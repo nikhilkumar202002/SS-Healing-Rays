@@ -30,7 +30,7 @@ if (empty($banner_images)) {
     $banner_images = [
         'assets/banner/banner-1.jpeg',
         'assets/banner/banner-2.jpeg',
-        'assets/banner/cta-banner-1.jpeg',
+        'assets/banner/cta-banner.jpeg',
         'assets/banner/cta-banner-2.jpeg',
     ];
 }
@@ -98,7 +98,7 @@ $stories_grid_items = [
     // --- ROW 4 ---
     [
         'type'        => 'image',
-        'image'       => 'assets/banner/cta-banner-1.jpeg',
+        'image'       => 'assets/banner/cta-banner.jpeg',
         'alt'         => 'Somatic Breathwork & Sacred Circle Gathering',
     ],
     [
@@ -222,13 +222,7 @@ $stories_grid_items = [
                         $btn_class = 'Btn-Profile-Primary';
                         include __DIR__ . '/common/button.php';
                     ?>
-                    <?php
-                        $btn_text  = 'Connect on WhatsApp';
-                        $btn_url   = 'https://wa.me/919000606792?text=' . rawurlencode('Hi SS Healing Rays, I would like to enquire about healing sessions.');
-                        $btn_class = 'Btn-Profile-Secondary';
-                        $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
-                        include __DIR__ . '/common/button.php';
-                    ?>
+                    
                 </div>
             </div>
 
