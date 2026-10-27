@@ -15,7 +15,8 @@ $about_btn_url         = $about_btn_url ?? '#about';
 $about_img             = $about_img ?? (file_exists(dirname(__DIR__) . '/assets/images/about-image.jpeg') ? 'assets/images/about-image.jpeg' : 'assets/images/workshop-healing-circle.png');
 ?>
 
-<section class="about-section workshop-section" id="about">
+<section class="about-section workshop-section position-relative" id="about">
+    <div id="workshop" class="position-absolute" style="top: -90px; left: 0;"></div>
     <div class="container">
         
         <!-- 1. Top Section Header (Full Length Without Breaking) -->

@@ -144,21 +144,46 @@ cite,
     min-height: var(--header-height-scrolled);
 }
 
-/* Desktop Navigation Items */
+/* ==========================================================================
+   Desktop Navigation Items & Dropdown Sub-Menus
+   ========================================================================== */
 .desktop-nav-menu .nav-link {
     font-family: var(--brand-font-serif);
     font-style: italic;
-    font-size: 17px;
+    font-size: 15.5px;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     color: #475569;
-    padding: 0.5rem 0.95rem !important;
+    padding: 0.45rem 0.65rem !important;
     position: relative;
     border-radius: 6px;
     transition: all 0.2s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
 }
 
-.desktop-nav-menu .nav-link::after {
+@media (min-width: 1400px) {
+    .desktop-nav-menu .nav-link {
+        font-size: 16.5px;
+        padding: 0.5rem 0.85rem !important;
+    }
+}
+
+/* Nav Link Hover & Active */
+.desktop-nav-menu .nav-link:hover,
+.desktop-nav-menu .nav-link:focus {
+    color: var(--primary-color);
+    background: rgba(130, 56, 122, 0.05);
+}
+
+.desktop-nav-menu .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Subtle Underline Indicator */
+.desktop-nav-menu .nav-link::before {
     content: '';
     position: absolute;
     bottom: 2px;
@@ -171,56 +196,41 @@ cite,
     transition: transform 0.25s ease;
 }
 
-.desktop-nav-menu .nav-link:hover,
-.desktop-nav-menu .nav-link:focus {
-    color: var(--primary-color);
-    background: rgba(130, 56, 122, 0.05);
-}
-
-.desktop-nav-menu .nav-link:hover::after,
-.desktop-nav-menu .nav-link.active::after {
+.desktop-nav-menu .nav-link:hover::before,
+.desktop-nav-menu .nav-link.active::before {
     transform: translateX(-50%) scaleX(1);
 }
 
-.desktop-nav-menu .nav-link.active {
-    color: var(--primary-color);
-    font-weight: 700;
+/* Dropdown Caret Styling */
+.desktop-nav-menu .nav-link.dropdown-toggle::after {
+    vertical-align: 0.12em;
+    margin-left: 0.35em;
+    border-top: 0.28em solid currentColor;
+    border-right: 0.28em solid transparent;
+    border-bottom: 0;
+    border-left: 0.28em solid transparent;
+    transition: transform 0.25s ease;
 }
 
-/* Bootstrap Dropdown Styling */
-.desktop-nav-menu .dropdown-menu {
-    border-radius: 12px;
-    box-shadow: 0 16px 36px -8px rgba(17, 17, 51, 0.12), 0 0 0 1px rgba(130, 56, 122, 0.15);
-    padding: 0.5rem;
-    border: none;
-    margin-top: 0.5rem;
-}
-
-.desktop-nav-menu .dropdown-item {
-    font-family: var(--brand-font-serif);
-    font-style: italic;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    color: #334155;
-    transition: all 0.2s ease;
-}
-
-.desktop-nav-menu .dropdown-item:hover {
-    color: var(--primary-color);
-    background-color: rgba(130, 56, 122, 0.06);
-    padding-left: 1.25rem;
-}
-
-/* Enable hover dropdown for desktop */
 @media (min-width: 992px) {
-    .desktop-nav-menu .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        animation: navDropdownFade 0.25s ease forwards;
+    .desktop-nav-menu .nav-item.dropdown:hover .nav-link.dropdown-toggle::after {
+        transform: rotate(180deg);
     }
 }
 
+/* Base Desktop Dropdown Menu */
+.desktop-nav-menu .dropdown-menu {
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 16px 40px -8px rgba(17, 17, 51, 0.14), 0 0 0 1px rgba(130, 56, 122, 0.12);
+    padding: 0.6rem;
+    border: none;
+    margin-top: 0.5rem;
+    z-index: 1060;
+    min-width: 240px;
+}
+
+/* Dropdown Animation */
 @keyframes navDropdownFade {
     from {
         opacity: 0;
@@ -232,147 +242,98 @@ cite,
     }
 }
 
-/* ==========================================================================
-   Services 4-Pillar Mega-Menu & Mobile Drawer Accordion
-   ========================================================================== */
-.services-dropdown-item {
-    position: relative;
+@media (min-width: 992px) {
+    .desktop-nav-menu .nav-item.dropdown:hover > .dropdown-menu {
+        display: block !important;
+        animation: navDropdownFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+}
+
+/* Dropdown Items */
+.desktop-nav-menu .dropdown-item {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 0.45rem 0.75rem;
+    border-radius: 6px;
+    color: #475569;
+    transition: all 0.18s ease;
+    white-space: normal;
+    line-height: 1.35;
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav-menu .dropdown-item:hover,
+.desktop-nav-menu .dropdown-item:focus {
+    color: var(--secondary-color, #ba436c);
+    background-color: rgba(186, 67, 108, 0.08);
+    transform: translateX(3px);
+}
+
+/* Dual Column Dropdown (Healing 11 items & Workshop 12 items) */
+.desktop-nav-menu .dropdown-menu.dropdown-menu-columns {
+    width: 440px;
+    min-width: 420px;
+    max-width: 92vw;
+    padding: 0.75rem;
 }
 
 @media (min-width: 992px) {
-    .desktop-nav-menu .dropdown-menu.services-mega-menu {
-        position: absolute;
-        top: 100%;
-        left: -40px;
-        width: 860px;
-        min-width: 840px;
-        max-width: 90vw;
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 1.75rem 2rem;
-        border: 1px solid rgba(130, 56, 122, 0.12);
-        box-shadow: 0 20px 48px -10px rgba(17, 17, 51, 0.14), 0 0 0 1px rgba(130, 56, 122, 0.05);
-        margin-top: 0.85rem;
-        z-index: 1060;
-    }
-
-    .desktop-nav-menu .services-dropdown-item:hover .services-mega-menu {
-        display: block !important;
-        animation: navDropdownFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .services-mega-grid {
-        display: grid;
-        grid-template-columns: 1.15fr 1.25fr 1.35fr;
-        gap: 1.75rem;
-    }
-
-    .mega-pillar-badge {
-        font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-        font-size: 0.94rem;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--heading-color, #111133);
-        margin-bottom: 0.75rem;
-        padding-bottom: 0.4rem;
-        border-bottom: 1.5px solid rgba(130, 56, 122, 0.12);
-    }
-
-    .mega-pillar-badge.text-secondary-color {
-        color: var(--secondary-color, #ba436c) !important;
-        margin-top: 1.15rem;
-    }
-
-    .mega-links-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .mega-link {
-        font-family: var(--brand-font-sans, 'Lato', sans-serif);
-        font-size: 0.86rem;
-        color: #475569;
-        text-decoration: none;
-        display: block;
-        padding: 4px 8px;
-        border-radius: 6px;
-        line-height: 1.4;
-        transition: all 0.2s ease;
-    }
-
-    .mega-link:hover {
-        color: var(--secondary-color, #ba436c);
-        background-color: rgba(186, 67, 108, 0.08);
-        transform: translateX(3px);
-    }
-
-    .mega-workshops-subgrid {
-        display: grid;
+    .desktop-nav-menu .nav-item.dropdown:hover > .dropdown-menu.dropdown-menu-columns {
+        display: grid !important;
         grid-template-columns: 1fr 1fr;
-        gap: 0.25rem 0.5rem;
-    }
-
-    .mega-workshop-pill {
-        font-family: var(--brand-font-sans, 'Lato', sans-serif);
-        font-size: 0.82rem;
-        color: #475569;
-        text-decoration: none;
-        display: block;
-        padding: 3px 6px;
-        border-radius: 4px;
-        line-height: 1.35;
-        transition: all 0.2s ease;
-        white-space: normal;
-    }
-
-    .mega-workshop-pill:hover {
-        color: var(--secondary-color, #ba436c);
-        background-color: rgba(186, 67, 108, 0.08);
-        transform: translateX(2px);
+        gap: 3px 6px;
     }
 }
 
-/* Laptops / iPad Pro Landscape (992px - 1199.98px) */
+/* Ensure right-aligned dropdowns fit within viewport */
+.desktop-nav-menu .dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .desktop-nav-menu .dropdown-menu.services-mega-menu {
-        width: 740px;
-        min-width: 740px;
-        left: -100px;
-        padding: 1.25rem 1.5rem;
+    .desktop-nav-menu .dropdown-menu.dropdown-menu-columns {
+        width: 400px;
+        min-width: 380px;
     }
-    .services-mega-grid {
-        gap: 1.25rem;
-        grid-template-columns: 1fr 1.15fr 1.3fr;
-    }
-    .mega-pillar-badge {
-        font-size: 0.88rem;
-    }
-    .mega-link,
-    .mega-workshop-pill {
-        font-size: 0.8rem;
+    .desktop-nav-menu .dropdown-item {
+        font-size: 13px;
+        padding: 0.4rem 0.6rem;
     }
 }
 
-/* Mobile Offcanvas Services Accordion */
-.mobile-services-collapse {
+/* Dropdown Divider & Header */
+.desktop-nav-menu .dropdown-divider-item {
+    grid-column: 1 / -1;
+    list-style: none;
+}
+
+.desktop-nav-menu .dropdown-header-item {
+    grid-column: 1 / -1;
+    list-style: none;
+}
+
+.desktop-nav-menu .dropdown-header {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--secondary-color, #ba436c) !important;
+    padding: 0.4rem 0.75rem 0.2rem;
+}
+
+/* ==========================================================================
+   Mobile Offcanvas Navigation & Collapsible Sub-Menus
+   ========================================================================== */
+.mobile-sub-collapse {
     background-color: rgba(130, 56, 122, 0.04);
     border-radius: 12px;
 }
 
-.mobile-pillar-heading {
-    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: 0.86rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--secondary-color, #ba436c);
-    margin-bottom: 0.4rem;
-    margin-top: 0.4rem;
+.mobile-sub-body {
+    padding: 0.5rem;
 }
 
 .mobile-sublinks-list {
@@ -386,20 +347,34 @@ cite,
 
 .mobile-sublink {
     font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     color: #475569;
     text-decoration: none;
     display: block;
-    padding: 4px 8px;
+    padding: 6px 10px;
     border-radius: 6px;
     transition: all 0.2s ease;
+    line-height: 1.35;
 }
 
 .mobile-sublink:hover,
 .mobile-sublink:active {
     color: var(--secondary-color, #ba436c);
     background-color: rgba(186, 67, 108, 0.1);
-    padding-left: 12px;
+    padding-left: 14px;
+}
+
+.transition-transform {
+    transition: transform 0.25s ease;
+}
+
+.offcanvas-nav a[aria-expanded="true"] .bi-chevron-down {
+    transform: rotate(180deg);
+}
+
+.mobile-sub-header {
+    list-style: none;
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
 }
 
 /* ==========================================================================

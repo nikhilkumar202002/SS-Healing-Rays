@@ -56,13 +56,12 @@
                 <h6 class="footer-col-heading">Quick Links</h6>
                 <ul class="footer-links">
                     <li><a href="index.php" class="footer-link">Home</a></li>
-                    <li><a href="#about" class="footer-link">About Sanctuary</a></li>
-                    <li><a href="#services" class="footer-link">All Services</a></li>
-                    <li><a href="#workshop" class="footer-link">Healing Circles</a></li>
-                    <li><a href="#testimonials" class="footer-link">Client Stories</a></li>
-                    <li><a href="#gallery" class="footer-link">Sacred Gallery</a></li>
-                    <li><a href="#faq" class="footer-link">FAQs</a></li>
-                    <li><a href="#contact" class="footer-link">Book a Session</a></li>
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#services" class="footer-link">Healing</a></li>
+                    <li><a href="#contact" class="footer-link">Training</a></li>
+                    <li><a href="#workshop" class="footer-link">Workshop</a></li>
+                    <li><a href="#gallery" class="footer-link">Gallery</a></li>
+                    <li><a href="#contact" class="footer-link">Contact Us</a></li>
                 </ul>
             </div>
 
