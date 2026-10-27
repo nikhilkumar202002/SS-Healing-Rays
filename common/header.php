@@ -66,10 +66,10 @@ $services_categories = [
         'title'    => 'III. COURSES on Wellness',
         'subtitle' => 'Sacred Knowledge',
         'icon'     => 'bi bi-journal-bookmark',
-        'url'      => 'contact.php',
+        'url'      => 'course.php',
         'items'    => [
-            ['label' => '1. Spandan', 'url' => 'contact.php'],
-            ['label' => '2. Chetan', 'url' => 'contact.php'],
+            ['label' => '1. Spandan', 'url' => 'course.php#course-spandan'],
+            ['label' => '2. Chetan', 'url' => 'course.php#course-chetan'],
         ]
     ],
     'workshops' => [
@@ -190,6 +190,9 @@ $nav_items = $nav_items ?? [
 
     <!-- Workshop Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/workshopbanner.css">
+
+    <!-- Course Page Hero Banner Custom Styles -->
+    <link rel="stylesheet" href="assets/css/coursebanner.css">
 
     <!-- Full Service Cards 3-Column Grid Styles -->
     <link rel="stylesheet" href="assets/css/servicecards.css">
