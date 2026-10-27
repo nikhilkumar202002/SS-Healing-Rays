@@ -137,9 +137,11 @@ $training_programs = [
                             <!-- Main Reusable Button Component from common/button.php -->
                             <div class="training-card-action">
                                 <?php
-                                    $btn_text  = 'Enquire for Batches';
-                                    $btn_url   = $program['url'];
-                                    $btn_class = 'Btn-Training-Card';
+                                    $btn_text    = 'Enquire for Batches';
+                                    $btn_url     = '#serviceBookingModal';
+                                    $btn_class   = 'Btn-Training-Card';
+                                    $clean_title = htmlspecialchars(html_entity_decode(strip_tags($program['title']), ENT_QUOTES, 'UTF-8'));
+                                    $btn_attr    = 'data-bs-toggle="modal" data-bs-target="#serviceBookingModal" data-service-title="' . $clean_title . '" data-service-category="II. Training"';
                                     include dirname(__DIR__) . '/common/button.php';
                                 ?>
                             </div>

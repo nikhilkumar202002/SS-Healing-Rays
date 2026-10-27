@@ -123,8 +123,12 @@ $full_services_list = $full_services_list ?? [
                             
                             <!-- Pinned Enquire Button -->
                             <div class="service-item-actions">
-                                <a href="<?= htmlspecialchars($service['url']) ?>" 
+                                <a href="#serviceBookingModal" 
                                    class="service-enquire-btn" 
+                                   data-bs-toggle="modal" 
+                                   data-bs-target="#serviceBookingModal" 
+                                   data-service-title="<?= htmlspecialchars($service['title']) ?>" 
+                                   data-service-category="I. Healings" 
                                    aria-label="Enquire about <?= htmlspecialchars($service['title']) ?>">
                                     <span>Enquire Now</span>
                                     <span class="service-enquire-icon-wrap" aria-hidden="true">

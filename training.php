@@ -9,6 +9,7 @@ $cta_url          = 'contact.php';
 include __DIR__ . '/common/header.php';
 include __DIR__ . '/training/trainingbanner.php';
 include __DIR__ . '/training/trainingcards.php';
+include __DIR__ . '/common/serviceform.php';
 include __DIR__ . '/common/footer.php';
 
 ?>

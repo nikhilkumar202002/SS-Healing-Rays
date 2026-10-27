@@ -126,8 +126,12 @@ $workshops_list = $workshops_list ?? [
                             
                             <!-- Pinned Enquire Button -->
                             <div class="service-item-actions">
-                                <a href="<?= htmlspecialchars($workshop['url']) ?>" 
+                                <a href="#serviceBookingModal" 
                                    class="service-enquire-btn" 
+                                   data-bs-toggle="modal" 
+                                   data-bs-target="#serviceBookingModal" 
+                                   data-service-title="<?= htmlspecialchars($workshop['title']) ?>" 
+                                   data-service-category="IV. Workshops" 
                                    aria-label="Enquire about <?= htmlspecialchars($workshop['title']) ?> Workshop">
                                     <span>Enquire Now</span>
                                     <span class="service-enquire-icon-wrap" aria-hidden="true">

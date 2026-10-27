@@ -27,6 +27,9 @@ include __DIR__ . '/home/faq.php';
 // 4. Sacred Retreat CTA Banner
 include __DIR__ . '/home/cta-banner.php';
 
-// 5. Common Global Footer
+// 5. Dynamic Service Booking Modal
+include __DIR__ . '/common/serviceform.php';
+
+// 6. Common Global Footer
 include __DIR__ . '/common/footer.php';
 ?>
