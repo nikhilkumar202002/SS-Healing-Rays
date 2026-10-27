@@ -5,8 +5,17 @@
  */
 
 $gallery_banner_bg    = $gallery_banner_bg ?? 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.40 PM.jpeg';
-$gallery_banner_title = $gallery_banner_title ?? 'Moments of <em>Stillness,</em><br>Journeys of <em>Transformation</em>';
 $gallery_banner_desc  = $gallery_banner_desc ?? 'Step inside our visual sanctuary. An authentic glimpse into transformative energy healing, guided meditations, sacred retreats, and soul-nourishing community circles.';
+
+// Split into two distinct lines without accidental word wrapping
+if (isset($gallery_banner_title)) {
+    $parts = preg_split('/<br\s*\/?>/i', $gallery_banner_title);
+    $gallery_banner_title_1 = $parts[0] ?? $gallery_banner_title;
+    $gallery_banner_title_2 = $parts[1] ?? '';
+} else {
+    $gallery_banner_title_1 = $gallery_banner_title_1 ?? 'Moments of <em>Stillness,</em>';
+    $gallery_banner_title_2 = $gallery_banner_title_2 ?? 'Journeys of <em>Transformation</em>';
+}
 
 ?>
 
@@ -22,7 +31,7 @@ $gallery_banner_desc  = $gallery_banner_desc ?? 'Step inside our visual sanctuar
 
     <div class="container position-relative gallery-banner-content-wrap">
         <div class="row justify-content-center text-center">
-            <div class="col-xl-9 col-lg-10 col-md-11">
+            <div class="col-12 col-lg-11 col-xl-10">
                 
                 <!-- Breadcrumb Navigation -->
                 <nav class="gallery-breadcrumb mb-3" aria-label="Breadcrumb">
@@ -32,9 +41,12 @@ $gallery_banner_desc  = $gallery_banner_desc ?? 'Step inside our visual sanctuar
                     </ol>
                 </nav>
 
-                <!-- Hero Title -->
+                <!-- Hero Title: Strict 2 Lines without Line Breaking -->
                 <h1 class="gallery-banner-title mb-3">
-                    <?= $gallery_banner_title ?>
+                    <span class="banner-title-line"><?= $gallery_banner_title_1 ?></span>
+                    <?php if (!empty($gallery_banner_title_2)): ?>
+                        <span class="banner-title-line"><?= $gallery_banner_title_2 ?></span>
+                    <?php endif; ?>
                 </h1>
 
                 <!-- Subtitle Description -->

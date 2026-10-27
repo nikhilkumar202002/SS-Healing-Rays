@@ -1,6 +1,7 @@
 /* ==========================================================================
    Gallery Page Banner Component - SS Healing Rays
    Clean, Minimal Banner with Pure Black Linear Gradient Overlay (Bottom to Top)
+   Typography: Marcellus headline across two balanced lines with Playfair italic accents
    ========================================================================== */
 
 .gallery-banner-section {
@@ -51,7 +52,7 @@
     padding: 2rem 1.5rem;
     text-align: center;
     color: #ffffff;
-    max-width: 900px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -85,15 +86,21 @@
     padding: 0 0.5rem;
 }
 
-/* 5. Typography: Headline matching the site's hero style */
+/* 5. Typography: Headline on Two Lines Without Line Breaking */
 .gallery-banner-title {
     font-family: var(--brand-font-marcellus, 'Marcellus', serif);
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-size: clamp(2rem, 3.8vw, 3.35rem);
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.24;
     color: #ffffff;
     margin-bottom: 1.25rem;
     text-shadow: none !important;
+}
+
+/* Each line stays strictly on its own line on desktop/tablets without breaking */
+.gallery-banner-title .banner-title-line {
+    display: block;
+    white-space: nowrap;
 }
 
 .gallery-banner-title em,
@@ -108,11 +115,11 @@
 /* 6. Subtitle / Description */
 .gallery-banner-subtitle {
     font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    font-size: clamp(0.95rem, 1.4vw, 1.12rem);
     font-weight: 400;
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
     text-shadow: none !important;
 }
@@ -127,8 +134,11 @@
         padding: 4.5rem 1rem 3rem;
     }
     .gallery-banner-title {
-        font-size: 2.1rem;
+        font-size: clamp(1.8rem, 6vw, 2.25rem);
         margin-bottom: 1rem;
+    }
+    .gallery-banner-title .banner-title-line {
+        white-space: normal;
     }
     .gallery-banner-subtitle {
         font-size: 0.95rem;

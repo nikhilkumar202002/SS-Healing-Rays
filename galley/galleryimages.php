@@ -1,14 +1,5 @@
 <?php
-/**
- * ==============================================================================
- * Masonry Gallery Grid Component - SS Healing Rays
- * Dynamic display of all gallery photos in assets/images/gallery/
- * Pure CSS columns masonry layout with Marcellus & Playfair Display typography
- * and built-in fullscreen interactive lightbox.
- * ==============================================================================
- */
 
-// Dynamic scan of all images in assets/images/gallery/
 $gallery_dir = dirname(__DIR__) . '/assets/images/gallery';
 $gallery_items = [];
 
