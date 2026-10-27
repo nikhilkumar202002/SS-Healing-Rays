@@ -92,14 +92,11 @@ $service_modal_categories = [
             <!-- Modal Body: Focused Form Only -->
             <div class="modal-body p-4 p-md-5">
                 
-                <!-- Dynamic Header & Badge -->
+                <!-- Header -->
                 <div class="contact-form-header mb-4 text-start">
-                    
-                    <h2 class="contact-heading" id="serviceModalLabel">
-                        <span class="d-block" id="serviceModalSubtext">Enquire for</span>
-                        <span class="d-block title-highlight" id="serviceModalTitle">Selected Offering</span>
+                    <h2 class="contact-heading service-modal-heading" id="serviceModalLabel">
+                        Take an Appointment
                     </h2>
-                   
                 </div>
 
                 <!-- Underline-Only Form (Mirrors home/contact.php design) -->
@@ -269,7 +266,22 @@ $service_modal_categories = [
     transform: rotate(90deg) scale(1.05);
 }
 
+.service-booking-modal .service-modal-heading,
+.service-booking-modal #serviceModalLabel {
+    font-size: 25px !important;
+    font-family: var(--brand-font-serif, 'Playfair Display', serif);
+    color: var(--heading-color, #111133);
+    margin: 0 !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.01em;
+}
+
 @media (max-width: 767.98px) {
+    .service-booking-modal .service-modal-heading,
+    .service-booking-modal #serviceModalLabel {
+        font-size: 22px !important;
+    }
     .service-booking-modal .modal-content {
         border-radius: 22px;
     }
@@ -295,26 +307,59 @@ $service_modal_categories = [
             var serviceSelect = modalElem.querySelector('#serviceModalSelect');
             if (!serviceSelect || !title) return;
 
-            var titleNorm = title.toLowerCase().replace(/[^a-z0-9]/g, '');
-            var matched = false;
+            var rawTitle = title.trim();
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = rawTitle;
+            var cleanTitle = tempDiv.textContent || tempDiv.innerText || rawTitle;
 
+            var titleNorm = cleanTitle.toLowerCase().replace(/[^a-z0-9]/g, '');
+            var matchedIndex = -1;
+
+            // 1. Exact match on value or visible text
             for (var i = 0; i < serviceSelect.options.length; i++) {
                 var opt = serviceSelect.options[i];
-                var valNorm = opt.value.toLowerCase().replace(/[^a-z0-9]/g, '');
-                var txtNorm = opt.text.toLowerCase().replace(/[^a-z0-9]/g, '');
-
-                if (valNorm === titleNorm || txtNorm === titleNorm ||
-                    (titleNorm.length >= 4 && (valNorm.indexOf(titleNorm) !== -1 || titleNorm.indexOf(valNorm) !== -1))) {
-                    serviceSelect.selectedIndex = i;
-                    matched = true;
+                if (opt.value.trim().toLowerCase() === cleanTitle.toLowerCase() ||
+                    opt.text.trim().toLowerCase() === cleanTitle.toLowerCase()) {
+                    matchedIndex = i;
                     break;
                 }
             }
 
-            if (!matched && title && title !== 'Selected Offering') {
-                var newOpt = new Option(title, title, true, true);
+            // 2. Normalized alphanumeric match
+            if (matchedIndex === -1) {
+                for (var j = 0; j < serviceSelect.options.length; j++) {
+                    var opt2 = serviceSelect.options[j];
+                    var valNorm = opt2.value.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    var txtNorm = opt2.text.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+                    if (valNorm === titleNorm || txtNorm === titleNorm) {
+                        matchedIndex = j;
+                        break;
+                    }
+                }
+            }
+
+            // 3. Substring match
+            if (matchedIndex === -1 && titleNorm.length >= 4) {
+                for (var k = 0; k < serviceSelect.options.length; k++) {
+                    var opt3 = serviceSelect.options[k];
+                    var valNorm3 = opt3.value.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    var txtNorm3 = opt3.text.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+                    if (valNorm3.indexOf(titleNorm) !== -1 || titleNorm.indexOf(valNorm3) !== -1 ||
+                        txtNorm3.indexOf(titleNorm) !== -1 || titleNorm.indexOf(txtNorm3) !== -1) {
+                        matchedIndex = k;
+                        break;
+                    }
+                }
+            }
+
+            if (matchedIndex !== -1) {
+                serviceSelect.selectedIndex = matchedIndex;
+            } else if (cleanTitle && cleanTitle !== 'Selected Offering') {
+                var newOpt = new Option(cleanTitle, cleanTitle, true, true);
                 serviceSelect.add(newOpt);
-                serviceSelect.value = title;
+                serviceSelect.value = cleanTitle;
             }
         }
 
@@ -323,42 +368,28 @@ $service_modal_categories = [
             var button = event.relatedTarget;
             if (!button) return;
 
-            var title = button.getAttribute('data-service-title') || button.getAttribute('data-title') || 'Selected Offering';
-            var category = button.getAttribute('data-service-category') || button.getAttribute('data-category') || 'Enquiry';
+            var title = button.getAttribute('data-service-title') || button.getAttribute('data-title') || '';
+            var category = button.getAttribute('data-service-category') || button.getAttribute('data-category') || '';
 
-            var titleText = modalElem.querySelector('#serviceModalTitle');
             var categoryInput = modalElem.querySelector('#serviceModalCategoryInput');
+            if (categoryInput && category) categoryInput.value = category;
 
-            if (titleText) titleText.textContent = title;
-            if (categoryInput) categoryInput.value = category;
-
-            selectServiceOption(title);
+            if (title) {
+                selectServiceOption(title);
+            }
         });
-
-        // Sync header title when user changes the dropdown option
-        var serviceSelectElem = modalElem.querySelector('#serviceModalSelect');
-        if (serviceSelectElem) {
-            serviceSelectElem.addEventListener('change', function() {
-                var chosen = this.options[this.selectedIndex]?.text;
-                var titleText = modalElem.querySelector('#serviceModalTitle');
-                if (chosen && titleText) {
-                    titleText.textContent = chosen;
-                }
-            });
-        }
 
         // Global helper for opening modal programmatically
         window.openServiceModal = function(serviceTitle, serviceCategory) {
-            var title = serviceTitle || 'Selected Offering';
-            var category = serviceCategory || 'Enquiry';
+            var title = serviceTitle || '';
+            var category = serviceCategory || '';
 
-            var titleText = modalElem.querySelector('#serviceModalTitle');
             var categoryInput = modalElem.querySelector('#serviceModalCategoryInput');
+            if (categoryInput && category) categoryInput.value = category;
 
-            if (titleText) titleText.textContent = title;
-            if (categoryInput) categoryInput.value = category;
-
-            selectServiceOption(title);
+            if (title) {
+                selectServiceOption(title);
+            }
 
             if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
                 var modalInstance = bootstrap.Modal.getOrCreateInstance(modalElem);

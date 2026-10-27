@@ -1,0 +1,104 @@
+# ==============================================================================
+# SS Healing Rays — Apache Server Configuration & Clean URLs
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Server Security & Environment Configuration
+# ------------------------------------------------------------------------------
+Options -Indexes -MultiViews +FollowSymLinks
+ServerSignature Off
+AddDefaultCharset UTF-8
+
+# Block access to hidden files and directories (.git, .env, .DS_Store, etc.)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# 2. Mod_Rewrite: Clean URLs & .php Extension Hiding
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Disable DirectorySlash to prevent automatic 301 trailing slashes on folders
+    # that share identical names with root pages (e.g. training, course, workshop)
+    DirectorySlash Off
+
+    # A. External 301 Redirect: /index.php or /index -> /
+    RewriteCond %{THE_REQUEST} \s/+index(?:\.php)?[\s?] [NC]
+    RewriteRule ^(?:index(?:\.php)?)?$ / [R=301,L]
+
+    # B. External 301 Redirect: Strip .php extension when requested directly
+    #    e.g., https://sshealingrays.com/aboutus.php -> https://sshealingrays.com/aboutus
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,L,NE]
+
+    # C. Trailing Slash Normalization: Remove trailing slash from page endpoints
+    #    e.g., /services/ -> /services, /training/ -> /training
+    RewriteCond %{REQUEST_METHOD} =GET
+    RewriteCond %{DOCUMENT_ROOT}/$1.php -f [OR]
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+    # D. Directory Trailing Slash: For physical directories without a matching .php file
+    #    e.g., /assets -> /assets/
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{DOCUMENT_ROOT}/$1.php !-f
+    RewriteCond %{REQUEST_URI} !(/$|\.)
+    RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+    # E. Pass through existing files unchanged (images, CSS, JS, fonts, audio, video)
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # F. Internal Rewrite: Map Clean URLs to their corresponding .php files
+    #    Prioritizes root .php files even if a folder with the same name exists
+    #    e.g., /training -> training.php, /course -> course.php, /services -> services.php
+    RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+    RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
+
+    # G. Secondary Fallback: Check if relative filename with .php exists
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 3. GZIP / DEFLATE Compression for High Performance
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE font/ttf font/otf font/woff font/woff2 image/svg+xml
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 4. Browser Caching Headers (Leverage Browser Cache)
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    
+    # Images & Media
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Webfonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    
+    # Stylesheets & Scripts
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    
+    # HTML Documents (instant freshness)
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- 1. Homepage -->
+    <url>
+        <loc>https://sshealingrays.com/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- 2. About Us -->
+    <url>
+        <loc>https://sshealingrays.com/aboutus</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 3. Holistic Healing Services (Pillar I) -->
+    <url>
+        <loc>https://sshealingrays.com/services</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- 4. Certified Training Programs (Pillar II) -->
+    <url>
+        <loc>https://sshealingrays.com/training</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- 5. Courses on Wellness (Pillar III) -->
+    <url>
+        <loc>https://sshealingrays.com/course</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- 6. Experiential Workshops (Pillar IV) -->
+    <url>
+        <loc>https://sshealingrays.com/workshop</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- 7. Sacred Photo Gallery -->
+    <url>
+        <loc>https://sshealingrays.com/gallery</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 8. Customer Stories & Testimonials -->
+    <url>
+        <loc>https://sshealingrays.com/customersstories</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 9. Contact Us & Consultation Booking -->
+    <url>
+        <loc>https://sshealingrays.com/contact</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- 10. Healer Profile: Sreeparvathy -->
+    <url>
+        <loc>https://sshealingrays.com/sreeparvathy</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- 11. Healer Profile: Sravanti -->
+    <url>
+        <loc>https://sshealingrays.com/sravanti</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+</urlset>
