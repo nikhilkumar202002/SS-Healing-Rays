@@ -1,18 +1,12 @@
 <?php
-/**
- * Gallery Section - SS Healing Rays
- * Two continuous slow sliders moving in opposite directions, full bleed (zero horizontal padding),
- * accompanied by section header and main button.
- */
 
 $gallery_pretitle        = $gallery_pretitle ?? 'SACRED GLIMPSES';
 $gallery_title_1         = $gallery_title_1 ?? 'Capturing Moments of';
 $gallery_title_2         = $gallery_title_2 ?? 'Inner';
 $gallery_title_highlight = $gallery_title_highlight ?? 'Transformation';
 $gallery_btn_text        = $gallery_btn_text ?? 'Explore Full Gallery';
-$gallery_btn_url         = $gallery_btn_url ?? '#gallery';
+$gallery_btn_url         = $gallery_btn_url ?? 'gallery.php';
 
-// Row 1 Gallery Items (slides in one direction)
 $gallery_row_1 = [
     [
         'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.02.55 PM.jpeg',
@@ -108,7 +102,7 @@ $gallery_row_2 = [
                 <!-- Set A -->
                 <div class="gallery-track-group">
                     <?php foreach ($gallery_row_1 as $item): ?>
-                        <div class="gallery-slide-card">
+                        <a href="gallery.php" class="gallery-slide-card" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
@@ -118,13 +112,13 @@ $gallery_row_2 = [
                                     <i class="bi bi-arrows-angle-expand"></i>
                                 </span>
                             </div>
-                        </div>
+                        </a>
                     <?php endforeach; ?>
                 </div>
                 <!-- Set B (Duplicated for 100% seamless infinite drift) -->
                 <div class="gallery-track-group" aria-hidden="true">
                     <?php foreach ($gallery_row_1 as $item): ?>
-                        <div class="gallery-slide-card">
+                        <a href="gallery.php" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
@@ -134,7 +128,7 @@ $gallery_row_2 = [
                                     <i class="bi bi-arrows-angle-expand"></i>
                                 </span>
                             </div>
-                        </div>
+                        </a>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -146,7 +140,7 @@ $gallery_row_2 = [
                 <!-- Set A -->
                 <div class="gallery-track-group">
                     <?php foreach ($gallery_row_2 as $item): ?>
-                        <div class="gallery-slide-card">
+                        <a href="gallery.php" class="gallery-slide-card" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
@@ -156,13 +150,13 @@ $gallery_row_2 = [
                                     <i class="bi bi-arrows-angle-expand"></i>
                                 </span>
                             </div>
-                        </div>
+                        </a>
                     <?php endforeach; ?>
                 </div>
                 <!-- Set B (Duplicated for 100% seamless infinite drift) -->
                 <div class="gallery-track-group" aria-hidden="true">
                     <?php foreach ($gallery_row_2 as $item): ?>
-                        <div class="gallery-slide-card">
+                        <a href="gallery.php" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
@@ -172,7 +166,7 @@ $gallery_row_2 = [
                                     <i class="bi bi-arrows-angle-expand"></i>
                                 </span>
                             </div>
-                        </div>
+                        </a>
                     <?php endforeach; ?>
                 </div>
             </div>

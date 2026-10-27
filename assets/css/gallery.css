@@ -121,6 +121,9 @@
 /* 5. Slide Card Styling (3:4 Aspect Ratio) */
 .gallery-slide-card {
     position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
     width: 315px;
     height: 420px;
     aspect-ratio: 3 / 4;

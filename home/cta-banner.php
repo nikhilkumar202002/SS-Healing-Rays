@@ -15,7 +15,7 @@ $cta_banner_title_1  = $cta_banner_title_1 ?? 'Join Us at';
 $cta_banner_title_2  = $cta_banner_title_2 ?? 'Whispers of Stillness';
 $cta_banner_title_3  = $cta_banner_title_3 ?? 'Retreat';
 $cta_banner_btn_text = $cta_banner_btn_text ?? 'Book your slot';
-$cta_banner_btn_url  = $cta_banner_btn_url ?? '#book-retreat';
+$cta_banner_btn_url  = $cta_banner_btn_url ?? '#bookingModal';
 
 $cta_banner_images = $cta_banner_images ?? [
     'assets/banner/cta-banner.jpeg',
@@ -61,6 +61,7 @@ $cta_banner_images = $cta_banner_images ?? [
                     $btn_icon_bg    = '#54205f';
                     $btn_text_color = '#111133';
                     $btn_icon_color = '#ffffff';
+                    $btn_attr       = 'data-bs-toggle="modal" data-bs-target="#bookingModal" aria-haspopup="dialog"';
                     include dirname(__DIR__) . '/common/button.php';
                 ?>
             </div>
