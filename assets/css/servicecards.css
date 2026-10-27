@@ -80,11 +80,11 @@
     -webkit-box-shadow: none !important;
 }
 
-/* 4. Card Media (Top Image) */
+/* 4. Card Media (Top Image) - Increased Height for visual impact */
 .service-item-media {
     position: relative;
     width: 100%;
-    height: 230px;
+    height: 290px;
     overflow: hidden;
     background-color: #f8fafc;
 }
@@ -207,7 +207,7 @@
         margin-bottom: 2.75rem;
     }
     .service-item-media {
-        height: 210px;
+        height: 255px;
     }
     .service-item-body {
         padding: 1.45rem 1.5rem 1.5rem;
@@ -222,7 +222,7 @@
         margin-bottom: 2rem;
     }
     .service-item-media {
-        height: 195px;
+        height: 225px;
     }
     .service-item-body {
         padding: 1.25rem 1.25rem 1.35rem;
