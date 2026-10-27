@@ -22,9 +22,7 @@
 /* Inside Container Card (Light Grey with 50px Surrounding Margin & Border Radius) */
 .footer-container-card {
     background-color: #f4f4f7;
-    max-width: 1360px;
-    margin: 50px auto;
-    width: calc(100% - 100px);
+    margin: 50px;
     border-radius: 30px;
     padding: 4.5rem 3.5rem 2.25rem 3.5rem;
     position: relative;
@@ -213,9 +211,7 @@
 /* Laptops & Desktops (1200px - 1399.98px) */
 @media (max-width: 1399.98px) {
     .footer-container-card {
-        max-width: 100%;
-        width: auto;
-        margin: 50px 35px;
+        margin: 50px;
         padding: 4rem 3rem 2rem 3rem;
     }
 }

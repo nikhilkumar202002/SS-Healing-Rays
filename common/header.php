@@ -29,6 +29,59 @@ $cta_url          = $cta_url ?? '#services';
 $phone_number     = $phone_number ?? '+91 98765 43210';
 $phone_tel        = preg_replace('/[^0-9+]/', '', $phone_number);
 
+// Categorized Services Menu (4 Sacred Pillars matching client specification)
+$services_categories = [
+    'healings' => [
+        'title' => 'I. Healings',
+        'items' => [
+            ['label' => '1. Reiki Healing', 'url' => '#services'],
+            ['label' => '2. Crystal Healing', 'url' => '#services'],
+            ['label' => '3. Angel Healing', 'url' => '#services'],
+            ['label' => '4. Energy healing', 'url' => '#services'],
+            ['label' => '5. EFT', 'url' => '#services'],
+            ['label' => '6. Counselling', 'url' => '#services'],
+            ['label' => '7. Trauma Healing', 'url' => '#services'],
+            ['label' => '8. Personal Transformation Healing', 'url' => '#services'],
+            ['label' => '9. Meditations', 'url' => '#services'],
+            ['label' => '10. Tarot Card reading', 'url' => '#services'],
+            ['label' => '11. Therapeutic Yoga', 'url' => '#services'],
+        ]
+    ],
+    'training' => [
+        'title' => 'II. Training',
+        'items' => [
+            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => '#contact'],
+            ['label' => '2. Crystal Therapy', 'url' => '#contact'],
+            ['label' => '3. Angel Therapy', 'url' => '#contact'],
+            ['label' => '4. EFT', 'url' => '#contact'],
+        ]
+    ],
+    'courses' => [
+        'title' => 'III. COURSES on Wellness',
+        'items' => [
+            ['label' => '1. Spandan', 'url' => '#contact'],
+            ['label' => '2. Chetan', 'url' => '#contact'],
+        ]
+    ],
+    'workshops' => [
+        'title' => 'IV. Workshops',
+        'items' => [
+            ['label' => '1. Energy Reset', 'url' => '#workshop'],
+            ['label' => '2. Language of crystals', 'url' => '#workshop'],
+            ['label' => '3. Gratitude', 'url' => '#workshop'],
+            ['label' => '4. Loving Yourself', 'url' => '#workshop'],
+            ['label' => '5. Breath work', 'url' => '#workshop'],
+            ['label' => '6. Mudras', 'url' => '#workshop'],
+            ['label' => '7. Relaxation', 'url' => '#workshop'],
+            ['label' => '8. Money manifestation', 'url' => '#workshop'],
+            ['label' => '9. Energy Routine', 'url' => '#workshop'],
+            ['label' => '10. Abundance program', 'url' => '#workshop'],
+            ['label' => '11. Reprogram with meditation', 'url' => '#workshop'],
+            ['label' => '12. Colour meditation', 'url' => '#workshop'],
+        ]
+    ]
+];
+
 // Navigation items array (centralized & customizable per page)
 $nav_items = $nav_items ?? [
     'home' => [
@@ -40,14 +93,9 @@ $nav_items = $nav_items ?? [
         'url'   => '#about',
     ],
     'services' => [
-        'label' => 'Services',
-        'url'   => '#services',
-        'children' => [
-            ['label' => 'Reiki & Energy Healing', 'url' => '#reiki'],
-            ['label' => 'Chakra Balancing', 'url' => '#chakra'],
-            ['label' => 'Crystal Therapy', 'url' => '#crystal'],
-            ['label' => 'Sound Meditation', 'url' => '#sound-healing'],
-        ]
+        'label'      => 'Services',
+        'url'        => '#services',
+        'categories' => $services_categories,
     ],
     'testimonials' => [
         'label' => 'Stories',
@@ -143,10 +191,80 @@ $nav_items = $nav_items ?? [
                         <?php foreach ($nav_items as $key => $item): ?>
                             <?php 
                                 $isActive = ($current_page === $key);
-                                $hasDropdown = !empty($item['children']);
+                                $hasCategories = !empty($item['categories']);
+                                $hasChildren = !empty($item['children']);
                             ?>
-                            <li class="nav-item <?= $hasDropdown ? 'dropdown' : '' ?>">
-                                <?php if ($hasDropdown): ?>
+                            <?php if ($hasCategories): ?>
+                                <li class="nav-item dropdown services-dropdown-item">
+                                    <a class="nav-link dropdown-toggle <?= $isActive ? 'active' : '' ?>" 
+                                       href="<?= htmlspecialchars($item['url']) ?>" 
+                                       id="servicesMegaMenuToggle"
+                                       role="button" 
+                                       data-bs-toggle="dropdown" 
+                                       data-bs-auto-close="outside"
+                                       aria-expanded="false">
+                                        <span><?= htmlspecialchars($item['label']) ?></span>
+                                    </a>
+                                    
+                                    <div class="dropdown-menu services-mega-menu shadow-lg" aria-labelledby="servicesMegaMenuToggle">
+                                        <div class="services-mega-grid">
+                                            
+                                            <!-- Pillar 1: I. Healings (11 items) -->
+                                            <div class="mega-col mega-col-healings">
+                                                <div class="mega-pillar-badge"><?= htmlspecialchars($item['categories']['healings']['title']) ?></div>
+                                                <ul class="mega-links-list">
+                                                    <?php foreach ($item['categories']['healings']['items'] as $sub): ?>
+                                                        <li>
+                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
+                                                                <?= htmlspecialchars($sub['label']) ?>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Pillar 2: II. Training & III. Courses on Wellness -->
+                                            <div class="mega-col mega-col-training">
+                                                <div class="mega-pillar-badge"><?= htmlspecialchars($item['categories']['training']['title']) ?></div>
+                                                <ul class="mega-links-list mb-3">
+                                                    <?php foreach ($item['categories']['training']['items'] as $sub): ?>
+                                                        <li>
+                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
+                                                                <?= htmlspecialchars($sub['label']) ?>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+
+                                                <div class="mega-pillar-badge text-secondary-color"><?= htmlspecialchars($item['categories']['courses']['title']) ?></div>
+                                                <ul class="mega-links-list">
+                                                    <?php foreach ($item['categories']['courses']['items'] as $sub): ?>
+                                                        <li>
+                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
+                                                                <?= htmlspecialchars($sub['label']) ?>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Pillar 3: IV. Workshops (12 items) -->
+                                            <div class="mega-col mega-col-workshops">
+                                                <div class="mega-pillar-badge"><?= htmlspecialchars($item['categories']['workshops']['title']) ?></div>
+                                                <div class="mega-workshops-subgrid">
+                                                    <?php foreach ($item['categories']['workshops']['items'] as $sub): ?>
+                                                        <a class="mega-link mega-workshop-pill" href="<?= htmlspecialchars($sub['url']) ?>">
+                                                            <?= htmlspecialchars($sub['label']) ?>
+                                                        </a>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php elseif ($hasChildren): ?>
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle <?= $isActive ? 'active' : '' ?>" 
                                        href="<?= htmlspecialchars($item['url']) ?>" 
                                        role="button" 
@@ -163,14 +281,16 @@ $nav_items = $nav_items ?? [
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
-                                <?php else: ?>
+                                </li>
+                            <?php else: ?>
+                                <li class="nav-item">
                                     <a class="nav-link <?= $isActive ? 'active' : '' ?>" 
                                        href="<?= htmlspecialchars($item['url']) ?>"
                                        <?= $isActive ? 'aria-current="page"' : '' ?>>
                                         <span><?= htmlspecialchars($item['label']) ?></span>
                                     </a>
-                                <?php endif; ?>
-                            </li>
+                                </li>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -231,13 +351,90 @@ $nav_items = $nav_items ?? [
         <ul class="navbar-nav offcanvas-nav gap-1">
             <?php foreach ($nav_items as $key => $item): ?>
                 <?php $isActive = ($current_page === $key); ?>
-                <li class="nav-item">
-                    <a href="<?= htmlspecialchars($item['url']) ?>" 
-                       class="nav-link <?= $isActive ? 'active' : '' ?>">
-                        <span><?= htmlspecialchars($item['label']) ?></span>
-                        <i class="bi bi-chevron-right small text-muted"></i>
-                    </a>
-                </li>
+                <?php if (!empty($item['categories'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex justify-content-between align-items-center <?= $isActive ? 'active' : '' ?>" 
+                           data-bs-toggle="collapse" 
+                           href="#mobileServicesCollapse" 
+                           role="button" 
+                           aria-expanded="false" 
+                           aria-controls="mobileServicesCollapse">
+                            <span><?= htmlspecialchars($item['label']) ?></span>
+                            <i class="bi bi-chevron-down small text-muted"></i>
+                        </a>
+                        
+                        <div class="collapse mobile-services-collapse" id="mobileServicesCollapse">
+                            <div class="mobile-services-body p-2 mt-1">
+                                
+                                <!-- I. Healings -->
+                                <div class="mobile-pillar-group mb-3">
+                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['healings']['title']) ?></h6>
+                                    <ul class="mobile-sublinks-list">
+                                        <?php foreach ($item['categories']['healings']['items'] as $sub): ?>
+                                            <li>
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                    <?= htmlspecialchars($sub['label']) ?>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+
+                                <!-- II. Training -->
+                                <div class="mobile-pillar-group mb-3">
+                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['training']['title']) ?></h6>
+                                    <ul class="mobile-sublinks-list">
+                                        <?php foreach ($item['categories']['training']['items'] as $sub): ?>
+                                            <li>
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                    <?= htmlspecialchars($sub['label']) ?>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+
+                                <!-- III. Courses on Wellness -->
+                                <div class="mobile-pillar-group mb-3">
+                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['courses']['title']) ?></h6>
+                                    <ul class="mobile-sublinks-list">
+                                        <?php foreach ($item['categories']['courses']['items'] as $sub): ?>
+                                            <li>
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                    <?= htmlspecialchars($sub['label']) ?>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+
+                                <!-- IV. Workshops -->
+                                <div class="mobile-pillar-group">
+                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['workshops']['title']) ?></h6>
+                                    <ul class="mobile-sublinks-list">
+                                        <?php foreach ($item['categories']['workshops']['items'] as $sub): ?>
+                                            <li>
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                    <?= htmlspecialchars($sub['label']) ?>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a href="<?= htmlspecialchars($item['url']) ?>" 
+                           class="nav-link <?= $isActive ? 'active' : '' ?>"
+                           data-bs-dismiss="offcanvas">
+                            <span><?= htmlspecialchars($item['label']) ?></span>
+                            <i class="bi bi-chevron-right small text-muted"></i>
+                        </a>
+                    </li>
+                <?php endif; ?>
             <?php endforeach; ?>
         </ul>
 

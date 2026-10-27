@@ -339,28 +339,73 @@
 }
 
 @media (max-width: 767.98px) {
+    /* Mobile Banner Height: 70vh */
     .hero-banner-section {
-        min-height: 560px;
+        height: 70vh !important;
+        height: 70dvh !important;
+        min-height: 0 !important;
+        max-height: 70vh !important;
+        max-height: 70dvh !important;
     }
     .hero-banner-section .swiper-button-prev,
     .hero-banner-section .swiper-button-next {
         display: none; /* Hide arrows on mobile for clean screen */
     }
+    .hero-banner-swiper .banner-content {
+        padding: 0 1.15rem;
+    }
     .hero-banner-swiper .banner-title {
-        margin-bottom: 1rem;
-        line-height: 1.22;
+        font-size: clamp(1.55rem, 6.2vw, 2.15rem);
+        margin-bottom: 0.65rem;
+        line-height: 1.2;
     }
     .hero-banner-swiper .banner-description {
-        margin-bottom: 1.75rem;
+        font-size: clamp(0.85rem, 2.6vw, 0.98rem);
+        line-height: 1.48;
+        margin-bottom: 1.15rem;
+        max-width: 92%;
     }
     .hero-banner-swiper .banner-actions {
         flex-direction: column;
         width: 100%;
-        gap: 0.75rem;
+        gap: 0.6rem;
     }
     .hero-banner-swiper .banner-actions .Btn-Container {
         width: 100%;
-        max-width: 290px;
+        max-width: 270px;
+        height: 44px;
+        padding: 2px 2px 2px 18px !important;
         justify-content: space-between;
+    }
+    .hero-banner-swiper .banner-actions .Btn-Container .text {
+        font-size: 0.95rem;
+    }
+    .hero-banner-swiper .banner-actions .Btn-Container .icon-Container {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 374.98px) {
+    .hero-banner-swiper .banner-title {
+        font-size: 1.42rem;
+        margin-bottom: 0.5rem;
+    }
+    .hero-banner-swiper .banner-description {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        margin-bottom: 0.85rem;
+    }
+    .hero-banner-swiper .banner-actions .Btn-Container {
+        height: 40px;
+        max-width: 240px;
+        padding: 2px 2px 2px 14px !important;
+    }
+    .hero-banner-swiper .banner-actions .Btn-Container .text {
+        font-size: 0.88rem;
+    }
+    .hero-banner-swiper .banner-actions .Btn-Container .icon-Container {
+        width: 34px;
+        height: 34px;
     }
 }

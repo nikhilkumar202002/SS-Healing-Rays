@@ -233,6 +233,176 @@ cite,
 }
 
 /* ==========================================================================
+   Services 4-Pillar Mega-Menu & Mobile Drawer Accordion
+   ========================================================================== */
+.services-dropdown-item {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .desktop-nav-menu .dropdown-menu.services-mega-menu {
+        position: absolute;
+        top: 100%;
+        left: -40px;
+        width: 860px;
+        min-width: 840px;
+        max-width: 90vw;
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 1.75rem 2rem;
+        border: 1px solid rgba(130, 56, 122, 0.12);
+        box-shadow: 0 20px 48px -10px rgba(17, 17, 51, 0.14), 0 0 0 1px rgba(130, 56, 122, 0.05);
+        margin-top: 0.85rem;
+        z-index: 1060;
+    }
+
+    .desktop-nav-menu .services-dropdown-item:hover .services-mega-menu {
+        display: block !important;
+        animation: navDropdownFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .services-mega-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1.25fr 1.35fr;
+        gap: 1.75rem;
+    }
+
+    .mega-pillar-badge {
+        font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+        font-size: 0.94rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--heading-color, #111133);
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1.5px solid rgba(130, 56, 122, 0.12);
+    }
+
+    .mega-pillar-badge.text-secondary-color {
+        color: var(--secondary-color, #ba436c) !important;
+        margin-top: 1.15rem;
+    }
+
+    .mega-links-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .mega-link {
+        font-family: var(--brand-font-sans, 'Lato', sans-serif);
+        font-size: 0.86rem;
+        color: #475569;
+        text-decoration: none;
+        display: block;
+        padding: 4px 8px;
+        border-radius: 6px;
+        line-height: 1.4;
+        transition: all 0.2s ease;
+    }
+
+    .mega-link:hover {
+        color: var(--secondary-color, #ba436c);
+        background-color: rgba(186, 67, 108, 0.08);
+        transform: translateX(3px);
+    }
+
+    .mega-workshops-subgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.25rem 0.5rem;
+    }
+
+    .mega-workshop-pill {
+        font-family: var(--brand-font-sans, 'Lato', sans-serif);
+        font-size: 0.82rem;
+        color: #475569;
+        text-decoration: none;
+        display: block;
+        padding: 3px 6px;
+        border-radius: 4px;
+        line-height: 1.35;
+        transition: all 0.2s ease;
+        white-space: normal;
+    }
+
+    .mega-workshop-pill:hover {
+        color: var(--secondary-color, #ba436c);
+        background-color: rgba(186, 67, 108, 0.08);
+        transform: translateX(2px);
+    }
+}
+
+/* Laptops / iPad Pro Landscape (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .desktop-nav-menu .dropdown-menu.services-mega-menu {
+        width: 740px;
+        min-width: 740px;
+        left: -100px;
+        padding: 1.25rem 1.5rem;
+    }
+    .services-mega-grid {
+        gap: 1.25rem;
+        grid-template-columns: 1fr 1.15fr 1.3fr;
+    }
+    .mega-pillar-badge {
+        font-size: 0.88rem;
+    }
+    .mega-link,
+    .mega-workshop-pill {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile Offcanvas Services Accordion */
+.mobile-services-collapse {
+    background-color: rgba(130, 56, 122, 0.04);
+    border-radius: 12px;
+}
+
+.mobile-pillar-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+.mobile-sublinks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.mobile-sublink {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    color: #475569;
+    text-decoration: none;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.mobile-sublink:hover,
+.mobile-sublink:active {
+    color: var(--secondary-color, #ba436c);
+    background-color: rgba(186, 67, 108, 0.1);
+    padding-left: 12px;
+}
+
+/* ==========================================================================
    CENTER COLUMN: Logo
    ========================================================================== */
 .site-logo {
