@@ -336,6 +336,8 @@ include __DIR__ . '/common/header.php';
                                 </article>
 
                             </div>
+                        </div>
+
                         <!-- Testimonials Action CTA via common/button.php -->
                         <div class="profile-testimonials-action text-center mt-4 pt-2">
                             <?php
