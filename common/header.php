@@ -220,6 +220,13 @@ $nav_items = $nav_items ?? [
 </head>
 <body>
 
+<?php
+// Homepage Preloader (displays on homepage load)
+if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
+    include __DIR__ . '/preloader.php';
+}
+?>
+
 
 <!-- ==========================================================================
      Main Header (Bootstrap 5.3 Navbar with 3-Column Layout)
