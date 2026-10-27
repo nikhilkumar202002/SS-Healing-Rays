@@ -1,0 +1,760 @@
+/* ==========================================================================
+   Personal Profile Details Component - Sreeparvathy (SS Healing Rays)
+   Split Layout: Left Side Scrollable Content | Right Side Sticky Portrait Image
+   Scrolling Testimonial Stream, Instagram Profile Integration, No Banner
+   Typography: Marcellus serif headers, Playfair italic accents, Lato clean copy
+   ========================================================================== */
+
+.profile-section {
+    position: relative;
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(4rem, 7vw, 6.5rem);
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 1. Breadcrumbs */
+.profile-breadcrumb .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.profile-breadcrumb .breadcrumb-item a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.profile-breadcrumb .breadcrumb-item a:hover {
+    color: var(--secondary-color, #ba436c);
+}
+
+.profile-breadcrumb .breadcrumb-item.active {
+    color: var(--heading-color, #111133);
+    font-weight: 600;
+}
+
+.profile-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: #cbd5e1;
+    content: "/";
+    padding: 0 0.5rem;
+}
+
+/* 2. Pretitle Badge */
+.profile-pretitle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.95rem;
+    border-radius: 999px;
+    background-color: #faf5f8;
+    border: 1px solid rgba(186, 67, 108, 0.2);
+    color: var(--secondary-color, #ba436c);
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 1.15rem;
+}
+
+/* 3. Hero Headline */
+.profile-hero-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.15rem);
+    font-weight: 400;
+    line-height: 1.24;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1rem;
+    letter-spacing: -0.015em;
+}
+
+.profile-hero-title em,
+.profile-hero-title i {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    color: var(--secondary-color, #ba436c);
+}
+
+.profile-lead-sub {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+/* 4. Instagram Profile & Social Card (Directly from User Upload) */
+.profile-ig-card {
+    background: #faf5f8;
+    border: 1px solid rgba(186, 67, 108, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem 1.65rem;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-ig-card:hover {
+    border-color: rgba(186, 67, 108, 0.45);
+    background-color: #ffffff;
+    box-shadow: 0 16px 36px -12px rgba(186, 67, 108, 0.12);
+}
+
+.profile-ig-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(186, 67, 108, 0.12);
+    margin-bottom: 1rem;
+}
+
+.profile-ig-user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.profile-ig-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-ig-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+.profile-ig-handle {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--heading-color, #111133);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.profile-ig-handle i {
+    color: #ba436c;
+}
+
+.profile-ig-category {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.profile-ig-stats {
+    display: flex;
+    gap: 1.25rem;
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.82rem;
+    color: #475569;
+}
+
+.profile-ig-stats strong {
+    font-weight: 800;
+    color: var(--heading-color, #111133);
+}
+
+.profile-ig-bio {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.68;
+    color: #334155;
+    margin-bottom: 1.25rem;
+}
+
+.profile-ig-bio-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.profile-ig-bio-line i {
+    color: var(--secondary-color, #ba436c);
+}
+
+.profile-ig-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.profile-ig-btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.15rem;
+    border-radius: 999px;
+    background-color: #25D366;
+    color: #ffffff;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.profile-ig-btn-wa:hover {
+    background-color: #1eb956;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+.profile-ig-btn-ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.15rem;
+    border-radius: 999px;
+    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+    color: #ffffff;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.profile-ig-btn-ig:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 39, 67, 0.35);
+}
+
+/* 5. Core Healing Pillars (Cards) */
+.profile-section-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.35rem;
+    letter-spacing: -0.01em;
+}
+
+.profile-section-heading em {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic;
+    color: var(--secondary-color, #ba436c);
+}
+
+.profile-pillars-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    margin-bottom: 2.75rem;
+}
+
+.profile-pillar-card {
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    border-radius: 18px;
+    padding: 1.35rem 1.45rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-pillar-card:hover {
+    border-color: rgba(186, 67, 108, 0.45);
+    background-color: #faf5f8;
+    transform: translateX(4px);
+}
+
+.profile-pillar-icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background-color: rgba(186, 67, 108, 0.1);
+    color: var(--secondary-color, #ba436c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+}
+
+.profile-pillar-card:hover .profile-pillar-icon-box {
+    background-color: var(--secondary-color, #ba436c);
+    color: #ffffff;
+    transform: scale(1.06);
+}
+
+.profile-pillar-content h4 {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.15rem;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.profile-pillar-content p {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.62;
+    color: #64748b;
+    margin: 0;
+}
+
+/* 6. Deep Dive Story / Sanctuary Philosophy */
+.profile-story-block {
+    margin-bottom: 2.75rem;
+}
+
+.profile-story-text {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 1.15rem;
+}
+
+.profile-quote-callout {
+    position: relative;
+    padding: 1.4rem 1.65rem 1.4rem 2rem;
+    background-color: #faf5f8;
+    border-left: 3.5px solid var(--secondary-color, #ba436c);
+    border-radius: 0 16px 16px 0;
+    margin: 1.75rem 0;
+}
+
+.profile-quote-callout p {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: #82387a;
+    margin: 0;
+}
+
+/* 7. DM CLARITY Callout Box */
+.profile-clarity-box {
+    background: linear-gradient(135deg, #111133 0%, #221430 100%);
+    border-radius: 24px;
+    padding: 2.25rem 2rem;
+    color: #ffffff;
+    margin-bottom: 3.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-clarity-box::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(186, 67, 108, 0.45) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.profile-clarity-badge {
+    display: inline-block;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ba436c;
+    background: rgba(186, 67, 108, 0.16);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 0.85rem;
+}
+
+.profile-clarity-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.profile-clarity-title em {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic;
+    color: #ba436c;
+}
+
+.profile-clarity-desc {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.68;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 1.45rem;
+}
+
+.profile-clarity-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.profile-btn-clarity-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background-color: #25D366;
+    color: #ffffff;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.profile-btn-clarity-wa:hover {
+    background-color: #1eb956;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.profile-btn-clarity-ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.profile-btn-clarity-ig:hover {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* 8. Scrolling Testimonial Stream Component */
+.profile-testimonials-stream {
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-testimonials-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.profile-testimonials-track-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem 0;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+.profile-testimonials-marquee {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    animation: profileMarqueeScroll 38s linear infinite;
+}
+
+.profile-testimonials-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes profileMarqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.profile-testi-card {
+    background: #faf5f8;
+    border: 1px solid rgba(186, 67, 108, 0.16);
+    border-radius: 18px;
+    padding: 1.35rem 1.45rem;
+    width: 320px;
+    min-width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.profile-testi-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(186, 67, 108, 0.45);
+    background-color: #ffffff;
+    box-shadow: 0 14px 32px -10px rgba(186, 67, 108, 0.12);
+}
+
+.profile-testi-stars {
+    color: #f59e0b;
+    font-size: 0.82rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+}
+
+.profile-testi-quote {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #334155;
+    margin-bottom: 1.15rem;
+    flex-grow: 1;
+}
+
+.profile-testi-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.65rem;
+    border-top: 1px solid rgba(186, 67, 108, 0.1);
+}
+
+.profile-testi-name {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.98rem;
+    color: var(--heading-color, #111133);
+    font-weight: 600;
+}
+
+.profile-testi-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #ba436c;
+    background: rgba(186, 67, 108, 0.1);
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+/* 9. Right Column: Static / Sticky Portrait Card */
+@media (min-width: 992px) {
+    .profile-sticky-media-wrap {
+        position: sticky;
+        top: 100px;
+        z-index: 20;
+    }
+}
+
+.profile-portrait-card {
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    border-radius: 28px;
+    padding: 0.85rem;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-portrait-card:hover {
+    border-color: rgba(186, 67, 108, 0.35);
+}
+
+.profile-portrait-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 22px;
+    overflow: hidden;
+    background-color: #0b0b1a;
+}
+
+.profile-portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-portrait-card:hover .profile-portrait-img {
+    transform: scale(1.04);
+}
+
+/* Floating Chips on Portrait */
+.profile-portrait-chip-top {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(17, 17, 51, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.profile-portrait-chip-bottom {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(186, 67, 108, 0.2);
+    border-radius: 16px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-chip-meta-name {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.05rem;
+    color: #111133;
+    display: block;
+    line-height: 1.2;
+}
+
+.profile-chip-meta-role {
+    font-size: 0.74rem;
+    color: #ba436c;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.profile-chip-ig-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* Quick Actions Under Portrait */
+.profile-sticky-actions-card {
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    border-radius: 20px;
+    padding: 1.35rem 1.45rem;
+    margin-top: 1rem;
+}
+
+.profile-sticky-contact-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.15rem;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.35rem;
+}
+
+.profile-sticky-contact-desc {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.profile-sticky-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.profile-sticky-btn-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    background-color: #25D366;
+    color: #ffffff;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.profile-sticky-btn-wa:hover {
+    background-color: #1eb956;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+    transform: translateY(-2px);
+}
+
+.profile-sticky-btn-enquire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    background-color: #faf5f8;
+    border: 1px solid rgba(186, 67, 108, 0.25);
+    color: #82387a;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.profile-sticky-btn-enquire:hover {
+    background-color: #ba436c;
+    border-color: #ba436c;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .profile-sticky-media-wrap {
+        margin-top: 2rem;
+    }
+    .profile-hero-title {
+        font-size: 2.2rem;
+    }
+}

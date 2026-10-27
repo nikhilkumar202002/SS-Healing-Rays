@@ -209,6 +209,9 @@ $nav_items = $nav_items ?? [
     <!-- Contact & Booking Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/contact.css">
 
+    <!-- Personal Profile Details Page Custom Styles -->
+    <link rel="stylesheet" href="assets/css/profile.css">
+
     <!-- Reusable Footer Island Custom Styles -->
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
