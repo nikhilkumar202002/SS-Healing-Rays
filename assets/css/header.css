@@ -201,21 +201,31 @@ cite,
     transform: translateX(-50%) scaleX(1);
 }
 
-/* Dropdown Caret Styling */
-.desktop-nav-menu .nav-link.dropdown-toggle::after {
-    vertical-align: 0.12em;
-    margin-left: 0.35em;
-    border-top: 0.28em solid currentColor;
-    border-right: 0.28em solid transparent;
-    border-bottom: 0;
-    border-left: 0.28em solid transparent;
-    transition: transform 0.25s ease;
+/* Dropdown Caret Styling: Replaced with rotating arrow */
+.desktop-nav-menu .dropdown-toggle::after {
+    display: none !important;
 }
 
-@media (min-width: 992px) {
-    .desktop-nav-menu .nav-item.dropdown:hover .nav-link.dropdown-toggle::after {
-        transform: rotate(180deg);
-    }
+/* Nav Dropdown Arrow (Initial State: Pointing DOWN) */
+.nav-arrow-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+    width: 11px;
+    height: 11px;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+    transform: rotate(0deg); /* Initial state: Pointing DOWN */
+    color: currentColor;
+    opacity: 0.82;
+}
+
+/* Hover & Open States: Rotates 180deg to Point UP */
+.desktop-nav-menu .nav-item.dropdown:hover .nav-arrow-icon,
+.desktop-nav-menu .nav-item.dropdown.show .nav-arrow-icon,
+.desktop-nav-menu .nav-link[aria-expanded="true"] .nav-arrow-icon {
+    transform: rotate(180deg); /* Hover state: Rotates UP */
+    color: var(--secondary-color, #ba436c);
+    opacity: 1;
 }
 
 /* Base Desktop Dropdown Menu */
@@ -251,7 +261,7 @@ cite,
 
 /* Dropdown Items */
 .desktop-nav-menu .dropdown-item {
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-family: var(--brand-font-sans, 'Lato', sans-serif) !important;
     font-size: 13.5px;
     font-weight: 500;
     padding: 0.45rem 0.75rem;
@@ -271,69 +281,224 @@ cite,
     transform: translateX(3px);
 }
 
-/* Dual Column Dropdown (Healing 11 items & Workshop 12 items) */
-.desktop-nav-menu .dropdown-menu.dropdown-menu-columns {
-    width: 440px;
-    min-width: 420px;
-    max-width: 92vw;
-    padding: 0.75rem;
+/* ==========================================================================
+   Services 4-Pillar Mega-Menu (Minimal UI with Lato Font Family)
+   ========================================================================== */
+.services-dropdown-item {
+    position: relative;
 }
 
 @media (min-width: 992px) {
-    .desktop-nav-menu .nav-item.dropdown:hover > .dropdown-menu.dropdown-menu-columns {
-        display: grid !important;
+    .desktop-nav-menu .dropdown-menu.services-mega-menu {
+        position: absolute;
+        top: 100%;
+        left: -60px;
+        width: 940px;
+        min-width: 920px;
+        max-width: 94vw;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 1.6rem 1.85rem 1.15rem;
+        border: 1px solid rgba(17, 17, 51, 0.08);
+        box-shadow: 0 20px 48px -12px rgba(17, 17, 51, 0.1), 0 0 0 1px rgba(130, 56, 122, 0.04);
+        margin-top: 0.65rem;
+        z-index: 1060;
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .desktop-nav-menu .services-dropdown-item:hover .services-mega-menu {
+        display: block !important;
+        animation: navDropdownFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Minimal 3-Column Grid Layout */
+    .services-mega-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1.25fr 1.9fr;
+        gap: 1.85rem;
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    /* Column 2 subtle dividing borders */
+    .mega-col-training {
+        border-left: 1px solid rgba(17, 17, 51, 0.06);
+        border-right: 1px solid rgba(17, 17, 51, 0.06);
+        padding: 0 1.35rem;
+    }
+
+    /* Pillar Badges / Minimal Category Headings in Lato */
+    .mega-pillar-badge {
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary-color, #82387a);
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.45rem;
+        border-bottom: 1px solid rgba(130, 56, 122, 0.12);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .mega-pillar-badge.text-secondary-color {
+        color: var(--secondary-color, #ba436c) !important;
+        margin-top: 1.25rem;
+        border-bottom-color: rgba(186, 67, 108, 0.14);
+    }
+
+    /* Minimal Links List in Lato */
+    .mega-links-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.16rem;
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .mega-link {
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        text-decoration: none;
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        padding: 4px 6px;
+        border-radius: 5px;
+        line-height: 1.35;
+        transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), color 0.18s ease, background-color 0.18s ease;
+    }
+
+    /* Tabular Minimal Numerals (01, 02, etc.) */
+    .mega-num {
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #94a3b8;
+        font-variant-numeric: tabular-nums;
+        min-width: 18px;
+        letter-spacing: 0.02em;
+        transition: color 0.18s ease;
+        flex-shrink: 0;
+    }
+
+    /* Service Label Text */
+    .mega-text {
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-size: 0.835rem;
+        font-weight: 400;
+        color: #334155;
+        transition: color 0.18s ease;
+    }
+
+    /* Minimal Hover State */
+    .mega-link:hover {
+        transform: translateX(3px);
+        background-color: rgba(186, 67, 108, 0.04);
+    }
+
+    .mega-link:hover .mega-num {
+        color: var(--secondary-color, #ba436c) !important;
+    }
+
+    .mega-link:hover .mega-text {
+        color: var(--secondary-color, #ba436c) !important;
+        font-weight: 500;
+    }
+
+    /* Dual Column Workshops Grid (6 items + 6 items) */
+    .mega-workshops-dual {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3px 6px;
+        gap: 0.95rem;
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    /* Minimal Subtle Footer Bar */
+    .mega-minimal-footer {
+        margin-top: 1.25rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(17, 17, 51, 0.06);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .mega-footer-tagline {
+        font-size: 0.78rem;
+        color: #64748b;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .mega-footer-action {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--secondary-color, #ba436c);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.18s ease, transform 0.18s ease;
+    }
+
+    .mega-footer-action:hover {
+        color: var(--primary-color, #82387a);
+        transform: translateX(3px);
     }
 }
 
-/* Ensure right-aligned dropdowns fit within viewport */
-.desktop-nav-menu .dropdown-menu-end {
-    right: 0;
-    left: auto;
-}
-
+/* Laptops / iPad Pro Landscape (992px - 1199.98px) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    .desktop-nav-menu .dropdown-menu.dropdown-menu-columns {
-        width: 400px;
-        min-width: 380px;
+    .desktop-nav-menu .dropdown-menu.services-mega-menu {
+        width: 820px;
+        min-width: 800px;
+        left: -90px;
+        padding: 1.35rem 1.5rem 1rem;
     }
-    .desktop-nav-menu .dropdown-item {
-        font-size: 13px;
-        padding: 0.4rem 0.6rem;
+    .services-mega-grid {
+        gap: 1.25rem;
+        grid-template-columns: 1fr 1.15fr 1.7fr;
     }
-}
-
-/* Dropdown Divider & Header */
-.desktop-nav-menu .dropdown-divider-item {
-    grid-column: 1 / -1;
-    list-style: none;
-}
-
-.desktop-nav-menu .dropdown-header-item {
-    grid-column: 1 / -1;
-    list-style: none;
-}
-
-.desktop-nav-menu .dropdown-header {
-    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: 0.74rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--secondary-color, #ba436c) !important;
-    padding: 0.4rem 0.75rem 0.2rem;
+    .mega-pillar-badge {
+        font-size: 0.68rem;
+    }
+    .mega-text {
+        font-size: 0.8rem;
+    }
+    .mega-num {
+        font-size: 0.68rem;
+    }
+    .mega-workshops-dual {
+        gap: 0.65rem;
+    }
 }
 
 /* ==========================================================================
-   Mobile Offcanvas Navigation & Collapsible Sub-Menus
+   Mobile Offcanvas Services Accordion (Minimal UI)
    ========================================================================== */
-.mobile-sub-collapse {
-    background-color: rgba(130, 56, 122, 0.04);
-    border-radius: 12px;
+.mobile-services-collapse {
+    background-color: rgba(130, 56, 122, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(17, 17, 51, 0.05);
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
-.mobile-sub-body {
-    padding: 0.5rem;
+.mobile-pillar-heading {
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary-color, #82387a);
+    margin-bottom: 0.45rem;
+    margin-top: 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid rgba(130, 56, 122, 0.08);
 }
 
 .mobile-sublinks-list {
@@ -342,39 +507,61 @@ cite,
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.2rem;
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 .mobile-sublink {
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.86rem;
-    color: #475569;
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #334155;
     text-decoration: none;
-    display: block;
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    line-height: 1.35;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: all 0.18s ease;
+}
+
+.mobile-sublink .mega-num {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #94a3b8;
+    min-width: 16px;
+    transition: color 0.18s ease;
+}
+
+.mobile-sublink .mega-text {
+    font-size: 0.82rem;
+    color: #334155;
+    transition: color 0.18s ease;
 }
 
 .mobile-sublink:hover,
 .mobile-sublink:active {
     color: var(--secondary-color, #ba436c);
-    background-color: rgba(186, 67, 108, 0.1);
-    padding-left: 14px;
+    transform: translateX(4px);
+    background-color: rgba(186, 67, 108, 0.04);
 }
 
-.transition-transform {
-    transition: transform 0.25s ease;
+.mobile-sublink:hover .mega-num,
+.mobile-sublink:hover .mega-text {
+    color: var(--secondary-color, #ba436c) !important;
 }
 
-.offcanvas-nav a[aria-expanded="true"] .bi-chevron-down {
-    transform: rotate(180deg);
+/* Mobile Drawer Rotating Arrow (Initial State: DOWN -> Hover/Open: UP) */
+.mobile-nav-arrow {
+    display: inline-block;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+    transform: rotate(0deg); /* Initial state: DOWN */
+    color: #64748b;
 }
 
-.mobile-sub-header {
-    list-style: none;
-    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+.offcanvas-nav a[aria-expanded="true"] .mobile-nav-arrow {
+    transform: rotate(180deg); /* Open state: UP */
+    color: var(--secondary-color, #ba436c);
 }
 
 /* ==========================================================================
