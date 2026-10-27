@@ -124,23 +124,16 @@ $workshops_list = $workshops_list ?? [
                             <h3 class="service-item-title"><?= htmlspecialchars($workshop['title']) ?></h3>
                             <p class="service-item-desc"><?= htmlspecialchars($workshop['desc']) ?></p>
                             
-                            <!-- Pinned Enquire Button -->
+                            <!-- Main Reusable Button Component from common/button.php -->
                             <div class="service-item-actions">
-                                <a href="#serviceBookingModal" 
-                                   class="service-enquire-btn" 
-                                   data-bs-toggle="modal" 
-                                   data-bs-target="#serviceBookingModal" 
-                                   data-service-title="<?= htmlspecialchars($workshop['title']) ?>" 
-                                   data-service-category="IV. Workshops" 
-                                   aria-label="Enquire about <?= htmlspecialchars($workshop['title']) ?> Workshop">
-                                    <span>Enquire Now</span>
-                                    <span class="service-enquire-icon-wrap" aria-hidden="true">
-                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                                            <polyline points="7 7 17 7 17 17"></polyline>
-                                        </svg>
-                                    </span>
-                                </a>
+                                <?php
+                                    $btn_text    = 'Enquire Now';
+                                    $btn_url     = '#serviceBookingModal';
+                                    $btn_class   = 'Btn-Card-Main w-100 justify-content-between';
+                                    $clean_title = htmlspecialchars(html_entity_decode(strip_tags($workshop['title']), ENT_QUOTES, 'UTF-8'));
+                                    $btn_attr    = 'data-bs-toggle="modal" data-bs-target="#serviceBookingModal" data-service-title="' . $clean_title . '" data-service-category="IV. Workshops" aria-label="Enquire about ' . $clean_title . ' Workshop"';
+                                    include dirname(__DIR__) . '/common/button.php';
+                                ?>
                             </div>
                         </div>
 

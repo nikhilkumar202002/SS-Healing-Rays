@@ -150,55 +150,63 @@
     flex-grow: 1;
 }
 
-/* 6. Enquire Button: Pinned to Bottom */
+/* 6. Enquire Button: Main Action Button (.Btn-Container from common/button.php) */
 .service-item-actions {
     margin-top: auto;
     width: 100%;
 }
 
-.service-enquire-btn {
+.service-item-actions .Btn-Card-Main,
+.Btn-Card-Main {
+    background-color: #ffffff !important;
+    border: 1.5px solid rgba(186, 67, 108, 0.3) !important;
+    box-shadow: 0 4px 14px rgba(17, 17, 51, 0.05);
+    padding: 3px 3px 3px 20px !important;
+    height: 50px;
+    border-radius: 50px !important;
+    box-sizing: border-box;
+    width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 0.72rem 1.25rem;
-    background-color: #faf5f8;
-    border: 1px solid rgba(186, 67, 108, 0.22);
-    border-radius: 999px;
-    color: #82387a;
-    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
-    font-size: 0.92rem;
-    font-weight: 600;
     text-decoration: none;
-    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-enquire-btn span {
+.service-item-actions .Btn-Card-Main .text,
+.Btn-Card-Main .text {
+    color: var(--heading-color, #111133) !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 0.98rem;
+    font-weight: 600;
     letter-spacing: 0.02em;
 }
 
-.service-enquire-icon-wrap {
-    display: inline-flex;
+.service-item-actions .Btn-Card-Main .icon-Container,
+.Btn-Card-Main .icon-Container {
+    width: 42px;
+    height: 42px;
+    background-color: var(--secondary-color, #ba436c) !important;
+    border-radius: 50% !important;
+    border: none !important;
+    color: #ffffff !important;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: rgba(186, 67, 108, 0.12);
-    color: #ba436c;
-    transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.service-enquire-btn:hover {
-    background-color: #ba436c;
-    border-color: #ba436c;
-    color: #ffffff;
+.service-item-actions .Btn-Card-Main:hover,
+.Btn-Card-Main:hover {
+    border-color: var(--secondary-color, #ba436c) !important;
+    box-shadow: 0 8px 24px rgba(186, 67, 108, 0.2);
+    transform: translateY(-2px);
 }
 
-.service-enquire-btn:hover .service-enquire-icon-wrap {
-    background-color: #ffffff;
-    color: #ba436c;
-    transform: translate(2px, -2px);
+.service-item-actions .Btn-Card-Main:hover .icon-Container,
+.Btn-Card-Main:hover .icon-Container {
+    background-color: var(--primary-color, #82387a) !important;
+    transform: rotate(45deg);
 }
 
 /* ==========================================================================

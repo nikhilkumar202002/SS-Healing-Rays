@@ -6,6 +6,46 @@ $service_modal_consultants = [
     'Sreeparvathy | Emotional wellness Coach',
     'Sravanti | Healer • Coach • Yoga',
 ];
+
+$service_modal_categories = [
+    'I. Healings' => [
+        'Reiki Healing',
+        'Crystal Healing',
+        'Angel Healing',
+        'Energy healing',
+        'EFT',
+        'Counselling',
+        'Trauma Healing',
+        'Personal Transformation Healing',
+        'Meditations',
+        'Tarot Card reading',
+        'Therapeutic Yoga',
+    ],
+    'II. Training' => [
+        'Reiki- Shiki Ryoho & Karuna Reiki- All levels',
+        'Crystal Therapy & Sacred Grid Mastery',
+        'Angel Therapy & Celestial Guidance',
+        'EFT (Emotional Freedom Techniques)',
+    ],
+    'III. COURSES on Wellness' => [
+        'Spandan – The Sacred Pulse of Healing & Vibration',
+        'Chetan – Awaken Witness Consciousness & Presence',
+    ],
+    'IV. Workshops' => [
+        'Energy Reset',
+        'Language of crystals',
+        'Gratitude',
+        'Loving Yourself',
+        'Breath work',
+        'Mudras',
+        'Relaxation',
+        'Money manifestation',
+        'Energy Routine',
+        'Abundance program',
+        'Reprogram with meditation',
+        'Colour meditation',
+    ],
+];
 ?>
 <?php if ($is_standalone_form): ?>
 <!DOCTYPE html>
@@ -71,20 +111,7 @@ $service_modal_consultants = [
 
                     <div class="row g-3 g-md-4">
                         
-                        <!-- 1. Selected Offering (Normal Underline Design) -->
-                        <div class="col-12">
-                            <div class="contact-field-group">
-                                <input type="text" 
-                                       class="form-control contact-underline-input" 
-                                       id="serviceModalSelectedInput" 
-                                       name="service" 
-                                       placeholder="Selected Service / Offering" 
-                                       aria-label="Selected Service or Offering" 
-                                       readonly>
-                            </div>
-                        </div>
-
-                        <!-- 2. Client Name -->
+                        <!-- 1. Client Name -->
                         <div class="col-12">
                             <div class="contact-field-group">
                                 <input type="text" 
@@ -92,12 +119,12 @@ $service_modal_consultants = [
                                        id="serviceClientName" 
                                        name="name" 
                                        placeholder="Your Name" 
-                                       aria-label="Your Name"
+                                       aria-label="Your Name" 
                                        required>
                             </div>
                         </div>
 
-                        <!-- 3. Phone Number -->
+                        <!-- 2. Phone Number -->
                         <div class="col-md-6">
                             <div class="contact-field-group">
                                 <input type="tel" 
@@ -105,12 +132,12 @@ $service_modal_consultants = [
                                        id="serviceClientPhone" 
                                        name="phone" 
                                        placeholder="Your Phone" 
-                                       aria-label="Your Phone"
+                                       aria-label="Your Phone" 
                                        required>
                             </div>
                         </div>
 
-                        <!-- 4. Email Address -->
+                        <!-- 3. Email Address -->
                         <div class="col-md-6">
                             <div class="contact-field-group">
                                 <input type="email" 
@@ -118,13 +145,13 @@ $service_modal_consultants = [
                                        id="serviceClientEmail" 
                                        name="email" 
                                        placeholder="Your Email" 
-                                       aria-label="Your Email"
+                                       aria-label="Your Email" 
                                        required>
                             </div>
                         </div>
 
-                        <!-- 5. WhatsApp Number -->
-                        <div class="col-md-6">
+                        <!-- 4. WhatsApp Number -->
+                        <div class="col-12">
                             <div class="contact-field-group">
                                 <input type="tel" 
                                        class="form-control contact-underline-input" 
@@ -135,17 +162,37 @@ $service_modal_consultants = [
                             </div>
                         </div>
 
-                        <!-- 6. Consultant Selecting -->
+                        <!-- 5. Consultant Selecting -->
                         <div class="col-md-6">
                             <div class="contact-field-group">
                                 <select class="form-select contact-underline-select" 
                                         id="serviceClientConsultant" 
                                         name="consultant" 
-                                        aria-label="Choose a Consultant"
+                                        aria-label="Choose a Consultant" 
                                         required>
                                     <option value="" disabled selected>Choose a Consultant</option>
                                     <?php foreach ($service_modal_consultants as $consultant): ?>
                                         <option value="<?= htmlspecialchars($consultant) ?>"><?= htmlspecialchars($consultant) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 6. Service Selecting (Auto-selected on Card click) -->
+                        <div class="col-md-6">
+                            <div class="contact-field-group">
+                                <select class="form-select contact-underline-select contact-service-select" 
+                                        id="serviceModalSelect" 
+                                        name="service" 
+                                        aria-label="Choose a Service" 
+                                        required>
+                                    <option value="" disabled selected>Choose a Service</option>
+                                    <?php foreach ($service_modal_categories as $category => $services): ?>
+                                        <optgroup label="<?= htmlspecialchars($category) ?>">
+                                            <?php foreach ($services as $srv): ?>
+                                                <option value="<?= htmlspecialchars($srv) ?>"><?= htmlspecialchars($srv) ?></option>
+                                            <?php endforeach; ?>
+                                        </optgroup>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
@@ -244,6 +291,33 @@ $service_modal_consultants = [
         var modalElem = document.getElementById('serviceBookingModal');
         if (!modalElem) return;
 
+        function selectServiceOption(title) {
+            var serviceSelect = modalElem.querySelector('#serviceModalSelect');
+            if (!serviceSelect || !title) return;
+
+            var titleNorm = title.toLowerCase().replace(/[^a-z0-9]/g, '');
+            var matched = false;
+
+            for (var i = 0; i < serviceSelect.options.length; i++) {
+                var opt = serviceSelect.options[i];
+                var valNorm = opt.value.toLowerCase().replace(/[^a-z0-9]/g, '');
+                var txtNorm = opt.text.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+                if (valNorm === titleNorm || txtNorm === titleNorm ||
+                    (titleNorm.length >= 4 && (valNorm.indexOf(titleNorm) !== -1 || titleNorm.indexOf(valNorm) !== -1))) {
+                    serviceSelect.selectedIndex = i;
+                    matched = true;
+                    break;
+                }
+            }
+
+            if (!matched && title && title !== 'Selected Offering') {
+                var newOpt = new Option(title, title, true, true);
+                serviceSelect.add(newOpt);
+                serviceSelect.value = title;
+            }
+        }
+
         // Populate modal data dynamically when triggered by any button
         modalElem.addEventListener('show.bs.modal', function(event) {
             var button = event.relatedTarget;
@@ -253,13 +327,25 @@ $service_modal_consultants = [
             var category = button.getAttribute('data-service-category') || button.getAttribute('data-category') || 'Enquiry';
 
             var titleText = modalElem.querySelector('#serviceModalTitle');
-            var selectedInput = modalElem.querySelector('#serviceModalSelectedInput');
             var categoryInput = modalElem.querySelector('#serviceModalCategoryInput');
 
             if (titleText) titleText.textContent = title;
-            if (selectedInput) selectedInput.value = title;
             if (categoryInput) categoryInput.value = category;
+
+            selectServiceOption(title);
         });
+
+        // Sync header title when user changes the dropdown option
+        var serviceSelectElem = modalElem.querySelector('#serviceModalSelect');
+        if (serviceSelectElem) {
+            serviceSelectElem.addEventListener('change', function() {
+                var chosen = this.options[this.selectedIndex]?.text;
+                var titleText = modalElem.querySelector('#serviceModalTitle');
+                if (chosen && titleText) {
+                    titleText.textContent = chosen;
+                }
+            });
+        }
 
         // Global helper for opening modal programmatically
         window.openServiceModal = function(serviceTitle, serviceCategory) {
@@ -267,12 +353,12 @@ $service_modal_consultants = [
             var category = serviceCategory || 'Enquiry';
 
             var titleText = modalElem.querySelector('#serviceModalTitle');
-            var selectedInput = modalElem.querySelector('#serviceModalSelectedInput');
             var categoryInput = modalElem.querySelector('#serviceModalCategoryInput');
 
             if (titleText) titleText.textContent = title;
-            if (selectedInput) selectedInput.value = title;
             if (categoryInput) categoryInput.value = category;
+
+            selectServiceOption(title);
 
             if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
                 var modalInstance = bootstrap.Modal.getOrCreateInstance(modalElem);
