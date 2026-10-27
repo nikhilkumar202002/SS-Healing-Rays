@@ -20,6 +20,17 @@
             window.addEventListener('scroll', handleScroll, { passive: true });
             handleScroll();
         }
+
+        // Direct redirection for Services menu item
+        const servicesToggle = document.getElementById('servicesMegaMenuToggle');
+        if (servicesToggle) {
+            servicesToggle.addEventListener('click', function (e) {
+                const targetUrl = this.getAttribute('href');
+                if (targetUrl && targetUrl !== '#' && targetUrl !== '') {
+                    window.location.href = targetUrl;
+                }
+            });
+        }
     }
 
     if (document.readyState === 'loading') {

@@ -25,7 +25,7 @@ $brand_name       = $brand_name ?? 'SS Healing Rays';
 $brand_subtitle   = $brand_subtitle ?? 'A Sanctuary for Personal Growth';
 $site_logo        = $site_logo ?? 'assets/logo/main-logo-white-border.png'; // Main logo with white border
 $cta_text         = $cta_text ?? 'Explore Services';
-$cta_url          = $cta_url ?? '#services';
+$cta_url          = $cta_url ?? 'services.php';
 $phone_number     = $phone_number ?? '+91 98765 43210';
 $phone_tel        = preg_replace('/[^0-9+]/', '', $phone_number);
 
@@ -34,50 +34,50 @@ $services_categories = [
     'healings' => [
         'title' => 'I. Healings',
         'items' => [
-            ['label' => '1. Reiki Healing', 'url' => '#services'],
-            ['label' => '2. Crystal Healing', 'url' => '#services'],
-            ['label' => '3. Angel Healing', 'url' => '#services'],
-            ['label' => '4. Energy healing', 'url' => '#services'],
-            ['label' => '5. EFT', 'url' => '#services'],
-            ['label' => '6. Counselling', 'url' => '#services'],
-            ['label' => '7. Trauma Healing', 'url' => '#services'],
-            ['label' => '8. Personal Transformation Healing', 'url' => '#services'],
-            ['label' => '9. Meditations', 'url' => '#services'],
-            ['label' => '10. Tarot Card reading', 'url' => '#services'],
-            ['label' => '11. Therapeutic Yoga', 'url' => '#services'],
+            ['label' => '1. Reiki Healing', 'url' => 'services.php'],
+            ['label' => '2. Crystal Healing', 'url' => 'services.php'],
+            ['label' => '3. Angel Healing', 'url' => 'services.php'],
+            ['label' => '4. Energy healing', 'url' => 'services.php'],
+            ['label' => '5. EFT', 'url' => 'services.php'],
+            ['label' => '6. Counselling', 'url' => 'services.php'],
+            ['label' => '7. Trauma Healing', 'url' => 'services.php'],
+            ['label' => '8. Personal Transformation Healing', 'url' => 'services.php'],
+            ['label' => '9. Meditations', 'url' => 'services.php'],
+            ['label' => '10. Tarot Card reading', 'url' => 'services.php'],
+            ['label' => '11. Therapeutic Yoga', 'url' => 'services.php'],
         ]
     ],
     'training' => [
         'title' => 'II. Training',
         'items' => [
-            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => '#contact'],
-            ['label' => '2. Crystal Therapy', 'url' => '#contact'],
-            ['label' => '3. Angel Therapy', 'url' => '#contact'],
-            ['label' => '4. EFT', 'url' => '#contact'],
+            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => 'contact.php'],
+            ['label' => '2. Crystal Therapy', 'url' => 'contact.php'],
+            ['label' => '3. Angel Therapy', 'url' => 'contact.php'],
+            ['label' => '4. EFT', 'url' => 'contact.php'],
         ]
     ],
     'courses' => [
         'title' => 'III. COURSES on Wellness',
         'items' => [
-            ['label' => '1. Spandan', 'url' => '#contact'],
-            ['label' => '2. Chetan', 'url' => '#contact'],
+            ['label' => '1. Spandan', 'url' => 'contact.php'],
+            ['label' => '2. Chetan', 'url' => 'contact.php'],
         ]
     ],
     'workshops' => [
         'title' => 'IV. Workshops',
         'items' => [
-            ['label' => '1. Energy Reset', 'url' => '#workshop'],
-            ['label' => '2. Language of crystals', 'url' => '#workshop'],
-            ['label' => '3. Gratitude', 'url' => '#workshop'],
-            ['label' => '4. Loving Yourself', 'url' => '#workshop'],
-            ['label' => '5. Breath work', 'url' => '#workshop'],
-            ['label' => '6. Mudras', 'url' => '#workshop'],
-            ['label' => '7. Relaxation', 'url' => '#workshop'],
-            ['label' => '8. Money manifestation', 'url' => '#workshop'],
-            ['label' => '9. Energy Routine', 'url' => '#workshop'],
-            ['label' => '10. Abundance program', 'url' => '#workshop'],
-            ['label' => '11. Reprogram with meditation', 'url' => '#workshop'],
-            ['label' => '12. Colour meditation', 'url' => '#workshop'],
+            ['label' => '1. Energy Reset', 'url' => 'workshop.php'],
+            ['label' => '2. Language of crystals', 'url' => 'workshop.php'],
+            ['label' => '3. Gratitude', 'url' => 'workshop.php'],
+            ['label' => '4. Loving Yourself', 'url' => 'workshop.php'],
+            ['label' => '5. Breath work', 'url' => 'workshop.php'],
+            ['label' => '6. Mudras', 'url' => 'workshop.php'],
+            ['label' => '7. Relaxation', 'url' => 'workshop.php'],
+            ['label' => '8. Money manifestation', 'url' => 'workshop.php'],
+            ['label' => '9. Energy Routine', 'url' => 'workshop.php'],
+            ['label' => '10. Abundance program', 'url' => 'workshop.php'],
+            ['label' => '11. Reprogram with meditation', 'url' => 'workshop.php'],
+            ['label' => '12. Colour meditation', 'url' => 'workshop.php'],
         ]
     ]
 ];
@@ -170,6 +170,9 @@ $nav_items = $nav_items ?? [
     <!-- Gallery Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/gallerybanner.css">
 
+    <!-- Service Page Hero Banner Custom Styles -->
+    <link rel="stylesheet" href="assets/css/servicebanner.css">
+
     <!-- Masonry Gallery Grid & Lightbox Styles -->
     <link rel="stylesheet" href="assets/css/galleryimages.css">
 
@@ -214,10 +217,7 @@ $nav_items = $nav_items ?? [
                                     <a class="nav-link dropdown-toggle <?= $isActive ? 'active' : '' ?>" 
                                        href="<?= htmlspecialchars($item['url']) ?>" 
                                        id="servicesMegaMenuToggle"
-                                       role="button" 
-                                       data-bs-toggle="dropdown" 
-                                       data-bs-auto-close="outside"
-                                       aria-expanded="false">
+                                       role="button">
                                         <span><?= htmlspecialchars($item['label']) ?></span>
                                         <svg class="nav-arrow-icon" width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -328,7 +328,7 @@ $nav_items = $nav_items ?? [
                                                 <i class="bi bi-stars text-secondary-color me-1"></i>
                                                 Personalized holistic healing sessions, retreats &amp; certified training.
                                             </span>
-                                            <a href="#services" class="mega-footer-action">
+                                            <a href="services.php" class="mega-footer-action">
                                                 <span>Explore All Offerings</span>
                                                 <i class="bi bi-arrow-right"></i>
                                             </a>
@@ -428,17 +428,24 @@ $nav_items = $nav_items ?? [
                 <?php $isActive = ($current_page === $key); ?>
                 <?php if (!empty($item['categories'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link d-flex justify-content-between align-items-center <?= $isActive ? 'active' : '' ?>" 
-                           data-bs-toggle="collapse" 
-                           href="#mobileServicesCollapse" 
-                           role="button" 
-                           aria-expanded="false" 
-                           aria-controls="mobileServicesCollapse">
-                            <span><?= htmlspecialchars($item['label']) ?></span>
-                            <svg class="mobile-nav-arrow" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </a>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="<?= htmlspecialchars($item['url']) ?>" 
+                               class="nav-link flex-grow-1 <?= $isActive ? 'active' : '' ?>"
+                               data-bs-dismiss="offcanvas">
+                                <span><?= htmlspecialchars($item['label']) ?></span>
+                            </a>
+                            <button class="btn btn-link text-muted p-2" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#mobileServicesCollapse" 
+                                    aria-expanded="false" 
+                                    aria-controls="mobileServicesCollapse" 
+                                    aria-label="Toggle Services Menu">
+                                <svg class="mobile-nav-arrow" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
                         
                         <div class="collapse mobile-services-collapse" id="mobileServicesCollapse">
                             <div class="mobile-services-body p-2 mt-1">

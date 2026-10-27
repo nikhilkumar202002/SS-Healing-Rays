@@ -15,7 +15,10 @@ $cta_url          = 'contact.php';
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';
 
-// 2. Healing Services Carousel Showcase
+// 2. Service Page Hero Banner (Exact same layout as Gallery Banner)
+include __DIR__ . '/service/servicebanner.php';
+
+// 3. Healing Services Carousel Showcase
 include __DIR__ . '/home/services.php';
 
 // 3. Frequently Asked Questions
