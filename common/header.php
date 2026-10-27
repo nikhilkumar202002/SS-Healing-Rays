@@ -82,6 +82,8 @@ $services_categories = [
     ]
 ];
 
+$is_home = ($current_page === 'home');
+
 // Navigation items array (centralized & customizable per page)
 $nav_items = $nav_items ?? [
     'home' => [
@@ -90,20 +92,24 @@ $nav_items = $nav_items ?? [
     ],
     'about' => [
         'label' => 'About Us',
-        'url'   => '#about',
+        'url'   => 'aboutus.php',
     ],
     'services' => [
         'label'      => 'Services',
-        'url'        => '#services',
+        'url'        => 'services.php',
         'categories' => $services_categories,
+    ],
+    'gallery' => [
+        'label' => 'Gallery',
+        'url'   => 'gallery.php',
     ],
     'testimonials' => [
         'label' => 'Stories',
-        'url'   => '#testimonials',
+        'url'   => $is_home ? '#testimonials' : 'index.php#testimonials',
     ],
     'contact' => [
         'label' => 'Contact',
-        'url'   => '#contact',
+        'url'   => 'contact.php',
     ],
 ];
 ?>
@@ -281,55 +287,28 @@ $nav_items = $nav_items ?? [
                                                 </ul>
                                             </div>
 
-                                            <!-- Pillar 3: IV. Workshops (12 items in 2 clean minimal vertical columns) -->
-                                            <?php
-                                                $workshops_all  = $item['categories']['workshops']['items'] ?? [];
-                                                $workshops_half = (int) ceil(count($workshops_all) / 2);
-                                                $workshops_col1 = array_slice($workshops_all, 0, $workshops_half);
-                                                $workshops_col2 = array_slice($workshops_all, $workshops_half);
-                                            ?>
+                                            <!-- Pillar 3: IV. Workshops (12 items) -->
                                             <div class="mega-col mega-col-workshops">
                                                 <div class="mega-pillar-badge"><?= htmlspecialchars($item['categories']['workshops']['title']) ?></div>
-                                                <div class="mega-workshops-dual">
-                                                    <ul class="mega-links-list">
-                                                        <?php foreach ($workshops_col1 as $sub): ?>
-                                                            <?php
-                                                                $raw_label = $sub['label'];
-                                                                $sub_num   = '';
-                                                                $sub_text  = $raw_label;
-                                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                                    $sub_text = $m[2];
-                                                                }
-                                                            ?>
-                                                            <li>
-                                                                <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
-                                                                    <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                                    <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                                </a>
-                                                            </li>
-                                                        <?php endforeach; ?>
-                                                    </ul>
-                                                    <ul class="mega-links-list">
-                                                        <?php foreach ($workshops_col2 as $sub): ?>
-                                                            <?php
-                                                                $raw_label = $sub['label'];
-                                                                $sub_num   = '';
-                                                                $sub_text  = $raw_label;
-                                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                                    $sub_text = $m[2];
-                                                                }
-                                                            ?>
-                                                            <li>
-                                                                <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
-                                                                    <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                                    <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                                </a>
-                                                            </li>
-                                                        <?php endforeach; ?>
-                                                    </ul>
-                                                </div>
+                                                <ul class="mega-links-list">
+                                                    <?php foreach ($item['categories']['workshops']['items'] as $sub): ?>
+                                                        <?php
+                                                            $raw_label = $sub['label'];
+                                                            $sub_num   = '';
+                                                            $sub_text  = $raw_label;
+                                                            if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
+                                                                $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
+                                                                $sub_text = $m[2];
+                                                            }
+                                                        ?>
+                                                        <li>
+                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
+                                                                <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
+                                                                <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
                                             </div>
 
                                         </div>
