@@ -86,13 +86,9 @@ $full_services_list = $full_services_list ?? [
         
         <!-- Section Header -->
         <div class="service-cards-header text-center">
-            <?php if (!empty($service_cards_pretitle)): ?>
-                <span class="service-cards-pretitle"><?= $service_cards_pretitle ?></span>
-            <?php endif; ?>
+         
             <h2 class="service-cards-title"><?= $service_cards_title ?></h2>
-            <?php if (!empty($service_cards_subtitle)): ?>
-                <p class="service-cards-subtitle"><?= htmlspecialchars($service_cards_subtitle) ?></p>
-            <?php endif; ?>
+           
         </div>
 
         <!-- 3-Column Service Cards Grid (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) -->
