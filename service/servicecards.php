@@ -86,8 +86,26 @@ $full_services_list = $full_services_list ?? [
 
         <!-- 3-Column Service Cards Grid (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) -->
         <div class="row service-cards-row justify-content-center">
+            <?php
+                $service_slugs = [
+                    'Reiki Healing'                     => 'reiki-healing',
+                    'Crystal Healing'                   => 'crystal-healing',
+                    'Angel Healing'                     => 'angel-healing',
+                    'Energy healing'                    => 'energy-healing',
+                    'EFT'                               => 'eft',
+                    'Counselling'                       => 'counselling',
+                    'Trauma Healing'                    => 'trauma-healing',
+                    'Personal Transformation Healing'   => 'personal-transformation',
+                    'Meditations'                       => 'meditations',
+                    'Tarot Card reading'                => 'tarot-card-reading',
+                    'Therapeutic Yoga'                  => 'therapeutic-yoga',
+                ];
+            ?>
             <?php foreach ($full_services_list as $index => $service): ?>
-                <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
+                <?php
+                    $card_id = $service_slugs[$service['title']] ?? strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $service['title'])));
+                ?>
+                <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch mb-4 service-card-col" id="<?= htmlspecialchars($card_id) ?>">
                     <article class="service-item-card">
                         
                         <!-- Top Image -->

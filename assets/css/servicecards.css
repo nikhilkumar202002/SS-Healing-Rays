@@ -58,6 +58,11 @@
 }
 
 /* 3. Service Item Card: Flat, No Box-Shadow */
+.service-card-col,
+.service-item-card {
+    scroll-margin-top: 100px;
+}
+
 .service-item-card {
     position: relative;
     background: #ffffff;

@@ -8,57 +8,57 @@ $services_list = $services_list ?? [
     [
         'title' => 'Trauma Healing',
         'image' => 'assets/images/services/trauma-healing.png',
-        'url'   => 'services.php'
+        'url'   => 'services.php#trauma-healing'
     ],
     [
         'title' => 'Personal Transformation',
         'image' => 'assets/images/services/personal-transformation.png',
-        'url'   => 'services.php'
+        'url'   => 'services.php#personal-transformation'
     ],
     [
         'title' => 'Guided Meditation',
         'image' => 'assets/images/services/meditations.png',
-        'url'   => 'services.php'
+        'url'   => 'services.php#meditations'
     ],
     [
         'title' => 'Tarot Card Reading',
         'image' => 'assets/images/services/tarot-card-reading.png',
-        'url'   => 'services.php'
+        'url'   => 'services.php#tarot-card-reading'
     ],
     [
         'title' => 'Reiki Healing',
         'image' => 'assets/images/services/reiki-healing.jpg',
-        'url'   => 'services.php'
+        'url'   => 'services.php#reiki-healing'
     ],
     [
         'title' => 'Crystal Healing',
         'image' => 'assets/images/services/crystal-healing.jpg',
-        'url'   => 'services.php'
+        'url'   => 'services.php#crystal-healing'
     ],
     [
         'title' => 'Angel Healing',
         'image' => 'assets/images/services/angel-healing.jpg',
-        'url'   => 'services.php'
+        'url'   => 'services.php#angel-healing'
     ],
     [
         'title' => 'Energy healing',
         'image' => 'assets/images/services/energy-healing.jpg',
-        'url'   => 'services.php'
+        'url'   => 'services.php#energy-healing'
     ],
     [
         'title' => 'EFT',
         'image' => 'assets/images/services/eft.jpg',
-        'url'   => 'services.php'
+        'url'   => 'services.php#eft'
     ],
     [
         'title' => 'Counselling',
         'image' => 'assets/images/services/counselling.jpg',
-        'url'   => 'services.php'
+        'url'   => 'services.php#counselling'
     ],
     [
         'title' => 'Therapeutic Yoga',
         'image' => 'assets/images/services/therapeutic-yoga.jpg',
-        'url'   => 'services.php'
+        'url'   => 'services.php#therapeutic-yoga'
     ],
 ];
 ?>
