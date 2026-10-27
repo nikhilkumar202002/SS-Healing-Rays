@@ -28,8 +28,8 @@ include __DIR__ . '/common/header.php';
                     <!-- Breadcrumb Navigation -->
                     <nav class="profile-breadcrumb mb-3" aria-label="Breadcrumb">
                         <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                            <li class="breadcrumb-item"><a href="aboutus.php">About Us</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="aboutus">About Us</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Sravanti</li>
                         </ol>
                     </nav>

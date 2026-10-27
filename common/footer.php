@@ -21,7 +21,7 @@
             <!-- 1. Brand & Contact Column -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-12 footer-col-brand">
                 <div class="footer-logo-wrapper mb-3">
-                    <a href="index.php" class="d-inline-block text-decoration-none" aria-label="SS Healing Rays Home">
+                    <a href="/" class="d-inline-block text-decoration-none" aria-label="SS Healing Rays Home">
                         <img src="assets/logo/main-logo.png" alt="<?= htmlspecialchars($brand_name ?? 'SS Healing Rays') ?>" height="52" class="footer-brand-logo">
                     </a>
                 </div>
@@ -55,13 +55,13 @@
             <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
                 <h6 class="footer-col-heading">Quick Links</h6>
                 <ul class="footer-links">
-                    <li><a href="index.php" class="footer-link">Home</a></li>
-                    <li><a href="#about" class="footer-link">About Us</a></li>
-                    <li><a href="#services" class="footer-link">Healing</a></li>
-                    <li><a href="#contact" class="footer-link">Training</a></li>
-                    <li><a href="#workshop" class="footer-link">Workshop</a></li>
-                    <li><a href="gallery.php" class="footer-link">Gallery</a></li>
-                    <li><a href="#contact" class="footer-link">Contact Us</a></li>
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="aboutus" class="footer-link">About Us</a></li>
+                    <li><a href="services" class="footer-link">Healing</a></li>
+                    <li><a href="training" class="footer-link">Training</a></li>
+                    <li><a href="workshop" class="footer-link">Workshop</a></li>
+                    <li><a href="gallery" class="footer-link">Gallery</a></li>
+                    <li><a href="contact" class="footer-link">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -69,17 +69,17 @@
             <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-6">
                 <h6 class="footer-col-heading">I. Healings</h6>
                 <ul class="footer-links">
-                    <li><a href="#services" class="footer-link">Reiki Healing</a></li>
-                    <li><a href="#services" class="footer-link">Crystal Healing</a></li>
-                    <li><a href="#services" class="footer-link">Angel Healing</a></li>
-                    <li><a href="#services" class="footer-link">Energy healing</a></li>
-                    <li><a href="#services" class="footer-link">EFT</a></li>
-                    <li><a href="#services" class="footer-link">Counselling</a></li>
-                    <li><a href="#services" class="footer-link">Trauma Healing</a></li>
-                    <li><a href="#services" class="footer-link">Personal Transformation</a></li>
-                    <li><a href="#services" class="footer-link">Meditations</a></li>
-                    <li><a href="#services" class="footer-link">Tarot Card reading</a></li>
-                    <li><a href="#services" class="footer-link">Therapeutic Yoga</a></li>
+                    <li><a href="services#reiki-healing" class="footer-link">Reiki Healing</a></li>
+                    <li><a href="services#crystal-healing" class="footer-link">Crystal Healing</a></li>
+                    <li><a href="services#angel-healing" class="footer-link">Angel Healing</a></li>
+                    <li><a href="services#energy-healing" class="footer-link">Energy healing</a></li>
+                    <li><a href="services#eft" class="footer-link">EFT</a></li>
+                    <li><a href="services#counselling" class="footer-link">Counselling</a></li>
+                    <li><a href="services#trauma-healing" class="footer-link">Trauma Healing</a></li>
+                    <li><a href="services#personal-transformation" class="footer-link">Personal Transformation</a></li>
+                    <li><a href="services#meditations" class="footer-link">Meditations</a></li>
+                    <li><a href="services#tarot-card-reading" class="footer-link">Tarot Card reading</a></li>
+                    <li><a href="services#therapeutic-yoga" class="footer-link">Therapeutic Yoga</a></li>
                 </ul>
             </div>
 
@@ -87,16 +87,16 @@
             <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12">
                 <h6 class="footer-col-heading">II. Training</h6>
                 <ul class="footer-links">
-                    <li><a href="#contact" class="footer-link">Reiki- Shiki Ryoho &amp; Karuna Reiki (All levels)</a></li>
-                    <li><a href="#contact" class="footer-link">Crystal Therapy</a></li>
-                    <li><a href="#contact" class="footer-link">Angel Therapy</a></li>
-                    <li><a href="#contact" class="footer-link">EFT</a></li>
+                    <li><a href="training#program-reiki" class="footer-link">Reiki- Shiki Ryoho &amp; Karuna Reiki (All levels)</a></li>
+                    <li><a href="training#program-crystal" class="footer-link">Crystal Therapy</a></li>
+                    <li><a href="training#program-angel" class="footer-link">Angel Therapy</a></li>
+                    <li><a href="training#program-eft" class="footer-link">EFT</a></li>
                 </ul>
 
                 <h6 class="footer-subgroup-title">III. Courses on Wellness</h6>
                 <ul class="footer-links">
-                    <li><a href="#contact" class="footer-link">Spandan</a></li>
-                    <li><a href="#contact" class="footer-link">Chetan</a></li>
+                    <li><a href="course#course-spandan" class="footer-link">Spandan</a></li>
+                    <li><a href="course#course-chetan" class="footer-link">Chetan</a></li>
                 </ul>
             </div>
 
@@ -104,18 +104,18 @@
             <div class="col-xl-3 col-lg-12 col-md-12 col-12 footer-col-workshops">
                 <h6 class="footer-col-heading">IV. Workshops</h6>
                 <div class="footer-workshops-grid">
-                    <a href="#workshop" class="footer-link">1. Energy Reset</a>
-                    <a href="#workshop" class="footer-link">2. Language of crystals</a>
-                    <a href="#workshop" class="footer-link">3. Gratitude</a>
-                    <a href="#workshop" class="footer-link">4. Loving Yourself</a>
-                    <a href="#workshop" class="footer-link">5. Breath work</a>
-                    <a href="#workshop" class="footer-link">6. Mudras</a>
-                    <a href="#workshop" class="footer-link">7. Relaxation</a>
-                    <a href="#workshop" class="footer-link">8. Money manifestation</a>
-                    <a href="#workshop" class="footer-link">9. Energy Routine</a>
-                    <a href="#workshop" class="footer-link">10. Abundance program</a>
-                    <a href="#workshop" class="footer-link">11. Reprogram with meditation</a>
-                    <a href="#workshop" class="footer-link">12. Colour meditation</a>
+                    <a href="workshop#workshop-energy-reset" class="footer-link">1. Energy Reset</a>
+                    <a href="workshop#workshop-language-of-crystals" class="footer-link">2. Language of crystals</a>
+                    <a href="workshop#workshop-gratitude" class="footer-link">3. Gratitude</a>
+                    <a href="workshop#workshop-loving-yourself" class="footer-link">4. Loving Yourself</a>
+                    <a href="workshop#workshop-breath-work" class="footer-link">5. Breath work</a>
+                    <a href="workshop#workshop-mudras" class="footer-link">6. Mudras</a>
+                    <a href="workshop#workshop-relaxation" class="footer-link">7. Relaxation</a>
+                    <a href="workshop#workshop-money-manifestation" class="footer-link">8. Money manifestation</a>
+                    <a href="workshop#workshop-energy-routine" class="footer-link">9. Energy Routine</a>
+                    <a href="workshop#workshop-abundance-program" class="footer-link">10. Abundance program</a>
+                    <a href="workshop#workshop-reprogram-with-meditation" class="footer-link">11. Reprogram with meditation</a>
+                    <a href="workshop#workshop-colour-meditation" class="footer-link">12. Colour meditation</a>
                 </div>
             </div>
 

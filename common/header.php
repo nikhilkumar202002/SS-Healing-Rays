@@ -1,23 +1,5 @@
 <?php
-/**
- * ==============================================================================
- * Reusable Header Component - SS Healing Rays (Bootstrap 5.3)
- * Layout: Left Side Menu | Center Brand Logo | Right Call-to-Action Button
- * ==============================================================================
- * 
- * Usage in any page:
- * ------------------------------------------------------------------------------
- * <?php
- *   $page_title   = 'Services | SS Healing Rays';
- *   $current_page = 'services'; // highlights active link
- *   include 'header.php';
- * ?>
- * <main>Your page content here</main>
- * <?php include 'footer.php'; ?>
- * ------------------------------------------------------------------------------
- */
 
-// Configurable component variables (defaults can be overridden per page)
 $page_title       = $page_title ?? 'SS Healing Rays | Holistic Wellness & Energy Healing';
 $page_description = $page_description ?? 'Experience holistic healing, energy alignment, and inner peace with SS Healing Rays.';
 $current_page     = $current_page ?? 'home';
@@ -25,71 +7,71 @@ $brand_name       = $brand_name ?? 'SS Healing Rays';
 $brand_subtitle   = $brand_subtitle ?? 'A Sanctuary for Personal Growth';
 $site_logo        = $site_logo ?? 'assets/logo/main-logo-white-border.png'; // Main logo with white border
 $cta_text         = $cta_text ?? 'Explore Services';
-$cta_url          = $cta_url ?? 'services.php';
+$cta_url          = $cta_url ?? 'services';
 $phone_number     = $phone_number ?? '+91 98765 43210';
 $phone_tel        = preg_replace('/[^0-9+]/', '', $phone_number);
 
-// Categorized Services Menu (4 Sacred Pillars with Hierarchical Tree Structure)
+
 $services_categories = [
     'healings' => [
         'title'    => 'I. Healings',
         'subtitle' => '11 Sacred Modalities',
         'icon'     => 'bi bi-heart-pulse',
-        'url'      => 'services.php',
+        'url'      => 'services',
         'items'    => [
-            ['label' => '1. Reiki Healing', 'url' => 'services.php#reiki-healing'],
-            ['label' => '2. Crystal Healing', 'url' => 'services.php#crystal-healing'],
-            ['label' => '3. Angel Healing', 'url' => 'services.php#angel-healing'],
-            ['label' => '4. Energy healing', 'url' => 'services.php#energy-healing'],
-            ['label' => '5. EFT', 'url' => 'services.php#eft'],
-            ['label' => '6. Counselling', 'url' => 'services.php#counselling'],
-            ['label' => '7. Trauma Healing', 'url' => 'services.php#trauma-healing'],
-            ['label' => '8. Personal Transformation Healing', 'url' => 'services.php#personal-transformation'],
-            ['label' => '9. Meditations', 'url' => 'services.php#meditations'],
-            ['label' => '10. Tarot Card reading', 'url' => 'services.php#tarot-card-reading'],
-            ['label' => '11. Therapeutic Yoga', 'url' => 'services.php#therapeutic-yoga'],
+            ['label' => '1. Reiki Healing', 'url' => 'services#reiki-healing'],
+            ['label' => '2. Crystal Healing', 'url' => 'services#crystal-healing'],
+            ['label' => '3. Angel Healing', 'url' => 'services#angel-healing'],
+            ['label' => '4. Energy healing', 'url' => 'services#energy-healing'],
+            ['label' => '5. EFT', 'url' => 'services#eft'],
+            ['label' => '6. Counselling', 'url' => 'services#counselling'],
+            ['label' => '7. Trauma Healing', 'url' => 'services#trauma-healing'],
+            ['label' => '8. Personal Transformation Healing', 'url' => 'services#personal-transformation'],
+            ['label' => '9. Meditations', 'url' => 'services#meditations'],
+            ['label' => '10. Tarot Card reading', 'url' => 'services#tarot-card-reading'],
+            ['label' => '11. Therapeutic Yoga', 'url' => 'services#therapeutic-yoga'],
         ]
     ],
     'training' => [
         'title'    => 'II. Training',
         'subtitle' => '4 Certified Programs',
         'icon'     => 'bi bi-mortarboard',
-        'url'      => 'training.php',
+        'url'      => 'training',
         'items'    => [
-            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => 'training.php#program-reiki'],
-            ['label' => '2. Crystal Therapy', 'url' => 'training.php#program-crystal'],
-            ['label' => '3. Angel Therapy', 'url' => 'training.php#program-angel'],
-            ['label' => '4. EFT', 'url' => 'training.php#program-eft'],
+            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => 'training#program-reiki'],
+            ['label' => '2. Crystal Therapy', 'url' => 'training#program-crystal'],
+            ['label' => '3. Angel Therapy', 'url' => 'training#program-angel'],
+            ['label' => '4. EFT', 'url' => 'training#program-eft'],
         ]
     ],
     'courses' => [
         'title'    => 'III. COURSES on Wellness',
         'subtitle' => 'Sacred Knowledge',
         'icon'     => 'bi bi-journal-bookmark',
-        'url'      => 'course.php',
+        'url'      => 'course',
         'items'    => [
-            ['label' => '1. Spandan', 'url' => 'course.php#course-spandan'],
-            ['label' => '2. Chetan', 'url' => 'course.php#course-chetan'],
+            ['label' => '1. Spandan', 'url' => 'course#course-spandan'],
+            ['label' => '2. Chetan', 'url' => 'course#course-chetan'],
         ]
     ],
     'workshops' => [
         'title'    => 'IV. Workshops',
         'subtitle' => '12 Healing Circles',
         'icon'     => 'bi bi-sun',
-        'url'      => 'workshop.php',
+        'url'      => 'workshop',
         'items'    => [
-            ['label' => '1. Energy Reset', 'url' => 'workshop.php#workshop-energy-reset'],
-            ['label' => '2. Language of crystals', 'url' => 'workshop.php#workshop-language-of-crystals'],
-            ['label' => '3. Gratitude', 'url' => 'workshop.php#workshop-gratitude'],
-            ['label' => '4. Loving Yourself', 'url' => 'workshop.php#workshop-loving-yourself'],
-            ['label' => '5. Breath work', 'url' => 'workshop.php#workshop-breath-work'],
-            ['label' => '6. Mudras', 'url' => 'workshop.php#workshop-mudras'],
-            ['label' => '7. Relaxation', 'url' => 'workshop.php#workshop-relaxation'],
-            ['label' => '8. Money manifestation', 'url' => 'workshop.php#workshop-money-manifestation'],
-            ['label' => '9. Energy Routine', 'url' => 'workshop.php#workshop-energy-routine'],
-            ['label' => '10. Abundance program', 'url' => 'workshop.php#workshop-abundance-program'],
-            ['label' => '11. Reprogram with meditation', 'url' => 'workshop.php#workshop-reprogram-with-meditation'],
-            ['label' => '12. Colour meditation', 'url' => 'workshop.php#workshop-colour-meditation'],
+            ['label' => '1. Energy Reset', 'url' => 'workshop#workshop-energy-reset'],
+            ['label' => '2. Language of crystals', 'url' => 'workshop#workshop-language-of-crystals'],
+            ['label' => '3. Gratitude', 'url' => 'workshop#workshop-gratitude'],
+            ['label' => '4. Loving Yourself', 'url' => 'workshop#workshop-loving-yourself'],
+            ['label' => '5. Breath work', 'url' => 'workshop#workshop-breath-work'],
+            ['label' => '6. Mudras', 'url' => 'workshop#workshop-mudras'],
+            ['label' => '7. Relaxation', 'url' => 'workshop#workshop-relaxation'],
+            ['label' => '8. Money manifestation', 'url' => 'workshop#workshop-money-manifestation'],
+            ['label' => '9. Energy Routine', 'url' => 'workshop#workshop-energy-routine'],
+            ['label' => '10. Abundance program', 'url' => 'workshop#workshop-abundance-program'],
+            ['label' => '11. Reprogram with meditation', 'url' => 'workshop#workshop-reprogram-with-meditation'],
+            ['label' => '12. Colour meditation', 'url' => 'workshop#workshop-colour-meditation'],
         ]
     ]
 ];
@@ -100,28 +82,28 @@ $is_home = ($current_page === 'home');
 $nav_items = $nav_items ?? [
     'home' => [
         'label' => 'Home',
-        'url'   => 'index.php',
+        'url'   => '/',
     ],
     'about' => [
         'label' => 'About Us',
-        'url'   => 'aboutus.php',
+        'url'   => 'aboutus',
     ],
     'services' => [
         'label'      => 'Services',
-        'url'        => 'services.php',
+        'url'        => 'services',
         'categories' => $services_categories,
     ],
     'gallery' => [
         'label' => 'Gallery',
-        'url'   => 'gallery.php',
+        'url'   => 'gallery',
     ],
     'stories' => [
         'label' => 'Stories',
-        'url'   => 'customersstories.php',
+        'url'   => 'customersstories',
     ],
     'contact' => [
         'label' => 'Contact',
-        'url'   => 'contact.php',
+        'url'   => 'contact',
     ],
 ];
 ?>
@@ -392,7 +374,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
 
                 <!-- 2. CENTER COLUMN: Brand Logo (Exactly Centered in Grid) -->
                 <div class="col-6 col-lg-2 text-center">
-                    <a href="index.php" class="site-logo d-inline-block" aria-label="<?= htmlspecialchars($brand_name) ?> Home">
+                    <a href="/" class="site-logo d-inline-block" aria-label="<?= htmlspecialchars($brand_name) ?> Home">
                         <?php if (!empty($site_logo)): ?>
                             <img src="<?= htmlspecialchars($site_logo) ?>" alt="<?= htmlspecialchars($brand_name) ?>" class="logo-image">
                         <?php else: ?>
@@ -430,7 +412,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
 <!-- Bootstrap 5 Offcanvas Mobile Navigation Drawer -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileDrawer" aria-labelledby="mobileDrawerLabel">
     <div class="offcanvas-header border-bottom">
-        <a href="index.php" class="d-flex align-items-center gap-2 text-decoration-none">
+        <a href="/" class="d-flex align-items-center gap-2 text-decoration-none">
             <?php if (!empty($site_logo)): ?>
                 <img src="<?= htmlspecialchars($site_logo) ?>" alt="<?= htmlspecialchars($brand_name) ?>" height="42" class="rounded-circle">
             <?php endif; ?>

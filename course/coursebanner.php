@@ -37,7 +37,7 @@ if (isset($course_banner_title)) {
                 <!-- Breadcrumb Navigation -->
                 <nav class="gallery-breadcrumb course-breadcrumb mb-3" aria-label="Breadcrumb">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Courses on Wellness</li>
                     </ol>
                 </nav>
