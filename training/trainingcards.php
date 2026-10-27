@@ -134,19 +134,14 @@ $training_programs = [
                                 <?php endforeach; ?>
                             </ul>
 
-                            <!-- Enquiry Action Button -->
+                            <!-- Main Reusable Button Component from common/button.php -->
                             <div class="training-card-action">
-                                <a href="<?= htmlspecialchars($program['url']) ?>" 
-                                   class="training-enquire-btn"
-                                   aria-label="Enquire about <?= strip_tags($program['title']) ?>">
-                                    <span>Enquire for Batches</span>
-                                    <span class="training-btn-arrow-wrap" aria-hidden="true">
-                                        <svg class="training-arrow-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                                            <polyline points="7 7 17 7 17 17"></polyline>
-                                        </svg>
-                                    </span>
-                                </a>
+                                <?php
+                                    $btn_text  = 'Enquire for Batches';
+                                    $btn_url   = $program['url'];
+                                    $btn_class = 'Btn-Training-Card';
+                                    include dirname(__DIR__) . '/common/button.php';
+                                ?>
                             </div>
 
                         </div>

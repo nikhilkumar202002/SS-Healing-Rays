@@ -29,11 +29,14 @@ $cta_url          = $cta_url ?? 'services.php';
 $phone_number     = $phone_number ?? '+91 98765 43210';
 $phone_tel        = preg_replace('/[^0-9+]/', '', $phone_number);
 
-// Categorized Services Menu (4 Sacred Pillars matching client specification)
+// Categorized Services Menu (4 Sacred Pillars with Hierarchical Tree Structure)
 $services_categories = [
     'healings' => [
-        'title' => 'I. Healings',
-        'items' => [
+        'title'    => 'I. Healings',
+        'subtitle' => '11 Sacred Modalities',
+        'icon'     => 'bi bi-heart-pulse',
+        'url'      => 'services.php',
+        'items'    => [
             ['label' => '1. Reiki Healing', 'url' => 'services.php'],
             ['label' => '2. Crystal Healing', 'url' => 'services.php'],
             ['label' => '3. Angel Healing', 'url' => 'services.php'],
@@ -48,24 +51,33 @@ $services_categories = [
         ]
     ],
     'training' => [
-        'title' => 'II. Training',
-        'items' => [
-            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => 'contact.php'],
-            ['label' => '2. Crystal Therapy', 'url' => 'contact.php'],
-            ['label' => '3. Angel Therapy', 'url' => 'contact.php'],
-            ['label' => '4. EFT', 'url' => 'contact.php'],
+        'title'    => 'II. Training',
+        'subtitle' => '4 Certified Programs',
+        'icon'     => 'bi bi-mortarboard',
+        'url'      => 'training.php',
+        'items'    => [
+            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => 'training.php#program-reiki'],
+            ['label' => '2. Crystal Therapy', 'url' => 'training.php#program-crystal'],
+            ['label' => '3. Angel Therapy', 'url' => 'training.php#program-angel'],
+            ['label' => '4. EFT', 'url' => 'training.php#program-eft'],
         ]
     ],
     'courses' => [
-        'title' => 'III. COURSES on Wellness',
-        'items' => [
+        'title'    => 'III. COURSES on Wellness',
+        'subtitle' => 'Sacred Knowledge',
+        'icon'     => 'bi bi-journal-bookmark',
+        'url'      => 'contact.php',
+        'items'    => [
             ['label' => '1. Spandan', 'url' => 'contact.php'],
             ['label' => '2. Chetan', 'url' => 'contact.php'],
         ]
     ],
     'workshops' => [
-        'title' => 'IV. Workshops',
-        'items' => [
+        'title'    => 'IV. Workshops',
+        'subtitle' => '12 Healing Circles',
+        'icon'     => 'bi bi-sun',
+        'url'      => 'workshop.php',
+        'items'    => [
             ['label' => '1. Energy Reset', 'url' => 'workshop.php'],
             ['label' => '2. Language of crystals', 'url' => 'workshop.php'],
             ['label' => '3. Gratitude', 'url' => 'workshop.php'],
@@ -233,114 +245,94 @@ $nav_items = $nav_items ?? [
                                         </svg>
                                     </a>
                                     
-                                    <div class="dropdown-menu services-mega-menu shadow-lg" aria-labelledby="servicesMegaMenuToggle">
-                                        <div class="services-mega-grid">
+                                    <!-- Services Tree-by-Tree Dropdown Menu -->
+                                    <div class="dropdown-menu services-tree-dropdown shadow-lg" aria-labelledby="servicesMegaMenuToggle">
+                                        <div class="tree-menu-container">
                                             
-                                            <!-- Pillar 1: I. Healings (11 items) -->
-                                            <div class="mega-col mega-col-healings">
-                                                <div class="mega-pillar-badge"><?= htmlspecialchars($item['categories']['healings']['title']) ?></div>
-                                                <ul class="mega-links-list">
-                                                    <?php foreach ($item['categories']['healings']['items'] as $sub): ?>
-                                                        <?php
-                                                            $raw_label = $sub['label'];
-                                                            $sub_num   = '';
-                                                            $sub_text  = $raw_label;
-                                                            if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                                $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                                $sub_text = $m[2];
-                                                            }
-                                                        ?>
-                                                        <li>
-                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
-                                                                <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                                <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
+                                            <!-- Main Sub-Menus List (Positioned Directly Over/Under Services) -->
+                                            <ul class="tree-main-pillars-list list-unstyled m-0 p-0">
+                                                <?php foreach ($item['categories'] as $catKey => $cat): ?>
+                                                    <li class="tree-pillar-item" data-pillar="<?= htmlspecialchars($catKey) ?>">
+                                                        
+                                                        <a href="<?= htmlspecialchars($cat['url'] ?? $item['url']) ?>" class="tree-pillar-trigger">
+                                                            <span class="tree-pillar-icon-box">
+                                                                <i class="<?= htmlspecialchars($cat['icon'] ?? 'bi bi-stars') ?>"></i>
+                                                            </span>
+                                                            <div class="tree-pillar-meta">
+                                                                <span class="tree-pillar-title"><?= htmlspecialchars($cat['title']) ?></span>
+                                                                <?php if (!empty($cat['subtitle'])): ?>
+                                                                    <span class="tree-pillar-sub"><?= htmlspecialchars($cat['subtitle']) ?></span>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                            <span class="tree-pillar-chevron" aria-hidden="true">
+                                                                <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+
+                                                        <!-- Tree Structure Menu Branch (Displays when hovering this sub-menu) -->
+                                                        <div class="tree-subpanel-wrap">
+                                                            <div class="tree-subpanel-inner">
+                                                                
+                                                                <!-- Branch Title Banner -->
+                                                                <div class="tree-branch-header">
+                                                                    <span class="tree-branch-pillar-name"><?= htmlspecialchars($cat['title']) ?></span>
+                                                                    <span class="tree-branch-count"><?= count($cat['items']) ?> Offerings</span>
+                                                                </div>
+
+                                                                <!-- Hierarchical Tree Branch System -->
+                                                                <div class="tree-branch-hierarchy <?= count($cat['items']) > 8 ? 'tree-multi-column' : '' ?>">
+                                                                    <div class="tree-trunk-stem" aria-hidden="true"></div>
+
+                                                                    <ul class="tree-nodes-list list-unstyled m-0 p-0">
+                                                                        <?php foreach ($cat['items'] as $sub): ?>
+                                                                            <?php
+                                                                                $raw_label = $sub['label'];
+                                                                                $sub_num   = '';
+                                                                                $sub_text  = $raw_label;
+                                                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
+                                                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
+                                                                                    $sub_text = $m[2];
+                                                                                }
+                                                                            ?>
+                                                                            <li class="tree-node-item">
+                                                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="tree-node-link">
+                                                                                    <span class="tree-branch-arm" aria-hidden="true"></span>
+                                                                                    <span class="tree-node-bullet" aria-hidden="true"></span>
+                                                                                    <?php if (!empty($sub_num)): ?>
+                                                                                        <span class="tree-node-num"><?= htmlspecialchars($sub_num) ?></span>
+                                                                                    <?php endif; ?>
+                                                                                    <span class="tree-node-title"><?= htmlspecialchars($sub_text) ?></span>
+                                                                                </a>
+                                                                            </li>
+                                                                        <?php endforeach; ?>
+                                                                    </ul>
+                                                                </div>
+
+                                                                <!-- Sub-branch Explore Link -->
+                                                                <div class="tree-branch-footer">
+                                                                    <a href="<?= htmlspecialchars($cat['url'] ?? $item['url']) ?>" class="tree-branch-explore-link">
+                                                                        <span>Explore <?= htmlspecialchars($cat['title']) ?></span>
+                                                                        <i class="bi bi-arrow-right"></i>
+                                                                    </a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+
+                                            <!-- Dropdown Footer -->
+                                            <div class="tree-dropdown-footer">
+                                                <a href="services.php" class="tree-footer-all-link">
+                                                    <span>View All Offerings</span>
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </a>
                                             </div>
 
-                                            <!-- Pillar 2: II. Training & III. Courses on Wellness -->
-                                            <div class="mega-col mega-col-training">
-                                                <div class="mega-pillar-badge"><?= htmlspecialchars($item['categories']['training']['title']) ?></div>
-                                                <ul class="mega-links-list mb-3">
-                                                    <?php foreach ($item['categories']['training']['items'] as $sub): ?>
-                                                        <?php
-                                                            $raw_label = $sub['label'];
-                                                            $sub_num   = '';
-                                                            $sub_text  = $raw_label;
-                                                            if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                                $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                                $sub_text = $m[2];
-                                                            }
-                                                        ?>
-                                                        <li>
-                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
-                                                                <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                                <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-
-                                                <div class="mega-pillar-badge text-secondary-color"><?= htmlspecialchars($item['categories']['courses']['title']) ?></div>
-                                                <ul class="mega-links-list">
-                                                    <?php foreach ($item['categories']['courses']['items'] as $sub): ?>
-                                                        <?php
-                                                            $raw_label = $sub['label'];
-                                                            $sub_num   = '';
-                                                            $sub_text  = $raw_label;
-                                                            if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                                $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                                $sub_text = $m[2];
-                                                            }
-                                                        ?>
-                                                        <li>
-                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
-                                                                <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                                <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Pillar 3: IV. Workshops (12 items) -->
-                                            <div class="mega-col mega-col-workshops">
-                                                <div class="mega-pillar-badge"><?= htmlspecialchars($item['categories']['workshops']['title']) ?></div>
-                                                <ul class="mega-links-list">
-                                                    <?php foreach ($item['categories']['workshops']['items'] as $sub): ?>
-                                                        <?php
-                                                            $raw_label = $sub['label'];
-                                                            $sub_num   = '';
-                                                            $sub_text  = $raw_label;
-                                                            if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                                $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                                $sub_text = $m[2];
-                                                            }
-                                                        ?>
-                                                        <li>
-                                                            <a class="mega-link" href="<?= htmlspecialchars($sub['url']) ?>">
-                                                                <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                                <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            </div>
-
-                                        </div>
-
-                                        <!-- Minimal Subtle Footer Bar -->
-                                        <div class="mega-minimal-footer">
-                                            <span class="mega-footer-tagline">
-                                                <i class="bi bi-stars text-secondary-color me-1"></i>
-                                                Personalized holistic healing sessions, retreats &amp; certified training.
-                                            </span>
-                                            <a href="services.php" class="mega-footer-action">
-                                                <span>Explore All Offerings</span>
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
                                         </div>
                                     </div>
                                 </li>

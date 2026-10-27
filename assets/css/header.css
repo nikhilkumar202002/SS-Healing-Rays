@@ -282,201 +282,381 @@ cite,
 }
 
 /* ==========================================================================
-   Services 4-Pillar Mega-Menu (Minimal UI with Lato Font Family)
+   Services Tree-by-Tree Menu Component (SS Healing Rays)
+   Primary Sub-Menus Dropdown directly under Services nav item
+   Hovering reveals hierarchical tree-structured sub-branches with trunk & branch lines
    ========================================================================== */
 .services-dropdown-item {
     position: relative;
 }
 
 @media (min-width: 992px) {
-    .desktop-nav-menu .dropdown-menu.services-mega-menu {
+    /* 1. Primary Dropdown Container - Sits directly under Services link */
+    .desktop-nav-menu .dropdown-menu.services-tree-dropdown {
         position: absolute;
         top: 100%;
-        left: -120px;
-        width: 1080px;
-        min-width: 1040px;
-        max-width: 95vw;
+        left: 0;
+        width: 320px;
+        min-width: 320px;
         background: #ffffff;
-        border-radius: 18px;
-        padding: 1.85rem 2.2rem 1.35rem;
+        border-radius: 16px;
+        padding: 0.65rem 0.55rem;
         border: 1px solid rgba(17, 17, 51, 0.08);
-        box-shadow: 0 24px 56px -12px rgba(17, 17, 51, 0.12), 0 0 0 1px rgba(130, 56, 122, 0.04);
-        margin-top: 0.65rem;
+        box-shadow: 0 20px 48px -10px rgba(17, 17, 51, 0.14), 0 0 0 1px rgba(130, 56, 122, 0.04);
+        margin-top: 0.5rem;
         z-index: 1060;
         font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        overflow: visible !important;
     }
 
-    .desktop-nav-menu .services-dropdown-item:hover .services-mega-menu {
+    .desktop-nav-menu .services-dropdown-item:hover .services-tree-dropdown {
         display: block !important;
         animation: navDropdownFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    /* Minimal Balanced 3-Column Grid Layout */
-    .services-mega-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.05fr 1fr;
-        gap: 2.25rem;
-        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    /* 2. Primary Sub-Menu Pillar Item */
+    .tree-pillar-item {
+        position: relative;
+        list-style: none;
+        margin-bottom: 4px;
     }
 
-    /* Column 2 subtle dividing borders with generous padding */
-    .mega-col-training {
-        border-left: 1px solid rgba(17, 17, 51, 0.07);
-        border-right: 1px solid rgba(17, 17, 51, 0.07);
-        padding: 0 1.5rem;
-    }
-
-    /* Pillar Badges / Minimal Category Headings in Lato */
-    .mega-pillar-badge {
-        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-        font-size: 0.74rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--primary-color, #82387a);
-        margin-bottom: 0.85rem;
-        padding-bottom: 0.45rem;
-        border-bottom: 1px solid rgba(130, 56, 122, 0.12);
+    .tree-pillar-trigger {
         display: flex;
         align-items: center;
-        gap: 6px;
+        justify-content: space-between;
+        padding: 0.75rem 0.95rem;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--heading-color, #111133);
+        background: transparent;
+        transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .mega-pillar-badge.text-secondary-color {
-        color: var(--secondary-color, #ba436c) !important;
-        margin-top: 1.35rem;
-        border-bottom-color: rgba(186, 67, 108, 0.14);
+    .tree-pillar-icon-box {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(186, 67, 108, 0.08);
+        color: var(--secondary-color, #ba436c);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-right: 12px;
+        transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Minimal Links List in Lato */
-    .mega-links-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    .tree-pillar-meta {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
-        gap: 0.2rem;
-        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     }
 
-    .mega-link {
-        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-        text-decoration: none;
+    .tree-pillar-title {
+        font-family: 'Lato', system-ui, sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1e293b;
+        line-height: 1.3;
+        transition: color 0.2s ease;
+    }
+
+    .tree-pillar-sub {
+        font-size: 0.75rem;
+        color: #64748b;
+        font-weight: 500;
+        line-height: 1.25;
+        margin-top: 1px;
+    }
+
+    .tree-pillar-chevron {
+        color: #94a3b8;
+        font-size: 0.8rem;
+        margin-left: 8px;
+        transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+    }
+
+    /* Hover state for Primary Pillar */
+    .tree-pillar-item:hover .tree-pillar-trigger {
+        background-color: #faf5f8;
+    }
+
+    .tree-pillar-item:hover .tree-pillar-icon-box {
+        background-color: var(--secondary-color, #ba436c);
+        color: #ffffff;
+        transform: scale(1.05);
+    }
+
+    .tree-pillar-item:hover .tree-pillar-title {
+        color: var(--secondary-color, #ba436c);
+    }
+
+    .tree-pillar-item:hover .tree-pillar-chevron {
+        color: var(--secondary-color, #ba436c);
+        transform: translateX(4px);
+    }
+
+    /* 3. Tree Structure Sub-Panel (Displays beside the hovered sub-menu) */
+    .tree-subpanel-wrap {
+        position: absolute;
+        top: -6px;
+        left: calc(100% - 6px);
+        width: 390px;
+        min-width: 380px;
+        padding-left: 14px; /* Seamless hover bridge */
+        margin-left: -8px;
+        display: none;
+        opacity: 0;
+        transform: translateX(8px);
+        transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+        z-index: 1070;
+    }
+
+    /* Workshops tree is 2-column for optimal compactness */
+    .tree-pillar-item[data-pillar="workshops"] .tree-subpanel-wrap {
+        width: 530px;
+        min-width: 510px;
+    }
+
+    .tree-subpanel-inner {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 1.25rem 1.4rem 1.15rem;
+        border: 1px solid rgba(17, 17, 51, 0.08);
+        box-shadow: 0 24px 56px -10px rgba(17, 17, 51, 0.16), 0 0 0 1px rgba(130, 56, 122, 0.06);
+    }
+
+    .tree-pillar-item:hover > .tree-subpanel-wrap {
+        display: block !important;
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+        animation: navDropdownFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Tree Branch Header */
+    .tree-branch-header {
         display: flex;
-        align-items: flex-start; /* CRITICAL: Never vertical center, align to top/first line */
-        gap: 0;
-        padding: 5px 8px;
-        border-radius: 6px;
-        line-height: 1.4;
-        transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), color 0.18s ease, background-color 0.18s ease;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.95rem;
+        padding-bottom: 0.55rem;
+        border-bottom: 1.5px solid rgba(186, 67, 108, 0.14);
     }
 
-    /* Tabular Minimal Numerals (01, 02, etc.) */
-    .mega-num {
-        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    .tree-branch-pillar-name {
+        font-family: 'Lato', system-ui, sans-serif;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--secondary-color, #ba436c);
+    }
+
+    .tree-branch-count {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #64748b;
+        background: rgba(17, 17, 51, 0.05);
+        padding: 2px 8px;
+        border-radius: 999px;
+    }
+
+    /* Hierarchical Tree Container with Trunk & Branches */
+    .tree-branch-hierarchy {
+        position: relative;
+        padding-left: 6px;
+    }
+
+    .tree-trunk-stem {
+        position: absolute;
+        top: 14px;
+        bottom: 16px;
+        left: 14px;
+        width: 2px;
+        background: linear-gradient(
+            to bottom,
+            var(--secondary-color, #ba436c) 0%,
+            rgba(186, 67, 108, 0.35) 85%,
+            rgba(186, 67, 108, 0.08) 100%
+        );
+        border-radius: 2px;
+    }
+
+    .tree-nodes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    /* Multi-column layout for pillars with many items */
+    .tree-branch-hierarchy.tree-multi-column .tree-nodes-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.25rem;
+    }
+
+    .tree-branch-hierarchy.tree-multi-column .tree-trunk-stem {
+        display: none;
+    }
+
+    .tree-node-item {
+        position: relative;
+    }
+
+    .tree-node-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 5px 8px 5px 36px;
+        border-radius: 8px;
+        position: relative;
+        line-height: 1.35;
+        transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tree-branch-hierarchy.tree-multi-column .tree-node-link {
+        padding-left: 24px;
+    }
+
+    /* Horizontal branch connector extending from vertical trunk */
+    .tree-branch-arm {
+        position: absolute;
+        top: 50%;
+        left: 14px;
+        width: 14px;
+        height: 1.5px;
+        background-color: rgba(186, 67, 108, 0.35);
+        transition: background-color 0.2s ease, width 0.2s ease;
+    }
+
+    .tree-branch-hierarchy.tree-multi-column .tree-branch-arm {
+        left: 6px;
+        width: 10px;
+    }
+
+    /* Tree Node Bullet Dot */
+    .tree-node-bullet {
+        position: absolute;
+        top: calc(50% - 3.5px);
+        left: 24px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 1.5px solid var(--secondary-color, #ba436c);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 2;
+    }
+
+    .tree-branch-hierarchy.tree-multi-column .tree-node-bullet {
+        left: 13px;
+    }
+
+    /* Tabular Numeral */
+    .tree-node-num {
+        font-family: 'Lato', system-ui, sans-serif;
         font-size: 0.74rem;
-        font-weight: 600;
+        font-weight: 700;
         color: #94a3b8;
         font-variant-numeric: tabular-nums;
-        display: inline-block;
-        width: 26px;
-        min-width: 26px;
-        margin-right: 12px; /* CRITICAL: Explicit 12px gutter between number and text */
-        margin-top: 1.5px; /* Perfect optical alignment with cap-height of first line */
-        line-height: 1.4;
-        letter-spacing: 0.04em;
-        transition: color 0.18s ease;
+        width: 22px;
         flex-shrink: 0;
+        margin-right: 6px;
+        transition: color 0.18s ease;
     }
 
-    /* Service Label Text */
-    .mega-text {
-        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    /* Title */
+    .tree-node-title {
+        font-family: 'Lato', system-ui, sans-serif;
         font-size: 0.85rem;
         font-weight: 400;
         color: #334155;
-        line-height: 1.4;
-        flex: 1; /* Allow text to occupy the remaining width */
+        line-height: 1.38;
         transition: color 0.18s ease;
     }
 
-    /* Minimal Hover State */
-    .mega-link:hover {
+    /* Hover State for Tree Node */
+    .tree-node-link:hover {
+        background-color: #faf5f8;
         transform: translateX(3px);
-        background-color: rgba(186, 67, 108, 0.04);
     }
 
-    .mega-link:hover .mega-num {
-        color: var(--secondary-color, #ba436c) !important;
+    .tree-node-link:hover .tree-branch-arm {
+        background-color: var(--secondary-color, #ba436c);
+        width: 16px;
     }
 
-    .mega-link:hover .mega-text {
-        color: var(--secondary-color, #ba436c) !important;
-        font-weight: 500;
+    .tree-node-link:hover .tree-node-bullet {
+        background-color: var(--secondary-color, #ba436c);
+        transform: scale(1.35);
+        box-shadow: 0 0 8px rgba(186, 67, 108, 0.45);
     }
 
-    /* Minimal Subtle Footer Bar */
-    .mega-minimal-footer {
-        margin-top: 1.45rem;
-        padding-top: 0.95rem;
+    .tree-node-link:hover .tree-node-num {
+        color: var(--secondary-color, #ba436c);
+        font-weight: 800;
+    }
+
+    .tree-node-link:hover .tree-node-title {
+        color: var(--secondary-color, #ba436c);
+        font-weight: 600;
+    }
+
+    /* Tree Branch Footer */
+    .tree-branch-footer {
+        margin-top: 0.85rem;
+        padding-top: 0.65rem;
         border-top: 1px solid rgba(17, 17, 51, 0.06);
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        justify-content: flex-end;
     }
 
-    .mega-footer-tagline {
+    .tree-branch-explore-link {
         font-size: 0.8rem;
-        color: #64748b;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .mega-footer-action {
-        font-size: 0.82rem;
-        font-weight: 600;
+        font-weight: 700;
         color: var(--secondary-color, #ba436c);
         text-decoration: none;
         display: inline-flex;
         align-items: center;
         gap: 5px;
-        transition: color 0.18s ease, transform 0.18s ease;
+        transition: all 0.2s ease;
     }
 
-    .mega-footer-action:hover {
-        color: var(--primary-color, #82387a);
+    .tree-branch-explore-link:hover {
+        color: #983355;
         transform: translateX(3px);
     }
-}
 
-/* Laptops / iPad Pro Landscape (992px - 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .desktop-nav-menu .dropdown-menu.services-mega-menu {
-        width: 940px;
-        min-width: 920px;
-        left: -140px;
-        padding: 1.4rem 1.6rem 1.1rem;
+    /* Primary Dropdown Footer */
+    .tree-dropdown-footer {
+        margin-top: 0.65rem;
+        padding: 0.65rem 0.5rem 0.2rem;
+        border-top: 1px solid rgba(17, 17, 51, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .services-mega-grid {
-        gap: 1.4rem;
-        grid-template-columns: 1fr 1.05fr 1fr;
-    }
-    .mega-col-training {
-        padding: 0 1rem;
-    }
-    .mega-pillar-badge {
-        font-size: 0.7rem;
-    }
-    .mega-text {
+
+    .tree-footer-all-link {
         font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--secondary-color, #ba436c);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        transition: all 0.2s ease;
     }
-    .mega-num {
-        font-size: 0.7rem;
-        width: 22px;
-        min-width: 22px;
-        margin-right: 8px;
+
+    .tree-footer-all-link:hover {
+        background-color: #faf5f8;
+        transform: translateX(3px);
     }
 }
 
