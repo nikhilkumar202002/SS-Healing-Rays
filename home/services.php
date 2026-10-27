@@ -1,76 +1,64 @@
 <?php
-/**
- * ==============================================================================
- * Services Carousel Component - SS Healing Rays (Swiper 11)
- * Displays 11 Healing Services without Bootstrap .container class (fluid/wide layout)
- * Matches UI Screenshot:
- *   - Centered "Healing Services" heading in Marcellus font (#5b2160)
- *   - Full-bleed / wide Swiper carousel with 4 cards in desktop view
- *   - Rounded card images (border-radius: 28px) with left-aligned Marcellus titles
- *   - Clean circular floating navigation chevrons (< and >)
- *   - Centered "Explore Service ↗" pill CTA button
- * ==============================================================================
- */
 
 $services_title    = $services_title ?? 'Healing Services';
-$services_cta_text = $services_cta_text ?? 'Explore Service';
-$services_cta_url  = $services_cta_url ?? '#services';
+$services_cta_text = $services_cta_text ?? 'Explore Services';
+$services_cta_url  = $services_cta_url ?? 'services.php';
 
 $services_list = $services_list ?? [
     [
         'title' => 'Trauma Healing',
         'image' => 'assets/images/services/trauma-healing.png',
-        'url'   => '#trauma-healing'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Personal Transformation',
         'image' => 'assets/images/services/personal-transformation.png',
-        'url'   => '#personal-transformation'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Guided Meditation',
         'image' => 'assets/images/services/meditations.png',
-        'url'   => '#meditations'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Tarot Card Reading',
         'image' => 'assets/images/services/tarot-card-reading.png',
-        'url'   => '#tarot-reading'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Reiki Healing',
         'image' => 'assets/images/services/reiki-healing.jpg',
-        'url'   => '#reiki'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Crystal Healing',
         'image' => 'assets/images/services/crystal-healing.jpg',
-        'url'   => '#crystal-healing'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Angel Healing',
         'image' => 'assets/images/services/angel-healing.jpg',
-        'url'   => '#angel-healing'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Energy healing',
         'image' => 'assets/images/services/energy-healing.jpg',
-        'url'   => '#energy-healing'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'EFT',
         'image' => 'assets/images/services/eft.jpg',
-        'url'   => '#eft'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Counselling',
         'image' => 'assets/images/services/counselling.jpg',
-        'url'   => '#counselling'
+        'url'   => 'services.php'
     ],
     [
         'title' => 'Therapeutic Yoga',
         'image' => 'assets/images/services/therapeutic-yoga.jpg',
-        'url'   => '#yoga'
+        'url'   => 'services.php'
     ],
 ];
 ?>

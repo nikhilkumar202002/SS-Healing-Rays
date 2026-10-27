@@ -67,12 +67,13 @@ $banner_slides = $banner_slides ?? [
                                 ?>
                             <?php endif; ?>
 
-                            <!-- Secondary Ghost CTA Button (Reserve Your Suite ↗) -->
+                            <!-- Secondary Ghost CTA Button (Triggers Booking Modal) -->
                             <?php if (!empty($slide['btn2_text'])): ?>
                                 <?php
                                     $btn_text  = $slide['btn2_text'];
-                                    $btn_url   = $slide['btn2_url'] ?? '#booking';
+                                    $btn_url   = '#bookingModal';
                                     $btn_class = 'Btn-Banner-Ghost';
+                                    $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#bookingModal" aria-haspopup="dialog"';
                                     include dirname(__DIR__) . '/common/button.php';
                                 ?>
                             <?php endif; ?>
