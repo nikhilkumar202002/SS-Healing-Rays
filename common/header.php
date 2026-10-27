@@ -179,6 +179,9 @@ $nav_items = $nav_items ?? [
     <!-- Full Service Cards 3-Column Grid Styles -->
     <link rel="stylesheet" href="assets/css/servicecards.css">
 
+    <!-- Training Programs Alternating 4-Row Section Styles -->
+    <link rel="stylesheet" href="assets/css/trainingcards.css">
+
     <!-- Masonry Gallery Grid & Lightbox Styles -->
     <link rel="stylesheet" href="assets/css/galleryimages.css">
 

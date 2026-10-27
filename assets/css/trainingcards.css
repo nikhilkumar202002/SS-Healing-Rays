@@ -1,0 +1,307 @@
+/* ==========================================================================
+   Certified Training Programs Alternating 4-Row Section - SS Healing Rays
+   Alternating: Odd rows (Image Left / Content Right), Even rows (Content Left / Image Right)
+   Typography: Marcellus serif headers, Playfair italic accents, Lato clean copy
+   Clean flat luxury aesthetic matching SS Healing Rays brand
+   ========================================================================== */
+
+.training-programs-section {
+    position: relative;
+    padding: 5.5rem 0 6.5rem;
+    background-color: #ffffff;
+}
+
+/* 1. Section Header */
+.training-section-header {
+    margin-bottom: 4.5rem;
+}
+
+.training-section-pretitle {
+    display: inline-block;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--secondary-color, #ba436c);
+    margin-bottom: 0.75rem;
+}
+
+.training-section-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.2rem, 3.8vw, 3rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.15rem;
+}
+
+.training-section-title em,
+.training-section-title i {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    color: var(--secondary-color, #ba436c);
+}
+
+.training-section-subtitle {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.72;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* 2. Alternating Program Rows with 80px Gap */
+.training-programs-list {
+    position: relative;
+}
+
+.training-program-row {
+    --bs-gutter-x: 80px;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(17, 17, 51, 0.08);
+}
+
+.training-program-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* 3. Image Wrap & Frame - Height strictly matching content */
+.training-image-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.training-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    flex: 1 1 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #f8fafc;
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    display: flex;
+}
+
+.training-program-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.training-image-wrap:hover .training-program-img {
+    transform: scale(1.05);
+}
+
+/* 4. Content Card - Perfectly Centered Matching Row Height */
+.training-content-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.training-card-header {
+    margin-bottom: 0.65rem;
+}
+
+.training-card-number {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--secondary-color, #ba436c);
+    letter-spacing: 0.08em;
+}
+
+.training-card-badge {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.training-card-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(1.65rem, 2.5vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.15rem;
+    letter-spacing: -0.01em;
+}
+
+.training-card-desc {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 1.02rem;
+    line-height: 1.76;
+    color: #475569;
+    margin-bottom: 1.75rem;
+}
+
+/* 5. Key Highlights / Feature List */
+.training-highlights-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.75rem 1rem;
+    margin-bottom: 2.25rem;
+    padding: 0;
+}
+
+.training-highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.92rem;
+    color: #334155;
+    font-weight: 500;
+}
+
+.training-check-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgba(186, 67, 108, 0.12);
+    color: var(--secondary-color, #ba436c);
+    flex-shrink: 0;
+}
+
+.training-check-icon {
+    display: block;
+}
+
+/* 6. Enquire Button */
+.training-card-action {
+    display: flex;
+    align-items: center;
+}
+
+.training-enquire-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1.85rem;
+    background-color: var(--secondary-color, #ba436c);
+    color: #ffffff !important;
+    border: 1.5px solid var(--secondary-color, #ba436c);
+    border-radius: 999px;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(186, 67, 108, 0.22);
+}
+
+.training-enquire-btn:hover {
+    background-color: #983355;
+    border-color: #983355;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(186, 67, 108, 0.35);
+}
+
+.training-btn-arrow-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.training-enquire-btn:hover .training-btn-arrow-wrap {
+    transform: translateX(3px) translateY(-2px);
+    background: #ffffff;
+    color: var(--secondary-color, #ba436c);
+}
+
+.training-arrow-svg {
+    display: block;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .training-programs-section {
+        padding: 4.5rem 0 5rem;
+    }
+    
+    .training-section-header {
+        margin-bottom: 3.5rem;
+    }
+    
+    .training-program-row {
+        --bs-gutter-x: 1.5rem;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .training-image-wrap {
+        height: 340px;
+        min-height: 280px;
+        flex: initial;
+    }
+    
+    .training-content-card {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        height: auto;
+    }
+    
+    .training-highlights-list {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .training-programs-section {
+        padding: 3.5rem 0 4rem;
+    }
+    
+    .training-image-wrap {
+        height: 260px;
+        border-radius: 18px;
+    }
+    
+    .training-card-title {
+        font-size: 1.55rem;
+        margin-bottom: 0.85rem;
+    }
+    
+    .training-card-desc {
+        font-size: 0.95rem;
+        line-height: 1.68;
+        margin-bottom: 1.35rem;
+    }
+    
+    .training-enquire-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.85rem 1.25rem;
+    }
+}
