@@ -1,11 +1,4 @@
 <?php
-/**
- * ==============================================================================
- * Full Service Cards Component - SS Healing Rays
- * 3-Column Grid Layout (col-12 col-md-6 col-lg-4)
- * Flat aesthetic: NO box-shadows, clean borders, heading, description & enquire button
- * ==============================================================================
- */
 
 $service_cards_pretitle = $service_cards_pretitle ?? 'SACRED OFFERINGS &amp; MODALITIES';
 $service_cards_title    = $service_cards_title ?? 'Comprehensive <em>Holistic Services</em>';
