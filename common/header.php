@@ -328,7 +328,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
 
                                             <!-- Dropdown Footer -->
                                             <div class="tree-dropdown-footer">
-                                                <a href="services.php" class="tree-footer-all-link">
+                                                <a href="services" class="tree-footer-all-link">
                                                     <span>View All Offerings</span>
                                                     <i class="bi bi-arrow-right"></i>
                                                 </a>

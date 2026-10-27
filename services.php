@@ -10,7 +10,7 @@ $page_title       = 'Holistic Services & Sacred Healings | SS Healing Rays';
 $page_description = 'Experience transformative energy healing, Reiki, EFT, trauma recovery, and certified holistic training sessions.';
 $current_page     = 'services';
 $cta_text         = 'Book Your Spot';
-$cta_url          = 'contact.php';
+$cta_url          = 'contact';
 
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';

@@ -2,63 +2,63 @@
 
 $services_title    = $services_title ?? 'Healing Services';
 $services_cta_text = $services_cta_text ?? 'Explore Services';
-$services_cta_url  = $services_cta_url ?? 'services.php';
+$services_cta_url  = $services_cta_url ?? 'services';
 
 $services_list = $services_list ?? [
     [
         'title' => 'Trauma Healing',
         'image' => 'assets/images/services/trauma-healing.png',
-        'url'   => 'services.php#trauma-healing'
+        'url'   => 'services#trauma-healing'
     ],
     [
         'title' => 'Personal Transformation',
         'image' => 'assets/images/services/personal-transformation.png',
-        'url'   => 'services.php#personal-transformation'
+        'url'   => 'services#personal-transformation'
     ],
     [
         'title' => 'Guided Meditation',
         'image' => 'assets/images/services/meditations.png',
-        'url'   => 'services.php#meditations'
+        'url'   => 'services#meditations'
     ],
     [
         'title' => 'Tarot Card Reading',
         'image' => 'assets/images/services/tarot-card-reading.png',
-        'url'   => 'services.php#tarot-card-reading'
+        'url'   => 'services#tarot-card-reading'
     ],
     [
         'title' => 'Reiki Healing',
         'image' => 'assets/images/services/reiki-healing.jpg',
-        'url'   => 'services.php#reiki-healing'
+        'url'   => 'services#reiki-healing'
     ],
     [
         'title' => 'Crystal Healing',
         'image' => 'assets/images/services/crystal-healing.jpg',
-        'url'   => 'services.php#crystal-healing'
+        'url'   => 'services#crystal-healing'
     ],
     [
         'title' => 'Angel Healing',
         'image' => 'assets/images/services/angel-healing.jpg',
-        'url'   => 'services.php#angel-healing'
+        'url'   => 'services#angel-healing'
     ],
     [
         'title' => 'Energy healing',
         'image' => 'assets/images/services/energy-healing.jpg',
-        'url'   => 'services.php#energy-healing'
+        'url'   => 'services#energy-healing'
     ],
     [
         'title' => 'EFT',
         'image' => 'assets/images/services/eft.jpg',
-        'url'   => 'services.php#eft'
+        'url'   => 'services#eft'
     ],
     [
         'title' => 'Counselling',
         'image' => 'assets/images/services/counselling.jpg',
-        'url'   => 'services.php#counselling'
+        'url'   => 'services#counselling'
     ],
     [
         'title' => 'Therapeutic Yoga',
         'image' => 'assets/images/services/therapeutic-yoga.jpg',
-        'url'   => 'services.php#therapeutic-yoga'
+        'url'   => 'services#therapeutic-yoga'
     ],
 ];
 ?>

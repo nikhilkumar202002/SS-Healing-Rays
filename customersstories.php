@@ -4,7 +4,7 @@ $page_title        = 'Emotional Wellness Stories – Real Journeys of Healing | 
 $page_description  = 'Inspiring real stories and testimonials from individuals who have healed from stress, anxiety, and overwhelm through Trauma-Informed Coaching, EFT, and Reiki at SS Healing Rays.';
 $current_page      = 'customer-stories';
 $cta_text          = 'Book a Session';
-$cta_url           = 'contact.php';
+$cta_url           = 'contact';
 
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';
@@ -218,7 +218,7 @@ $stories_grid_items = [
                 <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
                     <?php
                         $btn_text  = 'Book a Healing Session';
-                        $btn_url   = 'contact.php';
+                        $btn_url   = 'contact';
                         $btn_class = 'Btn-Profile-Primary';
                         include __DIR__ . '/common/button.php';
                     ?>

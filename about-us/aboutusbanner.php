@@ -12,7 +12,7 @@ $about_banner_image       = $about_banner_image ?? 'assets/banner/banner-2.jpeg'
 $about_banner_title       = $about_banner_title ?? 'A Sacred Sanctuary for<br>Personal Growth & <em>Healing</em>';
 $about_banner_description = $about_banner_description ?? 'An exclusive sanctuary where authentic Reiki alignment, trauma recovery, and intuitive coaching meet compassionate guidance on your path to lasting peace.';
 $about_banner_btn1_text   = $about_banner_btn1_text ?? 'Explore Services';
-$about_banner_btn1_url    = $about_banner_btn1_url ?? 'services.php';
+$about_banner_btn1_url    = $about_banner_btn1_url ?? 'services';
 $about_banner_btn2_text   = $about_banner_btn2_text ?? 'Meet Our Healers';
 $about_banner_btn2_url    = $about_banner_btn2_url ?? '#about';
 ?>

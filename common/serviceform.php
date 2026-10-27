@@ -100,7 +100,7 @@ $service_modal_categories = [
                 </div>
 
                 <!-- Underline-Only Form (Mirrors home/contact.php design) -->
-                <form action="contact.php" method="POST" class="contact-form" id="dynamicServiceBookingForm" novalidate>
+                <form action="contact" method="POST" class="contact-form" id="dynamicServiceBookingForm" novalidate>
                     
                     <!-- Hidden Dynamic Fields -->
                     <input type="hidden" name="service" id="serviceModalHiddenInput" value="">
