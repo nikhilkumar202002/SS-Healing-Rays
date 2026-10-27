@@ -13,5 +13,6 @@ include 'services.php';
 include 'team.php';
 include 'cta-banner.php';
 include 'testimonials.php';
+include 'gallery.php';
 include 'footer.php';
 ?>

@@ -106,6 +106,9 @@ $nav_items = $nav_items ?? [
 
     <!-- Testimonials Bento Grid Custom Styles -->
     <link rel="stylesheet" href="assets/css/testimonials.css">
+
+    <!-- Sacred Gallery 3x4 Grid Custom Styles -->
+    <link rel="stylesheet" href="assets/css/gallery.css">
 </head>
 <body>
 

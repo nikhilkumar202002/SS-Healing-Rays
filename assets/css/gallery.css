@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Gallery Component - SS Healing Rays
+   Specifications:
+     - 3 Rows x 4 Columns Grid (12 Images)
+     - No Bootstrap container class used
+     - Section left and right padding: 50px
+     - Section heading: Marcellus with Playfair Display italic highlight
+     - Rounded corners (20px) with smooth hover zoom
+   ========================================================================== */
+
+.gallery-section {
+    position: relative;
+    padding: 6.5rem 50px 6.5rem 50px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 1. Header Typography */
+.gallery-header {
+    margin-bottom: 3.75rem;
+    max-width: 800px;
+}
+
+.gallery-pretitle {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.92rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.15rem;
+}
+
+.gallery-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.3rem, 4vw, 3.25rem);
+    font-weight: 400;
+    line-height: 53px;
+    color: var(--heading-color, #111133);
+    margin: 0 auto;
+    letter-spacing: -0.015em;
+}
+
+.gallery-heading .title-highlight {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    color: #c43666;
+    margin-left: 0.25rem;
+}
+
+/* 2. Gallery Grid (4 Columns x 3 Rows) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+/* 3. Gallery Card Item */
+.gallery-item {
+    width: 100%;
+}
+
+.gallery-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f3f4f6;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.08);
+}
+
+/* 4. Elegant Ambient Hover Overlay */
+.gallery-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(15, 13, 30, 0) 0%,
+        rgba(84, 32, 95, 0.45) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.gallery-card:hover .gallery-hover-overlay {
+    opacity: 1;
+}
+
+.gallery-zoom-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color, #82387a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover .gallery-zoom-icon {
+    transform: scale(1);
+}
+
+/* 5. Responsive Breakpoints */
+@media (max-width: 1199.98px) {
+    .gallery-section {
+        padding: 5rem 30px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .gallery-section {
+        padding: 4rem 20px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .gallery-card {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .gallery-card {
+        aspect-ratio: 16 / 10;
+    }
+}
