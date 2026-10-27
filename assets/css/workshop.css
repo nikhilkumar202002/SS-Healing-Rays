@@ -1,0 +1,441 @@
+/* ==========================================================================
+   About Us & Workshop Section - SS Healing Rays
+   Matches UI Screenshot:
+     - Top Section Header with Brand Logo Seal, Pretitle, and Full-Length Unbroken Marcellus Text
+     - Ambient Golden/Amber Warm Aura Glow (Center & Bottom-Right)
+     - Left Image: Parabolic Arch Shape (border-radius: 40px 40px 220px 220px)
+     - Right Content (About SS Healing Rays):
+       * Sacred Pinwheel Swirl Icon (Rose Pink #e85688) + "ABOUT SS HEALING RAYS" Badge
+       * "What Makes My" (Marcellus #111133)
+       * "Healing Unique" ("Healing" in Marcellus #111133, "Unique" in Playfair Display Italic Rose #c43666)
+       * Compassionate Description in Lato (heightened readability & line-height)
+       * Solid Purple Pill CTA Button ("Learn More", #54205f, 50px pill shape)
+   ========================================================================== */
+
+/* 1. Section Wrapper (Clean Background) */
+.about-section,
+.workshop-section {
+    position: relative;
+    padding: 6.5rem 0 6rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 2. Top Header Component (Full Length Without Breaking) */
+.workshop-top-header {
+    text-align: center;
+    max-width: 1140px;
+    margin: 0 auto 4.75rem;
+    padding: 0 1.25rem;
+}
+
+.workshop-brand-seal-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.workshop-brand-seal {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.workshop-brand-seal:hover {
+    transform: scale(1.08);
+}
+
+.workshop-pretitle {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--heading-color, #111133);
+    margin-bottom: 22px;
+}
+
+/* Full Length Text Without Breaking */
+.workshop-welcome-text {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size:35;
+    font-weight: 400;
+    line-height: 45px;
+    color: var(--heading-color, #111133);
+    margin: 0 auto;
+    letter-spacing: -0.01em;
+    max-width: 800px;
+    width: 100%;
+    text-wrap: normal;
+}
+
+/* 2.5 Grid Row Layout: 100px Column Gap */
+.about-grid-row {
+    row-gap: 2.5rem;
+}
+
+@media (min-width: 992px) {
+    .about-grid-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 100px !important;
+        --bs-gutter-x: 0px !important;
+    }
+
+    .about-grid-row > * {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .about-grid-row .col-about-image {
+        flex: 0 1 460px;
+        max-width: 460px;
+        width: 100%;
+    }
+
+    .about-grid-row .col-about-content {
+        flex: 0 1 580px;
+        max-width: 580px;
+        width: 100%;
+    }
+
+    .about-content,
+    .workshop-content {
+        padding-left: 0 !important;
+    }
+
+    .workshop-image-card {
+        margin: 0 auto;
+    }
+}
+
+/* 3. Left Column: Image Arch Card (Enlarged with exact parabolic arch shape) */
+.workshop-image-card {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    height: 580px;
+    margin: 0 auto;
+    border-radius: 44px 44px 260px 260px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px -10px rgba(17, 17, 51, 0.08);
+    background-color: #f8fafc;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.workshop-image-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 55px -12px rgba(130, 56, 122, 0.2);
+}
+
+.workshop-image-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.workshop-image-card:hover img {
+    transform: scale(1.03);
+}
+
+/* 4. Right Column: Content & Typography */
+.workshop-content {
+    max-width: 580px;
+}
+
+.about-badge,
+.workshop-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.25rem;
+}
+
+.about-badge svg,
+.about-badge-icon {
+    color: #e85688 !important; /* Rose pink swirl matching screenshot */
+    flex-shrink: 0;
+}
+
+.workshop-badge svg {
+    color: var(--primary-color, #82387a);
+    flex-shrink: 0;
+}
+
+/* Heading: "What Makes My / Healing Unique" */
+.about-heading,
+.workshop-heading {
+    margin-bottom: 1.35rem;
+}
+
+.about-heading .title-line-1,
+.workshop-heading .title-main {
+    display: block;
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.35rem, 4.2vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--heading-color, #111133);
+    letter-spacing: -0.015em;
+}
+
+.about-heading .title-line-2 {
+    display: block;
+    line-height: 1.18;
+    margin-top: 0.15rem;
+}
+
+.about-heading .title-line-2 .title-main {
+    display: inline;
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.35rem, 4.2vw, 3.5rem);
+    font-weight: 400;
+    color: var(--heading-color, #111133);
+    letter-spacing: -0.015em;
+}
+
+.about-heading .title-line-2 .title-highlight,
+.workshop-heading .title-highlight {
+    display: inline;
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(2.35rem, 4.2vw, 3.5rem);
+    line-height: 1.2;
+    color: #c43666;
+    letter-spacing: 0.01em;
+    margin-left: 0.35rem;
+}
+
+.workshop-meta {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 1.65rem;
+}
+
+.about-description,
+.workshop-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.78;
+    color: #475569;
+    max-width: 580px;
+    margin-bottom: 2.35rem;
+}
+
+/* 5. Action Buttons */
+.about-actions,
+.workshop-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.15rem;
+}
+
+/* Solid Purple Pill Button for About Us ("Learn More") */
+.btn-about-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 154px;
+    height: 50px;
+    padding: 0 2.25rem;
+    border-radius: 50px;
+    background-color: #54205f;
+    color: #ffffff !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    border: none;
+    box-shadow: 0 4px 14px rgba(84, 32, 95, 0.22);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-about-primary:hover {
+    background-color: #6c2a7a;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(84, 32, 95, 0.36);
+}
+
+.btn-about-primary:active {
+    transform: translateY(0);
+}
+
+/* Main Reusable Button for About Us & Workshop (.Btn-About-Primary / .Btn-Workshop-Primary) */
+.Btn-About-Primary,
+.Btn-Workshop-Primary {
+    background-color: #ffffff !important;
+    border: 1.5px solid rgba(130, 56, 122, 0.35) !important;
+    box-shadow: 0 4px 14px rgba(17, 17, 51, 0.05);
+    padding: 3px 3px 3px 20px !important;
+    gap: 16px;
+    height: 50px;
+    border-radius: 50px !important;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-About-Primary .text,
+.Btn-Workshop-Primary .text {
+    color: var(--heading-color, #111133) !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.Btn-About-Primary .icon-Container,
+.Btn-Workshop-Primary .icon-Container {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-color, #82387a) !important;
+    border-radius: 50% !important;
+    border: none !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-About-Primary .icon-Container .btn-arrow-svg,
+.Btn-Workshop-Primary .icon-Container .btn-arrow-svg {
+    width: 18px;
+    height: 18px;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.Btn-About-Primary:hover,
+.Btn-Workshop-Primary:hover {
+    background-color: var(--primary-color, #82387a) !important;
+    border-color: var(--primary-color, #82387a) !important;
+    box-shadow: 0 8px 24px rgba(130, 56, 122, 0.28);
+    transform: translateY(-2px);
+}
+
+.Btn-About-Primary:hover .text,
+.Btn-Workshop-Primary:hover .text {
+    color: #ffffff !important;
+}
+
+.Btn-About-Primary:hover .icon-Container,
+.Btn-Workshop-Primary:hover .icon-Container {
+    background-color: #ffffff !important;
+}
+
+.Btn-About-Primary:hover .icon-Container .btn-arrow-svg,
+.Btn-Workshop-Primary:hover .icon-Container .btn-arrow-svg {
+    color: var(--primary-color, #82387a) !important;
+    stroke: var(--primary-color, #82387a) !important;
+    transform: translate(2px, -2px);
+}
+
+.btn-outline-reserve {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    height: 50px;
+    padding: 0 1.85rem;
+    border-radius: 50px;
+    border: 1.5px solid rgba(130, 56, 122, 0.35);
+    background-color: #ffffff;
+    color: var(--heading-color, #111133);
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.02rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 10px rgba(17, 17, 51, 0.04);
+}
+
+.btn-outline-reserve:hover {
+    background-color: var(--primary-color, #82387a);
+    border-color: var(--primary-color, #82387a);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(130, 56, 122, 0.28);
+}
+
+.btn-outline-reserve:active {
+    transform: translateY(0);
+}
+
+/* 6. Responsive Breakpoints */
+@media (max-width: 991.98px) {
+    .about-section,
+    .workshop-section {
+        padding: 4.5rem 0;
+    }
+    .workshop-top-header {
+        margin-bottom: 3.5rem;
+    }
+    .workshop-content {
+        padding-left: 0;
+        margin-top: 2.5rem;
+        text-align: center;
+    }
+    .about-description,
+    .workshop-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-actions,
+    .workshop-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .workshop-image-card {
+        border-radius: 32px 32px 160px 160px;
+        max-width: 320px;
+        height: 420px;
+    }
+    .about-heading .title-line-1,
+    .about-heading .title-line-2 .title-main,
+    .about-heading .title-line-2 .title-highlight,
+    .workshop-heading .title-main,
+    .workshop-heading .title-highlight {
+        font-size: 2.1rem;
+    }
+    .about-actions,
+    .workshop-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-about-primary,
+    .Btn-About-Primary,
+    .Btn-Workshop-Primary,
+    .btn-outline-reserve {
+        width: 100%;
+        max-width: 290px;
+        justify-content: center;
+    }
+}

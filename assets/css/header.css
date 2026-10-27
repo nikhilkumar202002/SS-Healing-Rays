@@ -1,0 +1,660 @@
+/* ==========================================================================
+   Header Component Styles - SS Healing Rays (Bootstrap 5 Integrated)
+   Layout: Left Side Menu | Center Logo | Right CTA Button
+   Brand Colors:
+     - #82387a : Primary Color (Amethyst Purple)
+     - #ba436c : Secondary Color (Rose Magenta)
+     - #111133 : Heading Text (Deep Midnight Navy)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Marcellus&family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap');
+
+:root {
+    /* ==========================================================================
+       Common Calling Color Tokens
+       ========================================================================== */
+    --primary-color: #82387a;
+    --secondary-color: #ba436c;
+    --heading-color: #111133;
+
+    /* Semantic Common Calling Aliases */
+    --color-primary: #82387a;
+    --color-secondary: #ba436c;
+    --color-heading: #111133;
+    
+    --brand-primary: #82387a;
+    --brand-secondary: #ba436c;
+    --brand-heading: #111133;
+
+    /* RGBA Translucent Tokens */
+    --primary-rgb: 130, 56, 122;
+    --secondary-rgb: 186, 67, 108;
+    --heading-rgb: 17, 17, 51;
+
+    /* Typography */
+    --brand-font-sans: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --brand-font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --brand-font-marcellus: 'Marcellus', Georgia, serif;
+    --brand-font-btn: 'Outfit', 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Header Dimensions */
+    --header-height: 90px;
+    --header-height-scrolled: 74px;
+}
+
+body {
+    font-family: var(--brand-font-sans);
+    color: #334155;
+    background-color: #FAFAFA;
+}
+
+/* ==========================================================================
+   Common Calling Utility Classes
+   ========================================================================== */
+/* Primary Color Calling */
+.text-primary-color,
+.text-brand-primary,
+.color-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary-color,
+.bg-brand-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.border-primary-color,
+.border-brand-primary {
+    border-color: var(--primary-color) !important;
+}
+
+/* Secondary Color Calling */
+.text-secondary-color,
+.text-brand-secondary,
+.color-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.bg-secondary-color,
+.bg-brand-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.border-secondary-color,
+.border-brand-secondary {
+    border-color: var(--secondary-color) !important;
+}
+
+/* Heading Text Color Calling */
+.text-heading,
+.heading-text,
+.heading-color {
+    color: var(--heading-color) !important;
+}
+
+/* ==========================================================================
+   Headings & Display Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.font-serif,
+.heading-text,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-family: var(--brand-font-serif);
+    color: var(--heading-color);
+}
+
+.font-sans {
+    font-family: var(--brand-font-sans);
+}
+
+/* Italic Typography - Playfair Display Italic */
+em,
+i:not([class*="bi-"]),
+cite,
+.fst-italic,
+.italic,
+.font-italic,
+.italic-text {
+    font-family: var(--brand-font-serif) !important;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Main Header & Navigation (Bootstrap 5.3 Navbar)
+   ========================================================================== */
+.site-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(130, 56, 122, 0.12) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1020;
+}
+
+.site-header.is-scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 10px 30px -10px rgba(17, 17, 51, 0.08), 0 1px 3px rgba(130, 56, 122, 0.15);
+}
+
+.site-header .navbar {
+    min-height: var(--header-height);
+    transition: min-height 0.3s ease;
+}
+
+.site-header.is-scrolled .navbar {
+    min-height: var(--header-height-scrolled);
+}
+
+/* Desktop Navigation Items */
+.desktop-nav-menu .nav-link {
+    font-family: var(--brand-font-serif);
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #475569;
+    padding: 0.5rem 0.95rem !important;
+    position: relative;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.desktop-nav-menu .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 20px;
+    height: 2.5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+    transition: transform 0.25s ease;
+}
+
+.desktop-nav-menu .nav-link:hover,
+.desktop-nav-menu .nav-link:focus {
+    color: var(--primary-color);
+    background: rgba(130, 56, 122, 0.05);
+}
+
+.desktop-nav-menu .nav-link:hover::after,
+.desktop-nav-menu .nav-link.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.desktop-nav-menu .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Bootstrap Dropdown Styling */
+.desktop-nav-menu .dropdown-menu {
+    border-radius: 12px;
+    box-shadow: 0 16px 36px -8px rgba(17, 17, 51, 0.12), 0 0 0 1px rgba(130, 56, 122, 0.15);
+    padding: 0.5rem;
+    border: none;
+    margin-top: 0.5rem;
+}
+
+.desktop-nav-menu .dropdown-item {
+    font-family: var(--brand-font-serif);
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+.desktop-nav-menu .dropdown-item:hover {
+    color: var(--primary-color);
+    background-color: rgba(130, 56, 122, 0.06);
+    padding-left: 1.25rem;
+}
+
+/* Enable hover dropdown for desktop */
+@media (min-width: 992px) {
+    .desktop-nav-menu .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        animation: navDropdownFade 0.25s ease forwards;
+    }
+}
+
+@keyframes navDropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   CENTER COLUMN: Logo
+   ========================================================================== */
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 1040;
+    transition: transform 0.25s ease;
+}
+
+.site-logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo-image {
+    width: 120px;
+    height: 120px;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: -36px; /* Elegantly overflows past header bottom border */
+    filter: none !important; /* Logo shadow removed */
+    position: relative;
+    z-index: 1045;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+    filter: none !important;
+}
+
+.site-header.is-scrolled .logo-image {
+    width: 90px;
+    height: 90px;
+    margin-top: 6px;
+    margin-bottom: -22px;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: CTA Button & Contacts
+   ========================================================================== */
+.header-phone-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.header-phone-link:hover {
+    color: var(--primary-color);
+}
+
+.header-phone-link i {
+    color: var(--secondary-color);
+}
+
+/* Brand CTA Button (extends Bootstrap .btn with Primary & Secondary gradient) */
+.btn-brand-cta {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #FFFFFF !important;
+    font-family: var(--brand-font-sans);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border: none;
+    border-radius: 50px;
+    padding: 0.65rem 1.45rem;
+    box-shadow: 0 4px 15px rgba(130, 56, 122, 0.35);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-brand-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.45) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    transition: left 0.75s ease;
+}
+
+.btn-brand-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(186, 67, 108, 0.45);
+    color: #FFFFFF !important;
+}
+
+.btn-brand-cta:hover::before {
+    left: 170%;
+}
+
+.btn-brand-cta:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Bootstrap Offcanvas Mobile Menu
+   ========================================================================== */
+.offcanvas {
+    max-width: 320px;
+    border-right: 1px solid rgba(130, 56, 122, 0.15);
+}
+
+.offcanvas-nav .nav-link {
+    font-family: var(--brand-font-serif);
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--heading-color);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.offcanvas-nav .nav-link:hover,
+.offcanvas-nav .nav-link.active {
+    color: var(--primary-color);
+    background: rgba(130, 56, 122, 0.06);
+    padding-left: 1.25rem;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .site-header .navbar {
+        min-height: 76px;
+    }
+
+    .logo-image {
+        width: 92px;
+        height: 92px;
+        margin-top: 6px;
+        margin-bottom: -22px;
+    }
+
+    .btn-brand-cta {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .logo-image {
+        width: 80px;
+        height: 80px;
+        margin-top: 4px;
+        margin-bottom: -18px;
+    }
+
+    .btn-brand-cta span {
+        display: none;
+    }
+
+    .btn-brand-cta {
+        padding: 0.55rem;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        justify-content: center;
+    }
+
+    .btn-brand-cta i {
+        margin: 0;
+    }
+}
+
+/* ==========================================================================
+   Common Reusable Button Component (.Btn-Container)
+   Supports dynamic custom color calling:
+     --btn-bg         : Container background
+     --btn-icon-bg    : Icon circle badge background
+     --btn-text-color : Text label color
+     --btn-icon-color : Icon color
+   ========================================================================== */
+/* ==========================================================================
+   Common Reusable Button Component (.Btn-Container)
+   Layout: Clean Text + Circular Badge Icon (Diagonal Arrow ↗)
+   Matches Reference: "Explore Services ↗"
+   ========================================================================== */
+.Btn-Container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--btn-bg, #ffffff);
+    border-radius: 50px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    text-decoration: none !important;
+    padding: 3px 3px 3px 18px;
+    gap: 16px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    vertical-align: middle;
+    outline: none;
+    user-select: none;
+}
+
+.Btn-Container:hover {
+    transform: translateY(-2px);
+}
+
+.Btn-Container:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.Btn-Container .text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--btn-text-color, var(--heading-color, #111133));
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.Btn-Container .icon-Container {
+    width: 48px;
+    height: 48px;
+    background-color: var(--btn-icon-bg, var(--primary-color, #82387a));
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50%;
+    border: none;
+    color: #ffffff !important;
+    flex-shrink: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Icon Color: Pure White in default/base state */
+.Btn-Container .icon-Container .btn-arrow-svg {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 20px;
+    height: 20px;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: none !important;
+    stroke-width: 2.6;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, stroke 0.3s ease;
+}
+
+.Btn-Container .icon-Container i {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    font-size: 1.15rem;
+    line-height: 1 !important;
+    color: #ffffff !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+/* ==========================================================================
+   Header CTA Button (.Btn-Header / #siteHeader .Btn-Container)
+   Normal State (Exact match to reference design):
+     - Background: Seamlessly White / Clean
+     - Border: None / transparent (No bulky pill border)
+     - Box-shadow: None
+     - Text: var(--heading-color, #111133), 1.18rem, 600 weight
+     - Icon Circle: 48px diameter, solid var(--primary-color, #82387a)
+     - Arrow: Crisp White diagonal arrow (↗) centered in circle
+   
+   Hover State (User specification):
+     - Button background: var(--primary-color, #82387a) (Primary Color)
+     - Button border: var(--primary-color, #82387a)
+     - Text color: #ffffff (White)
+     - Icon Circle background: #ffffff (White)
+     - Icon Arrow color: #000000 (Black arrow!)
+     - Smooth elevation lift and diagonal arrow micro-motion
+   ========================================================================== */
+.Btn-Header,
+#siteHeader .Btn-Container {
+    background-color: #ffffff !important;
+    border: 1.5px solid transparent !important;
+    box-shadow: none !important;
+    padding: 3px 3px 3px 18px;
+    gap: 16px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-Header .text,
+#siteHeader .Btn-Container .text {
+    color: var(--heading-color, #111133) !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.18rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    padding-right: 0;
+    transition: color 0.3s ease;
+}
+
+.Btn-Header .icon-Container,
+#siteHeader .Btn-Container .icon-Container {
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-color, #82387a) !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-Header .icon-Container .btn-arrow-svg,
+.Btn-Header .icon-Container i,
+#siteHeader .Btn-Container .icon-Container .btn-arrow-svg,
+#siteHeader .Btn-Container .icon-Container i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, stroke 0.3s ease;
+}
+
+/* Hover Invert State */
+.Btn-Header:hover,
+#siteHeader .Btn-Container:hover {
+    background-color: var(--primary-color, #82387a) !important;
+    border-color: var(--primary-color, #82387a) !important;
+    box-shadow: 0 8px 24px rgba(130, 56, 122, 0.32) !important;
+    transform: translateY(-2px);
+}
+
+.Btn-Header:hover .text,
+#siteHeader .Btn-Container:hover .text {
+    color: #ffffff !important;
+}
+
+.Btn-Header:hover .icon-Container,
+#siteHeader .Btn-Container:hover .icon-Container {
+    background-color: #ffffff !important;
+    border: none !important;
+    transform: scale(1.02);
+}
+
+.Btn-Header:hover .icon-Container .btn-arrow-svg,
+.Btn-Header:hover .icon-Container i,
+#siteHeader .Btn-Container .icon-Container .btn-arrow-svg,
+#siteHeader .Btn-Container .icon-Container i {
+    color: #000000 !important;
+    stroke: #000000 !important; /* Black arrow on hover */
+    transform: translate(2px, -2px);
+}
+
+.Btn-Header:active,
+#siteHeader .Btn-Container:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .Btn-Header,
+    #siteHeader .Btn-Container {
+        padding: 3px 3px 3px 14px;
+        gap: 12px;
+    }
+    .Btn-Header .text,
+    #siteHeader .Btn-Container .text {
+        font-size: 1.05rem;
+    }
+    .Btn-Header .icon-Container,
+    #siteHeader .Btn-Container .icon-Container {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .Btn-Header,
+    #siteHeader .Btn-Container {
+        padding: 2px 2px 2px 10px;
+        gap: 8px;
+    }
+    .Btn-Header .text,
+    #siteHeader .Btn-Container .text {
+        font-size: 0.92rem;
+    }
+    .Btn-Header .icon-Container,
+    #siteHeader .Btn-Container .icon-Container {
+        width: 36px;
+        height: 36px;
+    }
+    .Btn-Header .icon-Container .btn-arrow-svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+#drawerCtaBtn {
+    border: 1.5px solid rgba(130, 56, 122, 0.2) !important;
+}

@@ -1,0 +1,366 @@
+/* ==========================================================================
+   Hero Banner Swiper Component - SS Healing Rays
+   Matches Screenshot Design:
+     - 100vh Full Viewport Height
+     - Swiper.js Crossfade & Image Ken-Burns Motion
+     - Headline: Playfair Display with Italic Accent Words ("Indulge in Wellness, Surrounded by Elegance")
+     - Subtitle: Sans-serif Clean Description
+     - Dual CTA Buttons: White Pill Primary + Translucent Ghost Secondary
+     - Glassmorphism Navigation & Pill Pagination
+   ========================================================================== */
+
+/* 1. Main Hero Section & Swiper Container */
+.hero-banner-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: var(--heading-color, #111133);
+}
+
+.hero-banner-swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* 2. Slide Layout & Background Images */
+.hero-banner-swiper .swiper-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b0b1a;
+}
+
+.hero-banner-swiper .banner-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.0);
+    transition: transform 7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+/* Ken Burns Subtle Zoom on Active Slide */
+.hero-banner-swiper .swiper-slide-active .banner-bg-img {
+    transform: scale(1.08);
+}
+
+/* 3. Slight Black Overlay with Linear Gradient from Bottom to Top */
+.hero-banner-swiper .banner-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba(0, 0, 0, 0.1) 80%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 4. Banner Content Wrapper & Alignment */
+.hero-banner-swiper .banner-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* 5. Typography: Headline with Marcellus for unhighlighted text and Playfair Display for highlighted text */
+.hero-banner-swiper .banner-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', serif);
+    font-size: clamp(2.35rem, 5.2vw, 4.4rem);
+    font-weight: 500; /* Medium weight */
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: none !important;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Highlighted Accent Words in Playfair Display (Italic) */
+.hero-banner-swiper .banner-title em,
+.hero-banner-swiper .banner-title .fst-italic,
+.hero-banner-swiper .banner-title .highlight-serif,
+.hero-banner-swiper .banner-title i {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    font-weight: 500 !important; /* Medium weight */
+    letter-spacing: 0.02em;
+    display: inline-block;
+    text-shadow: none !important;
+}
+
+/* Sub-headline / Description in Lato font */
+.hero-banner-swiper .banner-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.68;
+    color: rgba(255, 255, 255, 0.94);
+    max-width: 780px;
+    margin: 0 auto 2.25rem;
+    text-shadow: none !important;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+/* Call to Action Actions Wrapper */
+.hero-banner-swiper .banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.15rem;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.28s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.28s;
+}
+
+/* Active Slide Staggered Entrance */
+.hero-banner-swiper .swiper-slide-active .banner-title,
+.hero-banner-swiper .swiper-slide-active .banner-description,
+.hero-banner-swiper .swiper-slide-active .banner-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   6. Dual CTA Buttons
+   Button 1: White Pill (.Btn-Container / .Btn-Banner-Primary)
+   Button 2: Secondary Button (.Btn-Banner-Ghost) - Clean, NO border radius on base
+   ========================================================================== */
+.Btn-Banner-Primary {
+    background-color: #ffffff !important;
+    border: 1.5px solid transparent !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+.Btn-Banner-Primary .text {
+    color: var(--heading-color, #111133) !important;
+    font-weight: 500; /* Medium weight */
+}
+
+.Btn-Banner-Primary .icon-Container {
+    background-color: var(--primary-color, #82387a) !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+}
+
+/* Base Icon Color: Pure White */
+.Btn-Banner-Primary .icon-Container .btn-arrow-svg,
+.Btn-Banner-Primary .icon-Container i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, stroke 0.3s ease;
+}
+
+.Btn-Banner-Primary:hover {
+    background-color: var(--primary-color, #82387a) !important;
+    border-color: var(--primary-color, #82387a) !important;
+    box-shadow: 0 8px 25px rgba(130, 56, 122, 0.45) !important;
+}
+
+.Btn-Banner-Primary:hover .text {
+    color: #ffffff !important;
+}
+
+.Btn-Banner-Primary:hover .icon-Container {
+    background-color: #ffffff !important;
+}
+
+.Btn-Banner-Primary:hover .icon-Container .btn-arrow-svg,
+.Btn-Banner-Primary:hover .icon-Container i {
+    color: #000000 !important;
+    stroke: #000000 !important;
+    transform: translate(2px, -2px);
+}
+
+/* Button 2: Secondary Button (Reserve Your Suite ↗) - NO outer border */
+.Btn-Banner-Ghost {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important; /* Removed outer border */
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-Banner-Ghost .text {
+    color: #ffffff !important;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-weight: 500; /* Medium weight */
+}
+
+.Btn-Banner-Ghost .icon-Container {
+    background-color: transparent !important;
+    border: 1.5px solid #ffffff !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+}
+
+/* Base Icon Color: Pure White */
+.Btn-Banner-Ghost .icon-Container .btn-arrow-svg,
+.Btn-Banner-Ghost .icon-Container i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, stroke 0.3s ease;
+}
+
+.Btn-Banner-Ghost:hover {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: translateY(-2px);
+}
+
+.Btn-Banner-Ghost:hover .text {
+    color: #ffffff !important;
+}
+
+.Btn-Banner-Ghost:hover .icon-Container {
+    background-color: transparent !important;
+    border: 1.5px solid #ffffff !important;
+}
+
+.Btn-Banner-Ghost:hover .icon-Container .btn-arrow-svg,
+.Btn-Banner-Ghost:hover .icon-Container i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    transform: translate(2px, -2px);
+}
+
+/* 7. Swiper Navigation Controls */
+.hero-banner-section .swiper-button-prev,
+.hero-banner-section .swiper-button-next {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 20;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero-banner-section .swiper-button-prev::after,
+.hero-banner-section .swiper-button-next::after {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.hero-banner-section .swiper-button-prev:hover,
+.hero-banner-section .swiper-button-next:hover {
+    background-color: var(--primary-color, #82387a);
+    border-color: var(--primary-color, #82387a);
+    color: #ffffff;
+    transform: scale(1.08);
+    box-shadow: 0 10px 28px rgba(130, 56, 122, 0.5);
+}
+
+.hero-banner-section .swiper-button-prev {
+    left: 2rem;
+}
+
+.hero-banner-section .swiper-button-next {
+    right: 2rem;
+}
+
+/* 8. Dotted Slider Removed Per Request */
+.hero-banner-section .swiper-pagination {
+    display: none !important;
+}
+
+/* 9. Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .hero-banner-section .swiper-button-prev,
+    .hero-banner-section .swiper-button-next {
+        width: 44px;
+        height: 44px;
+    }
+    .hero-banner-section .swiper-button-prev::after,
+    .hero-banner-section .swiper-button-next::after {
+        font-size: 1rem;
+    }
+    .hero-banner-section .swiper-button-prev {
+        left: 1rem;
+    }
+    .hero-banner-section .swiper-button-next {
+        right: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-banner-section {
+        min-height: 560px;
+    }
+    .hero-banner-section .swiper-button-prev,
+    .hero-banner-section .swiper-button-next {
+        display: none; /* Hide arrows on mobile for clean screen */
+    }
+    .hero-banner-swiper .banner-title {
+        margin-bottom: 1rem;
+        line-height: 1.22;
+    }
+    .hero-banner-swiper .banner-description {
+        margin-bottom: 1.75rem;
+    }
+    .hero-banner-swiper .banner-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+    .hero-banner-swiper .banner-actions .Btn-Container {
+        width: 100%;
+        max-width: 290px;
+        justify-content: space-between;
+    }
+}
