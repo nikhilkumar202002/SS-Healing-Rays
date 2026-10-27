@@ -173,6 +173,9 @@ $nav_items = $nav_items ?? [
     <!-- Service Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/servicebanner.css">
 
+    <!-- Full Service Cards 3-Column Grid Styles -->
+    <link rel="stylesheet" href="assets/css/servicecards.css">
+
     <!-- Masonry Gallery Grid & Lightbox Styles -->
     <link rel="stylesheet" href="assets/css/galleryimages.css">
 

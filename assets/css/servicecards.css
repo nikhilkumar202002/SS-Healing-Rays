@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Full Service Cards Component - SS Healing Rays
+   3-Column Grid Layout (Desktop) | 2-Column (Tablet) | 1-Column (Mobile)
+   Clean Flat Aesthetic: NO box-shadows, subtle borders, elegant typography
+   ========================================================================== */
+
+.service-cards-section {
+    position: relative;
+    padding: 5.5rem 0 6.5rem;
+    background-color: #ffffff;
+}
+
+/* 1. Section Header (Optional intro) */
+.service-cards-header {
+    margin-bottom: 3.5rem;
+}
+
+.service-cards-pretitle {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--secondary-color, #ba436c);
+    margin-bottom: 0.65rem;
+    display: inline-block;
+}
+
+.service-cards-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2rem, 3.4vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1rem;
+}
+
+.service-cards-title em,
+.service-cards-title i {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    color: var(--secondary-color, #ba436c);
+}
+
+.service-cards-subtitle {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 1.02rem;
+    color: #64748b;
+    line-height: 1.68;
+    max-width: 660px;
+    margin: 0 auto;
+}
+
+/* 2. Main 3-Column Grid Row */
+.service-cards-row {
+    --bs-gutter-x: 2rem;
+    --bs-gutter-y: 2rem;
+}
+
+/* 3. Service Item Card: Flat, No Box-Shadow */
+.service-item-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item-card:hover {
+    border-color: rgba(186, 67, 108, 0.45);
+    transform: translateY(-4px);
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+/* 4. Card Media (Top Image) */
+.service-item-media {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.service-item-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item-card:hover .service-item-media img {
+    transform: scale(1.05);
+}
+
+/* 5. Card Body: Heading & Description */
+.service-item-body {
+    padding: 1.65rem 1.75rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.service-item-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--heading-color, #111133);
+    line-height: 1.32;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.01em;
+    transition: color 0.25s ease;
+}
+
+.service-item-card:hover .service-item-title {
+    color: var(--secondary-color, #ba436c);
+}
+
+.service-item-desc {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #64748b;
+    margin-bottom: 1.65rem;
+    flex-grow: 1;
+}
+
+/* 6. Enquire Button: Pinned to Bottom */
+.service-item-actions {
+    margin-top: auto;
+    width: 100%;
+}
+
+.service-enquire-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.72rem 1.25rem;
+    background-color: #faf5f8;
+    border: 1px solid rgba(186, 67, 108, 0.22);
+    border-radius: 999px;
+    color: #82387a;
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-enquire-btn span {
+    letter-spacing: 0.02em;
+}
+
+.service-enquire-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(186, 67, 108, 0.12);
+    color: #ba436c;
+    transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.service-enquire-btn:hover {
+    background-color: #ba436c;
+    border-color: #ba436c;
+    color: #ffffff;
+}
+
+.service-enquire-btn:hover .service-enquire-icon-wrap {
+    background-color: #ffffff;
+    color: #ba436c;
+    transform: translate(2px, -2px);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .service-cards-section {
+        padding: 4.5rem 0 5rem;
+    }
+    .service-cards-header {
+        margin-bottom: 2.75rem;
+    }
+    .service-item-media {
+        height: 210px;
+    }
+    .service-item-body {
+        padding: 1.45rem 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .service-cards-section {
+        padding: 3.5rem 0 4rem;
+    }
+    .service-cards-header {
+        margin-bottom: 2rem;
+    }
+    .service-item-media {
+        height: 195px;
+    }
+    .service-item-body {
+        padding: 1.25rem 1.25rem 1.35rem;
+    }
+    .service-item-title {
+        font-size: 1.22rem;
+    }
+    .service-item-desc {
+        font-size: 0.9rem;
+        line-height: 1.62;
+        margin-bottom: 1.25rem;
+    }
+}
