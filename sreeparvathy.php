@@ -1,13 +1,4 @@
 <?php
-/**
- * Personal Profile Details Page - Sreeparvathy
- * SS Healing Rays
- * 
- * Layout: Split Screen
- * - Left Side: Scrollable rich content details (Instagram bio, 3 Core Pillars, Philosophy, Clarity Call, Testimonial Scrolling Stream)
- * - Right Side: Sticky portrait image of Sreeparvathy with floating chips and quick action card
- * - Banner: Not needed (starts directly below site header)
- */
 
 $page_title       = 'Sreeparvathy – Emotional Wellness Coach & Master Energy Healer | SS Healing Rays';
 $page_description = 'Helping women move through stress and emotional overwhelm through Trauma-Informed Coaching, EFT meridian tapping, and Reiki healing with Sreeparvathy.';
@@ -22,10 +13,7 @@ include __DIR__ . '/common/header.php';
     <section class="profile-section position-relative" id="sreeparvathyProfile" aria-label="Sreeparvathy Personal Profile Details">
         <div class="container">
             <div class="row g-4 g-xl-5 align-items-start">
-                
-                <!-- ==============================================================
-                     1. LEFT COLUMN: Scrollable Content Details
-                     ============================================================== -->
+       
                 <div class="col-12 col-lg-7 col-xl-7 profile-content-scroll-col">
                     
                     <!-- Breadcrumb Navigation -->
@@ -37,11 +25,7 @@ include __DIR__ . '/common/header.php';
                         </ol>
                     </nav>
 
-                    <!-- Pretitle Badge -->
-                    <div class="profile-pretitle-badge">
-                        <i class="bi bi-stars"></i>
-                        <span>Founder &amp; Emotional Wellness Coach</span>
-                    </div>
+           
 
                     <!-- Main Headline -->
                     <h1 class="profile-hero-title">
@@ -53,68 +37,7 @@ include __DIR__ . '/common/header.php';
                         Guiding you from survival mode and high-functioning anxiety into a grounded sanctuary of nervous system safety, somatic release, and inner sovereignty.
                     </p>
 
-                    <!-- Instagram Profile & Community Card (Directly from Uploaded Instagram Info) -->
-                    <div class="profile-ig-card">
-                        
-                        <!-- Card Header -->
-                        <div class="profile-ig-header">
-                            <div class="profile-ig-user">
-                                <div class="profile-ig-avatar" aria-hidden="true">
-                                    <img src="assets/images/profile/sreeparvathi.jpg" alt="Sreeparvathy Avatar">
-                                </div>
-                                <div>
-                                    <div class="profile-ig-handle">
-                                        <span>heal_sreeparvathy</span>
-                                        <i class="bi bi-patch-check-fill" title="Verified Healer"></i>
-                                    </div>
-                                    <span class="profile-ig-category">Product / Service • Emotional Wellness</span>
-                                </div>
-                            </div>
-                            <div class="profile-ig-stats">
-                                <span><strong>722</strong> posts</span>
-                                <span><strong>465</strong> followers</span>
-                                <span><strong>209</strong> following</span>
-                            </div>
-                        </div>
 
-                        <!-- Card Bio Text Matching Instagram Upload -->
-                        <div class="profile-ig-bio">
-                            <div class="profile-ig-bio-line">
-                                <i class="bi bi-heart-pulse-fill"></i>
-                                <span><strong>Sreeparvathy</strong> || Emotional wellness Coach</span>
-                            </div>
-                            <div class="profile-ig-bio-line">
-                                <i class="bi bi-flower1"></i>
-                                <span>Helping women move through stress and emotional overwhelm</span>
-                            </div>
-                            <div class="profile-ig-bio-line">
-                                <i class="bi bi-shield-check"></i>
-                                <span>Trauma-informed coaching • EFT • Reiki</span>
-                            </div>
-                            <div class="profile-ig-bio-line mt-2">
-                                <i class="bi bi-chat-quote-fill"></i>
-                                <span><strong>DM CLARITY</strong> for a free clarity call &mdash; Link in bio 👇</span>
-                            </div>
-                        </div>
-
-                        <!-- Direct Social Action Buttons -->
-                        <div class="profile-ig-actions">
-                            <a href="https://chat.whatsapp.com/CJpMxOezsRzAutnt2yxuAm" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="profile-ig-btn-wa">
-                                <i class="bi bi-whatsapp"></i>
-                                <span>Join WhatsApp Community</span>
-                            </a>
-                            <a href="https://www.instagram.com/heal_sreeparvathy/" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="profile-ig-btn-ig">
-                                <i class="bi bi-instagram"></i>
-                                <span>@heal_sreeparvathy</span>
-                            </a>
-                        </div>
-                    </div>
 
                     <!-- Core Healing Pillars / Specializations -->
                     <div class="profile-pillars-section mb-5">
@@ -216,12 +139,10 @@ include __DIR__ . '/common/header.php';
                     <div class="profile-testimonials-stream">
                         <div class="profile-testimonials-header">
                             <div>
-                                <span class="profile-pretitle-badge mb-1">VOICES OF TRANSFORMATION</span>
+                                
                                 <h3 class="profile-section-heading mb-0">What Women <em>Say</em></h3>
                             </div>
-                            <span class="text-muted small d-none d-md-inline-block">
-                                <i class="bi bi-pause-circle me-1"></i>Hover to pause
-                            </span>
+                            
                         </div>
 
                         <!-- Continuous Scrolling Marquee Track -->
@@ -386,25 +307,7 @@ include __DIR__ . '/common/header.php';
                                      alt="Sreeparvathy Emotional Wellness Coach at SS Healing Rays" 
                                      class="profile-portrait-img">
                                 
-                                <!-- Floating Top Chip -->
-                                <div class="profile-portrait-chip-top">
-                                    <span>✦ Founder &amp; Master Healer</span>
-                                </div>
 
-                                <!-- Floating Bottom Chip -->
-                                <div class="profile-portrait-chip-bottom">
-                                    <div>
-                                        <span class="profile-chip-meta-name">Sreeparvathy</span>
-                                        <span class="profile-chip-meta-role">Emotional Wellness Coach</span>
-                                    </div>
-                                    <a href="https://www.instagram.com/heal_sreeparvathy/" 
-                                       target="_blank" 
-                                       rel="noopener noreferrer" 
-                                       class="profile-chip-ig-icon" 
-                                       aria-label="Instagram Profile">
-                                        <i class="bi bi-instagram"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 

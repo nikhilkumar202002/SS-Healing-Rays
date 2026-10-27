@@ -10,7 +10,7 @@
     padding-top: clamp(2.5rem, 5vw, 4rem);
     padding-bottom: clamp(4rem, 7vw, 6.5rem);
     background-color: #ffffff;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* 1. Breadcrumbs */
@@ -564,10 +564,16 @@
 
 /* 9. Right Column: Static / Sticky Portrait Card */
 @media (min-width: 992px) {
-    .profile-sticky-media-wrap {
+    .profile-media-sticky-col {
+        position: -webkit-sticky;
         position: sticky;
-        top: 100px;
+        top: 96px;
+        align-self: flex-start;
         z-index: 20;
+    }
+    .profile-sticky-media-wrap {
+        position: relative;
+        width: 100%;
     }
 }
 
@@ -604,65 +610,6 @@
 
 .profile-portrait-card:hover .profile-portrait-img {
     transform: scale(1.04);
-}
-
-/* Floating Chips on Portrait */
-.profile-portrait-chip-top {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: rgba(17, 17, 51, 0.72);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    color: #ffffff;
-    padding: 5px 12px;
-    border-radius: 999px;
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.profile-portrait-chip-bottom {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    right: 14px;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(186, 67, 108, 0.2);
-    border-radius: 16px;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.profile-chip-meta-name {
-    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: 1.05rem;
-    color: #111133;
-    display: block;
-    line-height: 1.2;
-}
-
-.profile-chip-meta-role {
-    font-size: 0.74rem;
-    color: #ba436c;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
-
-.profile-chip-ig-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
-    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -684,6 +631,7 @@
     font-size: 1.15rem;
     color: var(--heading-color, #111133);
     margin-bottom: 0.35rem;
+    margin-top: 20px;
 }
 
 .profile-sticky-contact-desc {
