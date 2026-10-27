@@ -112,7 +112,7 @@ include __DIR__ . '/common/header.php';
 
                     <!-- DM CLARITY Action Box -->
                     <div class="profile-clarity-box">
-                        <span class="profile-clarity-badge">Complimentary 1-on-1 Consultation</span>
+                        
                         <h3 class="profile-clarity-title">Ready for Your <em>Clarity Call</em>?</h3>
                         <p class="profile-clarity-desc">
                             Send a direct message with the word <strong>CLARITY</strong> or click below to connect directly on WhatsApp. Let&rsquo;s discuss what you&rsquo;re experiencing and explore a personalized path back to emotional balance.
