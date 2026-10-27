@@ -110,6 +110,17 @@
     flex-grow: 1;
 }
 
+.service-item-number {
+    display: inline-block;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--secondary-color, #ba436c);
+    letter-spacing: 0.14em;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+}
+
 .service-item-title {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
     font-size: 1.35rem;

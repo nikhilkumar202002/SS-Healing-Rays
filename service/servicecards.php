@@ -25,25 +25,25 @@ $full_services_list = $full_services_list ?? [
         'url'   => 'contact.php?service=Crystal+Healing'
     ],
     [
-        'title' => 'Angel Healing & Guidance',
+        'title' => 'Angel Healing',
         'image' => 'assets/images/services/angel-healing.jpg',
         'desc'  => 'A gentle, high-vibrational healing modality connecting you with angelic guidance for divine protection, intuitive clarity, and profound emotional solace during life transitions.',
         'url'   => 'contact.php?service=Angel+Healing'
     ],
     [
-        'title' => 'Energy Healing',
+        'title' => 'Energy healing',
         'image' => 'assets/images/services/energy-healing.jpg',
         'desc'  => 'Holistic biofield realignment that clears energetic fatigue, releases heavy emotional residue, and harmonizes your physical, emotional, and spiritual layers.',
-        'url'   => 'contact.php?service=Energy+Healing'
+        'url'   => 'contact.php?service=Energy+healing'
     ],
     [
-        'title' => 'Emotional Freedom Techniques (EFT)',
+        'title' => 'EFT',
         'image' => 'assets/images/services/eft.jpg',
         'desc'  => 'Acupressure meridian tapping combined with mindful cognitive reframing to rapidly dissolve chronic anxiety, release trapped trauma, and rewire healthy thought patterns.',
         'url'   => 'contact.php?service=EFT'
     ],
     [
-        'title' => 'Holistic Counselling',
+        'title' => 'Counselling',
         'image' => 'assets/images/services/counselling.jpg',
         'desc'  => 'A safe, empathetic sanctuary offering confidential dialogue, emotional grounding, and practical holistic tools to navigate relationship hurdles and personal growth.',
         'url'   => 'contact.php?service=Counselling'
@@ -58,19 +58,19 @@ $full_services_list = $full_services_list ?? [
         'title' => 'Personal Transformation Healing',
         'image' => 'assets/images/services/personal-transformation.png',
         'desc'  => 'An immersive, multi-layered journey addressing root subconscious patterns, unlocking emotional freedom, and empowering you to step boldly into your soul purpose.',
-        'url'   => 'contact.php?service=Personal+Transformation'
+        'url'   => 'contact.php?service=Personal+Transformation+Healing'
     ],
     [
-        'title' => 'Guided Meditations',
+        'title' => 'Meditations',
         'image' => 'assets/images/services/meditations.png',
         'desc'  => 'Soulful mindfulness journeys, conscious pranayama breathwork, and guided visualization designed to quiet mental chatter, expand awareness, and ground profound inner peace.',
-        'url'   => 'contact.php?service=Guided+Meditations'
+        'url'   => 'contact.php?service=Meditations'
     ],
     [
-        'title' => 'Tarot Card Reading',
+        'title' => 'Tarot Card reading',
         'image' => 'assets/images/services/tarot-card-reading.png',
         'desc'  => 'Intuitive symbolic tarot readings offering illuminating perspectives, spiritual alignment, and actionable clarity for your relationships, career, and soul path.',
-        'url'   => 'contact.php?service=Tarot+Reading'
+        'url'   => 'contact.php?service=Tarot+Card+reading'
     ],
     [
         'title' => 'Therapeutic Yoga',
@@ -97,7 +97,7 @@ $full_services_list = $full_services_list ?? [
 
         <!-- 3-Column Service Cards Grid (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) -->
         <div class="row service-cards-row justify-content-center">
-            <?php foreach ($full_services_list as $service): ?>
+            <?php foreach ($full_services_list as $index => $service): ?>
                 <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
                     <article class="service-item-card">
                         
@@ -110,6 +110,7 @@ $full_services_list = $full_services_list ?? [
 
                         <!-- Card Body (Heading + Description + Enquire Button) -->
                         <div class="service-item-body">
+                            <span class="service-item-number"><?= sprintf('%02d', $index + 1) ?>.</span>
                             <h3 class="service-item-title"><?= htmlspecialchars($service['title']) ?></h3>
                             <p class="service-item-desc"><?= htmlspecialchars($service['desc']) ?></p>
                             
