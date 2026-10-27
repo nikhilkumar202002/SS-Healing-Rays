@@ -1,25 +1,27 @@
 /* ==========================================================================
-   Gallery Component - SS Healing Rays (Masonry Grid Layout)
+   Gallery Component - SS Healing Rays (Dual Opposite Direction Sliders)
    Specifications:
-     - Organic Masonry Grid layout (Pinterest style)
-     - 4 Columns with 20px gap
-     - No Bootstrap container class used
-     - Section left and right padding: 50px
+     - 2 Sliders moving in opposite directions (Row 1 Left, Row 2 Right)
+     - Infinite smooth, slow, seamless continuous drift
+     - Edge-to-edge full bleed with NO left and right padding on the section/slider
+     - Hover to pause for calm, effortless image inspection
      - Section heading: Marcellus with Playfair Display italic highlight
-     - Rounded corners (20px) with smooth hover zoom & ambient overlay
+     - Signature main button below the sliders
    ========================================================================== */
 
 .gallery-section {
     position: relative;
-    padding: 6.5rem 50px 6.5rem 50px;
+    padding: 6.5rem 0 6.5rem 0;
     background-color: #ffffff;
     overflow: hidden;
+    width: 100%;
 }
 
-/* 1. Header Typography */
+/* 1. Header Typography (Padded internally for centered legibility) */
 .gallery-header {
     margin-bottom: 3.75rem;
     max-width: 800px;
+    padding: 0 24px;
 }
 
 .gallery-pretitle {
@@ -50,60 +52,116 @@
     margin-left: 0.25rem;
 }
 
-/* 2. Masonry Grid Layout (4 Columns) */
-.gallery-masonry-grid {
-    column-count: 4;
-    column-gap: 20px;
+/* 2. Sliders Wrapper (Edge-to-Edge Full Bleed, Zero Horizontal Padding) */
+.gallery-sliders-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
     width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
-/* 3. Masonry Item */
-.gallery-item {
-    break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    margin-bottom: 20px;
-    display: inline-block;
+/* 3. Slider Row Container */
+.gallery-slider-row {
     width: 100%;
-}
-
-.gallery-card {
+    overflow: hidden;
     position: relative;
-    width: 100%;
-    border-radius: 20px;
+    display: flex;
+    padding: 6px 0; /* Slight headroom for card hover scale */
+}
+
+/* 4. Marquee Tracks & Hardware Accelerated Smooth Drift */
+.gallery-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.gallery-track-group {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px; /* Exact match to gap for seamless infinite join */
+}
+
+/* Direction 1: Slides continuously to the Left (Slow & Majestic) */
+.gallery-track-left {
+    animation: galleryDriftLeft 50s linear infinite;
+}
+
+@keyframes galleryDriftLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* Direction 2: Slides continuously to the Right (Opposite Direction) */
+.gallery-track-right {
+    animation: galleryDriftRight 50s linear infinite;
+}
+
+@keyframes galleryDriftRight {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Pause drift on hover so visitors can calmly inspect any photo */
+.gallery-slider-row:hover .gallery-track {
+    animation-play-state: paused;
+}
+
+/* 5. Slide Card Styling (3:4 Aspect Ratio) */
+.gallery-slide-card {
+    position: relative;
+    width: 315px;
+    height: 420px;
+    aspect-ratio: 3 / 4;
+    flex-shrink: 0;
+    border-radius: 22px;
     overflow: hidden;
     background-color: #f3f4f6;
     cursor: pointer;
     border: none;
-    box-shadow: none;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px rgba(17, 17, 51, 0.06);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.gallery-card:hover {
-    transform: translateY(-4px);
+.gallery-slide-card:hover {
+    transform: scale(1.035);
+    box-shadow: 0 18px 40px rgba(15, 13, 30, 0.18);
+    z-index: 5;
 }
 
-.gallery-img {
+.gallery-slide-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
-    border-radius: 20px;
     transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.gallery-card:hover .gallery-img {
-    transform: scale(1.05);
+.gallery-slide-card:hover .gallery-slide-img {
+    transform: scale(1.06);
 }
 
-/* 4. Elegant Ambient Hover Overlay */
+/* 6. Ambient Hover Overlay */
 .gallery-hover-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         180deg,
         rgba(15, 13, 30, 0) 0%,
-        rgba(84, 32, 95, 0.42) 100%
+        rgba(84, 32, 95, 0.45) 100%
     );
     display: flex;
     align-items: center;
@@ -114,7 +172,7 @@
     border-radius: 20px;
 }
 
-.gallery-card:hover .gallery-hover-overlay {
+.gallery-slide-card:hover .gallery-hover-overlay {
     opacity: 1;
 }
 
@@ -122,7 +180,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.94);
     color: var(--primary-color, #82387a);
     display: flex;
     align-items: center;
@@ -133,48 +191,151 @@
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.gallery-card:hover .gallery-zoom-icon {
+.gallery-slide-card:hover .gallery-zoom-icon {
     transform: scale(1);
 }
 
-/* 5. Responsive Breakpoints */
+/* 7. Bottom Main Button Action */
+.gallery-action {
+    margin-top: 3.75rem;
+    padding: 0 20px;
+}
+
+.Btn-Gallery-Main {
+    background-color: #ffffff !important;
+    border: 1.5px solid rgba(130, 56, 122, 0.28) !important;
+    box-shadow: 0 8px 24px rgba(17, 17, 51, 0.08) !important;
+    padding: 4px 5px 4px 26px !important;
+    gap: 16px !important;
+    height: 54px !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.Btn-Gallery-Main .text {
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #111133 !important;
+    letter-spacing: -0.01em;
+}
+
+.Btn-Gallery-Main .icon-Container {
+    width: 44px !important;
+    height: 44px !important;
+    background-color: #54205f !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(84, 32, 95, 0.25) !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.Btn-Gallery-Main .icon-Container .btn-arrow-svg {
+    width: 19px !important;
+    height: 19px !important;
+    stroke: #ffffff !important;
+    color: #ffffff !important;
+    stroke-width: 2.5 !important;
+    transition: transform 0.3s ease;
+}
+
+.Btn-Gallery-Main:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color, #82387a) !important;
+    box-shadow: 0 14px 32px rgba(130, 56, 122, 0.25) !important;
+}
+
+.Btn-Gallery-Main:hover .icon-Container {
+    background-color: #752984 !important;
+    transform: scale(1.05);
+}
+
+.Btn-Gallery-Main:hover .icon-Container .btn-arrow-svg {
+    transform: translate(2px, -2px);
+}
+
+.Btn-Gallery-Main:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* 8. Responsive Adaptations (Preserving 3:4 Aspect Ratio) */
 @media (max-width: 1199.98px) {
+    .gallery-slide-card {
+        width: 285px;
+        height: 380px;
+        aspect-ratio: 3 / 4;
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 991.98px) {
     .gallery-section {
-        padding: 5rem 30px;
+        padding: 5rem 0;
     }
-    .gallery-masonry-grid {
-        column-count: 3;
-        column-gap: 18px;
+    .gallery-header {
+        margin-bottom: 2.75rem;
     }
-    .gallery-item {
-        margin-bottom: 18px;
+    .gallery-sliders-wrapper {
+        gap: 18px;
+    }
+    .gallery-track-group {
+        gap: 16px;
+        padding-right: 16px;
+    }
+    .gallery-slide-card {
+        width: 255px;
+        height: 340px;
+        aspect-ratio: 3 / 4;
+        border-radius: 16px;
+    }
+    .gallery-track-left {
+        animation-duration: 45s;
+    }
+    .gallery-track-right {
+        animation-duration: 45s;
+    }
+    .gallery-action {
+        margin-top: 3rem;
     }
 }
 
 @media (max-width: 767.98px) {
     .gallery-section {
-        padding: 4rem 20px;
+        padding: 4rem 0;
     }
-    .gallery-masonry-grid {
-        column-count: 2;
-        column-gap: 14px;
+    .gallery-header {
+        margin-bottom: 2.25rem;
     }
-    .gallery-item {
-        margin-bottom: 14px;
+    .gallery-sliders-wrapper {
+        gap: 14px;
     }
-    .gallery-card,
-    .gallery-img,
-    .gallery-hover-overlay {
-        border-radius: 16px;
+    .gallery-track-group {
+        gap: 12px;
+        padding-right: 12px;
     }
-}
-
-@media (max-width: 480px) {
-    .gallery-masonry-grid {
-        column-count: 2;
-        column-gap: 10px;
+    .gallery-slide-card {
+        width: 210px;
+        height: 280px;
+        aspect-ratio: 3 / 4;
+        border-radius: 14px;
     }
-    .gallery-item {
-        margin-bottom: 10px;
+    .gallery-track-left {
+        animation-duration: 38s;
+    }
+    .gallery-track-right {
+        animation-duration: 38s;
+    }
+    .gallery-action {
+        margin-top: 2.5rem;
+    }
+    .Btn-Gallery-Main {
+        height: 48px !important;
+        padding: 3px 4px 3px 20px !important;
+        gap: 12px !important;
+    }
+    .Btn-Gallery-Main .text {
+        font-size: 1rem;
+    }
+    .Btn-Gallery-Main .icon-Container {
+        width: 40px !important;
+        height: 40px !important;
     }
 }

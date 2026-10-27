@@ -109,6 +109,9 @@ $nav_items = $nav_items ?? [
 
     <!-- Sacred Gallery 3x4 Grid Custom Styles -->
     <link rel="stylesheet" href="assets/css/gallery.css">
+
+    <!-- Frequently Asked Questions (FAQ) Accordion Styles -->
+    <link rel="stylesheet" href="assets/css/faq.css">
 </head>
 <body>
 
