@@ -32,9 +32,7 @@ $service_modal_consultants = [
     </div>
 <?php endif; ?>
 
-<!-- ==========================================================================
-     Dynamic Service/Program Booking Modal (Bootstrap 5.3)
-     ========================================================================== -->
+
 <div class="modal fade popup-booking-modal service-booking-modal" 
      id="serviceBookingModal" 
      tabindex="-1" 
@@ -73,16 +71,16 @@ $service_modal_consultants = [
 
                     <div class="row g-3 g-md-4">
                         
-                        <!-- 1. Dynamic Selected Offering Highlight Box -->
+                        <!-- 1. Selected Offering (Normal Underline Design) -->
                         <div class="col-12">
-                            <div class="service-modal-selected-pill p-3 d-flex align-items-center justify-content-between flex-wrap gap-2">
-                                <div class="d-flex align-items-center gap-2 flex-wrap">
-                                    <span class="service-pill-tag" id="serviceModalPillTag">OFFERING</span>
-                                    <span class="service-pill-name" id="serviceModalPillName">Selected Offering</span>
-                                </div>
-                                <span class="service-pill-status">
-                                    <i class="bi bi-check-circle-fill text-success me-1"></i> Pre-selected
-                                </span>
+                            <div class="contact-field-group">
+                                <input type="text" 
+                                       class="form-control contact-underline-input" 
+                                       id="serviceModalSelectedInput" 
+                                       name="service" 
+                                       placeholder="Selected Service / Offering" 
+                                       aria-label="Selected Service or Offering" 
+                                       readonly>
                             </div>
                         </div>
 
@@ -186,9 +184,7 @@ $service_modal_consultants = [
     </div>
 </div>
 
-<!-- ==========================================================================
-     Service Form Modal Styles
-     ========================================================================== -->
+
 <style>
 .service-booking-modal .modal-dialog {
     max-width: 680px;
@@ -226,38 +222,6 @@ $service_modal_consultants = [
     transform: rotate(90deg) scale(1.05);
 }
 
-/* Dynamic Pre-selected Offering Highlight Pill */
-.service-modal-selected-pill {
-    background: rgba(130, 56, 122, 0.05);
-    border: 1px solid rgba(130, 56, 122, 0.14);
-    border-radius: 14px;
-    transition: all 0.3s ease;
-}
-
-.service-pill-tag {
-    background: linear-gradient(135deg, #82387a, #54205f);
-    color: #ffffff;
-    font-size: 0.68rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 3px 9px;
-    border-radius: 99px;
-}
-
-.service-pill-name {
-    color: #111133;
-    font-size: 1.02rem;
-    font-weight: 700;
-    font-family: var(--brand-font-serif, 'Playfair Display', serif);
-}
-
-.service-pill-status {
-    font-size: 0.8rem;
-    color: #15803d;
-    font-weight: 600;
-}
-
 @media (max-width: 767.98px) {
     .service-booking-modal .modal-content {
         border-radius: 22px;
@@ -274,9 +238,6 @@ $service_modal_consultants = [
 }
 </style>
 
-<!-- ==========================================================================
-     Dynamic Data Population Script
-     ========================================================================== -->
 <script>
 (function() {
     function initServiceModal() {
@@ -291,18 +252,12 @@ $service_modal_consultants = [
             var title = button.getAttribute('data-service-title') || button.getAttribute('data-title') || 'Selected Offering';
             var category = button.getAttribute('data-service-category') || button.getAttribute('data-category') || 'Enquiry';
 
-            var badge = modalElem.querySelector('#serviceModalBadge');
             var titleText = modalElem.querySelector('#serviceModalTitle');
-            var pillTag = modalElem.querySelector('#serviceModalPillTag');
-            var pillName = modalElem.querySelector('#serviceModalPillName');
-            var hiddenInput = modalElem.querySelector('#serviceModalHiddenInput');
+            var selectedInput = modalElem.querySelector('#serviceModalSelectedInput');
             var categoryInput = modalElem.querySelector('#serviceModalCategoryInput');
 
-            if (badge) badge.textContent = category.toUpperCase();
             if (titleText) titleText.textContent = title;
-            if (pillTag) pillTag.textContent = category.toUpperCase();
-            if (pillName) pillName.textContent = title;
-            if (hiddenInput) hiddenInput.value = title;
+            if (selectedInput) selectedInput.value = title;
             if (categoryInput) categoryInput.value = category;
         });
 
@@ -311,18 +266,12 @@ $service_modal_consultants = [
             var title = serviceTitle || 'Selected Offering';
             var category = serviceCategory || 'Enquiry';
 
-            var badge = modalElem.querySelector('#serviceModalBadge');
             var titleText = modalElem.querySelector('#serviceModalTitle');
-            var pillTag = modalElem.querySelector('#serviceModalPillTag');
-            var pillName = modalElem.querySelector('#serviceModalPillName');
-            var hiddenInput = modalElem.querySelector('#serviceModalHiddenInput');
+            var selectedInput = modalElem.querySelector('#serviceModalSelectedInput');
             var categoryInput = modalElem.querySelector('#serviceModalCategoryInput');
 
-            if (badge) badge.textContent = category.toUpperCase();
             if (titleText) titleText.textContent = title;
-            if (pillTag) pillTag.textContent = category.toUpperCase();
-            if (pillName) pillName.textContent = title;
-            if (hiddenInput) hiddenInput.value = title;
+            if (selectedInput) selectedInput.value = title;
             if (categoryInput) categoryInput.value = category;
 
             if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
