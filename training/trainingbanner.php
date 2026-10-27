@@ -15,15 +15,15 @@ if (isset($training_banner_title)) {
     $training_banner_title_2 = $parts[1] ?? '';
 } else {
     $training_banner_title_1 = $training_banner_title_1 ?? 'Empower Your Sacred Calling,';
-    $training_banner_title_2 = $training_banner_title_2 ?? 'Certified Training & <em>Workshops</em>';
+    $training_banner_title_2 = $training_banner_title_2 ?? 'Certified Holistic <em>Training</em>';
 }
 
 ?>
 
-<section class="gallery-banner-section training-banner-section position-relative" id="trainingBanner" aria-label="Certified Training & Workshops Banner">
+<section class="gallery-banner-section training-banner-section position-relative" id="trainingBanner" aria-label="Certified Holistic Training Banner">
     <!-- Background Image -->
     <img src="<?= htmlspecialchars($training_banner_bg) ?>" 
-         alt="Certified Training and Workshops Banner" 
+         alt="Certified Holistic Training Banner" 
          class="gallery-banner-bg-img training-banner-bg-img"
          loading="eager">
 

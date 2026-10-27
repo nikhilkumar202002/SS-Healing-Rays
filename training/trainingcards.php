@@ -81,7 +81,7 @@ $training_programs = [
         
         <!-- Section Header -->
         <div class="training-section-header text-center">
-            <span class="training-section-pretitle">SACRED MASTERY &amp; CERTIFICATION</span>
+        
             <h2 class="training-section-title">Certified <em>Training Programs</em></h2>
             <p class="training-section-subtitle">
                 Deepen your calling with authentic, certified curriculum led by experienced master mentors. Each program blends sacred initiations, practical hands-on hours, comprehensive study materials, and recognized practitioner credentials.
@@ -111,15 +111,9 @@ $training_programs = [
                     </div>
 
                     <!-- Content Column -->
-                    <div class="col-12 col-lg-6 d-flex flex-column">
+                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
                         <div class="training-content-card">
                             
-                            <!-- Header / Metadata -->
-                            <div class="training-card-header d-flex align-items-center gap-2 mb-2">
-                                <span class="training-card-number"><?= $program['number'] ?>.</span>
-                                <span class="training-card-badge"><?= $program['badge'] ?></span>
-                            </div>
-
                             <!-- Title -->
                             <h3 class="training-card-title"><?= $program['title'] ?></h3>
 
