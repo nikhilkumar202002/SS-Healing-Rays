@@ -7,21 +7,34 @@ $contact_title_highlight = $contact_title_highlight ?? 'Retreat';
 $contact_subtitle        = $contact_subtitle ?? 'Step into a sacred sanctuary of peace, alignment, and revitalizing energy. Share your intentions below to begin.';
 
 $consultant_options = [
-    'Sreeparvathi C M — Reiki Grandmaster',
-    'Sravanthi Chillara — Holistic & Crystal Healer',
-    'Senior Sanctuary Practitioner',
-    'First Available Master Healer',
+    'Sreeparvathy | Emotional wellness Coach',
+    'Sravanti | Healer • Coach • Yoga',
 ];
 
-$service_options = [
-    'Reiki & Universal Energy Healing',
-    'Chakra Balancing & Alignment',
-    'Crystal Vibration Therapy',
-    'Tibetan Singing Bowl Sound Bath',
-    'Angel Guidance & Card Reading',
-    'Emotional Freedom Technique (EFT)',
-    'Trauma Release & Breathwork',
-    'Sacred Healing Circle & Retreat',
+$service_categories = [
+    'I. Healings' => [
+        'Reiki Healing',
+        'Crystal Healing',
+        'Angel Healing',
+        'Energy healing',
+        'EFT',
+        'Counselling',
+        'Trauma Healing',
+        'Personal Transformation Healing',
+        'Meditations',
+        'Tarot Card reading',
+        'Therapeutic Yoga',
+    ],
+    'II. Training' => [
+        'Reiki- Shiki Ryoho & Karuna Reiki- All levels',
+        'Crystal Therapy',
+        'Angel Therapy',
+        'EFT',
+    ],
+    'III. COURSES on Wellness' => [
+        'Spandan',
+        'Chetan',
+    ],
 ];
 ?>
 
@@ -47,10 +60,7 @@ $service_options = [
                     <div class="contact-form-header mb-4">
                         <div class="contact-badge-wrapper mb-2">
                             <span class="contact-badge">
-                                <svg class="contact-badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
-                                    <path d="M12 6a6 6 0 0 0-6 6c0 3 2 5 6 9 4-4 6-6 6-9a6 6 0 0 0-6-6z"/>
-                                </svg>
+                              
                                 <?= htmlspecialchars($contact_pretitle) ?>
                             </span>
                         </div>
@@ -61,9 +71,7 @@ $service_options = [
                                 <span class="title-highlight"><?= htmlspecialchars($contact_title_highlight) ?></span>
                             </span>
                         </h2>
-                        <?php if (!empty($contact_subtitle)): ?>
-                            <p class="contact-subtext mb-0"><?= htmlspecialchars($contact_subtitle) ?></p>
-                        <?php endif; ?>
+                        
                     </div>
 
                     <!-- Underline-Only Form (No labels, no icons, placeholders only) -->
@@ -146,8 +154,12 @@ $service_options = [
                                             aria-label="Choose a Service"
                                             required>
                                         <option value="" disabled selected>Choose a Service</option>
-                                        <?php foreach ($service_options as $service): ?>
-                                            <option value="<?= htmlspecialchars($service) ?>"><?= htmlspecialchars($service) ?></option>
+                                        <?php foreach ($service_categories as $category => $services): ?>
+                                            <optgroup label="<?= htmlspecialchars($category) ?>">
+                                                <?php foreach ($services as $service): ?>
+                                                    <option value="<?= htmlspecialchars($service) ?>"><?= htmlspecialchars($service) ?></option>
+                                                <?php endforeach; ?>
+                                            </optgroup>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>

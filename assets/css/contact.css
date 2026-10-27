@@ -35,7 +35,7 @@
 .contact-arch-wrapper:hover {
     transform: translateY(-3px);
     box-shadow: 0 24px 54px rgba(17, 17, 51, 0.11),
-                0 8px 24px rgba(232, 69, 124, 0.12);
+                0 8px 24px rgba(186, 67, 108, 0.15);
 }
 
 .contact-arch-img {
@@ -74,11 +74,11 @@
     font-weight: 500;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #e8457c;
+    color: var(--secondary-color, #ba436c);
 }
 
 .contact-badge-icon {
-    stroke: #e8457c;
+    stroke: var(--secondary-color, #ba436c);
     animation: contactBadgeSpin 18s linear infinite;
 }
 
@@ -102,7 +102,7 @@
     font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
     font-style: italic;
     font-weight: 600;
-    color: #e8457c;
+    color: var(--secondary-color, #ba436c);
     margin-left: 0.25rem;
 }
 
@@ -146,7 +146,7 @@
 
 .contact-underline-input:focus {
     background-color: transparent !important;
-    border-bottom: 2px solid #e8457c !important;
+    border-bottom: 2px solid var(--secondary-color, #ba436c) !important;
     box-shadow: none !important;
     outline: none !important;
 }
@@ -172,21 +172,31 @@
 
 .contact-underline-select:focus {
     background-color: transparent !important;
-    border-bottom: 2px solid #e8457c !important;
+    border-bottom: 2px solid var(--secondary-color, #ba436c) !important;
     box-shadow: none !important;
     outline: none !important;
     color: #111133 !important;
 }
 
+.contact-underline-select optgroup {
+    font-weight: 700;
+    color: #54205f;
+    background-color: #f8f6fb;
+    font-size: 0.96rem;
+    padding: 8px 10px;
+    letter-spacing: 0.02em;
+}
+
 .contact-underline-select option {
     background-color: #ffffff;
     color: #111133;
-    padding: 10px;
+    font-weight: 400;
+    padding: 9px 12px;
 }
 
-/* Highlighted Retreat/Service Select (Echoing reference pink accent) */
+/* Highlighted Retreat/Service Select (Using brand secondary color) */
 .contact-service-select {
-    color: #e8457c !important;
+    color: var(--secondary-color, #ba436c) !important;
     font-weight: 500;
 }
 
@@ -201,13 +211,13 @@
     line-height: 1.6;
 }
 
-/* 4. Submit Pill Button (Echoing Reference Mockup) */
+/* 4. Submit Pill Button (Brand Secondary Color) */
 .btn-contact-submit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.92rem 2.2rem;
-    background: linear-gradient(135deg, #ff5388 0%, #f43f7a 100%);
+    background: linear-gradient(135deg, var(--secondary-color, #ba436c) 0%, #9e3256 100%);
     color: #ffffff !important;
     font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
     font-size: 1.12rem;
@@ -215,7 +225,7 @@
     letter-spacing: -0.01em;
     border: none;
     border-radius: 50px;
-    box-shadow: 0 8px 24px rgba(244, 63, 122, 0.35);
+    box-shadow: 0 8px 24px rgba(186, 67, 108, 0.35);
     cursor: pointer;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -226,8 +236,8 @@
 }
 
 .btn-contact-submit:hover {
-    background: linear-gradient(135deg, #ff3d79 0%, #e02f6b 100%);
-    box-shadow: 0 14px 34px rgba(244, 63, 122, 0.48);
+    background: linear-gradient(135deg, #a6365c 0%, #8b2546 100%);
+    box-shadow: 0 14px 34px rgba(186, 67, 108, 0.45);
     transform: translateY(-2px);
     color: #ffffff !important;
 }
