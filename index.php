@@ -15,5 +15,6 @@ include 'cta-banner.php';
 include 'testimonials.php';
 include 'gallery.php';
 include 'faq.php';
+include 'contact.php';
 include 'footer.php';
 ?>

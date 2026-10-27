@@ -1,0 +1,297 @@
+/* ==========================================================================
+   Contact & Booking Section - SS Healing Rays
+   Specifications:
+     - Left Side: Cathedral-arch framed photo matching full height of right side
+     - Right Side: Clean minimalist form with underline-only border
+     - No form labels, no icons, placeholders only
+     - No background objects (pure clean canvas)
+     - Rose-pink pill button echoing reference mockup
+   ========================================================================== */
+
+.contact-section {
+    position: relative;
+    padding: 6.5rem 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 1. Left Side: Full-Height Arch-Framed Photo */
+.contact-arch-wrapper {
+    position: relative;
+    max-width: 440px;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border-radius: 260px 260px 24px 24px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    box-shadow: 0 16px 44px rgba(17, 17, 51, 0.08),
+                0 4px 14px rgba(84, 32, 95, 0.04);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-arch-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 54px rgba(17, 17, 51, 0.11),
+                0 8px 24px rgba(232, 69, 124, 0.12);
+}
+
+.contact-arch-img {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-arch-wrapper:hover .contact-arch-img {
+    transform: scale(1.025);
+}
+
+/* 2. Right Side: Form Container */
+.contact-form-container {
+    max-width: 620px;
+    width: 100%;
+    position: relative;
+}
+
+/* Badge */
+.contact-badge-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.contact-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #e8457c;
+}
+
+.contact-badge-icon {
+    stroke: #e8457c;
+    animation: contactBadgeSpin 18s linear infinite;
+}
+
+@keyframes contactBadgeSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Heading */
+.contact-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.3rem, 4.2vw, 3.35rem);
+    font-weight: 400;
+    line-height: 53px;
+    color: var(--heading-color, #111133);
+    margin: 0;
+    letter-spacing: -0.015em;
+}
+
+.contact-heading .title-highlight {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    color: #e8457c;
+    margin-left: 0.25rem;
+}
+
+.contact-subtext {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: #666677;
+    margin-top: 0.85rem;
+}
+
+/* 3. Underline-Only Form Fields (No Labels, No Icons) */
+.contact-field-group {
+    position: relative;
+    width: 100%;
+}
+
+.contact-underline-input {
+    width: 100%;
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1.5px solid #d5d3de !important;
+    border-radius: 0 !important;
+    padding: 0.95rem 0.15rem !important;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 1.05rem;
+    color: #111133 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: border-bottom-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-underline-input::placeholder {
+    color: #555566 !important;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 1.02rem;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.contact-underline-input:focus {
+    background-color: transparent !important;
+    border-bottom: 2px solid #e8457c !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Underline Dropdown Selects */
+.contact-underline-select {
+    width: 100%;
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1.5px solid #d5d3de !important;
+    border-radius: 0 !important;
+    padding: 0.95rem 1.8rem 0.95rem 0.15rem !important;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 1.05rem;
+    color: #555566 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    cursor: pointer;
+    background-position: right 0 center !important;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.contact-underline-select:focus {
+    background-color: transparent !important;
+    border-bottom: 2px solid #e8457c !important;
+    box-shadow: none !important;
+    outline: none !important;
+    color: #111133 !important;
+}
+
+.contact-underline-select option {
+    background-color: #ffffff;
+    color: #111133;
+    padding: 10px;
+}
+
+/* Highlighted Retreat/Service Select (Echoing reference pink accent) */
+.contact-service-select {
+    color: #e8457c !important;
+    font-weight: 500;
+}
+
+.contact-service-select:focus {
+    color: #111133 !important;
+}
+
+/* Textarea */
+.contact-underline-textarea {
+    resize: none !important;
+    min-height: 60px !important;
+    line-height: 1.6;
+}
+
+/* 4. Submit Pill Button (Echoing Reference Mockup) */
+.btn-contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.92rem 2.2rem;
+    background: linear-gradient(135deg, #ff5388 0%, #f43f7a 100%);
+    color: #ffffff !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.12rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 24px rgba(244, 63, 122, 0.35);
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-contact-submit i {
+    font-size: 1.35rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-contact-submit:hover {
+    background: linear-gradient(135deg, #ff3d79 0%, #e02f6b 100%);
+    box-shadow: 0 14px 34px rgba(244, 63, 122, 0.48);
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+
+.btn-contact-submit:hover i {
+    transform: translateX(4px);
+}
+
+.btn-contact-submit:active {
+    transform: translateY(0) scale(0.985);
+}
+
+.contact-privacy-note {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.84rem;
+    color: #777788;
+}
+
+/* 5. Responsive Adaptations */
+@media (max-width: 1199.98px) {
+    .contact-arch-wrapper {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .contact-section {
+        padding: 5rem 0;
+    }
+    .contact-arch-wrapper {
+        max-width: 360px;
+        height: 460px;
+        min-height: 460px;
+        margin-bottom: 2.25rem;
+    }
+    .contact-heading {
+        line-height: 48px;
+    }
+    .contact-form-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact-section {
+        padding: 4rem 0;
+    }
+    .contact-arch-wrapper {
+        max-width: 300px;
+        height: 380px;
+        min-height: 380px;
+        border-radius: 200px 200px 20px 20px;
+        margin-bottom: 1.75rem;
+    }
+    .contact-heading {
+        line-height: 42px;
+    }
+    .contact-underline-input,
+    .contact-underline-select {
+        padding: 0.82rem 0.1rem !important;
+        font-size: 1rem;
+    }
+    .btn-contact-submit {
+        padding: 0.85rem 1.8rem;
+        font-size: 1.05rem;
+    }
+}

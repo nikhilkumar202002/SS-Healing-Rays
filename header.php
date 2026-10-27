@@ -112,6 +112,9 @@ $nav_items = $nav_items ?? [
 
     <!-- Frequently Asked Questions (FAQ) Accordion Styles -->
     <link rel="stylesheet" href="assets/css/faq.css">
+
+    <!-- Contact & Booking Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
 
