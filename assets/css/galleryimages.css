@@ -1,0 +1,364 @@
+/* ==========================================================================
+   Masonry Gallery Grid & Interactive Lightbox Component
+   SS Healing Rays
+   ========================================================================== */
+
+.masonry-gallery-section {
+    position: relative;
+    padding: 5rem 0 6rem;
+    background: #ffffff;
+}
+
+/* Header Area */
+.masonry-header {
+    margin-bottom: 2.75rem;
+}
+
+.masonry-pretitle {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+    margin-bottom: 0.6rem;
+}
+
+.masonry-heading {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+}
+
+.masonry-heading em {
+    font-style: italic;
+    color: var(--primary-color, #82387a);
+}
+
+.masonry-lead {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 620px;
+}
+
+/* Filter Nav Pills */
+.masonry-filter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 3rem;
+}
+
+.masonry-filter-btn {
+    background: #f8fafc;
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    color: #475569;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.masonry-filter-btn:hover {
+    color: var(--primary-color, #82387a);
+    background: rgba(130, 56, 122, 0.06);
+    border-color: rgba(130, 56, 122, 0.2);
+}
+
+.masonry-filter-btn.active {
+    background: var(--primary-color, #82387a);
+    color: #ffffff;
+    border-color: var(--primary-color, #82387a);
+    box-shadow: 0 4px 14px rgba(130, 56, 122, 0.28);
+}
+
+/* Pure CSS Columns Masonry Grid */
+.masonry-columns {
+    column-count: 4;
+    column-gap: 22px;
+    width: 100%;
+}
+
+@media (max-width: 1399.98px) {
+    .masonry-columns {
+        column-count: 4;
+        column-gap: 18px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .masonry-columns {
+        column-count: 3;
+        column-gap: 18px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .masonry-columns {
+        column-count: 2;
+        column-gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry-columns {
+        column-count: 1;
+        column-gap: 0;
+    }
+}
+
+/* Masonry Item Card */
+.masonry-item {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 22px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #f1f5f9;
+    box-shadow: 0 6px 18px rgba(17, 17, 51, 0.06);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+@media (max-width: 767.98px) {
+    .masonry-item {
+        margin-bottom: 14px;
+        border-radius: 12px;
+    }
+}
+
+.masonry-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(17, 17, 51, 0.14);
+}
+
+.masonry-item.is-hidden {
+    display: none !important;
+}
+
+.masonry-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.masonry-item:hover .masonry-img {
+    transform: scale(1.06);
+}
+
+/* Hover Vignette Overlay */
+.masonry-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(17, 17, 51, 0.8) 0%,
+        rgba(130, 56, 122, 0.45) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+.masonry-item:hover .masonry-overlay {
+    opacity: 1;
+}
+
+/* Overlay Top Badge */
+.masonry-item-badge {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Overlay Bottom Action Icon */
+.masonry-item-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.masonry-item-caption {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-size: 0.92rem;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.masonry-zoom-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+    flex-shrink: 0;
+}
+
+.masonry-item:hover .masonry-zoom-icon {
+    transform: scale(1.08);
+    background: var(--primary-color, #82387a);
+    border-color: var(--primary-color, #82387a);
+}
+
+/* Lightbox Modal */
+.gallery-lightbox-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(11, 11, 26, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.gallery-lightbox-modal.is-active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content-box {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.lightbox-caption-bar {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 760px;
+}
+
+.lightbox-counter {
+    color: #ffd6e0;
+    font-weight: 600;
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: -46px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+    background: var(--secondary-color, #ba436c);
+    transform: rotate(90deg);
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+    background: var(--primary-color, #82387a);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev-btn {
+    left: -70px;
+}
+
+.lightbox-next-btn {
+    right: -70px;
+}
+
+@media (max-width: 768px) {
+    .lightbox-prev-btn {
+        left: 10px;
+        background: rgba(17, 17, 51, 0.7);
+    }
+    .lightbox-next-btn {
+        right: 10px;
+        background: rgba(17, 17, 51, 0.7);
+    }
+    .lightbox-close-btn {
+        top: -42px;
+        right: 10px;
+    }
+}

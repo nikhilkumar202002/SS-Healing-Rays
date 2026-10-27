@@ -164,6 +164,12 @@ $nav_items = $nav_items ?? [
     <!-- Sacred Gallery 3x4 Grid Custom Styles -->
     <link rel="stylesheet" href="assets/css/gallery.css">
 
+    <!-- Gallery Page Hero Banner Custom Styles -->
+    <link rel="stylesheet" href="assets/css/gallerybanner.css">
+
+    <!-- Masonry Gallery Grid & Lightbox Styles -->
+    <link rel="stylesheet" href="assets/css/galleryimages.css">
+
     <!-- Frequently Asked Questions (FAQ) Accordion Styles -->
     <link rel="stylesheet" href="assets/css/faq.css">
 
