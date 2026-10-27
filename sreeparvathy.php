@@ -306,8 +306,7 @@ include __DIR__ . '/common/header.php';
                                 <img src="assets/images/profile/sreeparvathi.jpg" 
                                      alt="Sreeparvathy Emotional Wellness Coach at SS Healing Rays" 
                                      class="profile-portrait-img">
-                                
-
+                            
                             </div>
                         </div>
 
