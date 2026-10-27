@@ -212,6 +212,9 @@ $nav_items = $nav_items ?? [
     <!-- Personal Profile Details Page Custom Styles -->
     <link rel="stylesheet" href="assets/css/profile.css">
 
+    <!-- Customer Stories Banner & Page Custom Styles -->
+    <link rel="stylesheet" href="assets/css/storiesbanner.css">
+
     <!-- Reusable Footer Island Custom Styles -->
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
