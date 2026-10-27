@@ -75,13 +75,6 @@ include __DIR__ . '/common/header.php';
                             
                             <!-- Pillar 1: Trauma-Informed Coaching -->
                             <div class="profile-pillar-card">
-                                <div class="profile-pillar-icon-box" aria-label="Trauma-Informed Coaching Icon">
-                                    <!-- Exact Sanctuary Shield & Calming Heart Icon -->
-                                    <svg class="profile-pillar-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                        <path d="M12 8.3c-.9-1.2-2.3-1.5-3.3-.6-1.1.9-1.2 2.5-.4 3.6 1.4 1.9 3.7 4.2 3.7 4.2s2.3-2.3 3.7-4.2c.8-1.1.7-2.7-.4-3.6-1-.9-2.4-.6-3.3.6z" fill="currentColor" fill-opacity="0.22"/>
-                                    </svg>
-                                </div>
                                 <div class="profile-pillar-content">
                                     <div class="profile-pillar-header-row">
                                         <h4>Trauma-Informed Coaching</h4>
@@ -95,15 +88,6 @@ include __DIR__ . '/common/header.php';
 
                             <!-- Pillar 2: EFT (Emotional Freedom Techniques) -->
                             <div class="profile-pillar-card">
-                                <div class="profile-pillar-icon-box" aria-label="EFT Meridian Tapping Icon">
-                                    <!-- Exact Acupressure Meridian Tapping Hand & Resonance Waves -->
-                                    <svg class="profile-pillar-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M7 3.5a7 7 0 0 1 10 0" stroke-dasharray="2 2"/>
-                                        <path d="M9 5.8a4.2 4.2 0 0 1 6 0"/>
-                                        <circle cx="12" cy="6.5" r="1.5" fill="currentColor"/>
-                                        <path d="M12 8.8v5.5a1.8 1.8 0 0 0 3.6 0v-2.2a1.5 1.5 0 0 1 3 0v3.2a5.5 5.5 0 0 1-5.5 5.5h-1a5.5 5.5 0 0 1-5.5-5.5v-3.2a1.5 1.5 0 0 1 3 0v1.2"/>
-                                    </svg>
-                                </div>
                                 <div class="profile-pillar-content">
                                     <div class="profile-pillar-header-row">
                                         <h4>EFT (Emotional Freedom Techniques)</h4>
@@ -117,21 +101,6 @@ include __DIR__ . '/common/header.php';
 
                             <!-- Pillar 3: Reiki Energy Healing -->
                             <div class="profile-pillar-card">
-                                <div class="profile-pillar-icon-box" aria-label="Reiki Universal Energy Rays Icon">
-                                    <!-- Exact Universal Life-Force / Radiant Reiki Rays -->
-                                    <svg class="profile-pillar-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <circle cx="12" cy="12" r="4" fill="currentColor" fill-opacity="0.22"/>
-                                        <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-                                        <line x1="12" y1="2" x2="12" y2="5"/>
-                                        <line x1="12" y1="19" x2="12" y2="22"/>
-                                        <line x1="2" y1="12" x2="5" y2="12"/>
-                                        <line x1="19" y1="12" x2="22" y2="12"/>
-                                        <line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/>
-                                        <line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/>
-                                        <line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/>
-                                        <line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/>
-                                    </svg>
-                                </div>
                                 <div class="profile-pillar-content">
                                     <div class="profile-pillar-header-row">
                                         <h4>Reiki Energy Healing</h4>

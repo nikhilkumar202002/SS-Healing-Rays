@@ -741,8 +741,7 @@
     gap: 0.65rem;
 }
 
-.profile-sticky-btn-wa {
-/* Sticky Buttons using Reusable Main Button Component (.Btn-Container) */
+.profile-sticky-btn-wa
 .Btn-Profile-Sticky-WA,
 .Btn-Profile-Sticky-Enquire {
     width: 100% !important;
