@@ -94,7 +94,7 @@ $team_members = $team_members ?? [
                                 $btn_icon_bg    = 'transparent';
                                 $btn_text_color = '#ffffff';
                                 $btn_icon_color = '#ffffff';
-                                include __DIR__ . '/assets/common/button.php';
+                                include dirname(__DIR__) . '/common/button.php';
                             ?>
                         </div>
 

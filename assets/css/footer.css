@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Footer Component - SS Healing Rays (Fully Responsive Across All Devices)
+   Specifications:
+     - Section background: Transparent
+     - Inside container card: Light grey (#f4f4f7)
+     - Desktop margin: 50px surrounding (responsive on mobile)
+     - Curved border radius (30px desktop, smoothly scaling down)
+     - Responsive grid and typography for 4K down to 320px mobile
+   ========================================================================== */
+
+/* Outer Footer Section (Zero background) */
+.site-footer {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    border: none !important;
+    width: 100%;
+}
+
+/* Inside Container Card (Light Grey with 50px Surrounding Margin & Border Radius) */
+.footer-container-card {
+    background-color: #f4f4f7;
+    max-width: 1360px;
+    margin: 50px auto;
+    width: calc(100% - 100px);
+    border-radius: 30px;
+    padding: 4.5rem 3.5rem 2.25rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(17, 17, 51, 0.06);
+    box-shadow: 0 12px 36px rgba(17, 17, 51, 0.04);
+}
+
+/* 1. Brand Identity Column */
+.footer-logo-wrapper {
+    display: inline-block;
+}
+
+.footer-brand-logo {
+    height: 52px;
+    width: auto;
+    max-width: 190px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.footer-brand-logo:hover {
+    transform: scale(1.03);
+}
+
+.footer-bio {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #666677;
+    max-width: 340px;
+}
+
+/* Social Buttons */
+.footer-social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: var(--heading-color, #111133);
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.92rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(17, 17, 51, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-social-btn:hover {
+    background-color: var(--secondary-color, #ba436c);
+    color: #ffffff !important;
+    border-color: var(--secondary-color, #ba436c);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(186, 67, 108, 0.28);
+}
+
+/* 2. Column Headings */
+.footer-col-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.15rem;
+    position: relative;
+}
+
+/* Sub-group Titles inside Training & Courses */
+.footer-subgroup-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+    margin-top: 1.25rem;
+    margin-bottom: 0.45rem;
+}
+
+/* 3. Link Lists */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.footer-link {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.91rem;
+    color: #555566;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.footer-link:hover {
+    color: var(--secondary-color, #ba436c);
+    transform: translateX(3px);
+}
+
+/* Workshops Subgrid */
+.footer-workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem 0.85rem;
+}
+
+/* 4. Contact & Visit Info */
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-contact-item {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.91rem;
+    color: #555566;
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+}
+
+.footer-contact-item i {
+    color: var(--secondary-color, #ba436c);
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.footer-contact-item a {
+    color: #555566;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-contact-item a:hover {
+    color: var(--secondary-color, #ba436c);
+}
+
+/* 5. Bottom Copyright Bar */
+.footer-bottom {
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(17, 17, 51, 0.08);
+}
+
+.footer-copyright {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.88rem;
+    color: #777788;
+}
+
+.footer-credit {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #666677;
+    letter-spacing: 0.02em;
+    transition: color 0.25s ease;
+}
+
+.footer-credit:hover {
+    color: var(--secondary-color, #ba436c);
+}
+
+/* ==========================================================================
+   Responsive Adaptations Across Breakpoints
+   ========================================================================== */
+
+/* Laptops & Desktops (1200px - 1399.98px) */
+@media (max-width: 1399.98px) {
+    .footer-container-card {
+        max-width: 100%;
+        width: auto;
+        margin: 50px 35px;
+        padding: 4rem 3rem 2rem 3rem;
+    }
+}
+
+/* Large Tablets / Small Laptops (992px - 1199.98px) */
+@media (max-width: 1199.98px) {
+    .footer-container-card {
+        max-width: 100%;
+        width: auto;
+        margin: 40px 24px;
+        padding: 3.5rem 2.25rem 2rem 2.25rem;
+        border-radius: 26px;
+    }
+    .footer-workshops-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.65rem 1rem;
+    }
+    .footer-col-workshops {
+        margin-top: 0.75rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(17, 17, 51, 0.06);
+    }
+}
+
+/* Medium Tablets (768px - 991.98px) */
+@media (max-width: 991.98px) {
+    .footer-container-card {
+        max-width: 100%;
+        width: auto;
+        margin: 30px 18px;
+        padding: 3.25rem 2rem 1.85rem 2rem;
+        border-radius: 24px;
+    }
+    .footer-workshops-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.65rem 1rem;
+    }
+    .footer-col-workshops {
+        margin-top: 0.75rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(17, 17, 51, 0.06);
+    }
+}
+
+/* Small Tablets / Large Phones (576px - 767.98px) */
+@media (max-width: 767.98px) {
+    .footer-container-card {
+        max-width: 100%;
+        width: auto;
+        margin: 20px 12px;
+        padding: 2.75rem 1.5rem 1.65rem 1.5rem;
+        border-radius: 22px;
+    }
+    .footer-workshops-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem 0.75rem;
+    }
+    .footer-bottom {
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        flex-direction: column !important;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .footer-col-workshops {
+        margin-top: 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(17, 17, 51, 0.06);
+    }
+}
+
+/* Standard Mobile Devices (375px - 575.98px) */
+@media (max-width: 575.98px) {
+    .footer-container-card {
+        max-width: 100%;
+        width: auto;
+        margin: 16px 10px;
+        padding: 2.25rem 1.15rem 1.35rem 1.15rem;
+        border-radius: 18px;
+    }
+    .footer-brand-logo {
+        height: 46px;
+    }
+    .footer-col-heading {
+        font-size: 0.98rem;
+        margin-bottom: 0.85rem;
+    }
+    .footer-link,
+    .footer-contact-item {
+        font-size: 0.88rem;
+    }
+    .footer-social-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.88rem;
+    }
+    .footer-workshops-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem 0.65rem;
+    }
+    .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+        font-size: 0.82rem;
+    }
+    .footer-copyright,
+    .footer-credit {
+        font-size: 0.82rem;
+    }
+}
+
+/* Extra Narrow Mobile Devices (320px - 374.98px) */
+@media (max-width: 374.98px) {
+    .footer-container-card {
+        margin: 12px 6px;
+        padding: 1.85rem 0.85rem 1.15rem 0.85rem;
+        border-radius: 16px;
+    }
+    .footer-brand-logo {
+        height: 40px;
+    }
+    .footer-col-heading {
+        font-size: 0.92rem;
+        margin-bottom: 0.75rem;
+    }
+    .footer-link,
+    .footer-contact-item {
+        font-size: 0.84rem;
+        line-height: 1.38;
+    }
+    .footer-workshops-grid {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+    }
+}

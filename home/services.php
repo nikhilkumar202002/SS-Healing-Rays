@@ -127,7 +127,7 @@ $services_list = $services_list ?? [
             $btn_text  = $services_cta_text;
             $btn_url   = $services_cta_url;
             $btn_class = 'Btn-Services-Primary';
-            include __DIR__ . '/assets/common/button.php';
+            include dirname(__DIR__) . '/common/button.php';
         ?>
     </div>
 

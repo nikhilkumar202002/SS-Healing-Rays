@@ -190,7 +190,7 @@ $gallery_row_2 = [
             $btn_icon_bg    = '#54205f';
             $btn_text_color = '#111133';
             $btn_icon_color = '#ffffff';
-            include __DIR__ . '/assets/common/button.php';
+            include dirname(__DIR__) . '/common/button.php';
         ?>
     </div>
 

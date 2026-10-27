@@ -12,7 +12,7 @@ $about_title_highlight = $about_title_highlight ?? 'Unique';
 $about_desc            = $about_desc ?? "At Heal with Sreeparvathy, healing is more than a single session. I combine Reiki, EFT and energy healing with compassionate coaching to help you release trauma, ease stress and reconnect with your inner calm. Each session is shaped around you, held in a safe, non-judgmental space, and guided at a pace that feels right for you.";
 $about_btn_text        = $about_btn_text ?? 'Learn More';
 $about_btn_url         = $about_btn_url ?? '#about';
-$about_img             = $about_img ?? (file_exists(__DIR__ . '/assets/images/about-image.jpeg') ? 'assets/images/about-image.jpeg' : 'assets/images/workshop-healing-circle.png');
+$about_img             = $about_img ?? (file_exists(dirname(__DIR__) . '/assets/images/about-image.jpeg') ? 'assets/images/about-image.jpeg' : 'assets/images/workshop-healing-circle.png');
 ?>
 
 <section class="about-section workshop-section" id="about">
@@ -39,7 +39,7 @@ $about_img             = $about_img ?? (file_exists(__DIR__ . '/assets/images/ab
         <div class="row align-items-center justify-content-center about-grid-row">
             
             <!-- Left Column: Parabolic Arch Image Card -->
-            <div class="col-lg-auto col-about-image d-flex justify-content-center">
+            <div class="col-12 col-lg-auto col-about-image d-flex justify-content-center">
                 <div class="workshop-image-card">
                     <img src="<?= htmlspecialchars($about_img) ?>" 
                          alt="<?= htmlspecialchars($about_title_1 . ' ' . $about_title_2 . ' ' . $about_title_highlight) ?>"
@@ -48,12 +48,15 @@ $about_img             = $about_img ?? (file_exists(__DIR__ . '/assets/images/ab
             </div>
 
             <!-- Right Column: About Us Content & Actions -->
-            <div class="col-lg-auto col-about-content">
+            <div class="col-12 col-lg-auto col-about-content">
                 <div class="workshop-content about-content">
                     
                     <!-- Sacred Energy Pinwheel Badge -->
                     <div class="about-badge workshop-badge">
-                       
+                        <svg class="about-badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
+                        </svg>
                         <span><?= htmlspecialchars($about_badge) ?></span>
                     </div>
 
@@ -77,7 +80,7 @@ $about_img             = $about_img ?? (file_exists(__DIR__ . '/assets/images/ab
                             $btn_text  = $about_btn_text;
                             $btn_url   = $about_btn_url;
                             $btn_class = 'Btn-About-Primary';
-                            include __DIR__ . '/assets/common/button.php';
+                            include dirname(__DIR__) . '/common/button.php';
                         ?>
                     </div>
 

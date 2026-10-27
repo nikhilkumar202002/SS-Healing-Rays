@@ -45,7 +45,6 @@
 body {
     font-family: var(--brand-font-sans);
     color: #334155;
-    background-color: #FAFAFA;
 }
 
 /* ==========================================================================
@@ -544,9 +543,9 @@ cite,
 #siteHeader .Btn-Container .text {
     color: var(--heading-color, #111133) !important;
     font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
-    font-size: 1.18rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
+    font-size: 1.12rem;
+    font-weight: 500 !important; /* Medium font weight */
+    letter-spacing: -0.01em;
     padding-right: 0;
     transition: color 0.3s ease;
 }
@@ -555,17 +554,21 @@ cite,
 #siteHeader .Btn-Container .icon-Container {
     width: 48px;
     height: 48px;
+    min-width: 48px;
     background-color: var(--primary-color, #82387a) !important;
     border: none !important;
     box-shadow: none !important;
     color: #ffffff !important;
-    display: flex !important;
+    display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 0 !important;
+    line-height: 1 !important;
     font-size: 0 !important;
+    border-radius: 50% !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -573,20 +576,25 @@ cite,
 .Btn-Header .icon-Container i,
 #siteHeader .Btn-Container .icon-Container .btn-arrow-svg,
 #siteHeader .Btn-Container .icon-Container i {
+    width: 20px;
+    height: 20px;
     color: #ffffff !important;
     stroke: #ffffff !important;
     fill: none !important;
+    stroke-width: 2.6;
     display: block !important;
     margin: 0 auto !important;
+    padding: 0 !important;
+    transform: none !important; /* Perfectly centered in middle of circle */
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, stroke 0.3s ease;
 }
 
-/* Hover Invert State */
+/* Hover State */
 .Btn-Header:hover,
 #siteHeader .Btn-Container:hover {
     background-color: var(--primary-color, #82387a) !important;
     border-color: var(--primary-color, #82387a) !important;
-    box-shadow: 0 8px 24px rgba(130, 56, 122, 0.32) !important;
+    box-shadow: 0 8px 24px rgba(130, 56, 122, 0.28) !important;
     transform: translateY(-2px);
 }
 
@@ -597,18 +605,17 @@ cite,
 
 .Btn-Header:hover .icon-Container,
 #siteHeader .Btn-Container:hover .icon-Container {
-    background-color: #ffffff !important;
-    border: none !important;
-    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.22) !important;
+    transform: scale(1.04);
 }
 
 .Btn-Header:hover .icon-Container .btn-arrow-svg,
 .Btn-Header:hover .icon-Container i,
-#siteHeader .Btn-Container .icon-Container .btn-arrow-svg,
-#siteHeader .Btn-Container .icon-Container i {
-    color: #000000 !important;
-    stroke: #000000 !important; /* Black arrow on hover */
-    transform: translate(2px, -2px);
+#siteHeader .Btn-Container:hover .icon-Container .btn-arrow-svg,
+#siteHeader .Btn-Container:hover .icon-Container i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    transform: translate(1px, -1px);
 }
 
 .Btn-Header:active,

@@ -17,7 +17,7 @@
  *    $btn_text  = 'Explore Services';
  *    $btn_url   = '#services';
  *    $btn_class = 'Btn-Header';
- *    include 'assets/common/button.php';
+ *    include 'common/button.php';
  * ==============================================================================
  */
 

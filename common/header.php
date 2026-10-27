@@ -115,6 +115,9 @@ $nav_items = $nav_items ?? [
 
     <!-- Contact & Booking Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/contact.css">
+
+    <!-- Reusable Footer Island Custom Styles -->
+    <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
 
@@ -200,7 +203,7 @@ $nav_items = $nav_items ?? [
                         $btn_url     = $cta_url;
                         $btn_class   = 'Btn-Header';
                         $btn_id      = 'headerCtaBtn';
-                        include __DIR__ . '/assets/common/button.php';
+                        include __DIR__ . '/button.php';
                     ?>
                 </div>
 
@@ -248,7 +251,7 @@ $nav_items = $nav_items ?? [
                 $btn_url     = $cta_url;
                 $btn_class   = 'Btn-Header w-100 justify-content-between';
                 $btn_id      = 'drawerCtaBtn';
-                include __DIR__ . '/assets/common/button.php';
+                include __DIR__ . '/button.php';
             ?>
         </div>
     </div>

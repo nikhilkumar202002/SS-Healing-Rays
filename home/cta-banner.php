@@ -61,7 +61,7 @@ $cta_banner_images = $cta_banner_images ?? [
                     $btn_icon_bg    = '#54205f';
                     $btn_text_color = '#111133';
                     $btn_icon_color = '#ffffff';
-                    include __DIR__ . '/assets/common/button.php';
+                    include dirname(__DIR__) . '/common/button.php';
                 ?>
             </div>
 

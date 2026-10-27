@@ -63,7 +63,7 @@ $banner_slides = $banner_slides ?? [
                                     $btn_text  = $slide['btn1_text'];
                                     $btn_url   = $slide['btn1_url'] ?? '#services';
                                     $btn_class = 'Btn-Banner-Primary';
-                                    include __DIR__ . '/assets/common/button.php';
+                                    include dirname(__DIR__) . '/common/button.php';
                                 ?>
                             <?php endif; ?>
 
@@ -73,7 +73,7 @@ $banner_slides = $banner_slides ?? [
                                     $btn_text  = $slide['btn2_text'];
                                     $btn_url   = $slide['btn2_url'] ?? '#booking';
                                     $btn_class = 'Btn-Banner-Ghost';
-                                    include __DIR__ . '/assets/common/button.php';
+                                    include dirname(__DIR__) . '/common/button.php';
                                 ?>
                             <?php endif; ?>
                         </div>
