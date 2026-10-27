@@ -1,6 +1,7 @@
 /* ==========================================================================
    Masonry Gallery Grid & Interactive Lightbox Component
    SS Healing Rays
+   Typography: Marcellus for headings, Playfair Display for highlighted accents
    ========================================================================== */
 
 .masonry-gallery-section {
@@ -9,77 +10,51 @@
     background: #ffffff;
 }
 
-/* Header Area */
+/* 1. Header Area */
 .masonry-header {
-    margin-bottom: 2.75rem;
+    margin-bottom: 3.5rem;
 }
 
 .masonry-pretitle {
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.78rem;
-    font-weight: 700;
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.92rem;
+    font-weight: 400;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--secondary-color, #ba436c);
-    margin-bottom: 0.6rem;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.85rem;
 }
 
 .masonry-heading {
-    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif) !important;
+    font-size: clamp(2.3rem, 4.2vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.22;
     color: var(--heading-color, #111133);
-    margin-bottom: 0.75rem;
-    line-height: 1.25;
+    margin-bottom: 0.95rem;
+    letter-spacing: -0.015em;
 }
 
-.masonry-heading em {
-    font-style: italic;
-    color: var(--primary-color, #82387a);
+.masonry-heading em,
+.masonry-heading .title-highlight,
+.masonry-heading i {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    color: #c43666;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
 }
 
 .masonry-lead {
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.95rem;
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(0.95rem, 1.25vw, 1.05rem);
     color: #64748b;
-    max-width: 620px;
+    max-width: 680px;
+    line-height: 1.6;
 }
 
-/* Filter Nav Pills */
-.masonry-filter-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 3rem;
-}
-
-.masonry-filter-btn {
-    background: #f8fafc;
-    border: 1px solid rgba(17, 17, 51, 0.08);
-    color: #475569;
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.masonry-filter-btn:hover {
-    color: var(--primary-color, #82387a);
-    background: rgba(130, 56, 122, 0.06);
-    border-color: rgba(130, 56, 122, 0.2);
-}
-
-.masonry-filter-btn.active {
-    background: var(--primary-color, #82387a);
-    color: #ffffff;
-    border-color: var(--primary-color, #82387a);
-    box-shadow: 0 4px 14px rgba(130, 56, 122, 0.28);
-}
-
-/* Pure CSS Columns Masonry Grid */
+/* 2. Pure CSS Columns Masonry Grid (All Images) */
 .masonry-columns {
     column-count: 4;
     column-gap: 22px;
@@ -114,7 +89,7 @@
     }
 }
 
-/* Masonry Item Card */
+/* 3. Masonry Item Card */
 .masonry-item {
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
@@ -126,7 +101,7 @@
     cursor: pointer;
     background: #f1f5f9;
     box-shadow: 0 6px 18px rgba(17, 17, 51, 0.06);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 767.98px) {
@@ -139,10 +114,6 @@
 .masonry-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 36px rgba(17, 17, 51, 0.14);
-}
-
-.masonry-item.is-hidden {
-    display: none !important;
 }
 
 .masonry-img {
@@ -158,7 +129,7 @@
     transform: scale(1.06);
 }
 
-/* Hover Vignette Overlay */
+/* 4. Hover Vignette Overlay */
 .masonry-overlay {
     position: absolute;
     inset: 0;
@@ -171,7 +142,7 @@
     opacity: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 18px;
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 2;
@@ -181,24 +152,6 @@
     opacity: 1;
 }
 
-/* Overlay Top Badge */
-.masonry-item-badge {
-    align-self: flex-start;
-    background: rgba(255, 255, 255, 0.22);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #ffffff;
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Overlay Bottom Action Icon */
 .masonry-item-bottom {
     display: flex;
     align-items: center;
@@ -208,7 +161,7 @@
 
 .masonry-item-caption {
     font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     font-style: italic;
     color: #ffffff;
     line-height: 1.3;
@@ -237,7 +190,7 @@
     border-color: var(--primary-color, #82387a);
 }
 
-/* Lightbox Modal */
+/* 5. Lightbox Modal */
 .gallery-lightbox-modal {
     display: none;
     position: fixed;

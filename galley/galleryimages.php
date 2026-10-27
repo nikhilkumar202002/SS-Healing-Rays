@@ -1,13 +1,28 @@
 <?php
+/**
+ * ==============================================================================
+ * Masonry Gallery Grid Component - SS Healing Rays
+ * Dynamic display of all gallery photos in assets/images/gallery/
+ * Pure CSS columns masonry layout with Marcellus & Playfair Display typography
+ * and built-in fullscreen interactive lightbox.
+ * ==============================================================================
+ */
 
+// Dynamic scan of all images in assets/images/gallery/
 $gallery_dir = dirname(__DIR__) . '/assets/images/gallery';
 $gallery_items = [];
 
-$category_presets = [
-    ['slug' => 'circles',    'badge' => 'Healing Circle',    'caption' => 'Sacred Energy Alignment'],
-    ['slug' => 'retreats',   'badge' => 'Retreat Gathering', 'caption' => 'Deep Soul Connection'],
-    ['slug' => 'meditation', 'badge' => 'Meditation',        'caption' => 'Mindful Inner Stillness'],
-    ['slug' => 'community',  'badge' => 'Sacred Community',  'caption' => 'Hearts in Harmony'],
+$captions = [
+    'Sacred Energy Alignment',
+    'Deep Soul Connection',
+    'Mindful Inner Stillness',
+    'Hearts in Harmony',
+    'Holistic Healing Circle',
+    'Chakra Harmonization Sanctuary',
+    'Reiki Awakening Practice',
+    'Tibetan Sound Bath Resonance',
+    'Peaceful Contemplation and Balance',
+    'Guided Meditation Journey',
 ];
 
 if (is_dir($gallery_dir)) {
@@ -17,14 +32,12 @@ if (is_dir($gallery_dir)) {
         $idx = 0;
         foreach ($raw_files as $file) {
             $filename = basename($file);
-            $preset   = $category_presets[$idx % count($category_presets)];
+            $caption  = $captions[$idx % count($captions)];
             $gallery_items[] = [
-                'src'      => 'assets/images/gallery/' . $filename,
-                'alt'      => 'SS Healing Rays ' . $preset['badge'] . ' - ' . $preset['caption'],
-                'category' => $preset['slug'],
-                'badge'    => $preset['badge'],
-                'caption'  => $preset['caption'],
-                'index'    => $idx,
+                'src'     => 'assets/images/gallery/' . $filename,
+                'alt'     => 'SS Healing Rays - ' . $caption,
+                'caption' => $caption,
+                'index'   => $idx,
             ];
             $idx++;
         }
@@ -37,9 +50,9 @@ $total_images = count($gallery_items);
 <section class="masonry-gallery-section" id="gallery" aria-label="Photo Gallery Collection">
     <div class="container-fluid px-3 px-md-4 px-xl-5">
         
-        <!-- Section Header -->
+        <!-- Section Header with Marcellus and Playfair Display highlighted font -->
         <div class="masonry-header text-center">
-            
+           
             <h2 class="masonry-heading">
                 Explore the <em>Sacred</em> Moments
             </h2>
@@ -48,33 +61,13 @@ $total_images = count($gallery_items);
             </p>
         </div>
 
-        <!-- Filter Tabs -->
-        <div class="masonry-filter-nav" role="tablist" aria-label="Gallery category filters">
-            <button type="button" class="masonry-filter-btn active" data-filter="all">
-                All Moments (<?= $total_images ?>)
-            </button>
-            <button type="button" class="masonry-filter-btn" data-filter="circles">
-                Healing Circles
-            </button>
-            <button type="button" class="masonry-filter-btn" data-filter="retreats">
-                Retreat Gatherings
-            </button>
-            <button type="button" class="masonry-filter-btn" data-filter="meditation">
-                Guided Meditations
-            </button>
-            <button type="button" class="masonry-filter-btn" data-filter="community">
-                Sacred Community
-            </button>
-        </div>
-
-        <!-- Pure CSS Columns Masonry Grid -->
+        <!-- Pure CSS Columns Masonry Grid (All Images) -->
         <div class="masonry-columns" id="masonryGrid">
             <?php foreach ($gallery_items as $item): ?>
                 <div class="masonry-item" 
-                     data-category="<?= htmlspecialchars($item['category']) ?>" 
                      data-index="<?= $item['index'] ?>"
                      data-src="<?= htmlspecialchars($item['src']) ?>"
-                     data-caption="<?= htmlspecialchars($item['caption']) ?> • <?= htmlspecialchars($item['badge']) ?>">
+                     data-caption="<?= htmlspecialchars($item['caption']) ?>">
                     
                     <img src="<?= htmlspecialchars($item['src']) ?>" 
                          alt="<?= htmlspecialchars($item['alt']) ?>" 
@@ -82,11 +75,7 @@ $total_images = count($gallery_items);
                          loading="lazy">
                     
                     <div class="masonry-overlay">
-                        <span class="masonry-item-badge">
-                            <?= htmlspecialchars($item['badge']) ?>
-                        </span>
-                        
-                        <div class="masonry-item-bottom">
+                        <div class="masonry-item-bottom w-100">
                             <span class="masonry-item-caption">
                                 <?= htmlspecialchars($item['caption']) ?>
                             </span>
@@ -128,10 +117,9 @@ $total_images = count($gallery_items);
     </div>
 </div>
 
-<!-- Inline Interactive Script for Filtering & Lightbox (Vanilla JS) -->
+<!-- Lightbox Interactive Script (Vanilla JS) -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.masonry-filter-btn');
     const masonryItems = Array.from(document.querySelectorAll('.masonry-item'));
     const lightbox = document.getElementById('galleryLightbox');
     const lightboxImg = document.getElementById('lightboxActiveImg');
@@ -141,48 +129,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('lightboxPrevBtn');
     const nextBtn = document.getElementById('lightboxNextBtn');
 
-    let currentVisibleItems = [...masonryItems];
     let currentIndex = 0;
 
-    // 1. Category Filtering
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-
-            const filter = this.getAttribute('data-filter');
-
-            masonryItems.forEach(item => {
-                const itemCat = item.getAttribute('data-category');
-                if (filter === 'all' || itemCat === filter) {
-                    item.classList.remove('is-hidden');
-                } else {
-                    item.classList.add('is-hidden');
-                }
-            });
-
-            currentVisibleItems = masonryItems.filter(item => !item.classList.contains('is-hidden'));
-        });
-    });
-
-    // 2. Open Lightbox
+    // 1. Open Lightbox
     function openLightbox(index) {
-        if (!currentVisibleItems.length) return;
-        currentIndex = (index + currentVisibleItems.length) % currentVisibleItems.length;
-        const targetItem = currentVisibleItems[currentIndex];
+        if (!masonryItems.length) return;
+        currentIndex = (index + masonryItems.length) % masonryItems.length;
+        const targetItem = masonryItems[currentIndex];
 
         const src = targetItem.getAttribute('data-src');
         const caption = targetItem.getAttribute('data-caption') || 'Sacred Healing Moment';
 
         lightboxImg.src = src;
         lightboxCaption.textContent = caption;
-        lightboxCounter.textContent = `${currentIndex + 1} / ${currentVisibleItems.length}`;
+        lightboxCounter.textContent = `${currentIndex + 1} / ${masonryItems.length}`;
 
         lightbox.classList.add('is-active');
         document.body.style.overflow = 'hidden';
     }
 
-    // 3. Close Lightbox
+    // 2. Close Lightbox
     function closeLightbox() {
         lightbox.classList.remove('is-active');
         document.body.style.overflow = '';
@@ -191,17 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     }
 
-    // 4. Attach Item Click
-    masonryItems.forEach(item => {
+    // 3. Attach Item Click
+    masonryItems.forEach((item, idx) => {
         item.addEventListener('click', function() {
-            const visibleIdx = currentVisibleItems.indexOf(this);
-            if (visibleIdx !== -1) {
-                openLightbox(visibleIdx);
-            }
+            openLightbox(idx);
         });
     });
 
-    // 5. Lightbox Controls
+    // 4. Lightbox Controls
     closeBtn.addEventListener('click', closeLightbox);
     
     prevBtn.addEventListener('click', (e) => {
