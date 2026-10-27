@@ -1,10 +1,19 @@
 <?php
 
-$page_title       = 'Sreeparvathy – Emotional Wellness Coach & Master Energy Healer | SS Healing Rays';
-$page_description = 'Helping women move through stress and emotional overwhelm through Trauma-Informed Coaching, EFT meridian tapping, and Reiki healing with Sreeparvathy.';
-$current_page     = 'about';
-$cta_text         = 'Book Clarity Call';
-$cta_url          = 'https://chat.whatsapp.com/CJpMxOezsRzAutnt2yxuAm';
+$page_title        = 'Sreeparvathy – Emotional Wellness Coach & Master Energy Healer | SS Healing Rays';
+$page_description  = 'Helping women move through stress and emotional overwhelm through Trauma-Informed Coaching, EFT meridian tapping, and Reiki healing with Sreeparvathy.';
+$current_page      = 'about';
+
+// WhatsApp Direct Connect Configuration with Initial Message
+$whatsapp_phone    = '+91 90006 06792';
+$whatsapp_digits   = '919000606792';
+$whatsapp_message  = 'Hi Sreeparvathy, I would like to request a free CLARITY call for emotional wellness & healing.';
+$whatsapp_url      = 'https://wa.me/' . $whatsapp_digits . '?text=' . rawurlencode($whatsapp_message);
+
+$phone_number      = $whatsapp_phone;
+$phone_tel         = '+919000606792';
+$cta_text          = 'Book Clarity Call';
+$cta_url           = $whatsapp_url;
 
 include __DIR__ . '/common/header.php';
 ?>
@@ -37,12 +46,26 @@ include __DIR__ . '/common/header.php';
                         Guiding you from survival mode and high-functioning anxiety into a grounded sanctuary of nervous system safety, somatic release, and inner sovereignty.
                     </p>
 
-
+                    <!-- Hero Actions via common/button.php -->
+                    <div class="profile-hero-actions d-flex flex-wrap align-items-center gap-3 mb-5">
+                        <?php
+                            $btn_text  = 'Book a Clarity Call';
+                            $btn_url   = $whatsapp_url;
+                            $btn_class = 'Btn-Profile-Primary';
+                            $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                            include __DIR__ . '/common/button.php';
+                        ?>
+                        <?php
+                            $btn_text  = 'Explore Healing Pillars';
+                            $btn_url   = '#healing-pillars';
+                            $btn_class = 'Btn-Profile-Secondary';
+                            include __DIR__ . '/common/button.php';
+                        ?>
+                    </div>
 
                     <!-- Core Healing Pillars / Specializations -->
-                    <div class="profile-pillars-section mb-5">
+                    <div class="profile-pillars-section mb-5" id="healing-pillars">
                         <div class="profile-pillars-header">
-                       
                             <h2 class="profile-section-heading">
                                 The Three <em>Healing Pillars</em>
                             </h2>
@@ -121,6 +144,16 @@ include __DIR__ . '/common/header.php';
                             </div>
 
                         </div>
+
+                        <!-- Pillar Action CTA via common/button.php -->
+                        <div class="profile-pillars-action mt-4">
+                            <?php
+                                $btn_text  = 'Enquire for Sessions';
+                                $btn_url   = 'contact.php?practitioner=Sreeparvathy';
+                                $btn_class = 'Btn-Profile-Primary';
+                                include __DIR__ . '/common/button.php';
+                            ?>
+                        </div>
                     </div>
 
                     <!-- Philosophy & Compassionate Holding Space -->
@@ -142,30 +175,41 @@ include __DIR__ . '/common/header.php';
                         <p class="profile-story-text">
                             Sreeparvathy combines holistic coaching with direct somatic meridian tapping and energetic healing. Instead of intellectualizing your pain, we work directly with the nervous system to create sustainable shifts, restoring your natural calm, healthy personal boundaries, and joyful presence.
                         </p>
+
+                        <!-- Story Action CTA via common/button.php -->
+                        <div class="profile-story-action mt-4">
+                            <?php
+                                $btn_text  = 'Begin Your Healing Journey';
+                                $btn_url   = 'contact.php?practitioner=Sreeparvathy';
+                                $btn_class = 'Btn-Profile-Primary';
+                                include __DIR__ . '/common/button.php';
+                            ?>
+                        </div>
                     </div>
 
-                    <!-- DM CLARITY Action Box -->
-                    <div class="profile-clarity-box">
-                        
-                        <h3 class="profile-clarity-title">Ready for Your <em>Clarity Call</em>?</h3>
+                    <!-- DM CLARITY Action Section (Plain Clean Layout with Main Button Design) -->
+                    <div class="profile-clarity-section mb-5" id="clarity-call">
+                        <h2 class="profile-section-heading">
+                            Ready for Your <em>Clarity Call</em>?
+                        </h2>
                         <p class="profile-clarity-desc">
-                            Send a direct message with the word <strong>CLARITY</strong> or click below to connect directly on WhatsApp. Let&rsquo;s discuss what you&rsquo;re experiencing and explore a personalized path back to emotional balance.
+                            Send a direct message with the word <strong>CLARITY</strong> or click below to connect directly on WhatsApp (+91 90006 06792). Let&rsquo;s discuss what you&rsquo;re experiencing and explore a personalized path back to emotional balance.
                         </p>
                         <div class="profile-clarity-actions">
-                            <a href="https://chat.whatsapp.com/CJpMxOezsRzAutnt2yxuAm" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="profile-btn-clarity-wa">
-                                <i class="bi bi-whatsapp"></i>
-                                <span>Message on WhatsApp</span>
-                            </a>
-                            <a href="https://www.instagram.com/heal_sreeparvathy/" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="profile-btn-clarity-ig">
-                                <i class="bi bi-instagram"></i>
-                                <span>DM on Instagram</span>
-                            </a>
+                            <?php
+                                $btn_text  = 'Message on WhatsApp';
+                                $btn_url   = $whatsapp_url;
+                                $btn_class = 'Btn-Profile-Primary';
+                                $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                                include __DIR__ . '/common/button.php';
+                            ?>
+                            <?php
+                                $btn_text  = 'DM on Instagram';
+                                $btn_url   = 'https://www.instagram.com/heal_sreeparvathy/';
+                                $btn_class = 'Btn-Profile-Secondary';
+                                $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                                include __DIR__ . '/common/button.php';
+                            ?>
                         </div>
                     </div>
 
@@ -323,6 +367,14 @@ include __DIR__ . '/common/header.php';
                                 </article>
 
                             </div>
+                        <!-- Testimonials Action CTA via common/button.php -->
+                        <div class="profile-testimonials-action text-center mt-4 pt-2">
+                            <?php
+                                $btn_text  = 'Schedule Your Transformation';
+                                $btn_url   = 'contact.php?practitioner=Sreeparvathy';
+                                $btn_class = 'Btn-Profile-Primary';
+                                include __DIR__ . '/common/button.php';
+                            ?>
                         </div>
                     </div>
 
@@ -350,19 +402,20 @@ include __DIR__ . '/common/header.php';
                             <p class="profile-sticky-contact-desc">
                                 Compassionate 1-on-1 sessions held online worldwide and in-person at our sacred sanctuary.
                             </p>
-                            <div class="profile-sticky-btn-group">
-                                <a href="https://chat.whatsapp.com/CJpMxOezsRzAutnt2yxuAm" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer" 
-                                   class="profile-sticky-btn-wa">
-                                    <i class="bi bi-whatsapp"></i>
-                                    <span>Join WhatsApp Community</span>
-                                </a>
-                                <a href="contact.php?practitioner=Sreeparvathy" 
-                                   class="profile-sticky-btn-enquire">
-                                    <i class="bi bi-calendar2-check"></i>
-                                    <span>Schedule a Session</span>
-                                </a>
+                            <div class="profile-sticky-btn-group d-flex flex-column gap-2 mt-3">
+                                <?php
+                                    $btn_text  = 'Connect on WhatsApp';
+                                    $btn_url   = $whatsapp_url;
+                                    $btn_class = 'Btn-Profile-Sticky-WA';
+                                    $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                                    include __DIR__ . '/common/button.php';
+                                ?>
+                                <?php
+                                    $btn_text  = 'Schedule a Session';
+                                    $btn_url   = 'contact.php?practitioner=Sreeparvathy';
+                                    $btn_class = 'Btn-Profile-Sticky-Enquire';
+                                    include __DIR__ . '/common/button.php';
+                                ?>
                             </div>
                         </div>
 
