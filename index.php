@@ -10,5 +10,8 @@ include 'header.php';
 include 'banner.php';
 include 'workshop.php';
 include 'services.php';
+include 'team.php';
+include 'cta-banner.php';
+include 'testimonials.php';
 include 'footer.php';
 ?>

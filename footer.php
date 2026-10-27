@@ -81,5 +81,8 @@
 <!-- Healing Services Carousel Script -->
 <script src="assets/js/services.js"></script>
 
+<!-- Retreat CTA Full Banner Swiper Script -->
+<script src="assets/js/cta-banner.js"></script>
+
 </body>
 </html>

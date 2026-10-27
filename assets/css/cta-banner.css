@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Full Banner CTA Section - Whispers of Stillness Retreat
+   Matches UI Screenshot:
+     - Full bleed height/width
+     - Background images crossfading with smooth Ken Burns/fade animation
+     - Soft luminous daylight / frosted overlay
+     - Title: "Join Us at" (Marcellus, #111133)
+              "Whispers of Stillness" (Playfair Display Italic, #54205f)
+              "Retreat" (Marcellus, #111133)
+     - White Pill Reusable Button: "Book your slot ↗"
+   ========================================================================== */
+
+.cta-banner-section {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    height: 70vh;
+    max-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f3f0;
+}
+
+/* 1. Background Swiper */
+.cta-banner-swiper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cta-banner-swiper .swiper-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cta-banner-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    transform: scale(1.02);
+    transition: transform 7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cta-banner-swiper .swiper-slide-active .cta-banner-bg-img {
+    transform: scale(1.07);
+}
+
+/* 2. Black Linear Gradient Overlay from Bottom to Top */
+.cta-banner-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.52) 45%,
+        rgba(0, 0, 0, 0.25) 80%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
+}
+
+/* 3. Content Positioning */
+.cta-banner-container {
+    z-index: 3;
+    padding: 3rem 1.5rem;
+}
+
+.cta-banner-content {
+    max-width: 920px;
+}
+
+/* 4. Typography */
+.cta-banner-title {
+    margin: 0 0 2.25rem 0;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+}
+
+.cta-banner-title .cta-title-line {
+    display: block;
+}
+
+.cta-banner-title .cta-title-main {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+    font-weight: 400;
+    color: #ffffff;
+
+}
+
+.cta-banner-title .cta-title-highlight {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(3rem, 6.2vw, 5.2rem);
+    color: #ffffff;
+    margin: 0.15rem 0;
+    letter-spacing: -0.01em;
+   
+}
+
+/* 5. Action Button */
+.cta-banner-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Btn-Cta-Retreat {
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(17, 17, 51, 0.18), 0 2px 6px rgba(84, 32, 95, 0.08) !important;
+    padding: 4px 5px 4px 26px !important;
+    gap: 16px !important;
+    height: 56px !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.Btn-Cta-Retreat .text {
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #111133 !important;
+    letter-spacing: -0.01em;
+}
+
+.Btn-Cta-Retreat .icon-Container {
+    width: 46px !important;
+    height: 46px !important;
+    background-color: #54205f !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(84, 32, 95, 0.3) !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.Btn-Cta-Retreat .icon-Container .btn-arrow-svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: #ffffff !important;
+    color: #ffffff !important;
+    stroke-width: 2.6 !important;
+    transition: transform 0.3s ease;
+}
+
+.Btn-Cta-Retreat:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 38px rgba(84, 32, 95, 0.28) !important;
+    background-color: #ffffff !important;
+}
+
+.Btn-Cta-Retreat:hover .icon-Container {
+    background-color: #752984 !important;
+    transform: scale(1.05);
+}
+
+.Btn-Cta-Retreat:hover .icon-Container .btn-arrow-svg {
+    transform: translate(2px, -2px);
+}
+
+.Btn-Cta-Retreat:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* 6. Responsive Queries */
+@media (max-width: 767.98px) {
+    .cta-banner-section {
+        min-height: 460px;
+        height: auto;
+        padding: 4.5rem 0;
+    }
+    .cta-banner-title {
+        margin-bottom: 1.75rem;
+    }
+    .Btn-Cta-Retreat {
+        height: 50px !important;
+        padding: 3px 4px 3px 20px !important;
+        gap: 12px !important;
+    }
+    .Btn-Cta-Retreat .text {
+        font-size: 1.02rem;
+    }
+    .Btn-Cta-Retreat .icon-Container {
+        width: 42px !important;
+        height: 42px !important;
+    }
+}

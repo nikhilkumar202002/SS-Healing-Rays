@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Testimonials Bento Grid Component - SS Healing Rays
+   3 Rows x 3 Columns Layout:
+     - Row 1: [Card] [Card] [Image Only]
+     - Row 2: [Card] [Card] [Card]
+     - Row 3: [Card] [Image Only] [Card]
+     - Light grey card background (#f3f4f6)
+     - No border, no box-shadow, no glowing items
+     - Center text aligned
+     - Elements: Stars (Gold) -> Description (Lato) -> Name (Marcellus)
+   ========================================================================== */
+
+.testimonials-section {
+    position: relative;
+    padding: 6.5rem 0 6.5rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 1. Header Typography */
+.testimonials-header {
+    margin-bottom: 3.75rem;
+    max-width: 760px;
+}
+
+.testimonials-pretitle {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.92rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.15rem;
+}
+
+.testimonials-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.3rem, 4vw, 3.25rem);
+    font-weight: 400;
+    line-height: 53px;
+    color: var(--heading-color, #111133);
+    margin: 0 auto 1.25rem;
+    letter-spacing: -0.015em;
+}
+
+.testimonials-heading .title-highlight {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    color: #c43666;
+    margin-left: 0.25rem;
+}
+
+/* 2. Bento Grid Layout (3 Rows x 3 Columns) */
+.testimonials-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, minmax(440px, auto));
+    gap: 20px;
+}
+
+/* 3. Clean Bento Card */
+.bento-card {
+    position: relative;
+    border-radius: 24px;
+    background-color: #f3f4f6; /* Clean light grey */
+    border: none !important;
+    box-shadow: none !important;
+    padding: 3rem 2.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    min-height: 440px;
+}
+
+.bento-card:hover {
+    background-color: #ebecef;
+    box-shadow: none !important;
+}
+
+/* 4. Image-Only Card (Row 1 Col 3 & Row 3 Col 2) */
+.bento-card-image-only {
+    padding: 0 !important;
+    overflow: hidden;
+    background-color: #f3f4f6;
+    border: none !important;
+    box-shadow: none !important;
+    min-height: 440px;
+    height: 100%;
+}
+
+.bento-card-image-only .bento-image-fill {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card-image-only:hover .bento-image-fill {
+    transform: scale(1.05);
+}
+
+/* 5. Stars (Centered, Warm Amber Gold) */
+.bento-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #f59e0b;
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+}
+
+/* 6. Description in Lato with 25px font size */
+.bento-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.48;
+    color: #475569;
+    margin: 0 auto 1.5rem auto;
+    max-width: 100%;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+/* 7. Name in Marcellus Font with Secondary Color */
+.bento-name {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--secondary-color, #ba436c);
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+/* 8. Responsive Breakpoints */
+@media (max-width: 1199.98px) {
+    .bento-description {
+        font-size: 22px;
+        line-height: 1.45;
+    }
+    .bento-card,
+    .bento-card-image-only {
+        min-height: 400px;
+        padding: 2.5rem 1.85rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .testimonials-section {
+        padding: 5rem 0;
+    }
+    .testimonials-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 18px;
+    }
+    .bento-card,
+    .bento-card-image-only {
+        min-height: 380px;
+        padding: 2.25rem 1.65rem;
+    }
+    .bento-description {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .testimonials-section {
+        padding: 4.25rem 0;
+    }
+    .testimonials-bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 16px;
+    }
+    .bento-card {
+        padding: 2.25rem 1.5rem;
+        border-radius: 20px;
+        min-height: auto;
+    }
+    .bento-card-image-only {
+        height: 320px;
+        min-height: 320px;
+        border-radius: 20px;
+    }
+    .bento-description {
+        font-size: 20px;
+        line-height: 1.42;
+    }
+    .bento-name {
+        font-size: 1.2rem;
+    }
+}

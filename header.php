@@ -97,6 +97,15 @@ $nav_items = $nav_items ?? [
 
     <!-- Healing Services Carousel Custom Styles -->
     <link rel="stylesheet" href="assets/css/services.css">
+
+    <!-- Meet Our Team / Profile Cards Custom Styles -->
+    <link rel="stylesheet" href="assets/css/team.css">
+
+    <!-- Retreat CTA Full Banner Custom Styles -->
+    <link rel="stylesheet" href="assets/css/cta-banner.css">
+
+    <!-- Testimonials Bento Grid Custom Styles -->
+    <link rel="stylesheet" href="assets/css/testimonials.css">
 </head>
 <body>
 
