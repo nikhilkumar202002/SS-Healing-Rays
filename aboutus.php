@@ -18,8 +18,8 @@ include __DIR__ . '/common/header.php';
 // 2. Full-Height Hero Banner (No Slider, Matches Home Banner Aesthetics)
 include __DIR__ . '/about-us/aboutusbanner.php';
 
-// 3. About & Philosophy Section
-include __DIR__ . '/home/workshop.php';
+// 3. About The Healing Center (Introducing the Center & Sanctuary)
+include __DIR__ . '/about-us/aboutthehealing.php';
 
 // 4. Meet Our Healers & Guides
 include __DIR__ . '/home/team.php';

@@ -1,0 +1,136 @@
+/* ==========================================================================
+   About The Healing Center Component - SS Healing Rays
+   Layout:
+     - Left: Parabolic Arch Image Card (matching homepage about section)
+     - Right: Clean Heading & Elaborated Description (no buttons, no sub-badges)
+   ========================================================================== */
+
+.about-healing-section {
+    position: relative;
+    padding: 6.5rem 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 1. Main Grid Row */
+.about-healing-row {
+    row-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. Left Column: Parabolic Arch Image Card (matching homepage about section) */
+.about-healing-image-card {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    height: 580px;
+    margin: 0 auto;
+    border-radius: 44px 44px 250px 250px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px -10px rgba(17, 17, 51, 0.09);
+    background-color: #f8fafc;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.about-healing-image-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 55px -12px rgba(130, 56, 122, 0.22);
+}
+
+.about-healing-image-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-healing-image-card:hover img {
+    transform: scale(1.03);
+}
+
+/* 3. Right Column: Content Box */
+.about-healing-content {
+    max-width: 620px;
+    width: 100%;
+}
+
+/* 4. Heading: Marcellus with Playfair Display italic highlight */
+.about-healing-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+    font-weight: 400;
+    line-height: 1.24;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.015em;
+}
+
+.about-healing-heading em,
+.about-healing-heading .title-highlight,
+.about-healing-heading i {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    color: var(--secondary-color, #ba436c);
+}
+
+/* 5. Elaborated Description Typography in Lato */
+.about-healing-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(1rem, 1.2vw, 1.08rem);
+    color: #475569;
+    line-height: 1.82;
+}
+
+.about-healing-description p {
+    margin-bottom: 1.35rem;
+}
+
+.about-healing-description p:last-child {
+    margin-bottom: 0;
+}
+
+.about-healing-description strong {
+    color: var(--heading-color, #111133);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .about-healing-section {
+        padding: 4.5rem 0;
+    }
+    .about-healing-image-card {
+        max-width: 400px;
+        height: 500px;
+        border-radius: 36px 36px 210px 210px;
+    }
+    .about-healing-heading {
+        font-size: clamp(1.95rem, 5vw, 2.4rem);
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-healing-section {
+        padding: 3.75rem 0;
+    }
+    .about-healing-image-card {
+        max-width: 320px;
+        height: 410px;
+        border-radius: 30px 30px 170px 170px;
+    }
+    .about-healing-heading {
+        font-size: 1.85rem;
+        line-height: 1.28;
+    }
+    .about-healing-description {
+        font-size: 0.95rem;
+        line-height: 1.72;
+    }
+}
