@@ -115,9 +115,9 @@ $nav_items = $nav_items ?? [
         'label' => 'Gallery',
         'url'   => 'gallery.php',
     ],
-    'testimonials' => [
+    'stories' => [
         'label' => 'Stories',
-        'url'   => $is_home ? '#testimonials' : 'index.php#testimonials',
+        'url'   => 'customersstories.php',
     ],
     'contact' => [
         'label' => 'Contact',
@@ -238,7 +238,7 @@ $nav_items = $nav_items ?? [
                     <ul class="navbar-nav desktop-nav-menu d-none d-lg-flex flex-row align-items-center gap-1 gap-xl-2 m-0 p-0" aria-label="Primary Site Navigation">
                         <?php foreach ($nav_items as $key => $item): ?>
                             <?php 
-                                $isActive = ($current_page === $key);
+                                $isActive = ($current_page === $key || ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])));
                                 $hasCategories = !empty($item['categories']);
                                 $hasChildren = !empty($item['children']);
                             ?>
@@ -435,7 +435,7 @@ $nav_items = $nav_items ?? [
     <div class="offcanvas-body d-flex flex-column justify-content-between p-3">
         <ul class="navbar-nav offcanvas-nav gap-1">
             <?php foreach ($nav_items as $key => $item): ?>
-                <?php $isActive = ($current_page === $key); ?>
+                <?php $isActive = ($current_page === $key || ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials']))); ?>
                 <?php if (!empty($item['categories'])): ?>
                     <li class="nav-item">
                         <div class="d-flex align-items-center justify-content-between">
