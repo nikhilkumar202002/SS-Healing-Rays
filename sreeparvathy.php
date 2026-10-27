@@ -46,22 +46,6 @@ include __DIR__ . '/common/header.php';
                         Guiding you from survival mode and high-functioning anxiety into a grounded sanctuary of nervous system safety, somatic release, and inner sovereignty.
                     </p>
 
-                    <!-- Hero Actions via common/button.php -->
-                    <div class="profile-hero-actions d-flex flex-wrap align-items-center gap-3 mb-5">
-                        <?php
-                            $btn_text  = 'Book a Clarity Call';
-                            $btn_url   = $whatsapp_url;
-                            $btn_class = 'Btn-Profile-Primary';
-                            $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
-                            include __DIR__ . '/common/button.php';
-                        ?>
-                        <?php
-                            $btn_text  = 'Explore Healing Pillars';
-                            $btn_url   = '#healing-pillars';
-                            $btn_class = 'Btn-Profile-Secondary';
-                            include __DIR__ . '/common/button.php';
-                        ?>
-                    </div>
 
                     <!-- Core Healing Pillars / Specializations -->
                     <div class="profile-pillars-section mb-5" id="healing-pillars">
@@ -114,15 +98,6 @@ include __DIR__ . '/common/header.php';
 
                         </div>
 
-                        <!-- Pillar Action CTA via common/button.php -->
-                        <div class="profile-pillars-action mt-4">
-                            <?php
-                                $btn_text  = 'Enquire for Sessions';
-                                $btn_url   = 'contact.php?practitioner=Sreeparvathy';
-                                $btn_class = 'Btn-Profile-Primary';
-                                include __DIR__ . '/common/button.php';
-                            ?>
-                        </div>
                     </div>
 
                     <!-- Philosophy & Compassionate Holding Space -->
@@ -145,15 +120,7 @@ include __DIR__ . '/common/header.php';
                             Sreeparvathy combines holistic coaching with direct somatic meridian tapping and energetic healing. Instead of intellectualizing your pain, we work directly with the nervous system to create sustainable shifts, restoring your natural calm, healthy personal boundaries, and joyful presence.
                         </p>
 
-                        <!-- Story Action CTA via common/button.php -->
-                        <div class="profile-story-action mt-4">
-                            <?php
-                                $btn_text  = 'Begin Your Healing Journey';
-                                $btn_url   = 'contact.php?practitioner=Sreeparvathy';
-                                $btn_class = 'Btn-Profile-Primary';
-                                include __DIR__ . '/common/button.php';
-                            ?>
-                        </div>
+                        
                     </div>
 
                     <!-- DM CLARITY Action Section (Plain Clean Layout with Main Button Design) -->
@@ -338,15 +305,7 @@ include __DIR__ . '/common/header.php';
                             </div>
                         </div>
 
-                        <!-- Testimonials Action CTA via common/button.php -->
-                        <div class="profile-testimonials-action text-center mt-4 pt-2">
-                            <?php
-                                $btn_text  = 'Schedule Your Transformation';
-                                $btn_url   = 'contact.php?practitioner=Sreeparvathy';
-                                $btn_class = 'Btn-Profile-Primary';
-                                include __DIR__ . '/common/button.php';
-                            ?>
-                        </div>
+                       
                     </div>
 
                 </div>
