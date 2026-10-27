@@ -78,18 +78,18 @@ $services_categories = [
         'icon'     => 'bi bi-sun',
         'url'      => 'workshop.php',
         'items'    => [
-            ['label' => '1. Energy Reset', 'url' => 'workshop.php'],
-            ['label' => '2. Language of crystals', 'url' => 'workshop.php'],
-            ['label' => '3. Gratitude', 'url' => 'workshop.php'],
-            ['label' => '4. Loving Yourself', 'url' => 'workshop.php'],
-            ['label' => '5. Breath work', 'url' => 'workshop.php'],
-            ['label' => '6. Mudras', 'url' => 'workshop.php'],
-            ['label' => '7. Relaxation', 'url' => 'workshop.php'],
-            ['label' => '8. Money manifestation', 'url' => 'workshop.php'],
-            ['label' => '9. Energy Routine', 'url' => 'workshop.php'],
-            ['label' => '10. Abundance program', 'url' => 'workshop.php'],
-            ['label' => '11. Reprogram with meditation', 'url' => 'workshop.php'],
-            ['label' => '12. Colour meditation', 'url' => 'workshop.php'],
+            ['label' => '1. Energy Reset', 'url' => 'workshop.php#workshop-energy-reset'],
+            ['label' => '2. Language of crystals', 'url' => 'workshop.php#workshop-language-of-crystals'],
+            ['label' => '3. Gratitude', 'url' => 'workshop.php#workshop-gratitude'],
+            ['label' => '4. Loving Yourself', 'url' => 'workshop.php#workshop-loving-yourself'],
+            ['label' => '5. Breath work', 'url' => 'workshop.php#workshop-breath-work'],
+            ['label' => '6. Mudras', 'url' => 'workshop.php#workshop-mudras'],
+            ['label' => '7. Relaxation', 'url' => 'workshop.php#workshop-relaxation'],
+            ['label' => '8. Money manifestation', 'url' => 'workshop.php#workshop-money-manifestation'],
+            ['label' => '9. Energy Routine', 'url' => 'workshop.php#workshop-energy-routine'],
+            ['label' => '10. Abundance program', 'url' => 'workshop.php#workshop-abundance-program'],
+            ['label' => '11. Reprogram with meditation', 'url' => 'workshop.php#workshop-reprogram-with-meditation'],
+            ['label' => '12. Colour meditation', 'url' => 'workshop.php#workshop-colour-meditation'],
         ]
     ]
 ];
@@ -188,6 +188,9 @@ $nav_items = $nav_items ?? [
     <!-- Training Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/trainingbanner.css">
 
+    <!-- Workshop Page Hero Banner Custom Styles -->
+    <link rel="stylesheet" href="assets/css/workshopbanner.css">
+
     <!-- Full Service Cards 3-Column Grid Styles -->
     <link rel="stylesheet" href="assets/css/servicecards.css">
 
@@ -282,7 +285,7 @@ $nav_items = $nav_items ?? [
                                                                 </div>
 
                                                                 <!-- Hierarchical Tree Branch System -->
-                                                                <div class="tree-branch-hierarchy <?= count($cat['items']) > 8 ? 'tree-multi-column' : '' ?>">
+                                                                <div class="tree-branch-hierarchy <?= ($catKey === 'workshops') ? 'tree-multi-column' : '' ?>">
                                                                     <div class="tree-trunk-stem" aria-hidden="true"></div>
 
                                                                     <ul class="tree-nodes-list list-unstyled m-0 p-0">

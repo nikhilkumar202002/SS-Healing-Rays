@@ -415,10 +415,12 @@ cite,
         z-index: 1070;
     }
 
-    /* Workshops tree is 2-column for optimal compactness */
+    /* Workshops tree is 2-column for optimal compactness & aligned to bottom */
     .tree-pillar-item[data-pillar="workshops"] .tree-subpanel-wrap {
-        width: 530px;
-        min-width: 510px;
+        width: 480px;
+        min-width: 470px;
+        top: auto;
+        bottom: -6px;
     }
 
     .tree-subpanel-inner {
@@ -427,6 +429,23 @@ cite,
         padding: 1.25rem 1.4rem 1.15rem;
         border: 1px solid rgba(17, 17, 51, 0.08);
         box-shadow: 0 24px 56px -10px rgba(17, 17, 51, 0.16), 0 0 0 1px rgba(130, 56, 122, 0.06);
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(186, 67, 108, 0.25) transparent;
+    }
+
+    .tree-subpanel-inner::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .tree-subpanel-inner::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .tree-subpanel-inner::-webkit-scrollbar-thumb {
+        background: rgba(186, 67, 108, 0.25);
+        border-radius: 4px;
     }
 
     .tree-pillar-item:hover > .tree-subpanel-wrap {
@@ -492,7 +511,7 @@ cite,
         gap: 2px;
     }
 
-    /* Multi-column layout for pillars with many items */
+    /* Multi-column layout for workshops with dual-trunk branch visuals */
     .tree-branch-hierarchy.tree-multi-column .tree-nodes-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -501,6 +520,26 @@ cite,
 
     .tree-branch-hierarchy.tree-multi-column .tree-trunk-stem {
         display: none;
+    }
+
+    .tree-branch-hierarchy.tree-multi-column .tree-node-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 6px;
+        width: 1.5px;
+        background: linear-gradient(to bottom, rgba(186, 67, 108, 0.28), rgba(186, 67, 108, 0.12));
+    }
+
+    .tree-branch-hierarchy.tree-multi-column .tree-node-item:first-child::before,
+    .tree-branch-hierarchy.tree-multi-column .tree-node-item:nth-child(2)::before {
+        top: 50%;
+    }
+
+    .tree-branch-hierarchy.tree-multi-column .tree-node-item:last-child::before,
+    .tree-branch-hierarchy.tree-multi-column .tree-node-item:nth-last-child(2)::before {
+        bottom: 50%;
     }
 
     .tree-node-item {
