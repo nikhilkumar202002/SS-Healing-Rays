@@ -20,6 +20,7 @@ include __DIR__ . '/about-us/aboutusbanner.php';
 
 // 3. About The Healing Center (Introducing the Center & Sanctuary)
 include __DIR__ . '/about-us/aboutthehealing.php';
+include __DIR__ . '/home/services.php';
 
 // 4. Meet Our Healers & Guides
 include __DIR__ . '/home/team.php';

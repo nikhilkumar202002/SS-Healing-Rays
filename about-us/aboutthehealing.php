@@ -1,30 +1,40 @@
 <?php
 
-$about_healing_img   = $about_healing_img ?? (file_exists(dirname(__DIR__) . '/assets/images/about-image.jpeg') ? 'assets/images/about-image.jpeg' : 'assets/images/workshop-healing-circle.png');
-$about_healing_title = $about_healing_title ?? 'A Sacred Sanctuary for Holistic Healing & <em>Transformation</em>';
+$about_healing_img_top    = $about_healing_img_top ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') ? 'assets/images/about/center-reiki-session.jpg' : 'assets/images/services/reiki-healing.jpg');
+$about_healing_img_bottom = $about_healing_img_bottom ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-crystal-therapy.jpg') ? 'assets/images/about/center-crystal-therapy.jpg' : 'assets/images/services/crystal-healing.jpg');
+$about_healing_title_1    = $about_healing_title_1 ?? 'A Sacred Sanctuary for';
+$about_healing_title_2    = $about_healing_title_2 ?? 'Holistic Healing & <em>Transformation</em>';
 ?>
 
 <section class="about-healing-section position-relative" id="aboutCenter" aria-label="About SS Healing Rays Center">
     <div class="container">
-        <div class="row align-items-center justify-content-center gx-lg-5 about-healing-row">
+        <div class="row align-items-stretch justify-content-center about-healing-row">
             
-            <!-- Left Column: Parabolic Arch Image Card (matching homepage shape) -->
-            <div class="col-12 col-lg-5 d-flex justify-content-center">
-                <div class="about-healing-image-card">
-                    <img src="<?= htmlspecialchars($about_healing_img) ?>" 
-                         alt="SS Healing Rays Sanctuary & Center" 
-                         loading="lazy">
+            <!-- Left Column: Two Stacked Images (Top & Bottom, 2:3 Ratio, Matching Right Content) -->
+            <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-stretch">
+                <div class="about-healing-images-stack">
+                    <div class="about-healing-image-card">
+                        <img src="<?= htmlspecialchars($about_healing_img_top) ?>" 
+                             alt="SS Healing Rays Sanctuary & Center" 
+                             loading="lazy">
+                    </div>
+                    <div class="about-healing-image-card">
+                        <img src="<?= htmlspecialchars($about_healing_img_bottom) ?>" 
+                             alt="SS Healing Rays Healing Modalities" 
+                             loading="lazy">
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Column: Heading & Elaborated Description Only -->
-            <div class="col-12 col-lg-7 d-flex align-items-center">
-                <div class="about-healing-content">
+            <!-- Right Column: Heading & Elaborated Description Only (Equal 50% Column, Full Width Content) -->
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center justify-content-lg-start">
+                <div class="about-healing-content w-100">
                     <h2 class="about-healing-heading">
-                        <?= $about_healing_title ?>
+                        <span class="about-healing-title-line"><?= $about_healing_title_1 ?></span>
+                        <span class="about-healing-title-line"><?= $about_healing_title_2 ?></span>
                     </h2>
                     
-                    <div class="about-healing-description">
+                    <div class="about-healing-description w-100">
                         <p>
                             Welcome to <strong>SS Healing Rays</strong>, a sanctuary founded on the sacred belief that true healing begins when the mind, body, and spirit are brought into profound alignment. Established as a peaceful refuge from the overwhelming pace of modern life, our center offers a safe, nurturing environment where you can gently release emotional blockages, dissolve anxiety, and awaken your natural state of vitality.
                         </p>

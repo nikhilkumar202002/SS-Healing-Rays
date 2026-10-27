@@ -15,27 +15,42 @@
 /* 1. Main Grid Row */
 .about-healing-row {
     row-gap: 3rem;
-    align-items: center;
-    justify-content: center;
+    --bs-gutter-x: 2rem;
 }
 
-/* 2. Left Column: Parabolic Arch Image Card (matching homepage about section) */
+@media (min-width: 992px) {
+    .about-healing-row {
+        --bs-gutter-x: 80px; /* Exact 80px gap between columns on desktop */
+    }
+}
+
+/* 2. Left Column: Stack of 2 Images (Top & Bottom, 2:3 Ratio, No Arch Shape) */
+.about-healing-images-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 490px;
+    height: 100%;
+    justify-content: space-between;
+}
+
 .about-healing-image-card {
     position: relative;
     width: 100%;
-    max-width: 460px;
-    height: 580px;
-    margin: 0 auto;
-    border-radius: 44px 44px 250px 250px;
+    flex: 1;
+    min-height: 230px;
+    aspect-ratio: 3 / 2;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 18px 45px -10px rgba(17, 17, 51, 0.09);
+    box-shadow: 0 12px 30px -8px rgba(17, 17, 51, 0.08);
     background-color: #f8fafc;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .about-healing-image-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 24px 55px -12px rgba(130, 56, 122, 0.22);
+    box-shadow: 0 18px 40px -10px rgba(130, 56, 122, 0.2);
 }
 
 .about-healing-image-card img {
@@ -43,29 +58,40 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-healing-image-card:hover img {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
-/* 3. Right Column: Content Box */
+/* 3. Right Column: Content Box (Full Width) */
 .about-healing-content {
-    max-width: 620px;
     width: 100%;
+    max-width: 100%;
+    padding: 0.5rem 0;
 }
 
-/* 4. Heading: Marcellus with Playfair Display italic highlight */
+/* 4. Heading: Marcellus with Playfair Display italic highlight (Strictly 2 lines) */
 .about-healing-heading {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+    font-size: clamp(1.85rem, 2.5vw, 2.45rem);
     font-weight: 400;
-    line-height: 1.24;
+    line-height: 1.26;
     color: var(--heading-color, #111133);
     margin-bottom: 1.75rem;
     letter-spacing: -0.015em;
+}
+
+.about-healing-title-line {
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .about-healing-title-line {
+        white-space: nowrap;
+    }
 }
 
 .about-healing-heading em,
@@ -77,8 +103,10 @@
     color: var(--secondary-color, #ba436c);
 }
 
-/* 5. Elaborated Description Typography in Lato */
+/* 5. Elaborated Description Typography in Lato (Full Width) */
 .about-healing-description {
+    width: 100%;
+    max-width: 100%;
     font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
     font-size: clamp(1rem, 1.2vw, 1.08rem);
     color: #475569;
@@ -87,6 +115,7 @@
 
 .about-healing-description p {
     margin-bottom: 1.35rem;
+    width: 100%;
 }
 
 .about-healing-description p:last-child {
@@ -105,13 +134,26 @@
     .about-healing-section {
         padding: 4.5rem 0;
     }
+    .about-healing-images-stack {
+        max-width: 440px;
+        margin: 0 auto;
+        gap: 1.25rem;
+    }
     .about-healing-image-card {
-        max-width: 400px;
-        height: 500px;
-        border-radius: 36px 36px 210px 210px;
+        width: 100%;
+        height: auto;
+        min-height: unset;
+        aspect-ratio: 3 / 2;
+        border-radius: 16px;
+    }
+    .about-healing-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: left;
     }
     .about-healing-heading {
-        font-size: clamp(1.95rem, 5vw, 2.4rem);
+        font-size: clamp(1.85rem, 5vw, 2.25rem);
         margin-bottom: 1.25rem;
     }
 }
@@ -120,13 +162,16 @@
     .about-healing-section {
         padding: 3.75rem 0;
     }
+    .about-healing-images-stack {
+        max-width: 100%;
+        gap: 1rem;
+    }
     .about-healing-image-card {
-        max-width: 320px;
-        height: 410px;
-        border-radius: 30px 30px 170px 170px;
+        border-radius: 14px;
+        aspect-ratio: 3 / 2;
     }
     .about-healing-heading {
-        font-size: 1.85rem;
+        font-size: 1.75rem;
         line-height: 1.28;
     }
     .about-healing-description {
