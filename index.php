@@ -9,5 +9,6 @@ $cta_url          = '#services';
 include 'header.php';
 include 'banner.php';
 include 'workshop.php';
+include 'services.php';
 include 'footer.php';
 ?>

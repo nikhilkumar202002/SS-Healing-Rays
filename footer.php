@@ -78,5 +78,8 @@
 <!-- Hero Banner Swiper Script -->
 <script src="assets/js/banner.js"></script>
 
+<!-- Healing Services Carousel Script -->
+<script src="assets/js/services.js"></script>
+
 </body>
 </html>

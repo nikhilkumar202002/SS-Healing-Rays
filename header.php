@@ -94,6 +94,9 @@ $nav_items = $nav_items ?? [
 
     <!-- Workshop / Healing Circle Custom Styles -->
     <link rel="stylesheet" href="assets/css/workshop.css">
+
+    <!-- Healing Services Carousel Custom Styles -->
+    <link rel="stylesheet" href="assets/css/services.css">
 </head>
 <body>
 

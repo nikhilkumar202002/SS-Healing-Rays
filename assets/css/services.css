@@ -1,0 +1,259 @@
+/* ==========================================================================
+   Healing Services Carousel Component - SS Healing Rays
+   Matches UI Screenshot:
+     - Centered "Healing Services" in Marcellus font (#5b2160)
+     - Fluid / Wide layout (no Bootstrap .container)
+     - 4-card desktop view with Swiper.js
+     - Card images with 28px border-radius
+     - Left-aligned service titles in Marcellus font
+     - Floating circular navigation chevrons (< and >)
+     - Centered "Explore Service ↗" CTA button
+   ========================================================================== */
+
+.services-section {
+    position: relative;
+    padding: 5.5rem 50px 6rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 1. Centered Header */
+.services-header {
+    margin-bottom: 3.25rem;
+    padding: 0 1rem;
+}
+
+.services-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #5b2160; /* Deep Amethyst matching screenshot */
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/* 2. Fluid / Wide Carousel Wrapper (Without .container) */
+.services-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.services-swiper {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 20px;
+}
+
+/* 3. Service Card */
+.service-slide {
+    height: auto;
+}
+
+.service-card-link {
+    text-decoration: none !important;
+    color: inherit;
+    display: block;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+.service-image-box {
+    position: relative;
+    width: 100%;
+    height: 490px;
+    border-radius: 28px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    box-shadow: 0 8px 24px rgba(17, 17, 51, 0.05);
+    transition: box-shadow 0.35s ease;
+}
+
+.service-card:hover .service-image-box {
+    box-shadow: 0 16px 36px rgba(91, 33, 96, 0.16);
+}
+
+.service-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .service-image-box img {
+    transform: scale(1.04);
+}
+
+/* Card Title */
+.service-card-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--heading-color, #111133);
+    margin: 14px 0 0 0;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-card-title {
+    color: #5b2160;
+}
+
+/* 4. Circular Floating Navigation Buttons */
+.services-nav-btn {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid rgba(17, 17, 51, 0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    color: #111133;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+    user-select: none;
+}
+
+.services-nav-prev {
+    left: 12px;
+}
+
+.services-nav-next {
+    right: 12px;
+}
+
+@media (min-width: 1200px) {
+    .services-nav-prev {
+        left: 20px;
+    }
+    .services-nav-next {
+        right: 20px;
+    }
+}
+
+.services-nav-btn:hover {
+    background-color: #5b2160;
+    border-color: #5b2160;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 18px rgba(91, 33, 96, 0.3);
+}
+
+.services-nav-btn:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+/* 5. Bottom Action Button */
+.services-actions {
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.Btn-Services-Primary {
+    background-color: #ffffff !important;
+    border: 1.5px solid rgba(130, 56, 122, 0.35) !important;
+    box-shadow: 0 4px 14px rgba(17, 17, 51, 0.05);
+    padding: 3px 3px 3px 22px !important;
+    gap: 16px;
+    height: 50px;
+    border-radius: 50px !important;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-Services-Primary .text {
+    color: var(--heading-color, #111133) !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.Btn-Services-Primary .icon-Container {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-color, #82387a) !important;
+    border-radius: 50% !important;
+    border: none !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-Services-Primary .icon-Container .btn-arrow-svg {
+    width: 18px;
+    height: 18px;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.Btn-Services-Primary:hover {
+    background-color: var(--primary-color, #82387a) !important;
+    border-color: var(--primary-color, #82387a) !important;
+    box-shadow: 0 8px 24px rgba(130, 56, 122, 0.28);
+    transform: translateY(-2px);
+}
+
+.Btn-Services-Primary:hover .text {
+    color: #ffffff !important;
+}
+
+.Btn-Services-Primary:hover .icon-Container {
+    background-color: #ffffff !important;
+}
+
+.Btn-Services-Primary:hover .icon-Container .btn-arrow-svg {
+    color: var(--primary-color, #82387a) !important;
+    stroke: var(--primary-color, #82387a) !important;
+    transform: translate(2px, -2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .service-image-box {
+        height: 420px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .services-section {
+        padding: 4rem 20px 4.5rem;
+    }
+    .service-image-box {
+        height: 380px;
+        border-radius: 22px;
+    }
+    .services-title {
+        font-size: 2.1rem;
+    }
+}
