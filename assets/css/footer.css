@@ -1,14 +1,4 @@
-/* ==========================================================================
-   Footer Component - SS Healing Rays (Fully Responsive Across All Devices)
-   Specifications:
-     - Section background: Transparent
-     - Inside container card: Light grey (#f4f4f7)
-     - Desktop margin: 50px surrounding (responsive on mobile)
-     - Curved border radius (30px desktop, smoothly scaling down)
-     - Responsive grid and typography for 4K down to 320px mobile
-   ========================================================================== */
 
-/* Outer Footer Section (Zero background) */
 .site-footer {
     background: transparent !important;
     background-color: transparent !important;
@@ -37,7 +27,7 @@
 }
 
 .footer-brand-logo {
-    height: 52px;
+    height: 120px;
     width: auto;
     max-width: 190px;
     object-fit: contain;

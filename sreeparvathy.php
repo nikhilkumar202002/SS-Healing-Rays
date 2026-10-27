@@ -42,10 +42,7 @@ include __DIR__ . '/common/header.php';
                     <!-- Core Healing Pillars / Specializations -->
                     <div class="profile-pillars-section mb-5">
                         <div class="profile-pillars-header">
-                            <span class="profile-pillars-badge">
-                                <i class="bi bi-flower1"></i>
-                                <span>Core Specializations</span>
-                            </span>
+                       
                             <h2 class="profile-section-heading">
                                 The Three <em>Healing Pillars</em>
                             </h2>
