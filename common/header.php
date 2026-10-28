@@ -6,6 +6,7 @@ $current_page     = $current_page ?? 'home';
 $brand_name       = $brand_name ?? 'SS Healing Rays';
 $brand_subtitle   = $brand_subtitle ?? 'A Sanctuary for Personal Growth';
 $site_logo        = $site_logo ?? 'assets/logo/main-logo-white-border.png'; // Main logo with white border
+$favicon_logo     = $favicon_logo ?? 'assets/logo/main-logo.png'; // Main logo for browser favicon
 $cta_text         = $cta_text ?? 'Explore Services';
 $cta_url          = $cta_url ?? 'services';
 $phone_number     = $phone_number ?? '+91 98765 43210';
@@ -114,11 +115,17 @@ $nav_items = $nav_items ?? [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($page_title) ?></title>
     <meta name="description" content="<?= htmlspecialchars($page_description) ?>">
+    <?php
+        // Dynamically compute base URL so assets and images always resolve properly
+        $script_dir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+        $site_base  = ($script_dir === '' || $script_dir === '.') ? '/' : $script_dir . '/';
+    ?>
+    <base href="<?= htmlspecialchars($site_base) ?>">
     
     <!-- Favicon & Touch Icons -->
-    <link rel="icon" type="image/png" href="<?= htmlspecialchars($site_logo) ?>">
+    <link rel="icon" type="image/png" href="<?= htmlspecialchars($favicon_logo) ?>">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="<?= htmlspecialchars($site_logo) ?>">
+    <link rel="apple-touch-icon" href="<?= htmlspecialchars($favicon_logo) ?>">
     
     <!-- Bootstrap 5.3 (Latest) CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">

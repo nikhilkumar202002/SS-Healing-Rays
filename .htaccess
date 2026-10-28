@@ -11,56 +11,48 @@ AddDefaultCharset UTF-8
 
 # Block access to hidden files and directories (.git, .env, .DS_Store, etc.)
 <FilesMatch "^\.">
-    Require all denied
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
 </FilesMatch>
 
 # ------------------------------------------------------------------------------
-# 2. Mod_Rewrite: Clean URLs & .php Extension Hiding
+# 2. Mod_Rewrite: Clean URLs & Asset Protection
 # ------------------------------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /
 
-    # Disable DirectorySlash to prevent automatic 301 trailing slashes on folders
-    # that share identical names with root pages (e.g. training, course, workshop)
-    DirectorySlash Off
-
-    # A. External 301 Redirect: /index.php or /index -> /
-    RewriteCond %{THE_REQUEST} \s/+index(?:\.php)?[\s?] [NC]
-    RewriteRule ^(?:index(?:\.php)?)?$ / [R=301,L]
-
-    # B. External 301 Redirect: Strip .php extension when requested directly
-    #    e.g., https://sshealingrays.com/aboutus.php -> https://sshealingrays.com/aboutus
-    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
-    RewriteRule ^ /%1 [R=301,L,NE]
-
-    # C. Trailing Slash Normalization: Remove trailing slash from page endpoints
-    #    e.g., /services/ -> /services, /training/ -> /training
-    RewriteCond %{REQUEST_METHOD} =GET
-    RewriteCond %{DOCUMENT_ROOT}/$1.php -f [OR]
-    RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^(.+)/$ /$1 [R=301,L]
-
-    # D. Directory Trailing Slash: For physical directories without a matching .php file
-    #    e.g., /assets -> /assets/
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteCond %{DOCUMENT_ROOT}/$1.php !-f
-    RewriteCond %{REQUEST_URI} !(/$|\.)
-    RewriteRule ^(.*)$ /$1/ [R=301,L]
-
-    # E. Pass through existing files unchanged (images, CSS, JS, fonts, audio, video)
+    # A. IMMUNITY FOR STATIC ASSETS (CRITICAL FOR LIVE SERVERS)
+    #    Never touch or rewrite images, CSS, JS, fonts, or media files
+    RewriteRule ^assets/ - [L,NC]
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]
 
-    # F. Internal Rewrite: Map Clean URLs to their corresponding .php files
-    #    Prioritizes root .php files even if a folder with the same name exists
-    #    e.g., /training -> training.php, /course -> course.php, /services -> services.php
-    RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+    # B. Redirect /index.php or /index to root /
+    RewriteCond %{THE_REQUEST} \s/+index(?:\.php)?[\s?] [NC]
+    RewriteRule ^(?:index(?:\.php)?)?$ ./ [R=301,L]
+
+    # C. External 301 Redirect: Strip .php extension when requested directly
+    #    e.g., https://sshealingrays.com/aboutus.php -> https://sshealingrays.com/aboutus
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+    RewriteRule ^ %1 [R=301,L,NE]
+
+    # D. Explicit mappings for root pages that share names with partial folders
+    RewriteRule ^training/?$ training.php [L,QSA]
+    RewriteRule ^course/?$ course.php [L,QSA]
+    RewriteRule ^workshop/?$ workshop.php [L,QSA]
+
+    # E. Generic Clean URL Rewriting to .php files
+    #    e.g., /aboutus -> aboutus.php, /services -> services.php
+    RewriteCond %{REQUEST_FILENAME}.php -f
     RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
 
-    # G. Secondary Fallback: Check if relative filename with .php exists
-    RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+    RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+    RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
 
 </IfModule>
 
@@ -99,6 +91,6 @@ AddDefaultCharset UTF-8
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
     
-    # HTML Documents (instant freshness)
+    # HTML Documents
     ExpiresByType text/html "access plus 0 seconds"
 </IfModule>

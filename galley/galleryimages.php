@@ -17,8 +17,21 @@ $captions = [
 ];
 
 if (is_dir($gallery_dir)) {
-    $raw_files = glob($gallery_dir . '/*.{jpeg,jpg,png,webp,JPEG,JPG,PNG,WEBP}', GLOB_BRACE);
-    if ($raw_files) {
+    $raw_files = [];
+    $all_entries = @scandir($gallery_dir);
+    if ($all_entries !== false) {
+        foreach ($all_entries as $entry) {
+            if ($entry === '.' || $entry === '..' || str_starts_with($entry, '.')) {
+                continue;
+            }
+            $ext = strtolower(pathinfo($entry, PATHINFO_EXTENSION));
+            if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
+                $raw_files[] = $gallery_dir . '/' . $entry;
+            }
+        }
+    }
+    
+    if (!empty($raw_files)) {
         natsort($raw_files);
         $idx = 0;
         foreach ($raw_files as $file) {
