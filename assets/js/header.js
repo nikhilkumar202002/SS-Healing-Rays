@@ -31,6 +31,34 @@
                 }
             });
         }
+
+        // Mobile Drawer Link Handling: For in-page anchor links, close the drawer so target section is visible
+        const mobileDrawerEl = document.getElementById('mobileDrawer');
+        if (mobileDrawerEl) {
+            const drawerLinks = mobileDrawerEl.querySelectorAll('a[href]');
+            drawerLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (!href || href === '#' || href.startsWith('tel:') || href.startsWith('mailto:')) return;
+
+                    // If it's a hash link on the current page, close the drawer smoothly
+                    const hashIndex = href.indexOf('#');
+                    if (hashIndex !== -1) {
+                        const linkPath = href.substring(0, hashIndex).replace(/^\/|\/$/g, '');
+                        const currentPath = window.location.pathname.replace(/^\/|\/$/g, '');
+                        
+                        if (linkPath === '' || linkPath === currentPath) {
+                            if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                                const instance = bootstrap.Offcanvas.getInstance(mobileDrawerEl);
+                                if (instance) {
+                                    instance.hide();
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        }
     }
 
     if (document.readyState === 'loading') {

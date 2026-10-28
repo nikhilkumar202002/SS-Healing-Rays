@@ -226,15 +226,24 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
         <div class="container-fluid px-3 px-lg-4">
             <div class="row w-100 align-items-center g-0">
                 
-                <!-- 1. LEFT COLUMN: Menu & Navigation (Desktop + Mobile Offcanvas Toggler) -->
-                <div class="col-3 col-lg-5 d-flex align-items-center">
-                    <!-- Mobile Hamburger Button triggering Bootstrap Offcanvas -->
-                    <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileDrawer" aria-controls="mobileDrawer" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                <!-- 1. BRAND LOGO (Mobile: Left side | Desktop: Centered Col 2) -->
+                <div class="col-6 col-lg-2 order-1 order-lg-2 d-flex align-items-center justify-content-start justify-content-lg-center">
+                    <a href="/" class="site-logo d-inline-flex align-items-center" aria-label="<?= htmlspecialchars($brand_name) ?> Home">
+                        <?php if (!empty($site_logo)): ?>
+                            <img src="<?= htmlspecialchars($site_logo) ?>" alt="<?= htmlspecialchars($brand_name) ?>" class="logo-image">
+                        <?php else: ?>
+                            <div class="d-flex flex-column align-items-start align-items-lg-center">
+                                <span class="fs-5 fw-bold text-dark text-uppercase font-serif"><?= htmlspecialchars($brand_name) ?></span>
+                                <small class="text-warning text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.2em;"><?= htmlspecialchars($brand_subtitle) ?></small>
+                            </div>
+                        <?php endif; ?>
+                    </a>
+                </div>
 
+                <!-- 2. DESKTOP NAVIGATION MENU (Desktop: Left Col 1 | Mobile: Hidden) -->
+                <div class="col-lg-5 order-lg-1 d-none d-lg-flex align-items-center">
                     <!-- Desktop Navigation Menu -->
-                    <ul class="navbar-nav desktop-nav-menu d-none d-lg-flex flex-row align-items-center gap-1 gap-xl-2 m-0 p-0" aria-label="Primary Site Navigation">
+                    <ul class="navbar-nav desktop-nav-menu d-flex flex-row align-items-center gap-1 gap-xl-2 m-0 p-0" aria-label="Primary Site Navigation">
                         <?php foreach ($nav_items as $key => $item): ?>
                             <?php 
                                 $isActive = ($current_page === $key || ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])));
@@ -379,36 +388,30 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                     </ul>
                 </div>
 
-                <!-- 2. CENTER COLUMN: Brand Logo (Exactly Centered in Grid) -->
-                <div class="col-6 col-lg-2 text-center">
-                    <a href="/" class="site-logo d-inline-block" aria-label="<?= htmlspecialchars($brand_name) ?> Home">
-                        <?php if (!empty($site_logo)): ?>
-                            <img src="<?= htmlspecialchars($site_logo) ?>" alt="<?= htmlspecialchars($brand_name) ?>" class="logo-image">
-                        <?php else: ?>
-                            <div class="d-flex flex-column align-items-center">
-                                <span class="fs-5 fw-bold text-dark text-uppercase font-serif"><?= htmlspecialchars($brand_name) ?></span>
-                                <small class="text-warning text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.2em;"><?= htmlspecialchars($brand_subtitle) ?></small>
-                            </div>
-                        <?php endif; ?>
-                    </a>
-                </div>
-
-                <!-- 3. RIGHT COLUMN: Call to Action (CTA) Button -->
-                <div class="col-3 col-lg-5 d-flex justify-content-end align-items-center gap-2 gap-md-3">
+                <!-- 3. RIGHT COLUMN: Mobile Hamburger (Right) + Desktop CTA / Phone (Desktop: Right Col 3) -->
+                <div class="col-6 col-lg-5 order-2 order-lg-3 d-flex justify-content-end align-items-center gap-2 gap-md-3">
                     <!-- Quick Contact Phone (Visible on large screens) -->
                     <a href="tel:<?= htmlspecialchars($phone_tel) ?>" class="header-phone-link d-none d-xl-inline-flex align-items-center gap-2" title="Call Us">
                         <i class="bi bi-telephone-fill"></i>
                         <span><?= htmlspecialchars($phone_number) ?></span>
                     </a>
 
-                    <!-- Action CTA Button via common button.php -->
-                    <?php
-                        $btn_text    = $cta_text;
-                        $btn_url     = $cta_url;
-                        $btn_class   = 'Btn-Header';
-                        $btn_id      = 'headerCtaBtn';
-                        include __DIR__ . '/button.php';
-                    ?>
+                    <!-- Action CTA Button (Desktop only, hidden on mobile) -->
+                    <div class="header-cta-wrapper d-none d-lg-inline-flex">
+                        <?php
+                            $btn_text    = $cta_text;
+                            $btn_url     = $cta_url;
+                            $btn_class   = 'Btn-Header';
+                            $btn_id      = 'headerCtaBtn';
+                            $btn_attr    = 'aria-label="' . htmlspecialchars($cta_text) . '" title="' . htmlspecialchars($cta_text) . '"';
+                            include __DIR__ . '/button.php';
+                        ?>
+                    </div>
+
+                    <!-- Mobile Hamburger Button triggering Bootstrap Offcanvas (Right side on mobile) -->
+                    <button class="navbar-toggler border-0 p-1 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileDrawer" aria-controls="mobileDrawer" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
 
             </div>
@@ -416,8 +419,8 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
     </nav>
 </header>
 
-<!-- Bootstrap 5 Offcanvas Mobile Navigation Drawer -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileDrawer" aria-labelledby="mobileDrawerLabel">
+<!-- Bootstrap 5 Offcanvas Mobile Navigation Drawer (Opens from Right) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileDrawer" aria-labelledby="mobileDrawerLabel">
     <div class="offcanvas-header border-bottom">
         <a href="/" class="d-flex align-items-center gap-2 text-decoration-none">
             <?php if (!empty($site_logo)): ?>
@@ -439,8 +442,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                     <li class="nav-item">
                         <div class="d-flex align-items-center justify-content-between">
                             <a href="<?= htmlspecialchars($item['url']) ?>" 
-                               class="nav-link flex-grow-1 <?= $isActive ? 'active' : '' ?>"
-                               data-bs-dismiss="offcanvas">
+                               class="nav-link flex-grow-1 <?= $isActive ? 'active' : '' ?>">
                                 <span><?= htmlspecialchars($item['label']) ?></span>
                             </a>
                             <button class="btn btn-link text-muted p-2" 
@@ -474,7 +476,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                                                 }
                                             ?>
                                             <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
                                                     <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
                                                     <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
                                                 </a>
@@ -498,7 +500,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                                                 }
                                             ?>
                                             <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
                                                     <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
                                                     <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
                                                 </a>
@@ -522,7 +524,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                                                 }
                                             ?>
                                             <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
                                                     <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
                                                     <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
                                                 </a>
@@ -546,7 +548,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                                                 }
                                             ?>
                                             <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink" data-bs-dismiss="offcanvas">
+                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
                                                     <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
                                                     <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
                                                 </a>
@@ -561,8 +563,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                 <?php else: ?>
                     <li class="nav-item">
                         <a href="<?= htmlspecialchars($item['url']) ?>" 
-                           class="nav-link <?= $isActive ? 'active' : '' ?>"
-                           data-bs-dismiss="offcanvas">
+                           class="nav-link <?= $isActive ? 'active' : '' ?>">
                             <span><?= htmlspecialchars($item['label']) ?></span>
                             <i class="bi bi-chevron-right small text-muted"></i>
                         </a>
