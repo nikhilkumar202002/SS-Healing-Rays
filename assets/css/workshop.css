@@ -1,21 +1,17 @@
 /* ==========================================================================
-   About Us & Workshop Section - SS Healing Rays
-   Fully Responsive Across All Screen Sizes (4K / Desktop / Tablet / Mobile)
-   Matches Design Specifications:
+   Homepage Workshop Component Styles - SS Healing Rays
+   Dedicated to: home/workshop.php
+   Class Prefix: .workshop-*
+   Layout:
      - Top Section Header: Brand Seal, Pretitle, Balanced Unbroken Headline
-     - Left Image: Parabolic Cathedral Arch Shape (proportional & responsive)
-     - Right Content:
-       * Sacred Pinwheel Swirl Badge (Rose / Secondary Accent)
-       * "What Makes My / Healing Unique" (Marcellus + Playfair Display Italic Rose)
-       * Compassionate Description (Lato, fluid line-height & readability)
-       * Reusable Primary Action Pill Button ("Learn More")
+     - Left Column: Parabolic Arch Image Card (workshop-healing-circle.png)
+     - Right Column: Workshop Content, Pinwheel Badge, Heading, Copy, Button
    ========================================================================== */
 
 /* 1. Section Wrapper */
-.about-section,
 .workshop-section {
     position: relative;
-    padding: clamp(3.5rem, 7vw, 6.5rem) 0 clamp(3rem, 6vw, 6rem);
+    padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(3.5rem, 6vw, 6rem);
     background-color: #ffffff;
     overflow: hidden;
     width: 100%;
@@ -72,14 +68,60 @@
     text-wrap: balance;
 }
 
-/* 3. Main Content Grid (Two Columns: Left Image Arch | Right Content) */
-.about-grid-row {
+/* 3. Main Content Grid Row */
+.workshop-grid-row {
     row-gap: 2.5rem;
     align-items: center;
     justify-content: center;
 }
 
-/* Parabolic Arch Image Card Container */
+/* Desktop Column Widths & Spacing */
+@media (min-width: 1400px) {
+    .workshop-grid-row {
+        column-gap: 90px !important;
+        --bs-gutter-x: 0px !important;
+    }
+    .col-workshop-image {
+        flex: 0 0 450px;
+        max-width: 450px;
+    }
+    .col-workshop-content {
+        flex: 0 1 580px;
+        max-width: 580px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .workshop-grid-row {
+        column-gap: 60px !important;
+        --bs-gutter-x: 0px !important;
+    }
+    .col-workshop-image {
+        flex: 0 0 420px;
+        max-width: 420px;
+    }
+    .col-workshop-content {
+        flex: 1 1 520px;
+        max-width: 560px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .workshop-grid-row {
+        column-gap: 36px !important;
+        --bs-gutter-x: 0px !important;
+    }
+    .col-workshop-image {
+        flex: 0 0 370px;
+        max-width: 370px;
+    }
+    .col-workshop-content {
+        flex: 1 1 480px;
+        max-width: 520px;
+    }
+}
+
+/* 4. Parabolic Arch Image Card Container */
 .workshop-image-card {
     position: relative;
     width: 100%;
@@ -111,15 +153,13 @@
     transform: scale(1.03);
 }
 
-/* Right Column Content Container */
-.workshop-content,
-.about-content {
+/* 5. Right Column Content Container */
+.workshop-content {
     max-width: 580px;
     width: 100%;
 }
 
-/* Sacred Energy Sunburst / Pinwheel Badge */
-.about-badge,
+/* Sacred Workshop Pinwheel Badge */
 .workshop-badge {
     display: inline-flex;
     align-items: center;
@@ -133,24 +173,23 @@
     margin-bottom: clamp(1rem, 2vw, 1.35rem);
 }
 
-.about-badge-icon {
+.workshop-badge-icon {
     color: var(--secondary-color, #ba436c) !important;
     flex-shrink: 0;
     transition: transform 0.6s ease;
 }
 
-.about-badge:hover .about-badge-icon {
+.workshop-badge:hover .workshop-badge-icon {
     transform: rotate(90deg);
 }
 
-/* Main Heading: "What Makes My / Healing Unique" */
-.about-heading,
+/* 6. Typography */
 .workshop-heading {
     margin-bottom: clamp(1rem, 2vw, 1.45rem);
 }
 
-.about-heading .title-line-1,
-.workshop-heading .title-main {
+.workshop-heading .title-line-1,
+.workshop-heading .workshop-title-line-1 {
     display: block;
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
     font-size: clamp(2rem, 3.4vw, 3.4rem);
@@ -160,23 +199,15 @@
     letter-spacing: -0.015em;
 }
 
-.about-heading .title-line-2 {
+.workshop-heading .title-line-2,
+.workshop-heading .workshop-title-line-2 {
     display: block;
     line-height: 1.18;
     margin-top: 0.2rem;
 }
 
-.about-heading .title-line-2 .title-main {
-    display: inline;
-    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: clamp(2rem, 3.4vw, 3.4rem);
-    font-weight: 400;
-    color: var(--heading-color, #111133);
-    letter-spacing: -0.015em;
-}
-
-.about-heading .title-line-2 .title-highlight,
-.workshop-heading .title-highlight {
+.workshop-heading .title-highlight,
+.workshop-heading .workshop-title-highlight {
     display: inline;
     font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
     font-style: italic;
@@ -185,11 +216,9 @@
     line-height: 1.2;
     color: var(--secondary-color, #ba436c);
     letter-spacing: 0.01em;
-    margin-left: 0.35rem;
 }
 
-/* Compassionate Description Body Text */
-.about-description,
+/* Description Text */
 .workshop-description {
     font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
     font-size: clamp(0.95rem, 1.1vw, 1.08rem);
@@ -200,182 +229,25 @@
     margin-bottom: clamp(1.5rem, 2.8vw, 2.35rem);
 }
 
-/* 4. Action Buttons Container */
-.about-actions,
+/* Action Button Wrapper */
 .workshop-actions {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 1.15rem;
-}
-
-/* Main Reusable Pill Button for About Us (.Btn-About-Primary) */
-.Btn-About-Primary,
-.Btn-Workshop-Primary {
-    background-color: #ffffff !important;
-    border: 1.5px solid rgba(130, 56, 122, 0.35) !important;
-    box-shadow: 0 4px 14px rgba(17, 17, 51, 0.05);
-    padding: 3px 3px 3px 22px !important;
-    gap: 16px;
-    height: 52px;
-    border-radius: 50px !important;
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: none !important;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.Btn-About-Primary .text,
-.Btn-Workshop-Primary .text {
-    color: var(--heading-color, #111133) !important;
-    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
-    font-size: 1.02rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    white-space: nowrap;
-}
-
-.Btn-About-Primary .icon-Container,
-.Btn-Workshop-Primary .icon-Container {
-    width: 44px;
-    height: 44px;
-    background-color: var(--primary-color, #82387a) !important;
-    border-radius: 50% !important;
-    border: none !important;
-    color: #ffffff !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    flex-shrink: 0;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.Btn-About-Primary .icon-Container .btn-arrow-svg,
-.Btn-Workshop-Primary .icon-Container .btn-arrow-svg {
-    width: 18px;
-    height: 18px;
-    color: #ffffff !important;
-    stroke: #ffffff !important;
-    fill: none !important;
-    display: block !important;
-    margin: 0 auto !important;
-    transition: transform 0.3s ease;
-}
-
-.Btn-About-Primary:hover,
-.Btn-Workshop-Primary:hover {
-    background-color: var(--primary-color, #82387a) !important;
-    border-color: var(--primary-color, #82387a) !important;
-    box-shadow: 0 8px 24px rgba(130, 56, 122, 0.28);
-    transform: translateY(-2px);
-}
-
-.Btn-About-Primary:hover .text,
-.Btn-Workshop-Primary:hover .text {
-    color: #ffffff !important;
-}
-
-.Btn-About-Primary:hover .icon-Container,
-.Btn-Workshop-Primary:hover .icon-Container {
-    background-color: #ffffff !important;
-}
-
-.Btn-About-Primary:hover .icon-Container .btn-arrow-svg,
-.Btn-Workshop-Primary:hover .icon-Container .btn-arrow-svg {
-    color: var(--primary-color, #82387a) !important;
-    stroke: var(--primary-color, #82387a) !important;
-    transform: translate(2px, -2px);
 }
 
 /* ==========================================================================
-   Responsive Breakpoints & Device Adaptations
+   Responsive Breakpoints for Workshop
    ========================================================================== */
-
-/* Wide Desktops & Displays (min-width: 1400px) */
-@media (min-width: 1400px) {
-    .about-grid-row {
-        column-gap: 90px !important;
-        --bs-gutter-x: 0px !important;
-    }
-    .about-grid-row .col-about-image {
-        flex: 0 0 450px;
-        max-width: 450px;
-    }
-    .about-grid-row .col-about-content {
-        flex: 0 1 580px;
-        max-width: 580px;
-    }
-}
-
-/* Standard Desktops & Laptops (1200px - 1399.98px) */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-    .about-grid-row {
-        column-gap: 60px !important;
-        --bs-gutter-x: 0px !important;
-    }
-    .about-grid-row .col-about-image {
-        flex: 0 0 420px;
-        max-width: 420px;
-    }
-    .workshop-image-card {
-        max-width: 420px;
-        height: 520px;
-        border-radius: 40px 40px 230px 230px;
-    }
-    .about-grid-row .col-about-content {
-        flex: 1 1 520px;
-        max-width: 560px;
-    }
-}
-
-/* Medium Desktops / Small Laptops / iPad Pro Landscape (992px - 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .about-grid-row {
-        column-gap: 36px !important;
-        --bs-gutter-x: 0px !important;
-    }
-    .about-grid-row .col-about-image {
-        flex: 0 0 370px;
-        max-width: 370px;
-    }
-    .workshop-image-card {
-        max-width: 370px;
-        height: 470px;
-        border-radius: 36px 36px 200px 200px;
-    }
-    .about-grid-row .col-about-content {
-        flex: 1 1 480px;
-        max-width: 520px;
-    }
-    .about-heading .title-line-1,
-    .about-heading .title-line-2 .title-main,
-    .about-heading .title-line-2 .title-highlight,
-    .workshop-heading .title-main,
-    .workshop-heading .title-highlight {
-        font-size: 2.35rem;
-    }
-    .about-description,
-    .workshop-description {
-        font-size: 16px;
-        line-height: 1.72;
-        margin-bottom: 1.85rem;
-    }
-}
 
 /* Tablets (Portrait 768px - 991.98px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .about-section,
     .workshop-section {
-        padding: 5rem 0 4.5rem;
+        padding: 4.5rem 0 4rem;
     }
     .workshop-top-header {
         margin-bottom: 3.25rem;
     }
-    .about-grid-row {
+    .workshop-grid-row {
         row-gap: 2.5rem;
     }
     .workshop-image-card {
@@ -384,25 +256,21 @@
         border-radius: 36px 36px 200px 200px;
         margin: 0 auto;
     }
-    .workshop-content,
-    .about-content {
+    .workshop-content {
         max-width: 580px;
         margin: 0 auto;
         text-align: center;
         padding-left: 0 !important;
     }
-    .about-badge,
     .workshop-badge {
         justify-content: center;
     }
-    .about-description,
     .workshop-description {
         margin-left: auto;
         margin-right: auto;
         font-size: 16.5px;
         max-width: 540px;
     }
-    .about-actions,
     .workshop-actions {
         justify-content: center;
     }
@@ -410,14 +278,13 @@
 
 /* Small Tablets & Large Phones (576px - 767.98px) */
 @media (max-width: 767.98px) {
-    .about-section,
     .workshop-section {
-        padding: 4.25rem 0 3.75rem;
+        padding: 4rem 0 3.5rem;
     }
     .workshop-top-header {
         margin-bottom: 2.5rem;
     }
-    .about-grid-row {
+    .workshop-grid-row {
         row-gap: 2rem;
     }
     .workshop-image-card {
@@ -426,149 +293,33 @@
         border-radius: 32px 32px 170px 170px;
         margin: 0 auto;
     }
-    .workshop-content,
-    .about-content {
-        max-width: 100%;
-        margin: 0 auto;
+    .workshop-content {
         text-align: center;
-        padding-left: 0 !important;
     }
-    .about-badge,
     .workshop-badge {
         justify-content: center;
     }
-    .about-description,
     .workshop-description {
         margin-left: auto;
         margin-right: auto;
-        font-size: 16px;
-        line-height: 1.7;
+        font-size: 15.5px;
     }
-    .about-actions,
     .workshop-actions {
         justify-content: center;
     }
 }
 
-/* Standard Mobile Devices (375px - 575.98px) */
+/* Small Phones (< 576px) */
 @media (max-width: 575.98px) {
-    .about-section,
-    .workshop-section {
-        padding: 3.5rem 0 3rem;
-    }
-    .workshop-top-header {
-        margin-bottom: 2rem;
-        padding: 0 0.75rem;
-    }
-    .workshop-brand-seal {
-        width: 80px;
-        margin-bottom: 14px;
-    }
-    .workshop-pretitle {
-        font-size: 0.82rem;
-        letter-spacing: 0.1em;
-        margin-bottom: 10px;
-    }
-    .workshop-welcome-text {
-        font-size: 1.2rem;
-        line-height: 1.45;
-    }
     .workshop-image-card {
         max-width: 280px;
         height: 360px;
-        border-radius: 28px 28px 145px 145px;
-        margin: 0 auto;
+        border-radius: 28px 28px 140px 140px;
     }
-    .workshop-content,
-    .about-content {
-        margin-top: 0.5rem;
-        text-align: center;
-    }
-    .about-badge,
-    .workshop-badge {
-        font-size: 0.76rem;
-        margin-bottom: 0.75rem;
-        justify-content: center;
-    }
-    .about-heading .title-line-1,
-    .about-heading .title-line-2 .title-main,
-    .about-heading .title-line-2 .title-highlight,
-    .workshop-heading .title-main,
-    .workshop-heading .title-highlight {
-        font-size: 1.95rem;
-    }
-    .about-description,
-    .workshop-description {
-        font-size: 15px;
-        line-height: 1.65;
-        margin-bottom: 1.65rem;
-    }
-    .about-actions,
-    .workshop-actions {
-        justify-content: center;
-        width: 100%;
-    }
-    .Btn-About-Primary,
-    .Btn-Workshop-Primary {
-        width: 100%;
-        max-width: 270px;
-        padding: 3px 3px 3px 18px !important;
-        margin: 0 auto;
-    }
-    .Btn-About-Primary .text,
-    .Btn-Workshop-Primary .text {
-        font-size: 0.98rem;
-    }
-    .Btn-About-Primary .icon-Container,
-    .Btn-Workshop-Primary .icon-Container {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* Extra Narrow Mobile Devices (320px - 374.98px) */
-@media (max-width: 374.98px) {
-    .about-section,
-    .workshop-section {
-        padding: 3rem 0 2.5rem;
-    }
-    .workshop-brand-seal {
-        width: 70px;
-        margin-bottom: 12px;
-    }
-    .workshop-pretitle {
-        font-size: 0.76rem;
-        letter-spacing: 0.08em;
-    }
-    .workshop-welcome-text {
-        font-size: 1.05rem;
-        line-height: 1.42;
-    }
-    .workshop-image-card {
-        max-width: 240px;
-        height: 310px;
-        border-radius: 22px 22px 125px 125px;
-    }
-    .about-heading .title-line-1,
-    .about-heading .title-line-2 .title-main,
-    .about-heading .title-line-2 .title-highlight,
-    .workshop-heading .title-main,
-    .workshop-heading .title-highlight {
-        font-size: 1.65rem;
-    }
-    .about-description,
-    .workshop-description {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-    .Btn-About-Primary,
-    .Btn-Workshop-Primary {
-        max-width: 240px;
-        padding: 3px 3px 3px 14px !important;
-        gap: 10px;
-    }
-    .Btn-About-Primary .text,
-    .Btn-Workshop-Primary .text {
-        font-size: 0.92rem;
+    .workshop-heading .title-line-1,
+    .workshop-heading .title-highlight,
+    .workshop-heading .workshop-title-line-1,
+    .workshop-heading .workshop-title-highlight {
+        font-size: 1.85rem;
     }
 }

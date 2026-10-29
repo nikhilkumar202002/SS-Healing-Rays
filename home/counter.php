@@ -23,7 +23,7 @@ $counter_rows = $counter_rows ?? [
             'value'      => '10',
             'suffix'     => '+',
             'is_numeric' => true,
-            'label'      => '10+ years of experience',
+            'label'      => 'Years of experience',
         ],
     ],
     [
@@ -65,7 +65,7 @@ $counter_rows = $counter_rows ?? [
                     <div class="row g-0 align-items-center">
                         <!-- Left Column -->
                         <div class="col-12 col-md-6 counter-col counter-col-left">
-                            <div class="counter-item">
+                            <div class="counter-item text-center">
                                 <div class="counter-number">
                                     <?php if (!empty($row['col1']['is_numeric'])): ?>
                                         <span class="counter-count" data-target="<?= htmlspecialchars($row['col1']['value']) ?>"><?= htmlspecialchars($row['col1']['value']) ?></span>
@@ -76,13 +76,13 @@ $counter_rows = $counter_rows ?? [
                                         <span class="counter-suffix"><?= htmlspecialchars($row['col1']['suffix']) ?></span>
                                     <?php endif; ?>
                                 </div>
-                                <p class="counter-label"><?= htmlspecialchars($row['col1']['label']) ?></p>
+                                <p class="counter-label text-center"><?= htmlspecialchars($row['col1']['label']) ?></p>
                             </div>
                         </div>
 
                         <!-- Right Column -->
                         <div class="col-12 col-md-6 counter-col counter-col-right">
-                            <div class="counter-item">
+                            <div class="counter-item text-center">
                                 <div class="counter-number">
                                     <?php if (!empty($row['col2']['is_numeric'])): ?>
                                         <span class="counter-count" data-target="<?= htmlspecialchars($row['col2']['value']) ?>"><?= htmlspecialchars($row['col2']['value']) ?></span>
@@ -93,7 +93,7 @@ $counter_rows = $counter_rows ?? [
                                         <span class="counter-suffix"><?= htmlspecialchars($row['col2']['suffix']) ?></span>
                                     <?php endif; ?>
                                 </div>
-                                <p class="counter-label"><?= htmlspecialchars($row['col2']['label']) ?></p>
+                                <p class="counter-label text-center"><?= htmlspecialchars($row['col2']['label']) ?></p>
                             </div>
                         </div>
                     </div>

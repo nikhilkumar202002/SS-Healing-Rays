@@ -35,6 +35,9 @@ include __DIR__ . '/home/team.php';
 // 6. Homepage Impact & Statistics Counter
 include __DIR__ . '/home/counter.php';
 
+// 6.5 Homepage About & Workshop Section
+include __DIR__ . '/home/aboutus.php';
+
 // 7. Homepage Retreat Call-to-Action Banner
 include __DIR__ . '/home/cta-banner.php';
 

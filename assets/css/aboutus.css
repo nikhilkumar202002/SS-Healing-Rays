@@ -1,0 +1,271 @@
+/* ==========================================================================
+   Homepage About Us Component Styles - SS Healing Rays
+   Dedicated to: home/aboutus.php
+   Class Prefix: .about-*
+   Layout:
+     - Left Column: About Us Content, Badge, Heading, Copy, CTA Button
+     - Right Column: Cathedral Arch Image Card
+   ========================================================================== */
+
+/* 1. Section Wrapper */
+.about-section {
+    position: relative;
+    padding: clamp(4rem, 6.5vw, 6.5rem) 0 clamp(3.5rem, 5.5vw, 5.5rem);
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 2. Main Content Grid Row */
+.about-grid-row {
+    row-gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Desktop Widths and Column Spacing */
+@media (min-width: 1400px) {
+    .about-grid-row {
+        column-gap: 90px !important;
+        --bs-gutter-x: 0px !important;
+    }
+    .col-about-image {
+        flex: 0 0 450px;
+        max-width: 450px;
+    }
+    .col-about-content {
+        flex: 0 1 580px;
+        max-width: 580px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .about-grid-row {
+        column-gap: 60px !important;
+        --bs-gutter-x: 0px !important;
+    }
+    .col-about-image {
+        flex: 0 0 420px;
+        max-width: 420px;
+    }
+    .col-about-content {
+        flex: 1 1 520px;
+        max-width: 560px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .about-grid-row {
+        column-gap: 36px !important;
+        --bs-gutter-x: 0px !important;
+    }
+    .col-about-image {
+        flex: 0 0 370px;
+        max-width: 370px;
+    }
+    .col-about-content {
+        flex: 1 1 480px;
+        max-width: 520px;
+    }
+}
+
+/* 3. Cathedral Arch Image Card (Curved at Bottom) */
+.about-image-card {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 560px;
+    margin: 0 auto;
+    border-radius: 44px 44px 250px 250px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px -10px rgba(17, 17, 51, 0.08);
+    background-color: #f8fafc;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.about-image-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px -12px rgba(130, 56, 122, 0.22);
+}
+
+.about-image-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-image-card:hover img {
+    transform: scale(1.03);
+}
+
+/* 4. Content Container */
+.about-content {
+    max-width: 580px;
+    width: 100%;
+}
+
+/* Sacred Pinwheel Badge */
+.about-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.78rem, 1vw, 0.85rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--heading-color, #111133);
+    margin-bottom: clamp(1rem, 2vw, 1.35rem);
+}
+
+.about-badge-icon {
+    color: var(--secondary-color, #ba436c) !important;
+    flex-shrink: 0;
+    transition: transform 0.6s ease;
+}
+
+.about-badge:hover .about-badge-icon {
+    transform: rotate(90deg);
+}
+
+/* 5. Typography */
+.about-heading {
+    margin-bottom: clamp(1rem, 2vw, 1.45rem);
+}
+
+.about-heading .title-line-1,
+.about-heading .about-title-line-1 {
+    display: block;
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2rem, 3.4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--heading-color, #111133);
+    letter-spacing: -0.015em;
+}
+
+.about-heading .title-line-2,
+.about-heading .about-title-line-2 {
+    display: block;
+    line-height: 1.18;
+    margin-top: 0.2rem;
+}
+
+.about-heading .title-line-2 .title-main,
+.about-heading .title-line-2 .about-title-main {
+    display: inline;
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2rem, 3.4vw, 3.4rem);
+    font-weight: 400;
+    color: var(--heading-color, #111133);
+    letter-spacing: -0.015em;
+}
+
+.about-heading .title-line-2 .title-highlight,
+.about-heading .title-line-2 .about-title-highlight {
+    display: inline;
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(2rem, 3.4vw, 3.4rem);
+    line-height: 1.2;
+    color: var(--secondary-color, #ba436c);
+    letter-spacing: 0.01em;
+    margin-left: 0.35rem;
+}
+
+/* Description Text */
+.about-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(0.95rem, 1.1vw, 1.08rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: #475569;
+    max-width: 580px;
+    margin-bottom: clamp(1.5rem, 2.8vw, 2.35rem);
+}
+
+/* Action Button */
+.about-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints for About Us
+   ========================================================================== */
+
+/* Tablets (Portrait 768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .about-section {
+        padding: 4rem 0 3rem;
+    }
+    .about-image-card {
+        max-width: 380px;
+        height: 480px;
+        border-radius: 36px 36px 200px 200px;
+    }
+    .about-content {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .about-badge {
+        justify-content: center;
+    }
+    .about-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16.5px;
+        max-width: 540px;
+    }
+    .about-actions {
+        justify-content: center;
+    }
+}
+
+/* Small Tablets & Large Phones (576px - 767.98px) */
+@media (max-width: 767.98px) {
+    .about-section {
+        padding: 3.5rem 0 2.5rem;
+    }
+    .about-image-card {
+        max-width: 320px;
+        height: 410px;
+        border-radius: 32px 32px 170px 170px;
+    }
+    .about-content {
+        text-align: center;
+    }
+    .about-badge {
+        justify-content: center;
+    }
+    .about-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15.5px;
+    }
+    .about-actions {
+        justify-content: center;
+    }
+}
+
+/* Small Phones (< 576px) */
+@media (max-width: 575.98px) {
+    .about-image-card {
+        max-width: 280px;
+        height: 360px;
+        border-radius: 28px 28px 140px 140px;
+    }
+    .about-heading .title-line-1,
+    .about-heading .title-line-2 .title-main,
+    .about-heading .title-line-2 .title-highlight,
+    .about-heading .about-title-line-1,
+    .about-heading .about-title-main,
+    .about-heading .about-title-highlight {
+        font-size: 1.85rem;
+    }
+}
+

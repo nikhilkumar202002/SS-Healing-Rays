@@ -150,6 +150,9 @@ $nav_items = $nav_items ?? [
     <!-- Workshop / Healing Circle Custom Styles -->
     <link rel="stylesheet" href="assets/css/workshop.css">
 
+    <!-- About Us Homepage Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/aboutus.css">
+
     <!-- About The Center Component Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutthehealing.css">
 
