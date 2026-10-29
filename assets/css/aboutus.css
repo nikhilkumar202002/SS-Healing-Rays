@@ -10,7 +10,7 @@
 /* 1. Section Wrapper */
 .about-section {
     position: relative;
-    padding: clamp(4rem, 6.5vw, 6.5rem) 0 clamp(3.5rem, 5.5vw, 5.5rem);
+    padding: 0 0 clamp(3.5rem, 5.5vw, 5.5rem);
     background-color: #ffffff;
     overflow: hidden;
     width: 100%;

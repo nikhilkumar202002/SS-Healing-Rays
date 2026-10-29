@@ -11,7 +11,7 @@
 
 .gallery-section {
     position: relative;
-    padding: 6.5rem 0 6.5rem 0;
+    padding: 0 0 6.5rem 0;
     background-color: #ffffff;
     overflow: hidden;
     width: 100%;
@@ -19,7 +19,7 @@
 
 /* 1. Header Typography (Padded internally for centered legibility) */
 .gallery-header {
-    margin-bottom: 3.75rem;
+    margin-bottom: 40px;
     max-width: 800px;
     padding: 0 24px;
 }
@@ -55,7 +55,7 @@
 
 .gallery-description {
     font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
-    font-size: clamp(1rem, 1.15vw, 1.12rem);
+    font-size: 20px;
     font-weight: 400;
     line-height: 1.65;
     color: #555566;

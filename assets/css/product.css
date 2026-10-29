@@ -11,14 +11,14 @@
 /* 1. Section Wrapper */
 .product-section {
     position: relative;
-    padding: clamp(4.5rem, 6.5vw, 6.5rem) 0 clamp(4.5rem, 6.5vw, 6.5rem);
+    padding: 0 0 clamp(4.5rem, 6.5vw, 6.5rem);
     background-color: #ffffff;
     overflow: hidden;
 }
 
 /* 2. Section Header */
 .product-header {
-    margin-bottom: clamp(2.5rem, 4vw, 3.75rem);
+    margin-bottom: 40px;
     padding: 0 1rem;
 }
 
@@ -29,7 +29,7 @@
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--heading-color, #111133);
-    margin-bottom: 0.75rem;
+    margin-bottom: 10px;
 }
 
 .product-heading {
@@ -54,7 +54,7 @@
 .product-heading .title-highlight {
     font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
     font-style: italic;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--secondary-color, #ba436c);
 }
 
