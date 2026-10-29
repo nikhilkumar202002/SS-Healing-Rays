@@ -11,38 +11,30 @@ $faq_title_2         = $faq_title_2 ?? 'Sacred';
 $faq_title_highlight = $faq_title_highlight ?? 'Inquiries';
 $faq_subtitle        = $faq_subtitle ?? 'Explore essential insights into our energy healing modalities, session preparations, and holistic sanctuary experiences.';
 
-$faq_items = [
+$faq_items = $faq_items ?? [
     [
-        'question' => 'What can I expect during my first energy healing session?',
-        'answer'   => 'Your first session begins with a gentle, heart-centered consultation to discuss your personal intentions, physical comfort, and emotional state. You will rest comfortably and fully clothed in our tranquil sanctuary while our certified master practitioners channel universal life force energy. Most guests report feeling deep warmth, light tingling, and an immediate release of accumulated tension.',
+        'question' => 'How can I choose the right healing approach for my needs?',
+        'answer'   => 'You don’t need to make that decision on your own. During your clarity call, we discuss your concerns, understand your needs, and explore the approaches that may suit you best. You can then choose what feels comfortable and appropriate for you.',
     ],
     [
-        'question' => 'How does Chakra Balancing work, and how do I know if mine are blocked?',
-        'answer'   => 'Chakras are seven core subtle energy vortexes that govern physical vitality and emotional harmony. When chronic stress, unresolved emotions, or burnout occur, these energy centers can become sluggish or congested. Common indicators include fatigue, anxiety, brain fog, and emotional sensitivity. Through sacred pendulum dowsing, therapeutic frequencies, and targeted crystal work, we restore free-flowing energetic equilibrium.',
+        'question' => 'Do I need to change my lifestyle or follow any specific beliefs?',
+        'answer'   => 'No. Our practices do not require you to follow a particular belief system or make major lifestyle changes. We explain the purpose of each approach, its potential benefits, and its limitations so you can make an informed decision.',
     ],
     [
-        'question' => 'Are distance or virtual energy healing sessions as effective as in-person visits?',
-        'answer'   => 'Yes, absolutely. Universal energy and subtle consciousness are not constrained by physical space or geographic distance. During a remote session, our practitioners tune into your individual energy field through deep intentional presence and sacred resonance. Clients across the globe regularly report the exact same profound warmth, clarity, emotional shifts, and renewal experienced in person.',
+        'question' => 'What can I expect during a one-to-one healing session?',
+        'answer'   => 'You will be offered a supportive, confidential, and non-judgmental space to share your concerns at your own pace. Your privacy is respected, and your personal information is handled confidentially. Each session is tailored to your needs and comfort level.',
     ],
     [
-        'question' => 'What should I wear or prepare prior to attending my appointment?',
-        'answer'   => 'We recommend wearing loose, comfortable clothing made of natural, breathable fabrics such as cotton or linen. Please stay well-hydrated throughout the day and avoid heavy meals or high doses of caffeine within two hours of your appointment. Arriving with an open mind, gentle breath, and quiet heart allows you to receive the optimal benefits of the healing frequencies.',
+        'question' => 'How many sessions will I need to achieve my goals?',
+        'answer'   => 'The number of sessions varies depending on your concerns, goals, and individual experience. Some people may notice changes early, while others may benefit from continued support. We review your progress together and discuss the next steps based on your needs.',
     ],
     [
-        'question' => 'What is Sound Healing with Tibetan Singing Bowls, and how does it heal?',
-        'answer'   => 'Sacred Tibetan singing bowls and precision-tuned quartz crystals produce rich harmonic vibrations that entrain brainwaves from high-stress beta states into restorative theta and delta meditative states. Acoustic resonance travels directly through the water molecules in your cells, clearing subconscious mental chatter, soothing the nervous system, and restoring cellular coherence.',
+        'question' => 'Can holistic energy healing complement conventional medical treatment?',
+        'answer'   => 'Yes. Holistic energy practices may complement conventional care by supporting relaxation, stress management, and emotional wellbeing. However, they do not replace medical treatment, psychological care, or prescribed medication. Individual experiences vary, and we encourage you to continue consulting your qualified healthcare professionals.',
     ],
     [
-        'question' => 'How many sessions will I need to experience lasting transformation?',
-        'answer'   => 'Many clients experience remarkable lightness, emotional relief, and peaceful clarity from their very first visit. For longstanding patterns, chronic stress, or deep soul transformation, we generally recommend a foundational series of 3 to 5 sessions spaced over several weeks to consolidate and sustain your new vibrational baseline.',
-    ],
-    [
-        'question' => 'Can holistic energy healing complement conventional medical treatments?',
-        'answer'   => 'Energy therapies such as Reiki, crystal alignment, and sound immersion are holistic complementary practices designed to support and enhance your total well-being alongside conventional medical care. While energy healing accelerates natural recuperation and mental resilience, it is not a replacement for professional medical diagnosis or prescribed medical therapies.',
-    ],
-    [
-        'question' => 'How do I schedule a session or register for upcoming healing workshops?',
-        'answer'   => 'You can easily reserve your private appointment or save a seat for our upcoming weekend workshops through our online booking button, by WhatsApp, or via direct phone consultation. Our compassionate care team is always delighted to assist you in selecting the ideal modality for your unique healing path.',
+        'question' => 'Can I benefit from energy healing sessions remotely?',
+        'answer'   => 'Yes. You can access personalised distance healing sessions from the comfort of your home, with care and attention tailored to your needs. However, individual experiences vary.',
     ],
 ];
 ?>
@@ -101,13 +93,20 @@ $faq_items = [
             </div>
         </div>
 
-        <!-- 3. Bottom Help Assistance Note -->
+        <!-- 3. Bottom Clarity Call CTA -->
         <div class="faq-contact-help text-center mx-auto">
-            <p class="mb-0 text-secondary">
-                Have a unique question not listed here? 
-                <a href="#contact" class="faq-help-link">Speak with our sanctuary guide</a> 
-                or reach us directly via WhatsApp.
+            <p class="faq-help-text">
+                Still have questions? Let’s find the right support for you.
             </p>
+            <div class="faq-help-action d-flex justify-content-center">
+                <?php
+                    $btn_text  = 'Book a Clarity Call';
+                    $btn_url   = '#bookingModal';
+                    $btn_class = 'Btn-Faq-Clarity';
+                    $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#bookingModal" aria-haspopup="dialog"';
+                    include dirname(__DIR__) . '/common/button.php';
+                ?>
+            </div>
         </div>
 
     </div>

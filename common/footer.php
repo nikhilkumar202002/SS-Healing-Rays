@@ -16,48 +16,34 @@
 <footer class="site-footer" id="siteFooter">
     <div class="footer-container-card">
         
-        <div class="row g-4 g-xl-5 justify-content-between">
+        <!-- 3-Column Footer Layout: Logo & Brand, Quick Links, Contact Details -->
+        <div class="row g-4 g-lg-5 justify-content-between">
             
-            <!-- 1. Brand & Contact Column -->
-            <div class="col-xl-3 col-lg-4 col-md-6 col-12 footer-col-brand">
+            <!-- 1. Logo & Brand Identity Column -->
+            <div class="col-lg-5 col-md-12 col-12 footer-col-brand">
                 <div class="footer-logo-wrapper mb-3">
                     <a href="/" class="d-inline-block text-decoration-none" aria-label="SS Healing Rays Home">
-                        <img src="assets/logo/main-logo.png" alt="<?= htmlspecialchars($brand_name ?? 'SS Healing Rays') ?>" height="52" class="footer-brand-logo">
+                        <img src="assets/logo/main-logo.png" alt="<?= htmlspecialchars($brand_name ?? 'SS Healing Rays') ?>" class="footer-brand-logo">
                     </a>
                 </div>
-               
-                <div class="d-flex gap-2 mb-4">
+                <p class="footer-bio mb-4">
+                    A sacred and compassionate sanctuary to pause, release stress, restore inner harmony, and nurture mind-body-soul wellbeing through personalized holistic healing modalities.
+                </p>
+                <div class="d-flex gap-2">
                     <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                    <a href="#" class="footer-social-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://wa.me/919000606792" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 </div>
-                <!-- Mini Reach Us -->
-                <ul class="footer-contact-list">
-                    <li class="footer-contact-item">
-                        <i class="bi bi-geo-alt" aria-hidden="true"></i>
-                        <span>Bangalore, Karnataka, India</span>
-                    </li>
-                    <li class="footer-contact-item">
-                        <i class="bi bi-telephone" aria-hidden="true"></i>
-                        <a href="tel:<?= htmlspecialchars($phone_tel ?? '+919876543210') ?>">
-                            <?= htmlspecialchars($phone_number ?? '+91 98765 43210') ?>
-                        </a>
-                    </li>
-                    <li class="footer-contact-item">
-                        <i class="bi bi-envelope" aria-hidden="true"></i>
-                        <a href="mailto:contact@sshealingrays.com">contact@sshealingrays.com</a>
-                    </li>
-                </ul>
             </div>
 
             <!-- 2. Quick Links Column -->
-            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
+            <div class="col-lg-3 col-md-6 col-12 ps-lg-4">
                 <h6 class="footer-col-heading">Quick Links</h6>
                 <ul class="footer-links">
                     <li><a href="/" class="footer-link">Home</a></li>
                     <li><a href="aboutus" class="footer-link">About Us</a></li>
-                    <li><a href="services" class="footer-link">Healing</a></li>
+                    <li><a href="services" class="footer-link">Healing Services</a></li>
                     <li><a href="training" class="footer-link">Training</a></li>
                     <li><a href="workshop" class="footer-link">Workshop</a></li>
                     <li><a href="gallery" class="footer-link">Gallery</a></li>
@@ -65,58 +51,26 @@
                 </ul>
             </div>
 
-            <!-- 3. I. Healings Column -->
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-6">
-                <h6 class="footer-col-heading">I. Healings</h6>
-                <ul class="footer-links">
-                    <li><a href="services#reiki-healing" class="footer-link">Reiki Healing</a></li>
-                    <li><a href="services#crystal-healing" class="footer-link">Crystal Healing</a></li>
-                    <li><a href="services#angel-healing" class="footer-link">Angel Healing</a></li>
-                    <li><a href="services#energy-healing" class="footer-link">Energy healing</a></li>
-                    <li><a href="services#eft" class="footer-link">EFT</a></li>
-                    <li><a href="services#counselling" class="footer-link">Counselling</a></li>
-                    <li><a href="services#trauma-healing" class="footer-link">Trauma Healing</a></li>
-                    <li><a href="services#personal-transformation" class="footer-link">Personal Transformation</a></li>
-                    <li><a href="services#meditations" class="footer-link">Meditations</a></li>
-                    <li><a href="services#tarot-card-reading" class="footer-link">Tarot Card reading</a></li>
-                    <li><a href="services#therapeutic-yoga" class="footer-link">Therapeutic Yoga</a></li>
+            <!-- 3. Contact Details Column -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <h6 class="footer-col-heading">Contact Details</h6>
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                        <span>Hyderabad, India.</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="bi bi-telephone" aria-hidden="true"></i>
+                        <div class="d-flex flex-column gap-1">
+                            <a href="tel:+919000606792">+91 90006 06792</a>
+                            <a href="tel:+919966010981">+91 99660 10981</a>
+                        </div>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="bi bi-envelope" aria-hidden="true"></i>
+                        <a href="mailto:sshealingrays@gmail.com">sshealingrays@gmail.com</a>
+                    </li>
                 </ul>
-            </div>
-
-            <!-- 4. II. Training & III. Courses Column -->
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12">
-                <h6 class="footer-col-heading">II. Training</h6>
-                <ul class="footer-links">
-                    <li><a href="training#program-reiki" class="footer-link">Reiki- Shiki Ryoho &amp; Karuna Reiki (All levels)</a></li>
-                    <li><a href="training#program-crystal" class="footer-link">Crystal Therapy</a></li>
-                    <li><a href="training#program-angel" class="footer-link">Angel Therapy</a></li>
-                    <li><a href="training#program-eft" class="footer-link">EFT</a></li>
-                </ul>
-
-                <h6 class="footer-subgroup-title">III. Courses on Wellness</h6>
-                <ul class="footer-links">
-                    <li><a href="course#course-spandan" class="footer-link">Spandan</a></li>
-                    <li><a href="course#course-chetan" class="footer-link">Chetan</a></li>
-                </ul>
-            </div>
-
-            <!-- 5. IV. Workshops Column -->
-            <div class="col-xl-3 col-lg-12 col-md-12 col-12 footer-col-workshops">
-                <h6 class="footer-col-heading">IV. Workshops</h6>
-                <div class="footer-workshops-grid">
-                    <a href="workshop#workshop-energy-reset" class="footer-link">1. Energy Reset</a>
-                    <a href="workshop#workshop-language-of-crystals" class="footer-link">2. Language of crystals</a>
-                    <a href="workshop#workshop-gratitude" class="footer-link">3. Gratitude</a>
-                    <a href="workshop#workshop-loving-yourself" class="footer-link">4. Loving Yourself</a>
-                    <a href="workshop#workshop-breath-work" class="footer-link">5. Breath work</a>
-                    <a href="workshop#workshop-mudras" class="footer-link">6. Mudras</a>
-                    <a href="workshop#workshop-relaxation" class="footer-link">7. Relaxation</a>
-                    <a href="workshop#workshop-money-manifestation" class="footer-link">8. Money manifestation</a>
-                    <a href="workshop#workshop-energy-routine" class="footer-link">9. Energy Routine</a>
-                    <a href="workshop#workshop-abundance-program" class="footer-link">10. Abundance program</a>
-                    <a href="workshop#workshop-reprogram-with-meditation" class="footer-link">11. Reprogram with meditation</a>
-                    <a href="workshop#workshop-colour-meditation" class="footer-link">12. Colour meditation</a>
-                </div>
             </div>
 
         </div>

@@ -1,11 +1,9 @@
 <?php
 
-$gallery_pretitle        = $gallery_pretitle ?? 'SACRED GLIMPSES';
-$gallery_title_1         = $gallery_title_1 ?? 'Capturing Moments of';
-$gallery_title_2         = $gallery_title_2 ?? 'Inner';
-$gallery_title_highlight = $gallery_title_highlight ?? 'Transformation';
-$gallery_btn_text        = $gallery_btn_text ?? 'Explore Full Gallery';
-$gallery_btn_url         = $gallery_btn_url ?? 'gallery';
+$gallery_heading  = $gallery_heading ?? 'Moments of Connection, Learning & <span class="title-highlight">Celebration</span>';
+$gallery_desc     = $gallery_desc ?? 'A glimpse into our community, shared experiences and milestones.';
+$gallery_btn_text = $gallery_btn_text ?? 'Explore Full Gallery';
+$gallery_btn_url  = $gallery_btn_url ?? 'gallery';
 
 $gallery_row_1 = [
     [
@@ -83,14 +81,10 @@ $gallery_row_2 = [
     
     <!-- 1. Section Header (Centered with internal spacing) -->
     <div class="gallery-header text-center mx-auto">
-        <p class="gallery-pretitle"><?= htmlspecialchars($gallery_pretitle) ?></p>
-        <h2 class="gallery-heading">
-            <span class="d-block"><?= htmlspecialchars($gallery_title_1) ?></span>
-            <span class="d-block">
-                <?= htmlspecialchars($gallery_title_2) ?>
-                <span class="title-highlight"><?= htmlspecialchars($gallery_title_highlight) ?></span>
-            </span>
-        </h2>
+        <h2 class="gallery-heading"><?= $gallery_heading ?></h2>
+        <?php if (!empty($gallery_desc)): ?>
+            <p class="gallery-description"><?= htmlspecialchars($gallery_desc) ?></p>
+        <?php endif; ?>
     </div>
 
     <!-- 2. Dual Continuous Sliders (Full-Bleed, Opposite Directions, Smooth & Slow) -->
