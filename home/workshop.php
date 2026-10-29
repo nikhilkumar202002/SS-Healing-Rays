@@ -2,14 +2,18 @@
 
 
 $welcome_logo          = $welcome_logo ?? 'assets/logo/main-logo.png';
-$welcome_tagline       = $welcome_tagline ?? 'WELCOME TO HEAL WITH SS HEALING RAYS';
+$welcome_tagline       = $welcome_tagline ?? 'Welcome to SS Healing Rays: A Space
+to Pause , Reconnect and Grow';
 $welcome_headline      = $welcome_headline ?? "A safe space to release trauma, ease stress, and return to your calm, where every session soothes the mind, restores the body’s balance, and inspires healing from within.";
 
 $about_badge           = $about_badge ?? 'ABOUT SS HEALING RAYS';
 $about_title_1         = $about_title_1 ?? 'What Makes My';
 $about_title_2         = $about_title_2 ?? 'Healing';
 $about_title_highlight = $about_title_highlight ?? 'Unique';
-$about_desc            = $about_desc ?? "At Heal with Sreeparvathy, healing is more than a single session. I combine Reiki, EFT and energy healing with compassionate coaching to help you release trauma, ease stress and reconnect with your inner calm. Each session is shaped around you, held in a safe, non-judgmental space, and guided at a pace that feels right for you.";
+$about_desc            = $about_desc ?? "Join our upcoming workshops to pause, release stress, and explore
+what’s been weighing you down. Through guided practices, reflection, and shared learning,
+discover simple tools to nurture calm, balance, and clarity in everyday life. Come as you are,
+connect with others, and grow at your own pace.";
 $about_btn_text        = $about_btn_text ?? 'Learn More';
 $about_btn_url         = $about_btn_url ?? '#about';
 $about_img             = $about_img ?? (file_exists(dirname(__DIR__) . '/assets/images/about-image.jpeg') ? 'assets/images/about-image.jpeg' : 'assets/images/workshop-healing-circle.png');

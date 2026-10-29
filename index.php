@@ -32,7 +32,10 @@ include __DIR__ . '/home/services.php';
 // 5. Homepage Meet Our Healers & Team
 include __DIR__ . '/home/team.php';
 
-// 6. Homepage Retreat Call-to-Action Banner
+// 6. Homepage Impact & Statistics Counter
+include __DIR__ . '/home/counter.php';
+
+// 7. Homepage Retreat Call-to-Action Banner
 include __DIR__ . '/home/cta-banner.php';
 
 // 7. Homepage Testimonials Bento Grid

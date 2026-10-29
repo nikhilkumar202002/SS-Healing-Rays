@@ -3,11 +3,11 @@
 $banner_slides = $banner_slides ?? [
     [
         'image'       => 'assets/banner/banner-1.jpeg',
-        'title'       => 'Indulge in <em>Wellness,</em><br>Surrounded by <em>Elegance</em>',
-        'description' => 'An exclusive sanctuary where world-class spa treatments, mindful movement, and gourmet nutrition meet luxury accommodation in breathtaking destinations.',
-        'btn1_text'   => 'Explore Retreats',
+        'title'       => 'Indulge in <em>Wellness.</em><br>Reconnect with the <em>Calm Within.</em>',
+        'description' => 'Heal and find balance through gentle one-to-one guidance that helps you reconnect with yourself and navigate life with greater ease and grace.',
+        'btn1_text'   => 'Explore Our Services',
         'btn1_url'    => '#services',
-        'btn2_text'   => 'Reserve Your Suite',
+        'btn2_text'   => 'Book Clarity Call',
         'btn2_url'    => '#booking',
     ],
     [

@@ -50,9 +50,8 @@
 
 .workshop-pretitle {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: clamp(0.82rem, 1.35vw, 1.2rem);
-    font-weight: 400;
-    letter-spacing: clamp(0.08em, 0.15vw, 0.14em);
+    font-size: 35px;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--heading-color, #111133);
     margin-bottom: clamp(12px, 1.8vw, 20px);
@@ -62,7 +61,7 @@
 /* Fluid Unbroken Welcome Headline */
 .workshop-welcome-text {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: clamp(1.15rem, 2.2vw, 2.15rem);
+    font-size: 25px;
     font-weight: 400;
     line-height: 1.4;
     color: var(--heading-color, #111133);

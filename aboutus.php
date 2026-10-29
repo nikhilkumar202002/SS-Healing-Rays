@@ -25,9 +25,12 @@ include __DIR__ . '/home/services.php';
 // 4. Meet Our Healers & Guides
 include __DIR__ . '/home/team.php';
 
-// 5. Sacred Retreat CTA Banner
+// 5. Impact & Statistics Counter
+include __DIR__ . '/home/counter.php';
+
+// 6. Sacred Retreat CTA Banner
 include __DIR__ . '/home/cta-banner.php';
 
-// 6. Common Global Footer
+// 7. Common Global Footer
 include __DIR__ . '/common/footer.php';
 ?>

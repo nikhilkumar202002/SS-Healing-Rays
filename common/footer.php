@@ -154,6 +154,9 @@ include __DIR__ . '/popupbookingform.php';
 <!-- Healing Services Carousel Script -->
 <script src="assets/js/services.js"></script>
 
+<!-- Counter Animation Script -->
+<script src="assets/js/counter.js"></script>
+
 <!-- Retreat CTA Full Banner Swiper Script -->
 <script src="assets/js/cta-banner.js"></script>
 

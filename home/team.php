@@ -2,16 +2,15 @@
 
 
 $team_pretitle        = $team_pretitle ?? 'MEET OUR TEAM';
-$team_title_1         = $team_title_1 ?? 'Meet the People';
-$team_title_2         = $team_title_2 ?? 'Who Make It';
-$team_title_highlight = $team_title_highlight ?? 'Sacred';
+$team_heading         = $team_heading ?? 'Meet the <span class="title-highlight">Founders</span>';
 
 $team_members = $team_members ?? [
     [
         'name'        => 'Sreeparvathy',
         'role'        => 'Founder & Master Healer',
         'image'       => 'assets/images/profile/sreeparvathi.jpg',
-        'bio'         => 'Supporting your journey towards emotional balance, self-discovery and a more mindful life through holistic healing practices.',
+        'bio'         => 'Guiding you towards emotional balance and self-discovery through holistic
+healing. Also offering personal coaching and corporate training.',
         'profile_url' => 'sreeparvathy',
         'instagram'   => 'https://www.instagram.com/heal_sreeparvathy/',
         'facebook'    => '#',
@@ -21,7 +20,8 @@ $team_members = $team_members ?? [
         'name'        => 'Sravanti',
         'role'        => 'Holistic Transformation & Yoga Guide',
         'image'       => 'assets/images/profile/sravanti.jpg',
-        'bio'         => 'Guiding individuals towards greater awareness, inner balance and personal transformation through healing practices, coaching and yoga.',
+        'bio'         => 'Supporting you in deepening self-awareness, finding inner balance and embracing
+change through holistic healing, wellness and yoga.',
         'profile_url' => 'sravanti',
         'instagram'   => 'https://www.instagram.com/sravantiheals/',
         'facebook'    => '#',
@@ -37,11 +37,7 @@ $team_members = $team_members ?? [
         <div class="team-header text-center">
             <p class="team-pretitle"><?= htmlspecialchars($team_pretitle) ?></p>
             <h2 class="team-heading">
-                <span class="d-block"><?= htmlspecialchars($team_title_1) ?></span>
-                <span class="d-block">
-                    <?= htmlspecialchars($team_title_2) ?>
-                    <span class="title-highlight"><?= htmlspecialchars($team_title_highlight) ?></span>
-                </span>
+                <?= $team_heading ?>
             </h2>
         </div>
 

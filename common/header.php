@@ -159,6 +159,9 @@ $nav_items = $nav_items ?? [
     <!-- Meet Our Team / Profile Cards Custom Styles -->
     <link rel="stylesheet" href="assets/css/team.css">
 
+    <!-- Counter / Impact Statistics Custom Styles -->
+    <link rel="stylesheet" href="assets/css/counter.css">
+
     <!-- Retreat CTA Full Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/cta-banner.css">
 
