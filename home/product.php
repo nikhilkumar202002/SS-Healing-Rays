@@ -13,9 +13,10 @@
  * ==============================================================================
  */
 
-$product_pretitle    = $product_pretitle ?? 'SACRED OFFERINGS';
-$product_heading     = $product_heading ?? 'Thoughtfully Curated for <span class="title-highlight">Your Wellbeing</span>';
-$show_product_header = $show_product_header ?? true;
+$product_pretitle        = $product_pretitle ?? 'SACRED OFFERINGS';
+$product_title_1         = $product_title_1 ?? 'Thoughtfully Curated for';
+$product_title_highlight = $product_title_highlight ?? 'Your Wellbeing';
+$show_product_header     = $show_product_header ?? true;
 
 $products = $products ?? [
     [
@@ -45,13 +46,20 @@ $products = $products ?? [
     <div class="container">
         
         <?php if (!empty($show_product_header)): ?>
-            <!-- Section Header -->
+            <!-- Section Header (Clean 2-line layout) -->
             <div class="product-header text-center">
                 <?php if (!empty($product_pretitle)): ?>
                     <p class="product-pretitle"><?= htmlspecialchars($product_pretitle) ?></p>
                 <?php endif; ?>
                 <?php if (!empty($product_heading)): ?>
                     <h2 class="product-heading"><?= $product_heading ?></h2>
+                <?php else: ?>
+                    <h2 class="product-heading">
+                        <span class="product-heading-line-1"><?= htmlspecialchars($product_title_1) ?></span>
+                        <span class="product-heading-line-2">
+                            <span class="title-highlight"><?= htmlspecialchars($product_title_highlight) ?></span>
+                        </span>
+                    </h2>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

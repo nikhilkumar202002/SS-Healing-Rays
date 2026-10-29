@@ -1083,6 +1083,11 @@ cite,
     transform: translateY(-2px);
 }
 
+.Btn-Container:hover .icon-Container .btn-arrow-svg,
+.Btn-Container:hover .icon-Container i {
+    transform: translate(2.5px, -2.5px);
+}
+
 .Btn-Container:active {
     transform: translateY(0) scale(0.98);
 }

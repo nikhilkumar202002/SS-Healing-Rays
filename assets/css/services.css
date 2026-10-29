@@ -230,12 +230,17 @@
 
 .Btn-Services-Primary:hover .icon-Container {
     background-color: #ffffff !important;
+    transform: scale(1.04);
 }
 
 .Btn-Services-Primary:hover .icon-Container .btn-arrow-svg {
     color: var(--primary-color, #82387a) !important;
     stroke: var(--primary-color, #82387a) !important;
-    transform: translate(2px, -2px);
+    transform: translate(2.5px, -2.5px);
+}
+
+.Btn-Services-Primary:active {
+    transform: translateY(0) scale(0.98);
 }
 
 /* Responsive adjustments */

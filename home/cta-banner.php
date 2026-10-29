@@ -11,32 +11,22 @@
  * ==============================================================================
  */
 
-$cta_banner_title_1  = $cta_banner_title_1 ?? 'Join Us at';
-$cta_banner_title_2  = $cta_banner_title_2 ?? 'Whispers of Stillness';
-$cta_banner_title_3  = $cta_banner_title_3 ?? 'Retreat';
+$cta_banner_title_1  = $cta_banner_title_1 ?? 'Join our';
+$cta_banner_title_2  = $cta_banner_title_2 ?? 'Healing Circle.';
+$cta_banner_title_3  = $cta_banner_title_3 ?? '';
 $cta_banner_btn_text = $cta_banner_btn_text ?? 'Book your slot';
 $cta_banner_btn_url  = $cta_banner_btn_url ?? '#bookingModal';
 
-$cta_banner_images = $cta_banner_images ?? [
-    'assets/banner/cta-banner.jpeg',
-    'assets/banner/cta-banner-2.jpeg',
-    'assets/banner/cta-banner-3.jpeg',
-];
+$cta_banner_image = $cta_banner_image ?? 'assets/banner/cta-banner.jpeg';
 ?>
 
-<section class="cta-banner-section position-relative overflow-hidden" id="retreat-cta" aria-label="Whispers of Stillness Retreat">
-    <!-- Ambient Background Crossfade Swiper -->
-    <div class="swiper cta-banner-swiper" aria-hidden="true">
-        <div class="swiper-wrapper">
-            <?php foreach ($cta_banner_images as $index => $img): ?>
-                <div class="swiper-slide">
-                    <img src="<?= htmlspecialchars($img) ?>" 
-                         alt="Whispers of Stillness Retreat Atmosphere <?= $index + 1 ?>" 
-                         class="cta-banner-bg-img"
-                         loading="<?= $index === 0 ? 'eager' : 'lazy' ?>">
-                </div>
-            <?php endforeach; ?>
-        </div>
+<section class="cta-banner-section position-relative overflow-hidden" id="retreat-cta" aria-label="Join our Healing Circle">
+    <!-- Ambient Single Background Image -->
+    <div class="cta-banner-bg-wrapper" aria-hidden="true">
+        <img src="<?= htmlspecialchars($cta_banner_image) ?>" 
+             alt="Healing Circle Atmosphere" 
+             class="cta-banner-bg-img"
+             loading="eager">
     </div>
 
     <!-- Soft Luminous Daylight Overlay (Matching UI Screenshot) -->
@@ -47,9 +37,15 @@ $cta_banner_images = $cta_banner_images ?? [
         <div class="cta-banner-content text-center mx-auto">
             
             <h2 class="cta-banner-title">
-                <span class="cta-title-line cta-title-main"><?= htmlspecialchars($cta_banner_title_1) ?></span>
-                <span class="cta-title-line cta-title-highlight"><?= htmlspecialchars($cta_banner_title_2) ?></span>
-                <span class="cta-title-line cta-title-main"><?= htmlspecialchars($cta_banner_title_3) ?></span>
+                <?php if (!empty($cta_banner_title_1)): ?>
+                    <span class="cta-title-line cta-title-main"><?= htmlspecialchars($cta_banner_title_1) ?></span>
+                <?php endif; ?>
+                <?php if (!empty($cta_banner_title_2)): ?>
+                    <span class="cta-title-line cta-title-highlight"><?= htmlspecialchars($cta_banner_title_2) ?></span>
+                <?php endif; ?>
+                <?php if (!empty($cta_banner_title_3)): ?>
+                    <span class="cta-title-line cta-title-main"><?= htmlspecialchars($cta_banner_title_3) ?></span>
+                <?php endif; ?>
             </h2>
 
             <div class="cta-banner-action">
