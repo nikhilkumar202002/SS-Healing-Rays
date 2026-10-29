@@ -1,0 +1,244 @@
+/* ==========================================================================
+   Product Cards Section Component Styles - SS Healing Rays
+   Dedicated to: home/product.php
+   Layout:
+     - 2 Products Card View (side-by-side on desktop, stacked on mobile)
+     - Top Image Container (3:2 ratio with zoom on hover)
+     - Overlapping Center Logo Badge (circular badge floating on boundary)
+     - Below Content Section: Product Name, Short Description, CTA Button
+   ========================================================================== */
+
+/* 1. Section Wrapper */
+.product-section {
+    position: relative;
+    padding: clamp(4.5rem, 6.5vw, 6.5rem) 0 clamp(4.5rem, 6.5vw, 6.5rem);
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* 2. Section Header */
+.product-header {
+    margin-bottom: clamp(2.5rem, 4vw, 3.75rem);
+    padding: 0 1rem;
+}
+
+.product-pretitle {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.75rem;
+}
+
+.product-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+    font-weight: 400;
+    line-height: 1.22;
+    color: var(--heading-color, #111133);
+    margin: 0 auto;
+    letter-spacing: -0.015em;
+}
+
+.product-heading .title-highlight {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--secondary-color, #ba436c);
+    margin-left: 0.25rem;
+}
+
+/* 3. Cards Grid Container */
+.product-cards-container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.product-card-col {
+    display: flex;
+}
+
+/* 4. Product Card Frame */
+.product-card {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 28px;
+    border: 1px solid rgba(130, 56, 122, 0.14);
+    box-shadow: 0 14px 38px -10px rgba(17, 17, 51, 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 55px -12px rgba(130, 56, 122, 0.22);
+    border-color: rgba(130, 56, 122, 0.32);
+}
+
+/* 5. Top Image Container with Overlapping Logo */
+.product-media-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.product-image-frame {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+/* 6. Overlapping Center Logo Badge */
+.product-logo-badge {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px -4px rgba(17, 17, 51, 0.14), 0 0 0 5px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    z-index: 5;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.product-card:hover .product-logo-badge {
+    transform: translate(-50%, 50%) scale(1.08);
+    box-shadow: 0 12px 30px -4px rgba(130, 56, 122, 0.25), 0 0 0 5px #ffffff;
+}
+
+.product-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* 7. Bottom Content Section */
+.product-content {
+    position: relative;
+    padding: 52px 32px 36px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.product-details {
+    margin-bottom: 1.75rem;
+    width: 100%;
+}
+
+.product-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(1.4rem, 2vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.product-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: 1.02rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #555566;
+    margin: 0 auto;
+    max-width: 380px;
+}
+
+/* 8. Action Button */
+.product-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Specific styling for custom product CTA button */
+.product-actions .Btn-Product-Primary,
+.product-actions .Btn-Product-Demo {
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet & Below (<= 991.98px) */
+@media (max-width: 991.98px) {
+    .product-section {
+        padding: 4rem 0 4.5rem;
+    }
+    .product-cards-container {
+        max-width: 760px;
+    }
+    .product-image-frame {
+        height: 230px;
+    }
+    .product-logo-badge {
+        width: 74px;
+        height: 74px;
+    }
+    .product-content {
+        padding: 46px 24px 30px;
+    }
+}
+
+/* Mobile Screens (<= 767.98px) */
+@media (max-width: 767.98px) {
+    .product-section {
+        padding: 3.5rem 0 4rem;
+    }
+    .product-cards-container {
+        max-width: 440px;
+    }
+    .product-card {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+    .product-image-frame {
+        height: 220px;
+    }
+    .product-logo-badge {
+        width: 68px;
+        height: 68px;
+    }
+    .product-content {
+        padding: 42px 20px 28px;
+    }
+    .product-title {
+        font-size: 1.45rem;
+    }
+    .product-description {
+        font-size: 0.96rem;
+    }
+}
+
