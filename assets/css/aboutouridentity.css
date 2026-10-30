@@ -11,7 +11,7 @@
     position: relative;
     padding: clamp(5rem, 7vw, 7rem) 0;
     background-color: #f7f3ee;
-    background-image: var(--identity-bg, url('../images/about/phylosophy.jpg'));
+    background-image: url('../images/about/phylosophy.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 30%;

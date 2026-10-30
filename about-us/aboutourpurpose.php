@@ -18,7 +18,7 @@ $purpose_banner_img      = $purpose_banner_img ?? 'assets/banner/about-banner.jp
 $purpose_description = $purpose_description ?? 'At SS Healing Rays, our philosophy is rooted in the belief that wellbeing begins with taking time to understand ourselves. The journey towards greater balance can look different for everyone. Sometimes it begins with a desire for calm. Sometimes it comes from the need to understand difficult emotions, develop greater self-awareness, or make room for personal change. We believe that a compassionate and welcoming environment can provide an opportunity to pause, reflect, and reconnect with what matters. Through our focus on holistic wellbeing and mindful practices, we aim to encourage individuals to approach their personal journeys with patience, openness, and kindness towards themselves. Our purpose is to create a space where people can explore these possibilities without judgement and take meaningful steps towards greater self-understanding.';
 ?>
 
-<section class="purpose-section position-relative" id="ourPurpose" style="--purpose-bg: url('<?= htmlspecialchars($purpose_banner_img) ?>');" aria-label="Our Purpose and Philosophy">
+<section class="purpose-section position-relative" id="ourPurpose" style="background-image: url('<?= htmlspecialchars($purpose_banner_img) ?>');" aria-label="Our Purpose and Philosophy">
     <div class="container-fluid purpose-container">
         
         <div class="purpose-content-wrap mx-auto text-center">

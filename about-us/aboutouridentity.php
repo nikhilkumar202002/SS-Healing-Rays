@@ -16,7 +16,7 @@ $identity_bg_img            = $identity_bg_img ?? (
 );
 ?>
 
-<section class="identity-section position-relative" id="ourIdentity" style="--identity-bg: url('<?= htmlspecialchars($identity_bg_img) ?>');" aria-label="Our Identity - A Ray of Light on Every Journey">
+<section class="identity-section position-relative" id="ourIdentity" style="background-image: url('<?= htmlspecialchars($identity_bg_img) ?>');" aria-label="Our Identity - A Ray of Light on Every Journey">
     
     <!-- Soft Center Radial Gradient Overlay -->
     <div class="identity-radial-overlay" aria-hidden="true"></div>
