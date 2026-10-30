@@ -165,6 +165,9 @@ $nav_items = $nav_items ?? [
     <!-- About Mission & Vision Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutvisionmission.css">
 
+    <!-- About Our Identity Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/aboutouridentity.css">
+
     <!-- About The Center Component Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutthehealing.css">
 

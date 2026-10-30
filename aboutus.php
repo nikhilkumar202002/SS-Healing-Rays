@@ -35,6 +35,9 @@ include __DIR__ . '/about-us/aboutapproach.php';
 // 7. Mission & Vision 2-Card Fixed-Height Section
 include __DIR__ . '/about-us/aboutvisionmission.php';
 
+// 8. Our Identity Banner Section ("A Ray of Light on Every Journey")
+include __DIR__ . '/about-us/aboutouridentity.php';
+
 
 
 // 7. Common Global Footer

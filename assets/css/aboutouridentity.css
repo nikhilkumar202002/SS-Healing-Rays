@@ -1,0 +1,174 @@
+/* ==========================================================================
+   Our Identity Section Component - SS Healing Rays (About Us Page)
+   Features:
+     - Full-Width Banner with Background Image (assets/images/about/our-dentity.jpg)
+     - Soft Center Radial Gradient Overlay to ensure crisp readability
+     - Strict 2-Line Headline (Marcellus + Playfair Display Italic Highlight)
+     - Poetic Subtitle and Full-Width Center-Aligned Description
+   ========================================================================== */
+
+.identity-section {
+    position: relative;
+    padding: clamp(5rem, 7vw, 7rem) 0;
+    background-color: #f7f3ee;
+    background-image: var(--identity-bg, url('../images/about/phylosophy.jpg'));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Only Center Overlap Radial Gradient (Tight around center text content) */
+.identity-radial-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(320px, 76vw, 980px);
+    height: clamp(300px, 82%, 480px);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.88) 35%,
+        rgba(255, 255, 255, 0.45) 65%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: 50%;
+    filter: blur(16px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.identity-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 clamp(1.5rem, 5vw, 4.5rem);
+}
+
+/* Centered Content Wrap */
+.identity-content-wrap {
+    max-width: 1120px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Main Heading (Strict 2 Lines) */
+.identity-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.1rem, 3.4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--heading-color, #111133);
+    margin: 0 auto clamp(0.9rem, 1.5vw, 1.25rem);
+    letter-spacing: -0.015em;
+    width: 100%;
+}
+
+.identity-heading .identity-title-line {
+    display: block;
+}
+
+.identity-heading .identity-title-line:nth-child(2) {
+    margin-top: 0.2rem;
+}
+
+.identity-heading .title-highlight {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--secondary-color, #ba436c);
+}
+
+/* Subtitle Tagline */
+.identity-subtitle {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-size: clamp(1.08rem, 1.35vw, 1.28rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--primary-color, #82387a);
+    max-width: 820px;
+    margin: 0 auto clamp(1.5rem, 2.2vw, 2rem);
+    text-wrap: balance;
+}
+
+/* Full-Width Description Paragraph */
+.identity-description-wrap {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.identity-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: clamp(1rem, 1.15vw, 1.12rem);
+    font-weight: 400;
+    line-height: 1.9;
+    color: #36364a;
+    margin: 0 auto;
+    letter-spacing: 0.005em;
+    width: 100%;
+}
+
+/* Responsive Adaptations */
+@media (min-width: 992px) {
+    .identity-section {
+        background-size: cover;
+        background-position: center 30%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .identity-section {
+        padding: clamp(4rem, 6vw, 5rem) 0;
+        background-size: cover;
+    }
+    .identity-radial-overlay {
+        width: clamp(300px, 92vw, 760px);
+        height: 88%;
+        background: radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.96) 0%,
+            rgba(255, 255, 255, 0.9) 45%,
+            rgba(255, 255, 255, 0.45) 75%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+    .identity-heading {
+        font-size: clamp(1.85rem, 3.5vw, 2.4rem);
+    }
+    .identity-subtitle {
+        font-size: 1.05rem;
+    }
+    .identity-description {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .identity-section {
+        padding: 3.5rem 0;
+    }
+    .identity-heading {
+        font-size: 1.7rem;
+        line-height: 1.28;
+    }
+    .identity-subtitle {
+        font-size: 0.98rem;
+        margin-bottom: 1.25rem;
+    }
+    .identity-description {
+        font-size: 0.96rem;
+        line-height: 1.75;
+    }
+}
+
