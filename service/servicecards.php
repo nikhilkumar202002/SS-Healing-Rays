@@ -7,67 +7,67 @@ $service_cards_subtitle = $service_cards_subtitle ?? 'Explore our tailored energ
 $full_services_list = $full_services_list ?? [
     [
         'title' => 'Reiki Healing',
-        'image' => 'assets/images/services/reiki-healing.jpg',
+        'image' => 'assets/images/services/Reiki Healing.jpg',
         'desc'  => 'A deeply restorative Japanese energy therapy that channels universal life force to dissolve stagnant blocks, align chakras, and catalyze physical and emotional self-healing.',
         'url'   => 'contact.php?service=Reiki+Healing'
     ],
     [
         'title' => 'Crystal Healing',
-        'image' => 'assets/images/services/crystal-healing.jpg',
+        'image' => 'assets/images/services/Crystal Healing.jpg',
         'desc'  => 'Harnesses the natural vibrational resonance of pure earth crystals placed on sacred energy vortexes to cleanse auric fields, release stress, and inspire mental clarity.',
         'url'   => 'contact.php?service=Crystal+Healing'
     ],
     [
         'title' => 'Angel Healing',
-        'image' => 'assets/images/services/angel-healing.jpg',
+        'image' => 'assets/images/services/Angel Healing.jpg',
         'desc'  => 'A gentle, high-vibrational healing modality connecting you with angelic guidance for divine protection, intuitive clarity, and profound emotional solace during life transitions.',
         'url'   => 'contact.php?service=Angel+Healing'
     ],
     [
         'title' => 'Energy healing',
-        'image' => 'assets/images/services/energy-healing.jpg',
+        'image' => 'assets/images/services/Energy healing.jpg',
         'desc'  => 'Holistic biofield realignment that clears energetic fatigue, releases heavy emotional residue, and harmonizes your physical, emotional, and spiritual layers.',
         'url'   => 'contact.php?service=Energy+healing'
     ],
     [
         'title' => 'EFT',
-        'image' => 'assets/images/services/eft.jpg',
+        'image' => 'assets/images/services/EFT.jpg',
         'desc'  => 'Acupressure meridian tapping combined with mindful cognitive reframing to rapidly dissolve chronic anxiety, release trapped trauma, and rewire healthy thought patterns.',
         'url'   => 'contact.php?service=EFT'
     ],
     [
         'title' => 'Counselling',
-        'image' => 'assets/images/services/counselling.jpg',
+        'image' => 'assets/images/services/Counselling.jpg',
         'desc'  => 'A safe, empathetic sanctuary offering confidential dialogue, emotional grounding, and practical holistic tools to navigate relationship hurdles and personal growth.',
         'url'   => 'contact.php?service=Counselling'
     ],
     [
         'title' => 'Trauma Healing',
-        'image' => 'assets/images/services/trauma-healing.png',
+        'image' => 'assets/images/services/Trauma Healing.jpg',
         'desc'  => 'Gentle somatic and energetic trauma recovery that supports the nervous system in discharging stored subconscious stress, restoring inner safety and lasting resilience.',
         'url'   => 'contact.php?service=Trauma+Healing'
     ],
     [
         'title' => 'Personal Transformation Healing',
-        'image' => 'assets/images/services/personal-transformation.png',
+        'image' => 'assets/images/services/Personal Transformation.jpg',
         'desc'  => 'An immersive, multi-layered journey addressing root subconscious patterns, unlocking emotional freedom, and empowering you to step boldly into your soul purpose.',
         'url'   => 'contact.php?service=Personal+Transformation+Healing'
     ],
     [
         'title' => 'Meditations',
-        'image' => 'assets/images/services/meditations.png',
+        'image' => 'assets/images/services/Guided Meditation.jpg',
         'desc'  => 'Soulful mindfulness journeys, conscious pranayama breathwork, and guided visualization designed to quiet mental chatter, expand awareness, and ground profound inner peace.',
         'url'   => 'contact.php?service=Meditations'
     ],
     [
         'title' => 'Tarot Card reading',
-        'image' => 'assets/images/services/tarot-card-reading.png',
+        'image' => 'assets/images/services/Tarot Card Reading.jpg',
         'desc'  => 'Intuitive symbolic tarot readings offering illuminating perspectives, spiritual alignment, and actionable clarity for your relationships, career, and soul path.',
         'url'   => 'contact.php?service=Tarot+Card+reading'
     ],
     [
         'title' => 'Therapeutic Yoga',
-        'image' => 'assets/images/services/therapeutic-yoga.jpg',
+        'image' => 'assets/images/services/Therapeutic Yoga.jpg',
         'desc'  => 'Conscious, therapeutic movement combined with restorative breath integration to release somatic holding patterns, improve flexibility, and nurture embodied vitality.',
         'url'   => 'contact.php?service=Therapeutic+Yoga'
     ],

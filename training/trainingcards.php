@@ -14,7 +14,7 @@ $training_programs = [
             'Full Manuals & Sacred Symbols Guide',
             'Authorized Practitioner & Master Certificate'
         ],
-        'image'       => 'assets/images/services/reiki-healing.jpg',
+        'image'       => 'assets/images/services/Reiki Healing.jpg',
         'alt'         => 'Reiki Shiki Ryoho and Karuna Reiki Training at SS Healing Rays',
         'url'         => 'contact.php?training=Reiki+Shiki+Ryoho+Karuna+All+Levels',
         'tag'         => 'Levels 1, 2, Master &amp; Grandmaster'
@@ -32,7 +32,7 @@ $training_programs = [
             'Cleansing, Charging & Programming Protocols',
             'Certified Crystal Practitioner Certificate'
         ],
-        'image'       => 'assets/images/services/crystal-healing.jpg',
+        'image'       => 'assets/images/services/Crystal Healing.jpg',
         'alt'         => 'Certified Crystal Therapy Training at SS Healing Rays',
         'url'         => 'contact.php?training=Crystal+Therapy',
         'tag'         => 'Practitioner Certification'
@@ -50,7 +50,7 @@ $training_programs = [
             'Aura Protection Shields & Violet Flame',
             'Certified Angel Therapy Practitioner Diploma'
         ],
-        'image'       => 'assets/images/services/angel-healing.jpg',
+        'image'       => 'assets/images/services/Angel Healing.jpg',
         'alt'         => 'Angel Therapy Certification Course at SS Healing Rays',
         'url'         => 'contact.php?training=Angel+Therapy',
         'tag'         => 'Intuitive Master Course'
@@ -68,7 +68,7 @@ $training_programs = [
             'Borrowing Benefits in Group Practice',
             'Accredited EFT Practitioner Certification'
         ],
-        'image'       => 'assets/images/services/eft.jpg',
+        'image'       => 'assets/images/services/EFT.jpg',
         'alt'         => 'EFT Emotional Freedom Techniques Training at SS Healing Rays',
         'url'         => 'contact.php?training=EFT',
         'tag'         => 'Clinical & Somatic Curriculum'

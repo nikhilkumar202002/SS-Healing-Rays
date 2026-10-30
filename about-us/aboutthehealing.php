@@ -1,7 +1,7 @@
 <?php
 
-$about_healing_img_top    = $about_healing_img_top ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') ? 'assets/images/about/center-reiki-session.jpg' : 'assets/images/services/reiki-healing.jpg');
-$about_healing_img_bottom = $about_healing_img_bottom ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-crystal-therapy.jpg') ? 'assets/images/about/center-crystal-therapy.jpg' : 'assets/images/services/crystal-healing.jpg');
+$about_healing_img_top    = $about_healing_img_top ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') ? 'assets/images/about/center-reiki-session.jpg' : 'assets/images/services/Reiki Healing.jpg');
+$about_healing_img_bottom = $about_healing_img_bottom ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-crystal-therapy.jpg') ? 'assets/images/about/center-crystal-therapy.jpg' : 'assets/images/services/Crystal Healing.jpg');
 $about_healing_title_1    = $about_healing_title_1 ?? 'A Sacred Sanctuary for';
 $about_healing_title_2    = $about_healing_title_2 ?? 'Holistic Healing & <em>Transformation</em>';
 ?>
