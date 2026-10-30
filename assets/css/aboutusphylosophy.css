@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Philosophy Section Component - SS Healing Rays (About Us Page)
+   Specifications:
+     - Pure White Background (#ffffff)
+     - 4-Card Grid (01 to 04)
+     - Soft lilac/blush tinted cards with smooth hover elevation
+     - Marcellus + Playfair Display italic headline
+     - Clean typography and balanced spacing
+   ========================================================================== */
+
+.philosophy-section {
+    position: relative;
+    padding: clamp(5rem, 7.5vw, 7.5rem) 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 1. Centered Header */
+.philosophy-header {
+    max-width: 860px;
+    margin: 0 auto clamp(2.75rem, 4.5vw, 4rem);
+    text-align: center;
+}
+
+.philosophy-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.35rem);
+    font-weight: 400;
+    line-height: 1.24;
+    color: var(--heading-color, #111133);
+    margin: 0 auto clamp(1rem, 1.8vw, 1.35rem);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+}
+
+.philosophy-heading .title-highlight {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--secondary-color, #ba436c);
+}
+
+.philosophy-subtitle {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: clamp(1.02rem, 1.15vw, 1.12rem);
+    font-weight: 400;
+    line-height: 1.78;
+    color: #555566;
+    max-width: 800px;
+    margin: 0 auto;
+    text-wrap: balance;
+}
+
+/* 2. Four Cards Grid */
+.philosophy-grid {
+    row-gap: 1.75rem;
+}
+
+.philosophy-card-col {
+    display: flex;
+}
+
+.philosophy-card {
+    position: relative;
+    background-color: #fbf9fb;
+    border: 1.5px solid rgba(130, 56, 122, 0.08);
+    border-radius: 22px;
+    padding: clamp(2rem, 2.5vw, 2.5rem) clamp(1.5rem, 2vw, 1.85rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 8px 24px rgba(17, 17, 51, 0.03);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease,
+                background-color 0.4s ease;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-6px);
+    background-color: #ffffff;
+    border-color: rgba(186, 67, 108, 0.28);
+    box-shadow: 0 18px 42px -8px rgba(130, 56, 122, 0.12),
+                0 4px 12px rgba(17, 17, 51, 0.04);
+}
+
+/* Card Number Tag */
+.philosophy-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(1rem, 1.8vw, 1.5rem);
+}
+
+.philosophy-card-number {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-size: clamp(1.6rem, 2vw, 1.95rem);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--secondary-color, #ba436c);
+    letter-spacing: -0.02em;
+    opacity: 0.9;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.philosophy-card:hover .philosophy-card-number {
+    transform: scale(1.08);
+    color: var(--primary-color, #82387a);
+}
+
+/* Card Icon Accent */
+.philosophy-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(186, 67, 108, 0.08);
+    color: var(--secondary-color, #ba436c);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.philosophy-card:hover .philosophy-card-icon {
+    background-color: var(--primary-color, #82387a);
+    color: #ffffff;
+    transform: rotate(15deg);
+}
+
+/* Card Title */
+.philosophy-card-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(1.22rem, 1.4vw, 1.35rem);
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.95rem;
+    letter-spacing: -0.01em;
+}
+
+/* Card Description */
+.philosophy-card-desc {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, sans-serif);
+    font-size: 0.98rem;
+    font-weight: 400;
+    line-height: 1.74;
+    color: #555566;
+    margin: 0;
+}
+
+/* Responsive Adaptations */
+@media (max-width: 1199.98px) {
+    .philosophy-card {
+        padding: 1.85rem 1.4rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .philosophy-section {
+        padding: 4.5rem 0;
+    }
+    .philosophy-header {
+        margin-bottom: 3rem;
+    }
+    .philosophy-grid {
+        row-gap: 1.5rem;
+    }
+    .philosophy-card {
+        padding: 2rem 1.6rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .philosophy-section {
+        padding: 3.75rem 0;
+    }
+    .philosophy-header {
+        margin-bottom: 2.25rem;
+    }
+    .philosophy-heading {
+        font-size: 1.85rem;
+        line-height: 1.28;
+    }
+    .philosophy-subtitle {
+        font-size: 0.96rem;
+    }
+    .philosophy-card {
+        padding: 1.65rem 1.35rem;
+        border-radius: 18px;
+    }
+    .philosophy-card-title {
+        font-size: 1.18rem;
+    }
+    .philosophy-card-desc {
+        font-size: 0.94rem;
+        line-height: 1.68;
+    }
+}
+

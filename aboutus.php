@@ -18,18 +18,24 @@ include __DIR__ . '/common/header.php';
 // 2. Full-Height Hero Banner (No Slider, Matches Home Banner Aesthetics)
 include __DIR__ . '/about-us/aboutusbanner.php';
 
+// 2.5 Our Purpose & Philosophy Section
+
 // 3. About The Healing Center (Introducing the Center & Sanctuary)
 include __DIR__ . '/about-us/aboutthehealing.php';
-include __DIR__ . '/home/services.php';
 
-// 4. Meet Our Healers & Guides
-include __DIR__ . '/home/team.php';
+// 4. Our Purpose Banner Section
+include __DIR__ . '/about-us/aboutourpurpose.php';
 
-// 5. Impact & Statistics Counter
-include __DIR__ . '/home/counter.php';
+// 5. Holistic Philosophy 4-Card Section (White Background)
+include __DIR__ . '/about-us/aboutusphylosophy.php';
 
-// 6. Sacred Retreat CTA Banner
-include __DIR__ . '/home/cta-banner.php';
+// 6. Individual Journey Approach Section (Left Content | Right Image)
+include __DIR__ . '/about-us/aboutapproach.php';
+
+// 7. Mission & Vision 2-Card Fixed-Height Section
+include __DIR__ . '/about-us/aboutvisionmission.php';
+
+
 
 // 7. Common Global Footer
 include __DIR__ . '/common/footer.php';

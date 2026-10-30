@@ -153,6 +153,18 @@ $nav_items = $nav_items ?? [
     <!-- About Us Homepage Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutus.css">
 
+    <!-- About Our Purpose Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/aboutourpurpose.css">
+
+    <!-- About Philosophy Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/aboutusphylosophy.css">
+
+    <!-- About Approach Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/aboutapproach.css">
+
+    <!-- About Mission & Vision Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/aboutvisionmission.css">
+
     <!-- About The Center Component Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutthehealing.css">
 

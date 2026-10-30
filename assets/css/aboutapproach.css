@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Individual Journey Approach Component - SS Healing Rays (About Us Page)
+   Layout: Left Column Content | Right Column Sanctuary Image (Equal Height, No Border)
+   Specifications:
+     - Soft sanctuary background (#faf7f5)
+     - Single unified full paragraph description
+     - Right image matches exact height of left column
+     - No border on image or card
+     - Responsive mobile styling
+   ========================================================================== */
+
+.approach-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: #faf7f5;
+    overflow: hidden;
+    width: 100%;
+}
+
+.approach-grid-row {
+    align-items: stretch;
+}
+
+@media (min-width: 992px) {
+    .approach-grid-row {
+        --bs-gutter-x: 100px !important;
+    }
+}
+
+/* 1. Left Content Column */
+.col-approach-content {
+    display: flex;
+}
+
+.approach-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: clamp(0.5rem, 1vw, 1.25rem) 0;
+}
+
+/* Main Heading */
+.approach-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(2.1rem, 3.2vw, 2.85rem);
+    font-weight: 400;
+    line-height: 1.24;
+    color: var(--heading-color, #111133);
+    margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+}
+
+.approach-heading-main {
+    display: block;
+}
+
+.approach-heading-highlight {
+    display: block;
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--secondary-color, #ba436c);
+    margin-top: 0.25rem;
+}
+
+/* Full Paragraph Description */
+.approach-description {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: clamp(1rem, 1.1vw, 1.08rem);
+    font-weight: 400;
+    line-height: 1.88;
+    color: #444458;
+    margin: 0;
+    letter-spacing: 0.005em;
+}
+
+/* 2. Right Column Image (Equal Height, No Border) */
+.col-approach-image {
+    display: flex;
+}
+
+.approach-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.approach-image-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border: none !important;
+    outline: none !important;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px -10px rgba(17, 17, 51, 0.08);
+    background-color: #f1edea;
+}
+
+.approach-image {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    border: none !important;
+    border-radius: 24px;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.approach-image-card:hover .approach-image {
+    transform: scale(1.03);
+}
+
+/* 3. Responsive Breakpoints */
+@media (max-width: 991.98px) {
+    .approach-section {
+        padding: clamp(3.5rem, 5.5vw, 4.5rem) 0;
+    }
+    .approach-content {
+        margin-bottom: 2rem;
+    }
+    .approach-image-wrapper {
+        min-height: 380px;
+    }
+    .approach-image-card {
+        min-height: 380px;
+        height: 400px;
+        border-radius: 20px;
+    }
+    .approach-image {
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .approach-section {
+        padding: 3rem 0;
+    }
+    .approach-heading {
+        font-size: 1.85rem;
+        line-height: 1.28;
+        margin-bottom: 1.25rem;
+    }
+    .approach-description {
+        font-size: 0.98rem;
+        line-height: 1.78;
+    }
+    .approach-image-wrapper {
+        min-height: 300px;
+    }
+    .approach-image-card {
+        min-height: 300px;
+        height: 320px;
+        border-radius: 18px;
+    }
+    .approach-image {
+        border-radius: 18px;
+    }
+}
