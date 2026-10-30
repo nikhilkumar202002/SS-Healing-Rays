@@ -8,11 +8,13 @@ $identity_subtitle          = $identity_subtitle ?? 'Light often reminds us of w
 $identity_description       = $identity_description ?? 'At SS Healing Rays, we want our brand to evoke that same sense of calm and possibility. The image of a gentle ray of light reflects our aspiration to create a welcoming environment where individuals can pause, reconnect with themselves, and explore their personal journeys. For us, wellbeing is not about becoming someone else. It is about developing a deeper understanding of who we are and finding space to grow with patience and compassion. This philosophy shapes the atmosphere we hope to create: one grounded in kindness, self-awareness, and the possibility of positive change.';
 
 $identity_bg_img            = $identity_bg_img ?? (
-    file_exists(dirname(__DIR__) . '/assets/images/about/phylosophy.jpg')
-        ? 'assets/images/about/phylosophy.jpg'
-        : (file_exists(dirname(__DIR__) . '/assets/images/about/phylosophy')
-            ? 'assets/images/about/phylosophy'
-            : 'assets/images/about/our-dentity.jpg')
+    file_exists(dirname(__DIR__) . '/assets/images/about/our-dentity.jpg')
+        ? 'assets/images/about/our-dentity.jpg'
+        : (file_exists(dirname(__DIR__) . '/assets/images/about/our-identity.jpg')
+            ? 'assets/images/about/our-identity.jpg'
+            : (file_exists(dirname(__DIR__) . '/assets/images/about/our-dentity')
+                ? 'assets/images/about/our-dentity'
+                : 'assets/images/about/phylosophy.jpg'))
 );
 ?>
 
