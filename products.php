@@ -147,3 +147,4 @@ include __DIR__ . '/home/product.php';
      6. Common Global Footer
      ========================================================================== -->
 <?php include __DIR__ . '/common/footer.php'; ?>
+

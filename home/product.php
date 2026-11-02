@@ -1,5 +1,11 @@
 <?php
 
+// If accessed directly without an outer page wrapper, redirect to /products
+if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'product.php' && str_contains($_SERVER['REQUEST_URI'] ?? '', 'home/product')) {
+    header('Location: /products', true, 301);
+    exit;
+}
+
 $product_pretitle        = $product_pretitle ?? 'SACRED OFFERINGS';
 $product_title_1         = $product_title_1 ?? 'Thoughtfully Curated for';
 $product_title_highlight = $product_title_highlight ?? 'Your Wellbeing';
@@ -7,20 +13,22 @@ $show_product_header     = $show_product_header ?? true;
 
 $products = $products ?? [
     [
+        'id'          => 'crystals',
         'name'        => 'Genuine Crystals & Decor',
         'desc'        => 'Thoughtfully curated and charged with intention',
         'image'       => 'assets/product/crystal-store.jpg',
-        'logo'        => 'assets/product/product-logo-1.png',
+        'logo'        => 'assets/product/product-logo-2.png', // Crystals emblem logo
         'btn_text'    => 'Explore Products',
-        'btn_url'     => '#products',
+        'btn_url'     => 'https://wa.me/919000606792?text=Hi%20SS%20Healing%20Rays,%20I%20am%20interested%20in%20Genuine%20Crystals%20%26%20Decor',
         'btn_class'   => 'Btn-Product-Primary',
-        'btn_attr'    => '',
+        'btn_attr'    => 'target="_blank" rel="noopener noreferrer"',
     ],
     [
+        'id'          => 'wellbeing',
         'name'        => 'Holistic wellbeing',
         'desc'        => 'Nurturing balance & wellbeing through mindful movement',
         'image'       => 'assets/product/wellness.jpg',
-        'logo'        => 'assets/product/product-logo-2.png',
+        'logo'        => 'assets/product/product-logo-1.png', // Shamaa Yoga & Wellness Center logo
         'btn_text'    => 'Book a demo session',
         'btn_url'     => '#bookingModal',
         'btn_class'   => 'Btn-Product-Demo',
@@ -55,7 +63,7 @@ $products = $products ?? [
         <div class="product-cards-container">
             <div class="row justify-content-center g-4 g-lg-5">
                 <?php foreach ($products as $item): ?>
-                    <div class="col-12 col-md-6 product-card-col">
+                    <div class="col-12 col-md-6 product-card-col" <?= !empty($item['id']) ? 'id="' . htmlspecialchars($item['id']) . '"' : '' ?>>
                         <div class="product-card">
                             
                             <!-- 1. Top Image + Overlapping Center Logo -->
