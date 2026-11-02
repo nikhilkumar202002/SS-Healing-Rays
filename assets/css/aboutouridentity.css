@@ -133,15 +133,16 @@
         background-size: cover;
     }
     .identity-radial-overlay {
-        width: clamp(300px, 92vw, 760px);
-        height: 88%;
+        width: clamp(320px, 94vw, 860px);
+        height: 92%;
         background: radial-gradient(
             ellipse at center,
-            rgba(255, 255, 255, 0.96) 0%,
-            rgba(255, 255, 255, 0.9) 45%,
-            rgba(255, 255, 255, 0.45) 75%,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.93) 50%,
+            rgba(255, 255, 255, 0.6) 80%,
             rgba(255, 255, 255, 0) 100%
         );
+        filter: blur(20px);
     }
     .identity-heading {
         font-size: clamp(1.85rem, 3.5vw, 2.4rem);

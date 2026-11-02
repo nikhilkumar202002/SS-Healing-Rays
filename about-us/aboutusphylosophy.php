@@ -11,32 +11,32 @@
  * ==============================================================================
  */
 
-$philosophy_heading     = $philosophy_heading ?? 'A Holistic Approach to <span class="title-highlight">Inner Wellbeing</span>';
-$philosophy_subtitle    = $philosophy_subtitle ?? "We believe that personal wellbeing involves understanding ourselves with greater awareness, compassion, and patience. Our philosophy respects each individual's experiences and recognizes that meaningful personal growth takes time.";
+$philosophy_heading     = $philosophy_heading ?? 'Different People. Different Needs.<br class="d-none d-md-inline"> <span class="title-highlight">Personalised Pathways.</span>';
+$philosophy_subtitle    = $philosophy_subtitle ?? "We don't believe in a one-size-fits-all approach to transformation. Our work begins with understanding you, your concerns and what you wish to change. We then explore suitable practices and approaches to create a pathway that respects your needs and pace.";
 
 $philosophy_cards = $philosophy_cards ?? [
     [
         'number' => '01',
         'title'  => 'Compassion Without Judgement',
-        'desc'   => 'Every individual deserves to feel heard, respected, and welcomed. We value a compassionate approach that honours personal experiences and emotional needs.',
+        'desc'   => 'A safe, confidential and non-judgemental space where you can express yourself freely.',
         'icon'   => 'bi bi-heart',
     ],
     [
         'number' => '02',
         'title'  => 'Every Journey Is Unique',
-        'desc'   => 'No two people experience life in exactly the same way. We respect individual preferences, personal boundaries, and different paths towards wellbeing.',
+        'desc'   => "We understand that each person's experiences, challenges and goals are different.",
         'icon'   => 'bi bi-compass',
     ],
     [
         'number' => '03',
-        'title'  => 'Awareness and Mindfulness',
-        'desc'   => 'Taking time to notice our thoughts, feelings, and experiences can encourage reflection and a deeper understanding of ourselves.',
-        'icon'   => 'bi bi-brightness-high',
+        'title'  => 'Knowledge Meets Practical Application',
+        'desc'   => 'We bring together different modalities, learnings and practical tools to support meaningful change.',
+        'icon'   => 'bi bi-lightbulb',
     ],
     [
         'number' => '04',
-        'title'  => 'Growth at Your Own Pace',
-        'desc'   => 'Personal transformation is an ongoing process. We believe in allowing space for gradual change, self-discovery, and a more mindful relationship with ourselves.',
+        'title'  => 'Growth Towards Independence',
+        'desc'   => 'Our intention is to equip you with the understanding and practices to navigate life with greater confidence and independence.',
         'icon'   => 'bi bi-flower1',
     ],
 ];

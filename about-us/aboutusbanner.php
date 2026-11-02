@@ -9,12 +9,12 @@
  */
 
 $about_banner_image       = $about_banner_image ?? 'assets/banner/banner-2.jpeg';
-$about_banner_title       = $about_banner_title ?? 'A Sacred Sanctuary for<br>Personal Growth & <em>Healing</em>';
-$about_banner_description = $about_banner_description ?? 'An exclusive sanctuary where authentic Reiki alignment, trauma recovery, and intuitive coaching meet compassionate guidance on your path to lasting peace.';
-$about_banner_btn1_text   = $about_banner_btn1_text ?? 'Explore Services';
+$about_banner_title       = $about_banner_title ?? 'A Space for Growth,<br>Healing & <em>Transformation</em>';
+$about_banner_description = $about_banner_description ?? 'From personal challenges to meaningful change, we bring together knowledge, experience and personalised support to help you move forward with confidence, balance and purpose.';
+$about_banner_btn1_text   = $about_banner_btn1_text ?? 'Explore Our Services';
 $about_banner_btn1_url    = $about_banner_btn1_url ?? 'services';
-$about_banner_btn2_text   = $about_banner_btn2_text ?? 'Meet Our Healers';
-$about_banner_btn2_url    = $about_banner_btn2_url ?? '#about';
+$about_banner_btn2_text   = $about_banner_btn2_text ?? 'Discover Our Story';
+$about_banner_btn2_url    = $about_banner_btn2_url ?? '#aboutCenter';
 ?>
 
 <section class="static-hero-banner position-relative" id="aboutBanner" aria-label="About Us Highlights">
