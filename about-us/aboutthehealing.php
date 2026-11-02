@@ -1,15 +1,4 @@
 <?php
-/**
- * ==============================================================================
- * Who We Are / About The Center Component - SS Healing Rays (About Us Page)
- * Features:
- *   - Eyebrow Badge: "WHO WE ARE"
- *   - 2-Line Headline: "More than a healing centre." / "A journey of learning, transformation and shared purpose."
- *   - 2-Column Responsive Grid (Left Stacked Images | Right Narrative & Stats)
- *   - Founders & Community Narrative with Modalities & Guidance
- * Dedicated Stylesheet: assets/css/aboutthehealing.css
- * ==============================================================================
- */
 
 $about_healing_badge      = $about_healing_badge ?? 'Who We Are';
 $about_healing_title_1    = $about_healing_title_1 ?? 'More than a healing centre.';
@@ -22,6 +11,21 @@ $about_healing_paragraphs = $about_healing_paragraphs ?? [
     'Founded by <strong>Sreeparvathy CM</strong> and <strong>Sravantii Chitturi</strong>, SS Healing Rays is a holistic wellness, healing, coaching and training platform.',
     'With over <strong>10 years</strong> of learning and service, we have supported <strong>500+ clients</strong> through individual sessions, courses, workshops, webinars and wellness initiatives.',
     'Our work brings together diverse modalities and practical approaches to emotional wellbeing, personal growth and transformation. We begin by understanding each individual\'s needs and then explore the right knowledge, guidance and practices to support their journey.',
+];
+
+$about_healing_stats = $about_healing_stats ?? [
+    [
+        'number' => '10',
+        'suffix' => '+',
+        'label'  => 'Years of Service',
+        'icon'   => 'bi-clock-history',
+    ],
+    [
+        'number' => '500',
+        'suffix' => '+',
+        'label'  => 'Clients Supported',
+        'icon'   => 'bi-people',
+    ],
 ];
 ?>
 
@@ -71,14 +75,24 @@ $about_healing_paragraphs = $about_healing_paragraphs ?? [
                     </div>
 
                     <!-- Trust & Impact Stats Highlight -->
-                    <div class="about-healing-stats d-flex flex-wrap align-items-center gap-3 mt-4 pt-1">
-                        <div class="healing-stat-pill d-inline-flex align-items-center">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Years of Service</span>
-                        </div>
-                        <div class="healing-stat-pill d-inline-flex align-items-center">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Clients Supported</span>
+                    <div class="about-healing-stats">
+                        <div class="row g-3 g-sm-4 align-items-stretch">
+                            <?php foreach ($about_healing_stats as $stat): ?>
+                                <div class="col-12 col-sm-6 d-flex">
+                                    <div class="healing-stat-card w-100">
+                                        <span class="stat-icon-wrap" aria-hidden="true">
+                                            <i class="bi <?= htmlspecialchars($stat['icon']) ?>"></i>
+                                        </span>
+                                        <div class="stat-info">
+                                            <div class="stat-number-wrap">
+                                                <span class="stat-number"><?= htmlspecialchars($stat['number']) ?></span>
+                                                <span class="stat-suffix"><?= htmlspecialchars($stat['suffix']) ?></span>
+                                            </div>
+                                            <span class="stat-label"><?= htmlspecialchars($stat['label']) ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
 
