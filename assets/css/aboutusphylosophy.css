@@ -23,6 +23,37 @@
     text-align: center;
 }
 
+/* Eyebrow Badge (Unified Brand Design) */
+.philosophy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(186, 67, 108, 0.08);
+    border: 1px solid rgba(186, 67, 108, 0.16);
+    border-radius: 50px;
+    margin-bottom: 0.95rem;
+}
+
+.philosophy-badge .badge-icon {
+    color: var(--secondary-color, #ba436c);
+    font-size: 0.92rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.philosophy-badge .badge-text {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.76rem, 0.84vw, 0.82rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+    line-height: 1;
+}
+
 .philosophy-heading {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
     font-size: clamp(2.2rem, 3.8vw, 3.35rem);

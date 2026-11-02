@@ -26,6 +26,12 @@ $identity_bg_img            = $identity_bg_img ?? (
     <div class="container-fluid identity-container position-relative">
         <div class="identity-content-wrap mx-auto text-center">
             
+            <!-- Unified Eyebrow Badge -->
+            <div class="identity-badge mb-3">
+                <span class="badge-icon" aria-hidden="true"><i class="bi bi-brightness-high"></i></span>
+                <span class="badge-text">Our Identity</span>
+            </div>
+
             <!-- Main Heading (2-Line Balanced Layout) -->
             <h2 class="identity-heading">
                 <span class="identity-title-line"><?= htmlspecialchars($identity_heading_main) ?></span>

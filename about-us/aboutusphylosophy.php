@@ -47,6 +47,13 @@ $philosophy_cards = $philosophy_cards ?? [
         
         <!-- Section Header -->
         <div class="philosophy-header text-center">
+            
+            <!-- Unified Eyebrow Badge -->
+            <div class="philosophy-badge mb-3">
+                <span class="badge-icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
+                <span class="badge-text">Our Philosophy</span>
+            </div>
+
             <h2 class="philosophy-heading">
                 <?= $philosophy_heading ?>
             </h2>

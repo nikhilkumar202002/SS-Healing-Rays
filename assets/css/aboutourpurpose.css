@@ -45,7 +45,7 @@
     text-align: center;
 }
 
-/* Eyebrow Badge */
+/* Eyebrow Badge (Unified Brand Design) */
 .purpose-badge {
     display: inline-flex;
     align-items: center;
@@ -54,22 +54,26 @@
     background: rgba(186, 67, 108, 0.08);
     border: 1px solid rgba(186, 67, 108, 0.16);
     border-radius: 50px;
+    margin-bottom: 0.95rem;
 }
 
 .purpose-badge .badge-icon {
     color: var(--secondary-color, #ba436c);
-    font-size: 0.95rem;
-    display: flex;
+    font-size: 0.92rem;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .purpose-badge .badge-text {
     font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: clamp(0.78rem, 0.85vw, 0.84rem);
+    font-size: clamp(0.76rem, 0.84vw, 0.82rem);
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--secondary-color, #ba436c);
+    line-height: 1;
 }
 
 /* Main Heading: Strict 2 Lines Layout */
@@ -155,6 +159,86 @@
     margin: 0;
 }
 
+/* ==========================================================================
+   4. White Background 2-Column Story Container
+   ========================================================================== */
+.purpose-two-col-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(186, 67, 108, 0.14);
+    box-shadow: 0 16px 45px -10px rgba(17, 17, 51, 0.06), 0 4px 15px rgba(186, 67, 108, 0.03);
+    padding: clamp(2rem, 3.5vw, 3.25rem);
+    margin-top: clamp(2.75rem, 4.5vw, 3.75rem);
+    max-width: 1200px;
+    width: 100%;
+    text-align: left;
+}
+
+.story-col-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-col-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1.25rem;
+}
+
+.story-col-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(186, 67, 108, 0.08);
+    border: 1px solid rgba(186, 67, 108, 0.18);
+    color: var(--secondary-color, #ba436c);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.story-col-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(1.28rem, 1.55vw, 1.55rem);
+    font-weight: 400;
+    line-height: 1.32;
+    color: var(--heading-color, #111133);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.story-col-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.story-col-desc {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, sans-serif);
+    font-size: clamp(0.95rem, 1.05vw, 1.02rem);
+    font-weight: 400;
+    line-height: 1.82;
+    color: #475569;
+    margin: 0;
+}
+
+.story-col-desc em {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    color: var(--primary-color, #82387a);
+}
+
+@media (min-width: 992px) {
+    .story-col-divider {
+        border-left: 1px solid rgba(186, 67, 108, 0.14);
+        padding-left: clamp(1.75rem, 3.2vw, 3rem);
+    }
+}
+
 /* Responsive Adaptations */
 @media (max-width: 991.98px) {
     .purpose-section {
@@ -178,6 +262,15 @@
     }
     .purpose-quote-callout {
         padding: 1.25rem 1.5rem;
+    }
+    .purpose-two-col-card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+    .story-col-divider {
+        border-top: 1px solid rgba(186, 67, 108, 0.12);
+        padding-top: 2rem;
+        margin-top: 0.5rem;
     }
 }
 

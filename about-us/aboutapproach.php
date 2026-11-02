@@ -47,6 +47,12 @@ $approach_img_alt         = $approach_img_alt ?? 'Multiple Ways to Learn, Grow a
             <div class="col-12 col-lg-6 col-approach-content">
                 <div class="approach-content">
                     
+                    <!-- Unified Eyebrow Badge -->
+                    <div class="approach-badge mb-3">
+                        <span class="badge-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
+                        <span class="badge-text">Our Pathways</span>
+                    </div>
+
                     <!-- Main Section Heading -->
                     <h2 class="approach-heading">
                         <span class="approach-heading-main"><?= htmlspecialchars($approach_title_main) ?></span>

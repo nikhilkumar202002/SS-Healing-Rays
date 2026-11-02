@@ -4,9 +4,10 @@
      - Alternating (Opposite Direction) 2-Block Layout:
          1. Vision: Left Side Image | Right Side Content
          2. Mission: Left Side Content | Right Side Image
-     - Wide Desktop Gutters (approx 75px) matching Approach & Healing Center
+     - Image Height Stretches to Exact Content Length
+     - Eyebrow without Badge/Pill Enclosure (Clean Icon + Uppercase Label)
+     - Correct Icon Colors: var(--secondary-color, #ba436c)
      - High-Elevation Borderless Image Cards with smooth hover zoom
-     - Clean Eyebrow Badges (Our Vision | Our Mission)
      - Community Commitment Note Callout in Mission
    ========================================================================== */
 
@@ -45,24 +46,29 @@
 }
 
 /* ==========================================================================
-   2. Media Column & Rounded Image Cards
+   2. Media Column & Full-Height Rounded Image Cards
    ========================================================================== */
 .col-vm-media {
     display: flex;
-    flex-direction: column;
+}
+
+.vm-image-wrapper {
+    position: relative;
+    width: 100%;
     height: 100%;
+    display: flex;
 }
 
 .vm-image-card {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 100%;
-    flex: 1 1 auto;
+    min-height: 480px;
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 16px 40px -10px rgba(17, 17, 51, 0.08), 0 4px 12px rgba(17, 17, 51, 0.03);
     background-color: #f7f3ee;
+    display: flex;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
@@ -72,10 +78,9 @@
 }
 
 .vm-image {
-    position: absolute;
-    inset: 0;
     width: 100%;
     height: 100%;
+    min-height: 480px;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -101,7 +106,7 @@
     padding: 0;
 }
 
-/* Eyebrow Badge */
+/* Unified Eyebrow Badge (Consistent across all About sections) */
 .vm-badge {
     display: inline-flex;
     align-items: center;
@@ -110,29 +115,39 @@
     background: rgba(186, 67, 108, 0.08);
     border: 1px solid rgba(186, 67, 108, 0.16);
     border-radius: 50px;
+    margin-bottom: 0.95rem;
 }
 
 .vm-badge .badge-icon {
     color: var(--secondary-color, #ba436c);
-    font-size: 0.95rem;
-    display: flex;
+    font-size: 0.92rem;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .vm-badge .badge-text {
     font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: clamp(0.78rem, 0.85vw, 0.84rem);
+    font-size: clamp(0.76rem, 0.84vw, 0.82rem);
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--secondary-color, #ba436c);
+    line-height: 1;
 }
 
-/* Main Heading */
+/* Main Heading (Strictly 2 Lines) */
 .vm-heading {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
-    font-size: clamp(1.85rem, 2.5vw, 2.45rem);
+    font-size: clamp(1.55rem, 2.05vw, 2.05rem);
     font-weight: 400;
+    line-height: 1.28;
+    color: var(--heading-color, #111133);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+}
     line-height: 1.28;
     color: var(--heading-color, #111133);
     margin-bottom: 1.35rem;
@@ -209,6 +224,10 @@
         display: block;
         height: auto;
     }
+    .vm-image-wrapper {
+        display: block;
+        height: auto;
+    }
     .vm-image-card {
         min-height: unset;
         aspect-ratio: 16 / 10;
@@ -216,14 +235,14 @@
         border-radius: 18px;
         max-width: 560px;
         margin: 0 auto;
+        display: block;
     }
     .vm-image {
-        position: absolute;
-        inset: 0;
+        position: static;
         width: 100%;
         height: 100%;
         min-height: unset;
-        aspect-ratio: unset;
+        aspect-ratio: 16 / 10;
         border-radius: 18px;
     }
     .vm-heading {

@@ -6,8 +6,9 @@
  *   - Alternating (Opposite Direction) 2-Block Layout:
  *       1. Vision: Left Side Image | Right Side Content
  *       2. Mission: Left Side Content | Right Side Image
- *   - Responsive Ordering (Image first on mobile, alternating on desktop)
- *   - Elevated Image Cards with smooth hover scale
+ *   - Image Height Stretches to Exact Content Length
+ *   - Eyebrows without Pill Badge Design (Rich Accent Icon + Uppercase Label)
+ *   - Elevated Image Cards with Smooth Hover Elevation
  *   - Community Commitment Note Callout in Mission
  * Dedicated Stylesheet: assets/css/aboutvisionmission.css
  * ==============================================================================
@@ -59,11 +60,13 @@ $mission_img       = $mission_img ?? (
             
             <!-- Left: Vision Image -->
             <div class="col-12 col-lg-6 col-vm-media">
-                <div class="vm-image-card">
-                    <img src="<?= htmlspecialchars($vision_img) ?>" 
-                         alt="<?= strip_tags($vision_tag . ' - ' . $vision_title) ?>"
-                         class="vm-image"
-                         loading="lazy">
+                <div class="vm-image-wrapper">
+                    <div class="vm-image-card">
+                        <img src="<?= htmlspecialchars($vision_img) ?>" 
+                             alt="<?= strip_tags($vision_tag . ' - ' . $vision_title) ?>"
+                             class="vm-image"
+                             loading="lazy">
+                    </div>
                 </div>
             </div>
 
@@ -71,7 +74,7 @@ $mission_img       = $mission_img ?? (
             <div class="col-12 col-lg-6 col-vm-content">
                 <div class="vm-content-wrap">
                     
-                    <!-- Eyebrow Badge -->
+                    <!-- Unified Eyebrow Badge -->
                     <div class="vm-badge mb-3">
                         <span class="badge-icon" aria-hidden="true"><i class="bi bi-eye"></i></span>
                         <span class="badge-text"><?= htmlspecialchars($vision_tag) ?></span>
@@ -103,7 +106,7 @@ $mission_img       = $mission_img ?? (
             <div class="col-12 col-lg-6 order-2 order-lg-1 col-vm-content">
                 <div class="vm-content-wrap">
                     
-                    <!-- Eyebrow Badge -->
+                    <!-- Unified Eyebrow Badge -->
                     <div class="vm-badge mb-3">
                         <span class="badge-icon" aria-hidden="true"><i class="bi bi-compass"></i></span>
                         <span class="badge-text"><?= htmlspecialchars($mission_tag) ?></span>
@@ -136,11 +139,13 @@ $mission_img       = $mission_img ?? (
 
             <!-- Right: Mission Image (order-1 on mobile, order-lg-2 on desktop) -->
             <div class="col-12 col-lg-6 order-1 order-lg-2 col-vm-media">
-                <div class="vm-image-card">
-                    <img src="<?= htmlspecialchars($mission_img) ?>" 
-                         alt="<?= strip_tags($mission_tag . ' - ' . $mission_title) ?>"
-                         class="vm-image"
-                         loading="lazy">
+                <div class="vm-image-wrapper">
+                    <div class="vm-image-card">
+                        <img src="<?= htmlspecialchars($mission_img) ?>" 
+                             alt="<?= strip_tags($mission_tag . ' - ' . $mission_title) ?>"
+                             class="vm-image"
+                             loading="lazy">
+                    </div>
                 </div>
             </div>
 
