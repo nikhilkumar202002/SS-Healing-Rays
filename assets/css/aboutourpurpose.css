@@ -9,11 +9,11 @@
 
 .purpose-section {
     position: relative;
-    padding: clamp(4rem, 6vw, 6rem) 0;
+    padding: clamp(4.5rem, 6.5vw, 6.5rem) 0;
     background-color: #fbf0ee;
     background-image: var(--purpose-bg, url('../banner/about-banner.jpg'));
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center center;
     width: 100%;
     overflow: hidden;
@@ -45,6 +45,33 @@
     text-align: center;
 }
 
+/* Eyebrow Badge */
+.purpose-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(186, 67, 108, 0.08);
+    border: 1px solid rgba(186, 67, 108, 0.16);
+    border-radius: 50px;
+}
+
+.purpose-badge .badge-icon {
+    color: var(--secondary-color, #ba436c);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.purpose-badge .badge-text {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.78rem, 0.85vw, 0.84rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+}
+
 /* Main Heading: Strict 2 Lines Layout */
 .purpose-heading {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
@@ -72,10 +99,10 @@
     color: var(--secondary-color, #ba436c);
 }
 
-/* 2. Full-Width Description Paragraph */
+/* 2. Full-Width Description Paragraphs */
 .purpose-description-wrap {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
     text-align: center;
 }
@@ -86,15 +113,52 @@
     font-weight: 400;
     line-height: 1.88;
     color: #3b3b4f;
-    margin: 0 auto;
+    margin: 0 auto 1.35rem;
     letter-spacing: 0.005em;
     width: 100%;
+}
+
+.purpose-description:last-child {
+    margin-bottom: 0;
+}
+
+/* 3. Pivotal Teacher Quote Callout */
+.purpose-quote-callout {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(186, 67, 108, 0.2);
+    border-left: 4px solid var(--secondary-color, #ba436c);
+    border-radius: 16px;
+    padding: clamp(1.25rem, 2vw, 1.65rem) clamp(1.25rem, 2.5vw, 2.25rem);
+    max-width: 860px;
+    box-shadow: 0 6px 20px rgba(186, 67, 108, 0.04);
+}
+
+.purpose-quote {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-size: clamp(1.08rem, 1.3vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.68;
+    color: var(--primary-color, #82387a);
+    margin: 0 0 0.5rem 0;
+}
+
+.purpose-quote-impact {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.82rem, 0.9vw, 0.88rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+    margin: 0;
 }
 
 /* Responsive Adaptations */
 @media (max-width: 991.98px) {
     .purpose-section {
-        padding: clamp(3rem, 5.5vw, 4.25rem) 0;
+        padding: clamp(3.5rem, 5.5vw, 4.5rem) 0;
         background-size: cover;
         background-position: center center;
     }
@@ -112,11 +176,14 @@
         font-size: 1rem;
         line-height: 1.8;
     }
+    .purpose-quote-callout {
+        padding: 1.25rem 1.5rem;
+    }
 }
 
 @media (max-width: 767.98px) {
     .purpose-section {
-        padding: 2.75rem 0;
+        padding: 3rem 0;
         background-size: cover;
     }
     .purpose-container {
@@ -129,6 +196,11 @@
     }
     .purpose-description {
         font-size: 0.96rem;
-        line-height: 1.72;
+        line-height: 1.75;
+        margin-bottom: 1.15rem;
+    }
+    .purpose-quote-callout {
+        padding: 1rem 1.15rem;
+        border-radius: 12px;
     }
 }

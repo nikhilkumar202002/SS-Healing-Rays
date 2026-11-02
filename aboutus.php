@@ -38,8 +38,9 @@ include __DIR__ . '/about-us/aboutvisionmission.php';
 // 8. Our Identity Banner Section ("A Ray of Light on Every Journey")
 include __DIR__ . '/about-us/aboutouridentity.php';
 
+// 9. Community Invitation Section ("There Is a Place for You at SS Healing Rays")
+include __DIR__ . '/about-us/aboutcommunity.php';
 
-
-// 7. Common Global Footer
+// 10. Common Global Footer
 include __DIR__ . '/common/footer.php';
 ?>

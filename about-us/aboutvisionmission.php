@@ -3,15 +3,17 @@
  * ==============================================================================
  * Mission & Vision Section Component - SS Healing Rays (About Us Page)
  * Features:
- *   - 2-Column Responsive Grid (Our Vision | Our Mission)
- *   - Balanced Multi-Paragraph Cards with Smooth Hover Elevation
- *   - Image Background with White Linear Gradient Overlay Blending the Cutting
- *   - Community Commitment Note Callout
+ *   - Alternating (Opposite Direction) 2-Block Layout:
+ *       1. Vision: Left Side Image | Right Side Content
+ *       2. Mission: Left Side Content | Right Side Image
+ *   - Responsive Ordering (Image first on mobile, alternating on desktop)
+ *   - Elevated Image Cards with smooth hover scale
+ *   - Community Commitment Note Callout in Mission
  * Dedicated Stylesheet: assets/css/aboutvisionmission.css
  * ==============================================================================
  */
 
-// Vision Card Data (Card 1)
+// Vision Data (Block 1: Left Image | Right Content)
 $vision_tag        = $vision_tag ?? 'Our Vision';
 $vision_title      = $vision_title ?? 'Many Paths. One Community.<br><span class="title-highlight">A Greater Purpose.</span>';
 $vision_paragraphs = $vision_paragraphs ?? [
@@ -28,7 +30,7 @@ $vision_img        = $vision_img ?? (
             : 'assets/images/workshop-healing-circle.png')
 );
 
-// Mission Card Data (Card 2)
+// Mission Data (Block 2: Left Content | Right Image)
 $mission_tag       = $mission_tag ?? 'Our Mission';
 $mission_title     = $mission_title ?? 'Shorten the Journey. Share What We Have Learned.<br><span class="title-highlight">Grow Together.</span>';
 $mission_paragraphs = $mission_paragraphs ?? [
@@ -48,97 +50,97 @@ $mission_img       = $mission_img ?? (
 ?>
 
 <section class="vision-mission-section position-relative" id="ourVisionMission" aria-label="Our Vision and Mission">
-    <div class="container">
+    <div class="container vm-container">
         
-        <div class="row g-4 g-xl-5 justify-content-center vm-grid">
+        <!-- ====================================================================
+             Block 1: OUR VISION (Left Side Image | Right Side Content)
+             ==================================================================== -->
+        <div class="row align-items-stretch vm-row vm-row-vision">
             
-            <!-- Card 1: Our Vision -->
-            <div class="col-12 col-lg-6 vm-col">
-                <div class="vm-card">
+            <!-- Left: Vision Image -->
+            <div class="col-12 col-lg-6 col-vm-media">
+                <div class="vm-image-card">
+                    <img src="<?= htmlspecialchars($vision_img) ?>" 
+                         alt="<?= strip_tags($vision_tag . ' - ' . $vision_title) ?>"
+                         class="vm-image"
+                         loading="lazy">
+                </div>
+            </div>
+
+            <!-- Right: Vision Content -->
+            <div class="col-12 col-lg-6 col-vm-content">
+                <div class="vm-content-wrap">
                     
-                    <!-- Background Image & White Gradient Overlay -->
-                    <div class="vm-card-media">
-                        <img src="<?= htmlspecialchars($vision_img) ?>" 
-                             alt="<?= strip_tags($vision_tag . ' - ' . $vision_title) ?>"
-                             class="vm-card-img"
-                             loading="lazy">
-                        <div class="vm-card-gradient" aria-hidden="true"></div>
+                    <!-- Eyebrow Badge -->
+                    <div class="vm-badge mb-3">
+                        <span class="badge-icon" aria-hidden="true"><i class="bi bi-eye"></i></span>
+                        <span class="badge-text"><?= htmlspecialchars($vision_tag) ?></span>
                     </div>
 
-                    <!-- Card Content Placed Over Gradient -->
-                    <div class="vm-card-content">
-                        
-                        <div class="vm-card-badge">
-                            <span class="badge-icon" aria-hidden="true">
-                                <i class="bi bi-eye"></i>
-                            </span>
-                            <span class="badge-text"><?= htmlspecialchars($vision_tag) ?></span>
-                        </div>
+                    <!-- Main Heading -->
+                    <h2 class="vm-heading">
+                        <?= $vision_title ?>
+                    </h2>
 
-                        <h3 class="vm-card-title">
-                            <?= $vision_title ?>
-                        </h3>
-
-                        <div class="vm-card-desc-wrap">
-                            <?php foreach ($vision_paragraphs as $para): ?>
-                                <p class="vm-card-desc">
-                                    <?= htmlspecialchars($para) ?>
-                                </p>
-                            <?php endforeach; ?>
-                        </div>
-
+                    <!-- Descriptive Paragraphs -->
+                    <div class="vm-desc-wrap">
+                        <?php foreach ($vision_paragraphs as $para): ?>
+                            <p class="vm-desc"><?= htmlspecialchars($para) ?></p>
+                        <?php endforeach; ?>
                     </div>
 
                 </div>
             </div>
 
-            <!-- Card 2: Our Mission -->
-            <div class="col-12 col-lg-6 vm-col">
-                <div class="vm-card">
+        </div>
+
+        <!-- ====================================================================
+             Block 2: OUR MISSION (Left Side Content | Right Side Image)
+             ==================================================================== -->
+        <div class="row align-items-stretch vm-row vm-row-mission">
+            
+            <!-- Left: Mission Content (order-2 on mobile, order-lg-1 on desktop) -->
+            <div class="col-12 col-lg-6 order-2 order-lg-1 col-vm-content">
+                <div class="vm-content-wrap">
                     
-                    <!-- Background Image & White Gradient Overlay -->
-                    <div class="vm-card-media">
-                        <img src="<?= htmlspecialchars($mission_img) ?>" 
-                             alt="<?= strip_tags($mission_tag . ' - ' . $mission_title) ?>"
-                             class="vm-card-img"
-                             loading="lazy">
-                        <div class="vm-card-gradient" aria-hidden="true"></div>
+                    <!-- Eyebrow Badge -->
+                    <div class="vm-badge mb-3">
+                        <span class="badge-icon" aria-hidden="true"><i class="bi bi-compass"></i></span>
+                        <span class="badge-text"><?= htmlspecialchars($mission_tag) ?></span>
                     </div>
 
-                    <!-- Card Content Placed Over Gradient -->
-                    <div class="vm-card-content">
-                        
-                        <div class="vm-card-badge">
-                            <span class="badge-icon" aria-hidden="true">
-                                <i class="bi bi-compass"></i>
-                            </span>
-                            <span class="badge-text"><?= htmlspecialchars($mission_tag) ?></span>
+                    <!-- Main Heading -->
+                    <h2 class="vm-heading">
+                        <?= $mission_title ?>
+                    </h2>
+
+                    <!-- Descriptive Paragraphs -->
+                    <div class="vm-desc-wrap">
+                        <?php foreach ($mission_paragraphs as $para): ?>
+                            <p class="vm-desc"><?= htmlspecialchars($para) ?></p>
+                        <?php endforeach; ?>
+
+                        <!-- Community Commitment Note Callout -->
+                        <div class="vm-note-callout mt-4">
+                            <strong class="vm-note-label">
+                                <i class="bi bi-info-circle me-1" aria-hidden="true"></i> <?= htmlspecialchars($mission_note_label) ?>
+                            </strong>
+                            <p class="vm-note-text">
+                                <?= htmlspecialchars($mission_note_text) ?>
+                            </p>
                         </div>
-
-                        <h3 class="vm-card-title">
-                            <?= $mission_title ?>
-                        </h3>
-
-                        <div class="vm-card-desc-wrap">
-                            <?php foreach ($mission_paragraphs as $para): ?>
-                                <p class="vm-card-desc">
-                                    <?= htmlspecialchars($para) ?>
-                                </p>
-                            <?php endforeach; ?>
-
-                            <!-- Community Commitment Note Callout -->
-                            <div class="vm-card-note">
-                                <strong class="vm-note-label">
-                                    <i class="bi bi-info-circle me-1" aria-hidden="true"></i> <?= htmlspecialchars($mission_note_label) ?>
-                                </strong>
-                                <p class="vm-note-text">
-                                    <?= htmlspecialchars($mission_note_text) ?>
-                                </p>
-                            </div>
-                        </div>
-
                     </div>
 
+                </div>
+            </div>
+
+            <!-- Right: Mission Image (order-1 on mobile, order-lg-2 on desktop) -->
+            <div class="col-12 col-lg-6 order-1 order-lg-2 col-vm-media">
+                <div class="vm-image-card">
+                    <img src="<?= htmlspecialchars($mission_img) ?>" 
+                         alt="<?= strip_tags($mission_tag . ' - ' . $mission_title) ?>"
+                         class="vm-image"
+                         loading="lazy">
                 </div>
             </div>
 

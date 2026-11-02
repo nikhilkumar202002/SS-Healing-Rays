@@ -168,6 +168,9 @@ $nav_items = $nav_items ?? [
     <!-- About Our Identity Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutouridentity.css">
 
+    <!-- About Community Section Custom Styles -->
+    <link rel="stylesheet" href="assets/css/aboutcommunity.css">
+
     <!-- About The Center Component Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutthehealing.css">
 
