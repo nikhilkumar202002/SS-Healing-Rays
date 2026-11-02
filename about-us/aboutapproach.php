@@ -2,15 +2,31 @@
 /**
  * ==============================================================================
  * Individual Journey Approach Section Component - SS Healing Rays (About Us Page)
- * Layout: Left Column Content (Heading + Full Paragraph) | Right Column Image (Equal Height, No Border)
+ * Layout: Left Column Content (Heading + 3 Pathway Offerings) | Right Column Image (Equal Height, No Border)
  * Dedicated Stylesheet: assets/css/aboutapproach.css
  * ==============================================================================
  */
 
-$approach_title_main      = $approach_title_main ?? 'Support That Respects Your';
-$approach_title_highlight = $approach_title_highlight ?? 'Individual Journey';
+$approach_title_main      = $approach_title_main ?? 'Multiple Ways to';
+$approach_title_highlight = $approach_title_highlight ?? 'Learn, Grow and Transform';
 
-$approach_description     = $approach_description ?? "We understand that seeking support can be a personal decision. Everyone comes with different experiences, expectations, and needs, and we believe these differences deserve to be respected. Our approach emphasizes compassionate guidance, individual attention, and a welcoming environment where people can explore their wellbeing without feeling pressured or judged. We value practices that encourage relaxation, reflection, emotional awareness, and personal growth. We also recognize the importance of respecting personal boundaries and allowing individuals to decide what feels appropriate for them. Rather than viewing wellbeing as a destination that must be reached, we see it as an ongoing journey of understanding, learning, and change. Our intention is to make that journey feel more approachable by creating space for self-reflection, mindful awareness, and a stronger connection with oneself.";
+$approach_pathways        = $approach_pathways ?? [
+    [
+        'title' => 'Personalised Coaching & Healing',
+        'desc'  => 'Individual support through personalised coaching and suitable healing approaches to navigate emotional, personal, relationship and professional challenges.',
+        'icon'  => 'bi bi-heart-pulse',
+    ],
+    [
+        'title' => 'Learning & Transformation Programs',
+        'desc'  => 'Structured courses, workshops and 21-day and three-month programs that bring together practical tools and learnings from multiple modalities.',
+        'icon'  => 'bi bi-mortarboard',
+    ],
+    [
+        'title' => 'Wellness & Professional Development',
+        'desc'  => 'Meditation, yoga, therapeutic yoga, emotional wellbeing and corporate training initiatives that support individuals, groups and workplaces.',
+        'icon'  => 'bi bi-brightness-high',
+    ],
+];
 
 $approach_img             = $approach_img ?? (
     file_exists(dirname(__DIR__) . '/assets/images/about/phylosophy.jpg')
@@ -19,7 +35,7 @@ $approach_img             = $approach_img ?? (
             ? 'assets/images/about/phylosophy'
             : 'assets/images/about-image.jpeg')
 );
-$approach_img_alt         = $approach_img_alt ?? 'Support That Respects Your Individual Journey - SS Healing Rays';
+$approach_img_alt         = $approach_img_alt ?? 'Multiple Ways to Learn, Grow and Transform - SS Healing Rays';
 ?>
 
 <section class="approach-section position-relative" id="ourApproach" aria-label="Our Individualized Approach">
@@ -27,7 +43,7 @@ $approach_img_alt         = $approach_img_alt ?? 'Support That Respects Your Ind
         
         <div class="row align-items-stretch g-4 g-lg-5 approach-grid-row">
             
-            <!-- Left Column: Heading and Full Paragraph -->
+            <!-- Left Column: Heading and 3 Pathway Offerings -->
             <div class="col-12 col-lg-6 col-approach-content">
                 <div class="approach-content">
                     
@@ -37,10 +53,24 @@ $approach_img_alt         = $approach_img_alt ?? 'Support That Respects Your Ind
                         <span class="approach-heading-highlight title-highlight"><?= htmlspecialchars($approach_title_highlight) ?></span>
                     </h2>
 
-                    <!-- Full Paragraph Description -->
-                    <p class="approach-description">
-                        <?= htmlspecialchars($approach_description) ?>
-                    </p>
+                    <!-- 3 Pathway Offerings -->
+                    <div class="approach-pathways">
+                        <?php foreach ($approach_pathways as $item): ?>
+                            <div class="approach-pathway-item">
+                                <div class="approach-pathway-icon" aria-hidden="true">
+                                    <i class="<?= htmlspecialchars($item['icon']) ?>"></i>
+                                </div>
+                                <div class="approach-pathway-body">
+                                    <h3 class="approach-pathway-title">
+                                        <?= htmlspecialchars($item['title']) ?>
+                                    </h3>
+                                    <p class="approach-pathway-desc">
+                                        <?= htmlspecialchars($item['desc']) ?>
+                                    </p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
 
                 </div>
             </div>
