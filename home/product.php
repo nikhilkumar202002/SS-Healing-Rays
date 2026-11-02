@@ -1,17 +1,4 @@
 <?php
-/**
- * ==============================================================================
- * Product / Offerings Section - SS Healing Rays
- * Positioned immediately after Counter Section
- *
- * Anatomy of Each Card:
- *   - Top Image (3:2 ratio)
- *   - Logo center-overlapped by image and below section
- *   - Product Name (Marcellus font)
- *   - Short Description (Lato font)
- *   - Action Button (Explore for Card 1, Book a demo session for Card 2)
- * ==============================================================================
- */
 
 $product_pretitle        = $product_pretitle ?? 'SACRED OFFERINGS';
 $product_title_1         = $product_title_1 ?? 'Thoughtfully Curated for';

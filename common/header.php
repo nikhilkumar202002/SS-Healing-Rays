@@ -94,9 +94,14 @@ $nav_items = $nav_items ?? [
         'url'        => 'services',
         'categories' => $services_categories,
     ],
-    'gallery' => [
-        'label' => 'Gallery',
-        'url'   => 'gallery',
+    'products' => [
+        'label'    => 'Products',
+        'url'      => 'products',
+        'children' => [
+            ['label' => 'Genuine Crystals & Decor', 'url' => 'products#crystals'],
+            ['label' => 'Holistic Wellbeing', 'url' => 'products#wellbeing'],
+            ['label' => 'Explore All Products', 'url' => 'products'],
+        ],
     ],
     'stories' => [
         'label' => 'Stories',
@@ -216,6 +221,9 @@ $nav_items = $nav_items ?? [
     <!-- Training Programs Alternating 4-Row Section Styles -->
     <link rel="stylesheet" href="assets/css/trainingcards.css">
 
+    <!-- Product Page Hero Banner Custom Styles -->
+    <link rel="stylesheet" href="assets/css/productbanner.css">
+
     <!-- Masonry Gallery Grid & Lightbox Styles -->
     <link rel="stylesheet" href="assets/css/galleryimages.css">
 
@@ -273,7 +281,9 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                     <ul class="navbar-nav desktop-nav-menu d-flex flex-row align-items-center gap-1 gap-xl-2 m-0 p-0" aria-label="Primary Site Navigation">
                         <?php foreach ($nav_items as $key => $item): ?>
                             <?php 
-                                $isActive = ($current_page === $key || ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])));
+                                $isActive = ($current_page === $key || 
+                                            ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
+                                            ($key === 'products' && in_array($current_page, ['products', 'product'])));
                                 $hasCategories = !empty($item['categories']);
                                 $hasChildren = !empty($item['children']);
                             ?>
@@ -464,7 +474,11 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
     <div class="offcanvas-body d-flex flex-column justify-content-between p-3">
         <ul class="navbar-nav offcanvas-nav gap-1">
             <?php foreach ($nav_items as $key => $item): ?>
-                <?php $isActive = ($current_page === $key || ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials']))); ?>
+                <?php 
+                    $isActive = ($current_page === $key || 
+                                ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
+                                ($key === 'products' && in_array($current_page, ['products', 'product']))); 
+                ?>
                 <?php if (!empty($item['categories'])): ?>
                     <li class="nav-item">
                         <div class="d-flex align-items-center justify-content-between">
@@ -585,6 +599,38 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                                 </div>
 
                             </div>
+                        </div>
+                    </li>
+                <?php elseif (!empty($item['children'])): ?>
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="<?= htmlspecialchars($item['url']) ?>" 
+                               class="nav-link flex-grow-1 <?= $isActive ? 'active' : '' ?>">
+                                <span><?= htmlspecialchars($item['label']) ?></span>
+                            </a>
+                            <button class="btn btn-link text-muted p-2" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#mobile<?= ucfirst($key) ?>Collapse" 
+                                    aria-expanded="false" 
+                                    aria-controls="mobile<?= ucfirst($key) ?>Collapse" 
+                                    aria-label="Toggle <?= htmlspecialchars($item['label']) ?> Menu">
+                                <svg class="mobile-nav-arrow" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="collapse mobile-services-collapse" id="mobile<?= ucfirst($key) ?>Collapse">
+                            <ul class="mobile-sublinks-list p-2 ps-3 m-0 list-unstyled">
+                                <?php foreach ($item['children'] as $child): ?>
+                                    <li class="mb-2">
+                                        <a href="<?= htmlspecialchars($child['url']) ?>" class="mobile-sublink d-flex align-items-center gap-2 py-1 text-decoration-none">
+                                            <i class="bi bi-chevron-right small text-muted"></i>
+                                            <span class="mega-text"><?= htmlspecialchars($child['label']) ?></span>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
                     </li>
                 <?php else: ?>

@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Product Page Banner & Offerings Component - SS Healing Rays
+   Clean, Minimal Banner matching Service / Gallery Banner exact layout
+   Black Linear Gradient Overlay from Bottom to Top
+   Typography: Marcellus headline across two balanced lines with Playfair italic accents
+   ========================================================================== */
+
+.product-banner-section {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    height: 52vh;
+    max-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #0b0b1a;
+}
+
+/* 1. Background Cover Image */
+.product-banner-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 2. Black Linear Gradient Overlay from Bottom to Top */
+.product-banner-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.52) 48%,
+        rgba(0, 0, 0, 0.22) 80%,
+        rgba(0, 0, 0, 0.08) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 3. Content Wrapper */
+.product-banner-content-wrap {
+    position: relative;
+    z-index: 10;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* 4. Breadcrumb */
+.product-breadcrumb .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.product-breadcrumb .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.product-breadcrumb .breadcrumb-item a:hover {
+    color: #ffffff;
+}
+
+.product-breadcrumb .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.product-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.45);
+    content: "/";
+    padding: 0 0.5rem;
+}
+
+/* 5. Typography: Headline on Two Lines Without Line Breaking */
+.product-banner-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', serif);
+    font-size: clamp(2rem, 3.8vw, 3.35rem);
+    font-weight: 500;
+    line-height: 1.24;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+    text-shadow: none !important;
+}
+
+.product-banner-title .banner-title-line {
+    display: block;
+    white-space: nowrap;
+}
+
+.product-banner-title em,
+.product-banner-title i {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    color: #ffffff;
+    text-shadow: none !important;
+}
+
+/* 6. Subtitle / Description */
+.product-banner-subtitle {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 760px;
+    margin: 0 auto;
+    text-shadow: none !important;
+}
+
+/* 7. Product Page Features Section */
+.product-features-section {
+    padding: 4.5rem 0 5rem;
+    background-color: #fcf9fb;
+    border-top: 1px solid rgba(186, 67, 108, 0.1);
+}
+
+.product-feature-card {
+    background: #ffffff;
+    border: 1px solid rgba(186, 67, 108, 0.14);
+    border-radius: 18px;
+    padding: 2.25rem 1.75rem;
+    height: 100%;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    box-shadow: 0 6px 20px -6px rgba(17, 17, 51, 0.04);
+}
+
+.product-feature-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(186, 67, 108, 0.35);
+    box-shadow: 0 16px 36px -8px rgba(130, 56, 122, 0.12);
+}
+
+.product-feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(186, 67, 108, 0.08);
+    border: 1px solid rgba(186, 67, 108, 0.2);
+    color: var(--secondary-color, #ba436c);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.product-feature-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.65rem;
+}
+
+.product-feature-desc {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 767.98px) {
+    .product-banner-section {
+        min-height: 360px;
+        height: auto;
+        padding: 4.5rem 1rem 3rem;
+    }
+    .product-banner-title {
+        font-size: clamp(1.8rem, 6vw, 2.25rem);
+        margin-bottom: 1rem;
+    }
+    .product-banner-title .banner-title-line {
+        white-space: normal;
+    }
+    .product-banner-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+}

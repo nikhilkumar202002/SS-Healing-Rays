@@ -2,8 +2,8 @@
 
 $gallery_heading  = $gallery_heading ?? 'Moments of Connection, Learning & <span class="title-highlight">Celebration</span>';
 $gallery_desc     = $gallery_desc ?? 'A glimpse into our community, shared experiences and milestones.';
-$gallery_btn_text = $gallery_btn_text ?? 'Explore Full Gallery';
-$gallery_btn_url  = $gallery_btn_url ?? 'gallery';
+$gallery_btn_text = $gallery_btn_text ?? 'Explore Products';
+$gallery_btn_url  = $gallery_btn_url ?? 'products';
 
 $gallery_row_1 = [
     [
@@ -96,7 +96,7 @@ $gallery_row_2 = [
                 <!-- Set A -->
                 <div class="gallery-track-group">
                     <?php foreach ($gallery_row_1 as $item): ?>
-                        <a href="gallery" class="gallery-slide-card" title="Explore Sacred Gallery">
+                        <a href="products" class="gallery-slide-card" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
@@ -112,7 +112,7 @@ $gallery_row_2 = [
                 <!-- Set B (Duplicated for 100% seamless infinite drift) -->
                 <div class="gallery-track-group" aria-hidden="true">
                     <?php foreach ($gallery_row_1 as $item): ?>
-                        <a href="gallery" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
+                        <a href="products" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
@@ -134,7 +134,7 @@ $gallery_row_2 = [
                 <!-- Set A -->
                 <div class="gallery-track-group">
                     <?php foreach ($gallery_row_2 as $item): ?>
-                        <a href="gallery" class="gallery-slide-card" title="Explore Sacred Gallery">
+                        <a href="products" class="gallery-slide-card" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
@@ -150,7 +150,7 @@ $gallery_row_2 = [
                 <!-- Set B (Duplicated for 100% seamless infinite drift) -->
                 <div class="gallery-track-group" aria-hidden="true">
                     <?php foreach ($gallery_row_2 as $item): ?>
-                        <a href="gallery" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
+                        <a href="products" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 

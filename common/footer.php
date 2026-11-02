@@ -46,7 +46,7 @@
                     <li><a href="services" class="footer-link">Healing Services</a></li>
                     <li><a href="training" class="footer-link">Training</a></li>
                     <li><a href="workshop" class="footer-link">Workshop</a></li>
-                    <li><a href="gallery" class="footer-link">Gallery</a></li>
+                    <li><a href="products" class="footer-link">Products</a></li>
                     <li><a href="contact" class="footer-link">Contact Us</a></li>
                 </ul>
             </div>
