@@ -6,7 +6,7 @@ if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'product.php' && str_contain
     exit;
 }
 
-$product_pretitle        = $product_pretitle ?? 'SACRED OFFERINGS';
+$product_pretitle        = $product_pretitle ?? 'Our Products';
 $product_title_1         = $product_title_1 ?? 'Thoughtfully Curated for';
 $product_title_highlight = $product_title_highlight ?? 'Your Wellbeing';
 $show_product_header     = $show_product_header ?? true;
@@ -14,6 +14,7 @@ $show_product_header     = $show_product_header ?? true;
 $products = $products ?? [
     [
         'id'          => 'crystals',
+        'subtitle'    => 'Ame Crystals',
         'name'        => 'Genuine Crystals & Decor',
         'desc'        => 'Thoughtfully curated and charged with intention',
         'image'       => 'assets/product/crystal-store.jpg',
@@ -25,6 +26,7 @@ $products = $products ?? [
     ],
     [
         'id'          => 'wellbeing',
+        'subtitle'    => 'Shamaa Wellness',
         'name'        => 'Holistic wellbeing',
         'desc'        => 'Nurturing balance & wellbeing through mindful movement',
         'image'       => 'assets/product/wellness.jpg',
@@ -44,7 +46,10 @@ $products = $products ?? [
             <!-- Section Header (Clean 2-line layout) -->
             <div class="product-header text-center">
                 <?php if (!empty($product_pretitle)): ?>
-                    <p class="product-pretitle"><?= htmlspecialchars($product_pretitle) ?></p>
+                    <div class="product-badge mb-3">
+                        <span class="badge-icon" aria-hidden="true"><i class="bi bi-box-seam"></i></span>
+                        <span class="badge-text"><?= htmlspecialchars($product_pretitle) ?></span>
+                    </div>
                 <?php endif; ?>
                 <?php if (!empty($product_heading)): ?>
                     <h2 class="product-heading"><?= $product_heading ?></h2>
@@ -84,6 +89,9 @@ $products = $products ?? [
                             <!-- 2. Bottom Content Section -->
                             <div class="product-content">
                                 <div class="product-details">
+                                    <?php if (!empty($item['subtitle'])): ?>
+                                        <span class="product-subheading"><?= htmlspecialchars($item['subtitle']) ?></span>
+                                    <?php endif; ?>
                                     <h3 class="product-title"><?= htmlspecialchars($item['name']) ?></h3>
                                     <p class="product-description"><?= htmlspecialchars($item['desc']) ?></p>
                                 </div>

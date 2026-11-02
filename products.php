@@ -66,7 +66,7 @@ if (!file_exists(__DIR__ . '/' . $product_banner_bg)) {
      ========================================================================== -->
 <?php
 // Reuse the styled product section component
-$product_pretitle        = 'SACRED OFFERINGS';
+$product_pretitle        = 'Our Products';
 $product_title_1         = 'Thoughtfully Curated for';
 $product_title_highlight = 'Your Wellbeing';
 $show_product_header     = true;

@@ -22,6 +22,37 @@
     padding: 0 1rem;
 }
 
+/* Unified Eyebrow Badge (Our Products) */
+.product-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(186, 67, 108, 0.08);
+    border: 1px solid rgba(186, 67, 108, 0.16);
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.product-badge .badge-icon {
+    color: var(--secondary-color, #ba436c);
+    font-size: 0.92rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.product-badge .badge-text {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.76rem, 0.84vw, 0.82rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+    line-height: 1;
+}
+
 .product-pretitle {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
     font-size: 0.95rem;
@@ -161,6 +192,17 @@
 .product-details {
     margin-bottom: 1.75rem;
     width: 100%;
+}
+
+.product-subheading {
+    display: inline-block;
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.74rem, 0.82vw, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary-color, #ba436c);
+    margin-bottom: 0.35rem;
 }
 
 .product-title {
