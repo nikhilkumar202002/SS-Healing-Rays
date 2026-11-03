@@ -16,6 +16,17 @@ if ($clean === 'index.php') {
     exit;
 }
 
+// Redirect decommissioned products page to dedicated offerings
+if (in_array($clean, ['products', 'product', 'products.php', 'product.php'])) {
+    header('Location: /ame-crystals', true, 301);
+    exit;
+}
+
+if ($clean === 'shamaa-wellness') {
+    header('Location: /wellness', true, 301);
+    exit;
+}
+
 if (str_ends_with($clean, '.php')) {
     $withoutExt = substr($clean, 0, -4);
     $query = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';

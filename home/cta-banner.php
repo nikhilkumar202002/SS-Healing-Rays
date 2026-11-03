@@ -17,7 +17,31 @@ $cta_banner_title_3  = $cta_banner_title_3 ?? '';
 $cta_banner_btn_text = $cta_banner_btn_text ?? 'Book your slot';
 $cta_banner_btn_url  = $cta_banner_btn_url ?? '#bookingModal';
 
-$cta_banner_image = $cta_banner_image ?? 'assets/banner/cta-banner.jpeg';
+// Ensure both .jpg and .jpeg exist and have 0644 permissions on live server
+$banner_dir = dirname(__DIR__) . '/assets/banner';
+if (file_exists($banner_dir . '/cta-banner.jpeg')) {
+    @chmod($banner_dir . '/cta-banner.jpeg', 0644);
+    if (!file_exists($banner_dir . '/cta-banner.jpg')) {
+        @copy($banner_dir . '/cta-banner.jpeg', $banner_dir . '/cta-banner.jpg');
+        @chmod($banner_dir . '/cta-banner.jpg', 0644);
+    }
+} elseif (file_exists($banner_dir . '/cta-banner.jpg')) {
+    @chmod($banner_dir . '/cta-banner.jpg', 0644);
+    if (!file_exists($banner_dir . '/cta-banner.jpeg')) {
+        @copy($banner_dir . '/cta-banner.jpg', $banner_dir . '/cta-banner.jpeg');
+        @chmod($banner_dir . '/cta-banner.jpeg', 0644);
+    }
+}
+
+// Single image source from assets/banner folder with fallback
+$cta_banner_image = 'assets/banner/cta-banner.jpg';
+if (!file_exists($banner_dir . '/cta-banner.jpg')) {
+    if (file_exists($banner_dir . '/cta-banner.jpeg')) {
+        $cta_banner_image = 'assets/banner/cta-banner.jpeg';
+    } else {
+        $cta_banner_image = 'assets/banner/banner-1.jpeg';
+    }
+}
 ?>
 
 <section class="cta-banner-section position-relative overflow-hidden" id="retreat-cta" aria-label="Join our Healing Circle">
@@ -26,7 +50,8 @@ $cta_banner_image = $cta_banner_image ?? 'assets/banner/cta-banner.jpeg';
         <img src="<?= htmlspecialchars($cta_banner_image) ?>" 
              alt="Healing Circle Atmosphere" 
              class="cta-banner-bg-img"
-             loading="eager">
+             loading="eager"
+             onerror="if (this.src.indexOf('cta-banner.jpeg') !== -1) { this.src='assets/banner/banner-1.jpeg'; } else { this.src='assets/banner/cta-banner.jpeg'; }">
     </div>
 
     <!-- Soft Luminous Daylight Overlay (Matching UI Screenshot) -->

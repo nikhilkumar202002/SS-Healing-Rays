@@ -52,7 +52,23 @@
         <priority>0.85</priority>
     </url>
 
-    <!-- 7. Sacred Photo Gallery -->
+    <!-- 7. Âme Crystals -->
+    <url>
+        <loc>https://sshealingrays.com/ame-crystals</loc>
+        <lastmod>2026-11-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- 8. Shamaa Wellness -->
+    <url>
+        <loc>https://sshealingrays.com/wellness</loc>
+        <lastmod>2026-11-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- 9. Sacred Photo Gallery -->
     <url>
         <loc>https://sshealingrays.com/gallery</loc>
         <lastmod>2026-10-27</lastmod>
@@ -60,7 +76,7 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- 8. Customer Stories & Testimonials -->
+    <!-- 10. Customer Stories & Testimonials -->
     <url>
         <loc>https://sshealingrays.com/customersstories</loc>
         <lastmod>2026-10-27</lastmod>

@@ -20,6 +20,22 @@ AddDefaultCharset UTF-8
     </IfModule>
 </FilesMatch>
 
+# Force correct MIME type for extensionless images on live servers
+<FilesMatch "^(purpose|mission|sreeparvathi)$">
+    ForceType image/jpeg
+</FilesMatch>
+
+# Explicitly grant access to CTA banner assets
+<FilesMatch "^cta-banner\.(jpg|jpeg)$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Allow from all
+    </IfModule>
+</FilesMatch>
+
 # ------------------------------------------------------------------------------
 # 2. Mod_Rewrite: Clean URLs & Asset Protection
 # ------------------------------------------------------------------------------

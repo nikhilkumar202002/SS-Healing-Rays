@@ -1,12 +1,12 @@
 <?php
 
-// If accessed directly without an outer page wrapper, redirect to /products
+// If accessed directly without an outer page wrapper, redirect to /ame-crystals
 if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'product.php' && str_contains($_SERVER['REQUEST_URI'] ?? '', 'home/product')) {
-    header('Location: /products', true, 301);
+    header('Location: /ame-crystals', true, 301);
     exit;
 }
 
-$product_pretitle        = $product_pretitle ?? 'Our Products';
+$product_pretitle        = $product_pretitle ?? 'Our Offerings';
 $product_title_1         = $product_title_1 ?? 'Thoughtfully Curated for';
 $product_title_highlight = $product_title_highlight ?? 'Your Wellbeing';
 $show_product_header     = $show_product_header ?? true;
@@ -14,27 +14,27 @@ $show_product_header     = $show_product_header ?? true;
 $products = $products ?? [
     [
         'id'          => 'crystals',
-        'subtitle'    => 'Ame Crystals',
-        'name'        => 'Genuine Crystals & Decor',
-        'desc'        => 'Thoughtfully curated and charged with intention',
+        'subtitle'    => 'Signature Crystal Collection',
+        'name'        => 'Âme Crystals',
+        'desc'        => 'Thoughtfully curated and charged with intention. Genuine natural crystals and sacred decor to support your soul journey.',
         'image'       => 'assets/product/crystal-store.jpg',
         'logo'        => 'assets/product/product-logo-2.png', // Crystals emblem logo
-        'btn_text'    => 'Explore Products',
-        'btn_url'     => 'https://wa.me/919000606792?text=Hi%20SS%20Healing%20Rays,%20I%20am%20interested%20in%20Genuine%20Crystals%20%26%20Decor',
+        'btn_text'    => 'Explore Âme Crystals',
+        'btn_url'     => 'ame-crystals',
         'btn_class'   => 'Btn-Product-Primary',
-        'btn_attr'    => 'target="_blank" rel="noopener noreferrer"',
+        'btn_attr'    => '',
     ],
     [
         'id'          => 'wellbeing',
-        'subtitle'    => 'Shamaa Wellness',
-        'name'        => 'Holistic wellbeing',
-        'desc'        => 'Nurturing balance & wellbeing through mindful movement',
+        'subtitle'    => 'The Yoga & Mindful Movement Center',
+        'name'        => 'Shamaa Wellness',
+        'desc'        => 'Nurturing balance, emotional wellbeing and physical vitality through mindful movement and holistic wellness practices.',
         'image'       => 'assets/product/wellness.jpg',
         'logo'        => 'assets/product/product-logo-1.png', // Shamaa Yoga & Wellness Center logo
-        'btn_text'    => 'Book a demo session',
-        'btn_url'     => '#bookingModal',
+        'btn_text'    => 'Explore Shamaa Wellness',
+        'btn_url'     => 'wellness',
         'btn_class'   => 'Btn-Product-Demo',
-        'btn_attr'    => 'data-bs-toggle="modal" data-bs-target="#bookingModal"',
+        'btn_attr'    => '',
     ],
 ];
 ?>

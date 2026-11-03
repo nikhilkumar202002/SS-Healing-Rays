@@ -74,23 +74,19 @@ $about_healing_stats = $about_healing_stats ?? [
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- Trust & Impact Stats Highlight -->
-                    <div class="about-healing-stats">
-                        <div class="row g-3 g-sm-4 align-items-stretch">
+                    <!-- Trust & Impact Stats Highlight (Redesigned Minimal Pill Counters with Generous Spacing from Line) -->
+                    <div class="about-healing-stats" id="aboutHealingStats">
+                        <div class="healing-stat-pills-wrap d-flex flex-wrap align-items-center gap-3">
                             <?php foreach ($about_healing_stats as $stat): ?>
-                                <div class="col-12 col-sm-6 d-flex">
-                                    <div class="healing-stat-card w-100">
-                                        <span class="stat-icon-wrap" aria-hidden="true">
-                                            <i class="bi <?= htmlspecialchars($stat['icon']) ?>"></i>
-                                        </span>
-                                        <div class="stat-info">
-                                            <div class="stat-number-wrap">
-                                                <span class="stat-number"><?= htmlspecialchars($stat['number']) ?></span>
-                                                <span class="stat-suffix"><?= htmlspecialchars($stat['suffix']) ?></span>
-                                            </div>
-                                            <span class="stat-label"><?= htmlspecialchars($stat['label']) ?></span>
-                                        </div>
+                                <div class="healing-stat-pill d-inline-flex align-items-center">
+                                    <span class="stat-pill-icon" aria-hidden="true">
+                                        <i class="bi <?= htmlspecialchars($stat['icon']) ?>"></i>
+                                    </span>
+                                    <div class="stat-number-wrap">
+                                        <span class="stat-number counter-count" data-target="<?= htmlspecialchars($stat['number']) ?>"><?= htmlspecialchars($stat['number']) ?></span><span class="stat-suffix"><?= htmlspecialchars($stat['suffix']) ?></span>
                                     </div>
+                                    <span class="stat-pill-divider" aria-hidden="true"></span>
+                                    <span class="stat-label"><?= htmlspecialchars($stat['label']) ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </div>

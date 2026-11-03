@@ -9,66 +9,68 @@
     'use strict';
 
     function initCounters() {
-        const counterSection = document.getElementById('counter');
-        if (!counterSection) return;
+        const sections = document.querySelectorAll('#counter, #aboutCenter, .about-healing-stats, [data-counter-section]');
+        if (!sections.length) return;
 
-        const countElements = counterSection.querySelectorAll('.counter-count[data-target]');
-        if (!countElements.length) return;
+        sections.forEach(section => {
+            const countElements = section.querySelectorAll('.counter-count[data-target]');
+            if (!countElements.length) return;
 
-        let hasAnimated = false;
+            let hasAnimated = false;
 
-        function animateCount(el) {
-            const target = parseInt(el.getAttribute('data-target'), 10);
-            if (isNaN(target)) return;
+            function animateCount(el) {
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                if (isNaN(target)) return;
 
-            const duration = 1600; // ms
-            const startTime = performance.now();
+                const duration = 1600; // ms
+                const startTime = performance.now();
 
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
 
-                // Ease-out quad curve
-                const easeOut = progress * (2 - progress);
-                const current = Math.floor(easeOut * target);
+                    // Ease-out quad curve
+                    const easeOut = progress * (2 - progress);
+                    const current = Math.floor(easeOut * target);
 
-                el.textContent = current;
+                    el.textContent = current;
 
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    el.textContent = target;
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        el.textContent = target;
+                    }
                 }
+
+                requestAnimationFrame(update);
             }
 
-            requestAnimationFrame(update);
-        }
+            function triggerAll() {
+                if (hasAnimated) return;
+                hasAnimated = true;
+                countElements.forEach(el => animateCount(el));
+            }
 
-        function triggerAll() {
-            if (hasAnimated) return;
-            hasAnimated = true;
-            countElements.forEach(el => animateCount(el));
-        }
-
-        // IntersectionObserver for scroll-triggered activation
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        triggerAll();
-                        obs.disconnect();
-                    }
+            // IntersectionObserver for scroll-triggered activation
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            triggerAll();
+                            obs.disconnect();
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -30px 0px'
                 });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -40px 0px'
-            });
 
-            observer.observe(counterSection);
-        } else {
-            // Fallback for older browsers
-            triggerAll();
-        }
+                observer.observe(section);
+            } else {
+                // Fallback for older browsers
+                triggerAll();
+            }
+        });
     }
 
     if (document.readyState === 'loading') {

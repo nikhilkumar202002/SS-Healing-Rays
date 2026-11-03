@@ -96,11 +96,10 @@ $nav_items = $nav_items ?? [
     ],
     'products' => [
         'label'    => 'Products',
-        'url'      => 'products',
+        'url'      => 'ame-crystals',
         'children' => [
-            ['label' => 'Genuine Crystals & Decor', 'url' => 'products#crystals'],
-            ['label' => 'Holistic Wellbeing', 'url' => 'products#wellbeing'],
-            ['label' => 'Explore All Products', 'url' => 'products'],
+            ['label' => 'Âme Crystals', 'url' => 'ame-crystals'],
+            ['label' => 'Shamaa Wellness', 'url' => 'wellness'],
         ],
     ],
     'stories' => [
@@ -177,7 +176,7 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/aboutcommunity.css">
 
     <!-- About The Center Component Custom Styles -->
-    <link rel="stylesheet" href="assets/css/aboutthehealing.css">
+    <link rel="stylesheet" href="assets/css/aboutthehealing.css?v=<?= file_exists(__DIR__ . '/../assets/css/aboutthehealing.css') ? filemtime(__DIR__ . '/../assets/css/aboutthehealing.css') : '2.2' ?>">
 
     <!-- Healing Services Carousel Custom Styles -->
     <link rel="stylesheet" href="assets/css/services.css">
@@ -222,7 +221,10 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/trainingcards.css">
 
     <!-- Product Page Hero Banner Custom Styles -->
-    <link rel="stylesheet" href="assets/css/productbanner.css">
+    <link rel="stylesheet" href="assets/css/productbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/productbanner.css') ? filemtime(__DIR__ . '/../assets/css/productbanner.css') : '2.2' ?>">
+
+    <!-- Shamaa Wellness Page Custom Styles -->
+    <link rel="stylesheet" href="assets/css/wellness.css?v=<?= file_exists(__DIR__ . '/../assets/css/wellness.css') ? filemtime(__DIR__ . '/../assets/css/wellness.css') : '1.0' ?>">
 
     <!-- Masonry Gallery Grid & Lightbox Styles -->
     <link rel="stylesheet" href="assets/css/galleryimages.css">
@@ -242,7 +244,7 @@ $nav_items = $nav_items ?? [
     <!-- Reusable Footer Island Custom Styles -->
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
-<body>
+<body class="<?= !empty($current_page) ? 'page-' . htmlspecialchars($current_page) : '' ?>">
 
 <?php
 // Homepage Preloader (displays on homepage load)
@@ -283,7 +285,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                             <?php 
                                 $isActive = ($current_page === $key || 
                                             ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
-                                            ($key === 'products' && in_array($current_page, ['products', 'product'])));
+                                            ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness'])));
                                 $hasCategories = !empty($item['categories']);
                                 $hasChildren = !empty($item['children']);
                             ?>
@@ -477,7 +479,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                 <?php 
                     $isActive = ($current_page === $key || 
                                 ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
-                                ($key === 'products' && in_array($current_page, ['products', 'product']))); 
+                                ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness']))); 
                 ?>
                 <?php if (!empty($item['categories'])): ?>
                     <li class="nav-item">

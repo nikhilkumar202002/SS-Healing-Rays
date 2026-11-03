@@ -43,7 +43,7 @@ if (empty($banner_images)) {
     $banner_images = [
         'assets/banner/banner-1.jpeg',
         'assets/banner/banner-2.jpeg',
-        'assets/banner/cta-banner.jpeg',
+        'assets/banner/cta-banner.jpg',
         'assets/banner/cta-banner-2.jpeg',
     ];
 }
@@ -111,7 +111,7 @@ $stories_grid_items = [
     // --- ROW 4 ---
     [
         'type'        => 'image',
-        'image'       => 'assets/banner/cta-banner.jpeg',
+        'image'       => 'assets/banner/cta-banner.jpg',
         'alt'         => 'Somatic Breathwork & Sacred Circle Gathering',
     ],
     [
