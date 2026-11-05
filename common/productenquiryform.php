@@ -1,4 +1,19 @@
 <?php
+/**
+ * ==============================================================================
+ * Simple Product Enquiry Form & Modal - SS Healing Rays
+ * Fields:
+ *   - Name (Required)
+ *   - Phone Number (Required)
+ *   - WhatsApp Number (Required, with "Same as Phone Number" checkbox sync)
+ *   - Email ID (Not mandatory / Optional)
+ *   - Product Select:
+ *       1. Book a clarity call
+ *       2. AME: Jewellery, Home Decor, Pouch, Cleansers, Grids
+ *       3. SHAMAA: Demo session, Group Session, Personal Therapeutic yoga session
+ *   - Submit Button
+ * ==============================================================================
+ */
 
 $is_standalone_product_form = (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'productenquiryform.php');
 
@@ -69,22 +84,11 @@ $product_dropdown_list = [
             <!-- Modal Body: Focused Form Only -->
             <div class="modal-body p-4 p-md-5">
                 
-                <!-- Header -->
-                <div class="contact-form-header mb-4 text-start">
-                    <div class="product-enquiry-badge mb-2 d-inline-flex align-items-center gap-1">
-                        <i class="bi bi-gem text-secondary"></i>
-                        <span>Product &amp; Consultation Enquiry</span>
-                    </div>
-                    <h2 class="contact-heading" id="productEnquiryModalLabel">
-                        <span class="d-block">Choose a Product</span>
-                        <span class="d-block">
-                            &amp; Connect
-                            <span class="title-highlight">With Us</span>
-                        </span>
+                <!-- Header: Clean Center-Aligned Heading -->
+                <div class="product-enquiry-header text-center">
+                    <h2 class="product-enquiry-heading" id="productEnquiryModalLabel">
+                        Choose a Product
                     </h2>
-                    <p class="text-muted small mt-2 mb-0">
-                        Please share your details. Our team will reach out promptly with personalized guidance and availability.
-                    </p>
                 </div>
 
                 <!-- Clean Underline Product Enquiry Form -->
@@ -219,13 +223,20 @@ $product_dropdown_list = [
     background-color: #ffffff;
 }
 
-.product-enquiry-badge {
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--secondary-color, #ba436c);
+.product-enquiry-header {
+    text-align: center !important;
+    margin-bottom: 40px !important;
+}
+
+.product-enquiry-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', serif);
+    font-size: 30px !important;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--heading-color, #111133);
+    text-align: center !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em;
 }
 
 .product-form-label {
