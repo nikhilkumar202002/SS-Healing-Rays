@@ -19,10 +19,8 @@ $crystal_headline_2         = $crystal_headline_2 ?? "Sometimes, the crystal fin
 $crystal_desc_1             = $crystal_desc_1 ?? "Inspired by the French word <em>âme</em>, meaning soul, <strong>Âme Crystals</strong> is built around the beautiful connection between a crystal and the person it finds.";
 $crystal_desc_2             = $crystal_desc_2 ?? "We believe every stone from Mother Earth carries a story. Some become silent supporters, some remind us of our strength, and some bring comfort, grounding and encouragement when we need them most.";
 
-$crystal_primary_cta_text   = $crystal_primary_cta_text ?? 'Discover Your Crystal';
+$crystal_primary_cta_text   = $crystal_primary_cta_text ?? 'Book your crystal consultation';
 $crystal_primary_cta_url    = $crystal_primary_cta_url ?? '#crystals';
-$crystal_secondary_cta_text = $crystal_secondary_cta_text ?? 'Book Your Crystal Consultation';
-$crystal_secondary_cta_url  = $crystal_secondary_cta_url ?? '#bookingModal';
 
 $crystal_img = $crystal_img ?? 'assets/images/purpose.jpg';
 if (!file_exists(dirname(__DIR__) . '/' . $crystal_img)) {

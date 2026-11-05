@@ -51,9 +51,10 @@ $grid_img_alt    = $grid_img_alt ?? 'Personalised Crystal Grids - Âme Crystals'
             <div class="col-12 col-lg-6 ame-grid-col-content d-flex flex-column justify-content-center">
                 <div class="ame-grid-content">
                     
-                    <!-- Headline (2 lines) -->
+                    <!-- Headline (Strict 2 lines) -->
                     <h2 class="ame-grid-heading mb-3 mb-lg-4">
-                        <?= htmlspecialchars($grid_headline_1) ?> <span class="d-block title-highlight"><?= htmlspecialchars($grid_headline_2) ?></span>
+                        <span class="ame-grid-title-line"><?= htmlspecialchars($grid_headline_1) ?></span>
+                        <span class="ame-grid-title-line title-highlight"><?= htmlspecialchars($grid_headline_2) ?></span>
                     </h2>
 
                     <!-- Story Description Paragraphs -->
