@@ -27,6 +27,14 @@ if (!file_exists(__DIR__ . '/' . $ame_hero_banner_img)) {
         $ame_hero_banner_img = 'assets/banner/banner-1.jpeg';
     }
 }
+
+// Robust live-server image resolution for Ame logo
+$ame_logo_img = 'assets/product/product-logo-2.png';
+if (!file_exists(__DIR__ . '/' . $ame_logo_img)) {
+    if (file_exists(__DIR__ . '/assets/product/product-logo-1.png')) {
+        $ame_logo_img = 'assets/product/product-logo-1.png';
+    }
+}
 ?>
 
 <!-- ==========================================================================
@@ -44,6 +52,18 @@ if (!file_exists(__DIR__ . '/' . $ame_hero_banner_img)) {
         <div class="row justify-content-center text-center">
             <div class="col-12 col-lg-11 col-xl-10">
                 
+                <!-- Brand Identity: Logo on top and Heading -->
+                <div class="ame-hero-brand-header mb-3">
+                    <div class="ame-hero-logo-badge mx-auto mb-2">
+                        <img src="<?= htmlspecialchars($ame_logo_img) ?>" 
+                             alt="Âme Crystals Emblem Logo" 
+                             class="ame-hero-logo-img"
+                             loading="eager">
+                    </div>
+                    <h2 class="ame-hero-brand-heading mb-1">Âme Crystals</h2>
+                    <span class="ame-hero-brand-subheading">The Signature Crystal Collection</span>
+                </div>
+
                 <!-- Hero Title: Strict 2 Lines Layout -->
                 <h1 class="product-banner-title mb-3">
                     <span class="banner-title-line">You don't always choose a crystal.</span>

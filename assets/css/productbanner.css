@@ -144,6 +144,78 @@
     padding: clamp(6.5rem, 9vw, 8.5rem) 0 clamp(4.5rem, 7vw, 6rem);
 }
 
+/* Âme Crystals Brand Identity Header (Logo & Heading on Top) */
+.ame-hero-brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.ame-hero-logo-badge {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 0 20px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    margin-bottom: 0.85rem;
+}
+
+.ame-hero-logo-badge:hover {
+    transform: scale(1.06);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32), 0 0 28px rgba(255, 215, 0, 0.4);
+}
+
+.ame-hero-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.ame-hero-brand-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', var(--brand-font-serif, 'Playfair Display', serif));
+    font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.ame-hero-brand-subheading {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.76rem, 0.88vw, 0.86rem);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.88);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.25rem;
+}
+
+.ame-hero-brand-subheading::before,
+.ame-hero-brand-subheading::after {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+}
+
 .ame-hero-badge {
     display: inline-flex;
     align-items: center;
@@ -205,6 +277,27 @@
     .product-banner-section.ame-crystal-hero {
         min-height: auto;
         padding: clamp(5.25rem, 12vh, 6.5rem) 20px clamp(3.5rem, 8vh, 4.5rem) !important;
+    }
+
+    .ame-hero-brand-header {
+        margin-bottom: 1.15rem !important;
+    }
+
+    .ame-hero-logo-badge {
+        width: 62px !important;
+        height: 62px !important;
+        padding: 8px !important;
+        margin-bottom: 0.65rem !important;
+    }
+
+    .ame-hero-brand-heading {
+        font-size: clamp(1.4rem, 5.2vw, 1.8rem) !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .ame-hero-brand-subheading {
+        font-size: 0.72rem !important;
+        letter-spacing: 0.12em !important;
     }
 
     .ame-crystal-hero .product-banner-title {
