@@ -9,6 +9,7 @@
  */
 
 $grid_headline_1 = $grid_headline_1 ?? 'A Dedicated Space for Your Intention';
+$grid_headline_2 = $grid_headline_2 ?? '- Crystal Grid';
 $grid_desc_1     = $grid_desc_1 ?? "For customers seeking focused support for a significant intention or manifestation goal, Âme offers personalised crystal grids. These are thoughtfully arranged using selected crystals and a design based on the person's intention—such as abundance, prosperity, career opportunities, a new job or other personal goals.";
 $grid_desc_2     = $grid_desc_2 ?? "Each grid is prepared personally and undergoes a 21-day energising process at our end before it is handed over to the customer. This is a premium, customised service and is recommended after understanding the person's needs.";
 
@@ -28,7 +29,7 @@ if (!file_exists(dirname(__DIR__) . '/' . $grid_img)) {
 $grid_img_alt    = $grid_img_alt ?? 'Personalised Crystal Grids - Âme Crystals';
 ?>
 
-<section class="ame-grid-section position-relative" id="ameCrystalGrid" aria-label="A Dedicated Space for Your Intention">
+<section class="ame-grid-section position-relative" id="ameCrystalGrid" aria-label="A Dedicated Space for Your Intention - Crystal Grid">
     <div class="container ame-grid-container">
         <div class="row align-items-lg-stretch align-items-center g-4 g-lg-5 ame-grid-row">
             
@@ -50,9 +51,9 @@ $grid_img_alt    = $grid_img_alt ?? 'Personalised Crystal Grids - Âme Crystals'
             <div class="col-12 col-lg-6 ame-grid-col-content d-flex flex-column justify-content-center">
                 <div class="ame-grid-content">
                     
-                    <!-- Headline (2 lines matching screenshot) -->
+                    <!-- Headline (2 lines) -->
                     <h2 class="ame-grid-heading mb-3 mb-lg-4">
-                        A Dedicated Space for <span class="d-block title-highlight">Your Intention</span>
+                        <?= htmlspecialchars($grid_headline_1) ?> <span class="d-block title-highlight"><?= htmlspecialchars($grid_headline_2) ?></span>
                     </h2>
 
                     <!-- Story Description Paragraphs -->
