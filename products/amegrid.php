@@ -70,7 +70,7 @@ $grid_img_alt    = $grid_img_alt ?? 'Personalised Crystal Grids - Âme Crystals'
                                 $btn_text  = $grid_cta_text;
                                 $btn_url   = $grid_cta_url;
                                 $btn_class = 'Btn-Crystal-Primary';
-                                $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#bookingModal" data-service-title="Personalised Crystal Grid" data-service-category="Âme Crystals" aria-label="' . htmlspecialchars($grid_cta_text) . '"';
+                                $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#productEnquiryModal" data-product="AME - Grids" data-service-title="Personalised Crystal Grid" aria-label="' . htmlspecialchars($grid_cta_text) . '"';
                                 include dirname(__DIR__) . '/common/button.php';
                             ?>
                         </div>

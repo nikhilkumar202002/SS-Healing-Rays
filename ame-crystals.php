@@ -79,9 +79,9 @@ if (!file_exists(__DIR__ . '/' . $ame_logo_img)) {
                     <div class="crystal-primary-btn-wrap">
                         <?php
                             $btn_text  = 'Book your crystal consultation';
-                            $btn_url   = '#bookingModal';
+                            $btn_url   = '#productEnquiryModal';
                             $btn_class = 'Btn-Crystal-Primary';
-                            $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#bookingModal"';
+                            $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#productEnquiryModal" data-product="Book a clarity call"';
                             include __DIR__ . '/common/button.php';
                         ?>
                     </div>

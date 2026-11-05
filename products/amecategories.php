@@ -106,9 +106,9 @@ $crystal_categories = $crystal_categories ?? [
                                 <button type="button" 
                                         class="btn btn-crystal-enquiry w-100"
                                         data-bs-toggle="modal" 
-                                        data-bs-target="#bookingModal"
+                                        data-bs-target="#productEnquiryModal"
+                                        data-product="<?= htmlspecialchars($item['title']) ?>"
                                         data-service-title="<?= htmlspecialchars($item['title']) ?>"
-                                        data-service-category="Âme Crystals"
                                         aria-label="Enquiry Now for <?= htmlspecialchars($item['title']) ?>">
                                     Enquiry Now
                                 </button>

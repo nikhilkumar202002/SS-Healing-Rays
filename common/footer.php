@@ -92,6 +92,9 @@
 <?php
 // Global Popup Booking Form Modal (Triggered by Hero Banner and Site-wide Booking Buttons)
 include __DIR__ . '/popupbookingform.php';
+
+// Product Enquiry Modal (Triggered by Product Banners & Category Cards)
+include __DIR__ . '/productenquiryform.php';
 ?>
 
 <!-- Bootstrap 5.3 (Latest) JavaScript Bundle -->
