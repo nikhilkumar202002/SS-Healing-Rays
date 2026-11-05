@@ -56,10 +56,10 @@ $crystal_categories = $crystal_categories ?? [
 <section class="crystal-categories-section position-relative" id="crystalCategories" aria-label="Curated Crystal Categories">
     <div class="container crystal-categories-container">
         
-        <!-- Header with Title -->
-        <div class="row align-items-end mb-4 mb-lg-5 crystal-cat-header-row">
-            <div class="col-12 col-lg-10">
-                <div class="crystal-cat-header text-center text-lg-start">
+        <!-- Header with Title (Center Aligned) -->
+        <div class="row justify-content-center mb-4 mb-lg-5 crystal-cat-header-row">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="crystal-cat-header text-center">
                     
                     <!-- Headline: 2-Line Balanced Layout -->
                     <h2 class="crystal-cat-heading mb-3">
@@ -70,7 +70,7 @@ $crystal_categories = $crystal_categories ?? [
                     </h2>
 
                     <!-- Lead Description -->
-                    <p class="crystal-cat-lead mb-0">
+                    <p class="crystal-cat-lead mx-auto mb-0">
                         <?= htmlspecialchars($crystal_cat_lead) ?>
                     </p>
 
