@@ -42,7 +42,7 @@ $crystal_categories = $crystal_categories ?? [
     ],
     [
         'title'       => 'Crystal Pouches',
-        'subtitle'    => 'For Abundance, Harmonious Relationships, Protection, Career, Wealth & Money, Success & Students.',
+        'subtitle'    => 'For Abundance, Harmonious Relationships, Protection, Career, Wealth & Money, Success & Students, Meditation',
         'image'       => resolve_ame_cat_img('assets/categories/tumble-stones.jpeg'),
     ],
     [

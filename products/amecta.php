@@ -9,7 +9,7 @@
 $ame_cta_headline_1 = $ame_cta_headline_1 ?? 'Let Your Crystal';
 $ame_cta_headline_2 = $ame_cta_headline_2 ?? 'Find You.';
 $ame_cta_desc       = $ame_cta_desc ?? "Not sure which crystal is right for you? Let's understand your present needs and help you find a crystal that resonates with your journey.";
-$ame_cta_btn_text   = $ame_cta_btn_text ?? 'Claim Free 20-Min Session free session on purchase of Rs.399/-';
+$ame_cta_btn_text   = $ame_cta_btn_text ?? 'Avail 20 minute Crystal Consultation worth Rs.399/- for FREE on every purchase';
 $ame_cta_btn_url    = $ame_cta_btn_url ?? '#bookingModal';
 
 $ame_cta_bg_img = $ame_cta_bg_img ?? 'assets/banner/ame-crystals-cta-banner.jpg';
