@@ -70,7 +70,7 @@ $crystal_img_alt = $crystal_img_alt ?? 'A Crystal with a Purpose - Âme Crystals
                             <p><?= $crystal_desc_1 ?></p>
                         <?php endif; ?>
                         <?php if (!empty($crystal_desc_2)): ?>
-                            <p><?= $crystal_desc_2 ?></p>
+                            <p class="crystal-consultation-quote"><?= $crystal_desc_2 ?></p>
                         <?php endif; ?>
                     </div>
 

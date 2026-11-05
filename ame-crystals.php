@@ -100,7 +100,7 @@ $crystal_eyebrow            = ''; // Minimal layout without subheading badge
 $crystal_headline_1         = 'Crystal with a purpose.';
 $crystal_headline_2         = '';
 $crystal_desc_1             = "We don't see crystals merely as beautiful stones or accessories. We see them as meaningful companions in one's personal journey. Depending on what you are navigating, a crystal can serve as a reminder, a motivator, a source of comfort or a symbol of protection and encouragement.";
-$crystal_desc_2             = '<strong class="crystal-highlight-free">Free 15 minutes crystal consultation</strong> with every purchase from <strong class="crystal-highlight-brand">Âme Crystals</strong>.';
+$crystal_desc_2             = '&ldquo;<strong class="crystal-highlight-free">Free 15 minutes crystal consultation</strong> with every purchase from <strong class="crystal-highlight-brand">Âme Crystals</strong>.&rdquo;';
 $show_crystal_ctas          = false;
 $crystal_primary_cta_text   = '';
 $crystal_secondary_cta_text = '';

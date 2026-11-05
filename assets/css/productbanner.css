@@ -500,6 +500,14 @@
 }
 
 /* Purpose Banner Offer & Brand Highlights */
+.signature-crystal-description .crystal-consultation-quote {
+    font-size: clamp(1.22rem, 1.55vw, 1.42rem) !important;
+    line-height: 1.65;
+    color: var(--heading-color, #111133);
+    margin-top: 1.35rem;
+    font-weight: 500;
+}
+
 .signature-crystal-description .crystal-highlight-free {
     color: var(--secondary-color, #ba436c) !important;
     font-weight: 700 !important;
