@@ -499,6 +499,19 @@
     font-weight: 600;
 }
 
+/* Purpose Banner Offer & Brand Highlights */
+.signature-crystal-description .crystal-highlight-free {
+    color: var(--secondary-color, #ba436c) !important;
+    font-weight: 700 !important;
+}
+
+.signature-crystal-description .crystal-highlight-brand {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif) !important;
+    font-style: italic !important;
+    color: var(--primary-color, #82387a) !important;
+    font-weight: 700 !important;
+}
+
 /* Actions & Buttons */
 .signature-crystal-actions {
     margin-top: 0.5rem;
