@@ -32,10 +32,7 @@ $faq_items = [
         'question' => 'Can I wear my crystal every day?',
         'answer'   => 'This depends on the particular stone, its physical properties and how you intend to use it. We will guide you on suitable usage and care.',
     ],
-    [
-        'question' => 'Do you offer customised combinations and crystal grids?',
-        'answer'   => 'Yes. Based on your consultation and requirements, we can guide you on suitable combinations and create personalised crystal grids. Our custom grids are energised for 21 days before handover.',
-    ],
+    
     [
         'question' => 'What does lifelong support include?',
         'answer'   => 'We provide ongoing guidance on usage, cleansing and care. For Hyderabad customers, in-person re-tying or minor bracelet upkeep may also be possible, depending on the requirement.',

@@ -948,7 +948,11 @@
     pointer-events: none !important;
 }
 
-/* Swiper Slide & Category Card */
+/* Grid & Category Card */
+.crystal-categories-grid {
+    margin-top: 0.5rem;
+}
+
 .crystal-categories-swiper {
     padding: 0.75rem 0.25rem 2rem;
     overflow: visible;
