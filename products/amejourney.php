@@ -29,7 +29,8 @@ $journey_steps = $journey_steps ?? [
         'step'        => '02',
         'title'       => 'Identify',
         'icon'        => 'bi bi-compass',
-        'description' => 'We explore crystals and combinations that align with the support you are looking for, informed by our experience, aura reading, pendulum and aura-rod guidance.',
+        'description' => 'We identify crystals and combinations that align with the support you are looking for, informed by
+our experience, aura reading.',
     ],
     [
         'step'        => '03',

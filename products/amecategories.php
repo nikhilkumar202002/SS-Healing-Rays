@@ -7,8 +7,8 @@
  * ==============================================================================
  */
 
-$crystal_cat_title_1     = $crystal_cat_title_1 ?? 'Beautifully Crafted.';
-$crystal_cat_title_2     = $crystal_cat_title_2 ?? 'Intentionally Chosen.';
+$crystal_cat_title_1     = $crystal_cat_title_1 ?? 'Beautifully crafted, Intentionally chosen';
+$crystal_cat_title_2     = $crystal_cat_title_2 ?? '- Crystal for sale';
 $crystal_cat_lead        = $crystal_cat_lead ?? 'A carefully curated selection of product categories, intentionally chosen to bring comfort, grounding, and harmony to your personal journey.';
 
 $crystal_categories = $crystal_categories ?? [

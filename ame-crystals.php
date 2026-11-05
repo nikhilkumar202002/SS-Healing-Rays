@@ -105,10 +105,10 @@ if (!file_exists(__DIR__ . '/' . $ame_logo_img)) {
      ========================================================================== -->
 <?php
 $crystal_eyebrow            = ''; // Minimal layout without subheading badge
-$crystal_headline_1         = 'A Crystal with a Purpose';
+$crystal_headline_1         = 'Crystal with a purpose.';
 $crystal_headline_2         = '';
 $crystal_desc_1             = "We don't see crystals merely as beautiful stones or accessories. We see them as meaningful companions in one's personal journey. Depending on what you are navigating, a crystal can serve as a reminder, a motivator, a source of comfort or a symbol of protection and encouragement.";
-$crystal_desc_2             = "Crystals are not a replacement for medical care, professional support or the actions needed to create change in life. We see them as an additional source of personal and symbolic support.";
+$crystal_desc_2             = "Free 15 minutes crystal consultation with every purchase from AME ";
 $show_crystal_ctas          = false;
 $crystal_primary_cta_text   = '';
 $crystal_secondary_cta_text = '';
