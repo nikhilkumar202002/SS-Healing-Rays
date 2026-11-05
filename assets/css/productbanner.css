@@ -153,31 +153,30 @@
     margin-bottom: 1.5rem;
 }
 
-.ame-hero-logo-badge {
-    width: 74px;
-    height: 74px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+.ame-hero-logo-wrap {
+    width: clamp(75px, 7.5vw, 95px);
+    height: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 0 20px rgba(255, 255, 255, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
     margin-bottom: 0.85rem;
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
+    transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.ame-hero-logo-badge:hover {
-    transform: scale(1.06);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32), 0 0 28px rgba(255, 215, 0, 0.4);
+.ame-hero-logo-wrap:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.6));
 }
 
 .ame-hero-logo-img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 95px;
     object-fit: contain;
     display: block;
 }
@@ -189,31 +188,9 @@
     letter-spacing: 0.08em;
     color: #ffffff;
     text-transform: uppercase;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0;
     line-height: 1.2;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
-}
-
-.ame-hero-brand-subheading {
-    font-family: var(--brand-font-sans, 'Lato', sans-serif);
-    font-size: clamp(0.76rem, 0.88vw, 0.86rem);
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.88);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0.25rem;
-}
-
-.ame-hero-brand-subheading::before,
-.ame-hero-brand-subheading::after {
-    content: '';
-    display: inline-block;
-    width: 22px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.45);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 .ame-hero-badge {
@@ -283,21 +260,14 @@
         margin-bottom: 1.15rem !important;
     }
 
-    .ame-hero-logo-badge {
+    .ame-hero-logo-wrap {
         width: 62px !important;
-        height: 62px !important;
-        padding: 8px !important;
-        margin-bottom: 0.65rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .ame-hero-brand-heading {
-        font-size: clamp(1.4rem, 5.2vw, 1.8rem) !important;
-        margin-bottom: 0.25rem !important;
-    }
-
-    .ame-hero-brand-subheading {
-        font-size: 0.72rem !important;
-        letter-spacing: 0.12em !important;
+        font-size: clamp(1.35rem, 5vw, 1.75rem) !important;
+        margin-bottom: 0 !important;
     }
 
     .ame-crystal-hero .product-banner-title {

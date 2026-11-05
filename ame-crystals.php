@@ -54,14 +54,13 @@ if (!file_exists(__DIR__ . '/' . $ame_logo_img)) {
                 
                 <!-- Brand Identity: Logo on top and Heading -->
                 <div class="ame-hero-brand-header mb-3">
-                    <div class="ame-hero-logo-badge mx-auto mb-2">
+                    <div class="ame-hero-logo-wrap mx-auto mb-2">
                         <img src="<?= htmlspecialchars($ame_logo_img) ?>" 
                              alt="Âme Crystals Emblem Logo" 
                              class="ame-hero-logo-img"
                              loading="eager">
                     </div>
-                    <h2 class="ame-hero-brand-heading mb-1">Âme Crystals</h2>
-                    <span class="ame-hero-brand-subheading">The Signature Crystal Collection</span>
+                    <h2 class="ame-hero-brand-heading mb-0">Âme Crystals</h2>
                 </div>
 
                 <!-- Hero Title: Strict 2 Lines Layout -->
