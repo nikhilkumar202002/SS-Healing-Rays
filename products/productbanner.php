@@ -20,7 +20,8 @@ $crystal_desc_1             = $crystal_desc_1 ?? "Inspired by the French word <e
 $crystal_desc_2             = $crystal_desc_2 ?? "We believe every stone from Mother Earth carries a story. Some become silent supporters, some remind us of our strength, and some bring comfort, grounding and encouragement when we need them most.";
 
 $crystal_primary_cta_text   = $crystal_primary_cta_text ?? 'Book your crystal consultation';
-$crystal_primary_cta_url    = $crystal_primary_cta_url ?? '#crystals';
+$crystal_primary_cta_url    = $crystal_primary_cta_url ?? '#bookingModal';
+$crystal_secondary_cta_text = $crystal_secondary_cta_text ?? '';
 
 $crystal_img = $crystal_img ?? 'assets/images/purpose.jpg';
 if (!file_exists(dirname(__DIR__) . '/' . $crystal_img)) {
@@ -85,6 +86,9 @@ $crystal_img_alt = $crystal_img_alt ?? 'A Crystal with a Purpose - Âme Crystals
                                         $btn_text  = $crystal_primary_cta_text;
                                         $btn_url   = $crystal_primary_cta_url;
                                         $btn_class = 'Btn-Crystal-Primary';
+                                        if ($btn_url === '#bookingModal') {
+                                            $btn_attr = 'data-bs-toggle="modal" data-bs-target="#bookingModal"';
+                                        }
                                         include dirname(__DIR__) . '/common/button.php';
                                     ?>
                                 </div>

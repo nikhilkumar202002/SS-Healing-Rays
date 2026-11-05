@@ -74,25 +74,17 @@ if (!file_exists(__DIR__ . '/' . $ame_logo_img)) {
                     Inspired by the French word <em>âme</em>, meaning soul, <strong>Âme Crystals</strong> is built around the beautiful connection between a crystal and the person it finds. We believe every stone from Mother Earth carries a story. Some become silent supporters, some remind us of our strength, and some bring comfort, grounding and encouragement when we need them most.
                 </p>
 
-                <!-- Dual CTAs -->
-                <div class="ame-hero-actions d-flex flex-wrap align-items-center justify-content-center gap-3 pt-2">
+                <!-- Action Button: Only Primary Button -->
+                <div class="ame-hero-actions d-flex flex-wrap align-items-center justify-content-center pt-2">
                     <div class="crystal-primary-btn-wrap">
                         <?php
-                            $btn_text  = 'Discover Your Crystal';
-                            $btn_url   = '#ameJourney';
+                            $btn_text  = 'Book your crystal consultation';
+                            $btn_url   = '#bookingModal';
                             $btn_class = 'Btn-Crystal-Primary';
+                            $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#bookingModal"';
                             include __DIR__ . '/common/button.php';
                         ?>
                     </div>
-
-                    <button type="button" 
-                            class="btn btn-hero-crystal-consultation"
-                            data-bs-toggle="modal" 
-                            data-bs-target="#bookingModal"
-                            aria-label="Book Your Crystal Consultation">
-                        <i class="bi bi-calendar2-heart me-2" aria-hidden="true"></i>
-                        <span>Book Your Crystal Consultation</span>
-                    </button>
                 </div>
 
             </div>
