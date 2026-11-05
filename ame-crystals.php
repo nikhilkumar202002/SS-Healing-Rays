@@ -44,14 +44,6 @@ if (!file_exists(__DIR__ . '/' . $ame_hero_banner_img)) {
         <div class="row justify-content-center text-center">
             <div class="col-12 col-lg-11 col-xl-10">
                 
-                <!-- Breadcrumb Navigation -->
-                <nav class="product-breadcrumb mb-3" aria-label="Breadcrumb">
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Âme Crystals</li>
-                    </ol>
-                </nav>
-
                 <!-- Hero Title: Strict 2 Lines Layout -->
                 <h1 class="product-banner-title mb-3">
                     <span class="banner-title-line">You don't always choose a crystal.</span>
