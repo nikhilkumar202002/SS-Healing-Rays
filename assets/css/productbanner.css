@@ -1476,6 +1476,79 @@
 }
 
 /* ==========================================================================
+   12.5. Crystal Guide Section (2 Columns, White Background)
+   ========================================================================== */
+.crystal-guide-section {
+    padding: clamp(4.5rem, 6.5vw, 6.5rem) 0;
+    background-color: #ffffff !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.crystal-guide-container {
+    position: relative;
+    z-index: 2;
+}
+
+.crystal-guide-heading {
+    font-family: var(--brand-font-marcellus, 'Marcellus', serif);
+    font-size: clamp(1.85rem, 2.75vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--heading-color, #111133);
+    letter-spacing: -0.015em;
+}
+
+.crystal-guide-lead {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: clamp(0.96rem, 1.1vw, 1.05rem);
+    line-height: 1.72;
+    color: #475569;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.crystal-guide-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(186, 67, 108, 0.14);
+    box-shadow: 0 8px 28px rgba(17, 17, 51, 0.06);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.crystal-guide-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(186, 67, 108, 0.35);
+    box-shadow: 0 18px 42px rgba(17, 17, 51, 0.12);
+}
+
+.crystal-guide-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 14px;
+}
+
+@media (max-width: 767.98px) {
+    .crystal-guide-section {
+        padding: 3.5rem 0;
+    }
+    .crystal-guide-card {
+        padding: 8px;
+        border-radius: 16px;
+    }
+    .crystal-guide-img {
+        border-radius: 10px;
+    }
+}
+
+/* ==========================================================================
    13. When the Right Crystal Finds Its Soulmate (2 Rows: Intro Row + 4-Col Slider)
    ========================================================================== */
 .ame-stories-section {
@@ -1998,6 +2071,7 @@
     .page-ame-crystals .crystal-categories-section,
     .page-ame-crystals .ame-grid-section,
     .page-ame-crystals .ame-guidance-section,
+    .page-ame-crystals .crystal-guide-section,
     .page-ame-crystals .ame-stories-section,
     .page-ame-crystals .faq-section,
     .page-ame-crystals .ame-cta-section,
@@ -2007,6 +2081,7 @@
     #crystalCategories,
     #ameCrystalGrid,
     #ameGuidance,
+    #crystalGuide,
     #ameStories,
     #faq,
     #ameCta {
@@ -2025,6 +2100,7 @@
     #crystalCategories > .container,
     #ameCrystalGrid > .container,
     #ameGuidance > .container,
+    #crystalGuide > .container,
     #ameStories > .container,
     #faq > .container,
     #ameCta > .container {

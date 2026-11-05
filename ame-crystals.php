@@ -141,6 +141,11 @@ include __DIR__ . '/products/productbanner.php';
 <?php include __DIR__ . '/products/ameguidance.php'; ?>
 
 <!-- ==========================================================================
+     5.5 Crystal Guide (2 Columns on White Background)
+     ========================================================================== -->
+<?php include __DIR__ . '/products/CrystalGuide.php'; ?>
+
+<!-- ==========================================================================
      6. When the Right Crystal Finds Its Soulmate (Left Content | Right Image)
      ========================================================================== -->
 <?php include __DIR__ . '/products/amestories.php'; ?>
