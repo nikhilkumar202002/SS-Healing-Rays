@@ -7,10 +7,14 @@ $brand_name       = $brand_name ?? 'SS Healing Rays';
 $brand_subtitle   = $brand_subtitle ?? 'A Sanctuary for Personal Growth';
 $site_logo        = $site_logo ?? 'assets/logo/main-logo-white-border.png'; // Main logo with white border
 $favicon_logo     = $favicon_logo ?? 'assets/logo/main-logo.png'; // Main logo for browser favicon
-$cta_text         = $cta_text ?? 'Explore Services';
-$cta_url          = $cta_url ?? 'services';
-$phone_number     = $phone_number ?? '+91 98765 43210';
-$phone_tel        = preg_replace('/[^0-9+]/', '', $phone_number);
+$cta_text         = $cta_text ?? 'Chat with us';
+$cta_url          = $cta_url ?? 'https://wa.me/919000606792';
+$phone_number_1   = '+91 90006 06792';
+$phone_tel_1      = '+919000606792';
+$phone_number_2   = '+91 99660 10981';
+$phone_tel_2      = '+919966010981';
+$phone_number     = $phone_number ?? $phone_number_1;
+$phone_tel        = $phone_tel ?? $phone_tel_1;
 
 
 $services_categories = [
@@ -103,7 +107,7 @@ $nav_items = $nav_items ?? [
         ],
     ],
     'stories' => [
-        'label' => 'Stories',
+        'label' => 'Healing Journeys',
         'url'   => 'customersstories',
     ],
     'contact' => [
@@ -126,71 +130,30 @@ $nav_items = $nav_items ?? [
     ?>
     <base href="<?= htmlspecialchars($site_base) ?>">
     
-    <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="<?= htmlspecialchars($favicon_logo) ?>">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="<?= htmlspecialchars($favicon_logo) ?>">
-    
-    <!-- Bootstrap 5.3 (Latest) CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Google Fonts: Marcellus, Playfair Display (Serif), Lato (Sans-Serif) & Outfit (Modern Display) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Marcellus&family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    
-    <!-- Swiper 11 (Latest) Slider CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-    <!-- Header Component Custom Styles -->
     <link rel="stylesheet" href="assets/css/header.css">
-
-    <!-- Hero Banner Swiper Custom Styles -->
     <link rel="stylesheet" href="assets/css/banner.css">
-
-    <!-- Workshop / Healing Circle Custom Styles -->
     <link rel="stylesheet" href="assets/css/workshop.css">
-
-    <!-- About Us Homepage Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutus.css">
-
-    <!-- About Our Purpose Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutourpurpose.css">
-
-    <!-- About Philosophy Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutusphylosophy.css">
-
-    <!-- About Approach Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutapproach.css">
-
-    <!-- About Mission & Vision Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutvisionmission.css">
-
-    <!-- About Our Identity Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutouridentity.css">
-
-    <!-- About Community Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutcommunity.css">
-
-    <!-- About The Center Component Custom Styles -->
     <link rel="stylesheet" href="assets/css/aboutthehealing.css?v=<?= file_exists(__DIR__ . '/../assets/css/aboutthehealing.css') ? filemtime(__DIR__ . '/../assets/css/aboutthehealing.css') : '2.2' ?>">
-
-    <!-- Healing Services Carousel Custom Styles -->
     <link rel="stylesheet" href="assets/css/services.css">
-
-    <!-- Meet Our Team / Profile Cards Custom Styles -->
     <link rel="stylesheet" href="assets/css/team.css">
-
-    <!-- Counter / Impact Statistics Custom Styles -->
     <link rel="stylesheet" href="assets/css/counter.css">
-
-    <!-- Product / Offerings Cards Custom Styles -->
     <link rel="stylesheet" href="assets/css/product.css">
-
-    <!-- Retreat CTA Full Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/cta-banner.css">
 
     <!-- Testimonials Bento Grid Custom Styles -->
@@ -253,17 +216,11 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
 }
 ?>
 
-
-<!-- ==========================================================================
-     Main Header (Bootstrap 5.3 Navbar with 3-Column Layout)
-     Layout: Left Menu (Col 1) | Center Logo (Col 2) | Right CTA (Col 3)
-     ========================================================================== -->
 <header class="site-header sticky-top border-bottom" id="siteHeader">
     <nav class="navbar navbar-expand-lg p-0">
         <div class="container-fluid px-3 px-lg-4">
             <div class="row w-100 align-items-center g-0">
-                
-                <!-- 1. BRAND LOGO (Mobile: Left side | Desktop: Centered Col 2) -->
+              
                 <div class="col-6 col-lg-2 order-1 order-lg-2 d-flex align-items-center justify-content-start justify-content-lg-center">
                     <a href="/" class="site-logo d-inline-flex align-items-center" aria-label="<?= htmlspecialchars($brand_name) ?> Home">
                         <?php if (!empty($site_logo)): ?>
@@ -277,7 +234,6 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                     </a>
                 </div>
 
-                <!-- 2. DESKTOP NAVIGATION MENU (Desktop: Left Col 1 | Mobile: Hidden) -->
                 <div class="col-lg-5 order-lg-1 d-none d-lg-flex align-items-center">
                     <!-- Desktop Navigation Menu -->
                     <ul class="navbar-nav desktop-nav-menu d-flex flex-row align-items-center gap-1 gap-xl-2 m-0 p-0" aria-label="Primary Site Navigation">
@@ -429,20 +385,27 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
 
                 <!-- 3. RIGHT COLUMN: Mobile Hamburger (Right) + Desktop CTA / Phone (Desktop: Right Col 3) -->
                 <div class="col-6 col-lg-5 order-2 order-lg-3 d-flex justify-content-end align-items-center gap-2 gap-md-3">
-                    <!-- Quick Contact Phone (Visible on large screens) -->
-                    <a href="tel:<?= htmlspecialchars($phone_tel) ?>" class="header-phone-link d-none d-xl-inline-flex align-items-center gap-2" title="Call Us">
-                        <i class="bi bi-telephone-fill"></i>
-                        <span><?= htmlspecialchars($phone_number) ?></span>
-                    </a>
+                    <!-- Quick Contact Phones (Visible on large screens) -->
+                    <div class="header-phone-group d-none d-xl-inline-flex align-items-center gap-2">
+                        <a href="tel:<?= htmlspecialchars($phone_tel_1) ?>" class="header-phone-link" title="Call <?= htmlspecialchars($phone_number_1) ?>">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span><?= htmlspecialchars($phone_number_1) ?></span>
+                        </a>
+                        <span class="header-phone-divider text-muted opacity-50">/</span>
+                        <a href="tel:<?= htmlspecialchars($phone_tel_2) ?>" class="header-phone-link" title="Call <?= htmlspecialchars($phone_number_2) ?>">
+                            <span><?= htmlspecialchars($phone_number_2) ?></span>
+                        </a>
+                    </div>
 
                     <!-- Action CTA Button (Desktop only, hidden on mobile) -->
                     <div class="header-cta-wrapper d-none d-lg-inline-flex">
                         <?php
+                            $is_wa_cta   = str_contains($cta_url ?? '', 'wa.me');
                             $btn_text    = $cta_text;
                             $btn_url     = $cta_url;
                             $btn_class   = 'Btn-Header';
                             $btn_id      = 'headerCtaBtn';
-                            $btn_attr    = 'aria-label="' . htmlspecialchars($cta_text) . '" title="' . htmlspecialchars($cta_text) . '"';
+                            $btn_attr    = 'aria-label="' . htmlspecialchars($cta_text) . '" title="' . htmlspecialchars($cta_text) . '"' . ($is_wa_cta ? ' target="_blank" rel="noopener noreferrer"' : '');
                             include __DIR__ . '/button.php';
                         ?>
                     </div>
@@ -648,15 +611,23 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
         </ul>
 
         <div class="pt-3 border-top">
-            <a href="tel:<?= htmlspecialchars($phone_tel) ?>" class="d-flex align-items-center gap-2 text-decoration-none text-secondary mb-3 small">
-                <i class="bi bi-telephone text-secondary-color"></i>
-                <span><?= htmlspecialchars($phone_number) ?></span>
-            </a>
+            <div class="d-flex flex-column gap-2 mb-3">
+                <a href="tel:<?= htmlspecialchars($phone_tel_1) ?>" class="d-flex align-items-center gap-2 text-decoration-none text-secondary small">
+                    <i class="bi bi-telephone text-secondary-color"></i>
+                    <span><?= htmlspecialchars($phone_number_1) ?></span>
+                </a>
+                <a href="tel:<?= htmlspecialchars($phone_tel_2) ?>" class="d-flex align-items-center gap-2 text-decoration-none text-secondary small">
+                    <i class="bi bi-telephone text-secondary-color"></i>
+                    <span><?= htmlspecialchars($phone_number_2) ?></span>
+                </a>
+            </div>
             <?php
+                $is_wa_cta   = str_contains($cta_url ?? '', 'wa.me');
                 $btn_text    = $cta_text;
                 $btn_url     = $cta_url;
                 $btn_class   = 'Btn-Header w-100 justify-content-between';
                 $btn_id      = 'drawerCtaBtn';
+                $btn_attr    = 'aria-label="' . htmlspecialchars($cta_text) . '"' . ($is_wa_cta ? ' target="_blank" rel="noopener noreferrer"' : '');
                 include __DIR__ . '/button.php';
             ?>
         </div>

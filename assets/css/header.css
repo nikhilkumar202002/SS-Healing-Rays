@@ -839,12 +839,26 @@ cite,
 /* ==========================================================================
    RIGHT COLUMN: CTA Button & Contacts
    ========================================================================== */
+.header-phone-group {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    white-space: nowrap;
+}
+
+.header-phone-divider {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    user-select: none;
+}
+
 .header-phone-link {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #475569;
     text-decoration: none;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .header-phone-link:hover {

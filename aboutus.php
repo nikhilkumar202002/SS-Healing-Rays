@@ -9,8 +9,8 @@
 $page_title       = 'About Us | SS Healing Rays';
 $page_description = 'Discover the mission, certified master healers, and sacred philosophy behind SS Healing Rays.';
 $current_page     = 'about';
-$cta_text         = 'Explore Services';
-$cta_url          = 'services';
+$cta_text         = 'Chat with us';
+$cta_url          = 'https://wa.me/919000606792';
 
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';

@@ -1,10 +1,10 @@
 <?php
 
-$page_title        = 'Emotional Wellness Stories – Real Journeys of Healing | SS Healing Rays';
+$page_title        = 'Healing Journeys – Real Stories of Transformation | SS Healing Rays';
 $page_description  = 'Inspiring real stories and testimonials from individuals who have healed from stress, anxiety, and overwhelm through Trauma-Informed Coaching, EFT, and Reiki at SS Healing Rays.';
 $current_page      = 'customer-stories';
-$cta_text          = 'Book a Session';
-$cta_url           = 'contact';
+$cta_text          = 'Chat with us';
+$cta_url           = 'https://wa.me/919000606792';
 
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';
