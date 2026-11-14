@@ -64,9 +64,10 @@ $stories_grid_items = [
         'name'        => 'Priya Ramanathan',
     ],
     [
-        'type'        => 'image',
-        'image'       => 'assets/banner/cta-banner-2.jpeg',
-        'alt'         => 'SS Healing Rays Community Retreat Experience',
+        'type'        => 'testimonial',
+        'stars'       => 5,
+        'description' => 'Working with Sreeparvathy changed how I respond to stress completely. For years I was living in constant fight-or-flight; her holding space and EFT tapping gave me my peace back.',
+        'name'        => 'Ananya Sharma',
     ],
 
     // --- ROW 2 ---
@@ -97,22 +98,10 @@ $stories_grid_items = [
         'name'        => 'Arvind Iyer',
     ],
     [
-        'type'        => 'image',
-        'image'       => 'assets/banner/banner-2.jpeg',
-        'alt'         => 'Sacred Sound Meditation Healing Sanctuary',
-    ],
-    [
         'type'        => 'testimonial',
         'stars'       => 5,
-        'description' => 'Working with Sreeparvathy changed how I respond to stress completely. For years I was living in constant fight-or-flight; her holding space and EFT tapping gave me my peace back.',
-        'name'        => 'Ananya Sharma',
-    ],
-
-    // --- ROW 4 ---
-    [
-        'type'        => 'image',
-        'image'       => 'assets/banner/cta-banner.jpg',
-        'alt'         => 'Somatic Breathwork & Sacred Circle Gathering',
+        'description' => "Sravanti's therapeutic yoga and chakra healing sessions dissolved muscular holding patterns talk therapy could never touch. I feel vibrant and aligned every day.",
+        'name'        => 'Rajeshwari Patel',
     ],
     [
         'type'        => 'testimonial',
@@ -120,11 +109,25 @@ $stories_grid_items = [
         'description' => 'The compassionate counselling and breathwork sessions provided a true safe haven during my darkest season. Deep gratitude to the sacred healers here.',
         'name'        => 'Deepa Menon',
     ],
+
+    // --- ROW 4 ---
     [
         'type'        => 'testimonial',
         'stars'       => 5,
-        'description' => 'Sravanti\'s therapeutic yoga and chakra healing sessions dissolved muscular holding patterns talk therapy could never touch. I feel vibrant and aligned every day.',
-        'name'        => 'Rajeshwari Patel',
+        'description' => 'The angel guidance and crystal therapy created an immediate sense of divine lightness and protection. I left feeling renewed and deeply aligned with my highest self.',
+        'name'        => 'Sunita Narayanan',
+    ],
+    [
+        'type'        => 'testimonial',
+        'stars'       => 5,
+        'description' => 'The personalized healing journey here helped me overcome intense professional burnout. I have regained my focus, vitality, and emotional peace.',
+        'name'        => 'Vikram Malhotra',
+    ],
+    [
+        'type'        => 'testimonial',
+        'stars'       => 5,
+        'description' => 'An empowering experience that blends ancient healing wisdom with grounded modern understanding. Highly recommended for anyone on a transformation path.',
+        'name'        => 'Pooja Hegde',
     ],
 ];
 ?>

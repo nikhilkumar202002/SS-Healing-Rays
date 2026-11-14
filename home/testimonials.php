@@ -4,13 +4,9 @@
  * Testimonials Bento Grid Section - SS Healing Rays
  * ==============================================================================
  * Clean 3 Rows x 3 Columns Bento Grid:
- *   - Row 1: [Testimonial] [Testimonial] [Image Only]
- *   - Row 2: [Testimonial] [Testimonial] [Testimonial]
- *   - Row 3: [Testimonial] [Image Only]  [Testimonial]
- *   - Light grey cards (#f3f4f6), borderless, shadowless, non-glowing
+ *   - 9 Pure Testimonial Cards (Light grey #f3f4f6, borderless, shadowless)
  *   - Centered alignment
- *   - Testimonials contain: Stars (Gold) -> Description (Lato) -> Name (Marcellus)
- *   - Image cards contain: Full-bleed image only
+ *   - Elements: Stars (Gold) -> Description (Lato) -> Name (Marcellus)
  *   - Unified brand heading at top
  * ==============================================================================
  */
@@ -21,7 +17,7 @@ $testimonials_title_2         = $testimonials_title_2 ?? 'Felt from the';
 $testimonials_title_highlight = $testimonials_title_highlight ?? 'Heart';
 
 $testimonials_grid_items = $testimonials_grid_items ?? [
-    // --- ROW 1 (Last item is Image Only) ---
+    // --- ROW 1 ---
     [
         'type'        => 'testimonial',
         'stars'       => 5,
@@ -35,9 +31,10 @@ $testimonials_grid_items = $testimonials_grid_items ?? [
         'name'        => 'Priya Ramanathan',
     ],
     [
-        'type'        => 'image',
-        'image'       => 'assets/banner/cta-banner-2.jpeg',
-        'alt'         => 'SS Healing Rays Community Retreat Experience',
+        'type'        => 'testimonial',
+        'stars'       => 5,
+        'description' => 'Working with Sreeparvathy changed how I respond to stress completely. For years I was living in constant fight-or-flight; her holding space and EFT tapping gave me my peace back.',
+        'name'        => 'Ananya Sharma',
     ],
 
     // --- ROW 2 ---
@@ -60,7 +57,7 @@ $testimonials_grid_items = $testimonials_grid_items ?? [
         'name'        => 'Sneha Kapur',
     ],
 
-    // --- ROW 3 (Middle item is Image Only) ---
+    // --- ROW 3 ---
     [
         'type'        => 'testimonial',
         'stars'       => 5,
@@ -68,9 +65,10 @@ $testimonials_grid_items = $testimonials_grid_items ?? [
         'name'        => 'Arvind Iyer',
     ],
     [
-        'type'        => 'image',
-        'image'       => 'assets/banner/banner-2.jpeg',
-        'alt'         => 'Sacred Sound Meditation Healing Sanctuary',
+        'type'        => 'testimonial',
+        'stars'       => 5,
+        'description' => "Sravanti's therapeutic yoga and chakra healing sessions dissolved muscular holding patterns talk therapy could never touch. I feel vibrant and aligned every day.",
+        'name'        => 'Rajeshwari Patel',
     ],
     [
         'type'        => 'testimonial',
