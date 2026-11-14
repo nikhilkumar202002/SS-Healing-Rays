@@ -25,7 +25,7 @@ Desktop.ini
 *.sublime-project
 *.sublime-workspace
 
-# Image formats - do not upload image files to GitHub
+# Media and Video formats - do not upload media files to GitHub
 *.jpg
 *.jpeg
 *.png
@@ -37,6 +37,11 @@ Desktop.ini
 *.tiff
 *.tif
 *.avif
+*.mp4
+*.mov
+*.avi
+*.mkv
+assets/testimonials/
 
 # Non-extension image files in assets
 assets/images/purpose

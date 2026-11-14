@@ -140,7 +140,7 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/contact.css">
 
     <!-- Personal Profile Details Page Custom Styles -->
-    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/profile.css?v=<?= file_exists(__DIR__ . '/../assets/css/profile.css') ? filemtime(__DIR__ . '/../assets/css/profile.css') : '1.2' ?>">
 
     <!-- Customer Stories Banner & Page Custom Styles -->
     <link rel="stylesheet" href="assets/css/storiesbanner.css">

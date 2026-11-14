@@ -703,11 +703,32 @@
     gap: 0.65rem;
 }
 
+/* Base styling for sticky profile CTA buttons */
+.Btn-Profile-Sticky-WA,
+.Btn-Profile-Sticky-Enquire {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(17, 17, 51, 0.04);
+    padding: 3px 3px 3px 18px;
+    gap: 12px;
+    height: 48px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Single-row button layout inside sticky profile card */
 .profile-sticky-btn-group.profile-sticky-btn-row {
+    display: flex !important;
     flex-direction: row !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
+    justify-content: space-between !important;
     gap: 0.5rem !important;
+    width: 100% !important;
 }
 
 .profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container,
@@ -715,10 +736,13 @@
 .profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-Enquire {
     flex: 1 1 0 !important;
     width: 50% !important;
+    max-width: 50% !important;
     min-width: 0 !important;
     padding: 3px 3px 3px 12px !important;
     gap: 6px !important;
     height: 44px !important;
+    display: inline-flex !important;
+    box-sizing: border-box !important;
 }
 
 .profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .text {
@@ -731,31 +755,15 @@
 }
 
 .profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container {
-    width: 34px !important;
-    height: 34px !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
     flex-shrink: 0 !important;
 }
 
 .profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container .btn-arrow-svg {
-    width: 16px !important;
-    height: 16px !important;
-}
-
-.profile-sticky-btn-wa
-.Btn-Profile-Sticky-WA,
-.Btn-Profile-Sticky-Enquire {
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(17, 17, 51, 0.04);
-    padding: 3px 3px 3px 18px !important;
-    gap: 12px !important;
-    height: 48px !important;
-    border-radius: 50px !important;
-    box-sizing: border-box;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 15px !important;
+    height: 15px !important;
 }
 
 .Btn-Profile-Sticky-WA {
