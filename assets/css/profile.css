@@ -703,6 +703,44 @@
     gap: 0.65rem;
 }
 
+/* Single-row button layout inside sticky profile card */
+.profile-sticky-btn-group.profile-sticky-btn-row {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-WA,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-Enquire {
+    flex: 1 1 0 !important;
+    width: 50% !important;
+    min-width: 0 !important;
+    padding: 3px 3px 3px 12px !important;
+    gap: 6px !important;
+    height: 44px !important;
+}
+
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .text {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    letter-spacing: -0.01em;
+}
+
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container {
+    width: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0 !important;
+}
+
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container .btn-arrow-svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+
 .profile-sticky-btn-wa
 .Btn-Profile-Sticky-WA,
 .Btn-Profile-Sticky-Enquire {

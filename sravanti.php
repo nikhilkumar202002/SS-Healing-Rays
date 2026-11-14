@@ -638,18 +638,19 @@ include __DIR__ . '/common/header.php';
                                 </li>
                             </ul>
 
-                            <div class="profile-sticky-btn-group d-flex flex-column gap-2 mt-3">
+                            <div class="profile-sticky-btn-group profile-sticky-btn-row d-flex flex-row align-items-center gap-2 mt-3">
                                 <?php
-                                    $btn_text  = 'BOOK YOUR CLARITY CALL';
+                                    $btn_text  = 'Book Clarity Call';
                                     $btn_url   = $whatsapp_url;
                                     $btn_class = 'Btn-Profile-Sticky-WA';
-                                    $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                                    $btn_attr  = 'target="_blank" rel="noopener noreferrer" title="Book Your Clarity Call"';
                                     include __DIR__ . '/common/button.php';
                                 ?>
                                 <?php
                                     $btn_text  = 'Enquire Online';
                                     $btn_url   = 'contact.php?practitioner=Sravanti';
                                     $btn_class = 'Btn-Profile-Sticky-Enquire';
+                                    $btn_attr  = 'title="Enquire Online"';
                                     include __DIR__ . '/common/button.php';
                                 ?>
                             </div>
