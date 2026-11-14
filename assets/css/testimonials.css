@@ -51,12 +51,12 @@
     margin-left: 0.25rem;
 }
 
-/* 2. Bento Grid Layout (3 Rows x 3 Columns) */
+/* 2. Bento Grid Layout (2 Rows x 3 Columns) */
 .testimonials-bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, minmax(440px, auto));
-    gap: 20px;
+    grid-template-rows: auto;
+    gap: 22px;
 }
 
 /* 3. Clean Bento Card */
@@ -81,7 +81,7 @@
     box-shadow: none !important;
 }
 
-/* 4. Image-Only Card (Row 1 Col 3 & Row 3 Col 2) */
+/* 4. Image-Only Card */
 .bento-card-image-only {
     padding: 0 !important;
     overflow: hidden;
@@ -116,12 +116,12 @@
     margin-bottom: 1.25rem;
 }
 
-/* 6. Description in Lato with 25px font size */
+/* 6. Description in Lato */
 .bento-description {
     font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
-    font-size: 25px;
+    font-size: clamp(1.06rem, 1.25vw, 1.22rem);
     font-weight: 400;
-    line-height: 1.48;
+    line-height: 1.62;
     color: #475569;
     margin: 0 auto 1.5rem auto;
     max-width: 100%;
@@ -140,11 +140,23 @@
     text-align: center;
 }
 
+/* 8. Modality / Service Highlight Subtitle */
+.bento-highlight {
+    display: inline-block;
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #64748b;
+    margin-top: 0.5rem;
+    letter-spacing: 0.025em;
+    text-align: center;
+}
+
 /* 8. Responsive Breakpoints */
 @media (max-width: 1199.98px) {
     .bento-description {
-        font-size: 22px;
-        line-height: 1.45;
+        font-size: 1.12rem;
+        line-height: 1.58;
     }
     .bento-card,
     .bento-card-image-only {
@@ -168,7 +180,8 @@
         padding: 2.25rem 1.65rem;
     }
     .bento-description {
-        font-size: 21px;
+        font-size: 1.05rem;
+        line-height: 1.55;
     }
 }
 
@@ -192,8 +205,8 @@
         border-radius: 20px;
     }
     .bento-description {
-        font-size: 20px;
-        line-height: 1.42;
+        font-size: 1rem;
+        line-height: 1.52;
     }
     .bento-name {
         font-size: 1.2rem;
