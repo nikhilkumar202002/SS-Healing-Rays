@@ -11,15 +11,6 @@ $banner_slides = $banner_slides ?? [
         'btn2_url'    => '#booking',
     ],
     [
-        'image'       => 'assets/banner/banner-2.jpeg',
-        'title'       => 'Harmonize Your <em>Energy,</em><br>Restore Inner <em>Serenity</em>',
-        'description' => 'Experience authentic Tibetan singing bowl resonance, sacred Reiki alignment, and transformative holistic sessions to renew your mind, body, and spirit.',
-        'btn1_text'   => 'Explore Modalities',
-        'btn1_url'    => '#services',
-        'btn2_text'   => 'Book a Session',
-        'btn2_url'    => '#booking',
-    ],
-    [
         'image'       => 'assets/banner/banner-3.jpeg',
         'title'       => 'Awaken Your <em>Potential,</em><br>Embrace Mindful <em>Growth</em>',
         'description' => 'Join empowering wellness masterclasses, guided group meditation, and certified healing courses designed to nurture deep peace and radiant vitality.',
