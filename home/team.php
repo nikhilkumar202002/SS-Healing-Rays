@@ -12,7 +12,6 @@ healing. Also offering personal coaching and corporate training.',
         'profile_url' => 'sreeparvathy',
         'instagram'   => 'https://www.instagram.com/heal_sreeparvathy/',
         'facebook'    => '#',
-        'youtube'     => '#',
         'linkedin'    => '#',
     ],
     [
@@ -24,7 +23,6 @@ change through holistic healing, wellness and yoga.',
         'profile_url' => 'sravanti',
         'instagram'   => 'https://www.instagram.com/sravantiheals/',
         'facebook'    => '#',
-        'youtube'     => '#',
         'linkedin'    => '#',
     ],
 ];
@@ -76,9 +74,6 @@ change through holistic healing, wellness and yoga.',
                                 </a>
                                 <a href="<?= htmlspecialchars($member['facebook'] ?? '#') ?>" class="profile-social-btn" aria-label="Facebook">
                                     <i class="bi bi-facebook"></i>
-                                </a>
-                                <a href="<?= htmlspecialchars($member['youtube'] ?? '#') ?>" class="profile-social-btn" aria-label="YouTube">
-                                    <i class="bi bi-youtube"></i>
                                 </a>
                                 <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" class="profile-social-btn" aria-label="LinkedIn">
                                     <i class="bi bi-linkedin"></i>
