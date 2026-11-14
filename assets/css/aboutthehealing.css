@@ -330,7 +330,9 @@
     display: inline-flex;
     align-items: baseline;
     line-height: 1;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+    column-gap: 4px;
 }
 
 .healing-stat-card .stat-number {
@@ -347,18 +349,26 @@
     font-size: clamp(1.2rem, 1.5vw, 1.45rem);
     font-weight: 700;
     color: var(--secondary-color, #ba436c);
-    margin-left: 1px;
+    line-height: 1;
+}
+
+.healing-stat-card .stat-unit {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, sans-serif);
+    font-size: clamp(0.78rem, 0.9vw, 0.88rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--secondary-color, #ba436c);
     line-height: 1;
 }
 
 .healing-stat-card .stat-label {
     font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, sans-serif);
     font-size: clamp(0.72rem, 0.8vw, 0.8rem);
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #3f4756;
-    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #475569;
+    line-height: 1.35;
 }
 
 /* ==========================================================================

@@ -1,7 +1,7 @@
 <?php
 
 $about_healing_badge      = $about_healing_badge ?? 'Who We Are';
-$about_healing_title_1    = $about_healing_title_1 ?? 'More than a healing centre.';
+$about_healing_title_1    = $about_healing_title_1 ?? 'More Than a Healing Centre';
 $about_healing_title_2    = $about_healing_title_2 ?? 'A journey of learning, transformation and shared purpose.';
 
 $about_healing_img        = $about_healing_img ?? (
@@ -15,22 +15,21 @@ $about_healing_img        = $about_healing_img ?? (
 );
 
 $about_healing_paragraphs = $about_healing_paragraphs ?? [
-    'Founded by <strong>Sreeparvathy CM</strong> and <strong>Sravantii Chitturi</strong>, SS Healing Rays is a holistic wellness, healing, coaching and training platform.',
-    'With over <strong>10 years</strong> of learning and service, we have supported <strong>500+ clients</strong> through individual sessions, courses, workshops, webinars and wellness initiatives.',
-    'Our work brings together diverse modalities and practical approaches to emotional wellbeing, personal growth and transformation. We begin by understanding each individual\'s needs and then explore the right knowledge, guidance and practices to support their journey.',
+    'Founded by <strong>Sreeparvathy CM</strong> and <strong>Sravanti Chitturi</strong>, SS Healing Rays is a wellness, healing, coaching and learning platform shaped by our own experiences and years of practice.',
+    'We bring together different modalities and practical approaches through personal sessions, courses, workshops and wellness initiatives—guided by each person\'s needs.',
 ];
 
 $about_healing_stats = $about_healing_stats ?? [
     [
         'number' => '10',
         'suffix' => '+',
-        'label'  => 'Years of Service',
+        'unit'   => 'years',
         'icon'   => 'bi-clock-history',
     ],
     [
         'number' => '500',
         'suffix' => '+',
-        'label'  => 'Clients Supported',
+        'unit'   => 'people reached',
         'icon'   => 'bi-people',
     ],
 ];
@@ -88,8 +87,11 @@ $about_healing_stats = $about_healing_stats ?? [
                                         <div class="stat-info">
                                             <div class="stat-number-wrap">
                                                 <span class="stat-number counter-count" data-target="<?= htmlspecialchars($stat['number']) ?>"><?= htmlspecialchars($stat['number']) ?></span><span class="stat-suffix"><?= htmlspecialchars($stat['suffix']) ?></span>
+                                                <?php if (!empty($stat['unit'])): ?>
+                                                    <span class="stat-unit ms-1"><?= htmlspecialchars($stat['unit']) ?></span>
+                                                <?php endif; ?>
                                             </div>
-                                            <span class="stat-label"><?= htmlspecialchars($stat['label']) ?></span>
+                                       
                                         </div>
                                     </div>
                                 </div>
