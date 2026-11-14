@@ -519,6 +519,17 @@
 .shamaa-offering-card .service-item-actions {
     margin-top: auto;
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.shamaa-offering-card .Btn-Workshop-Card,
+.shamaa-offering-card .Btn-Container {
+    width: fit-content !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
 }
 
 .wellness-card {

@@ -243,14 +243,14 @@ $shamaa_offerings = [
                                 <p><?= htmlspecialchars($offering['desc']) ?></p>
                             </div>
                             
-                            <!-- Book a Clarity Call Button -->
-                            <div class="service-item-actions mt-auto pt-2">
+                            <!-- Book a Clarity Call Button (Natural width pill, not full width) -->
+                            <div class="service-item-actions workshop-item-actions mt-auto pt-2">
                                 <?php
                                     $btn_text    = 'Book a Clarity Call';
                                     $clean_title = htmlspecialchars(html_entity_decode(strip_tags($offering['title']), ENT_QUOTES, 'UTF-8'));
                                     $wa_msg      = rawurlencode("Hi Sravanti, I would like to book a Clarity Call for {$clean_title} at SHAMAA.");
                                     $btn_url     = "https://wa.me/919966010981?text={$wa_msg}";
-                                    $btn_class   = 'Btn-Card-Main w-100 justify-content-between';
+                                    $btn_class   = 'Btn-Workshop-Card';
                                     $btn_attr    = 'target="_blank" rel="noopener noreferrer" title="Book a Clarity Call for ' . $clean_title . ' on WhatsApp" aria-label="Book a Clarity Call for ' . $clean_title . '"';
                                     include __DIR__ . '/common/button.php';
                                 ?>
