@@ -304,6 +304,112 @@
 }
 
 /* --------------------------------------------------------------------------
+   SHAMAA Philosophy & Three Principles Section Enhancements
+   -------------------------------------------------------------------------- */
+.shamaa-philosophy-subheading {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--secondary-color, #ba436c);
+    letter-spacing: -0.01em;
+}
+
+.shamaa-philosophy-subheading strong {
+    font-family: var(--brand-font-playfair, 'Playfair Display', Georgia, serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.18rem;
+}
+
+.shamaa-principles-block {
+    background: #faf8f9;
+    border-left: 3.5px solid var(--secondary-color, #ba436c);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.shamaa-principle-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+.shamaa-principle-badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(186, 67, 108, 0.12);
+    color: var(--secondary-color, #ba436c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.shamaa-principle-text {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.shamaa-principle-text strong {
+    color: var(--heading-color, #111133);
+    font-weight: 700;
+}
+
+/* SHAMAA Approach Action Button */
+.Btn-Shamaa-Approach {
+    background-color: #ffffff !important;
+    border: 1.5px solid rgba(186, 67, 108, 0.35) !important;
+    box-shadow: 0 4px 14px rgba(17, 17, 51, 0.05);
+    padding: 3px 3px 3px 22px !important;
+    gap: 16px;
+    height: 50px;
+    border-radius: 50px !important;
+    box-sizing: border-box;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none !important;
+    width: fit-content;
+}
+
+.Btn-Shamaa-Approach .text {
+    color: var(--heading-color, #111133) !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.Btn-Shamaa-Approach .icon-Container {
+    width: 42px !important;
+    height: 42px !important;
+    background-color: var(--secondary-color, #ba436c) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.Btn-Shamaa-Approach:hover {
+    border-color: var(--secondary-color, #ba436c) !important;
+    box-shadow: 0 8px 24px rgba(186, 67, 108, 0.2);
+    transform: translateY(-2px);
+}
+
+.Btn-Shamaa-Approach:hover .icon-Container {
+    background-color: var(--primary-color, #82387a) !important;
+    transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------------------
    3. Modalities / Offerings Cards Grid
    -------------------------------------------------------------------------- */
 .wellness-offerings-section {

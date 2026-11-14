@@ -50,58 +50,91 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
 ?>
 
 <!-- ==========================================================================
-     2. Philosophy & Introduction (Left Content | Right Image)
+     2. Philosophy & Introduction (Left Image | Right Content)
      ========================================================================== -->
 <section class="wellness-about-section position-relative" id="wellnessAbout" aria-label="About SHAMAA Philosophy">
     <div class="container">
         <div class="row align-items-center g-4 g-lg-5">
             
-            <!-- Left Content Column -->
-            <div class="col-12 col-lg-6">
-                <p class="wellness-pretitle">Mindful Movement &amp; Somatic Healing</p>
-                <h2 class="wellness-heading">
-                    Movement as Medicine, <br><em>Breath as Harmony</em>
-                </h2>
-                
-                <p class="wellness-text">
-                    <strong>SHAMAA</strong> is our dedicated sanctuary for conscious movement, therapeutic yoga, and mindful living. Founded under SS Healing Rays, our sessions are designed not for performance or competition, but for deep, embodied restoration.
-                </p>
-                <p class="wellness-text">
-                    Whether you are navigating chronic physical stiffness, occupational stress, or seeking to cultivate mental clarity, our certified facilitators guide each session with individualized attention and gentle reverence for your unique journey.
-                </p>
-
-                <!-- Feature Chips Row -->
-                <div class="wellness-feature-badge-row">
-                    <span class="wellness-chip">
-                        <i class="bi bi-shield-check"></i> Gentle &amp; Non-Judgmental
-                    </span>
-                    <span class="wellness-chip">
-                        <i class="bi bi-wind"></i> Somatic Breath Integration
-                    </span>
-                    <span class="wellness-chip">
-                        <i class="bi bi-heart-pulse"></i> Postural Restoration
-                    </span>
-                </div>
-            </div>
-
-            <!-- Right Image Frame with Floating Pill -->
+            <!-- Left Image Column -->
             <div class="col-12 col-lg-6">
                 <div class="wellness-media-frame">
                     <img src="assets/images/about/center-yoga-sanctuary.jpg" 
-                         alt="SHAMAA Yoga Sanctuary at SS Healing Rays" 
+                         alt="SHAMAA – Sthiram Sukham Asanam Yoga Sanctuary" 
                          class="wellness-media-img"
                          loading="lazy">
                     
                     <div class="wellness-floating-pill">
                         <span class="pill-icon" aria-hidden="true">
-                            <i class="bi bi-stars"></i>
+                            <i class="bi bi-flower1"></i>
                         </span>
                         <div class="pill-text">
-                            <strong>Sanctuary for Growth</strong>
-                            <small>Safe, Peaceful &amp; Energized Environment</small>
+                            <strong>Sthiram Sukham Asanam</strong>
+                            <small>Steady, Comfortable &amp; Personal</small>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Right Content Column -->
+            <div class="col-12 col-lg-6">
+                <p class="wellness-pretitle">Mindful Movement &amp; Somatic Healing</p>
+                <h2 class="wellness-heading mb-2">
+                    Movement as Medicine, <br><em>Breath as Harmony</em>
+                </h2>
+                
+                <p class="shamaa-philosophy-subheading mb-4">
+                    <strong>Sthiram Sukham Asanam</strong> &ndash; Steady, Comfortable and Personal.
+                </p>
+                
+                <p class="wellness-text">
+                    At <strong>SHAMAA</strong>, yoga begins with the individual&mdash;not with a prescribed posture. The principle of <em>Sthiram Sukham Asanam</em> guides every practice: a posture is meaningful when it is steady and comfortable for the person practising it. There is no requirement to touch the toes, sit on the floor, lift the arms overhead or perform an asana perfectly.
+                </p>
+                <p class="wellness-text">
+                    For someone who feels unsure about movement, practice may begin while seated or lying on a cot or bed. As confidence, comfort and ability develop, the practice may progress to a chair and, when suitable, to the yoga mat. Breathing practices, relaxation, mudras and appropriate healing techniques may be integrated according to individual needs.
+                </p>
+
+                <!-- Three Core Principles -->
+                <div class="shamaa-principles-block my-4">
+                    <div class="shamaa-principle-item d-flex align-items-start gap-3 mb-3">
+                        <span class="shamaa-principle-badge" aria-hidden="true">
+                            <i class="bi bi-check2"></i>
+                        </span>
+                        <div class="shamaa-principle-text">
+                            <strong>Begin Where You Are</strong> &ndash; practice starts from present comfort and ability.
+                        </div>
+                    </div>
+
+                    <div class="shamaa-principle-item d-flex align-items-start gap-3 mb-3">
+                        <span class="shamaa-principle-badge" aria-hidden="true">
+                            <i class="bi bi-check2"></i>
+                        </span>
+                        <div class="shamaa-principle-text">
+                            <strong>Progress Without Pressure</strong> &ndash; supported cot/bed, chair and mat options are considered as appropriate.
+                        </div>
+                    </div>
+
+                    <div class="shamaa-principle-item d-flex align-items-start gap-3 mb-3">
+                        <span class="shamaa-principle-badge" aria-hidden="true">
+                            <i class="bi bi-check2"></i>
+                        </span>
+                        <div class="shamaa-principle-text">
+                            <strong>Consistency Over Perfection</strong> &ndash; regular, comfortable practice matters more than an ideal-looking posture.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button to Scroll to Section 3 -->
+                <div class="shamaa-philosophy-action pt-2">
+                    <?php
+                        $btn_text  = 'Discover the SHAMAA Approach';
+                        $btn_url   = '#wellnessOfferings';
+                        $btn_class = 'Btn-Shamaa-Approach';
+                        $btn_attr  = 'title="Discover the SHAMAA Approach"';
+                        include __DIR__ . '/common/button.php';
+                    ?>
+                </div>
+
             </div>
 
         </div>
