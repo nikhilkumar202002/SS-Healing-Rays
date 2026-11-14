@@ -63,14 +63,11 @@ if (!file_exists(dirname(__DIR__) . '/' . $shamaa_logo_img)) {
                     <span class="banner-title-line"><?= $shamaa_heading_2 ?></span>
                 </h1>
 
-                <!-- Subheading Badge / Pill -->
+                <!-- Subheading (Clean text: no background, no pill border, no icon) -->
                 <?php if (!empty($shamaa_subheading)): ?>
-                    <div class="shamaa-hero-subheading-wrap mb-3">
-                        <span class="shamaa-hero-badge">
-                            <span class="badge-icon" aria-hidden="true"><i class="bi bi-flower1"></i></span>
-                            <span class="badge-text"><?= htmlspecialchars($shamaa_subheading) ?></span>
-                        </span>
-                    </div>
+                    <p class="shamaa-hero-subheading mb-3 mx-auto">
+                        <?= htmlspecialchars($shamaa_subheading) ?>
+                    </p>
                 <?php endif; ?>
 
                 <!-- Story Description Paragraph -->
