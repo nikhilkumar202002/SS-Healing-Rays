@@ -1,6 +1,15 @@
 <?php
 
-$gallery_dir = dirname(__DIR__) . '/assets/images/gallery';
+$selected_dir = dirname(__DIR__) . '/assets/images/selected-gallery';
+$default_dir  = dirname(__DIR__) . '/assets/images/gallery';
+
+$gallery_dir = (is_dir($selected_dir) && count(glob($selected_dir . '/*.*')) > 0)
+    ? $selected_dir
+    : $default_dir;
+$rel_path = (strpos($gallery_dir, 'selected-gallery') !== false)
+    ? 'assets/images/selected-gallery/'
+    : 'assets/images/gallery/';
+
 $gallery_items = [];
 
 $captions = [
@@ -38,7 +47,7 @@ if (is_dir($gallery_dir)) {
             $filename = basename($file);
             $caption  = $captions[$idx % count($captions)];
             $gallery_items[] = [
-                'src'     => 'assets/images/gallery/' . $filename,
+                'src'     => $rel_path . $filename,
                 'alt'     => 'SS Healing Rays - ' . $caption,
                 'caption' => $caption,
                 'index'   => $idx,

@@ -5,73 +5,96 @@ $gallery_desc     = $gallery_desc ?? 'A glimpse into our community, shared exper
 $gallery_btn_text = $gallery_btn_text ?? 'Explore Âme Crystals';
 $gallery_btn_url  = $gallery_btn_url ?? 'ame-crystals';
 
-$gallery_row_1 = [
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.02.55 PM.jpeg',
-        'alt'   => 'Sacred Healing Circle Gathering',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.13 PM.jpeg',
-        'alt'   => 'Guided Meditation Experience',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.14 PM.jpeg',
-        'alt'   => 'Spiritual Energy Awakening',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.15 PM.jpeg',
-        'alt'   => 'Chakra Harmonization Sanctuary',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.17 PM (1).jpeg',
-        'alt'   => 'Reiki Energy Healing Session',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.18 PM (1).jpeg',
-        'alt'   => 'Peaceful Contemplation and Balance',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.19 PM (1).jpeg',
-        'alt'   => 'Whispers of Stillness Retreat',
-    ],
-    
+// Alt tags for mindful accessibility
+$gallery_alt_titles = [
+    'Sacred Healing Circle Gathering',
+    'Guided Meditation Experience',
+    'Spiritual Energy Awakening',
+    'Chakra Harmonization Sanctuary',
+    'Reiki Energy Healing Session',
+    'Peaceful Contemplation and Balance',
+    'Whispers of Stillness Retreat',
+    'Sacred Energy Connection',
+    'Mindful Breathing Practice',
+    'Deep Crystal Vibration Sanctuary',
+    'Angel Guidance Meditation',
+    'Tibetan Singing Bowl Sound Bath',
+    'Sacred Community Gathering',
+    'Inner Peace and Renewal',
+    'Luminous Soul Alignment Session',
+    'Holistic Wellness Circle',
+    'Heart-Centered Energy Flow',
+    'Divine Presence & Stillness',
+    'Spiritual Healing Breakthrough',
+    'Radiant Living Connection',
 ];
 
-// Row 2 Gallery Items (slides in opposite direction)
-$gallery_row_2 = [
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.20 PM.jpeg',
-        'alt'   => 'Sacred Energy Connection',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.21 PM.jpeg',
-        'alt'   => 'Mindful Breathing Practice',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.22 PM.jpeg',
-        'alt'   => 'Deep Crystal Vibration Sanctuary',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.23 PM (1).jpeg',
-        'alt'   => 'Angel Guidance Meditation',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.23 PM.jpeg',
-        'alt'   => 'Tibetan Singing Bowl Sound Bath',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.29 PM (1).jpeg',
-        'alt'   => 'Sacred Community Gathering',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.29 PM.jpeg',
-        'alt'   => 'Inner Peace and Renewal',
-    ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.33 PM.jpeg',
-        'alt'   => 'Luminous Soul Alignment Session',
-    ],
-];
+$gallery_row_1 = [];
+$gallery_row_2 = [];
+
+$selected_gallery_dir = dirname(__DIR__) . '/assets/images/selected-gallery';
+
+if (is_dir($selected_gallery_dir)) {
+    $raw_files = [];
+    $all_entries = @scandir($selected_gallery_dir);
+    if ($all_entries !== false) {
+        foreach ($all_entries as $entry) {
+            if ($entry === '.' || $entry === '..' || str_starts_with($entry, '.')) {
+                continue;
+            }
+            $ext = strtolower(pathinfo($entry, PATHINFO_EXTENSION));
+            if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
+                $raw_files[] = $entry;
+            }
+        }
+    }
+    if (!empty($raw_files)) {
+        natsort($raw_files);
+        $idx = 0;
+        foreach ($raw_files as $file) {
+            $alt_text = $gallery_alt_titles[$idx % count($gallery_alt_titles)];
+            $item = [
+                'image' => 'assets/images/selected-gallery/' . $file,
+                'alt'   => $alt_text,
+            ];
+            if ($idx % 2 === 0) {
+                $gallery_row_1[] = $item;
+            } else {
+                $gallery_row_2[] = $item;
+            }
+            $idx++;
+        }
+    }
+}
+
+// Fallback if directory scan returns empty
+if (empty($gallery_row_1) || empty($gallery_row_2)) {
+    $gallery_row_1 = [
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.17 PM (1).jpeg', 'alt' => 'Sacred Healing Circle Gathering'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.19 PM (1).jpeg', 'alt' => 'Spiritual Energy Awakening'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.21 PM.jpeg',      'alt' => 'Reiki Energy Healing Session'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.23 PM (1).jpeg', 'alt' => 'Whispers of Stillness Retreat'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.29 PM (1).jpeg', 'alt' => 'Mindful Breathing Practice'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.30 PM.jpeg',      'alt' => 'Angel Guidance Meditation'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.34 PM.jpeg',      'alt' => 'Sacred Community Gathering'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.35 PM.jpeg',      'alt' => 'Luminous Soul Alignment Session'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.39 PM.jpeg',      'alt' => 'Heart-Centered Energy Flow'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.42 PM (1).jpeg', 'alt' => 'Spiritual Healing Breakthrough'],
+    ];
+
+    $gallery_row_2 = [
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.17 PM.jpeg',      'alt' => 'Guided Meditation Experience'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.20 PM (1).jpeg', 'alt' => 'Chakra Harmonization Sanctuary'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.22 PM.jpeg',      'alt' => 'Peaceful Contemplation and Balance'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.23 PM.jpeg',      'alt' => 'Sacred Energy Connection'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.30 PM (1).jpeg', 'alt' => 'Deep Crystal Vibration Sanctuary'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.33 PM.jpeg',      'alt' => 'Tibetan Singing Bowl Sound Bath'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.35 PM (1).jpeg', 'alt' => 'Inner Peace and Renewal'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.36 PM.jpeg',      'alt' => 'Holistic Wellness Circle'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.41 PM.jpeg',      'alt' => 'Divine Presence & Stillness'],
+        ['image' => 'assets/images/selected-gallery/WhatsApp Image 2026-10-17 at 1.22.42 PM.jpeg',      'alt' => 'Radiant Living Connection'],
+    ];
+}
 ?>
 
 <section class="gallery-section position-relative" id="gallery" aria-label="Photo Gallery of Sacred Healing Moments">
