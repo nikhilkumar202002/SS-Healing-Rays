@@ -2,7 +2,7 @@
 
 $banner_slides = $banner_slides ?? [
     [
-        'image'       => 'assets/banner/banner-4.jpeg',
+        'image'       => 'assets/banner/hero-main-banner.jpg',
         'title'       => 'Indulge in <em>Wellness.</em><br>Reconnect with the <em>Calm Within.</em>',
         'description' => 'Heal and find balance through gentle one-to-one guidance that helps you reconnect with yourself and navigate life with greater ease and grace.',
         'btn1_text'   => 'Explore Our Services',
