@@ -27,12 +27,12 @@ $products = $products ?? [
     [
         'id'          => 'wellbeing',
         'subtitle'    => 'The Yoga & Mindful Movement Center',
-        'name'        => 'Shamaa Wellness',
+        'name'        => 'SHAMAA',
         'desc'        => 'Nurturing balance, emotional wellbeing and physical vitality through mindful movement and holistic wellness practices.',
         'image'       => 'assets/product/wellness.jpg',
         'logo'        => 'assets/product/product-logo-1.png', // Shamaa Yoga & Wellness Center logo
-        'btn_text'    => 'Explore Shamaa Wellness',
-        'btn_url'     => 'wellness',
+        'btn_text'    => 'Explore SHAMAA',
+        'btn_url'     => 'shamaa',
         'btn_class'   => 'Btn-Product-Demo',
         'btn_attr'    => '',
     ],

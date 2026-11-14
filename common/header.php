@@ -44,7 +44,7 @@ $nav_items = $nav_items ?? [
         'url'      => 'ame-crystals',
         'children' => [
             ['label' => 'Âme Crystals', 'url' => 'ame-crystals'],
-            ['label' => 'Shamaa Wellness', 'url' => 'wellness'],
+            ['label' => 'SHAMAA', 'url' => 'shamaa'],
         ],
     ],
     'stories' => [
@@ -183,7 +183,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                                 $isActive = ($current_page === $key || 
                                             ($key === 'services' && in_array($current_page, ['services', 'service', 'training', 'course', 'courses', 'workshop', 'workshops'])) ||
                                             ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
-                                            ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness'])));
+                                            ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness', 'shamaa'])));
                                 $hasChildren = !empty($item['children']);
                             ?>
                             <?php if ($hasChildren): ?>
@@ -281,7 +281,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                     $isActive = ($current_page === $key || 
                                 ($key === 'services' && in_array($current_page, ['services', 'service', 'training', 'course', 'courses', 'workshop', 'workshops'])) ||
                                 ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
-                                ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness']))); 
+                                ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness', 'shamaa']))); 
                 ?>
                 <?php if (!empty($item['children'])): ?>
                     <li class="nav-item">
