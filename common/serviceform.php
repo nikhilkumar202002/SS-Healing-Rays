@@ -22,14 +22,14 @@ $service_modal_categories = [
         'Therapeutic Yoga',
     ],
     'II. Training' => [
-        'Reiki- Shiki Ryoho & Karuna Reiki- All levels',
-        'Crystal Therapy & Sacred Grid Mastery',
-        'Angel Therapy & Celestial Guidance',
-        'EFT (Emotional Freedom Techniques)',
+        'Usui Reiki & Karuna Reiki Training',
+        'Crystal Therapy Training',
+        'Angel Therapy Training',
+        'EFT Training',
     ],
     'III. COURSES on Wellness' => [
-        'Spandan – The Sacred Pulse of Healing & Vibration',
-        'Chetan – Awaken Witness Consciousness & Presence',
+        'SPANDAN – Personal Wellness Mentoring with Sreeparvathy',
+        'CHETAN – Integrated Mind, Body & Spirit Programme with Sravanti',
     ],
     'IV. Workshops' => [
         'Energy Reset',

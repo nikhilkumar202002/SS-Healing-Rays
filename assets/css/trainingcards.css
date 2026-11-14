@@ -144,6 +144,34 @@
     margin-bottom: 0;
 }
 
+/* Specialised Pathway Box for Courses (e.g. Healpreneur Coaching in SPANDAN) */
+.course-specialised-pathway {
+    background: #fdf7f9;
+    border-left: 3.5px solid var(--secondary-color, #ba436c);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-specialised-pathway-title {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--secondary-color, #ba436c);
+    margin-bottom: 0.4rem;
+    display: block;
+    letter-spacing: -0.01em;
+}
+
+.course-specialised-pathway-text {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.93rem;
+    line-height: 1.68;
+    color: #475569;
+    margin: 0;
+}
+
 /* 5. Key Highlights / Feature List */
 .training-highlights-list {
     display: grid;

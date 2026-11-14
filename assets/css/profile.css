@@ -745,7 +745,9 @@
     box-sizing: border-box !important;
 }
 
-.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .text {
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .text,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-WA .text,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-Enquire .text {
     font-size: 0.8rem !important;
     font-weight: 600 !important;
     white-space: nowrap !important;
@@ -754,14 +756,19 @@
     letter-spacing: -0.01em;
 }
 
-.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container {
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-WA .icon-Container,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-Enquire .icon-Container {
     width: 32px !important;
     height: 32px !important;
     min-width: 32px !important;
+    max-width: 32px !important;
     flex-shrink: 0 !important;
 }
 
-.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container .btn-arrow-svg {
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Container .icon-Container .btn-arrow-svg,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-WA .icon-Container .btn-arrow-svg,
+.profile-sticky-btn-group.profile-sticky-btn-row .Btn-Profile-Sticky-Enquire .icon-Container .btn-arrow-svg {
     width: 15px !important;
     height: 15px !important;
 }

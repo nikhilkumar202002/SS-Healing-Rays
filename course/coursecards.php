@@ -3,38 +3,46 @@
  * Wellness Courses Cards Component - SS Healing Rays
  * Exact same alternating row layout, 80px gap, image-content height matching,
  * and button styling as trainingcards.php.
- * Features 2 Sacred Wellness Courses: 1. Spandan, 2. Chetan.
+ * Features 2 Sacred Wellness Programmes:
+ * 1. SPANDAN – Personal Wellness Mentoring with Sreeparvathy
+ * 2. CHETAN – Integrated Mind, Body & Spirit Programme with Sravanti
  */
 
 $wellness_courses = [
     [
         'id'          => 'spandan',
-        'title'       => 'Spandan – The Sacred Pulse of Healing &amp; Vibration',
-        'desc'        => 'Awaken to the primordial vibrational resonance of life itself. Spandan guides you into the metaphysical science of bio-frequencies, sacred pulse awareness, and sound integration. Learn how subtle vibrations influence your cellular health, how to dissolve disharmony in your biofield, and how to harness healing sonic frequencies to attune your mind and body to profound inner peace and vibrant life force energy.',
+        'title'       => 'SPANDAN &ndash; Personal Wellness Mentoring with Sreeparvathy',
+        'badge'       => 'Personal Wellness Mentoring',
+        'desc'        => 'SPANDAN is curated and led by Sreeparvathy, Corporate Trainer and Wellness Coach. Drawing on her experience in wellness guidance and the healing modalities offered through SS Healing Rays, the programme focuses on physical, emotional and mental well-being. Its concepts and practices are designed to encourage self-awareness, personal growth and meaningful transformation.',
+        'specialised_pathway_title' => 'Specialised pathway: Healpreneur Coaching',
+        'specialised_pathway_desc'  => 'SPANDAN also includes a specialised Healpreneur Coaching pathway for participants who wish to develop their skills as independent wellness or healing practitioners. Alongside learning and personal development, this pathway covers building practitioner confidence, understanding client needs, structuring sessions and exploring responsible ways to offer services. It may help participants work towards an additional income opportunity, without guaranteeing earnings or clients.',
         'highlights'  => [
-            'Bio-Frequency Scanning & Vibrational Mapping',
-            'Pulse Awareness & Subtle Prana Alignment',
-            'Primordial Sound Frequencies & Mantras',
-            'Cellular Recalibration & Breath Integration',
-            'Certified Course Completion Certificate'
+            'Curated & Led by Sreeparvathy, Corporate Trainer & Wellness Coach',
+            'Comprehensive Physical, Emotional & Mental Well-Being',
+            'Self-Awareness, Personal Growth & Meaningful Transformation',
+            'Specialised Pathway: Healpreneur Coaching for Practitioners',
+            'Mentorship in Client Needs, Structuring Sessions & Responsible Practice'
         ],
         'image'       => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.40 PM.jpeg',
-        'alt'         => 'Spandan Sacred Vibration and Pulse Course at SS Healing Rays',
+        'alt'         => 'SPANDAN Personal Wellness Mentoring with Sreeparvathy at SS Healing Rays',
         'url'         => 'contact.php?course=Spandan',
     ],
     [
         'id'          => 'chetan',
-        'title'       => 'Chetan – Awaken Witness Consciousness &amp; Presence',
-        'desc'        => 'Embark on an illuminating inward journey to awaken pure consciousness and mindful presence. Chetan teaches you ancient and contemporary mindfulness disciplines to transcend habitual mental chatter, dissolve deep-seated limiting subconscious patterns, and cultivate an unwavering center of calm. Learn to navigate life’s everyday challenges with emotional mastery, heightened intuition, and clarity.',
+        'title'       => 'CHETAN &ndash; Integrated Mind, Body &amp; Spirit Programme with Sravanti',
+        'badge'       => 'Mind, Body & Spirit Integration',
+        'desc'        => "CHETAN is curated and led by Sravanti, Energy Healing Practitioner, Inner Transformation Coach and Therapeutic Yoga Teacher. It brings together suitable energy-healing practices, EFT, meditation and therapeutic yoga techniques in a personalised mentoring programme.\n\nThe programme is shaped around the participant's goals and may include mindful movement, breathwork, mudras, relaxation and other relevant practices to support physical, emotional and mental well-being.",
+        'specialised_pathway_title' => null,
+        'specialised_pathway_desc'  => null,
         'highlights'  => [
-            'Witness Consciousness & Detached Awareness',
-            'Subconscious De-conditioning Practices',
-            'Neuro-Spiritual Mindfulness Protocols',
-            'Emotional Grounding & Anchoring Presence',
-            'Certified Course Completion Certificate'
+            'Curated & Led by Sravanti, Energy Healer, Transformation Coach & Yoga Teacher',
+            'Integrates Energy Healing, EFT, Meditation & Therapeutic Yoga',
+            'Personalised One-on-One Mentoring Shaped Around Your Goals',
+            'Mindful Movement, Breathwork, Mudras & Relaxation',
+            'Holistic Support for Physical, Emotional & Mental Well-Being'
         ],
         'image'       => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.42 PM.jpeg',
-        'alt'         => 'Chetan Awakened Consciousness Course at SS Healing Rays',
+        'alt'         => 'CHETAN Integrated Mind, Body and Spirit Programme with Sravanti at SS Healing Rays',
         'url'         => 'contact.php?course=Chetan',
     ],
 ];
@@ -45,9 +53,9 @@ $wellness_courses = [
         
         <!-- Section Header -->
         <div class="training-section-header text-center">
-            <h2 class="training-section-title">Sacred Courses on <em>Wellness</em></h2>
+            <h2 class="training-section-title">Courses on <em>Wellness</em></h2>
             <p class="training-section-subtitle">
-                Deepen your spiritual path through structured wellness courses crafted to awaken vital energy pulse, expand conscious awareness, and integrate ancient holistic wisdom into contemporary daily life.
+                Personalised mentoring and transformational wellness programmes curated by experienced wellness coaches and practitioners to guide your physical, emotional and mental well-being.
             </p>
         </div>
 
@@ -81,7 +89,22 @@ $wellness_courses = [
                             <h3 class="training-card-title"><?= $course['title'] ?></h3>
 
                             <!-- Description -->
-                            <p class="training-card-desc"><?= $course['desc'] ?></p>
+                            <div class="training-card-desc">
+                                <?php 
+                                    $paragraphs = preg_split('/\n\s*\n/', trim($course['desc']));
+                                    foreach ($paragraphs as $para): 
+                                ?>
+                                    <p><?= nl2br(htmlspecialchars(trim($para))) ?></p>
+                                <?php endforeach; ?>
+                            </div>
+
+                            <!-- Specialised Pathway Callout (Healpreneur Coaching in SPANDAN) -->
+                            <?php if (!empty($course['specialised_pathway_title'])): ?>
+                                <div class="course-specialised-pathway">
+                                    <span class="course-specialised-pathway-title"><?= htmlspecialchars($course['specialised_pathway_title']) ?></span>
+                                    <p class="course-specialised-pathway-text"><?= htmlspecialchars($course['specialised_pathway_desc']) ?></p>
+                                </div>
+                            <?php endif; ?>
 
                             <!-- Key Highlights / Feature List -->
                             <ul class="training-highlights-list list-unstyled">
@@ -100,7 +123,7 @@ $wellness_courses = [
                             <!-- Main Reusable Button Component from common/button.php -->
                             <div class="training-card-action">
                                 <?php
-                                    $btn_text    = 'Enquire for Course';
+                                    $btn_text    = 'Enquire for Programme';
                                     $btn_url     = '#serviceBookingModal';
                                     $btn_class   = 'Btn-Training-Card';
                                     $clean_title = htmlspecialchars(html_entity_decode(strip_tags($course['title']), ENT_QUOTES, 'UTF-8'));
