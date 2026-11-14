@@ -1,24 +1,10 @@
 <?php
-/**
- * ==============================================================================
- * The Signature Crystal Collection Section - SS Healing Rays
- * Features:
- *   - Eyebrow: THE SIGNATURE CRYSTAL COLLECTION
- *   - Headline: "You don't always choose a crystal. Sometimes, the crystal finds you."
- *   - Story of Âme Crystals (inspired by the French word âme, meaning soul)
- *   - Dual CTAs: Primary ("Discover Your Crystal") & Secondary ("Book Your Crystal Consultation")
- *   - Layout: Left Content | Right Gallery Image (Deep Crystal Sanctuary)
- * Dedicated Stylesheet: assets/css/productbanner.css
- * ==============================================================================
- */
 
 $crystal_eyebrow            = $crystal_eyebrow ?? 'The Signature Crystal Collection';
 $crystal_headline_1         = $crystal_headline_1 ?? "You don't always choose a crystal.";
 $crystal_headline_2         = $crystal_headline_2 ?? "Sometimes, the crystal finds you.";
-
 $crystal_desc_1             = $crystal_desc_1 ?? "Inspired by the French word <em>âme</em>, meaning soul, <strong>Âme Crystals</strong> is built around the beautiful connection between a crystal and the person it finds.";
 $crystal_desc_2             = $crystal_desc_2 ?? "We believe every stone from Mother Earth carries a story. Some become silent supporters, some remind us of our strength, and some bring comfort, grounding and encouragement when we need them most.";
-
 $crystal_primary_cta_text   = $crystal_primary_cta_text ?? 'Book your crystal consultation';
 $crystal_primary_cta_url    = $crystal_primary_cta_url ?? '#bookingModal';
 $crystal_secondary_cta_text = $crystal_secondary_cta_text ?? '';
@@ -118,8 +104,6 @@ $crystal_img_alt = $crystal_img_alt ?? 'A Crystal with a Purpose - Âme Crystals
                              alt="<?= htmlspecialchars($crystal_img_alt) ?>" 
                              class="signature-crystal-image"
                              loading="lazy">
-                        
-                
                     </div>
                 </div>
             </div>
