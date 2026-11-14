@@ -25,13 +25,7 @@ $about_banner_btn2_text   = $about_banner_btn2_text ?? '';
 $about_banner_btn2_url    = $about_banner_btn2_url ?? '';
 ?>
 
-<section class="static-hero-banner position-relative" id="aboutBanner" aria-label="About Us Highlights">
-    <!-- Background Cover Image with Ken Burns Drift -->
-    <img src="<?= htmlspecialchars($about_banner_image) ?>" 
-         alt="<?= strip_tags($about_banner_title) ?>" 
-         class="banner-bg-img"
-         loading="eager">
-
+<section class="static-hero-banner position-relative" id="aboutBanner" aria-label="About Us Highlights" style="background-image: url('<?= htmlspecialchars($about_banner_image) ?>');">
     <!-- Slight Black Overlay with Linear Gradient from Bottom to Top -->
     <div class="banner-overlay" aria-hidden="true"></div>
 
