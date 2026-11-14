@@ -12,7 +12,7 @@ healing. Also offering personal coaching and corporate training.',
         'profile_url' => 'sreeparvathy',
         'instagram'   => 'https://www.instagram.com/heal_sreeparvathy/',
         'facebook'    => '#',
-        'linkedin'    => '#',
+        'linkedin'    => 'https://www.linkedin.com/in/sreeparvathy-c-m-515b619a',
     ],
     [
         'name'        => 'Sravanti',
@@ -23,7 +23,7 @@ change through holistic healing, wellness and yoga.',
         'profile_url' => 'sravanti',
         'instagram'   => 'https://www.instagram.com/sravantiheals/',
         'facebook'    => '#',
-        'linkedin'    => '#',
+        'linkedin'    => 'https://www.linkedin.com/in/sravantichitturi',
     ],
 ];
 ?>
@@ -69,13 +69,16 @@ change through holistic healing, wellness and yoga.',
                         <!-- Bottom Action Row: Socials on Left | Actual Reusable Button on Right -->
                         <div class="profile-actions-row">
                             <div class="profile-socials">
-                                <a href="<?= htmlspecialchars($member['instagram'] ?? '#') ?>" class="profile-social-btn" aria-label="Instagram">
+                                <?php $has_insta = !empty($member['instagram']) && $member['instagram'] !== '#'; ?>
+                                <a href="<?= htmlspecialchars($member['instagram'] ?? '#') ?>" <?= $has_insta ? 'target="_blank" rel="noopener noreferrer"' : '' ?> class="profile-social-btn" aria-label="Instagram">
                                     <i class="bi bi-instagram"></i>
                                 </a>
-                                <a href="<?= htmlspecialchars($member['facebook'] ?? '#') ?>" class="profile-social-btn" aria-label="Facebook">
+                                <?php $has_fb = !empty($member['facebook']) && $member['facebook'] !== '#'; ?>
+                                <a href="<?= htmlspecialchars($member['facebook'] ?? '#') ?>" <?= $has_fb ? 'target="_blank" rel="noopener noreferrer"' : '' ?> class="profile-social-btn" aria-label="Facebook">
                                     <i class="bi bi-facebook"></i>
                                 </a>
-                                <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" class="profile-social-btn" aria-label="LinkedIn">
+                                <?php $has_li = !empty($member['linkedin']) && $member['linkedin'] !== '#'; ?>
+                                <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" <?= $has_li ? 'target="_blank" rel="noopener noreferrer"' : '' ?> class="profile-social-btn" aria-label="LinkedIn">
                                     <i class="bi bi-linkedin"></i>
                                 </a>
                             </div>
