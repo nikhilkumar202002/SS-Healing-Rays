@@ -4,7 +4,15 @@ $about_healing_badge      = $about_healing_badge ?? 'Who We Are';
 $about_healing_title_1    = $about_healing_title_1 ?? 'More than a healing centre.';
 $about_healing_title_2    = $about_healing_title_2 ?? 'A journey of learning, transformation and shared purpose.';
 
-$about_healing_img        = $about_healing_img ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') ? 'assets/images/about/center-reiki-session.jpg' : 'assets/images/services/Reiki Healing.jpg');
+$about_healing_img        = $about_healing_img ?? (
+    file_exists(dirname(__DIR__) . '/assets/images/profile/who-we-are.jpg') 
+        ? 'assets/images/profile/who-we-are.jpg' 
+        : (file_exists(dirname(__DIR__) . '/assets/images/about/who-we-are.jpg') 
+            ? 'assets/images/about/who-we-are.jpg' 
+            : (file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') 
+                ? 'assets/images/about/center-reiki-session.jpg' 
+                : 'assets/images/services/Reiki Healing.jpg'))
+);
 
 $about_healing_paragraphs = $about_healing_paragraphs ?? [
     'Founded by <strong>Sreeparvathy CM</strong> and <strong>Sravantii Chitturi</strong>, SS Healing Rays is a holistic wellness, healing, coaching and training platform.',
@@ -37,7 +45,7 @@ $about_healing_stats = $about_healing_stats ?? [
                 <div class="about-healing-image-wrapper">
                     <div class="about-healing-image-card">
                         <img src="<?= htmlspecialchars($about_healing_img) ?>" 
-                             alt="SS Healing Rays Sanctuary & Center" 
+                             alt="Who We Are - SS Healing Rays Sanctuary & Healers" 
                              loading="lazy">
                     </div>
                 </div>
