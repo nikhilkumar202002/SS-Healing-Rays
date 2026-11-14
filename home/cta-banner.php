@@ -14,7 +14,7 @@
 $cta_banner_title_1  = $cta_banner_title_1 ?? 'Join our';
 $cta_banner_title_2  = $cta_banner_title_2 ?? 'Healing Circle.';
 $cta_banner_title_3  = $cta_banner_title_3 ?? '';
-$cta_banner_btn_text = $cta_banner_btn_text ?? 'Book your slot';
+$cta_banner_btn_text = $cta_banner_btn_text ?? 'Join our Community';
 $cta_banner_btn_url  = $cta_banner_btn_url ?? '#bookingModal';
 
 // Ensure both .jpg and .jpeg exist and have 0644 permissions on live server

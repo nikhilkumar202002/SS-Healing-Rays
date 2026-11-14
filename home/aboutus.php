@@ -11,7 +11,7 @@ with greater confidence and independence. Our nurturing community offers connect
 encouragement along the way. We support you as you find your wings—and celebrate seeing
 you fly.";
 $about_btn_text        = $about_btn_text ?? 'Learn More';
-$about_btn_url         = $about_btn_url ?? '#about';
+$about_btn_url         = $about_btn_url ?? 'aboutus';
 $about_img             = $about_img ?? (file_exists(dirname(__DIR__) . '/assets/images/about-image.jpeg') ? 'assets/images/about-image.jpeg' : 'assets/images/workshop-healing-circle.png');
 ?>
 
