@@ -4,60 +4,87 @@ $services_title    = $services_title ?? 'Healing Services';
 $services_cta_text = $services_cta_text ?? 'Explore Services';
 $services_cta_url  = $services_cta_url ?? 'services';
 
+// Robust live-server image resolution for service images
+if (!function_exists('resolve_service_img')) {
+    function resolve_service_img($path) {
+        $root = dirname(__DIR__);
+        if (file_exists($root . '/' . $path)) {
+            return $path;
+        }
+        $dir = dirname($path);
+        $base = basename($path);
+        $candidates = [
+            $dir . '/' . str_replace(' ', '-', $base),
+            $dir . '/' . str_replace('-', ' ', $base),
+            $dir . '/' . strtolower($base),
+            $dir . '/' . strtoupper($base),
+            $dir . '/' . str_replace('.jpg', '.jpeg', $base),
+            $dir . '/' . str_replace('.jpeg', '.jpg', $base),
+            $dir . '/' . strtolower(str_replace(' ', '-', $base)),
+        ];
+        foreach ($candidates as $cand) {
+            if (file_exists($root . '/' . $cand)) {
+                return $cand;
+            }
+        }
+        return $path;
+    }
+}
+
 $services_list = $services_list ?? [
     [
         'title' => 'Trauma Healing',
-        'image' => 'assets/images/services/Trauma Healing.jpg',
+        'image' => resolve_service_img('assets/images/services/Trauma Healing.jpg'),
         'url'   => 'services#trauma-healing'
     ],
     [
         'title' => 'Personal Transformation',
-        'image' => 'assets/images/services/Personal Transformation.jpg',
+        'image' => resolve_service_img('assets/images/services/Personal Transformation.jpg'),
         'url'   => 'services#personal-transformation'
     ],
     [
         'title' => 'Guided Meditation',
-        'image' => 'assets/images/services/Guided Meditation.jpg',
+        'image' => resolve_service_img('assets/images/services/Guided Meditation.jpg'),
         'url'   => 'services#meditations'
     ],
     [
         'title' => 'Tarot Card Reading',
-        'image' => 'assets/images/services/Tarot Card Reading.jpg',
+        'image' => resolve_service_img('assets/images/services/Tarot Card Reading.jpg'),
         'url'   => 'services#tarot-card-reading'
     ],
     [
         'title' => 'Reiki Healing',
-        'image' => 'assets/images/services/Reiki Healing.jpg',
+        'image' => resolve_service_img('assets/images/services/Reiki Healing.jpg'),
         'url'   => 'services#reiki-healing'
     ],
     [
         'title' => 'Crystal Healing',
-        'image' => 'assets/images/services/Crystal Healing.jpg',
+        'image' => resolve_service_img('assets/images/services/Crystal Healing.jpg'),
         'url'   => 'services#crystal-healing'
     ],
     [
         'title' => 'Angel Healing',
-        'image' => 'assets/images/services/Angel Healing.jpg',
+        'image' => resolve_service_img('assets/images/services/Angel-Healing.jpg'),
         'url'   => 'services#angel-healing'
     ],
     [
         'title' => 'Energy healing',
-        'image' => 'assets/images/services/Energy healing.jpg',
+        'image' => resolve_service_img('assets/images/services/Energy healing.jpg'),
         'url'   => 'services#energy-healing'
     ],
     [
         'title' => 'EFT',
-        'image' => 'assets/images/services/EFT.jpg',
+        'image' => resolve_service_img('assets/images/services/EFT.jpg'),
         'url'   => 'services#eft'
     ],
     [
         'title' => 'Counselling',
-        'image' => 'assets/images/services/Counselling.jpg',
+        'image' => resolve_service_img('assets/images/services/Counselling.jpg'),
         'url'   => 'services#counselling'
     ],
     [
         'title' => 'Therapeutic Yoga',
-        'image' => 'assets/images/services/Therapeutic Yoga.jpg',
+        'image' => resolve_service_img('assets/images/services/Therapeutic Yoga.jpg'),
         'url'   => 'services#therapeutic-yoga'
     ],
 ];
