@@ -9,9 +9,10 @@
  *   - Strict 2-Line Heading: "From Personal Transformation" / "to Shared Purpose"
  *   - Narrative story of the founders' personal journey and pivotal transformation
  *   - Styled quote callout for the teacher's life-changing guidance
- *   - White Background 2-Column Story Container:
- *       Col 1: From Learning to Teaching
- *       Col 2: From Teaching to Personalised Coaching
+ *   - Evolution Journey Card (Left Image | Right Progressive Milestones):
+ *       1. From Learning to Teaching
+ *       2. From Teaching to Personalised Coaching
+ *       3. Our Work Continued to Grow
  * Dedicated Stylesheet: assets/css/aboutourpurpose.css
  * ==============================================================================
  */
@@ -31,20 +32,40 @@ $purpose_quote_impact = $purpose_quote_impact ?? 'That became the beginning of o
 
 $purpose_para_3 = $purpose_para_3 ?? 'As we learned and practised, the way we experienced and responded to life began to change. Our circumstances had not changed much, but our energy, relationships and sense of wellbeing did. We realised that what was helping us could also help others.';
 
-// 2-Column Story Content
-$purpose_col1_title = 'From Learning to Teaching';
-$purpose_col1_paragraphs = [
-    'The pandemic gave us an opportunity to invest even more deeply in learning, exploring and expanding our understanding of different modalities and approaches. What started as personal growth gradually became a passion for teaching.',
-    'We began sharing what we had learnt through courses and training programs, helping people develop the knowledge and confidence to take charge of their own transformation.',
-    'Watching our students grow and create meaningful changes in their lives strengthened our belief in the power of learning and consistent practice.'
-];
+// Evolution Journey Milestones (Left Image | Right Content)
+$evolution_img = $evolution_img ?? (
+    file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') 
+        ? 'assets/images/about/center-reiki-session.jpg' 
+        : (file_exists(dirname(__DIR__) . '/assets/images/selected-gallery/Meditation Class in a Sunlit Hall.png') 
+            ? 'assets/images/selected-gallery/Meditation Class in a Sunlit Hall.png' 
+            : (file_exists(dirname(__DIR__) . '/assets/images/workshop-healing-circle.png') 
+                ? 'assets/images/workshop-healing-circle.png' 
+                : 'assets/images/about-image.jpeg'))
+);
 
-$purpose_col2_title = 'From Teaching to Personalised Coaching';
-$purpose_col2_paragraphs = [
-    'As our work evolved, we recognised that not everyone had the time, energy or capacity to undertake a lengthy learning journey. Some needed personal guidance, while others needed structured support to remain consistent and navigate their challenges.',
-    'We asked ourselves: <em>How could we bring together years of learning and experience to make meaningful transformation more accessible to others?</em>',
-    'This led us to one-to-one coaching and personalised transformation programs. We began integrating the most useful elements of our learning from different modalities into individual coaching journeys and structured 21-day and three-month programs. Our intention was to help people access the right support without having to spend the same years exploring and learning everything themselves.',
-    'As our passion and the demand for our work grew, we eventually made the significant decision to leave our secure professional careers and dedicate ourselves fully to this purpose. It was not an easy decision, but we trusted the journey and the purpose that had brought us this far.'
+$evolution_milestones = $evolution_milestones ?? [
+    [
+        'icon'       => 'bi-mortarboard',
+        'title'      => 'From Learning to Teaching',
+        'paragraphs' => [
+            'The pandemic gave us the opportunity to deepen our learning and explore different healing modalities. What began as personal growth became a passion for teaching. Through courses and training programmes, we started sharing what we had learned and supporting others in their own growth.',
+        ],
+    ],
+    [
+        'icon'       => 'bi-person-heart',
+        'title'      => 'From Teaching to Personalised Coaching',
+        'paragraphs' => [
+            'We realised that not everyone needed a course. Some needed personal guidance; others needed structured support. This led us to one-to-one coaching and personalised 21-day and three-month programmes, bringing together practices from different modalities to suit individual needs.',
+            'As our work grew, we made the significant decision to leave our secure professional careers and dedicate ourselves to this purpose. It was not an easy choice, but one we believed in.',
+        ],
+    ],
+    [
+        'icon'       => 'bi-flower1',
+        'title'      => 'Our Work Continued to Grow',
+        'paragraphs' => [
+            'Over time, our vision expanded to include Âme Crystals, bringing personalised crystal guidance into our work, and Shamaa, extending our offerings into yoga and wellness. Both are part of the wider SS Healing Rays vision.',
+        ],
+    ],
 ];
 ?>
 
@@ -94,39 +115,39 @@ $purpose_col2_paragraphs = [
                 </p>
             </div>
 
-            <!-- White Background 2-Column Story Container -->
-            <div class="purpose-two-col-card mx-auto">
+            <!-- White Background Evolution Card (Left Image | Right Content) -->
+            <div class="purpose-two-col-card purpose-evolution-card mx-auto">
                 <div class="row g-4 g-lg-5 align-items-stretch">
                     
-                    <!-- Column 1: From Learning to Teaching -->
-                    <div class="col-12 col-lg-6 d-flex">
-                        <div class="story-col-card w-100">
-                            <div class="story-col-header">
-                                <span class="story-col-icon" aria-hidden="true">
-                                    <i class="bi bi-mortarboard"></i>
-                                </span>
-                                <h3 class="story-col-title"><?= htmlspecialchars($purpose_col1_title) ?></h3>
-                            </div>
-                            <div class="story-col-content">
-                                <?php foreach ($purpose_col1_paragraphs as $para): ?>
-                                    <p class="story-col-desc"><?= $para ?></p>
-                                <?php endforeach; ?>
+                    <!-- Left Column: Visual Showcase Image -->
+                    <div class="col-12 col-lg-5 d-flex">
+                        <div class="evolution-image-wrapper w-100">
+                            <div class="evolution-image-card">
+                                <img src="<?= htmlspecialchars($evolution_img) ?>" 
+                                     alt="Our Journey - SS Healing Rays Evolution" 
+                                     loading="lazy">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Column 2: From Teaching to Personalised Coaching -->
-                    <div class="col-12 col-lg-6 d-flex">
-                        <div class="story-col-card story-col-divider w-100">
-                            <div class="story-col-header">
-                                <span class="story-col-icon" aria-hidden="true">
-                                    <i class="bi bi-person-heart"></i>
-                                </span>
-                                <h3 class="story-col-title"><?= htmlspecialchars($purpose_col2_title) ?></h3>
-                            </div>
-                            <div class="story-col-content">
-                                <?php foreach ($purpose_col2_paragraphs as $para): ?>
-                                    <p class="story-col-desc"><?= $para ?></p>
+                    <!-- Right Column: Evolution Milestones Content -->
+                    <div class="col-12 col-lg-7 d-flex">
+                        <div class="evolution-content-wrapper w-100 text-start">
+                            <div class="evolution-milestones-list">
+                                <?php foreach ($evolution_milestones as $index => $milestone): ?>
+                                    <div class="evolution-milestone-item <?= $index < count($evolution_milestones) - 1 ? 'has-divider' : '' ?>">
+                                        <div class="milestone-header d-flex align-items-center gap-3">
+                                            <span class="milestone-icon" aria-hidden="true">
+                                                <i class="bi <?= htmlspecialchars($milestone['icon']) ?>"></i>
+                                            </span>
+                                            <h3 class="milestone-title mb-0"><?= htmlspecialchars($milestone['title']) ?></h3>
+                                        </div>
+                                        <div class="milestone-body">
+                                            <?php foreach ($milestone['paragraphs'] as $p): ?>
+                                                <p class="milestone-desc"><?= $p ?></p>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
