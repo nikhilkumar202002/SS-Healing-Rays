@@ -266,70 +266,73 @@ $shamaa_offerings = [
 </section>
 
 <!-- ==========================================================================
-     4. Dedicated Space & The Studio Experience (Left Image | Right Content)
+     4. Guided Wellness Experience (Left Side Content | Right Side Image)
      ========================================================================== -->
-<section class="wellness-space-section position-relative" id="wellnessSpace" aria-label="SHAMAA Sanctuary Experience">
+<section class="wellness-space-section position-relative" id="wellnessSpace" aria-label="A Guided Wellness Experience, Wherever You Are">
+    <div id="wellnessOnline" class="position-absolute" style="top: -95px;"></div>
     <div class="container">
-        <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+        <div class="row align-items-center g-4 g-lg-5">
             
-            <!-- Right Content Column -->
+            <!-- Left Content Column -->
             <div class="col-12 col-lg-6">
-                <p class="wellness-pretitle">The Sanctuary Experience</p>
-                <h2 class="wellness-heading">
-                    A Quiet Haven Away from <em>Daily Distractions</em>
+                <p class="wellness-pretitle">PERSONAL GUIDANCE, WHEREVER YOU ARE</p>
+                <h2 class="wellness-heading mb-2">
+                    A Guided Wellness Experience, <br><em>Wherever You Are</em>
                 </h2>
-                <p class="wellness-text">
-                    Our movement sanctuary is intentionally crafted to feel like an oasis of calm. With soft natural light, peaceful acoustic frequencies, and clean organic energy, every element allows your nervous system to downshift and unwind.
+                
+                <p class="shamaa-philosophy-subheading mb-3">
+                    <strong>Personal Guidance.</strong> Meaningful Practice. Holistic Well-being.
+                </p>
+                
+                <p class="wellness-text mb-4">
+                    SHAMAA offers guided online yoga and wellness sessions, making it possible for participants to practise from the comfort of their own homes. Sessions are shaped around individual needs, comfort and wellness goals. Whether through personalized one-to-one guidance or group practice, participants are supported in exploring movement, breath, relaxation and yogic practices at a pace that feels appropriate to them.
                 </p>
 
-                <!-- Checkmarks Checklist -->
-                <ul class="wellness-checklist">
+                <!-- Highlights Checklist -->
+                <ul class="wellness-checklist mb-4">
                     <li>
                         <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Small Intimate Batches:</strong> Capped participant sizes ensuring individualized attention and posture guidance.</span>
+                        <span><strong>Guided Online Sessions</strong> &ndash; practice from home.</span>
                     </li>
                     <li>
                         <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Organic Props Provided:</strong> Eco-friendly natural mats, organic cotton bolsters, straps, and blocks provided for comfort.</span>
+                        <span><strong>Personalized Attention</strong> &ndash; guidance shaped around individual needs and comfort.</span>
                     </li>
                     <li>
                         <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Flexible Scheduling:</strong> Morning, afternoon, and evening batches designed to seamlessly match your lifestyle.</span>
+                        <span><strong>Individual &amp; Group Practice</strong> &ndash; one-to-one and group options.</span>
                     </li>
                     <li>
                         <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Online &amp; In-Studio:</strong> Join in-person at our Hyderabad center or access live interactive sessions worldwide.</span>
+                        <span><strong>Flexible Timings</strong> &ndash; Suitable for different time zones.</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                        <span><strong>An Integrated Approach</strong> &ndash; yoga, breathwork, meditation, mudras, relaxation and relevant healing practices.</span>
                     </li>
                 </ul>
 
-                <button type="button" 
-                        class="btn-wellness-demo"
-                        data-bs-toggle="modal" 
-                        data-bs-target="#bookingModal"
-                        aria-label="Reserve a Demo Session">
-                    <i class="bi bi-calendar2-heart" aria-hidden="true"></i>
-                    <span>Reserve Your Demo Session</span>
-                </button>
+                <!-- Button: Book a Clarity Call (WhatsApp click-to-chat) -->
+                <div class="pt-2">
+                    <?php
+                        $btn_text  = 'Book a Clarity Call';
+                        $wa_msg    = rawurlencode('Hi Sravanti, I would like to book a Clarity Call for SHAMAA Online Yoga & Wellness.');
+                        $btn_url   = "https://wa.me/919966010981?text={$wa_msg}";
+                        $btn_class = 'Btn-Shamaa-Approach';
+                        $btn_attr  = 'target="_blank" rel="noopener noreferrer" title="Book a Clarity Call on WhatsApp" aria-label="Book a Clarity Call on WhatsApp"';
+                        include __DIR__ . '/common/button.php';
+                    ?>
+                </div>
             </div>
 
-            <!-- Left Image Column -->
+            <!-- Right Image Column -->
             <div class="col-12 col-lg-6">
-                <div class="wellness-media-frame">
-                    <img src="assets/images/services/Therapeutic Yoga.jpg" 
-                         alt="Therapeutic Yoga Session at SHAMAA" 
+                <div class="wellness-media-frame shamaa-sticky-frame">
+                    <img src="<?= htmlspecialchars(resolve_shamaa_img('assets/images/selected-gallery/Online yoga session international yoga day.PNG')) ?>" 
+                         alt="A Guided Wellness Experience, Wherever You Are – SHAMAA Online Sessions" 
                          class="wellness-media-img"
-                         style="aspect-ratio: 4/3; object-position: center 25%;"
+                         style="aspect-ratio: 4/3; object-fit: cover;"
                          loading="lazy">
-                    
-                    <div class="wellness-floating-pill">
-                        <span class="pill-icon" aria-hidden="true">
-                            <i class="bi bi-shield-heart"></i>
-                        </span>
-                        <div class="pill-text">
-                            <strong>Certified Mentors</strong>
-                            <small>Experienced &amp; Compassionate Guidance</small>
-                        </div>
-                    </div>
                 </div>
             </div>
 
