@@ -11,7 +11,7 @@ $team_members = $team_members ?? [
 healing. Also offering personal coaching and corporate training.',
         'profile_url' => 'sreeparvathy',
         'instagram'   => 'https://www.instagram.com/heal_sreeparvathy/',
-        'facebook'    => '#',
+        'facebook'    => 'https://www.facebook.com/share/1CcuyB2gBV/',
         'linkedin'    => 'https://www.linkedin.com/in/sreeparvathy-c-m-515b619a',
     ],
     [
