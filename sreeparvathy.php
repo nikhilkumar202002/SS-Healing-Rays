@@ -1,28 +1,38 @@
 <?php
 
-$page_title        = 'Sreeparvathy – Emotional Wellness Coach & Master Energy Healer | SS Healing Rays';
-$page_description  = 'Helping women move through stress and emotional overwhelm through Trauma-Informed Coaching, EFT meridian tapping, and Reiki healing with Sreeparvathy.';
+$page_title        = 'Sreeparvathy C M – Trauma-Informed Wellness Coach, Emotional Wellness Practitioner & Educator | SS Healing Rays';
+$page_description  = 'Emotional Wellness. Human Growth. Lasting Transformation. Helping individuals and organisations build emotional resilience, self-awareness and well-being.';
 $current_page      = 'about';
 
-// WhatsApp Direct Connect Configuration with Initial Message
-$whatsapp_phone    = '+91 90006 06792';
-$whatsapp_digits   = '919000606792';
-$whatsapp_message  = 'Hi Sreeparvathy, I would like to request a free CLARITY call for emotional wellness & healing.';
-$whatsapp_url      = 'https://wa.me/' . $whatsapp_digits . '?text=' . rawurlencode($whatsapp_message);
+// WhatsApp & Contact Details Configuration
+$whatsapp_phone        = '+91 90006 06792';
+$whatsapp_digits       = '919000606792';
+$whatsapp_coaching_msg = 'Hi Sreeparvathy, I would like to book a coaching consultation.';
+$whatsapp_training_msg = 'Hi Sreeparvathy, I would like to schedule a training needs discussion for our organisation.';
 
-$phone_number      = $whatsapp_phone;
-$phone_tel         = '+919000606792';
-$cta_text          = 'Book Clarity Call';
-$cta_url           = $whatsapp_url;
+$whatsapp_url_coaching = 'https://wa.me/' . $whatsapp_digits . '?text=' . rawurlencode($whatsapp_coaching_msg);
+$whatsapp_url_training = 'https://wa.me/' . $whatsapp_digits . '?text=' . rawurlencode($whatsapp_training_msg);
+
+$pro_email             = 'sreeparvathy.coach@gmail.com';
+$general_email         = 'contact@sshealingrays.com';
+$linkedin_url          = 'https://www.linkedin.com/in/sreeparvathy-c-m/';
+
+$phone_number          = $whatsapp_phone;
+$phone_tel             = '+919000606792';
+$cta_text              = 'Book Consultation';
+$cta_url               = $whatsapp_url_coaching;
 
 include __DIR__ . '/common/header.php';
 ?>
 
 <main class="profile-page-wrapper">
-    <section class="profile-section position-relative" id="sreeparvathyProfile" aria-label="Sreeparvathy Personal Profile Details">
+    <section class="profile-section position-relative" id="sreeparvathyProfile" aria-label="Sreeparvathy C M Personal Profile Details">
         <div class="container">
             <div class="row g-4 g-xl-5 align-items-start">
        
+                <!-- ==============================================================
+                     1. LEFT COLUMN: Main Scrollable Content
+                     ============================================================== -->
                 <div class="col-12 col-lg-7 col-xl-7 profile-content-scroll-col">
                     
                     <!-- Breadcrumb Navigation -->
@@ -30,136 +40,186 @@ include __DIR__ . '/common/header.php';
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item"><a href="aboutus">About Us</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Sreeparvathy</li>
+                            <li class="breadcrumb-item active" aria-current="page">Sreeparvathy C M</li>
                         </ol>
                     </nav>
 
-           
+                    <!-- Practitioner Eyebrow Badge & Title -->
+                    <div class="profile-pretitle-badge">
+                        <i class="bi bi-flower1" aria-hidden="true"></i>
+                        <span>Sreeparvathy C M</span>
+                    </div>
 
-                    <!-- Main Headline -->
+                    <span class="profile-title-tagline d-block">
+                        Trauma-Informed Wellness Coach &bull; Emotional Wellness Practitioner &bull; Educator &amp; Mentor
+                    </span>
+
+                    <!-- Main Hero Headline -->
                     <h1 class="profile-hero-title">
-                        Helping Women Move Through <em>Stress</em> &amp; Emotional <em>Overwhelm</em>
+                        <span class="d-block">Emotional Wellness. Human Growth.</span>
+                        <span class="d-block"><em>Lasting Transformation.</em></span>
                     </h1>
 
                     <!-- Lead Paragraph -->
                     <p class="profile-lead-sub">
-                        Guiding you from survival mode and high-functioning anxiety into a grounded sanctuary of nervous system safety, somatic release, and inner sovereignty.
+                        Helping individuals and organisations build emotional resilience, self-awareness and well-being through trauma-informed coaching, emotional wellness and experiential learning.
                     </p>
 
+                    <!-- Hero Action Buttons -->
+                    <div class="profile-hero-actions">
+                        <?php
+                            $btn_text  = 'Book a Coaching Consultation';
+                            $btn_url   = $whatsapp_url_coaching;
+                            $btn_class = 'Btn-Profile-Primary';
+                            $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                            include __DIR__ . '/common/button.php';
+                        ?>
+                        <?php
+                            $btn_text  = 'Schedule Training Discussion';
+                            $btn_url   = 'mailto:' . htmlspecialchars($pro_email) . '?subject=' . rawurlencode('Training Needs Discussion - Sreeparvathy C M');
+                            $btn_class = 'Btn-Profile-Secondary';
+                            $btn_attr  = 'title="Email for Organisational Training Discussion"';
+                            include __DIR__ . '/common/button.php';
+                        ?>
+                    </div>
 
-                    <!-- Core Healing Pillars / Specializations -->
-                    <div class="profile-pillars-section mb-5" id="healing-pillars">
-                        <div class="profile-pillars-header">
-                            <h2 class="profile-section-heading">
-                                The Three <em>Healing Pillars</em>
+                    <!-- ==============================================================
+                         SECTION 02 — AREAS OF EXPERTISE
+                         ============================================================== -->
+                    <div class="profile-pillars-section mb-5" id="areas-of-expertise">
+                        <div class="profile-pillars-header mb-4">
+                            <div class="profile-pillars-badge">
+                                <i class="bi bi-compass"></i>
+                                <span>Core Domains</span>
+                            </div>
+                            <h2 class="profile-section-heading mb-0">
+                                Areas of <em>Expertise</em>
                             </h2>
                         </div>
                         
                         <div class="profile-pillars-grid">
                             
-                            <!-- Pillar 1: Trauma-Informed Coaching -->
+                            <!-- 01 · TRAUMA-INFORMED COACHING -->
                             <div class="profile-pillar-card">
                                 <div class="profile-pillar-content">
                                     <div class="profile-pillar-header-row">
-                                        <h4>Trauma-Informed Coaching</h4>
-                                        <span class="profile-pillar-badge-num">Pillar I</span>
+                                        <h4>01 &bull; Trauma-Informed Coaching</h4>
+                                        <span class="profile-pillar-badge-num">Coaching</span>
                                     </div>
                                     <p>
-                                        A gentle, non-judgmental holding space honoring your nervous system’s natural rhythm. We explore chronic stress triggers, release emotional baggage, and re-establish safety and self-worth from within.
+                                        Understand emotional patterns, release limiting beliefs and build inner resilience. A gentle, safe and attuned holding space honoring nervous system safety and lasting sovereignty.
                                     </p>
                                 </div>
                             </div>
 
-                            <!-- Pillar 2: EFT (Emotional Freedom Techniques) -->
+                            <!-- 02 · EMOTIONAL WELLNESS & EFT -->
                             <div class="profile-pillar-card">
                                 <div class="profile-pillar-content">
                                     <div class="profile-pillar-header-row">
-                                        <h4>EFT (Emotional Freedom Techniques)</h4>
-                                        <span class="profile-pillar-badge-num">Pillar II</span>
+                                        <h4>02 &bull; Emotional Wellness &amp; EFT</h4>
+                                        <span class="profile-pillar-badge-num">Somatic EFT</span>
                                     </div>
                                     <p>
-                                        Acupressure meridian tapping combined with mindful cognitive reframing. Rapidly reduces amygdala hyperactivity to dissolve chronic anxiety, release trapped panic, and rewire healthy, empowering beliefs.
+                                        Develop emotional awareness, manage stress and cultivate inner balance through gentle meridian tapping combined with mindful cognitive reframing.
                                     </p>
                                 </div>
                             </div>
 
-                            <!-- Pillar 3: Reiki Energy Healing -->
+                            <!-- 03 · REIKI & ENERGY HEALING -->
                             <div class="profile-pillar-card">
                                 <div class="profile-pillar-content">
                                     <div class="profile-pillar-header-row">
-                                        <h4>Reiki Energy Healing</h4>
-                                        <span class="profile-pillar-badge-num">Pillar III</span>
+                                        <h4>03 &bull; Reiki &amp; Energy Healing</h4>
+                                        <span class="profile-pillar-badge-num">Energy Healing</span>
                                     </div>
                                     <p>
-                                        Channeling universal life force energy through traditional Usui and Karuna Reiki protocols to dissolve auric fatigue, rebalance subtle energy vortexes, and ground deep restorative emotional peace.
+                                        Usui Reiki, Karuna Reiki and holistic energy practices for personal well-being, auric rejuvenation and grounded subtle peace.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- 04 · EMOTIONAL INTELLIGENCE & WORKPLACE WELL-BEING -->
+                            <div class="profile-pillar-card">
+                                <div class="profile-pillar-content">
+                                    <div class="profile-pillar-header-row">
+                                        <h4>04 &bull; Emotional Intelligence &amp; Workplace Well-being</h4>
+                                        <span class="profile-pillar-badge-num">Workplace</span>
+                                    </div>
+                                    <p>
+                                        Bringing emotional awareness, resilience and healthier human connections into professional environments, team dynamics and leadership development.
                                     </p>
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
 
-                    <!-- Philosophy & Compassionate Holding Space -->
-                    <div class="profile-story-block">
+                    <!-- ==============================================================
+                         SECTION 03 — SHORT ABOUT
+                         ============================================================== -->
+                    <div class="profile-story-block" id="about-sreeparvathy">
                         <h2 class="profile-section-heading">
-                            Healing in a <em>Safe Sanctuary</em>
+                            Understanding People. <em>Enabling Growth.</em>
                         </h2>
                         
                         <p class="profile-story-text">
-                            Many women carry an invisible weight: the expectation to be resilient, productive, and nurturing, even when their own nervous systems are screaming in exhaustion. When stress becomes chronic, it doesn't just stay in your thoughts &mdash; it settles into your muscles, your sleep patterns, and your emotional reactivity.
+                            With over 13 years of experience in education and mentoring, Sreeparvathy brings together human understanding, emotional wellness and holistic practices to support meaningful personal and professional growth.
                         </p>
 
                         <div class="profile-quote-callout">
                             <p>
-                                &ldquo;You do not need to be fixed. You simply need a gentle, safe space to lay down what was never yours to carry alone.&rdquo;
+                                &ldquo;Her approach combines trauma-informed coaching, EFT, Reiki and experiential learning, helping individuals and organisations navigate emotional demands with greater awareness and resilience.&rdquo;
                             </p>
                         </div>
-
-                        <p class="profile-story-text">
-                            Sreeparvathy combines holistic coaching with direct somatic meridian tapping and energetic healing. Instead of intellectualizing your pain, we work directly with the nervous system to create sustainable shifts, restoring your natural calm, healthy personal boundaries, and joyful presence.
-                        </p>
-
-                        
                     </div>
 
-                    <!-- DM CLARITY Action Section (Plain Clean Layout with Main Button Design) -->
-                    <div class="profile-clarity-section mb-5" id="clarity-call">
+                    <!-- ==============================================================
+                         SECTION 04 — TWO AUDIENCE PATHWAYS
+                         ============================================================== -->
+                    <div class="profile-story-block" id="audience-pathways">
                         <h2 class="profile-section-heading">
-                            Ready for Your <em>Clarity Call</em>?
+                            Supporting <em>Individuals &amp; Organisations</em>
                         </h2>
-                        <p class="profile-clarity-desc">
-                            Send a direct message with the word <strong>CLARITY</strong> or click below to connect directly on WhatsApp (+91 90006 06792). Let&rsquo;s discuss what you&rsquo;re experiencing and explore a personalized path back to emotional balance.
-                        </p>
-                        <div class="profile-clarity-actions">
-                            <?php
-                                $btn_text  = 'Message on WhatsApp';
-                                $btn_url   = $whatsapp_url;
-                                $btn_class = 'Btn-Profile-Primary';
-                                $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
-                                include __DIR__ . '/common/button.php';
-                            ?>
-                            <?php
-                                $btn_text  = 'DM on Instagram';
-                                $btn_url   = 'https://www.instagram.com/heal_sreeparvathy/';
-                                $btn_class = 'Btn-Profile-Secondary';
-                                $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
-                                include __DIR__ . '/common/button.php';
-                            ?>
+
+                        <div class="profile-pathways-grid">
+                            
+                            <!-- Pathway 1: For Individuals -->
+                            <div class="profile-pathway-card">
+                                <div>
+                                    <span class="profile-pathway-badge"><i class="bi bi-person"></i> Personal Path</span>
+                                    <h4 class="profile-pathway-title">For Individuals</h4>
+                                    <p class="profile-pathway-desc">
+                                        Personalised support for emotional wellness, self-awareness and healing. Compassionate 1-on-1 coaching designed around your personal emotional triggers and nervous system recovery.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Pathway 2: For Organisations & Institutions -->
+                            <div class="profile-pathway-card">
+                                <div>
+                                    <span class="profile-pathway-badge"><i class="bi bi-building"></i> Institutional Path</span>
+                                    <h4 class="profile-pathway-title">For Organisations &amp; Institutions</h4>
+                                    <p class="profile-pathway-desc">
+                                        Experiential learning and wellness engagements focused on emotional intelligence, resilience and workplace well-being to strengthen teams, educators and professionals.
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Testimonial Scrolling Design -->
-                    <div class="profile-testimonials-stream">
+                    <!-- ==============================================================
+                         SECTION 05 — TESTIMONIALS & TRAINING HIGHLIGHTS
+                         ============================================================== -->
+                    <div class="profile-testimonials-stream mb-5" id="testimonials">
+                        
                         <div class="profile-testimonials-header">
                             <div>
-                                
-                                <h3 class="profile-section-heading mb-0">What Women <em>Say</em></h3>
+                                <h3 class="profile-section-heading mb-0">Stories of Growth &amp; <em>Transformation</em></h3>
                             </div>
-                            
                         </div>
 
-                        <!-- Continuous Scrolling Marquee Track -->
+                        <!-- Continuous Scrolling Marquee Track for Personal Testimonials -->
                         <div class="profile-testimonials-track-wrapper">
                             <div class="profile-testimonials-marquee">
                                 
@@ -305,7 +365,98 @@ include __DIR__ . '/common/header.php';
                             </div>
                         </div>
 
-                       
+                        <!-- Distinct Subsection: Training & Facilitation Highlights -->
+                        <div class="profile-training-highlights-section" id="training-highlights">
+                            <h4 class="profile-section-heading mb-2">
+                                Training &amp; Facilitation <em>Highlights</em>
+                            </h4>
+                            <p class="profile-story-text mb-3">
+                                Editorial summaries of institutional and corporate engagements led by Sreeparvathy C M:
+                            </p>
+
+                            <div class="profile-highlights-grid">
+                                
+                                <!-- Highlight 1 -->
+                                <div class="profile-highlight-card">
+                                    <h5 class="profile-highlight-title">Workplace Productivity &amp; Well-being</h5>
+                                    <span class="profile-highlight-org"><i class="bi bi-briefcase"></i> GQ Engagement</span>
+                                    <p class="profile-highlight-desc">
+                                        A corporate session exploring how employee well-being can support focus, energy and productivity.
+                                    </p>
+                                </div>
+
+                                <!-- Highlight 2 -->
+                                <div class="profile-highlight-card">
+                                    <h5 class="profile-highlight-title">Freshers’ Orientation</h5>
+                                    <span class="profile-highlight-org"><i class="bi bi-mortarboard"></i> Engineering College, Palakkad, Kerala</span>
+                                    <p class="profile-highlight-desc">
+                                        A practical session for incoming students. Participants described the content as insightful and helpful, highlighting perspectives they had not previously considered.
+                                    </p>
+                                </div>
+
+                                <!-- Highlight 3 -->
+                                <div class="profile-highlight-card">
+                                    <h5 class="profile-highlight-title">Emotional Intelligence</h5>
+                                    <span class="profile-highlight-org"><i class="bi bi-people"></i> Trainers’ Development Session</span>
+                                    <p class="profile-highlight-desc">
+                                        An engaging learning session for a group of trainers, focused on building awareness and applying emotional intelligence in training and professional interactions.
+                                    </p>
+                                </div>
+
+                                <!-- Highlight 4 -->
+                                <div class="profile-highlight-card">
+                                    <h5 class="profile-highlight-title">Mindset Mastery</h5>
+                                    <span class="profile-highlight-org"><i class="bi bi-lightbulb"></i> Trainers’ Development Session</span>
+                                    <p class="profile-highlight-desc">
+                                        A session for trainers exploring mindset, self-awareness and the role of empowering perspectives in personal and professional growth.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ==============================================================
+                         SECTION 06 — FINAL CALL TO ACTION
+                         ============================================================== -->
+                    <div class="profile-clarity-section mb-4" id="lets-work-together">
+                        <h2 class="profile-section-heading">
+                            Let’s Work <em>Together</em>
+                        </h2>
+                        <p class="profile-clarity-desc">
+                            Whether you are seeking personal emotional wellness support or looking to strengthen the capabilities and well-being of your people, let’s explore how we can work together.
+                        </p>
+                        <div class="profile-clarity-actions">
+                            <?php
+                                $btn_text  = 'Book a Coaching Consultation';
+                                $btn_url   = $whatsapp_url_coaching;
+                                $btn_class = 'Btn-Profile-Primary';
+                                $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                                include __DIR__ . '/common/button.php';
+                            ?>
+                            <?php
+                                $btn_text  = 'Schedule Training Discussion';
+                                $btn_url   = 'mailto:' . htmlspecialchars($pro_email) . '?subject=' . rawurlencode('Training Needs Discussion - Sreeparvathy C M');
+                                $btn_class = 'Btn-Profile-Secondary';
+                                $btn_attr  = 'title="Email for Organisational Training Discussion"';
+                                include __DIR__ . '/common/button.php';
+                            ?>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Discreet Profile Callout -->
+                    <div class="profile-linkedin-callout">
+                        <div class="profile-linkedin-text-wrap">
+                            <i class="bi bi-linkedin profile-linkedin-icon"></i>
+                            <p class="profile-linkedin-note">
+                                For my detailed professional background, experience and credentials, connect with me on LinkedIn.
+                            </p>
+                        </div>
+                        <a href="<?= htmlspecialchars($linkedin_url) ?>" class="profile-linkedin-link" target="_blank" rel="noopener noreferrer">
+                            <span>View LinkedIn Profile</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
 
                 </div>
@@ -320,30 +471,67 @@ include __DIR__ . '/common/header.php';
                         <div class="profile-portrait-card">
                             <div class="profile-portrait-frame">
                                 <img src="assets/images/profile/sreeparvathi.jpg" 
-                                     alt="Sreeparvathy Emotional Wellness Coach at SS Healing Rays" 
+                                     alt="Sreeparvathy C M – Trauma-Informed Wellness Coach & Educator" 
                                      class="profile-portrait-img">
-                            
                             </div>
                         </div>
 
                         <!-- Sticky Quick Actions Card -->
                         <div class="profile-sticky-actions-card">
-                            <h4 class="profile-sticky-contact-title">Start Your Healing Journey</h4>
-                            <p class="profile-sticky-contact-desc">
-                                Compassionate 1-on-1 sessions held online worldwide and in-person at our sacred sanctuary.
+                            <h4 class="profile-sticky-contact-title mt-0">Sreeparvathy C M</h4>
+                            <p class="profile-sticky-contact-desc mb-2">
+                                Trauma-Informed Wellness Coach &bull; Emotional Wellness Practitioner &bull; Educator &amp; Mentor
                             </p>
-                            <div class="profile-sticky-btn-group d-flex flex-column gap-2 mt-3">
+
+                            <!-- Profile Meta Details -->
+                            <ul class="profile-sticky-meta-list">
+                                <li class="profile-sticky-meta-item">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <a href="<?= htmlspecialchars($whatsapp_url_coaching) ?>" target="_blank" rel="noopener noreferrer">
+                                        <strong><?= htmlspecialchars($whatsapp_phone) ?></strong>
+                                    </a>
+                                </li>
+                                <li class="profile-sticky-meta-item">
+                                    <i class="bi bi-envelope"></i>
+                                    <a href="mailto:<?= htmlspecialchars($pro_email) ?>">
+                                        <?= htmlspecialchars($pro_email) ?>
+                                    </a>
+                                </li>
+                                <li class="profile-sticky-meta-item">
+                                    <i class="bi bi-linkedin"></i>
+                                    <a href="<?= htmlspecialchars($linkedin_url) ?>" target="_blank" rel="noopener noreferrer">
+                                        Connect on LinkedIn
+                                    </a>
+                                </li>
+                                <li class="profile-sticky-meta-item">
+                                    <i class="bi bi-instagram"></i>
+                                    <a href="https://www.instagram.com/heal_sreeparvathy/" target="_blank" rel="noopener noreferrer">
+                                        @heal_sreeparvathy
+                                    </a>
+                                </li>
+                                <li class="profile-sticky-meta-item">
+                                    <i class="bi bi-globe"></i>
+                                    <span>Online Worldwide | In-person / Onsite</span>
+                                </li>
+                                <li class="profile-sticky-meta-item">
+                                    <i class="bi bi-mortarboard"></i>
+                                    <span>13+ Years in Education &amp; Mentoring</span>
+                                </li>
+                            </ul>
+
+                            <div class="profile-sticky-btn-group profile-sticky-btn-row d-flex flex-row align-items-center gap-2 mt-3">
                                 <?php
-                                    $btn_text  = 'Connect on WhatsApp';
-                                    $btn_url   = $whatsapp_url;
+                                    $btn_text  = 'Book Consultation';
+                                    $btn_url   = $whatsapp_url_coaching;
                                     $btn_class = 'Btn-Profile-Sticky-WA';
-                                    $btn_attr  = 'target="_blank" rel="noopener noreferrer"';
+                                    $btn_attr  = 'target="_blank" rel="noopener noreferrer" title="Book a Coaching Consultation"';
                                     include __DIR__ . '/common/button.php';
                                 ?>
                                 <?php
-                                    $btn_text  = 'Schedule a Session';
-                                    $btn_url   = 'contact.php?practitioner=Sreeparvathy';
+                                    $btn_text  = 'Training Enquiry';
+                                    $btn_url   = 'mailto:' . htmlspecialchars($pro_email) . '?subject=' . rawurlencode('Training Needs Discussion - Sreeparvathy C M');
                                     $btn_class = 'Btn-Profile-Sticky-Enquire';
+                                    $btn_attr  = 'title="Schedule a Training Needs Discussion"';
                                     include __DIR__ . '/common/button.php';
                                 ?>
                             </div>
