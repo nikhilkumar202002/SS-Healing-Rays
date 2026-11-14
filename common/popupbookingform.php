@@ -30,6 +30,20 @@ $modal_service_categories = [
         'SPANDAN – Personal Wellness Mentoring with Sreeparvathy',
         'CHETAN – Integrated Mind, Body & Spirit Programme with Sravanti',
     ],
+    'IV. Workshops' => [
+        'Energy Routine',
+        'Energy Reset',
+        'Gratitude Journey',
+        'Breathwork',
+        'Yogic & Mind Relaxation',
+        'Reprogram with Meditation',
+        'Language of Crystals – Webinar',
+        'Loving Yourself',
+        'Mudras Workshop',
+        'Align & Manifest Programme',
+        'Abundance Programme',
+        'Colour Meditation',
+    ],
 ];
 ?>
 

@@ -219,6 +219,66 @@
     transform: rotate(45deg);
 }
 
+/* 7. Workshop Cards: Natural Width Pill Button (No Full Width) */
+.workshop-item-actions {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Btn-Workshop-Card {
+    width: fit-content !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    padding: 3px 3px 3px 20px !important;
+    height: 50px !important;
+    background-color: #ffffff !important;
+    border: 1.5px solid rgba(186, 67, 108, 0.3) !important;
+    box-shadow: 0 4px 14px rgba(17, 17, 51, 0.05);
+    border-radius: 50px !important;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Btn-Workshop-Card .text {
+    color: var(--heading-color, #111133) !important;
+    font-family: var(--brand-font-btn, 'Outfit', 'Lato', sans-serif);
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.Btn-Workshop-Card .icon-Container {
+    width: 42px !important;
+    height: 42px !important;
+    background-color: var(--secondary-color, #ba436c) !important;
+    border-radius: 50% !important;
+    border: none !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.Btn-Workshop-Card:hover {
+    border-color: var(--secondary-color, #ba436c) !important;
+    box-shadow: 0 8px 24px rgba(186, 67, 108, 0.2);
+    transform: translateY(-2px);
+}
+
+.Btn-Workshop-Card:hover .icon-Container {
+    background-color: var(--primary-color, #82387a) !important;
+    transform: rotate(45deg);
+}
+
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
