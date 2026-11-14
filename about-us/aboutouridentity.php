@@ -12,12 +12,12 @@ $identity_cta_text          = $identity_cta_text ?? 'Explore Our Services';
 $identity_cta_url           = $identity_cta_url ?? 'services';
 
 $identity_bg_img            = $identity_bg_img ?? (
-    file_exists(dirname(__DIR__) . '/assets/images/about/our-dentity.jpg')
-        ? 'assets/images/about/our-dentity.jpg'
-        : (file_exists(dirname(__DIR__) . '/assets/images/about/our-identity.jpg')
-            ? 'assets/images/about/our-identity.jpg'
-            : (file_exists(dirname(__DIR__) . '/assets/images/about/our-dentity')
-                ? 'assets/images/about/our-dentity'
+    file_exists(dirname(__DIR__) . '/assets/banner/about-banner-cta.jpg')
+        ? 'assets/banner/about-banner-cta.jpg'
+        : (file_exists(dirname(__DIR__) . '/assets/banner/about-banner-cta.jpeg')
+            ? 'assets/banner/about-banner-cta.jpeg'
+            : (file_exists(dirname(__DIR__) . '/assets/images/about/our-dentity.jpg')
+                ? 'assets/images/about/our-dentity.jpg'
                 : 'assets/images/about/phylosophy.jpg'))
 );
 ?>
