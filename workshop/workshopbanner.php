@@ -1,11 +1,17 @@
 <?php
 /**
  * Workshop Page Banner Component - SS Healing Rays
- * Exact layout as Training Page Banner with pure black linear gradient overlay (bottom to top).
+ * Exact layout as Service Page Banner with fixed background cover and subtle dark overlay.
  * Typography: Marcellus headline across two balanced lines with Playfair Display italic accents.
  */
 
-$workshop_banner_bg    = $workshop_banner_bg ?? 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.46 PM.jpeg';
+$workshop_banner_bg    = $workshop_banner_bg ?? (
+    file_exists(dirname(__DIR__) . '/assets/banner/our-service-banner.jpg') 
+        ? 'assets/banner/our-service-banner.jpg' 
+        : (file_exists(dirname(__DIR__) . '/assets/banner/banner-1.jpg') 
+            ? 'assets/banner/banner-1.jpg' 
+            : 'assets/banner/banner-1.jpeg')
+);
 $workshop_banner_desc  = $workshop_banner_desc ?? 'Join our sacred community circles, immersive breathwork journeys, energy resets, and guided meditation workshops crafted to awaken self-love, align your chakras, and manifest abundance.';
 
 // Split into two distinct lines without accidental word wrapping
@@ -20,13 +26,7 @@ if (isset($workshop_banner_title)) {
 
 ?>
 
-<section class="gallery-banner-section workshop-banner-section position-relative" id="workshopBanner" aria-label="Experiential Holistic Workshops Banner">
-    <!-- Background Image -->
-    <img src="<?= htmlspecialchars($workshop_banner_bg) ?>" 
-         alt="Experiential Holistic Workshops Banner" 
-         class="gallery-banner-bg-img workshop-banner-bg-img"
-         loading="eager">
-
+<section class="gallery-banner-section workshop-banner-section position-relative" id="workshopBanner" aria-label="Experiential Holistic Workshops Banner" style="background-image: url('<?= htmlspecialchars($workshop_banner_bg) ?>');">
     <!-- Black Linear Gradient Overlay from Bottom to Top -->
     <div class="gallery-banner-overlay workshop-banner-overlay" aria-hidden="true"></div>
 

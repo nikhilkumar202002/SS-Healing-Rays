@@ -1,11 +1,17 @@
 <?php
 /**
  * Training Page Banner Component - SS Healing Rays
- * Exact layout as Gallery Banner with pure black linear gradient overlay (bottom to top).
+ * Exact layout as Service Banner with fixed background cover and subtle dark overlay.
  * Typography: Marcellus headline across two balanced lines with Playfair Display italic accents.
  */
 
-$training_banner_bg    = $training_banner_bg ?? 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.41 PM.jpeg';
+$training_banner_bg    = $training_banner_bg ?? (
+    file_exists(dirname(__DIR__) . '/assets/banner/our-service-banner.jpg') 
+        ? 'assets/banner/our-service-banner.jpg' 
+        : (file_exists(dirname(__DIR__) . '/assets/banner/banner-1.jpg') 
+            ? 'assets/banner/banner-1.jpg' 
+            : 'assets/banner/banner-1.jpeg')
+);
 $training_banner_desc  = $training_banner_desc ?? 'Empower your healing gifts through certified training in Reiki, Crystal Therapy, Angel Healing, and transformative wellness courses guided by experienced master mentors.';
 
 // Split into two distinct lines without accidental word wrapping
@@ -20,13 +26,7 @@ if (isset($training_banner_title)) {
 
 ?>
 
-<section class="gallery-banner-section training-banner-section position-relative" id="trainingBanner" aria-label="Certified Holistic Training Banner">
-    <!-- Background Image -->
-    <img src="<?= htmlspecialchars($training_banner_bg) ?>" 
-         alt="Certified Holistic Training Banner" 
-         class="gallery-banner-bg-img training-banner-bg-img"
-         loading="eager">
-
+<section class="gallery-banner-section training-banner-section position-relative" id="trainingBanner" aria-label="Certified Holistic Training Banner" style="background-image: url('<?= htmlspecialchars($training_banner_bg) ?>');">
     <!-- Black Linear Gradient Overlay from Bottom to Top -->
     <div class="gallery-banner-overlay training-banner-overlay" aria-hidden="true"></div>
 

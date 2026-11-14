@@ -110,13 +110,13 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/servicebanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/servicebanner.css') ? filemtime(__DIR__ . '/../assets/css/servicebanner.css') : '1.2' ?>">
 
     <!-- Training Page Hero Banner Custom Styles -->
-    <link rel="stylesheet" href="assets/css/trainingbanner.css">
+    <link rel="stylesheet" href="assets/css/trainingbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/trainingbanner.css') ? filemtime(__DIR__ . '/../assets/css/trainingbanner.css') : '1.2' ?>">
 
     <!-- Workshop Page Hero Banner Custom Styles -->
-    <link rel="stylesheet" href="assets/css/workshopbanner.css">
+    <link rel="stylesheet" href="assets/css/workshopbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/workshopbanner.css') ? filemtime(__DIR__ . '/../assets/css/workshopbanner.css') : '1.2' ?>">
 
     <!-- Course Page Hero Banner Custom Styles -->
-    <link rel="stylesheet" href="assets/css/coursebanner.css">
+    <link rel="stylesheet" href="assets/css/coursebanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/coursebanner.css') ? filemtime(__DIR__ . '/../assets/css/coursebanner.css') : '1.2' ?>">
 
     <!-- Full Service Cards 3-Column Grid Styles -->
     <link rel="stylesheet" href="assets/css/servicecards.css?v=<?= file_exists(__DIR__ . '/../assets/css/servicecards.css') ? filemtime(__DIR__ . '/../assets/css/servicecards.css') : '1.2' ?>">
