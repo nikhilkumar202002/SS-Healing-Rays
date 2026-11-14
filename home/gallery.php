@@ -34,10 +34,7 @@ $gallery_row_1 = [
         'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.19 PM (1).jpeg',
         'alt'   => 'Whispers of Stillness Retreat',
     ],
-    [
-        'image' => 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.20 PM (1).jpeg',
-        'alt'   => 'Holistic Transformation Workshop',
-    ],
+    
 ];
 
 // Row 2 Gallery Items (slides in opposite direction)
@@ -96,33 +93,23 @@ $gallery_row_2 = [
                 <!-- Set A -->
                 <div class="gallery-track-group">
                     <?php foreach ($gallery_row_1 as $item): ?>
-                        <a href="ame-crystals" class="gallery-slide-card" title="Explore Sacred Gallery">
+                        <div class="gallery-slide-card">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
                                  loading="lazy">
-                            <div class="gallery-hover-overlay" aria-hidden="true">
-                                <span class="gallery-zoom-icon">
-                                    <i class="bi bi-arrows-angle-expand"></i>
-                                </span>
-                            </div>
-                        </a>
+                        </div>
                     <?php endforeach; ?>
                 </div>
                 <!-- Set B (Duplicated for 100% seamless infinite drift) -->
                 <div class="gallery-track-group" aria-hidden="true">
                     <?php foreach ($gallery_row_1 as $item): ?>
-                        <a href="ame-crystals" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
+                        <div class="gallery-slide-card">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
                                  loading="lazy">
-                            <div class="gallery-hover-overlay" aria-hidden="true">
-                                <span class="gallery-zoom-icon">
-                                    <i class="bi bi-arrows-angle-expand"></i>
-                                </span>
-                            </div>
-                        </a>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -134,33 +121,23 @@ $gallery_row_2 = [
                 <!-- Set A -->
                 <div class="gallery-track-group">
                     <?php foreach ($gallery_row_2 as $item): ?>
-                        <a href="ame-crystals" class="gallery-slide-card" title="Explore Sacred Gallery">
+                        <div class="gallery-slide-card">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
                                  loading="lazy">
-                            <div class="gallery-hover-overlay" aria-hidden="true">
-                                <span class="gallery-zoom-icon">
-                                    <i class="bi bi-arrows-angle-expand"></i>
-                                </span>
-                            </div>
-                        </a>
+                        </div>
                     <?php endforeach; ?>
                 </div>
                 <!-- Set B (Duplicated for 100% seamless infinite drift) -->
                 <div class="gallery-track-group" aria-hidden="true">
                     <?php foreach ($gallery_row_2 as $item): ?>
-                        <a href="ame-crystals" class="gallery-slide-card" tabindex="-1" title="Explore Sacred Gallery">
+                        <div class="gallery-slide-card">
                             <img src="<?= htmlspecialchars($item['image']) ?>" 
                                  alt="<?= htmlspecialchars($item['alt']) ?>" 
                                  class="gallery-slide-img" 
                                  loading="lazy">
-                            <div class="gallery-hover-overlay" aria-hidden="true">
-                                <span class="gallery-zoom-icon">
-                                    <i class="bi bi-arrows-angle-expand"></i>
-                                </span>
-                            </div>
-                        </a>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>
