@@ -50,29 +50,19 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
 ?>
 
 <!-- ==========================================================================
-     2. Philosophy & Introduction (Left Image | Right Content)
+     2. Philosophy & Introduction (Left Image Sticky | Right Content)
      ========================================================================== -->
 <section class="wellness-about-section position-relative" id="wellnessAbout" aria-label="About SHAMAA Philosophy">
     <div class="container">
-        <div class="row align-items-center g-4 g-lg-5">
+        <div class="row align-items-start g-4 g-lg-5 position-relative">
             
-            <!-- Left Image Column -->
-            <div class="col-12 col-lg-6">
-                <div class="wellness-media-frame">
+            <!-- Left Image Column (Sticky Static on Desktop while Right Content Scrolls) -->
+            <div class="col-12 col-lg-6 shamaa-sticky-media-col">
+                <div class="wellness-media-frame shamaa-sticky-frame">
                     <img src="assets/images/about/center-yoga-sanctuary.jpg" 
                          alt="SHAMAA – Sthiram Sukham Asanam Yoga Sanctuary" 
                          class="wellness-media-img"
                          loading="lazy">
-                    
-                    <div class="wellness-floating-pill">
-                        <span class="pill-icon" aria-hidden="true">
-                            <i class="bi bi-flower1"></i>
-                        </span>
-                        <div class="pill-text">
-                            <strong>Sthiram Sukham Asanam</strong>
-                            <small>Steady, Comfortable &amp; Personal</small>
-                        </div>
-                    </div>
                 </div>
             </div>
 

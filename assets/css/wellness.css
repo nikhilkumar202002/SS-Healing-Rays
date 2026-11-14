@@ -306,6 +306,28 @@
 /* --------------------------------------------------------------------------
    SHAMAA Philosophy & Three Principles Section Enhancements
    -------------------------------------------------------------------------- */
+
+/* Sticky Left-Column Media on Desktop (Left stays static while right content scrolls) */
+@media (min-width: 992px) {
+    .shamaa-sticky-media-col {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 105px !important;
+        align-self: flex-start !important;
+        z-index: 10;
+    }
+}
+
+.shamaa-sticky-frame {
+    box-shadow: 0 20px 48px -12px rgba(17, 17, 51, 0.14) !important;
+    border: 1px solid rgba(186, 67, 108, 0.16);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.shamaa-sticky-frame:hover {
+    box-shadow: 0 24px 54px -10px rgba(186, 67, 108, 0.2) !important;
+}
+
 .shamaa-philosophy-subheading {
     font-family: var(--brand-font-sans, 'Lato', sans-serif);
     font-size: 1.08rem;
