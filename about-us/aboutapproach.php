@@ -1,11 +1,4 @@
 <?php
-/**
- * ==============================================================================
- * Individual Journey Approach Section Component - SS Healing Rays (About Us Page)
- * Layout: Left Column Content (Heading + 3 Pathway Offerings) | Right Column Image (Equal Height, No Border)
- * Dedicated Stylesheet: assets/css/aboutapproach.css
- * ==============================================================================
- */
 
 $approach_title_main      = $approach_title_main ?? 'Multiple Ways to';
 $approach_title_highlight = $approach_title_highlight ?? 'Learn, Grow and Transform';

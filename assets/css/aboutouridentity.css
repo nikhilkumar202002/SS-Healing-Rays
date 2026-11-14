@@ -134,20 +134,88 @@
 /* Full-Width Description Paragraph */
 .identity-description-wrap {
     width: 100%;
-    max-width: 1080px;
+    max-width: 960px;
     margin: 0 auto;
     text-align: center;
 }
 
 .identity-description {
     font-family: var(--brand-font-sans, 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
-    font-size: clamp(1rem, 1.15vw, 1.12rem);
+    font-size: clamp(1.02rem, 1.18vw, 1.15rem);
     font-weight: 400;
-    line-height: 1.9;
+    line-height: 1.88;
     color: #36364a;
-    margin: 0 auto;
+    margin: 0 auto 1.25rem;
     letter-spacing: 0.005em;
     width: 100%;
+}
+
+.identity-description:last-child {
+    margin-bottom: 0;
+}
+
+/* Call to Action Button */
+.identity-actions {
+    margin-top: clamp(1.75rem, 2.5vw, 2.5rem);
+    position: relative;
+    z-index: 3;
+}
+
+.Btn-Identity-CTA {
+    background: #ffffff;
+    border: 1.5px solid rgba(186, 67, 108, 0.25);
+    box-shadow: 0 8px 24px -4px rgba(186, 67, 108, 0.15), 0 2px 8px rgba(17, 17, 51, 0.04);
+    border-radius: 999px;
+    padding: 6px 6px 6px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Btn-Identity-CTA .text {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(0.95rem, 1.05vw, 1.02rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--secondary-color, #ba436c);
+    transition: color 0.35s ease;
+}
+
+.Btn-Identity-CTA .icon-Container {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--secondary-color, #ba436c);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.Btn-Identity-CTA:hover {
+    transform: translateY(-3px);
+    background: var(--secondary-color, #ba436c);
+    border-color: var(--secondary-color, #ba436c);
+    box-shadow: 0 14px 32px -6px rgba(186, 67, 108, 0.32);
+}
+
+.Btn-Identity-CTA:hover .text {
+    color: #ffffff;
+}
+
+.Btn-Identity-CTA:hover .icon-Container {
+    background: #ffffff;
+    color: var(--secondary-color, #ba436c);
+    transform: scale(1.08) rotate(45deg);
+}
+
+.Btn-Identity-CTA:active {
+    transform: translateY(-1px);
 }
 
 /* Responsive Adaptations */

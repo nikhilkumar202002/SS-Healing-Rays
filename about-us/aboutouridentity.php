@@ -3,9 +3,13 @@
 $identity_heading_main      = $identity_heading_main ?? 'A Ray of Light on';
 $identity_heading_highlight = $identity_heading_highlight ?? 'Every Journey';
 
-$identity_subtitle          = $identity_subtitle ?? 'Light often reminds us of warmth, hope, and the possibility of a new beginning.';
+$identity_paragraphs        = $identity_paragraphs ?? [
+    'We believe wellbeing is not about becoming someone else. It is about understanding yourself more deeply, finding the support that feels right and creating space for growth—one step at a time.',
+    'Wherever you are in your journey, you are welcome to explore what feels right for you.',
+];
 
-$identity_description       = $identity_description ?? 'At SS Healing Rays, we want our brand to evoke that same sense of calm and possibility. The image of a gentle ray of light reflects our aspiration to create a welcoming environment where individuals can pause, reconnect with themselves, and explore their personal journeys. For us, wellbeing is not about becoming someone else. It is about developing a deeper understanding of who we are and finding space to grow with patience and compassion. This philosophy shapes the atmosphere we hope to create: one grounded in kindness, self-awareness, and the possibility of positive change.';
+$identity_cta_text          = $identity_cta_text ?? 'Explore Our Services';
+$identity_cta_url           = $identity_cta_url ?? 'services';
 
 $identity_bg_img            = $identity_bg_img ?? (
     file_exists(dirname(__DIR__) . '/assets/images/about/our-dentity.jpg')
@@ -40,17 +44,26 @@ $identity_bg_img            = $identity_bg_img ?? (
                 </span>
             </h2>
 
-            <!-- Subtitle Tagline -->
-            <p class="identity-subtitle">
-                <?= htmlspecialchars($identity_subtitle) ?>
-            </p>
-
-            <!-- Center-Aligned Full-Width Description Paragraph -->
+            <!-- Center-Aligned Full-Width Description Paragraphs -->
             <div class="identity-description-wrap">
-                <p class="identity-description">
-                    <?= htmlspecialchars($identity_description) ?>
-                </p>
+                <?php foreach ($identity_paragraphs as $para): ?>
+                    <p class="identity-description">
+                        <?= htmlspecialchars($para) ?>
+                    </p>
+                <?php endforeach; ?>
             </div>
+
+            <!-- Explore Our Services CTA Button -->
+            <?php if (!empty($identity_cta_text)): ?>
+                <div class="identity-actions mt-4 pt-1 d-flex justify-content-center">
+                    <?php
+                        $btn_text  = $identity_cta_text;
+                        $btn_url   = $identity_cta_url;
+                        $btn_class = 'Btn-Identity-CTA';
+                        include dirname(__DIR__) . '/common/button.php';
+                    ?>
+                </div>
+            <?php endif; ?>
 
         </div>
     </div>
