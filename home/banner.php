@@ -2,7 +2,7 @@
 
 $banner_slides = $banner_slides ?? [
     [
-        'image'       => 'assets/banner/banner-1.jpeg',
+        'image'       => 'assets/banner/banner-4.jpeg',
         'title'       => 'Indulge in <em>Wellness.</em><br>Reconnect with the <em>Calm Within.</em>',
         'description' => 'Heal and find balance through gentle one-to-one guidance that helps you reconnect with yourself and navigate life with greater ease and grace.',
         'btn1_text'   => 'Explore Our Services',
@@ -13,10 +13,10 @@ $banner_slides = $banner_slides ?? [
     [
         'image'       => 'assets/banner/banner-3.jpeg',
         'title'       => 'Awaken Your <em>Potential,</em><br>Embrace Mindful <em>Growth</em>',
-        'description' => 'Join empowering wellness masterclasses, guided group meditation, and certified healing courses designed to nurture deep peace and radiant vitality.',
+        'description' => 'Join empowering wellness master classes, guided group meditation and certified healing courses designed to nurture deep peace and radiant vitality.',
         'btn1_text'   => 'Join Workshop',
         'btn1_url'    => 'workshop',
-        'btn2_text'   => 'Connect with Us',
+        'btn2_text'   => 'Connect with us',
         'btn2_url'    => '#bookingModal',
     ],
 ];
