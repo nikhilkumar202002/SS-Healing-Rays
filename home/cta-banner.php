@@ -15,7 +15,7 @@ $cta_banner_title_1  = $cta_banner_title_1 ?? 'Join our';
 $cta_banner_title_2  = $cta_banner_title_2 ?? 'Healing Circle.';
 $cta_banner_title_3  = $cta_banner_title_3 ?? '';
 $cta_banner_btn_text = $cta_banner_btn_text ?? 'Join our Community';
-$cta_banner_btn_url  = $cta_banner_btn_url ?? '#bookingModal';
+$cta_banner_btn_url  = $cta_banner_btn_url ?? 'https://chat.whatsapp.com/CJpMxOezsRzAutnt2yxuAm';
 
 // Ensure both .jpg and .jpeg exist and have 0644 permissions on live server
 $banner_dir = dirname(__DIR__) . '/assets/banner';
@@ -82,7 +82,9 @@ if (!file_exists($banner_dir . '/cta-banner.jpg')) {
                     $btn_icon_bg    = '#54205f';
                     $btn_text_color = '#111133';
                     $btn_icon_color = '#ffffff';
-                    $btn_attr       = 'data-bs-toggle="modal" data-bs-target="#bookingModal" aria-haspopup="dialog"';
+                    $btn_attr       = str_starts_with($btn_url, '#') 
+                        ? 'data-bs-toggle="modal" data-bs-target="' . htmlspecialchars($btn_url) . '" aria-haspopup="dialog"' 
+                        : 'target="_blank" rel="noopener noreferrer" aria-label="' . htmlspecialchars($btn_text) . '"';
                     include dirname(__DIR__) . '/common/button.php';
                 ?>
             </div>
