@@ -15,9 +15,9 @@ $banner_slides = $banner_slides ?? [
         'title'       => 'Awaken Your <em>Potential,</em><br>Embrace Mindful <em>Growth</em>',
         'description' => 'Join empowering wellness masterclasses, guided group meditation, and certified healing courses designed to nurture deep peace and radiant vitality.',
         'btn1_text'   => 'Join Workshop',
-        'btn1_url'    => '#services',
+        'btn1_url'    => 'workshop',
         'btn2_text'   => 'Connect with Us',
-        'btn2_url'    => '#contact',
+        'btn2_url'    => '#bookingModal',
     ],
 ];
 ?>
@@ -27,12 +27,25 @@ $banner_slides = $banner_slides ?? [
     <div class="swiper hero-banner-swiper">
         <div class="swiper-wrapper">
             <?php foreach ($banner_slides as $index => $slide): ?>
+                <?php
+                    $banner_img = $slide['image'];
+                    if (!file_exists(dirname(__DIR__) . '/' . $banner_img)) {
+                        if (str_ends_with($banner_img, '.jpeg')) {
+                            $alt = substr($banner_img, 0, -5) . '.jpg';
+                            if (file_exists(dirname(__DIR__) . '/' . $alt)) $banner_img = $alt;
+                        } elseif (str_ends_with($banner_img, '.jpg')) {
+                            $alt = substr($banner_img, 0, -4) . '.jpeg';
+                            if (file_exists(dirname(__DIR__) . '/' . $alt)) $banner_img = $alt;
+                        }
+                    }
+                ?>
                 <div class="swiper-slide" data-slide-index="<?= $index ?>">
                     <!-- Background Cover Image with Ken Burns Transition -->
-                    <img src="<?= htmlspecialchars($slide['image']) ?>" 
+                    <img src="<?= htmlspecialchars($banner_img) ?>" 
                          alt="<?= strip_tags($slide['title']) ?>" 
                          class="banner-bg-img"
-                         loading="<?= $index === 0 ? 'eager' : 'lazy' ?>">
+                         loading="<?= $index === 0 ? 'eager' : 'lazy' ?>"
+                         onerror="if (!this.dataset.retried) { this.dataset.retried='1'; this.src = (this.src.indexOf('.jpeg') !== -1) ? this.src.replace('.jpeg', '.jpg') : this.src.replace('.jpg', '.jpeg'); }">
 
                     <!-- Cinematic Dark Vignette Overlay -->
                     <div class="banner-overlay" aria-hidden="true"></div>
