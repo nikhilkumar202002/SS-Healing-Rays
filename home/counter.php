@@ -1,17 +1,7 @@
 <?php
-/**
- * ==============================================================================
- * Impact & Statistics Counter Section - SS Healing Rays
- * Placed immediately after the Founders Profile / Team section
- *
- * Content:
- *   - Row 1 (3 Columns): 500+ Clients supported | 10+ Years of experience | 11+ Healing modalities
- *   - Row 2 (3 Columns): 200+ Workshops, webinars & trainings | 1:1 Personalised healing & coaching | 5 Languages for comfortable connection
- * ==============================================================================
- */
 
 $counter_rows = $counter_rows ?? [
-    // Row 1 (3 Columns)
+
     [
         [
             'value'      => '500',
@@ -32,7 +22,7 @@ $counter_rows = $counter_rows ?? [
             'label'      => 'Healing modalities',
         ],
     ],
-    // Row 2 (3 Columns)
+
     [
         [
             'value'      => '200',
