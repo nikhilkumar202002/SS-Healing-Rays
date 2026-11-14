@@ -107,7 +107,7 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/gallerybanner.css">
 
     <!-- Service Page Hero Banner Custom Styles -->
-    <link rel="stylesheet" href="assets/css/servicebanner.css">
+    <link rel="stylesheet" href="assets/css/servicebanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/servicebanner.css') ? filemtime(__DIR__ . '/../assets/css/servicebanner.css') : '1.2' ?>">
 
     <!-- Training Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/trainingbanner.css">

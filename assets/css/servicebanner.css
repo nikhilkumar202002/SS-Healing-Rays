@@ -8,26 +8,23 @@
 .service-banner-section {
     position: relative;
     width: 100%;
-    min-height: 420px;
-    height: 52vh;
-    max-height: 520px;
+    min-height: 480px;
+    height: 58vh;
+    max-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     background-color: #0b0b1a;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
-/* 1. Background Cover Image */
+/* 1. Background Cover Image (Retained for fallback / dynamic image tags) */
 .service-banner-bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
+    display: none;
 }
 
 /* 2. Black Linear Gradient Overlay from Bottom to Top */
@@ -38,10 +35,10 @@
     height: 100%;
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.82) 0%,
-        rgba(0, 0, 0, 0.52) 48%,
-        rgba(0, 0, 0, 0.22) 80%,
-        rgba(0, 0, 0, 0.08) 100%
+        rgba(11, 11, 26, 0.88) 0%,
+        rgba(11, 11, 26, 0.62) 48%,
+        rgba(11, 11, 26, 0.40) 80%,
+        rgba(11, 11, 26, 0.28) 100%
     );
     z-index: 2;
     pointer-events: none;

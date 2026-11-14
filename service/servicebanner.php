@@ -1,6 +1,12 @@
 <?php
 
-$service_banner_bg   = $service_banner_bg ?? 'assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.19 PM (1).jpeg';
+$service_banner_bg   = $service_banner_bg ?? (
+    file_exists(dirname(__DIR__) . '/assets/banner/our-service-banner.jpg') 
+        ? 'assets/banner/our-service-banner.jpg' 
+        : (file_exists(dirname(__DIR__) . '/assets/banner/banner-1.jpg') 
+            ? 'assets/banner/banner-1.jpg' 
+            : 'assets/banner/banner-1.jpeg')
+);
 $service_banner_desc = $service_banner_desc ?? 'Immerse yourself in integrative energy therapies, certified training courses, and transformative personal healing sessions tailored to restore your body, mind, and spirit.';
 
 // Split into two distinct lines without accidental word wrapping
@@ -14,13 +20,7 @@ if (isset($service_banner_title)) {
 }
 ?>
 
-<section class="service-banner-section position-relative" id="serviceBanner" aria-label="Sacred Healing Services Banner">
-    <!-- Background Image -->
-    <img src="<?= htmlspecialchars($service_banner_bg) ?>" 
-         alt="Sacred Healing Services Banner" 
-         class="service-banner-bg-img"
-         loading="eager">
-
+<section class="service-banner-section position-relative" id="serviceBanner" aria-label="Sacred Healing Services Banner" style="background-image: url('<?= htmlspecialchars($service_banner_bg) ?>');">
     <!-- Black Linear Gradient Overlay from Bottom to Top -->
     <div class="service-banner-overlay" aria-hidden="true"></div>
 
