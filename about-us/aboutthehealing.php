@@ -4,8 +4,7 @@ $about_healing_badge      = $about_healing_badge ?? 'Who We Are';
 $about_healing_title_1    = $about_healing_title_1 ?? 'More than a healing centre.';
 $about_healing_title_2    = $about_healing_title_2 ?? 'A journey of learning, transformation and shared purpose.';
 
-$about_healing_img_top    = $about_healing_img_top ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') ? 'assets/images/about/center-reiki-session.jpg' : 'assets/images/services/Reiki Healing.jpg');
-$about_healing_img_bottom = $about_healing_img_bottom ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-crystal-therapy.jpg') ? 'assets/images/about/center-crystal-therapy.jpg' : 'assets/images/services/Crystal Healing.jpg');
+$about_healing_img        = $about_healing_img ?? (file_exists(dirname(__DIR__) . '/assets/images/about/center-reiki-session.jpg') ? 'assets/images/about/center-reiki-session.jpg' : 'assets/images/services/Reiki Healing.jpg');
 
 $about_healing_paragraphs = $about_healing_paragraphs ?? [
     'Founded by <strong>Sreeparvathy CM</strong> and <strong>Sravantii Chitturi</strong>, SS Healing Rays is a holistic wellness, healing, coaching and training platform.',
@@ -33,23 +32,18 @@ $about_healing_stats = $about_healing_stats ?? [
     <div class="container">
         <div class="row align-items-stretch justify-content-center about-healing-row">
             
-            <!-- Left Column: Two Stacked Images (Top & Bottom, 2:3 Ratio, Matching Right Content) -->
+            <!-- Left Column: Single Visual Showcase Image -->
             <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-stretch">
-                <div class="about-healing-images-stack">
+                <div class="about-healing-image-wrapper">
                     <div class="about-healing-image-card">
-                        <img src="<?= htmlspecialchars($about_healing_img_top) ?>" 
+                        <img src="<?= htmlspecialchars($about_healing_img) ?>" 
                              alt="SS Healing Rays Sanctuary & Center" 
-                             loading="lazy">
-                    </div>
-                    <div class="about-healing-image-card">
-                        <img src="<?= htmlspecialchars($about_healing_img_bottom) ?>" 
-                             alt="SS Healing Rays Healing Modalities" 
                              loading="lazy">
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column: Heading & Elaborated Description (Equal 50% Column, Full Width Content) -->
+            <!-- Right Column: Heading & Content Box -->
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center justify-content-lg-start">
                 <div class="about-healing-content w-100">
                     
@@ -74,19 +68,22 @@ $about_healing_stats = $about_healing_stats ?? [
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- Trust & Impact Stats Highlight (Redesigned Minimal Pill Counters with Generous Spacing from Line) -->
+                    <!-- Trust & Impact Stats Counter (1 Row x 2 Columns) -->
                     <div class="about-healing-stats" id="aboutHealingStats">
-                        <div class="healing-stat-pills-wrap d-flex flex-wrap align-items-center gap-3">
+                        <div class="row g-3 g-sm-4 healing-stats-row">
                             <?php foreach ($about_healing_stats as $stat): ?>
-                                <div class="healing-stat-pill d-inline-flex align-items-center">
-                                    <span class="stat-pill-icon" aria-hidden="true">
-                                        <i class="bi <?= htmlspecialchars($stat['icon']) ?>"></i>
-                                    </span>
-                                    <div class="stat-number-wrap">
-                                        <span class="stat-number counter-count" data-target="<?= htmlspecialchars($stat['number']) ?>"><?= htmlspecialchars($stat['number']) ?></span><span class="stat-suffix"><?= htmlspecialchars($stat['suffix']) ?></span>
+                                <div class="col-6">
+                                    <div class="healing-stat-card">
+                                        <div class="stat-icon-wrap" aria-hidden="true">
+                                            <i class="bi <?= htmlspecialchars($stat['icon']) ?>"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <div class="stat-number-wrap">
+                                                <span class="stat-number counter-count" data-target="<?= htmlspecialchars($stat['number']) ?>"><?= htmlspecialchars($stat['number']) ?></span><span class="stat-suffix"><?= htmlspecialchars($stat['suffix']) ?></span>
+                                            </div>
+                                            <span class="stat-label"><?= htmlspecialchars($stat['label']) ?></span>
+                                        </div>
                                     </div>
-                                    <span class="stat-pill-divider" aria-hidden="true"></span>
-                                    <span class="stat-label"><?= htmlspecialchars($stat['label']) ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </div>

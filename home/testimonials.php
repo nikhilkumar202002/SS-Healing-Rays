@@ -1,24 +1,11 @@
 <?php
-/**
- * ==============================================================================
- * Testimonials Bento Grid Section - SS Healing Rays
- * ==============================================================================
- * Clean 2 Rows x 3 Columns Bento Grid:
- *   - 6 Curated Testimonial Cards (Light grey #f3f4f6, borderless, shadowless)
- *   - Centered alignment
- *   - Elements: Stars (Gold) -> Description (Lato) -> Name (Marcellus) -> Highlight
- *   - Unified brand heading at top
- * ==============================================================================
- */
 
 $testimonials_pretitle        = $testimonials_pretitle ?? 'VOICES OF TRANSFORMATION';
 $testimonials_title_1         = $testimonials_title_1 ?? 'Words of Healing,';
 $testimonials_title_2         = $testimonials_title_2 ?? 'Felt from the';
 $testimonials_title_highlight = $testimonials_title_highlight ?? 'Heart';
-
 $testimonials_grid_items = $testimonials_grid_items ?? [
-    // --- ROW 1 ---
-    // 1. Transformative story: 21-Day Reikithon (Shalini Varshne)
+
     [
         'type'        => 'testimonial',
         'stars'       => 5,
@@ -28,7 +15,6 @@ $testimonials_grid_items = $testimonials_grid_items ?? [
         'name'        => 'Shalini Varshne',
     ],
 
-    // 2. Âme Crystals highlight: Tiger’s Eye – Confidence & Career Progress (Aparna Akella)
     [
         'type'        => 'testimonial',
         'stars'       => 5,
