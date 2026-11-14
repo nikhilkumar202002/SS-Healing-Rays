@@ -22,7 +22,7 @@ healing. Also offering personal coaching and corporate training.',
 change through holistic healing, wellness and yoga.',
         'profile_url' => 'sravanti',
         'instagram'   => 'https://www.instagram.com/sravantiheals/',
-        'facebook'    => '#',
+        'facebook'    => 'https://www.facebook.com/share/1EKEVQXUJd/',
         'linkedin'    => 'https://www.linkedin.com/in/sravantichitturi',
     ],
 ];

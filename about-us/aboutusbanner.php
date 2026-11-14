@@ -10,11 +10,11 @@
 
 $about_banner_image       = $about_banner_image ?? 'assets/banner/banner-2.jpeg';
 $about_banner_title       = $about_banner_title ?? 'A Space for Growth,<br>Healing & <em>Transformation</em>';
-$about_banner_description = $about_banner_description ?? 'From personal challenges to meaningful change, we bring together knowledge, experience and personalised support to help you move forward with confidence, balance and purpose.';
-$about_banner_btn1_text   = $about_banner_btn1_text ?? 'Explore Our Services';
-$about_banner_btn1_url    = $about_banner_btn1_url ?? 'services';
-$about_banner_btn2_text   = $about_banner_btn2_text ?? 'Discover Our Story';
-$about_banner_btn2_url    = $about_banner_btn2_url ?? '#aboutCenter';
+$about_banner_description = $about_banner_description ?? 'Rooted in our own journey, SS Healing Rays brings together learning, healing and personalised support to help people move forward with greater self-awareness and confidence.';
+$about_banner_btn1_text   = $about_banner_btn1_text ?? 'Discover Our Story';
+$about_banner_btn1_url    = $about_banner_btn1_url ?? '#aboutCenter';
+$about_banner_btn2_text   = $about_banner_btn2_text ?? '';
+$about_banner_btn2_url    = $about_banner_btn2_url ?? '';
 ?>
 
 <section class="static-hero-banner position-relative" id="aboutBanner" aria-label="About Us Highlights">
