@@ -33,6 +33,7 @@
                     <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                     <a href="https://wa.me/919000606792" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 </div>
             </div>

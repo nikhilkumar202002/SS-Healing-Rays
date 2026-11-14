@@ -1,8 +1,6 @@
 <?php
 
-
-$team_pretitle        = $team_pretitle ?? 'MEET OUR TEAM';
-$team_heading         = $team_heading ?? 'Meet the <span class="title-highlight">Founders</span>';
+$team_heading         = $team_heading ?? 'Meet Our <span class="title-highlight">Team</span>';
 
 $team_members = $team_members ?? [
     [
@@ -15,6 +13,7 @@ healing. Also offering personal coaching and corporate training.',
         'instagram'   => 'https://www.instagram.com/heal_sreeparvathy/',
         'facebook'    => '#',
         'youtube'     => '#',
+        'linkedin'    => '#',
     ],
     [
         'name'        => 'Sravanti',
@@ -26,6 +25,7 @@ change through holistic healing, wellness and yoga.',
         'instagram'   => 'https://www.instagram.com/sravantiheals/',
         'facebook'    => '#',
         'youtube'     => '#',
+        'linkedin'    => '#',
     ],
 ];
 ?>
@@ -35,7 +35,7 @@ change through holistic healing, wellness and yoga.',
         
         <!-- 1. Section Header -->
         <div class="team-header text-center">
-            <p class="team-pretitle"><?= htmlspecialchars($team_pretitle) ?></p>
+    
             <h2 class="team-heading">
                 <?= $team_heading ?>
             </h2>
@@ -79,6 +79,9 @@ change through holistic healing, wellness and yoga.',
                                 </a>
                                 <a href="<?= htmlspecialchars($member['youtube'] ?? '#') ?>" class="profile-social-btn" aria-label="YouTube">
                                     <i class="bi bi-youtube"></i>
+                                </a>
+                                <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" class="profile-social-btn" aria-label="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
                                 </a>
                             </div>
 

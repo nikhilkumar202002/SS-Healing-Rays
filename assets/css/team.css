@@ -299,23 +299,26 @@
     .profile-actions-row {
         flex-direction: row;
         justify-content: space-between;
-        gap: 8px;
+        gap: 6px;
+    }
+    .profile-socials {
+        gap: 6px;
     }
     .Btn-Team-Profile {
-        padding: 2px 2px 2px 14px !important;
-        height: 40px !important;
+        padding: 2px 2px 2px 12px !important;
+        height: 38px !important;
         gap: 6px !important;
     }
     .Btn-Team-Profile .text {
-        font-size: 0.88rem;
+        font-size: 0.84rem;
     }
     .Btn-Team-Profile .icon-Container {
-        width: 30px !important;
-        height: 30px !important;
+        width: 28px !important;
+        height: 28px !important;
     }
     .profile-social-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 0.85rem;
+        width: 32px;
+        height: 32px;
+        font-size: 0.82rem;
     }
 }
