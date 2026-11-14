@@ -8,7 +8,15 @@
  * ==============================================================================
  */
 
-$about_banner_image       = $about_banner_image ?? 'assets/banner/banner-2.jpeg';
+$about_banner_image       = $about_banner_image ?? (
+    file_exists(dirname(__DIR__) . '/assets/banner/about-main-banner.jpg') 
+        ? 'assets/banner/about-main-banner.jpg' 
+        : (file_exists(dirname(__DIR__) . '/assets/banner/about-banner.jpg') 
+            ? 'assets/banner/about-banner.jpg' 
+            : (file_exists(dirname(__DIR__) . '/assets/banner/about-banner.jpeg') 
+                ? 'assets/banner/about-banner.jpeg' 
+                : 'assets/banner/banner-2.jpeg'))
+);
 $about_banner_title       = $about_banner_title ?? 'A Space for Growth,<br>Healing & <em>Transformation</em>';
 $about_banner_description = $about_banner_description ?? 'Rooted in our own journey, SS Healing Rays brings together learning, healing and personalised support to help people move forward with greater self-awareness and confidence.';
 $about_banner_btn1_text   = $about_banner_btn1_text ?? 'Discover Our Story';
