@@ -150,6 +150,16 @@
     flex-grow: 1;
 }
 
+.service-item-desc p {
+    margin-bottom: 0.85rem;
+    line-height: 1.68;
+    color: inherit;
+}
+
+.service-item-desc p:last-child {
+    margin-bottom: 0;
+}
+
 /* 6. Enquire Button: Main Action Button (.Btn-Container from common/button.php) */
 .service-item-actions {
     margin-top: auto;

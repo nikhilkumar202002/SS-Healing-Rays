@@ -35,67 +35,67 @@ $full_services_list = $full_services_list ?? [
     [
         'title' => 'Reiki Healing',
         'image' => resolve_service_img('assets/images/services/Reiki Healing.jpg'),
-        'desc'  => 'A deeply restorative Japanese energy therapy that channels universal life force to dissolve stagnant blocks, align chakras, and catalyze physical and emotional self-healing.',
+        'desc'  => "Reiki is a Japanese energy-healing practice that works with universal life force energy, the vital energy understood to flow through all living beings. Reiki Grandmasters Sreeparvathy and Sravanti offer personalised Reiki sessions using their training and experience, including appropriate advanced Reiki techniques.\n\nDuring a session, Reiki is channelled to support the flow and balance of energy. The practice works with the person's energy field (aura) and chakra system, helping address perceived energetic imbalances and support a greater sense of harmony, relaxation and overall well-being.",
         'url'   => 'contact.php?service=Reiki+Healing'
     ],
     [
-        'title' => 'Crystal Healing',
+        'title' => 'Crystal Healing & Crystal Spa',
         'image' => resolve_service_img('assets/images/services/Crystal Healing.jpg'),
-        'desc'  => 'Harnesses the natural vibrational resonance of pure earth crystals placed on sacred energy vortexes to cleanse auric fields, release stress, and inspire mental clarity.',
-        'url'   => 'contact.php?service=Crystal+Healing'
+        'desc'  => "Our crystal services include crystal healing, chakra-focused crystal sessions and crystal spa experiences. We select crystals according to the client's stated needs and the intention of the session, and may also curate personalised crystal sets.\n\nDuring in-person sessions, crystals may be placed on or around the body as appropriate. For online sessions, selected crystals can be couriered to the client with guidance on how to hold or place them, with distance support included where suitable. Personalised crystal grids can also be prepared and charged as part of selected services.",
+        'url'   => 'contact.php?service=Crystal+Healing+and+Crystal+Spa'
     ],
     [
         'title' => 'Angel Healing',
         'image' => resolve_service_img('assets/images/services/Angel-Healing.jpg'),
-        'desc'  => 'A gentle, high-vibrational healing modality connecting you with angelic guidance for divine protection, intuitive clarity, and profound emotional solace during life transitions.',
+        'desc'  => "Angel healing is a spiritual practice that may involve prayer, intention and guided connection with angels, archangels, guardian angels and spirit-animal symbolism. Sessions are personalised around the client's intentions and may be combined with energy-based practices.\n\nWhere appropriate, sessions may also include intuitive card-based guidance or reflective readings to help clients explore their questions, gain perspective and consider possible next steps. Cards are used as a tool for reflection and guidance, not guaranteed predictions.",
         'url'   => 'contact.php?service=Angel+Healing'
     ],
     [
-        'title' => 'Energy healing',
+        'title' => 'Energy Healing',
         'image' => resolve_service_img('assets/images/services/Energy healing.jpg'),
-        'desc'  => 'Holistic biofield realignment that clears energetic fatigue, releases heavy emotional residue, and harmonizes your physical, emotional, and spiritual layers.',
-        'url'   => 'contact.php?service=Energy+healing'
+        'desc'  => "These sessions draw on traditional energy-work concepts, including the body's meridian and chakra systems. The approach and techniques are selected according to the individual's needs and the purpose of the session.",
+        'url'   => 'contact.php?service=Energy+Healing'
     ],
     [
-        'title' => 'EFT',
+        'title' => 'EFT – Emotional Freedom Techniques',
         'image' => resolve_service_img('assets/images/services/EFT.jpg'),
-        'desc'  => 'Acupressure meridian tapping combined with mindful cognitive reframing to rapidly dissolve chronic anxiety, release trapped trauma, and rewire healthy thought patterns.',
+        'desc'  => "EFT sessions combine focused conversation with gentle tapping on selected acupressure points while bringing attention to thoughts, feelings or experiences. After understanding the client's concern through an initial conversation, we use appropriate tapping statements and guided steps to support emotional awareness and coping.",
         'url'   => 'contact.php?service=EFT'
     ],
     [
-        'title' => 'Counselling',
+        'title' => 'Counselling & Personal Guidance',
         'image' => resolve_service_img('assets/images/services/Counselling.jpg'),
-        'desc'  => 'A safe, empathetic sanctuary offering confidential dialogue, emotional grounding, and practical holistic tools to navigate relationship hurdles and personal growth.',
-        'url'   => 'contact.php?service=Counselling'
+        'desc'  => "A supportive one-to-one space to talk through personal concerns, gain perspective and explore practical next steps. As certified counsellors and EFT practitioners, we use attentive listening, relevant psychological and self-reflection tools, and a respectful, non-judgmental approach to help clients understand their concerns, consider new perspectives and identify practical next steps within the scope of our training.",
+        'url'   => 'contact.php?service=Counselling+and+Personal+Guidance'
     ],
     [
-        'title' => 'Trauma Healing',
+        'title' => 'Trauma-Informed Support',
         'image' => resolve_service_img('assets/images/services/Trauma Healing.jpg'),
-        'desc'  => 'Gentle somatic and energetic trauma recovery that supports the nervous system in discharging stored subconscious stress, restoring inner safety and lasting resilience.',
-        'url'   => 'contact.php?service=Trauma+Healing'
+        'desc'  => "A personalised, supportive process for people navigating the effects of difficult or distressing experiences. Depending on the person's needs and comfort, sessions may draw on EFT, grounding, relaxation, crystal-based practices and other complementary well-being approaches.\n\nOur Mindset Reset approach may combine EFT, grounding, relaxation, energy-based practices and guided self-reflection to help clients recognise unhelpful patterns and develop more supportive responses. The work is paced collaboratively according to individual comfort and remains complementary to, not a replacement for, appropriate trauma-focused mental-health care.",
+        'url'   => 'contact.php?service=Trauma-Informed+Support'
     ],
     [
         'title' => 'Personal Transformation Healing',
         'image' => resolve_service_img('assets/images/services/Personal Transformation.jpg'),
-        'desc'  => 'An immersive, multi-layered journey addressing root subconscious patterns, unlocking emotional freedom, and empowering you to step boldly into your soul purpose.',
+        'desc'  => "A tailored series of sessions for individuals who want to work on recurring personal challenges, strengthen self-awareness or move towards a meaningful personal goal. After a clarity conversation, we identify an appropriate combination of modalities and agree on a personalised approach.\n\nThe programme may combine more than one healing modality and focuses on building self-awareness, resilience and a constructive mindset, with agreed steps and continued guidance rather than a fixed sequence of techniques.",
         'url'   => 'contact.php?service=Personal+Transformation+Healing'
     ],
     [
-        'title' => 'Meditations',
+        'title' => 'Guided Meditation & Alpha Meditation',
         'image' => resolve_service_img('assets/images/services/Guided Meditation.jpg'),
-        'desc'  => 'Soulful mindfulness journeys, conscious pranayama breathwork, and guided visualization designed to quiet mental chatter, expand awareness, and ground profound inner peace.',
-        'url'   => 'contact.php?service=Meditations'
+        'desc'  => "Guided meditation sessions include practices for relaxation, focus, self-awareness and inner reflection. Depending on the session, themes may draw on the five elements, nature, visualisation, deep relaxation or alpha meditation.\n\nWe offer one-to-one meditation guidance because not every style of meditation suits every person. After understanding the client's needs, comfort and experience, we suggest an appropriate practice and adapt it to the individual.",
+        'url'   => 'contact.php?service=Guided+Meditation+and+Alpha+Meditation'
     ],
     [
-        'title' => 'Tarot Card reading',
+        'title' => 'Tarot Reading',
         'image' => resolve_service_img('assets/images/services/Tarot Card Reading.jpg'),
-        'desc'  => 'Intuitive symbolic tarot readings offering illuminating perspectives, spiritual alignment, and actionable clarity for your relationships, career, and soul path.',
-        'url'   => 'contact.php?service=Tarot+Card+reading'
+        'desc'  => "Tarot is offered as a reflective guidance session using selected card decks to help clients explore a question, consider different perspectives and build awareness. It is not presented as a guaranteed prediction or a substitute for professional advice in health, legal or financial matters.",
+        'url'   => 'contact.php?service=Tarot+Reading'
     ],
     [
-        'title' => 'Therapeutic Yoga',
+        'title' => 'Therapeutic Yoga & Yoga-Based Healing',
         'image' => resolve_service_img('assets/images/services/Therapeutic Yoga.jpg'),
-        'desc'  => 'Conscious, therapeutic movement combined with restorative breath integration to release somatic holding patterns, improve flexibility, and nurture embodied vitality.',
+        'desc'  => "Personalised sessions combine appropriate yogic practices with a mindful, whole-person approach. Depending on the client's needs and abilities, sessions may include therapeutic asanas, breathwork, pranayama, mudras, relaxation and meditation.\n\nYou do not need to be a yoga practitioner or feel confident with asanas to begin. If you are hesitant, inflexible or unsure about getting onto a mat, we start where you are—with comfortable seated or chair-based practices, breath awareness, mudras and relaxation. As your comfort and confidence develop, we gradually introduce suitable mat-based practices at your pace. The aim is to make yoga approachable, adaptable and supportive, not intimidating.",
         'url'   => 'contact.php?service=Therapeutic+Yoga'
     ],
 ];
@@ -115,17 +115,25 @@ $full_services_list = $full_services_list ?? [
         <div class="row service-cards-row justify-content-center">
             <?php
                 $service_slugs = [
-                    'Reiki Healing'                     => 'reiki-healing',
-                    'Crystal Healing'                   => 'crystal-healing',
-                    'Angel Healing'                     => 'angel-healing',
-                    'Energy healing'                    => 'energy-healing',
-                    'EFT'                               => 'eft',
-                    'Counselling'                       => 'counselling',
-                    'Trauma Healing'                    => 'trauma-healing',
-                    'Personal Transformation Healing'   => 'personal-transformation',
-                    'Meditations'                       => 'meditations',
-                    'Tarot Card reading'                => 'tarot-card-reading',
-                    'Therapeutic Yoga'                  => 'therapeutic-yoga',
+                    'Reiki Healing'                           => 'reiki-healing',
+                    'Crystal Healing & Crystal Spa'           => 'crystal-healing',
+                    'Crystal Healing'                         => 'crystal-healing',
+                    'Angel Healing'                           => 'angel-healing',
+                    'Energy Healing'                          => 'energy-healing',
+                    'Energy healing'                          => 'energy-healing',
+                    'EFT – Emotional Freedom Techniques'      => 'eft',
+                    'EFT'                                     => 'eft',
+                    'Counselling & Personal Guidance'         => 'counselling',
+                    'Counselling'                             => 'counselling',
+                    'Trauma-Informed Support'                 => 'trauma-healing',
+                    'Trauma Healing'                          => 'trauma-healing',
+                    'Personal Transformation Healing'         => 'personal-transformation',
+                    'Guided Meditation & Alpha Meditation'    => 'meditations',
+                    'Meditations'                             => 'meditations',
+                    'Tarot Reading'                           => 'tarot-card-reading',
+                    'Tarot Card reading'                      => 'tarot-card-reading',
+                    'Therapeutic Yoga & Yoga-Based Healing'   => 'therapeutic-yoga',
+                    'Therapeutic Yoga'                        => 'therapeutic-yoga',
                 ];
             ?>
             <?php foreach ($full_services_list as $index => $service): ?>
@@ -146,7 +154,14 @@ $full_services_list = $full_services_list ?? [
                         <div class="service-item-body">
                             <span class="service-item-number"><?= sprintf('%02d', $index + 1) ?>.</span>
                             <h3 class="service-item-title"><?= htmlspecialchars($service['title']) ?></h3>
-                            <p class="service-item-desc"><?= htmlspecialchars($service['desc']) ?></p>
+                            <div class="service-item-desc">
+                                <?php 
+                                    $paragraphs = preg_split('/\n\s*\n/', trim($service['desc']));
+                                    foreach ($paragraphs as $para): 
+                                ?>
+                                    <p><?= nl2br(htmlspecialchars(trim($para))) ?></p>
+                                <?php endforeach; ?>
+                            </div>
                             
                             <!-- Main Reusable Button Component from common/button.php -->
                             <div class="service-item-actions">
