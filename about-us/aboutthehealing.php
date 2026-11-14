@@ -87,11 +87,10 @@ $about_healing_stats = $about_healing_stats ?? [
                                         <div class="stat-info">
                                             <div class="stat-number-wrap">
                                                 <span class="stat-number counter-count" data-target="<?= htmlspecialchars($stat['number']) ?>"><?= htmlspecialchars($stat['number']) ?></span><span class="stat-suffix"><?= htmlspecialchars($stat['suffix']) ?></span>
-                                                <?php if (!empty($stat['unit'])): ?>
-                                                    <span class="stat-unit ms-1"><?= htmlspecialchars($stat['unit']) ?></span>
-                                                <?php endif; ?>
                                             </div>
-                                       
+                                            <?php if (!empty($stat['unit'])): ?>
+                                                <span class="stat-unit"><?= htmlspecialchars($stat['unit']) ?></span>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
