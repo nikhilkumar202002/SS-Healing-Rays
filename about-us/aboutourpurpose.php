@@ -21,15 +21,15 @@ $purpose_title_1         = $purpose_title_1 ?? 'From Personal Transformation';
 $purpose_title_highlight = $purpose_title_highlight ?? 'to Shared Purpose';
 $purpose_banner_img      = $purpose_banner_img ?? 'assets/banner/about-banner.jpg';
 
-$purpose_para_1 = $purpose_para_1 ?? 'Almost a decade ago, we were two working professionals trying to balance our careers, families and personal lives. Despite coming from different family backgrounds, we discovered that we were carrying remarkably similar emotional burdens. Exhaustion, lack of motivation, dissatisfaction and the constant guilt of not being able to give our best at work and home had become part of our everyday lives. Our conversations helped us realise that something needed to change.';
+$purpose_para_1 = $purpose_para_1 ?? 'Almost a decade ago, we were two working professionals trying to balance our careers, families and personal lives. Though our backgrounds were different, we recognised similar emotional struggles—exhaustion, dissatisfaction and the constant feeling of not being able to give our best at work and home.';
 
-$purpose_para_2 = $purpose_para_2 ?? 'At a time when holistic healing practices were not widely known, our search for answers led us to a teacher who introduced us to different ways of understanding and releasing emotional baggage.';
+$purpose_para_2 = $purpose_para_2 ?? 'Our search for answers led us to a teacher who introduced us to practices for understanding and releasing emotional baggage.';
 
 $purpose_quote  = $purpose_quote ?? '“You don\'t have to depend on someone else every time. Learn these practices and take responsibility for your own life.”';
 
 $purpose_quote_impact = $purpose_quote_impact ?? 'That became the beginning of our transformation.';
 
-$purpose_para_3 = $purpose_para_3 ?? 'As we continued learning and practising, our energy, productivity, relationships and overall wellbeing began to shift. The people and circumstances around us remained largely the same, but the way we experienced and responded to life changed. We realised that what was helping us could also help others.';
+$purpose_para_3 = $purpose_para_3 ?? 'As we learned and practised, the way we experienced and responded to life began to change. Our circumstances had not changed much, but our energy, relationships and sense of wellbeing did. We realised that what was helping us could also help others.';
 
 // 2-Column Story Content
 $purpose_col1_title = 'From Learning to Teaching';
