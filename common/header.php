@@ -17,70 +17,6 @@ $phone_number     = $phone_number ?? $phone_number_1;
 $phone_tel        = $phone_tel ?? $phone_tel_1;
 
 
-$services_categories = [
-    'healings' => [
-        'title'    => 'I. Healings',
-        'subtitle' => '11 Sacred Modalities',
-        'icon'     => 'bi bi-heart-pulse',
-        'url'      => 'services',
-        'items'    => [
-            ['label' => '1. Reiki Healing', 'url' => 'services#reiki-healing'],
-            ['label' => '2. Crystal Healing', 'url' => 'services#crystal-healing'],
-            ['label' => '3. Angel Healing', 'url' => 'services#angel-healing'],
-            ['label' => '4. Energy healing', 'url' => 'services#energy-healing'],
-            ['label' => '5. EFT', 'url' => 'services#eft'],
-            ['label' => '6. Counselling', 'url' => 'services#counselling'],
-            ['label' => '7. Trauma Healing', 'url' => 'services#trauma-healing'],
-            ['label' => '8. Personal Transformation Healing', 'url' => 'services#personal-transformation'],
-            ['label' => '9. Meditations', 'url' => 'services#meditations'],
-            ['label' => '10. Tarot Card reading', 'url' => 'services#tarot-card-reading'],
-            ['label' => '11. Therapeutic Yoga', 'url' => 'services#therapeutic-yoga'],
-        ]
-    ],
-    'training' => [
-        'title'    => 'II. Training',
-        'subtitle' => '4 Certified Programs',
-        'icon'     => 'bi bi-mortarboard',
-        'url'      => 'training',
-        'items'    => [
-            ['label' => '1. Reiki- Shiki Ryoho & Karuna Reiki- All levels', 'url' => 'training#program-reiki'],
-            ['label' => '2. Crystal Therapy', 'url' => 'training#program-crystal'],
-            ['label' => '3. Angel Therapy', 'url' => 'training#program-angel'],
-            ['label' => '4. EFT', 'url' => 'training#program-eft'],
-        ]
-    ],
-    'courses' => [
-        'title'    => 'III. COURSES on Wellness',
-        'subtitle' => 'Sacred Knowledge',
-        'icon'     => 'bi bi-journal-bookmark',
-        'url'      => 'course',
-        'items'    => [
-            ['label' => '1. Spandan', 'url' => 'course#course-spandan'],
-            ['label' => '2. Chetan', 'url' => 'course#course-chetan'],
-        ]
-    ],
-    'workshops' => [
-        'title'    => 'IV. Workshops',
-        'subtitle' => '12 Healing Circles',
-        'icon'     => 'bi bi-sun',
-        'url'      => 'workshop',
-        'items'    => [
-            ['label' => '1. Energy Reset', 'url' => 'workshop#workshop-energy-reset'],
-            ['label' => '2. Language of crystals', 'url' => 'workshop#workshop-language-of-crystals'],
-            ['label' => '3. Gratitude', 'url' => 'workshop#workshop-gratitude'],
-            ['label' => '4. Loving Yourself', 'url' => 'workshop#workshop-loving-yourself'],
-            ['label' => '5. Breath work', 'url' => 'workshop#workshop-breath-work'],
-            ['label' => '6. Mudras', 'url' => 'workshop#workshop-mudras'],
-            ['label' => '7. Relaxation', 'url' => 'workshop#workshop-relaxation'],
-            ['label' => '8. Money manifestation', 'url' => 'workshop#workshop-money-manifestation'],
-            ['label' => '9. Energy Routine', 'url' => 'workshop#workshop-energy-routine'],
-            ['label' => '10. Abundance program', 'url' => 'workshop#workshop-abundance-program'],
-            ['label' => '11. Reprogram with meditation', 'url' => 'workshop#workshop-reprogram-with-meditation'],
-            ['label' => '12. Colour meditation', 'url' => 'workshop#workshop-colour-meditation'],
-        ]
-    ]
-];
-
 $is_home = ($current_page === 'home');
 
 // Navigation items array (centralized & customizable per page)
@@ -94,9 +30,14 @@ $nav_items = $nav_items ?? [
         'url'   => 'aboutus',
     ],
     'services' => [
-        'label'      => 'Services',
-        'url'        => 'services',
-        'categories' => $services_categories,
+        'label'    => 'Services',
+        'url'      => 'services',
+        'children' => [
+            ['label' => 'Healings', 'url' => 'services'],
+            ['label' => 'Training', 'url' => 'training'],
+            ['label' => 'Courses on Wellness', 'url' => 'course'],
+            ['label' => 'Workshops', 'url' => 'workshop'],
+        ],
     ],
     'products' => [
         'label'    => 'Products',
@@ -240,115 +181,12 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                         <?php foreach ($nav_items as $key => $item): ?>
                             <?php 
                                 $isActive = ($current_page === $key || 
+                                            ($key === 'services' && in_array($current_page, ['services', 'service', 'training', 'course', 'courses', 'workshop', 'workshops'])) ||
                                             ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
                                             ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness'])));
-                                $hasCategories = !empty($item['categories']);
                                 $hasChildren = !empty($item['children']);
                             ?>
-                            <?php if ($hasCategories): ?>
-                                <li class="nav-item dropdown services-dropdown-item">
-                                    <a class="nav-link dropdown-toggle <?= $isActive ? 'active' : '' ?>" 
-                                       href="<?= htmlspecialchars($item['url']) ?>" 
-                                       id="servicesMegaMenuToggle"
-                                       role="button">
-                                        <span><?= htmlspecialchars($item['label']) ?></span>
-                                        <svg class="nav-arrow-icon" width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </a>
-                                    
-                                    <!-- Services Tree-by-Tree Dropdown Menu -->
-                                    <div class="dropdown-menu services-tree-dropdown shadow-lg" aria-labelledby="servicesMegaMenuToggle">
-                                        <div class="tree-menu-container">
-                                            
-                                            <!-- Main Sub-Menus List (Positioned Directly Over/Under Services) -->
-                                            <ul class="tree-main-pillars-list list-unstyled m-0 p-0">
-                                                <?php foreach ($item['categories'] as $catKey => $cat): ?>
-                                                    <li class="tree-pillar-item" data-pillar="<?= htmlspecialchars($catKey) ?>">
-                                                        
-                                                        <a href="<?= htmlspecialchars($cat['url'] ?? $item['url']) ?>" class="tree-pillar-trigger">
-                                                            <span class="tree-pillar-icon-box">
-                                                                <i class="<?= htmlspecialchars($cat['icon'] ?? 'bi bi-stars') ?>"></i>
-                                                            </span>
-                                                            <div class="tree-pillar-meta">
-                                                                <span class="tree-pillar-title"><?= htmlspecialchars($cat['title']) ?></span>
-                                                                <?php if (!empty($cat['subtitle'])): ?>
-                                                                    <span class="tree-pillar-sub"><?= htmlspecialchars($cat['subtitle']) ?></span>
-                                                                <?php endif; ?>
-                                                            </div>
-                                                            <span class="tree-pillar-chevron" aria-hidden="true">
-                                                                <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
-                                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                                                </svg>
-                                                            </span>
-                                                        </a>
-
-                                                        <!-- Tree Structure Menu Branch (Displays when hovering this sub-menu) -->
-                                                        <div class="tree-subpanel-wrap">
-                                                            <div class="tree-subpanel-inner">
-                                                                
-                                                                <!-- Branch Title Banner -->
-                                                                <div class="tree-branch-header">
-                                                                    <span class="tree-branch-pillar-name"><?= htmlspecialchars($cat['title']) ?></span>
-                                                                    <span class="tree-branch-count"><?= count($cat['items']) ?> Offerings</span>
-                                                                </div>
-
-                                                                <!-- Hierarchical Tree Branch System -->
-                                                                <div class="tree-branch-hierarchy <?= ($catKey === 'workshops') ? 'tree-multi-column' : '' ?>">
-                                                                    <div class="tree-trunk-stem" aria-hidden="true"></div>
-
-                                                                    <ul class="tree-nodes-list list-unstyled m-0 p-0">
-                                                                        <?php foreach ($cat['items'] as $sub): ?>
-                                                                            <?php
-                                                                                $raw_label = $sub['label'];
-                                                                                $sub_num   = '';
-                                                                                $sub_text  = $raw_label;
-                                                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                                                    $sub_text = $m[2];
-                                                                                }
-                                                                            ?>
-                                                                            <li class="tree-node-item">
-                                                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="tree-node-link">
-                                                                                    <span class="tree-branch-arm" aria-hidden="true"></span>
-                                                                                    <span class="tree-node-bullet" aria-hidden="true"></span>
-                                                                                    <?php if (!empty($sub_num)): ?>
-                                                                                        <span class="tree-node-num"><?= htmlspecialchars($sub_num) ?></span>
-                                                                                    <?php endif; ?>
-                                                                                    <span class="tree-node-title"><?= htmlspecialchars($sub_text) ?></span>
-                                                                                </a>
-                                                                            </li>
-                                                                        <?php endforeach; ?>
-                                                                    </ul>
-                                                                </div>
-
-                                                                <!-- Sub-branch Explore Link -->
-                                                                <div class="tree-branch-footer">
-                                                                    <a href="<?= htmlspecialchars($cat['url'] ?? $item['url']) ?>" class="tree-branch-explore-link">
-                                                                        <span>Explore <?= htmlspecialchars($cat['title']) ?></span>
-                                                                        <i class="bi bi-arrow-right"></i>
-                                                                    </a>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-
-                                            <!-- Dropdown Footer -->
-                                            <div class="tree-dropdown-footer">
-                                                <a href="services" class="tree-footer-all-link">
-                                                    <span>View All Offerings</span>
-                                                    <i class="bi bi-arrow-right"></i>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                            <?php elseif ($hasChildren): ?>
+                            <?php if ($hasChildren): ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle <?= $isActive ? 'active' : '' ?>" 
                                        href="<?= htmlspecialchars($item['url']) ?>" 
@@ -441,132 +279,11 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
             <?php foreach ($nav_items as $key => $item): ?>
                 <?php 
                     $isActive = ($current_page === $key || 
+                                ($key === 'services' && in_array($current_page, ['services', 'service', 'training', 'course', 'courses', 'workshop', 'workshops'])) ||
                                 ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
                                 ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness']))); 
                 ?>
-                <?php if (!empty($item['categories'])): ?>
-                    <li class="nav-item">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <a href="<?= htmlspecialchars($item['url']) ?>" 
-                               class="nav-link flex-grow-1 <?= $isActive ? 'active' : '' ?>">
-                                <span><?= htmlspecialchars($item['label']) ?></span>
-                            </a>
-                            <button class="btn btn-link text-muted p-2" 
-                                    type="button" 
-                                    data-bs-toggle="collapse" 
-                                    data-bs-target="#mobileServicesCollapse" 
-                                    aria-expanded="false" 
-                                    aria-controls="mobileServicesCollapse" 
-                                    aria-label="Toggle Services Menu">
-                                <svg class="mobile-nav-arrow" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <div class="collapse mobile-services-collapse" id="mobileServicesCollapse">
-                            <div class="mobile-services-body p-2 mt-1">
-                                
-                                <!-- I. Healings -->
-                                <div class="mobile-pillar-group mb-3">
-                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['healings']['title']) ?></h6>
-                                    <ul class="mobile-sublinks-list">
-                                        <?php foreach ($item['categories']['healings']['items'] as $sub): ?>
-                                            <?php
-                                                $raw_label = $sub['label'];
-                                                $sub_num   = '';
-                                                $sub_text  = $raw_label;
-                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                    $sub_text = $m[2];
-                                                }
-                                            ?>
-                                            <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
-                                                    <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                    <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-
-                                <!-- II. Training -->
-                                <div class="mobile-pillar-group mb-3">
-                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['training']['title']) ?></h6>
-                                    <ul class="mobile-sublinks-list">
-                                        <?php foreach ($item['categories']['training']['items'] as $sub): ?>
-                                            <?php
-                                                $raw_label = $sub['label'];
-                                                $sub_num   = '';
-                                                $sub_text  = $raw_label;
-                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                    $sub_text = $m[2];
-                                                }
-                                            ?>
-                                            <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
-                                                    <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                    <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-
-                                <!-- III. Courses on Wellness -->
-                                <div class="mobile-pillar-group mb-3">
-                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['courses']['title']) ?></h6>
-                                    <ul class="mobile-sublinks-list">
-                                        <?php foreach ($item['categories']['courses']['items'] as $sub): ?>
-                                            <?php
-                                                $raw_label = $sub['label'];
-                                                $sub_num   = '';
-                                                $sub_text  = $raw_label;
-                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                    $sub_text = $m[2];
-                                                }
-                                            ?>
-                                            <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
-                                                    <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                    <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-
-                                <!-- IV. Workshops -->
-                                <div class="mobile-pillar-group">
-                                    <h6 class="mobile-pillar-heading"><?= htmlspecialchars($item['categories']['workshops']['title']) ?></h6>
-                                    <ul class="mobile-sublinks-list">
-                                        <?php foreach ($item['categories']['workshops']['items'] as $sub): ?>
-                                            <?php
-                                                $raw_label = $sub['label'];
-                                                $sub_num   = '';
-                                                $sub_text  = $raw_label;
-                                                if (preg_match('/^(\d+)\.\s*(.*)$/', $raw_label, $m)) {
-                                                    $sub_num  = str_pad($m[1], 2, '0', STR_PAD_LEFT);
-                                                    $sub_text = $m[2];
-                                                }
-                                            ?>
-                                            <li>
-                                                <a href="<?= htmlspecialchars($sub['url']) ?>" class="mobile-sublink">
-                                                    <?php if (!empty($sub_num)): ?><span class="mega-num"><?= htmlspecialchars($sub_num) ?></span><?php endif; ?>
-                                                    <span class="mega-text"><?= htmlspecialchars($sub_text) ?></span>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                <?php elseif (!empty($item['children'])): ?>
+                <?php if (!empty($item['children'])): ?>
                     <li class="nav-item">
                         <div class="d-flex align-items-center justify-content-between">
                             <a href="<?= htmlspecialchars($item['url']) ?>" 
