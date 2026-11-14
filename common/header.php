@@ -122,7 +122,7 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/servicecards.css?v=<?= file_exists(__DIR__ . '/../assets/css/servicecards.css') ? filemtime(__DIR__ . '/../assets/css/servicecards.css') : '1.2' ?>">
 
     <!-- Training Programs Alternating 4-Row Section Styles -->
-    <link rel="stylesheet" href="assets/css/trainingcards.css">
+    <link rel="stylesheet" href="assets/css/trainingcards.css?v=<?= file_exists(__DIR__ . '/../assets/css/trainingcards.css') ? filemtime(__DIR__ . '/../assets/css/trainingcards.css') : '1.2' ?>">
 
     <!-- Product Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/productbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/productbanner.css') ? filemtime(__DIR__ . '/../assets/css/productbanner.css') : '2.2' ?>">

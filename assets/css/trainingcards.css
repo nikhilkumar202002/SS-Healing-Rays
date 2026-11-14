@@ -134,6 +134,16 @@
     margin-bottom: 1.75rem;
 }
 
+.training-card-desc p {
+    margin-bottom: 0.85rem;
+    line-height: 1.74;
+    color: inherit;
+}
+
+.training-card-desc p:last-child {
+    margin-bottom: 0;
+}
+
 /* 5. Key Highlights / Feature List */
 .training-highlights-list {
     display: grid;

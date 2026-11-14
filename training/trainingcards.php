@@ -32,73 +32,73 @@ $training_programs = [
         'id'          => 'reiki',
         'number'      => '01',
         'badge'       => 'Pillar I • Energy Healing Mastery',
-        'title'       => 'Reiki: Usui Shiki Ryoho &amp; Karuna Reiki – All Levels',
-        'desc'        => 'Master the sacred art of channeling universal life force energy. Our certified Reiki training encompasses both traditional Usui Shiki Ryoho and advanced Karuna Reiki. Journey through Level 1 (Self-Healing &amp; Fundamentals), Level 2 (Sacred Symbols &amp; Distance Healing), Master Level (Advanced Attunements), and Grandmaster Teacher certification. Learn sacred hand placements, Byosen energy scanning, aura clearing, and sacred symbol activations with ongoing lineage mentorship.',
+        'title'       => 'Usui Reiki &amp; Karuna Reiki Training',
+        'desc'        => 'Sreeparvathy and Sravanti are Reiki Grandmasters and offer structured Reiki training across available levels, including Usui Reiki and Karuna Reiki. The programmes guide students through Reiki principles and practice, self-practice, hands-on techniques and appropriate advanced methods.',
         'highlights'  => [
-            'Usui & Karuna Lineage Attunements',
-            'Distance & Karmic Healing Protocols',
-            'Chakra Balancing & Byosen Scanning',
-            'Full Manuals & Sacred Symbols Guide',
-            'Authorized Practitioner & Master Certificate'
+            'Guided by Reiki Grandmasters Sreeparvathy & Sravanti',
+            'Structured Reiki Training Across Available Levels',
+            'Reiki Principles, Self-Practice & Daily Discipline',
+            'Hands-On Energy Channeling Techniques',
+            'Appropriate Advanced Methods & Lineage Guidance'
         ],
         'image'       => resolve_service_img('assets/images/services/Reiki Healing.jpg'),
-        'alt'         => 'Reiki Shiki Ryoho and Karuna Reiki Training at SS Healing Rays',
-        'url'         => 'contact.php?training=Reiki+Shiki+Ryoho+Karuna+All+Levels',
-        'tag'         => 'Levels 1, 2, Master &amp; Grandmaster'
+        'alt'         => 'Usui Reiki and Karuna Reiki Training at SS Healing Rays',
+        'url'         => 'contact.php?training=Usui+Reiki+and+Karuna+Reiki+Training',
+        'tag'         => 'Usui Reiki &amp; Karuna Reiki'
     ],
     [
         'id'          => 'crystal',
         'number'      => '02',
         'badge'       => 'Pillar II • Earth Resonance &amp; Grids',
-        'title'       => 'Crystal Therapy &amp; Sacred Grid Mastery',
-        'desc'        => 'Discover the metaphysical and vibrational science of natural earth crystals, sacred geometries, and healing gemstones. Learn how to cleanse, program, and activate quartz, obsidian, and master crystals for deep energetic realignment. This comprehensive practitioner certification teaches you sacred geometric crystal grids, chakra laying protocols, pendulum radiesthesia, aura clearing, and distance crystal therapy layouts.',
+        'title'       => 'Crystal Therapy Training',
+        'desc'        => 'Crystal therapy training is offered at different levels, progressing from foundational understanding to advanced crystal knowledge and techniques. Depending on the level, students learn about crystal properties, selection and care, chakra-related applications, personal and family use, intention-setting and crystal grids.',
         'highlights'  => [
-            'Sacred Geometric Crystal Grids',
-            'Pendulum Dowsing & Chakra Scanning',
-            'Chakra Laying & Gemstone Alignment',
-            'Cleansing, Charging & Programming Protocols',
-            'Certified Crystal Practitioner Certificate'
+            'Progressive Training from Foundational to Advanced',
+            'Crystal Properties, Selection & Cleansing Care',
+            'Chakra-Related Applications & Vibrational Harmonization',
+            'Practical Techniques for Personal & Family Well-Being',
+            'Intention-Setting & Sacred Crystal Grid Creation'
         ],
         'image'       => resolve_service_img('assets/images/services/Crystal Healing.jpg'),
-        'alt'         => 'Certified Crystal Therapy Training at SS Healing Rays',
-        'url'         => 'contact.php?training=Crystal+Therapy',
-        'tag'         => 'Practitioner Certification'
+        'alt'         => 'Crystal Therapy Training at SS Healing Rays',
+        'url'         => 'contact.php?training=Crystal+Therapy+Training',
+        'tag'         => 'Progressive Training Levels'
     ],
     [
         'id'          => 'angel',
         'number'      => '03',
         'badge'       => 'Pillar III • Higher Dimensional Wisdom',
-        'title'       => 'Angel Therapy &amp; Celestial Guidance',
-        'desc'        => 'Attune your intuitive gifts to the gentle, high-vibrational guidance of the Angelic Realm, Archangels, and Divine protectors. This profound training program teaches you how to establish clear celestial channels, interpret angel numbers and signs, conduct intuitive card readings, and perform etheric cord cutting and protective shielding rituals. Learn to facilitate compassionate, heart-centered sessions that bring profound solace and spiritual alignment.',
+        'title'       => 'Angel Therapy Training',
+        'desc'        => 'Angel therapy programmes are offered at different levels to help learners explore spiritual practices involving angels, personal and guardian angels, intention and reflective guidance. Advanced learning may include introductory Tarot-reading skills and practical application, as specified for that level.',
         'highlights'  => [
-            'Archangel Invocations & Sacred Rays',
-            'Etheric Cord Cutting & Energy Cleansing',
-            'Intuitive Angel Card Reading Mastery',
-            'Aura Protection Shields & Violet Flame',
-            'Certified Angel Therapy Practitioner Diploma'
+            'Multi-Level Spiritual Exploration Programmes',
+            'Connecting with Personal & Guardian Angels',
+            'Spiritual Intention & Reflective Guidance Practices',
+            'Introductory Tarot-Reading Skills & Techniques',
+            'Practical Real-World Application for Each Level'
         ],
         'image'       => resolve_service_img('assets/images/services/Angel-Healing.jpg'),
-        'alt'         => 'Angel Therapy Certification Course at SS Healing Rays',
-        'url'         => 'contact.php?training=Angel+Therapy',
-        'tag'         => 'Intuitive Master Course'
+        'alt'         => 'Angel Therapy Training at SS Healing Rays',
+        'url'         => 'contact.php?training=Angel+Therapy+Training',
+        'tag'         => 'Includes Tarot-Reading Skills'
     ],
     [
         'id'          => 'eft',
         'number'      => '04',
         'badge'       => 'Pillar IV • Somatic Acupressure &amp; Mindset',
-        'title'       => 'EFT (Emotional Freedom Techniques)',
-        'desc'        => 'Harness the transformative power of acupressure meridian tapping combined with mindful cognitive reframing. This certified EFT course trains you to rapidly discharge stored emotional trauma, chronic anxiety, stress patterns, and limiting subconscious beliefs. Master clinical tapping sequences, 9-gamut techniques, cognitive reframing, borrowing benefits in group circles, and compassionate trauma-informed holding space.',
+        'title'       => 'EFT Training',
+        'desc'        => "EFT training introduces learners to Emotional Freedom Techniques, beginning with personal practice and self-application. Further levels develop the knowledge and practical skills needed to use EFT responsibly when supporting others, within the learner's training and professional scope.\n\nThe training helps learners build confidence in using EFT for personal practice and, with appropriate training and adherence to professional requirements, develop the skills to offer sessions independently. For some learners, this may create an opportunity to develop an additional income stream; outcomes and client demand are not guaranteed.",
         'highlights'  => [
-            'Acupressure Meridian Tapping Maps',
-            'Trauma De-escalation & Stress Relief',
-            'Subconscious Reframing & Setup Phrases',
-            'Borrowing Benefits in Group Practice',
-            'Accredited EFT Practitioner Certification'
+            'Foundations in Personal Practice & Self-Application',
+            'Knowledge & Skills to Support Others Responsibly',
+            'Confidence-Building for Independent Client Sessions',
+            'Adherence to Professional Requirements & Scope',
+            'Potential to Develop an Additional Income Stream'
         ],
         'image'       => resolve_service_img('assets/images/services/EFT.jpg'),
         'alt'         => 'EFT Emotional Freedom Techniques Training at SS Healing Rays',
-        'url'         => 'contact.php?training=EFT',
-        'tag'         => 'Clinical & Somatic Curriculum'
+        'url'         => 'contact.php?training=EFT+Training',
+        'tag'         => 'Personal &amp; Professional Scope'
     ],
 ];
 ?>
@@ -145,7 +145,14 @@ $training_programs = [
                             <h3 class="training-card-title"><?= $program['title'] ?></h3>
 
                             <!-- Description -->
-                            <p class="training-card-desc"><?= $program['desc'] ?></p>
+                            <div class="training-card-desc">
+                                <?php 
+                                    $paragraphs = preg_split('/\n\s*\n/', trim($program['desc']));
+                                    foreach ($paragraphs as $para): 
+                                ?>
+                                    <p><?= nl2br(htmlspecialchars(trim($para))) ?></p>
+                                <?php endforeach; ?>
+                            </div>
 
                             <!-- Key Highlights / Feature List -->
                             <ul class="training-highlights-list list-unstyled">
