@@ -132,151 +132,134 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
 </section>
 
 <!-- ==========================================================================
-     3. Pathways to Wellness (Core Offerings 6-Card Grid)
+     3. Therapeutic Yoga – Begin Where You Are (7-Card Grid)
      ========================================================================== -->
-<section class="wellness-offerings-section position-relative" id="wellnessOfferings" aria-label="Our Core Offerings at SHAMAA">
+<?php
+if (!function_exists('resolve_shamaa_img')) {
+    function resolve_shamaa_img($path) {
+        $root = __DIR__;
+        if (file_exists($root . '/' . $path)) {
+            return $path;
+        }
+        $dir = dirname($path);
+        $base = basename($path);
+        $candidates = [
+            $dir . '/' . str_replace(' ', '-', $base),
+            $dir . '/' . str_replace('-', ' ', $base),
+            $dir . '/' . strtolower($base),
+            $dir . '/' . str_replace('.jpg', '.jpeg', $base),
+            $dir . '/' . str_replace('.jpeg', '.jpg', $base),
+            $dir . '/' . strtolower(str_replace(' ', '-', $base)),
+        ];
+        foreach ($candidates as $cand) {
+            if (file_exists($root . '/' . $cand)) {
+                return $cand;
+            }
+        }
+        return $path;
+    }
+}
+
+$shamaa_offerings = [
+    [
+        'id'    => 'personalized-yoga',
+        'title' => 'Personalized Yoga Sessions',
+        'image' => resolve_shamaa_img('assets/images/services/Therapeutic Yoga.jpg'),
+        'desc'  => 'One-to-one sessions shaped around the participant’s needs, comfort, experience and wellness goals.',
+    ],
+    [
+        'id'    => 'group-yoga',
+        'title' => 'Group Yoga Sessions',
+        'image' => resolve_shamaa_img('assets/images/selected-gallery/Yoga session to students at college.jpg'),
+        'desc'  => 'Guided group practices that encourage consistency, shared learning and a supportive practice environment.',
+    ],
+    [
+        'id'    => 'conscious-breathwork-pranayama',
+        'title' => 'Conscious Breathwork & Pranayama',
+        'image' => resolve_shamaa_img('assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.17 PM.jpeg'),
+        'desc'  => 'Appropriate breathing practices introduced with care and adapted to the participant’s comfort and capacity.',
+    ],
+    [
+        'id'    => 'mudras',
+        'title' => 'Mudras',
+        'image' => resolve_shamaa_img('assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.20 PM.jpeg'),
+        'desc'  => 'Traditional yogic hand gestures incorporated into suitable sessions to support concentration, awareness and mindful practice.',
+    ],
+    [
+        'id'    => 'meditation-guided-relaxation',
+        'title' => 'Meditation & Guided Relaxation',
+        'image' => resolve_shamaa_img('assets/images/services/Guided Meditation.jpg'),
+        'desc'  => 'Guided practices that encourage stillness, attention and relaxation.',
+    ],
+    [
+        'id'    => 'yoga-nidra-restful-practices',
+        'title' => 'Yoga Nidra & Restful Practices',
+        'image' => resolve_shamaa_img('assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.13 PM.jpeg'),
+        'desc'  => 'Supported relaxation practices, including lying-down options when suitable.',
+    ],
+    [
+        'id'    => 'face-yoga',
+        'title' => 'Face Yoga',
+        'image' => resolve_shamaa_img('assets/images/services/Personal Transformation.jpg'),
+        'desc'  => 'Gentle facial movements and mindful techniques that can be included in a personal self-care routine.',
+    ],
+];
+?>
+<section class="wellness-offerings-section service-cards-section position-relative" id="wellnessOfferings" aria-label="Therapeutic Yoga – Begin Where You Are">
+    <!-- Anchor for hero and page links targeting #therapeuticYoga -->
+    <div id="therapeuticYoga" class="position-absolute" style="top: -95px;"></div>
+
     <div class="container">
         
         <!-- Section Header -->
-        <div class="text-center max-w-700 mx-auto mb-5">
-            <p class="wellness-pretitle">Our Sacred Offerings</p>
-            <h2 class="wellness-heading">
-                Holistic Practices Tailored to <em>Your Rhythm</em>
+        <div class="service-cards-header text-center max-w-700 mx-auto mb-5">
+            <p class="service-cards-pretitle">SHAMAA YOGIC OFFERINGS</p>
+            <h2 class="service-cards-title">
+                Therapeutic Yoga &ndash; <em>Begin Where You Are</em>
             </h2>
-            <p class="wellness-text text-muted mx-auto" style="max-width: 680px;">
-                Choose from restorative group flows, private therapeutic alignments, or specialized corporate wellness programs crafted to awaken conscious vitality.
+            <p class="service-cards-subtitle text-muted mx-auto">
+                Thoughtfully adapted sessions designed for every body and experience level&mdash;rooted in comfort, steady practice, and compassionate guidance.
             </p>
         </div>
 
-        <!-- 6 Cards Grid -->
-        <div class="row g-4 justify-content-center">
-            
-            <!-- Card 1: Therapeutic Yoga (Featured Section 3 Target) -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex" id="therapeuticYoga">
-                <div class="wellness-card w-100">
-                    <div>
-                        <div class="wellness-card-icon" aria-hidden="true">
-                            <i class="bi bi-person-arms-up"></i>
+        <!-- 7-Card Grid (3 Columns on Desktop, 2 on Tablet, 1 on Mobile) -->
+        <div class="row service-cards-row justify-content-center">
+            <?php foreach ($shamaa_offerings as $index => $offering): ?>
+                <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch mb-4" id="<?= htmlspecialchars($offering['id']) ?>">
+                    <article class="service-item-card shamaa-offering-card">
+                        
+                        <!-- Top Image -->
+                        <div class="service-item-media">
+                            <img src="<?= htmlspecialchars($offering['image']) ?>" 
+                                 alt="<?= htmlspecialchars($offering['title']) ?> at SHAMAA" 
+                                 loading="lazy">
                         </div>
-                        <h3 class="wellness-card-title">Therapeutic Yoga</h3>
-                        <p class="wellness-card-desc">
-                            Conscious asana sequences customized to alleviate chronic back stiffness, release muscular tension, and re-establish natural spinal alignment.
-                        </p>
-                    </div>
-                    <div class="pt-3 mt-3 border-top border-light-subtle d-flex justify-content-between align-items-center">
-                        <span class="small text-muted fw-semibold">Personalized / Group</span>
-                        <a href="#bookingModal" data-bs-toggle="modal" class="text-decoration-none small fw-bold" style="color: var(--secondary-color, #ba436c);">
-                            Enquire <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 2: Conscious Pranayama -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="wellness-card w-100">
-                    <div>
-                        <div class="wellness-card-icon" aria-hidden="true">
-                            <i class="bi bi-wind"></i>
+                        <!-- Card Body (Heading + Description + Action) -->
+                        <div class="service-item-body">
+                            <span class="service-item-number"><?= sprintf('%02d', $index + 1) ?>.</span>
+                            <h3 class="service-item-title"><?= htmlspecialchars($offering['title']) ?></h3>
+                            <div class="service-item-desc">
+                                <p><?= htmlspecialchars($offering['desc']) ?></p>
+                            </div>
+                            
+                            <!-- Book a Clarity Call Button -->
+                            <div class="service-item-actions mt-auto pt-2">
+                                <?php
+                                    $btn_text    = 'Book a Clarity Call';
+                                    $clean_title = htmlspecialchars(html_entity_decode(strip_tags($offering['title']), ENT_QUOTES, 'UTF-8'));
+                                    $wa_msg      = rawurlencode("Hi Sravanti, I would like to book a Clarity Call for {$clean_title} at SHAMAA.");
+                                    $btn_url     = "https://wa.me/919966010981?text={$wa_msg}";
+                                    $btn_class   = 'Btn-Card-Main w-100 justify-content-between';
+                                    $btn_attr    = 'target="_blank" rel="noopener noreferrer" title="Book a Clarity Call for ' . $clean_title . ' on WhatsApp" aria-label="Book a Clarity Call for ' . $clean_title . '"';
+                                    include __DIR__ . '/common/button.php';
+                                ?>
+                            </div>
                         </div>
-                        <h3 class="wellness-card-title">Conscious Pranayama</h3>
-                        <p class="wellness-card-desc">
-                            Sacred yogic breathwork techniques that regulate heart-rate variability, soothe an overactive nervous system, and awaken radiant life-force energy.
-                        </p>
-                    </div>
-                    <div class="pt-3 mt-3 border-top border-light-subtle d-flex justify-content-between align-items-center">
-                        <span class="small text-muted fw-semibold">Breath Mastery</span>
-                        <a href="#bookingModal" data-bs-toggle="modal" class="text-decoration-none small fw-bold" style="color: var(--secondary-color, #ba436c);">
-                            Enquire <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 3: Restorative & Yin Yoga -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="wellness-card w-100">
-                    <div>
-                        <div class="wellness-card-icon" aria-hidden="true">
-                            <i class="bi bi-moon-stars"></i>
-                        </div>
-                        <h3 class="wellness-card-title">Restorative &amp; Yin Yoga</h3>
-                        <p class="wellness-card-desc">
-                            Long-held, fully supported restorative poses using cushions and bolsters to release deep fascial holding patterns and invite restorative stillness.
-                        </p>
-                    </div>
-                    <div class="pt-3 mt-3 border-top border-light-subtle d-flex justify-content-between align-items-center">
-                        <span class="small text-muted fw-semibold">Deep Release</span>
-                        <a href="#bookingModal" data-bs-toggle="modal" class="text-decoration-none small fw-bold" style="color: var(--secondary-color, #ba436c);">
-                            Enquire <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                    </article>
                 </div>
-            </div>
-
-            <!-- Card 4: Somatic Mindfulness -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="wellness-card w-100">
-                    <div>
-                        <div class="wellness-card-icon" aria-hidden="true">
-                            <i class="bi bi-brightness-high"></i>
-                        </div>
-                        <h3 class="wellness-card-title">Somatic Mindfulness</h3>
-                        <p class="wellness-card-desc">
-                            Sensory body-scan meditations and conscious stillness practices designed to quiet chronic mental chatter and ground deep present-moment peace.
-                        </p>
-                    </div>
-                    <div class="pt-3 mt-3 border-top border-light-subtle d-flex justify-content-between align-items-center">
-                        <span class="small text-muted fw-semibold">Mind-Body Calm</span>
-                        <a href="#bookingModal" data-bs-toggle="modal" class="text-decoration-none small fw-bold" style="color: var(--secondary-color, #ba436c);">
-                            Enquire <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5: Prenatal & Gentle Care -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="wellness-card w-100">
-                    <div>
-                        <div class="wellness-card-icon" aria-hidden="true">
-                            <i class="bi bi-flower1"></i>
-                        </div>
-                        <h3 class="wellness-card-title">Gentle &amp; Nurturing Flows</h3>
-                        <p class="wellness-card-desc">
-                            Soft, supportive movement sequences tailored for individuals seeking low-impact physical care, graceful recovery, and gentle joint decompression.
-                        </p>
-                    </div>
-                    <div class="pt-3 mt-3 border-top border-light-subtle d-flex justify-content-between align-items-center">
-                        <span class="small text-muted fw-semibold">Gentle Restoration</span>
-                        <a href="#bookingModal" data-bs-toggle="modal" class="text-decoration-none small fw-bold" style="color: var(--secondary-color, #ba436c);">
-                            Enquire <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 6: Corporate Ergo-Wellness -->
-            <div class="col-12 col-md-6 col-lg-4 d-flex">
-                <div class="wellness-card w-100">
-                    <div>
-                        <div class="wellness-card-icon" aria-hidden="true">
-                            <i class="bi bi-building"></i>
-                        </div>
-                        <h3 class="wellness-card-title">Corporate Wellness</h3>
-                        <p class="wellness-card-desc">
-                            Targeted workplace posture routines, desk stretching, and guided 15-minute nervous system resets to prevent burnout and boost team focus.
-                        </p>
-                    </div>
-                    <div class="pt-3 mt-3 border-top border-light-subtle d-flex justify-content-between align-items-center">
-                        <span class="small text-muted fw-semibold">Workplace Vitality</span>
-                        <a href="#bookingModal" data-bs-toggle="modal" class="text-decoration-none small fw-bold" style="color: var(--secondary-color, #ba436c);">
-                            Enquire <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+            <?php endforeach; ?>
         </div>
 
     </div>
