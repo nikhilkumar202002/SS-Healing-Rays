@@ -102,6 +102,9 @@ $workshops_list = $workshops_list ?? [
         
         <!-- Section Header -->
         <div class="service-cards-header text-center">
+            <?php if (!empty($workshop_cards_pretitle)): ?>
+                <p class="service-cards-pretitle mb-2"><?= $workshop_cards_pretitle ?></p>
+            <?php endif; ?>
             <h2 class="service-cards-title"><?= $workshop_cards_title ?></h2>
             <?php if (!empty($workshop_cards_subtitle)): ?>
                 <p class="service-cards-subtitle mt-2"><?= htmlspecialchars($workshop_cards_subtitle) ?></p>
