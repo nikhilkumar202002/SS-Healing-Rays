@@ -3,6 +3,17 @@
    SS Healing Rays
    ========================================================================== */
 
+/* Page Wrapper Spacing (Accounts for fixed header when banner is absent) */
+.stories-page-wrapper {
+    padding-top: calc(var(--header-height, 90px) + 2rem);
+}
+
+@media (max-width: 991.98px) {
+    .stories-page-wrapper {
+        padding-top: calc(var(--header-height, 80px) + 1.25rem);
+    }
+}
+
 .stories-banner-section {
     position: relative;
     width: 100%;

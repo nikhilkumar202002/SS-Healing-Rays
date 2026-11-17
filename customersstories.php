@@ -9,45 +9,6 @@ $cta_url           = 'https://wa.me/919000606792';
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';
 
-// 2. Collect Gallery Images for Infinite Banner Carousel
-$gallery_dir = __DIR__ . '/assets/images/gallery';
-$banner_images = [];
-
-if (is_dir($gallery_dir)) {
-    $raw_files = [];
-    $all_entries = @scandir($gallery_dir);
-    if ($all_entries !== false) {
-        foreach ($all_entries as $entry) {
-            if ($entry === '.' || $entry === '..' || str_starts_with($entry, '.')) {
-                continue;
-            }
-            $ext = strtolower(pathinfo($entry, PATHINFO_EXTENSION));
-            if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
-                $raw_files[] = $gallery_dir . '/' . $entry;
-            }
-        }
-    }
-
-    if (!empty($raw_files)) {
-        natsort($raw_files);
-        // Take a diverse set of 18 images for rich visual variation
-        $sample_files = array_slice($raw_files, 0, 18);
-        foreach ($sample_files as $f) {
-            $banner_images[] = 'assets/images/gallery/' . basename($f);
-        }
-    }
-}
-
-// Fallback in case folder scan yields empty
-if (empty($banner_images)) {
-    $banner_images = [
-        'assets/banner/banner-1.jpeg',
-        'assets/banner/banner-2.jpeg',
-        'assets/banner/cta-banner.jpg',
-        'assets/banner/cta-banner-2.jpeg',
-    ];
-}
-
 $stories_grid_items = [
     // --- ROW 1 ---
     [
@@ -134,41 +95,7 @@ $stories_grid_items = [
 <main class="stories-page-wrapper">
 
     <!-- ==========================================================================
-         1. HERO BANNER: Continuous Infinite Carousel (Gallery Images, Zero Gap, Same Height)
-         ========================================================================== -->
-    <section class="stories-banner-section position-relative" id="storiesBanner" aria-label="Stories Hero Banner">
-        
-        <!-- Infinite Gallery Carousel Track (Edge-to-Edge, Gap: 0) -->
-        <div class="stories-carousel-wrapper">
-            <div class="stories-carousel-track">
-                
-                <!-- Set 1: Gallery Images -->
-                <?php foreach ($banner_images as $img_src): ?>
-                    <div class="stories-carousel-slide">
-                        <img src="<?= htmlspecialchars($img_src) ?>" 
-                             alt="SS Healing Rays Sacred Circle Experience" 
-                             class="stories-carousel-img" 
-                             loading="eager">
-                    </div>
-                <?php endforeach; ?>
-
-                <!-- Set 2: Duplicate Set for Seamless Continuous Loop -->
-                <?php foreach ($banner_images as $img_src): ?>
-                    <div class="stories-carousel-slide" aria-hidden="true">
-                        <img src="<?= htmlspecialchars($img_src) ?>" 
-                             alt="SS Healing Rays Sacred Circle Experience" 
-                             class="stories-carousel-img" 
-                             loading="lazy">
-                    </div>
-                <?php endforeach; ?>
-
-            </div>
-        </div>
-
-    </section>
-
-    <!-- ==========================================================================
-         2. TESTIMONIALS SECTION: Bento Grid Layout (Identical to Homepage Design)
+         TESTIMONIALS SECTION: Bento Grid Layout (Identical to Homepage Design)
          ========================================================================== -->
     <section class="testimonials-section position-relative" id="customerStoriesGrid" aria-label="Client Testimonials and Experiences">
         <div class="container">
