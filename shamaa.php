@@ -177,13 +177,13 @@ $shamaa_offerings = [
     [
         'id'    => 'conscious-breathwork-pranayama',
         'title' => 'Conscious Breathwork & Pranayama',
-        'image' => resolve_shamaa_img('assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.17 PM.jpeg'),
+        'image' => resolve_shamaa_img('assets/images/selected-gallery/Online yoga session international yoga day.PNG'),
         'desc'  => 'Appropriate breathing practices introduced with care and adapted to the participant’s comfort and capacity.',
     ],
     [
         'id'    => 'mudras',
         'title' => 'Mudras',
-        'image' => resolve_shamaa_img('assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.20 PM.jpeg'),
+        'image' => resolve_shamaa_img('assets/images/selected-gallery/Meditation Class in a Sunlit Hall.png'),
         'desc'  => 'Traditional yogic hand gestures incorporated into suitable sessions to support concentration, awareness and mindful practice.',
     ],
     [
@@ -195,13 +195,13 @@ $shamaa_offerings = [
     [
         'id'    => 'yoga-nidra-restful-practices',
         'title' => 'Yoga Nidra & Restful Practices',
-        'image' => resolve_shamaa_img('assets/images/gallery/WhatsApp Image 2026-10-17 at 1.22.13 PM.jpeg'),
+        'image' => resolve_shamaa_img('assets/images/selected-gallery/Screenshot_20260621_151408_Gallery.jpg'),
         'desc'  => 'Supported relaxation practices, including lying-down options when suitable.',
     ],
     [
         'id'    => 'face-yoga',
         'title' => 'Face Yoga',
-        'image' => resolve_shamaa_img('assets/images/services/Personal Transformation.jpg'),
+        'image' => resolve_shamaa_img('assets/images/selected-gallery/IMG_3736 (1).PNG'),
         'desc'  => 'Gentle facial movements and mindful techniques that can be included in a personal self-care routine.',
     ],
 ];
