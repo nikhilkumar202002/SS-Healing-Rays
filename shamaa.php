@@ -350,6 +350,8 @@ if (!function_exists('resolve_pillar_vector')) {
     function resolve_pillar_vector($slug, $num) {
         $root = __DIR__;
         $candidates = [
+            'assets/product/shamaa/pillar-cards/' . $slug . '.png',
+            'assets/product/shamaa/pillar-cards/' . $num . '.png',
             'assets/images/shamaa/' . $slug . '.png',
             'assets/images/shamaa/pillar-' . $num . '.png',
             'assets/product/shamaa/' . $slug . '.png',
@@ -373,6 +375,7 @@ $shamaa_pillars = [
         'slug'  => 'physical-awareness',
         'title' => 'Physical Awareness',
         'desc'  => 'Explore movement, mobility and strength within an appropriate range.',
+        'image' => 'assets/product/shamaa/pillar-cards/physical-awareness.png',
         'icon'  => 'bi bi-person-arms-up',
     ],
     [
@@ -380,6 +383,7 @@ $shamaa_pillars = [
         'slug'  => 'breath-awareness',
         'title' => 'Breath Awareness',
         'desc'  => 'Develop a mindful relationship with breathing through suitable guided practices.',
+        'image' => 'assets/product/shamaa/pillar-cards/breath-awareness.png',
         'icon'  => 'bi bi-wind',
     ],
     [
@@ -387,6 +391,7 @@ $shamaa_pillars = [
         'slug'  => 'emotional-mental-wellbeing',
         'title' => 'Emotional & Mental Well-being',
         'desc'  => 'Make space for relaxation and self-awareness.',
+        'image' => 'assets/product/shamaa/pillar-cards/emotional-mental-well-being.png',
         'icon'  => 'bi bi-heart-pulse',
     ],
     [
@@ -394,6 +399,7 @@ $shamaa_pillars = [
         'slug'  => 'confidence-consistency',
         'title' => 'Confidence Through Consistency',
         'desc'  => 'Build confidence through achievable steps, without comparison or pressure.',
+        'image' => 'assets/product/shamaa/pillar-cards/confidence-through-consitency.png',
         'icon'  => 'bi bi-stars',
     ],
 ];
@@ -438,7 +444,11 @@ $shamaa_pillars = [
     <!-- 4 Cards Grid (Full width across 50px section padding, no container) -->
     <div class="shamaa-transformation-grid">
         <?php foreach ($shamaa_pillars as $pillar): ?>
-            <?php $vector_img = resolve_pillar_vector($pillar['slug'], $pillar['num']); ?>
+            <?php 
+                $vector_img = (!empty($pillar['image']) && file_exists(__DIR__ . '/' . $pillar['image'])) 
+                    ? $pillar['image'] 
+                    : resolve_pillar_vector($pillar['slug'] ?? '', $pillar['num'] ?? ''); 
+            ?>
             <article class="shamaa-transformation-card">
                 <div class="shamaa-pillar-vector-wrap">
                     <?php if (!empty($vector_img)): ?>
