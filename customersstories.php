@@ -1,7 +1,7 @@
 <?php
 
-$page_title        = 'Healing Journeys – Real Stories of Transformation | SS Healing Rays';
-$page_description  = 'Inspiring real stories and testimonials from individuals who have healed from stress, anxiety, and overwhelm through Trauma-Informed Coaching, EFT, and Reiki at SS Healing Rays.';
+$page_title        = 'Customer Stories – Voices of Transformation | SS Healing Rays';
+$page_description  = 'Read all 33 authentic client stories and testimonials covering Âme Crystals, Reiki healing, EFT clarity, and SHAMAA therapeutic yoga at SS Healing Rays.';
 $current_page      = 'customer-stories';
 $cta_text          = 'Chat with us';
 $cta_url           = 'https://wa.me/919000606792';
@@ -9,93 +9,79 @@ $cta_url           = 'https://wa.me/919000606792';
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';
 
-$stories_grid_items = [
-    // --- ROW 1 ---
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'The shift I experienced during Reiki and Trauma Healing was unlike anything I had tried in years of conventional therapies. I walked in carrying profound grief, and left feeling genuinely anchored in inner serenity and light.',
-        'name'        => 'Meera Nambiar',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'Every single session feels like coming back home to my calmest, most centered self. The emotional balance and clarity I found here is irreplaceable.',
-        'name'        => 'Priya Ramanathan',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'Working with Sreeparvathy changed how I respond to stress completely. For years I was living in constant fight-or-flight; her holding space and EFT tapping gave me my peace back.',
-        'name'        => 'Ananya Sharma',
-    ],
+// 2. Load all 33 testimonials dynamically from dataset
+$dataset_file = __DIR__ . '/dataset/testimonials.json';
+$all_testimonials = [];
+if (file_exists($dataset_file)) {
+    $raw_json = file_get_contents($dataset_file);
+    $parsed   = json_decode($raw_json, true);
+    if (!empty($parsed['testimonials'])) {
+        $all_testimonials = $parsed['testimonials'];
+    }
+}
 
-    // --- ROW 2 ---
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'The Whispers of Stillness retreat gave me a quietude I hadn’t felt in a decade. Waking up without anxiety felt like a true miracle.',
-        'name'        => 'Kavitha Sundaram',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'Sravanti guided me through subconscious blockages that held my career and relationships back for years. The clarity, self-compassion, and confidence I gained are priceless.',
-        'name'        => 'Rahul Deshmukh',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'The crystal singing bowl frequencies dissolved my chronic work exhaustion immediately. It felt like an energetic reset button for body, mind, and spirit.',
-        'name'        => 'Sneha Kapur',
-    ],
+// Helper to categorize each testimonial into clean filter groups & visual badges
+function resolve_testimonial_meta(array $t): array {
+    $cat = $t['category'] ?? '';
+    
+    if (stripos($cat, 'Crystal') !== false) {
+        return [
+            'group' => 'crystals',
+            'badge' => !empty($t['crystal']) ? $t['crystal'] : 'Âme Crystals',
+            'icon'  => 'bi-gem',
+        ];
+    }
+    if (stripos($cat, 'Reiki') !== false) {
+        return [
+            'group' => 'reiki',
+            'badge' => 'Reiki Practice',
+            'icon'  => 'bi-stars',
+        ];
+    }
+    if (stripos($cat, 'Shamaa') !== false || stripos($cat, 'Yoga') !== false) {
+        return [
+            'group' => 'yoga',
+            'badge' => 'Therapeutic Yoga',
+            'icon'  => 'bi-person-arms-up',
+        ];
+    }
+    if (stripos($cat, 'EFT') !== false) {
+        return [
+            'group' => 'eft',
+            'badge' => 'EFT & Clarity',
+            'icon'  => 'bi-heart-pulse',
+        ];
+    }
+    return [
+        'group' => 'programmes',
+        'badge' => 'Holistic Programme',
+        'icon'  => 'bi-sun',
+    ];
+}
 
-    // --- ROW 3 ---
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'Chakra alignment helped release deep emotional burdens I had held onto for twenty years. I finally feel grounded, open, and physically radiant again.',
-        'name'        => 'Arvind Iyer',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => "Sravanti's therapeutic yoga and chakra healing sessions dissolved muscular holding patterns talk therapy could never touch. I feel vibrant and aligned every day.",
-        'name'        => 'Rajeshwari Patel',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'The compassionate counselling and breathwork sessions provided a true safe haven during my darkest season. Deep gratitude to the sacred healers here.',
-        'name'        => 'Deepa Menon',
-    ],
-
-    // --- ROW 4 ---
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'The angel guidance and crystal therapy created an immediate sense of divine lightness and protection. I left feeling renewed and deeply aligned with my highest self.',
-        'name'        => 'Sunita Narayanan',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'The personalized healing journey here helped me overcome intense professional burnout. I have regained my focus, vitality, and emotional peace.',
-        'name'        => 'Vikram Malhotra',
-    ],
-    [
-        'type'        => 'testimonial',
-        'stars'       => 5,
-        'description' => 'An empowering experience that blends ancient healing wisdom with grounded modern understanding. Highly recommended for anyone on a transformation path.',
-        'name'        => 'Pooja Hegde',
-    ],
+// Calculate tally counts for filter buttons
+$filter_counts = [
+    'all'        => count($all_testimonials),
+    'crystals'   => 0,
+    'reiki'      => 0,
+    'yoga'       => 0,
+    'eft'        => 0,
+    'programmes' => 0,
 ];
+
+foreach ($all_testimonials as $item) {
+    $meta = resolve_testimonial_meta($item);
+    $g = $meta['group'];
+    if (isset($filter_counts[$g])) {
+        $filter_counts[$g]++;
+    }
+}
 ?>
 
 <main class="stories-page-wrapper">
 
     <!-- ==========================================================================
-         TESTIMONIALS SECTION: Bento Grid Layout (Identical to Homepage Design)
+         TESTIMONIALS SECTION: Dynamic Masonry Layout with Interactive Filter Tabs
          ========================================================================== -->
     <section class="testimonials-section position-relative" id="customerStoriesGrid" aria-label="Client Testimonials and Experiences">
         <div class="container">
@@ -110,42 +96,94 @@ $stories_grid_items = [
                         <span class="title-highlight">Heart</span>
                     </span>
                 </h2>
+                <p class="stories-section-lead">
+                    Authentic words and heartfelt reflections from our seekers, practitioners, and crystal guardians across <?= count($all_testimonials) ?> transformative journeys.
+                </p>
             </div>
 
-            <!-- Bento Grid of Testimonials & Images (Homepage Design) -->
-            <div class="testimonials-bento-grid stories-page-grid">
-                <?php foreach ($stories_grid_items as $item): ?>
-                    <?php if ($item['type'] === 'image'): ?>
-                        <!-- Image-Only Bento Card -->
-                        <article class="bento-card bento-card-image-only">
-                            <img src="<?= htmlspecialchars($item['image']) ?>" 
-                                 alt="<?= htmlspecialchars($item['alt'] ?? 'Healing Sanctuary Experience') ?>" 
-                                 class="bento-image-fill" 
-                                 loading="lazy">
-                        </article>
-                    <?php else: ?>
-                        <!-- Testimonial Card (Stars -> Description -> Name) -->
-                        <article class="bento-card">
+            <!-- Interactive Modality Filter Tabs -->
+            <nav class="stories-filter-nav" aria-label="Filter testimonials by modality">
+                <button type="button" class="stories-filter-btn active" data-filter="all">
+                    All Stories <span class="stories-filter-count"><?= $filter_counts['all'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="crystals">
+                    <i class="bi bi-gem"></i> Âme Crystals <span class="stories-filter-count"><?= $filter_counts['crystals'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="reiki">
+                    <i class="bi bi-stars"></i> Reiki Practice & Training <span class="stories-filter-count"><?= $filter_counts['reiki'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="yoga">
+                    <i class="bi bi-person-arms-up"></i> SHAMAA Yoga <span class="stories-filter-count"><?= $filter_counts['yoga'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="eft">
+                    <i class="bi bi-heart-pulse"></i> EFT Clarity <span class="stories-filter-count"><?= $filter_counts['eft'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="programmes">
+                    <i class="bi bi-sun"></i> Holistic Programmes <span class="stories-filter-count"><?= $filter_counts['programmes'] ?></span>
+                </button>
+            </nav>
+
+            <!-- Dynamic Pure CSS Columns Masonry Wall (All 33 Testimonials from Dataset) -->
+            <div class="testimonials-masonry-wall" id="storiesMasonryWall">
+                <?php foreach ($all_testimonials as $item): ?>
+                    <?php 
+                        $meta   = resolve_testimonial_meta($item);
+                        $stars  = !empty($item['rating']) ? (int)$item['rating'] : 5;
+                        $author = !empty($item['author']) ? $item['author'] : 'Valued Seeker';
+                        $title  = !empty($item['title']) ? $item['title'] : ($item['category'] ?? 'Healing Reflection');
+                        $quote  = $item['quote'] ?? '';
+                        $guide  = $item['practitioner'] ?? '';
+                        $cryst  = $item['crystal'] ?? '';
+                    ?>
+                    <div class="masonry-item" data-group="<?= htmlspecialchars($meta['group']) ?>" data-id="<?= (int)$item['id'] ?>">
+                        <article class="masonry-testimonial-card">
                             
-                            <!-- 1. Stars (Centered, Gold) -->
-                            <div class="bento-stars" aria-label="<?= (int)$item['stars'] ?> out of 5 stars">
-                                <?php for ($i = 0; $i < (int)$item['stars']; $i++): ?>
-                                    <i class="bi bi-star-fill"></i>
-                                <?php endfor; ?>
+                            <!-- Header: Stars + Modality Badge -->
+                            <div class="masonry-card-header">
+                                <div class="masonry-stars" aria-label="<?= $stars ?> out of 5 stars">
+                                    <?php for ($s = 0; $s < $stars; $s++): ?>
+                                        <i class="bi bi-star-fill"></i>
+                                    <?php endfor; ?>
+                                </div>
+                                <span class="masonry-badge">
+                                    <i class="bi <?= htmlspecialchars($meta['icon']) ?>"></i>
+                                    <?= htmlspecialchars($meta['badge']) ?>
+                                </span>
                             </div>
 
-                            <!-- 2. Description in Lato with Inverted Commas (Centered) -->
-                            <p class="bento-description">
-                                &ldquo;<?= htmlspecialchars($item['description']) ?>&rdquo;
-                            </p>
-
-                            <!-- 3. Name in Marcellus Font (Centered) -->
-                            <h3 class="bento-name">
-                                <?= htmlspecialchars($item['name']) ?>
+                            <!-- Title / Highlight -->
+                            <h3 class="masonry-card-title">
+                                <?= htmlspecialchars($title) ?>
                             </h3>
 
+                            <!-- Authentic Quotation -->
+                            <p class="masonry-quote">
+                                &ldquo;<?= htmlspecialchars($quote) ?>&rdquo;
+                            </p>
+
+                            <!-- Card Footer: Author + Guide attribution -->
+                            <div class="masonry-card-footer">
+                                <h4 class="masonry-author">
+                                    <?= htmlspecialchars($author) ?>
+                                </h4>
+                                <div class="masonry-meta-tags">
+                                    <?php if (!empty($guide)): ?>
+                                        <span class="masonry-meta-item">
+                                            <i class="bi bi-sparkles"></i>
+                                            Guided by <?= htmlspecialchars($guide) ?>
+                                        </span>
+                                    <?php endif; ?>
+                                    <?php if (!empty($cryst) && $cryst !== $meta['badge']): ?>
+                                        <span class="masonry-meta-item">
+                                            <i class="bi bi-gem"></i>
+                                            <?= htmlspecialchars($cryst) ?>
+                                        </span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+
                         </article>
-                    <?php endif; ?>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
@@ -164,7 +202,6 @@ $stories_grid_items = [
                         $btn_class = 'Btn-Profile-Primary';
                         include __DIR__ . '/common/button.php';
                     ?>
-                    
                 </div>
             </div>
 
@@ -172,6 +209,34 @@ $stories_grid_items = [
     </section>
 
 </main>
+
+<script>
+// Interactive Client-Side Masonry Filter
+document.addEventListener('DOMContentLoaded', function () {
+    const filterBtns = document.querySelectorAll('.stories-filter-btn');
+    const masonryItems = document.querySelectorAll('.masonry-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const targetFilter = this.getAttribute('data-filter');
+
+            // Toggle active pill state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Filter items with smooth transition
+            masonryItems.forEach(item => {
+                const group = item.getAttribute('data-group');
+                if (targetFilter === 'all' || group === targetFilter) {
+                    item.classList.remove('is-hidden');
+                } else {
+                    item.classList.add('is-hidden');
+                }
+            });
+        });
+    });
+});
+</script>
 
 <?php
 // 4. Common Global Footer

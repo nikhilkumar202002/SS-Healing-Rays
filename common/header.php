@@ -112,7 +112,7 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/faq.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/profile.css?v=<?= file_exists(__DIR__ . '/../assets/css/profile.css') ? filemtime(__DIR__ . '/../assets/css/profile.css') : '1.2' ?>">
-    <link rel="stylesheet" href="assets/css/storiesbanner.css">
+    <link rel="stylesheet" href="assets/css/storiesbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/storiesbanner.css') ? filemtime(__DIR__ . '/../assets/css/storiesbanner.css') : '1.2' ?>">
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body class="<?= !empty($current_page) ? 'page-' . htmlspecialchars($current_page) : '' ?>">

@@ -179,6 +179,233 @@
     }
 }
 
+/* ==========================================================================
+   Stories Masonry Wall & Interactive Filter Tabs
+   ========================================================================== */
+
+/* 1. Subheading under Section Title */
+.stories-section-lead {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: clamp(1rem, 1.35vw, 1.15rem);
+    line-height: 1.65;
+    color: #64748b;
+    max-width: 680px;
+    margin: 0.5rem auto 2.5rem;
+}
+
+/* 2. Filter Navigation Bar */
+.stories-filter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 3.5rem;
+}
+
+.stories-filter-btn {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(17, 17, 51, 0.12);
+    background: #ffffff;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    line-height: 1.4;
+}
+
+.stories-filter-btn:hover {
+    border-color: var(--secondary-color, #ba436c);
+    color: var(--secondary-color, #ba436c);
+    background: #faf5f8;
+    transform: translateY(-1px);
+}
+
+.stories-filter-btn.active {
+    background: var(--secondary-color, #ba436c);
+    color: #ffffff;
+    border-color: var(--secondary-color, #ba436c);
+    box-shadow: 0 4px 14px rgba(186, 67, 108, 0.25);
+}
+
+.stories-filter-count {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 12px;
+    background: rgba(17, 17, 51, 0.07);
+    color: #4b5563;
+    transition: all 0.2s ease;
+}
+
+.stories-filter-btn:hover .stories-filter-count {
+    background: rgba(186, 67, 108, 0.14);
+    color: var(--secondary-color, #ba436c);
+}
+
+.stories-filter-btn.active .stories-filter-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+/* 3. Pure CSS Multi-Column Masonry Wall */
+.testimonials-masonry-wall {
+    column-count: 3;
+    column-gap: 24px;
+    width: 100%;
+}
+
+@media (max-width: 1199.98px) {
+    .testimonials-masonry-wall {
+        column-count: 2;
+        column-gap: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .testimonials-masonry-wall {
+        column-count: 1;
+        column-gap: 0;
+    }
+}
+
+/* 4. Masonry Item Wrapper */
+.masonry-item {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 24px;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.masonry-item.is-hidden {
+    display: none !important;
+}
+
+/* 5. Masonry Testimonial Card */
+.masonry-testimonial-card {
+    position: relative;
+    border-radius: 24px;
+    background-color: #f3f4f6; /* Matching clean light grey bento cards */
+    border: 1px solid rgba(17, 17, 51, 0.05);
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.masonry-testimonial-card:hover {
+    transform: translateY(-4px);
+    background-color: #edeef2;
+    box-shadow: 0 16px 32px rgba(186, 67, 108, 0.08);
+}
+
+/* Card Header: Stars + Category Pill */
+.masonry-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 1.15rem;
+    flex-wrap: wrap;
+}
+
+.masonry-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #f59e0b;
+    font-size: 1.05rem;
+}
+
+.masonry-badge {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(186, 67, 108, 0.09);
+    color: var(--secondary-color, #ba436c);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Card Title */
+.masonry-card-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.22rem;
+    font-weight: 400;
+    line-height: 1.38;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.01em;
+}
+
+/* Card Quotation */
+.masonry-quote {
+    font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
+    font-size: 1.02rem;
+    font-weight: 400;
+    line-height: 1.68;
+    color: #475569;
+    margin-bottom: 1.35rem;
+    letter-spacing: -0.005em;
+}
+
+/* Card Footer */
+.masonry-card-footer {
+    margin-top: auto;
+    padding-top: 1.15rem;
+    border-top: 1px solid rgba(17, 17, 51, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.masonry-author {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: 1.18rem;
+    font-weight: 400;
+    color: var(--secondary-color, #ba436c);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.masonry-meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin-top: 4px;
+}
+
+.masonry-meta-item {
+    font-family: var(--brand-font-sans, 'Lato', sans-serif);
+    font-size: 0.82rem;
+    color: #64748b;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.masonry-meta-item i {
+    color: var(--secondary-color, #ba436c);
+    font-size: 0.85rem;
+}
+
 /* Stories Call-To-Action Card at Bottom */
 .stories-bottom-cta {
     background: #faf5f8;
