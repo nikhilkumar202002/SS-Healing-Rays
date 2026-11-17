@@ -172,6 +172,53 @@ $shamaa_supporting_services = [
         'desc'  => 'Meditation and restful practices.',
     ],
 ];
+
+$shamaa_supporting_practices = [
+    [
+        'id'    => 'practice-personalized',
+        'title' => 'Personalized Yoga Sessions',
+        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Guided-Seated-Side-Stretch.jpg'),
+        'desc'  => 'One-to-one sessions shaped around the participant’s needs, comfort, experience and wellness goals.',
+    ],
+    [
+        'id'    => 'practice-group',
+        'title' => 'Group Yoga Sessions',
+        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Serene-Group-Yoga-Side-Stretch.jpg'),
+        'desc'  => 'Guided group practices that encourage consistency, shared learning and a supportive practice environment.',
+    ],
+    [
+        'id'    => 'practice-breathwork',
+        'title' => 'Conscious Breathwork & Pranayama',
+        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Serene-Group-Pranayama-Meditation.jpg'),
+        'desc'  => 'Appropriate breathing practices introduced with care and adapted to the participant’s comfort and capacity.',
+    ],
+    [
+        'id'    => 'practice-mudras',
+        'title' => 'Mudras',
+        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Gyan-Mudra-in-Green-Serenity.jpg'),
+        'desc'  => 'Traditional yogic hand gestures incorporated into suitable sessions to support concentration, awareness and mindful practice.',
+    ],
+    [
+        'id'    => 'practice-meditation',
+        'title' => 'Meditation & Guided Relaxation',
+        'image' => resolve_shamaa_img('assets/product/shamaa/4-5.jpg'),
+        'desc'  => 'Guided practices that encourage stillness, attention and relaxation.',
+    ],
+    [
+        'id'    => 'practice-yoga-nidra',
+        'title' => 'Yoga Nidra & Restful Practices',
+        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Peaceful-Group-Savasana-in-a-Sunlit-Studio.jpg'),
+        'desc'  => 'Supported relaxation practices, including lying-down options when suitable.',
+    ],
+    [
+        'id'    => 'practice-face-yoga',
+        'title' => 'Face Yoga',
+        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Serene-Facial-Yoga-in-a-Green-Studio.jpg'),
+        'desc'  => 'Gentle facial movements and mindful techniques that can be included in a personal self-care routine.',
+    ],
+];
+
+$shamaa_clarity_call_url = "https://wa.me/919966010981?text=" . rawurlencode('Hi Sravanti, I would like to book a Clarity Call for SHAMAA Therapeutic Yoga & Supporting Practices.');
 ?>
 <section class="wellness-offerings-section service-cards-section position-relative overflow-hidden" id="wellnessOfferings" aria-label="Therapeutic Yoga – Begin Where You Are">
 
@@ -254,6 +301,62 @@ $shamaa_supporting_services = [
                         </article>
                     </div>
                 <?php endforeach; ?>
+            </div>
+        </div>
+
+        <!-- Row 3: Supporting Practices – Smaller Horizontal Cards Carousel -->
+        <div class="shamaa-practices-carousel-wrapper mt-5 pt-4 pt-lg-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-4">
+                <div>
+                    <p class="wellness-pretitle mb-1">SUPPORTING PRACTICES</p>
+                    <h3 class="shamaa-supporting-title">Specialized Practices &amp; Techniques</h3>
+                </div>
+                <!-- Carousel Nav Arrows -->
+                <div class="shamaa-practices-nav d-none d-md-flex align-items-center gap-2 mt-3 mt-md-0">
+                    <button type="button" class="shamaa-carousel-btn shamaa-practices-prev" aria-label="Previous Practice">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <button type="button" class="shamaa-carousel-btn shamaa-practices-next" aria-label="Next Practice">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper shamaa-practices-swiper" id="shamaaPracticesSwiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($shamaa_supporting_practices as $practice): ?>
+                        <div class="swiper-slide shamaa-practice-slide">
+                            <div class="shamaa-horizontal-card">
+                                <div class="shamaa-hcard-media">
+                                    <img src="<?= htmlspecialchars($practice['image']) ?>" 
+                                         alt="<?= htmlspecialchars($practice['title']) ?>" 
+                                         class="shamaa-hcard-img" 
+                                         loading="lazy">
+                                </div>
+                                <div class="shamaa-hcard-body">
+                                    <h4 class="shamaa-hcard-title"><?= htmlspecialchars($practice['title']) ?></h4>
+                                    <p class="shamaa-hcard-desc"><?= htmlspecialchars($practice['desc']) ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <!-- Pagination Dots -->
+                <div class="swiper-pagination shamaa-practices-pagination mt-4"></div>
+            </div>
+
+            <!-- Action Button: Book a Clarity Call on WhatsApp -->
+            <div class="shamaa-practices-action text-center mt-4 pt-2">
+                <a href="<?= htmlspecialchars($shamaa_clarity_call_url) ?>" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-shamaa-clarity-call d-inline-flex align-items-center gap-2"
+                   title="Book a Clarity Call on WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>Book a Clarity Call</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
             </div>
         </div>
 
@@ -542,3 +645,48 @@ include __DIR__ . '/common/popupbookingform.php';
 include __DIR__ . '/common/serviceform.php';
 include __DIR__ . '/common/footer.php'; 
 ?>
+
+<!-- Initialize SHAMAA Supporting Practices Swiper Carousel -->
+<script>
+window.addEventListener('load', function () {
+    if (typeof Swiper !== 'undefined' && document.getElementById('shamaaPracticesSwiper')) {
+        new Swiper('#shamaaPracticesSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.shamaa-practices-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.shamaa-practices-next',
+                prevEl: '.shamaa-practices-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 18,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 22,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                }
+            }
+        });
+    }
+});
+</script>
