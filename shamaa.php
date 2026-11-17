@@ -36,14 +36,25 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
         : 'assets/banner/banner-1.jpg');
 ?>
 
+<?php
+$shamaa_about_img = 'assets/product/shamaa/Mindful-Wellness-Studio-Meditation.jpg';
+if (!file_exists(__DIR__ . '/' . $shamaa_about_img)) {
+    if (file_exists(__DIR__ . '/assets/images/about/Mindful-Wellness-Studio-Meditation.jpg')) {
+        $shamaa_about_img = 'assets/images/about/Mindful-Wellness-Studio-Meditation.jpg';
+    } else {
+        $shamaa_about_img = 'assets/images/about/center-yoga-sanctuary.jpg';
+    }
+}
+?>
+
 <section class="wellness-about-section position-relative" id="wellnessAbout" aria-label="About SHAMAA Philosophy">
     <div class="container">
         <div class="row align-items-start g-4 g-lg-5 position-relative">
             
             <div class="col-12 col-lg-6 shamaa-sticky-media-col">
                 <div class="wellness-media-frame shamaa-sticky-frame">
-                    <img src="assets/images/about/center-yoga-sanctuary.jpg" 
-                         alt="SHAMAA – Sthiram Sukham Asanam Yoga Sanctuary" 
+                    <img src="<?= htmlspecialchars($shamaa_about_img) ?>" 
+                         alt="SHAMAA – Sthiram Sukham Asanam Mindful Yoga Sanctuary" 
                          class="wellness-media-img"
                          loading="lazy">
                 </div>
@@ -56,23 +67,25 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
                 </h2>
                 
                 <p class="shamaa-philosophy-subheading mb-4">
-                    <strong>Sthiram Sukham Asanam</strong> &ndash; Steady, Comfortable and Personal.
+                    <em>Sthiram Sukham Asanam &ndash; Steady, Comfortable and Personal.</em>
                 </p>
                 
                 <p class="wellness-text">
-                    At <strong>SHAMAA</strong>, yoga begins with the individual&mdash;not with a prescribed posture. The principle of <em>Sthiram Sukham Asanam</em> guides every practice: a posture is meaningful when it is steady and comfortable for the person practising it. There is no requirement to touch the toes, sit on the floor, lift the arms overhead or perform an asana perfectly.
+                    At <strong>SHAMAA</strong>, yoga begins with individual comfort and ability, not perfect postures. Practice is gently adapted, whether seated, lying down, using a chair or on a yoga mat.
                 </p>
                 <p class="wellness-text">
-                    For someone who feels unsure about movement, practice may begin while seated or lying on a cot or bed. As confidence, comfort and ability develop, the practice may progress to a chair and, when suitable, to the yoga mat. Breathing practices, relaxation, mudras and appropriate healing techniques may be integrated according to individual needs.
+                    With mindful breathing, relaxation, mudras and suitable healing practices, each participant progresses at their own pace.
                 </p>
 
                 <div class="shamaa-principles-block my-4">
+                    <h3 class="shamaa-principles-title">Our Three Principles</h3>
+
                     <div class="shamaa-principle-item d-flex align-items-start gap-3 mb-3">
                         <span class="shamaa-principle-badge" aria-hidden="true">
                             <i class="bi bi-check2"></i>
                         </span>
                         <div class="shamaa-principle-text">
-                            <strong>Begin Where You Are</strong> &ndash; practice starts from present comfort and ability.
+                            <strong>Begin Where You Are</strong> &ndash; Start with your comfort and ability.
                         </div>
                     </div>
 
@@ -81,16 +94,16 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
                             <i class="bi bi-check2"></i>
                         </span>
                         <div class="shamaa-principle-text">
-                            <strong>Progress Without Pressure</strong> &ndash; supported cot/bed, chair and mat options are considered as appropriate.
+                            <strong>Progress Without Pressure</strong> &ndash; Explore supported and suitable movements.
                         </div>
                     </div>
 
-                    <div class="shamaa-principle-item d-flex align-items-start gap-3 mb-3">
+                    <div class="shamaa-principle-item d-flex align-items-start gap-3 mb-0">
                         <span class="shamaa-principle-badge" aria-hidden="true">
                             <i class="bi bi-check2"></i>
                         </span>
                         <div class="shamaa-principle-text">
-                            <strong>Consistency Over Perfection</strong> &ndash; regular, comfortable practice matters more than an ideal-looking posture.
+                            <strong>Consistency Over Perfection</strong> &ndash; Value regular practice over perfect postures.
                         </div>
                     </div>
                 </div>

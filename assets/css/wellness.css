@@ -1381,19 +1381,53 @@
 
 .page-shamaa #wellnessAbout .shamaa-philosophy-subheading {
     color: #1b5336 !important;
+    font-size: 1.08rem;
 }
 
+.page-shamaa #wellnessAbout .shamaa-philosophy-subheading em,
 .page-shamaa #wellnessAbout .shamaa-philosophy-subheading strong {
     color: #28724d !important;
+    font-style: italic;
+    font-weight: 600;
 }
 
 .page-shamaa #wellnessAbout .shamaa-principles-block {
+    background: #f7faf8 !important;
     border-left: 3.5px solid #28724d !important;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+}
+
+.page-shamaa #wellnessAbout .shamaa-principles-title {
+    font-family: var(--brand-font-serif, 'Playfair Display', Georgia, serif);
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: #1b5336 !important;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
 .page-shamaa #wellnessAbout .shamaa-principle-badge {
     background: linear-gradient(135deg, rgba(40, 114, 77, 0.14) 0%, rgba(55, 122, 21, 0.18) 100%) !important;
     color: #28724d !important;
+    box-shadow: none !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-principle-text strong {
+    color: #1b5336 !important;
+}
+
+.page-shamaa #wellnessAbout .wellness-media-frame {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.page-shamaa #wellnessAbout .wellness-media-img {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 24px;
 }
 
 .page-shamaa #wellnessAbout .shamaa-sticky-frame:hover {
