@@ -463,7 +463,8 @@
 .shamaa-offering-card .service-item-media {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: auto;
+    aspect-ratio: 1448 / 1086;
     overflow: hidden;
     background-color: #f8fafc;
 }
@@ -471,14 +472,15 @@
 .shamaa-offering-card .service-item-media img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1448 / 1086;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center;
     display: block;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .shamaa-offering-card:hover .service-item-media img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .shamaa-offering-card .service-item-body {
