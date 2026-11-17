@@ -442,29 +442,18 @@ $shamaa_pillars = [
     <!-- Anchor for direct deep linking -->
     <div id="transformationPillars" class="position-absolute" style="top: -95px;"></div>
 
-    <!-- Section Header (Text Left, Action Right) -->
-    <div class="shamaa-transformation-header d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-4">
-        <div class="shamaa-transformation-header-text">
-            <p class="wellness-pretitle mb-2">FOUR PILLARS OF PRACTICE</p>
-            <h2 class="shamaa-transformation-heading mb-2">
-                Enduring <em>Transformation</em>
-            </h2>
-            <p class="shamaa-transformation-subheading mb-3">
-                Building Confidence, Comfort and Consistency&mdash;One Practice at a Time.
-            </p>
-            <p class="shamaa-transformation-desc mb-0">
-                With guided, consistent practice, SHAMAA helps build confidence, awareness and a deeper connection with body, breath and mind.
-            </p>
-        </div>
-        <div class="shamaa-transformation-header-action flex-shrink-0">
-            <?php
-                $btn_text  = 'Explore the Practices';
-                $btn_url   = '#wellnessOfferings';
-                $btn_class = 'Btn-Shamaa-Approach Btn-Shamaa-Explore';
-                $btn_attr  = 'title="Explore the Practices"';
-                include __DIR__ . '/common/button.php';
-            ?>
-        </div>
+    <!-- Section Header (Centered) -->
+    <div class="shamaa-transformation-header text-center max-w-850 mx-auto mb-5">
+        <p class="wellness-pretitle mb-2">FOUR PILLARS OF PRACTICE</p>
+        <h2 class="shamaa-transformation-heading mb-2">
+            Enduring <em>Transformation</em>
+        </h2>
+        <p class="shamaa-transformation-subheading mb-3">
+            Building Confidence, Comfort and Consistency&mdash;One Practice at a Time.
+        </p>
+        <p class="shamaa-transformation-desc mx-auto mb-0">
+            With guided, consistent practice, SHAMAA helps build confidence, awareness and a deeper connection with body, breath and mind.
+        </p>
     </div>
 
     <!-- 4 Cards Grid (Full width across 50px section padding, no container) -->
@@ -472,26 +461,34 @@ $shamaa_pillars = [
         <?php foreach ($shamaa_pillars as $pillar): ?>
             <?php $vector_img = resolve_pillar_vector($pillar['slug'], $pillar['num']); ?>
             <article class="shamaa-transformation-card">
-                <div class="shamaa-pillar-card-top">
-                    <div class="shamaa-pillar-vector-wrap">
-                        <?php if (!empty($vector_img)): ?>
-                            <img src="<?= htmlspecialchars($vector_img) ?>" 
-                                 alt="<?= htmlspecialchars($pillar['title']) ?> Vector" 
-                                 class="shamaa-pillar-vector-img" 
-                                 loading="lazy">
-                        <?php else: ?>
-                            <div class="shamaa-pillar-vector-placeholder">
-                                <i class="<?= htmlspecialchars($pillar['icon']) ?>" aria-hidden="true"></i>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                    <span class="shamaa-pillar-number"><?= htmlspecialchars($pillar['num']) ?></span>
+                <div class="shamaa-pillar-vector-wrap">
+                    <?php if (!empty($vector_img)): ?>
+                        <img src="<?= htmlspecialchars($vector_img) ?>" 
+                             alt="<?= htmlspecialchars($pillar['title']) ?> Vector" 
+                             class="shamaa-pillar-vector-img" 
+                             loading="lazy">
+                    <?php else: ?>
+                        <div class="shamaa-pillar-vector-placeholder">
+                            <i class="<?= htmlspecialchars($pillar['icon']) ?>" aria-hidden="true"></i>
+                        </div>
+                    <?php endif; ?>
                 </div>
 
                 <h3 class="shamaa-transformation-card-title"><?= htmlspecialchars($pillar['title']) ?></h3>
                 <p class="shamaa-transformation-card-desc"><?= htmlspecialchars($pillar['desc']) ?></p>
             </article>
         <?php endforeach; ?>
+    </div>
+
+    <!-- Bottom Action Button (Centered below the cards) -->
+    <div class="shamaa-transformation-action text-center mt-5 pt-3 pt-lg-4">
+        <?php
+            $btn_text  = 'Explore the Practices';
+            $btn_url   = '#wellnessOfferings';
+            $btn_class = 'Btn-Shamaa-Approach Btn-Shamaa-Explore';
+            $btn_attr  = 'title="Explore the Practices"';
+            include __DIR__ . '/common/button.php';
+        ?>
     </div>
 
 </section>
