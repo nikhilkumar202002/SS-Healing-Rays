@@ -15,12 +15,12 @@ $shamaa_cta_wa_num     = '919966010981';
 $shamaa_cta_wa_msg     = rawurlencode('Hi Sravanti, I would like to book a Clarity Call for SHAMAA Therapeutic Yoga & Wellness.');
 $shamaa_cta_wa_url     = "https://wa.me/{$shamaa_cta_wa_num}?text={$shamaa_cta_wa_msg}";
 
-$shamaa_cta_bg = 'assets/banner/cta-banner.jpg';
+$shamaa_cta_bg = 'assets/product/cta-banner.jpg';
 if (!file_exists(dirname(__DIR__) . '/' . $shamaa_cta_bg)) {
-    if (file_exists(dirname(__DIR__) . '/assets/banner/cta-banner.jpeg')) {
-        $shamaa_cta_bg = 'assets/banner/cta-banner.jpeg';
-    } elseif (file_exists(dirname(__DIR__) . '/assets/banner/shamaa-banner.jpg')) {
-        $shamaa_cta_bg = 'assets/banner/shamaa-banner.jpg';
+    if (file_exists(dirname(__DIR__) . '/assets/product/shamaa/cta-banner.jpg')) {
+        $shamaa_cta_bg = 'assets/product/shamaa/cta-banner.jpg';
+    } elseif (file_exists(dirname(__DIR__) . '/assets/banner/cta-banner.jpg')) {
+        $shamaa_cta_bg = 'assets/banner/cta-banner.jpg';
     } else {
         $shamaa_cta_bg = 'assets/banner/banner-1.jpg';
     }
