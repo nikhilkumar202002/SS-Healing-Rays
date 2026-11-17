@@ -182,10 +182,24 @@ $shamaa_offerings = [
     ],
 ];
 ?>
-<section class="wellness-offerings-section service-cards-section position-relative" id="wellnessOfferings" aria-label="Therapeutic Yoga – Begin Where You Are">
+<section class="wellness-offerings-section service-cards-section position-relative overflow-hidden" id="wellnessOfferings" aria-label="Therapeutic Yoga – Begin Where You Are">
+
+    <!-- Decorative Corner Leaves -->
+    <div class="shamaa-leaf-decoration shamaa-leaf-top-left" aria-hidden="true">
+        <img src="assets/product/shamaa/leaf.png" 
+             alt="" 
+             class="shamaa-leaf-img" 
+             loading="lazy">
+    </div>
+    <div class="shamaa-leaf-decoration shamaa-leaf-bottom-right" aria-hidden="true">
+        <img src="assets/product/shamaa/leaf-2.png" 
+             alt="" 
+             class="shamaa-leaf-img" 
+             loading="lazy">
+    </div>
 
     <div id="therapeuticYoga" class="position-absolute" style="top: -95px;"></div>
-    <div class="container">
+    <div class="container position-relative" style="z-index: 2;">
         <div class="service-cards-header text-center max-w-700 mx-auto mb-5">
             <p class="service-cards-pretitle">SHAMAA YOGIC OFFERINGS</p>
             <h2 class="service-cards-title">

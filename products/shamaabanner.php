@@ -1,10 +1,9 @@
 <?php
 
-$shamaa_brand_name       = $shamaa_brand_name ?? 'SHAMAA';
 $shamaa_heading_1        = $shamaa_heading_1 ?? 'Where Yogic Wisdom';
 $shamaa_heading_2        = $shamaa_heading_2 ?? 'Meets the <em>Art of Healing.</em>';
-$shamaa_subheading       = $shamaa_subheading ?? 'Therapeutic Yoga and integrated wellness practices, thoughtfully adapted to the individual.';
-$shamaa_description      = $shamaa_description ?? 'SHAMAA brings together the wisdom of yoga and holistic healing practices to support physical, mental and emotional well-being. With Therapeutic Yoga at its heart, sessions are designed for individuals who may feel hesitant about yoga, have difficulty with certain movements or are simply unsure where to begin. Practice starts at a comfortable level and progresses at an individual pace—because yoga is not about perfect postures; it is about steady, comfortable and consistent practice.';
+
+$shamaa_description      = $shamaa_description ?? 'SHAMAA combines the wisdom of yoga and holistic practices to support physical, mental and emotional well-being. With personalized guidance and gentle progression, every individual can begin comfortably, build confidence and grow through consistent practice.';
 $shamaa_whatsapp_phone   = $shamaa_whatsapp_phone ?? '919966010981';
 $shamaa_whatsapp_text    = rawurlencode('Hi Sravanti, I would like to book a Clarity Call for SHAMAA Therapeutic Yoga & Wellness.');
 $shamaa_whatsapp_url     = "https://wa.me/{$shamaa_whatsapp_phone}?text={$shamaa_whatsapp_text}";
@@ -54,7 +53,7 @@ if (!file_exists(dirname(__DIR__) . '/' . $shamaa_logo_img)) {
                              class="ame-hero-logo-img"
                              loading="eager">
                     </div>
-                    <h2 class="ame-hero-brand-heading mb-0"><?= htmlspecialchars($shamaa_brand_name) ?></h2>
+    
                 </div>
 
                 <!-- Hero Title: Strict 2 Lines Layout -->
@@ -63,12 +62,6 @@ if (!file_exists(dirname(__DIR__) . '/' . $shamaa_logo_img)) {
                     <span class="banner-title-line"><?= $shamaa_heading_2 ?></span>
                 </h1>
 
-                <!-- Subheading (Clean text: no background, no pill border, no icon) -->
-                <?php if (!empty($shamaa_subheading)): ?>
-                    <p class="shamaa-hero-subheading mb-3 mx-auto">
-                        <?= htmlspecialchars($shamaa_subheading) ?>
-                    </p>
-                <?php endif; ?>
 
                 <!-- Story Description Paragraph -->
                 <p class="product-banner-subtitle mx-auto mb-4">
