@@ -203,6 +203,35 @@
     margin-bottom: 3.5rem;
 }
 
+/* Mobile & Tablet 1-Row Horizontal Scrolling for Filter Tabs */
+@media (max-width: 991.98px) {
+    .stories-filter-nav {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        padding: 4px 15px 12px 15px !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        margin-bottom: 2.25rem !important;
+        scrollbar-width: none !important; /* Firefox */
+        -ms-overflow-style: none !important; /* IE/Edge */
+    }
+
+    .stories-filter-nav::-webkit-scrollbar {
+        display: none !important; /* Chrome, Safari, Opera */
+    }
+
+    .stories-filter-btn {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        padding: 7px 15px !important;
+        font-size: 0.88rem !important;
+    }
+}
+
 .stories-filter-btn {
     font-family: var(--brand-font-sans, 'Lato', system-ui, sans-serif);
     font-size: 0.92rem;

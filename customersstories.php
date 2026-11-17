@@ -377,6 +377,11 @@ document.addEventListener('DOMContentLoaded', function () {
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
 
+            // On mobile, gently scroll active pill towards center of the scroll container
+            if (window.innerWidth <= 991 && typeof this.scrollIntoView === 'function') {
+                this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+
             // Pause any playing videos when switching filters
             document.querySelectorAll('.masonry-video-player').forEach(v => {
                 if (!v.paused) v.pause();
