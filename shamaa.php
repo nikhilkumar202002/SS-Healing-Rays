@@ -415,13 +415,13 @@ $shamaa_slider_images = [
             <div class="shamaa-guided-header text-center max-w-860 mx-auto mb-5">
                 <p class="wellness-pretitle mb-2">PERSONAL GUIDANCE, WHEREVER YOU ARE</p>
                 <h2 class="shamaa-guided-heading mb-2">
-                    A Guided Wellness Experience, <br class="d-none d-md-block"><em>Wherever You Are</em>
+                    A Guided <em>Wellness Experience</em>
                 </h2>
                 <p class="shamaa-guided-subheading mb-3">
-                    Personal Guidance. Meaningful Practice. Holistic Well-being.
+                    <strong>Personal Guidance. Meaningful Practice. Holistic Well-being.</strong>
                 </p>
                 <p class="shamaa-guided-desc mx-auto mb-0">
-                    SHAMAA offers guided online yoga and wellness sessions, making it possible for participants to practise from the comfort of their own homes. Sessions are shaped around individual needs, comfort and wellness goals. Whether through personalized one-to-one guidance or group practice, participants are supported in exploring movement, breath, relaxation and yogic practices at a pace that feels appropriate to them.
+                    SHAMAA brings personalized online yoga and wellness sessions to the comfort of your home. Through one-to-one and group guidance, explore movement, breath and relaxation at your own pace.
                 </p>
             </div>
             <div class="shamaa-highlights-grid">
