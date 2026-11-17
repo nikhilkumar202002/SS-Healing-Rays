@@ -232,77 +232,31 @@ foreach ($written_list as $w) {
                 <?php foreach ($all_cards as $card): ?>
                     
                     <?php if ($card['kind'] === 'video'): ?>
-                        <!-- ================= CARD TYPE: VIDEO TESTIMONIAL ================= -->
+                        <!-- ================= CARD TYPE: VIDEO TESTIMONIAL (Pure media, no captions) ================= -->
                         <div class="masonry-item" data-type="video" data-group="video" data-id="<?= htmlspecialchars($card['id']) ?>">
-                            <article class="masonry-testimonial-card masonry-video-card">
-                                
-                                <div class="masonry-card-header">
-                                    <span class="masonry-badge bg-dark text-white">
-                                        <i class="bi bi-camera-video-fill text-danger me-1"></i> Video Story
-                                    </span>
-                                    <span class="masonry-badge">
-                                        <i class="bi bi-check-circle-fill text-success me-1"></i> Verified Seeker
-                                    </span>
-                                </div>
-
-                                <!-- HTML5 Video with preload="none" for zero premature bandwidth consumption -->
-                                <div class="masonry-video-wrapper">
-                                    <video controls preload="metadata" playsinline class="masonry-video-player" aria-label="<?= htmlspecialchars($card['title']) ?>">
+                            <article class="masonry-testimonial-card masonry-video-card p-2 p-md-3">
+                                <div class="masonry-video-wrapper mb-0">
+                                    <video controls preload="metadata" playsinline class="masonry-video-player" aria-label="Client Video Testimonial">
                                         <source src="<?= htmlspecialchars($card['src']) ?>" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
-
-                                <h3 class="masonry-card-title mb-2">
-                                    <?= htmlspecialchars($card['title']) ?>
-                                </h3>
-
-                                <div class="masonry-card-footer mt-2">
-                                    <h4 class="masonry-author"><?= htmlspecialchars($card['client']) ?></h4>
-                                    <div class="masonry-meta-tags">
-                                        <?php if (!empty($card['date'])): ?>
-                                            <span class="masonry-meta-item"><i class="bi bi-calendar3"></i> <?= htmlspecialchars($card['date']) ?></span>
-                                        <?php endif; ?>
-                                        <span class="masonry-meta-item"><i class="bi bi-play-circle"></i> Client Video Recording</span>
-                                    </div>
-                                </div>
-
                             </article>
                         </div>
 
                     <?php elseif ($card['kind'] === 'screenshot'): ?>
-                        <!-- ================= CARD TYPE: SCREENSHOT / CHAT FEEDBACK ================= -->
+                        <!-- ================= CARD TYPE: SCREENSHOT / CHAT FEEDBACK (Pure media, no captions) ================= -->
                         <div class="masonry-item" data-type="screenshot" data-group="screenshot" data-id="<?= htmlspecialchars($card['id']) ?>">
-                            <article class="masonry-testimonial-card masonry-screenshot-card">
-                                
-                                <div class="masonry-card-header mb-2">
-                                    <span class="masonry-badge">
-                                        <i class="bi <?= htmlspecialchars($card['icon']) ?>"></i> <?= htmlspecialchars($card['badge']) ?>
-                                    </span>
-                                    <span class="text-muted small"><i class="bi bi-shield-check text-success"></i> Genuine Client Note</span>
-                                </div>
-
-                                <!-- Screenshot Image with interactive click-to-expand modal -->
-                                <div class="masonry-screenshot-wrapper masonry-screenshot-click" 
+                            <article class="masonry-testimonial-card masonry-screenshot-card p-2 p-md-3">
+                                <div class="masonry-screenshot-wrapper masonry-screenshot-click mb-0" 
                                      data-full-src="<?= htmlspecialchars($card['src']) ?>" 
-                                     data-caption="<?= htmlspecialchars($card['caption']) ?>" 
                                      title="Click to view full message">
                                     <img src="<?= htmlspecialchars($card['src']) ?>" 
-                                         alt="<?= htmlspecialchars($card['title']) ?>" 
+                                         alt="Client Feedback" 
                                          class="masonry-screenshot-img" 
                                          loading="lazy">
                                     <span class="masonry-zoom-pill"><i class="bi bi-arrows-fullscreen"></i> Tap to Zoom</span>
                                 </div>
-
-                                <div class="masonry-card-footer pt-1 mt-1 border-0">
-                                    <div class="masonry-meta-tags justify-content-between w-100">
-                                        <span class="masonry-meta-item small text-muted"><?= htmlspecialchars($card['caption']) ?></span>
-                                        <?php if (!empty($card['date'])): ?>
-                                            <span class="masonry-meta-item small text-muted"><i class="bi bi-calendar-event"></i> <?= htmlspecialchars($card['date']) ?></span>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-
                             </article>
                         </div>
 
@@ -395,7 +349,6 @@ foreach ($written_list as $w) {
             </div>
             <div class="modal-body text-center p-2 p-md-3">
                 <img src="" id="modalTestimonialImg" class="testimonial-modal-img" alt="Client Feedback Note">
-                <p id="modalTestimonialCaption" class="text-white mt-3 mb-0 small text-opacity-75"></p>
             </div>
         </div>
     </div>
@@ -460,9 +413,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.masonry-screenshot-click').forEach(trigger => {
         trigger.addEventListener('click', function () {
             const src = this.getAttribute('data-full-src');
-            const caption = this.getAttribute('data-caption') || 'Client Feedback Note';
             if (modalImg) modalImg.src = src;
-            if (modalCap) modalCap.textContent = caption;
             if (bsModal) bsModal.show();
         });
     });

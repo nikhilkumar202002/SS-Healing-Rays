@@ -413,7 +413,7 @@
     border-radius: 16px;
     overflow: hidden;
     background: #0b0b1a;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
@@ -428,7 +428,7 @@
 
 /* 7. Screenshot / Image Testimonial Card */
 .masonry-screenshot-card {
-    padding: 1.5rem 1.35rem !important;
+    padding: 1.15rem !important;
 }
 
 .masonry-screenshot-wrapper {
@@ -438,7 +438,7 @@
     overflow: hidden;
     background: #ffffff;
     cursor: pointer;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0;
     border: 1px solid rgba(17, 17, 51, 0.06);
 }
 
