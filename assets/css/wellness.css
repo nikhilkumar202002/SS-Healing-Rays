@@ -882,6 +882,12 @@
     overflow: hidden;
 }
 
+.shamaa-guided-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 3.5rem;
+}
+
 .shamaa-guided-heading {
     font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
     font-size: clamp(2rem, 3.2vw, 2.85rem);
@@ -910,7 +916,12 @@
     font-size: 1.02rem;
     line-height: 1.85;
     color: #4b5563;
-    max-width: 840px;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.shamaa-guided-header-action {
+    margin-top: 1.75rem;
 }
 
 .shamaa-clarity-caption {
@@ -1296,6 +1307,10 @@
     border: none !important;
     background: none !important;
 }
+
+
+
+
 
 
 

@@ -3,13 +3,10 @@
 $page_title       = 'SHAMAA | Where Yogic Wisdom Meets the Art of Healing | SS Healing Rays';
 $page_description = 'Therapeutic Yoga and integrated wellness practices, thoughtfully adapted to the individual at SHAMAA.';
 $current_page     = 'shamaa';
-
 $pro_phone_code = '+91';
 $pro_phone      = '9966010981';
 $whatsapp_phone = '9966010981';
 $pro_email      = 'contact@sshealingrays.com';
-
-// Default social values
 $social_fb       = 'sshealingrays';
 $social_insta    = 'sravantiheals';
 $social_x        = 'sshealingrays';
@@ -17,25 +14,16 @@ $social_wa       = '9966010981';
 $social_linkedin = 'sshealingrays';
 $social_youtube  = 'sshealingrays';
 $social_threads  = 'sshealingrays';
-
-// WhatsApp URLs
 $whatsapp_url_coaching = 'https://wa.me/' . $whatsapp_phone . '?text=' . rawurlencode('Hi, I would like to enquire about SHAMAA Wellness.');
 $whatsapp_url_wellness = 'https://wa.me/' . $whatsapp_phone . '?text=' . rawurlencode('Hi, I would like to book a Clarity Call for SHAMAA Therapeutic Yoga.');
 $whatsapp_url_programs = 'https://wa.me/' . $whatsapp_phone . '?text=' . rawurlencode('Hi, I would like to explore SHAMAA programmes.');
-
 $cta_text         = 'Book Clarity Call';
 $cta_url          = $whatsapp_url_wellness;
-
-// Set current user (practitioner) for reuse across included files
 $current_user = 'shamaa';
 
-// 1. Common Global Header
 include __DIR__ . '/common/header.php';
-
-// 2. SHAMAA Dedicated Hero Banner (Same layout & typography as Âme Crystals)
 include __DIR__ . '/products/shamaabanner.php';
 
-// Live-server image resolution for CTA banner
 $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg') 
     ? 'assets/banner/cta-banner.jpg' 
     : (file_exists(__DIR__ . '/assets/banner/cta-banner.jpeg') 
@@ -43,14 +31,10 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
         : 'assets/banner/banner-1.jpg');
 ?>
 
-<!-- ==========================================================================
-     2. Philosophy & Introduction (Left Image Sticky | Right Content)
-     ========================================================================== -->
 <section class="wellness-about-section position-relative" id="wellnessAbout" aria-label="About SHAMAA Philosophy">
     <div class="container">
         <div class="row align-items-start g-4 g-lg-5 position-relative">
             
-            <!-- Left Image Column (Sticky Static on Desktop while Right Content Scrolls) -->
             <div class="col-12 col-lg-6 shamaa-sticky-media-col">
                 <div class="wellness-media-frame shamaa-sticky-frame">
                     <img src="assets/images/about/center-yoga-sanctuary.jpg" 
@@ -60,7 +44,6 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
                 </div>
             </div>
 
-            <!-- Right Content Column -->
             <div class="col-12 col-lg-6">
                 <p class="wellness-pretitle">Mindful Movement &amp; Somatic Healing</p>
                 <h2 class="wellness-heading mb-2">
@@ -78,7 +61,6 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
                     For someone who feels unsure about movement, practice may begin while seated or lying on a cot or bed. As confidence, comfort and ability develop, the practice may progress to a chair and, when suitable, to the yoga mat. Breathing practices, relaxation, mudras and appropriate healing techniques may be integrated according to individual needs.
                 </p>
 
-                <!-- Three Core Principles -->
                 <div class="shamaa-principles-block my-4">
                     <div class="shamaa-principle-item d-flex align-items-start gap-3 mb-3">
                         <span class="shamaa-principle-badge" aria-hidden="true">
@@ -108,7 +90,6 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
                     </div>
                 </div>
 
-                <!-- CTA Button to Scroll to Section 3 -->
                 <div class="shamaa-philosophy-action pt-2">
                     <?php
                         $btn_text  = 'Discover the SHAMAA Approach';
@@ -125,9 +106,6 @@ $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg')
     </div>
 </section>
 
-<!-- ==========================================================================
-     3. Therapeutic Yoga – Begin Where You Are (7-Card Grid)
-     ========================================================================== -->
 <?php
 if (!function_exists('resolve_shamaa_img')) {
     function resolve_shamaa_img($path) {
@@ -200,12 +178,9 @@ $shamaa_offerings = [
 ];
 ?>
 <section class="wellness-offerings-section service-cards-section position-relative" id="wellnessOfferings" aria-label="Therapeutic Yoga – Begin Where You Are">
-    <!-- Anchor for hero and page links targeting #therapeuticYoga -->
-    <div id="therapeuticYoga" class="position-absolute" style="top: -95px;"></div>
 
+    <div id="therapeuticYoga" class="position-absolute" style="top: -95px;"></div>
     <div class="container">
-        
-        <!-- Section Header -->
         <div class="service-cards-header text-center max-w-700 mx-auto mb-5">
             <p class="service-cards-pretitle">SHAMAA YOGIC OFFERINGS</p>
             <h2 class="service-cards-title">
@@ -216,20 +191,17 @@ $shamaa_offerings = [
             </p>
         </div>
 
-        <!-- 7-Card Grid (3 Columns on Desktop, 2 on Tablet, 1 on Mobile) -->
         <div class="row service-cards-row justify-content-center">
             <?php foreach ($shamaa_offerings as $index => $offering): ?>
                 <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch mb-4" id="<?= htmlspecialchars($offering['id']) ?>">
                     <article class="service-item-card shamaa-offering-card">
                         
-                        <!-- Top Image -->
                         <div class="service-item-media">
                             <img src="<?= htmlspecialchars($offering['image']) ?>" 
                                  alt="<?= htmlspecialchars($offering['title']) ?> at SHAMAA" 
                                  loading="lazy">
                         </div>
 
-                        <!-- Card Body (Heading + Description) -->
                         <div class="service-item-body">
                             <span class="service-item-number"><?= sprintf('%02d', $index + 1) ?>.</span>
                             <h3 class="service-item-title"><?= htmlspecialchars($offering['title']) ?></h3>
@@ -246,11 +218,6 @@ $shamaa_offerings = [
     </div>
 </section>
 
-<!-- ==========================================================================
-     4. A Guided Wellness Experience, Wherever You Are (2-Row Layout)
-     - Row 1: Content Header + 5 Highlights on 1 Row Columns Cards
-     - Row 2: Infinite Image Slider from assets/product/shamaa
-     ========================================================================== -->
 <?php
 $shamaa_wa_number = (strpos($whatsapp_phone, '91') === 0) ? $whatsapp_phone : ('91' . preg_replace('/\D/', '', $whatsapp_phone));
 $whatsapp_url_clarity = 'https://wa.me/' . $shamaa_wa_number . '?text=' . rawurlencode('Hi Sravanti, I would like to book a Clarity Call for SHAMAA Online Wellness Sessions.');
@@ -294,29 +261,26 @@ $shamaa_slider_images = [
 ];
 ?>
 <section class="shamaa-guided-section position-relative" id="guidedExperience" aria-label="A Guided Wellness Experience, Wherever You Are">
-    <!-- Anchor for direct deep linking -->
-    <div id="onlineWellness" class="position-absolute" style="top: -95px;"></div>
 
+    <div id="onlineWellness" class="position-absolute" style="top: -95px;"></div>
     <div class="container">
-        
-        <!-- Row 1: Content Header + 1-Row Highlight Column Cards -->
+
         <div class="shamaa-guided-row-content">
-            
-            <!-- Top Content & CTA -->
-            <div class="row align-items-center justify-content-between g-4 mb-4 mb-lg-5">
-                <div class="col-12 col-lg-8">
-                    <p class="wellness-pretitle mb-2">PERSONAL GUIDANCE, WHEREVER YOU ARE</p>
-                    <h2 class="shamaa-guided-heading mb-2">
-                        A Guided Wellness Experience, <br class="d-none d-md-block"><em>Wherever You Are</em>
-                    </h2>
-                    <p class="shamaa-guided-subheading mb-3">
-                        Personal Guidance. Meaningful Practice. Holistic Well-being.
-                    </p>
-                    <p class="shamaa-guided-desc mb-0">
-                        SHAMAA offers guided online yoga and wellness sessions, making it possible for participants to practise from the comfort of their own homes. Sessions are shaped around individual needs, comfort and wellness goals. Whether through personalized one-to-one guidance or group practice, participants are supported in exploring movement, breath, relaxation and yogic practices at a pace that feels appropriate to them.
-                    </p>
-                </div>
-                <div class="col-12 col-lg-4 text-lg-end d-flex flex-column align-items-lg-end justify-content-center">
+            <!-- Section Header (Centered) -->
+            <div class="shamaa-guided-header text-center max-w-860 mx-auto mb-5">
+                <p class="wellness-pretitle mb-2">PERSONAL GUIDANCE, WHEREVER YOU ARE</p>
+                <h2 class="shamaa-guided-heading mb-2">
+                    A Guided Wellness Experience, <br class="d-none d-md-block"><em>Wherever You Are</em>
+                </h2>
+                <p class="shamaa-guided-subheading mb-3">
+                    Personal Guidance. Meaningful Practice. Holistic Well-being.
+                </p>
+                <p class="shamaa-guided-desc mx-auto mb-4">
+                    SHAMAA offers guided online yoga and wellness sessions, making it possible for participants to practise from the comfort of their own homes. Sessions are shaped around individual needs, comfort and wellness goals. Whether through personalized one-to-one guidance or group practice, participants are supported in exploring movement, breath, relaxation and yogic practices at a pace that feels appropriate to them.
+                </p>
+
+                <!-- Book a Clarity Call Button (Centered) -->
+                <div class="shamaa-guided-header-action d-flex flex-column align-items-center justify-content-center">
                     <?php
                         $btn_text  = 'Book a Clarity Call';
                         $btn_url   = $whatsapp_url_clarity;
@@ -330,8 +294,6 @@ $shamaa_slider_images = [
                     </span>
                 </div>
             </div>
-
-            <!-- Highlights on 1 Row of Columns Cards -->
             <div class="shamaa-highlights-grid">
                 <?php foreach ($shamaa_highlights as $index => $hl): ?>
                     <div class="shamaa-highlight-card">
@@ -347,8 +309,6 @@ $shamaa_slider_images = [
         </div>
 
     </div>
-
-    <!-- Row 2: Infinite Image Slider from product/shamaa -->
     <div class="shamaa-slider-row mt-5 pt-2 pt-lg-4">
         <div class="shamaa-infinite-marquee" aria-label="SHAMAA Experience Visual Journey">
             <div class="shamaa-marquee-track">
