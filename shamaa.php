@@ -49,9 +49,9 @@ if (!file_exists(__DIR__ . '/' . $shamaa_about_img)) {
 
 <section class="wellness-about-section position-relative" id="wellnessAbout" aria-label="About SHAMAA Philosophy">
     <div class="container">
-        <div class="row align-items-start g-4 g-lg-5 position-relative">
+        <div class="row align-items-center g-4 g-lg-5 position-relative">
             
-            <div class="col-12 col-lg-6 shamaa-sticky-media-col">
+            <div class="col-12 col-lg-6 shamaa-about-media-col">
                 <div class="wellness-media-frame shamaa-sticky-frame">
                     <img src="<?= htmlspecialchars($shamaa_about_img) ?>" 
                          alt="SHAMAA – Sthiram Sukham Asanam Mindful Yoga Sanctuary" 
@@ -60,7 +60,7 @@ if (!file_exists(__DIR__ . '/' . $shamaa_about_img)) {
                 </div>
             </div>
 
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 shamaa-about-content-col">
                 <p class="wellness-pretitle">Mindful Movement &amp; Somatic Healing</p>
                 <h2 class="wellness-heading mb-2">
                     Movement as Medicine, <br><em>Breath as Harmony</em>

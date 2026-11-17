@@ -1371,6 +1371,21 @@
 }
 
 /* 2. Section 2: About Philosophy (#wellnessAbout) */
+.page-shamaa #wellnessAbout .row {
+    align-items: center !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-about-media-col {
+    align-self: center !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-about-content-col {
+    align-self: center !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .page-shamaa #wellnessAbout .wellness-pretitle {
     color: #28724d !important;
 }
