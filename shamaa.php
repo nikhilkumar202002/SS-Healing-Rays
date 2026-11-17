@@ -1,12 +1,5 @@
 <?php
-/**
- * ==============================================================================
- * SHAMAA - The Yoga & Mindful Movement Sanctuary
- * Dedicated Brand & Wellness Page - SS Healing Rays
- * ==============================================================================
- */
 
-// Page-level configuration variables
 $page_title       = 'SHAMAA | Where Yogic Wisdom Meets the Art of Healing | SS Healing Rays';
 $page_description = 'Therapeutic Yoga and integrated wellness practices, thoughtfully adapted to the individual at SHAMAA.';
 $current_page     = 'shamaa';
@@ -254,287 +247,253 @@ $shamaa_offerings = [
 </section>
 
 <!-- ==========================================================================
-     4. Guided Wellness Experience (Left Side Content | Right Side Image)
+     4. A Guided Wellness Experience, Wherever You Are (2-Row Layout)
+     - Row 1: Content Header + 5 Highlights on 1 Row Columns Cards
+     - Row 2: Infinite Image Slider from assets/product/shamaa
      ========================================================================== -->
-<section class="wellness-space-section position-relative" id="wellnessSpace" aria-label="A Guided Wellness Experience, Wherever You Are">
-    <div id="wellnessOnline" class="position-absolute" style="top: -95px;"></div>
+<?php
+$shamaa_wa_number = (strpos($whatsapp_phone, '91') === 0) ? $whatsapp_phone : ('91' . preg_replace('/\D/', '', $whatsapp_phone));
+$whatsapp_url_clarity = 'https://wa.me/' . $shamaa_wa_number . '?text=' . rawurlencode('Hi Sravanti, I would like to book a Clarity Call for SHAMAA Online Wellness Sessions.');
+
+$shamaa_highlights = [
+    [
+        'icon'  => 'bi bi-camera-video',
+        'title' => 'Guided Online Sessions',
+        'desc'  => 'Practice from home.',
+    ],
+    [
+        'icon'  => 'bi bi-person-heart',
+        'title' => 'Personalized Attention',
+        'desc'  => 'Guidance shaped around individual needs and comfort.',
+    ],
+    [
+        'icon'  => 'bi bi-people',
+        'title' => 'Individual & Group Practice',
+        'desc'  => 'One-to-one and group options.',
+    ],
+    [
+        'icon'  => 'bi bi-clock-history',
+        'title' => 'Flexible Timings',
+        'desc'  => 'Suitable for different time zones.',
+    ],
+    [
+        'icon'  => 'bi bi-flower1',
+        'title' => 'An Integrated Approach',
+        'desc'  => 'Yoga, breathwork, meditation, mudras, relaxation and relevant healing practices.',
+    ],
+];
+
+$shamaa_slider_images = [
+    'assets/product/shamaa/Section-4-1.jpg',
+    'assets/product/shamaa/Section-4-2.jpg',
+    'assets/product/shamaa/4-3.jpg',
+    'assets/product/shamaa/Section-4-4.jpg',
+    'assets/product/shamaa/4-5.jpg',
+    'assets/product/shamaa/4-6.jpg',
+    'assets/product/shamaa/4-7-2.jpg',
+];
+?>
+<section class="shamaa-guided-section position-relative" id="guidedExperience" aria-label="A Guided Wellness Experience, Wherever You Are">
+    <!-- Anchor for direct deep linking -->
+    <div id="onlineWellness" class="position-absolute" style="top: -95px;"></div>
+
     <div class="container">
-        <div class="row align-items-start g-4 g-lg-5 position-relative">
+        
+        <!-- Row 1: Content Header + 1-Row Highlight Column Cards -->
+        <div class="shamaa-guided-row-content">
             
-            <!-- Left Content Column (Scrolls smoothly on Desktop) -->
-            <div class="col-12 col-lg-6">
-                <p class="wellness-pretitle">PERSONAL GUIDANCE, WHEREVER YOU ARE</p>
-                <h2 class="wellness-heading mb-2">
-                    A Guided Wellness Experience, <br><em>Wherever You Are</em>
-                </h2>
-                
-                <p class="shamaa-philosophy-subheading mb-3">
-                    <strong>Personal Guidance.</strong> Meaningful Practice. Holistic Well-being.
-                </p>
-                
-                <p class="wellness-text mb-4">
-                    SHAMAA offers guided online yoga and wellness sessions, making it possible for participants to practise from the comfort of their own homes. Sessions are shaped around individual needs, comfort and wellness goals. Whether through personalized one-to-one guidance or group practice, participants are supported in exploring movement, breath, relaxation and yogic practices at a pace that feels appropriate to them.
-                </p>
-
-                <!-- Highlights Checklist -->
-                <ul class="wellness-checklist mb-4">
-                    <li>
-                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Guided Online Sessions</strong> &ndash; practice from home.</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Personalized Attention</strong> &ndash; guidance shaped around individual needs and comfort.</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Individual &amp; Group Practice</strong> &ndash; one-to-one and group options.</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>Flexible Timings</strong> &ndash; Suitable for different time zones.</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                        <span><strong>An Integrated Approach</strong> &ndash; yoga, breathwork, meditation, mudras, relaxation and relevant healing practices.</span>
-                    </li>
-                </ul>
-
-                <!-- Button: Book a Clarity Call (WhatsApp click-to-chat) -->
-                <div class="pt-2">
+            <!-- Top Content & CTA -->
+            <div class="row align-items-center justify-content-between g-4 mb-4 mb-lg-5">
+                <div class="col-12 col-lg-8">
+                    <p class="wellness-pretitle mb-2">PERSONAL GUIDANCE, WHEREVER YOU ARE</p>
+                    <h2 class="shamaa-guided-heading mb-2">
+                        A Guided Wellness Experience, <br class="d-none d-md-block"><em>Wherever You Are</em>
+                    </h2>
+                    <p class="shamaa-guided-subheading mb-3">
+                        Personal Guidance. Meaningful Practice. Holistic Well-being.
+                    </p>
+                    <p class="shamaa-guided-desc mb-0">
+                        SHAMAA offers guided online yoga and wellness sessions, making it possible for participants to practise from the comfort of their own homes. Sessions are shaped around individual needs, comfort and wellness goals. Whether through personalized one-to-one guidance or group practice, participants are supported in exploring movement, breath, relaxation and yogic practices at a pace that feels appropriate to them.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-4 text-lg-end d-flex flex-column align-items-lg-end justify-content-center">
                     <?php
                         $btn_text  = 'Book a Clarity Call';
-                        $wa_msg    = rawurlencode('Hi Sravanti, I would like to book a Clarity Call for SHAMAA Online Yoga & Wellness.');
-                        $btn_url   = "https://wa.me/919966010981?text={$wa_msg}";
-                        $btn_class = 'Btn-Shamaa-Approach';
-                        $btn_attr  = 'target="_blank" rel="noopener noreferrer" title="Book a Clarity Call on WhatsApp" aria-label="Book a Clarity Call on WhatsApp"';
+                        $btn_url   = $whatsapp_url_clarity;
+                        $btn_class = 'Btn-Shamaa-Approach Btn-Shamaa-Clarity';
+                        $btn_icon  = 'bi bi-whatsapp';
+                        $btn_attr  = 'target="_blank" rel="noopener noreferrer" title="Book a Clarity Call on WhatsApp"';
                         include __DIR__ . '/common/button.php';
                     ?>
+                    <span class="shamaa-clarity-caption mt-2 text-muted">
+                        <i class="bi bi-shield-check text-success me-1"></i> Personalized &amp; Confidential
+                    </span>
                 </div>
             </div>
 
-            <!-- Right Image Column (Sticky Static on Desktop while Left Content Scrolls) -->
-            <div class="col-12 col-lg-6 shamaa-sticky-media-col">
-                <div class="wellness-media-frame shamaa-sticky-frame">
-                    <img src="<?= htmlspecialchars(resolve_shamaa_img('assets/images/selected-gallery/Online yoga session international yoga day.PNG')) ?>" 
-                         alt="A Guided Wellness Experience, Wherever You Are – SHAMAA Online Sessions" 
-                         class="wellness-media-img"
-                         style="aspect-ratio: 4/3; object-fit: cover;"
-                         loading="lazy">
-                </div>
+            <!-- Highlights on 1 Row of Columns Cards -->
+            <div class="shamaa-highlights-grid">
+                <?php foreach ($shamaa_highlights as $index => $hl): ?>
+                    <div class="shamaa-highlight-card">
+                        <div class="shamaa-highlight-icon-box">
+                            <i class="<?= htmlspecialchars($hl['icon']) ?>" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="shamaa-highlight-title"><?= htmlspecialchars($hl['title']) ?></h3>
+                        <p class="shamaa-highlight-desc"><?= htmlspecialchars($hl['desc']) ?></p>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
+        </div>
+
+    </div>
+
+    <!-- Row 2: Infinite Image Slider from product/shamaa -->
+    <div class="shamaa-slider-row mt-5 pt-2 pt-lg-4">
+        <div class="shamaa-infinite-marquee" aria-label="SHAMAA Experience Visual Journey">
+            <div class="shamaa-marquee-track">
+                
+                <!-- Track Group A -->
+                <div class="shamaa-marquee-group">
+                    <?php foreach ($shamaa_slider_images as $img): ?>
+                        <div class="shamaa-slider-card">
+                            <img src="<?= htmlspecialchars(resolve_shamaa_img($img)) ?>" 
+                                 alt="SHAMAA Guided Experience" 
+                                 class="shamaa-slider-img" 
+                                 loading="lazy">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- Track Group B (Duplicated for 100% seamless infinite drift) -->
+                <div class="shamaa-marquee-group" aria-hidden="true">
+                    <?php foreach ($shamaa_slider_images as $img): ?>
+                        <div class="shamaa-slider-card">
+                            <img src="<?= htmlspecialchars(resolve_shamaa_img($img)) ?>" 
+                                 alt="SHAMAA Guided Experience" 
+                                 class="shamaa-slider-img" 
+                                 loading="lazy">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
 
 <!-- ==========================================================================
-     5. Transformative Benefits (4 Pillars on Deep Navy)
+     5. Enduring Transformation (4 Pillars, Full Width 50px Padding, No Container)
      ========================================================================== -->
-<section class="wellness-pillars-section position-relative" id="wellnessPillars" aria-label="Enduring Benefits of SHAMAA">
-    <div class="container position-relative" style="z-index: 2;">
-        
-        <div class="text-center max-w-700 mx-auto mb-5">
-            <p class="wellness-pretitle" style="color: #ffdfba;">Enduring Transformation</p>
-            <h2 class="wellness-heading text-white">
-                What You Will Experience on <em>Your Journey</em>
+<?php
+if (!function_exists('resolve_pillar_vector')) {
+    function resolve_pillar_vector($slug, $num) {
+        $root = __DIR__;
+        $candidates = [
+            'assets/images/shamaa/' . $slug . '.png',
+            'assets/images/shamaa/pillar-' . $num . '.png',
+            'assets/product/shamaa/' . $slug . '.png',
+            'assets/product/shamaa/pillar-' . $num . '.png',
+            'assets/product/shamaa/pillars/pillar-' . $num . '.png',
+            'assets/images/' . $slug . '.png',
+            'assets/images/pillar-' . $num . '.png',
+        ];
+        foreach ($candidates as $cand) {
+            if (file_exists($root . '/' . $cand)) {
+                return $cand;
+            }
+        }
+        return null;
+    }
+}
+
+$shamaa_pillars = [
+    [
+        'num'   => '01',
+        'slug'  => 'physical-awareness',
+        'title' => 'Physical Awareness',
+        'desc'  => 'Explore movement, mobility and strength within an appropriate range.',
+        'icon'  => 'bi bi-person-arms-up',
+    ],
+    [
+        'num'   => '02',
+        'slug'  => 'breath-awareness',
+        'title' => 'Breath Awareness',
+        'desc'  => 'Develop a mindful relationship with breathing through suitable guided practices.',
+        'icon'  => 'bi bi-wind',
+    ],
+    [
+        'num'   => '03',
+        'slug'  => 'emotional-mental-wellbeing',
+        'title' => 'Emotional & Mental Well-being',
+        'desc'  => 'Make space for relaxation and self-awareness.',
+        'icon'  => 'bi bi-heart-pulse',
+    ],
+    [
+        'num'   => '04',
+        'slug'  => 'confidence-consistency',
+        'title' => 'Confidence Through Consistency',
+        'desc'  => 'Build confidence through achievable steps, without comparison or pressure.',
+        'icon'  => 'bi bi-stars',
+    ],
+];
+?>
+<section class="shamaa-transformation-section position-relative" id="enduringTransformation" aria-label="Enduring Transformation – Four Pillars">
+    <!-- Anchor for direct deep linking -->
+    <div id="transformationPillars" class="position-absolute" style="top: -95px;"></div>
+
+    <!-- Section Header (Text Left, Action Right) -->
+    <div class="shamaa-transformation-header d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-4">
+        <div class="shamaa-transformation-header-text">
+            <p class="wellness-pretitle mb-2">FOUR PILLARS OF PRACTICE</p>
+            <h2 class="shamaa-transformation-heading mb-2">
+                Enduring <em>Transformation</em>
             </h2>
-            <p class="wellness-text text-white-50 mx-auto" style="max-width: 660px;">
-                Through consistent practice, your body and mind will establish new patterns of ease, resilience, and vitality.
+            <p class="shamaa-transformation-subheading mb-3">
+                Building Confidence, Comfort and Consistency&mdash;One Practice at a Time.
+            </p>
+            <p class="shamaa-transformation-desc mb-0">
+                With guided, consistent practice, SHAMAA helps build confidence, awareness and a deeper connection with body, breath and mind.
             </p>
         </div>
-
-        <div class="row g-4 justify-content-center">
-            
-            <div class="col-12 col-sm-6 col-lg-3 d-flex">
-                <div class="wellness-pillar-card w-100">
-                    <div class="wellness-pillar-num">Pillar 01</div>
-                    <h3 class="wellness-pillar-title">Physical Ease</h3>
-                    <p class="wellness-pillar-desc">
-                        Release chronic somatic holding patterns, lubricate stiff joints, and experience newfound fluidity and lightness in everyday movement.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 d-flex">
-                <div class="wellness-pillar-card w-100">
-                    <div class="wellness-pillar-num">Pillar 02</div>
-                    <h3 class="wellness-pillar-title">Nervous Calm</h3>
-                    <p class="wellness-pillar-desc">
-                        Shift from chronic fight-or-flight stimulation into the restorative parasympathetic state for restful sleep and reduced cortisol levels.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 d-flex">
-                <div class="wellness-pillar-card w-100">
-                    <div class="wellness-pillar-num">Pillar 03</div>
-                    <h3 class="wellness-pillar-title">Emotional Balance</h3>
-                    <p class="wellness-pillar-desc">
-                        Cultivate an anchor of inner peace that remains centered and unwavering through personal transitions and daily pressures.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 d-flex">
-                <div class="wellness-pillar-card w-100">
-                    <div class="wellness-pillar-num">Pillar 04</div>
-                    <h3 class="wellness-pillar-title">Sacred Wholeness</h3>
-                    <p class="wellness-pillar-desc">
-                        Experience the harmonious union of physical vitality, conscious breath, and spiritual alignment across all areas of your life.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- ==========================================================================
-     6. Frequently Asked Questions (Accordion)
-     ========================================================================== -->
-<section class="wellness-faq-section position-relative" id="wellnessFaq" aria-label="SHAMAA FAQ">
-    <div class="container">
-        
-        <div class="text-center max-w-700 mx-auto mb-5">
-            <p class="wellness-pretitle">Common Enquiries</p>
-            <h2 class="wellness-heading">
-                Frequently Asked <em>Questions</em>
-            </h2>
-            <p class="wellness-text text-muted mx-auto" style="max-width: 600px;">
-                Everything you need to know about joining our mindful movement and yoga sessions.
-            </p>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-9 col-xl-8">
-                
-                <div class="accordion wellness-accordion" id="wellnessFaqAccordion">
-                    
-                    <!-- FAQ 1 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                I have never practiced yoga before. Can I still join?
-                            </button>
-                        </h3>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#wellnessFaqAccordion">
-                            <div class="accordion-body">
-                                Absolutely. SHAMAA welcomes individuals of every fitness level, body type, and age. Our certified instructors provide personalized modifications so you can move comfortably without strain, pressure, or judgment.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                What do I need to bring for my demo session?
-                            </button>
-                        </h3>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#wellnessFaqAccordion">
-                            <div class="accordion-body">
-                                Just wear comfortable, breathable clothing that allows free movement. Premium sanitized yoga mats, props, bolsters, and filtered drinking water are all provided at our studio. If joining online, ensure you have a quiet space and a stable internet connection.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                How does Therapeutic Yoga differ from fitness gym yoga?
-                            </button>
-                        </h3>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#wellnessFaqAccordion">
-                            <div class="accordion-body">
-                                Fitness yoga often focuses on fast pacing, calorie burn, and extreme flexibility. In contrast, Therapeutic Yoga at SHAMAA prioritizes functional alignment, breath integration, nervous system regulation, and somatic healing tailored to alleviate chronic tension and fatigue.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Can I combine yoga with energy healing sessions at SS Healing Rays?
-                            </button>
-                        </h3>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#wellnessFaqAccordion">
-                            <div class="accordion-body">
-                                Yes, highly recommended! Many of our clients find that pairing mindful movement with Reiki, Crystal Therapy, or Sound Resonance creates profound synergy—grounding energy shifts into the physical body and accelerating lasting wellbeing.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                How do I schedule my demo session or private class?
-                            </button>
-                        </h3>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#wellnessFaqAccordion">
-                            <div class="accordion-body">
-                                Simply click any of the "Book a Demo Session" buttons on this page or reach out directly via WhatsApp at +91 99660 10981. Our team will understand your personal wellness goals and suggest the ideal batch timing for you.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- ==========================================================================
-     7. SHAMAA Bottom CTA Banner
-     ========================================================================== -->
-<section class="wellness-cta-section position-relative text-center" id="wellnessCta" aria-label="Book Demo Session Banner">
-    <img src="<?= htmlspecialchars($wellness_cta_bg) ?>" 
-         alt="SHAMAA Mindful Movement Sanctuary" 
-         class="wellness-cta-bg" 
-         loading="lazy">
-
-    <div class="wellness-cta-overlay" aria-hidden="true"></div>
-
-    <div class="container position-relative wellness-cta-content">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 col-xl-8">
-                
-                <p class="wellness-pretitle" style="color: #ffdfba;">Begin Your Renewal</p>
-                <h2 class="wellness-heading text-white mb-3">
-                    Step Onto the Mat. <br><em>Rediscover Your Inner Radiance.</em>
-                </h2>
-                <p class="wellness-text text-white-50 mx-auto mb-4" style="max-width: 620px;">
-                    Whether you are taking your very first step into mindful movement or seeking a nurturing sanctuary for deeper healing, we are here to support your journey.
-                </p>
-
-                <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
-                    <button type="button" 
-                            class="btn-wellness-demo"
-                            data-bs-toggle="modal" 
-                            data-bs-target="#bookingModal"
-                            aria-label="Book Your Demo Session">
-                        <i class="bi bi-calendar2-check" aria-hidden="true"></i>
-                        <span>Book Your Demo Session</span>
-                    </button>
-                    <a href="https://wa.me/919966010981" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="btn-wellness-outline"
-                       aria-label="Chat on WhatsApp">
-                        <i class="bi bi-whatsapp text-success" aria-hidden="true"></i>
-                        <span>Chat With Us</span>
-                    </a>
-                </div>
-
-            </div>
+        <div class="shamaa-transformation-header-action flex-shrink-0">
+            <?php
+                $btn_text  = 'Explore the Practices';
+                $btn_url   = '#wellnessOfferings';
+                $btn_class = 'Btn-Shamaa-Approach Btn-Shamaa-Explore';
+                $btn_attr  = 'title="Explore the Practices"';
+                include __DIR__ . '/common/button.php';
+            ?>
         </div>
     </div>
+
+    <!-- 4 Cards Grid (Full width across 50px section padding, no container) -->
+    <div class="shamaa-transformation-grid">
+        <?php foreach ($shamaa_pillars as $pillar): ?>
+            <?php $vector_img = resolve_pillar_vector($pillar['slug'], $pillar['num']); ?>
+            <article class="shamaa-transformation-card">
+                <div class="shamaa-pillar-card-top">
+                    <div class="shamaa-pillar-vector-wrap">
+                        <?php if (!empty($vector_img)): ?>
+                            <img src="<?= htmlspecialchars($vector_img) ?>" 
+                                 alt="<?= htmlspecialchars($pillar['title']) ?> Vector" 
+                                 class="shamaa-pillar-vector-img" 
+                                 loading="lazy">
+                        <?php else: ?>
+                            <div class="shamaa-pillar-vector-placeholder">
+                                <i class="<?= htmlspecialchars($pillar['icon']) ?>" aria-hidden="true"></i>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <span class="shamaa-pillar-number"><?= htmlspecialchars($pillar['num']) ?></span>
+                </div>
+
+                <h3 class="shamaa-transformation-card-title"><?= htmlspecialchars($pillar['title']) ?></h3>
+                <p class="shamaa-transformation-card-desc"><?= htmlspecialchars($pillar['desc']) ?></p>
+            </article>
+        <?php endforeach; ?>
+    </div>
+
 </section>
 
 <?php 
