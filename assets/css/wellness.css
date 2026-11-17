@@ -547,26 +547,10 @@
     overflow: hidden;
 }
 
-.wellness-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #ba436c, #e69c24);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
 .wellness-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px -12px rgba(186, 67, 108, 0.16);
     border-color: rgba(186, 67, 108, 0.25);
-}
-
-.wellness-card:hover::before {
-    opacity: 1;
 }
 
 .wellness-card-icon {
@@ -971,27 +955,10 @@
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.shamaa-highlight-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    border-radius: 20px 20px 0 0;
-    background: linear-gradient(90deg, #ba436c, #e69c24);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
 .shamaa-highlight-card:hover {
     transform: translateY(-5px);
     border-color: rgba(186, 67, 108, 0.35);
     box-shadow: 0 16px 32px -8px rgba(186, 67, 108, 0.16);
-}
-
-.shamaa-highlight-card:hover::before {
-    opacity: 1;
 }
 
 .shamaa-highlight-icon-box {
@@ -1185,27 +1152,10 @@
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.shamaa-transformation-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    border-radius: 22px 22px 0 0;
-    background: linear-gradient(90deg, #ba436c, #e69c24);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
 .shamaa-transformation-card:hover {
     transform: translateY(-6px);
     border-color: rgba(186, 67, 108, 0.35);
     box-shadow: 0 20px 42px -10px rgba(186, 67, 108, 0.18);
-}
-
-.shamaa-transformation-card:hover::before {
-    opacity: 1;
 }
 
 /* Card Top Row: Vector Frame & Step Number */
