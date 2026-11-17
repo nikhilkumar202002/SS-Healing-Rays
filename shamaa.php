@@ -512,6 +512,11 @@ $shamaa_pillars = [
 
 </section>
 
+<!-- ==========================================================================
+     6. Frequently Asked Questions (Section 6 - Accordion)
+     ========================================================================== -->
+<?php include __DIR__ . '/products/shamaafaq.php'; ?>
+
 <?php 
 // Common Global Modals & Footer
 include __DIR__ . '/common/popupbookingform.php';

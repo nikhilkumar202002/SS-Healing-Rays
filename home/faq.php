@@ -39,28 +39,36 @@ $faq_items = $faq_items ?? [
 ];
 ?>
 
-<section class="faq-section position-relative" id="faq" aria-label="Frequently Asked Questions">
+<section class="faq-section position-relative" id="<?= htmlspecialchars($faq_section_id ?? 'faq') ?>" aria-label="Frequently Asked Questions">
+    <?php if (!empty($faq_anchor_id)): ?>
+        <div id="<?= htmlspecialchars($faq_anchor_id) ?>" class="position-absolute" style="top: -95px;"></div>
+    <?php endif; ?>
     <div class="container">
         
         <!-- 1. Section Header -->
         <div class="faq-header text-center mx-auto">
             <p class="faq-pretitle"><?= htmlspecialchars($faq_pretitle) ?></p>
             <h2 class="faq-heading">
-                <span class="d-block"><?= htmlspecialchars($faq_title_1) ?></span>
+                <?php if (!empty($faq_title_1)): ?>
+                    <span class="d-block"><?= htmlspecialchars($faq_title_1) ?></span>
+                <?php endif; ?>
                 <span class="d-block">
-                    <?= htmlspecialchars($faq_title_2) ?>
+                    <?= !empty($faq_title_2) ? htmlspecialchars($faq_title_2) . ' ' : '' ?>
                     <span class="title-highlight"><?= htmlspecialchars($faq_title_highlight) ?></span>
                 </span>
             </h2>
-        
+            <?php if (!empty($faq_subtitle)): ?>
+                <p class="faq-subtitle mx-auto"><?= htmlspecialchars($faq_subtitle) ?></p>
+            <?php endif; ?>
         </div>
 
         <!-- 2. Classic Accordion (No Border, No Box Shadow) -->
+        <?php $prefix = $faq_prefix ?? 'faq'; ?>
         <div class="faq-accordion-wrapper mx-auto">
-            <div class="accordion accordion-flush" id="faqAccordion">
+            <div class="accordion accordion-flush" id="<?= $prefix ?>Accordion">
                 <?php foreach ($faq_items as $index => $item): 
-                    $collapse_id = "faqCollapse_" . $index;
-                    $heading_id  = "faqHeading_" . $index;
+                    $collapse_id = "{$prefix}Collapse_" . $index;
+                    $heading_id  = "{$prefix}Heading_" . $index;
                     // First item open by default for classic accordion clarity
                     $is_first    = ($index === 0);
                 ?>
@@ -81,7 +89,7 @@ $faq_items = $faq_items ?? [
                         <div id="<?= $collapse_id ?>" 
                              class="accordion-collapse collapse <?= $is_first ? 'show' : '' ?>" 
                              aria-labelledby="<?= $heading_id ?>" 
-                             data-bs-parent="#faqAccordion">
+                             data-bs-parent="#<?= $prefix ?>Accordion">
                             <div class="accordion-body faq-body">
                                 <p class="faq-answer-text mb-0">
                                     <?= htmlspecialchars($item['answer']) ?>
@@ -96,14 +104,14 @@ $faq_items = $faq_items ?? [
         <!-- 3. Bottom Clarity Call CTA -->
         <div class="faq-contact-help text-center mx-auto">
             <p class="faq-help-text">
-                Still have questions? Let’s find the right support for you.
+                <?= htmlspecialchars($faq_help_text ?? 'Still have questions? Let’s find the right support for you.') ?>
             </p>
             <div class="faq-help-action d-flex justify-content-center">
                 <?php
-                    $btn_text  = 'Book a Clarity Call';
-                    $btn_url   = '#bookingModal';
-                    $btn_class = 'Btn-Faq-Clarity';
-                    $btn_attr  = 'data-bs-toggle="modal" data-bs-target="#bookingModal" aria-haspopup="dialog"';
+                    $btn_text  = $faq_cta_text ?? 'Book a Clarity Call';
+                    $btn_url   = $faq_cta_url ?? '#bookingModal';
+                    $btn_class = $faq_cta_class ?? 'Btn-Faq-Clarity';
+                    $btn_attr  = $faq_cta_attr ?? 'data-bs-toggle="modal" data-bs-target="#bookingModal" aria-haspopup="dialog"';
                     include dirname(__DIR__) . '/common/button.php';
                 ?>
             </div>
