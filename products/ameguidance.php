@@ -1,12 +1,4 @@
 <?php
-/**
- * ==============================================================================
- * Lifelong Crystal Guidance & Care Section - Âme Crystals (SS Healing Rays)
- * "Your Crystal Journey Comes with Lifelong Guidance."
- * Layout: Left Image | Right Content
- * Dedicated Stylesheet: assets/css/productbanner.css
- * ==============================================================================
- */
 
 $guidance_headline_1 = $guidance_headline_1 ?? 'Your Crystal Journey Comes with';
 $guidance_headline_2 = $guidance_headline_2 ?? 'Lifelong Guidance.';
@@ -64,7 +56,6 @@ $guidance_img_alt    = $guidance_img_alt ?? 'Lifelong Crystal Care & Guidance - 
                              class="ame-guidance-image"
                              loading="lazy">
                         
-               
                     </div>
                 </div>
             </div>

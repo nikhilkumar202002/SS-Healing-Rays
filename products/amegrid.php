@@ -1,12 +1,4 @@
 <?php
-/**
- * ==============================================================================
- * Personalised Crystal Grids Section - Âme Crystals (SS Healing Rays)
- * "A Dedicated Space for Your Intention"
- * Layout: Left Image | Right Content
- * Dedicated Stylesheet: assets/css/productbanner.css
- * ==============================================================================
- */
 
 $grid_headline_1 = $grid_headline_1 ?? 'A Dedicated Space for Your Intention';
 $grid_headline_2 = $grid_headline_2 ?? '- Crystal Grid';

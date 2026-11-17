@@ -1,11 +1,4 @@
 <?php
-/**
- * ==============================================================================
- * Curated Crystal Categories Component - SS Healing Rays
- * "Beautifully crafted, Intentionally chosen - Crystal for sale"
- * Dedicated to ame-crystals.php
- * ==============================================================================
- */
 
 $crystal_cat_title_1     = $crystal_cat_title_1 ?? 'Beautifully crafted, Intentionally chosen';
 $crystal_cat_title_2     = $crystal_cat_title_2 ?? '- Crystal for sale';
@@ -14,16 +7,26 @@ $crystal_cat_lead        = $crystal_cat_lead ?? 'A carefully curated selection o
 // Helper to resolve .jpg vs .jpeg on various server environments
 if (!function_exists('resolve_ame_cat_img')) {
     function resolve_ame_cat_img($path) {
-        $full = dirname(__DIR__) . '/' . $path;
-        if (file_exists($full)) {
+        $root = dirname(__DIR__);
+        if (file_exists($root . '/' . $path)) {
             return $path;
         }
-        if (str_ends_with($path, '.jpeg')) {
-            $alt = substr($path, 0, -5) . '.jpg';
-            if (file_exists(dirname(__DIR__) . '/' . $alt)) return $alt;
-        } elseif (str_ends_with($path, '.jpg')) {
-            $alt = substr($path, 0, -4) . '.jpeg';
-            if (file_exists(dirname(__DIR__) . '/' . $alt)) return $alt;
+        $dir = dirname($path);
+        $base = basename($path);
+        $candidates = [
+            'assets/product/' . $base,
+            'assets/categories/' . $base,
+            'assets/product/' . str_replace(' ', '-', $base),
+            'assets/categories/' . str_replace(' ', '-', $base),
+            'assets/product/' . strtolower($base),
+            'assets/categories/' . strtolower($base),
+            $dir . '/' . str_replace('.jpeg', '.jpg', $base),
+            $dir . '/' . str_replace('.jpg', '.jpeg', $base),
+        ];
+        foreach ($candidates as $cand) {
+            if (file_exists($root . '/' . $cand)) {
+                return $cand;
+            }
         }
         return $path;
     }
@@ -33,22 +36,22 @@ $crystal_categories = $crystal_categories ?? [
     [
         'title'       => 'Crystal jewellery',
         'subtitle'    => 'Bracelets, Malas (including Customized combinations), Pendants, Bangles, Finger rings, Ear rings & Anklets',
-        'image'       => resolve_ame_cat_img('assets/categories/customize.jpeg'),
+        'image'       => resolve_ame_cat_img('assets/product/Jewelry.jpg'),
     ],
     [
         'title'       => 'Home and Space Decor',
         'subtitle'    => 'Trees, Wind chimes, Towers, Clusters, Pyramids, Figurines (God, Goddess, Angels, Spirit animals)',
-        'image'       => resolve_ame_cat_img('assets/categories/home-decor.jpeg'),
+        'image'       => resolve_ame_cat_img('assets/product/space-and-decor.jpg'),
     ],
     [
         'title'       => 'Crystal Pouches',
         'subtitle'    => 'For Abundance, Harmonious Relationships, Protection, Career, Wealth & Money, Success & Students, Meditation',
-        'image'       => resolve_ame_cat_img('assets/categories/tumble-stones.jpeg'),
+        'image'       => resolve_ame_cat_img('assets/product/Pouches.jpg'),
     ],
     [
         'title'       => 'Cleansers',
         'subtitle'    => 'California White sage, Palo Santo, Salt products, Selenite products.',
-        'image'       => resolve_ame_cat_img('assets/categories/crystal-grid.jpeg'),
+        'image'       => resolve_ame_cat_img('assets/product/Cleansers.jpg'),
     ],
 ];
 ?>
