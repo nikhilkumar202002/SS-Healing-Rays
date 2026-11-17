@@ -1455,6 +1455,78 @@
     background: #f5f9f6 !important;
 }
 
+.page-shamaa #wellnessOfferings .wellness-pretitle {
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessOfferings .wellness-heading {
+    color: #111133 !important;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-philosophy-subheading em {
+    color: #28724d !important;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-focus-callout {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(40, 114, 77, 0.16);
+    border-left: 4px solid #28724d;
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px -4px rgba(40, 114, 77, 0.08);
+}
+
+.page-shamaa #wellnessOfferings .shamaa-focus-callout .focus-title {
+    color: #1b5336;
+    font-weight: 700;
+    font-size: 0.98rem;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-focus-callout .focus-desc {
+    color: #374151;
+    font-size: 0.98rem;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-therapeutic-media-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(40, 114, 77, 0.16);
+    box-shadow: none !important;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-therapeutic-media-frame:hover {
+    border-color: rgba(40, 114, 77, 0.38);
+    box-shadow: 0 16px 36px -10px rgba(40, 114, 77, 0.16) !important;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-therapeutic-media-frame .wellness-media-img {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
+    transition: transform 0.8s ease;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-therapeutic-media-frame:hover .wellness-media-img {
+    transform: scale(1.03);
+}
+
+.page-shamaa #wellnessOfferings .shamaa-supporting-title {
+    font-family: var(--brand-font-marcellus, 'Marcellus', Georgia, serif);
+    font-size: clamp(1.8rem, 2.5vw, 2.25rem);
+    font-weight: 400;
+    color: var(--heading-color, #111133);
+    margin-bottom: 0;
+}
+
 .page-shamaa #wellnessOfferings .service-cards-pretitle {
     color: #28724d !important;
 }

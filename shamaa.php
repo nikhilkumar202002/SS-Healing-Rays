@@ -150,48 +150,26 @@ if (!function_exists('resolve_shamaa_img')) {
     }
 }
 
-$shamaa_offerings = [
+$shamaa_therapeutic_hero_img = resolve_shamaa_img('assets/product/shamaa/offerings/Guided-Seated-Side-Stretch.jpg');
+
+$shamaa_supporting_services = [
     [
-        'id'    => 'personalized-yoga',
-        'title' => 'Personalized Yoga Sessions',
-        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Guided-Seated-Side-Stretch.jpg'),
-        'desc'  => 'One-to-one sessions shaped around the participant’s needs, comfort, experience and wellness goals.',
-    ],
-    [
-        'id'    => 'group-yoga',
-        'title' => 'Group Yoga Sessions',
-        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Serene-Group-Yoga-Side-Stretch.jpg'),
-        'desc'  => 'Guided group practices that encourage consistency, shared learning and a supportive practice environment.',
-    ],
-    [
-        'id'    => 'conscious-breathwork-pranayama',
-        'title' => 'Conscious Breathwork & Pranayama',
+        'id'    => 'breathwork',
+        'title' => 'Breathwork',
         'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Serene-Group-Pranayama-Meditation.jpg'),
-        'desc'  => 'Appropriate breathing practices introduced with care and adapted to the participant’s comfort and capacity.',
+        'desc'  => 'Mindful breathing practices.',
     ],
     [
         'id'    => 'mudras',
         'title' => 'Mudras',
         'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Gyan-Mudra-in-Green-Serenity.jpg'),
-        'desc'  => 'Traditional yogic hand gestures incorporated into suitable sessions to support concentration, awareness and mindful practice.',
+        'desc'  => 'Traditional mindful gestures.',
     ],
     [
-        'id'    => 'meditation-guided-relaxation',
-        'title' => 'Meditation & Guided Relaxation',
-        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Serene-Group-Pranayama-Meditation.jpg'),
-        'desc'  => 'Guided practices that encourage stillness, attention and relaxation.',
-    ],
-    [
-        'id'    => 'yoga-nidra-restful-practices',
-        'title' => 'Yoga Nidra & Restful Practices',
+        'id'    => 'relaxation',
+        'title' => 'Relaxation',
         'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Peaceful-Group-Savasana-in-a-Sunlit-Studio.jpg'),
-        'desc'  => 'Supported relaxation practices, including lying-down options when suitable.',
-    ],
-    [
-        'id'    => 'face-yoga',
-        'title' => 'Face Yoga',
-        'image' => resolve_shamaa_img('assets/product/shamaa/offerings/Serene-Facial-Yoga-in-a-Green-Studio.jpg'),
-        'desc'  => 'Gentle facial movements and mindful techniques that can be included in a personal self-care routine.',
+        'desc'  => 'Meditation and restful practices.',
     ],
 ];
 ?>
@@ -213,38 +191,70 @@ $shamaa_offerings = [
 
     <div id="therapeuticYoga" class="position-absolute" style="top: -95px;"></div>
     <div class="container position-relative" style="z-index: 2;">
-        <div class="service-cards-header text-center max-w-700 mx-auto mb-5">
-            <p class="service-cards-pretitle">SHAMAA YOGIC OFFERINGS</p>
-            <h2 class="service-cards-title">
-                Therapeutic Yoga &ndash; <em>Begin Where You Are</em>
-            </h2>
-            <p class="service-cards-subtitle text-muted mx-auto">
-                Thoughtfully adapted sessions designed for every body and experience level&mdash;rooted in comfort, steady practice, and compassionate guidance.
-            </p>
+        
+        <!-- Row 1: Left Main Content | Right Hero Image -->
+        <div class="row align-items-center g-4 g-lg-5 mb-5 pb-lg-3">
+            <div class="col-12 col-lg-6">
+                <p class="wellness-pretitle">SHAMAA YOGIC OFFERINGS</p>
+                <h2 class="wellness-heading mb-2">
+                    Therapeutic Yoga
+                </h2>
+                <p class="shamaa-philosophy-subheading mb-4">
+                    <em>Begin Where You Are.</em>
+                </p>
+                <p class="wellness-text">
+                    Therapeutic Yoga at SHAMAA welcomes those who feel hesitant, uncomfortable or unsure about beginning yoga.
+                </p>
+                <p class="wellness-text">
+                    Practice starts with gentle, manageable movements and supported positions on a bed, chair or mat, progressing at an individual pace.
+                </p>
+                
+                <div class="shamaa-focus-callout mt-4">
+                    <span class="focus-title">The focus:</span>
+                    <span class="focus-desc">Comfort, confidence, mobility and gradual progress.</span>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="wellness-media-frame shamaa-therapeutic-media-frame">
+                    <img src="<?= htmlspecialchars($shamaa_therapeutic_hero_img) ?>" 
+                         alt="Therapeutic Yoga – Begin Where You Are at SHAMAA" 
+                         class="wellness-media-img"
+                         loading="lazy">
+                </div>
+            </div>
         </div>
 
-        <div class="row service-cards-row justify-content-center">
-            <?php foreach ($shamaa_offerings as $index => $offering): ?>
-                <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch mb-4" id="<?= htmlspecialchars($offering['id']) ?>">
-                    <article class="service-item-card shamaa-offering-card">
-                        
-                        <div class="service-item-media">
-                            <img src="<?= htmlspecialchars($offering['image']) ?>" 
-                                 alt="<?= htmlspecialchars($offering['title']) ?> at SHAMAA" 
-                                 loading="lazy">
-                        </div>
+        <!-- Row 2: Supporting Services (3 Cards with Image) -->
+        <div class="shamaa-supporting-services-wrapper pt-3">
+            <div class="shamaa-supporting-header text-center max-w-700 mx-auto mb-4 mb-lg-5">
+                <p class="wellness-pretitle mb-1">COMPLEMENTARY PRACTICES</p>
+                <h3 class="shamaa-supporting-title">Supporting Services</h3>
+            </div>
 
-                        <div class="service-item-body">
-                            <span class="service-item-number"><?= sprintf('%02d', $index + 1) ?>.</span>
-                            <h3 class="service-item-title"><?= htmlspecialchars($offering['title']) ?></h3>
-                            <div class="service-item-desc mb-0">
-                                <p class="mb-0"><?= htmlspecialchars($offering['desc']) ?></p>
+            <div class="row g-4 justify-content-center">
+                <?php foreach ($shamaa_supporting_services as $index => $service): ?>
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch" id="<?= htmlspecialchars($service['id']) ?>">
+                        <article class="service-item-card shamaa-offering-card">
+                            
+                            <div class="service-item-media">
+                                <img src="<?= htmlspecialchars($service['image']) ?>" 
+                                     alt="<?= htmlspecialchars($service['title']) ?> at SHAMAA" 
+                                     loading="lazy">
                             </div>
-                        </div>
 
-                    </article>
-                </div>
-            <?php endforeach; ?>
+                            <div class="service-item-body">
+                                <span class="service-item-number"><?= sprintf('%02d', $index + 1) ?>.</span>
+                                <h4 class="service-item-title"><?= htmlspecialchars($service['title']) ?></h4>
+                                <div class="service-item-desc mb-0">
+                                    <p class="mb-0"><?= htmlspecialchars($service['desc']) ?></p>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
 
     </div>
