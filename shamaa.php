@@ -492,6 +492,11 @@ $shamaa_pillars = [
      ========================================================================== -->
 <?php include __DIR__ . '/products/shamaafaq.php'; ?>
 
+<!-- ==========================================================================
+     7. Dedicated CTA Section ("Yoga Is for Everyone. Begin Where You Are.")
+     ========================================================================== -->
+<?php include __DIR__ . '/products/shamaacta.php'; ?>
+
 </main>
 
 <?php 
