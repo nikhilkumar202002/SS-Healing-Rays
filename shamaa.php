@@ -275,24 +275,9 @@ $shamaa_slider_images = [
                 <p class="shamaa-guided-subheading mb-3">
                     Personal Guidance. Meaningful Practice. Holistic Well-being.
                 </p>
-                <p class="shamaa-guided-desc mx-auto mb-4">
+                <p class="shamaa-guided-desc mx-auto mb-0">
                     SHAMAA offers guided online yoga and wellness sessions, making it possible for participants to practise from the comfort of their own homes. Sessions are shaped around individual needs, comfort and wellness goals. Whether through personalized one-to-one guidance or group practice, participants are supported in exploring movement, breath, relaxation and yogic practices at a pace that feels appropriate to them.
                 </p>
-
-                <!-- Book a Clarity Call Button (Centered) -->
-                <div class="shamaa-guided-header-action d-flex flex-column align-items-center justify-content-center">
-                    <?php
-                        $btn_text  = 'Book a Clarity Call';
-                        $btn_url   = $whatsapp_url_clarity;
-                        $btn_class = 'Btn-Shamaa-Approach Btn-Shamaa-Clarity';
-                        $btn_icon  = 'bi bi-whatsapp';
-                        $btn_attr  = 'target="_blank" rel="noopener noreferrer" title="Book a Clarity Call on WhatsApp"';
-                        include __DIR__ . '/common/button.php';
-                    ?>
-                    <span class="shamaa-clarity-caption mt-2 text-muted">
-                        <i class="bi bi-shield-check text-success me-1"></i> Personalized &amp; Confidential
-                    </span>
-                </div>
             </div>
             <div class="shamaa-highlights-grid">
                 <?php foreach ($shamaa_highlights as $index => $hl): ?>
@@ -339,6 +324,21 @@ $shamaa_slider_images = [
 
             </div>
         </div>
+    </div>
+
+    <!-- Bottom Action Button (Centered below Image Scrolling) -->
+    <div class="shamaa-guided-bottom-action text-center mt-5 pt-2 pt-lg-3 d-flex flex-column align-items-center justify-content-center">
+        <?php
+            $btn_text  = 'Book a Clarity Call';
+            $btn_url   = $whatsapp_url_clarity;
+            $btn_class = 'Btn-Shamaa-Approach Btn-Shamaa-Clarity';
+            $btn_icon  = 'bi bi-whatsapp';
+            $btn_attr  = 'target="_blank" rel="noopener noreferrer" title="Book a Clarity Call on WhatsApp"';
+            include __DIR__ . '/common/button.php';
+        ?>
+        <span class="shamaa-clarity-caption mt-2 text-muted">
+            <i class="bi bi-shield-check text-success me-1"></i> Personalized &amp; Confidential
+        </span>
     </div>
 </section>
 
