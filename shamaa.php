@@ -271,9 +271,9 @@ $shamaa_offerings = [
 <section class="wellness-space-section position-relative" id="wellnessSpace" aria-label="A Guided Wellness Experience, Wherever You Are">
     <div id="wellnessOnline" class="position-absolute" style="top: -95px;"></div>
     <div class="container">
-        <div class="row align-items-center g-4 g-lg-5">
+        <div class="row align-items-start g-4 g-lg-5 position-relative">
             
-            <!-- Left Content Column -->
+            <!-- Left Content Column (Scrolls smoothly on Desktop) -->
             <div class="col-12 col-lg-6">
                 <p class="wellness-pretitle">PERSONAL GUIDANCE, WHEREVER YOU ARE</p>
                 <h2 class="wellness-heading mb-2">
@@ -325,8 +325,8 @@ $shamaa_offerings = [
                 </div>
             </div>
 
-            <!-- Right Image Column -->
-            <div class="col-12 col-lg-6">
+            <!-- Right Image Column (Sticky Static on Desktop while Left Content Scrolls) -->
+            <div class="col-12 col-lg-6 shamaa-sticky-media-col">
                 <div class="wellness-media-frame shamaa-sticky-frame">
                     <img src="<?= htmlspecialchars(resolve_shamaa_img('assets/images/selected-gallery/Online yoga session international yoga day.PNG')) ?>" 
                          alt="A Guided Wellness Experience, Wherever You Are – SHAMAA Online Sessions" 
