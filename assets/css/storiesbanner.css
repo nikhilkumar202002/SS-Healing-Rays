@@ -406,6 +406,98 @@
     font-size: 0.85rem;
 }
 
+/* 6. Video Testimonial Card */
+.masonry-video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0b0b1a;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.masonry-video-player {
+    width: 100%;
+    max-height: 480px;
+    display: block;
+    border-radius: 16px;
+    background: #0b0b1a;
+    outline: none;
+}
+
+/* 7. Screenshot / Image Testimonial Card */
+.masonry-screenshot-card {
+    padding: 1.5rem 1.35rem !important;
+}
+
+.masonry-screenshot-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    cursor: pointer;
+    margin-bottom: 0.85rem;
+    border: 1px solid rgba(17, 17, 51, 0.06);
+}
+
+.masonry-screenshot-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.35s ease;
+}
+
+.masonry-screenshot-wrapper:hover .masonry-screenshot-img {
+    transform: scale(1.02);
+}
+
+.masonry-zoom-pill {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(17, 17, 51, 0.78);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    pointer-events: none;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+}
+
+.masonry-screenshot-wrapper:hover .masonry-zoom-pill {
+    background: rgba(186, 67, 108, 0.95);
+    color: #ffffff;
+}
+
+/* 8. Lightbox Modal for Screenshots */
+.testimonial-modal-dialog {
+    max-width: 820px;
+}
+
+.testimonial-modal-img {
+    max-height: 82vh;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
 /* Stories Call-To-Action Card at Bottom */
 .stories-bottom-cta {
     background: #faf5f8;

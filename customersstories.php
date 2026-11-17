@@ -1,7 +1,7 @@
 <?php
 
 $page_title        = 'Customer Stories – Voices of Transformation | SS Healing Rays';
-$page_description  = 'Read all 33 authentic client stories and testimonials covering Âme Crystals, Reiki healing, EFT clarity, and SHAMAA therapeutic yoga at SS Healing Rays.';
+$page_description  = 'Watch client video testimonials, read genuine WhatsApp message feedback, and explore 33 authentic healing stories across Âme Crystals, Reiki, EFT, and SHAMAA Yoga at SS Healing Rays.';
 $current_page      = 'customer-stories';
 $cta_text          = 'Chat with us';
 $cta_url           = 'https://wa.me/919000606792';
@@ -9,21 +9,26 @@ $cta_url           = 'https://wa.me/919000606792';
 // 1. Common Global Header
 include __DIR__ . '/common/header.php';
 
-// 2. Load all 33 testimonials dynamically from dataset
-$dataset_file = __DIR__ . '/dataset/testimonials.json';
-$all_testimonials = [];
-if (file_exists($dataset_file)) {
-    $raw_json = file_get_contents($dataset_file);
-    $parsed   = json_decode($raw_json, true);
-    if (!empty($parsed['testimonials'])) {
-        $all_testimonials = $parsed['testimonials'];
+// 2. Load 33 Written Testimonials from dataset/testimonials.json
+$testimonials_file = __DIR__ . '/dataset/testimonials.json';
+$raw_testimonials = [];
+if (file_exists($testimonials_file)) {
+    $parsed_t = json_decode(file_get_contents($testimonials_file), true);
+    if (!empty($parsed_t['testimonials'])) {
+        $raw_testimonials = $parsed_t['testimonials'];
     }
 }
 
-// Helper to categorize each testimonial into clean filter groups & visual badges
-function resolve_testimonial_meta(array $t): array {
+// 3. Load Videos and Screenshots from dataset/testimonialAssets.json
+$assets_file = __DIR__ . '/dataset/testimonialAssets.json';
+$raw_assets = [];
+if (file_exists($assets_file)) {
+    $raw_assets = json_decode(file_get_contents($assets_file), true) ?? [];
+}
+
+// Helper to categorize written testimonials into filter groups & badges
+function resolve_written_meta(array $t): array {
     $cat = $t['category'] ?? '';
-    
     if (stripos($cat, 'Crystal') !== false) {
         return [
             'group' => 'crystals',
@@ -59,9 +64,100 @@ function resolve_testimonial_meta(array $t): array {
     ];
 }
 
-// Calculate tally counts for filter buttons
-$filter_counts = [
-    'all'        => count($all_testimonials),
+// Separate and normalize assets
+$videos_list = [];
+$screenshots_list = [];
+foreach ($raw_assets as $asset) {
+    if (!empty($asset['isDuplicate'])) {
+        continue;
+    }
+    if (($asset['mediaType'] ?? '') === 'video') {
+        $formatted_date = !empty($asset['date']) ? date('M Y', strtotime($asset['date'])) : '';
+        $clean_title = !empty($asset['clientName']) 
+            ? $asset['clientName'] . ' Video Testimony' 
+            : (!empty($asset['title']) ? $asset['title'] : 'Client Video Experience');
+        
+        $videos_list[] = [
+            'kind'    => 'video',
+            'id'      => 'vid-' . ($asset['id'] ?? uniqid()),
+            'type'    => 'video',
+            'group'   => 'video',
+            'badge'   => 'Video Experience',
+            'icon'    => 'bi-play-circle-fill',
+            'title'   => $clean_title,
+            'src'     => $asset['relativePath'],
+            'client'  => !empty($asset['clientName']) ? $asset['clientName'] : 'SS Healing Rays Seeker',
+            'date'    => $formatted_date,
+            'size'    => $asset['sizeFormatted'] ?? '',
+        ];
+    } elseif (($asset['mediaType'] ?? '') === 'image') {
+        $src_source = $asset['source'] ?? 'WhatsApp';
+        $badge_label = $src_source . ' Feedback';
+        $formatted_date = !empty($asset['date']) ? date('M Y', strtotime($asset['date'])) : '';
+        $caption = !empty($asset['date']) ? 'Client feedback note (' . date('F Y', strtotime($asset['date'])) . ')' : 'Authentic client message feedback';
+        
+        $screenshots_list[] = [
+            'kind'    => 'screenshot',
+            'id'      => 'shot-' . ($asset['id'] ?? uniqid()),
+            'type'    => 'screenshot',
+            'group'   => 'screenshot',
+            'badge'   => $badge_label,
+            'icon'    => ($src_source === 'Instagram') ? 'bi-instagram' : 'bi-whatsapp',
+            'title'   => !empty($asset['title']) ? $asset['title'] : $badge_label,
+            'src'     => $asset['relativePath'],
+            'caption' => $caption,
+            'date'    => $formatted_date,
+        ];
+    }
+}
+
+// Normalize written testimonials
+$written_list = [];
+foreach ($raw_testimonials as $item) {
+    $meta = resolve_written_meta($item);
+    $written_list[] = [
+        'kind'     => 'written',
+        'id'       => 'story-' . ($item['id'] ?? uniqid()),
+        'type'     => 'written',
+        'group'    => $meta['group'],
+        'badge'    => $meta['badge'],
+        'icon'     => $meta['icon'],
+        'title'    => !empty($item['title']) ? $item['title'] : ($item['category'] ?? 'Healing Reflection'),
+        'stars'    => !empty($item['rating']) ? (int)$item['rating'] : 5,
+        'quote'    => $item['quote'] ?? '',
+        'author'   => !empty($item['author']) ? $item['author'] : 'Valued Seeker',
+        'guide'    => $item['practitioner'] ?? '',
+        'crystal'  => $item['crystal'] ?? '',
+    ];
+}
+
+// Interleave all 138 items for a rich multimedia Masonry presentation on "All" view
+$all_cards = [];
+$v_idx = 0; $v_count = count($videos_list);
+$w_idx = 0; $w_count = count($written_list);
+$s_idx = 0; $s_count = count($screenshots_list);
+
+while ($v_idx < $v_count || $w_idx < $w_count || $s_idx < $s_count) {
+    // 1 video
+    if ($v_idx < $v_count) {
+        $all_cards[] = $videos_list[$v_idx++];
+    }
+    // 2-3 written stories
+    for ($k = 0; $k < 3 && $w_idx < $w_count; $k++) {
+        $all_cards[] = $written_list[$w_idx++];
+    }
+    // 5-7 screenshots
+    for ($k = 0; $k < 7 && $s_idx < $s_count; $k++) {
+        $all_cards[] = $screenshots_list[$s_idx++];
+    }
+}
+
+// Calculate precise counts for filter navigation pills
+$counts = [
+    'all'        => count($all_cards),
+    'video'      => count($videos_list),
+    'written'    => count($written_list),
+    'screenshot' => count($screenshots_list),
     'crystals'   => 0,
     'reiki'      => 0,
     'yoga'       => 0,
@@ -69,11 +165,10 @@ $filter_counts = [
     'programmes' => 0,
 ];
 
-foreach ($all_testimonials as $item) {
-    $meta = resolve_testimonial_meta($item);
-    $g = $meta['group'];
-    if (isset($filter_counts[$g])) {
-        $filter_counts[$g]++;
+foreach ($written_list as $w) {
+    $g = $w['group'];
+    if (isset($counts[$g])) {
+        $counts[$g]++;
     }
 }
 ?>
@@ -81,7 +176,7 @@ foreach ($all_testimonials as $item) {
 <main class="stories-page-wrapper">
 
     <!-- ==========================================================================
-         TESTIMONIALS SECTION: Dynamic Masonry Layout with Interactive Filter Tabs
+         TESTIMONIALS SECTION: Full Multimedia Masonry Wall (Videos, Screenshots & Stories)
          ========================================================================== -->
     <section class="testimonials-section position-relative" id="customerStoriesGrid" aria-label="Client Testimonials and Experiences">
         <div class="container">
@@ -97,93 +192,174 @@ foreach ($all_testimonials as $item) {
                     </span>
                 </h2>
                 <p class="stories-section-lead">
-                    Authentic words and heartfelt reflections from our seekers, practitioners, and crystal guardians across <?= count($all_testimonials) ?> transformative journeys.
+                    Experience authentic client transformations across <?= $counts['all'] ?> real touchpoints — including <?= $counts['video'] ?> video reflections, <?= $counts['screenshot'] ?> WhatsApp message notes, and <?= $counts['written'] ?> heartfelt written journeys.
                 </p>
             </div>
 
-            <!-- Interactive Modality Filter Tabs -->
-            <nav class="stories-filter-nav" aria-label="Filter testimonials by modality">
+            <!-- Interactive Multimedia & Modality Filter Tabs -->
+            <nav class="stories-filter-nav" aria-label="Filter testimonials by format and modality">
                 <button type="button" class="stories-filter-btn active" data-filter="all">
-                    All Stories <span class="stories-filter-count"><?= $filter_counts['all'] ?></span>
+                    All Media <span class="stories-filter-count"><?= $counts['all'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="video">
+                    <i class="bi bi-play-circle-fill"></i> Videos <span class="stories-filter-count"><?= $counts['video'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="written">
+                    <i class="bi bi-card-text"></i> Written Stories <span class="stories-filter-count"><?= $counts['written'] ?></span>
+                </button>
+                <button type="button" class="stories-filter-btn" data-filter="screenshot">
+                    <i class="bi bi-whatsapp"></i> Chat &amp; Social Notes <span class="stories-filter-count"><?= $counts['screenshot'] ?></span>
                 </button>
                 <button type="button" class="stories-filter-btn" data-filter="crystals">
-                    <i class="bi bi-gem"></i> Âme Crystals <span class="stories-filter-count"><?= $filter_counts['crystals'] ?></span>
+                    <i class="bi bi-gem"></i> Âme Crystals <span class="stories-filter-count"><?= $counts['crystals'] ?></span>
                 </button>
                 <button type="button" class="stories-filter-btn" data-filter="reiki">
-                    <i class="bi bi-stars"></i> Reiki Practice & Training <span class="stories-filter-count"><?= $filter_counts['reiki'] ?></span>
+                    <i class="bi bi-stars"></i> Reiki Practice <span class="stories-filter-count"><?= $counts['reiki'] ?></span>
                 </button>
                 <button type="button" class="stories-filter-btn" data-filter="yoga">
-                    <i class="bi bi-person-arms-up"></i> SHAMAA Yoga <span class="stories-filter-count"><?= $filter_counts['yoga'] ?></span>
+                    <i class="bi bi-person-arms-up"></i> SHAMAA Yoga <span class="stories-filter-count"><?= $counts['yoga'] ?></span>
                 </button>
                 <button type="button" class="stories-filter-btn" data-filter="eft">
-                    <i class="bi bi-heart-pulse"></i> EFT Clarity <span class="stories-filter-count"><?= $filter_counts['eft'] ?></span>
+                    <i class="bi bi-heart-pulse"></i> EFT Clarity <span class="stories-filter-count"><?= $counts['eft'] ?></span>
                 </button>
                 <button type="button" class="stories-filter-btn" data-filter="programmes">
-                    <i class="bi bi-sun"></i> Holistic Programmes <span class="stories-filter-count"><?= $filter_counts['programmes'] ?></span>
+                    <i class="bi bi-sun"></i> Holistic Programmes <span class="stories-filter-count"><?= $counts['programmes'] ?></span>
                 </button>
             </nav>
 
-            <!-- Dynamic Pure CSS Columns Masonry Wall (All 33 Testimonials from Dataset) -->
+            <!-- Dynamic Pure CSS Columns Masonry Wall -->
             <div class="testimonials-masonry-wall" id="storiesMasonryWall">
-                <?php foreach ($all_testimonials as $item): ?>
-                    <?php 
-                        $meta   = resolve_testimonial_meta($item);
-                        $stars  = !empty($item['rating']) ? (int)$item['rating'] : 5;
-                        $author = !empty($item['author']) ? $item['author'] : 'Valued Seeker';
-                        $title  = !empty($item['title']) ? $item['title'] : ($item['category'] ?? 'Healing Reflection');
-                        $quote  = $item['quote'] ?? '';
-                        $guide  = $item['practitioner'] ?? '';
-                        $cryst  = $item['crystal'] ?? '';
-                    ?>
-                    <div class="masonry-item" data-group="<?= htmlspecialchars($meta['group']) ?>" data-id="<?= (int)$item['id'] ?>">
-                        <article class="masonry-testimonial-card">
-                            
-                            <!-- Header: Stars + Modality Badge -->
-                            <div class="masonry-card-header">
-                                <div class="masonry-stars" aria-label="<?= $stars ?> out of 5 stars">
-                                    <?php for ($s = 0; $s < $stars; $s++): ?>
-                                        <i class="bi bi-star-fill"></i>
-                                    <?php endfor; ?>
+                <?php foreach ($all_cards as $card): ?>
+                    
+                    <?php if ($card['kind'] === 'video'): ?>
+                        <!-- ================= CARD TYPE: VIDEO TESTIMONIAL ================= -->
+                        <div class="masonry-item" data-type="video" data-group="video" data-id="<?= htmlspecialchars($card['id']) ?>">
+                            <article class="masonry-testimonial-card masonry-video-card">
+                                
+                                <div class="masonry-card-header">
+                                    <span class="masonry-badge bg-dark text-white">
+                                        <i class="bi bi-camera-video-fill text-danger me-1"></i> Video Story
+                                    </span>
+                                    <span class="masonry-badge">
+                                        <i class="bi bi-check-circle-fill text-success me-1"></i> Verified Seeker
+                                    </span>
                                 </div>
-                                <span class="masonry-badge">
-                                    <i class="bi <?= htmlspecialchars($meta['icon']) ?>"></i>
-                                    <?= htmlspecialchars($meta['badge']) ?>
-                                </span>
-                            </div>
 
-                            <!-- Title / Highlight -->
-                            <h3 class="masonry-card-title">
-                                <?= htmlspecialchars($title) ?>
-                            </h3>
-
-                            <!-- Authentic Quotation -->
-                            <p class="masonry-quote">
-                                &ldquo;<?= htmlspecialchars($quote) ?>&rdquo;
-                            </p>
-
-                            <!-- Card Footer: Author + Guide attribution -->
-                            <div class="masonry-card-footer">
-                                <h4 class="masonry-author">
-                                    <?= htmlspecialchars($author) ?>
-                                </h4>
-                                <div class="masonry-meta-tags">
-                                    <?php if (!empty($guide)): ?>
-                                        <span class="masonry-meta-item">
-                                            <i class="bi bi-sparkles"></i>
-                                            Guided by <?= htmlspecialchars($guide) ?>
-                                        </span>
-                                    <?php endif; ?>
-                                    <?php if (!empty($cryst) && $cryst !== $meta['badge']): ?>
-                                        <span class="masonry-meta-item">
-                                            <i class="bi bi-gem"></i>
-                                            <?= htmlspecialchars($cryst) ?>
-                                        </span>
-                                    <?php endif; ?>
+                                <!-- HTML5 Video with preload="none" for zero premature bandwidth consumption -->
+                                <div class="masonry-video-wrapper">
+                                    <video controls preload="metadata" playsinline class="masonry-video-player" aria-label="<?= htmlspecialchars($card['title']) ?>">
+                                        <source src="<?= htmlspecialchars($card['src']) ?>" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
-                            </div>
 
-                        </article>
-                    </div>
+                                <h3 class="masonry-card-title mb-2">
+                                    <?= htmlspecialchars($card['title']) ?>
+                                </h3>
+
+                                <div class="masonry-card-footer mt-2">
+                                    <h4 class="masonry-author"><?= htmlspecialchars($card['client']) ?></h4>
+                                    <div class="masonry-meta-tags">
+                                        <?php if (!empty($card['date'])): ?>
+                                            <span class="masonry-meta-item"><i class="bi bi-calendar3"></i> <?= htmlspecialchars($card['date']) ?></span>
+                                        <?php endif; ?>
+                                        <span class="masonry-meta-item"><i class="bi bi-play-circle"></i> Client Video Recording</span>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div>
+
+                    <?php elseif ($card['kind'] === 'screenshot'): ?>
+                        <!-- ================= CARD TYPE: SCREENSHOT / CHAT FEEDBACK ================= -->
+                        <div class="masonry-item" data-type="screenshot" data-group="screenshot" data-id="<?= htmlspecialchars($card['id']) ?>">
+                            <article class="masonry-testimonial-card masonry-screenshot-card">
+                                
+                                <div class="masonry-card-header mb-2">
+                                    <span class="masonry-badge">
+                                        <i class="bi <?= htmlspecialchars($card['icon']) ?>"></i> <?= htmlspecialchars($card['badge']) ?>
+                                    </span>
+                                    <span class="text-muted small"><i class="bi bi-shield-check text-success"></i> Genuine Client Note</span>
+                                </div>
+
+                                <!-- Screenshot Image with interactive click-to-expand modal -->
+                                <div class="masonry-screenshot-wrapper masonry-screenshot-click" 
+                                     data-full-src="<?= htmlspecialchars($card['src']) ?>" 
+                                     data-caption="<?= htmlspecialchars($card['caption']) ?>" 
+                                     title="Click to view full message">
+                                    <img src="<?= htmlspecialchars($card['src']) ?>" 
+                                         alt="<?= htmlspecialchars($card['title']) ?>" 
+                                         class="masonry-screenshot-img" 
+                                         loading="lazy">
+                                    <span class="masonry-zoom-pill"><i class="bi bi-arrows-fullscreen"></i> Tap to Zoom</span>
+                                </div>
+
+                                <div class="masonry-card-footer pt-1 mt-1 border-0">
+                                    <div class="masonry-meta-tags justify-content-between w-100">
+                                        <span class="masonry-meta-item small text-muted"><?= htmlspecialchars($card['caption']) ?></span>
+                                        <?php if (!empty($card['date'])): ?>
+                                            <span class="masonry-meta-item small text-muted"><i class="bi bi-calendar-event"></i> <?= htmlspecialchars($card['date']) ?></span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div>
+
+                    <?php else: ?>
+                        <!-- ================= CARD TYPE: WRITTEN STORY ================= -->
+                        <div class="masonry-item" data-type="written" data-group="<?= htmlspecialchars($card['group']) ?>" data-id="<?= htmlspecialchars($card['id']) ?>">
+                            <article class="masonry-testimonial-card">
+                                
+                                <!-- Header: Stars + Modality Badge -->
+                                <div class="masonry-card-header">
+                                    <div class="masonry-stars" aria-label="<?= $card['stars'] ?> out of 5 stars">
+                                        <?php for ($s = 0; $s < $card['stars']; $s++): ?>
+                                            <i class="bi bi-star-fill"></i>
+                                        <?php endfor; ?>
+                                    </div>
+                                    <span class="masonry-badge">
+                                        <i class="bi <?= htmlspecialchars($card['icon']) ?>"></i>
+                                        <?= htmlspecialchars($card['badge']) ?>
+                                    </span>
+                                </div>
+
+                                <!-- Title -->
+                                <h3 class="masonry-card-title">
+                                    <?= htmlspecialchars($card['title']) ?>
+                                </h3>
+
+                                <!-- Authentic Quotation -->
+                                <p class="masonry-quote">
+                                    &ldquo;<?= htmlspecialchars($card['quote']) ?>&rdquo;
+                                </p>
+
+                                <!-- Card Footer: Author + Guide attribution -->
+                                <div class="masonry-card-footer">
+                                    <h4 class="masonry-author">
+                                        <?= htmlspecialchars($card['author']) ?>
+                                    </h4>
+                                    <div class="masonry-meta-tags">
+                                        <?php if (!empty($card['guide'])): ?>
+                                            <span class="masonry-meta-item">
+                                                <i class="bi bi-sparkles"></i>
+                                                Guided by <?= htmlspecialchars($card['guide']) ?>
+                                            </span>
+                                        <?php endif; ?>
+                                        <?php if (!empty($card['crystal']) && $card['crystal'] !== $card['badge']): ?>
+                                            <span class="masonry-meta-item">
+                                                <i class="bi bi-gem"></i>
+                                                <?= htmlspecialchars($card['crystal']) ?>
+                                            </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div>
+
+                    <?php endif; ?>
+
                 <?php endforeach; ?>
             </div>
 
@@ -210,29 +386,84 @@ foreach ($all_testimonials as $item) {
 
 </main>
 
+<!-- Lightbox Modal for Full-Size Screenshot View -->
+<div class="modal fade" id="testimonialImageModal" tabindex="-1" aria-labelledby="testimonialImageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered testimonial-modal-dialog">
+        <div class="modal-content border-0 bg-dark bg-opacity-75 shadow-none" style="backdrop-filter: blur(8px);">
+            <div class="modal-header border-0 pb-0 justify-content-end">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center p-2 p-md-3">
+                <img src="" id="modalTestimonialImg" class="testimonial-modal-img" alt="Client Feedback Note">
+                <p id="modalTestimonialCaption" class="text-white mt-3 mb-0 small text-opacity-75"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-// Interactive Client-Side Masonry Filter
+// Interactive Client-Side Masonry Filter and Image Lightbox Modal
 document.addEventListener('DOMContentLoaded', function () {
     const filterBtns = document.querySelectorAll('.stories-filter-btn');
     const masonryItems = document.querySelectorAll('.masonry-item');
+    const modalElement = document.getElementById('testimonialImageModal');
+    const modalImg = document.getElementById('modalTestimonialImg');
+    const modalCap = document.getElementById('modalTestimonialCaption');
+    let bsModal = null;
 
+    if (modalElement && typeof bootstrap !== 'undefined') {
+        bsModal = new bootstrap.Modal(modalElement);
+    }
+
+    // Filter pills logic
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function () {
-            const targetFilter = this.getAttribute('data-filter');
+            const target = this.getAttribute('data-filter');
 
             // Toggle active pill state
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
 
+            // Pause any playing videos when switching filters
+            document.querySelectorAll('.masonry-video-player').forEach(v => {
+                if (!v.paused) v.pause();
+            });
+
             // Filter items with smooth transition
             masonryItems.forEach(item => {
+                const type = item.getAttribute('data-type');
                 const group = item.getAttribute('data-group');
-                if (targetFilter === 'all' || group === targetFilter) {
+                let show = false;
+
+                if (target === 'all') {
+                    show = true;
+                } else if (target === 'video') {
+                    show = (type === 'video');
+                } else if (target === 'written') {
+                    show = (type === 'written');
+                } else if (target === 'screenshot') {
+                    show = (type === 'screenshot');
+                } else {
+                    show = (group === target);
+                }
+
+                if (show) {
                     item.classList.remove('is-hidden');
                 } else {
                     item.classList.add('is-hidden');
                 }
             });
+        });
+    });
+
+    // Screenshot click to open lightbox modal
+    document.querySelectorAll('.masonry-screenshot-click').forEach(trigger => {
+        trigger.addEventListener('click', function () {
+            const src = this.getAttribute('data-full-src');
+            const caption = this.getAttribute('data-caption') || 'Client Feedback Note';
+            if (modalImg) modalImg.src = src;
+            if (modalCap) modalCap.textContent = caption;
+            if (bsModal) bsModal.show();
         });
     });
 });
