@@ -61,6 +61,9 @@ AddDefaultCharset UTF-8
     RewriteRule ^training/?$ training.php [L,QSA]
     RewriteRule ^course/?$ course.php [L,QSA]
     RewriteRule ^workshop/?$ workshop.php [L,QSA]
+    RewriteRule ^customersstories/?$ customersstories.php [L,QSA]
+    RewriteRule ^customer-stories/?$ customersstories.php [L,QSA]
+    RewriteRule ^customerstories/?$ customersstories.php [L,QSA]
 
     # E. Generic Clean URL Rewriting to .php files
     #    e.g., /aboutus -> aboutus.php, /services -> services.php

@@ -48,7 +48,7 @@
                     <li><a href="workshop" class="footer-link">Workshop</a></li>
                     <li><a href="ame-crystals" class="footer-link">Âme Crystals</a></li>
                     <li><a href="shamaa" class="footer-link">SHAMAA</a></li>
-                    <li><a href="customersstories" class="footer-link">Healing Journeys</a></li>
+                    <li><a href="customersstories" class="footer-link">Customer Stories</a></li>
                     <li><a href="contact" class="footer-link">Contact Us</a></li>
                 </ul>
             </div>

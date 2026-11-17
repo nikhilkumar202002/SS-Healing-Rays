@@ -19,7 +19,7 @@ $phone_tel        = $phone_tel ?? $phone_tel_1;
 
 $is_home = ($current_page === 'home');
 
-// Navigation items array (centralized & customizable per page)
+
 $nav_items = $nav_items ?? [
     'home' => [
         'label' => 'Home',
@@ -48,7 +48,7 @@ $nav_items = $nav_items ?? [
         ],
     ],
     'stories' => [
-        'label' => 'Healing Journeys',
+        'label' => 'Customer Stories',
         'url'   => 'customersstories',
     ],
     'contact' => [
@@ -97,61 +97,27 @@ $nav_items = $nav_items ?? [
     <link rel="stylesheet" href="assets/css/product.css">
     <link rel="stylesheet" href="assets/css/cta-banner.css">
 
-    <!-- Testimonials Bento Grid Custom Styles -->
     <link rel="stylesheet" href="assets/css/testimonials.css">
-
-    <!-- Sacred Gallery 3x4 Grid Custom Styles -->
     <link rel="stylesheet" href="assets/css/gallery.css">
-
-    <!-- Gallery Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/gallerybanner.css">
-
-    <!-- Service Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/servicebanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/servicebanner.css') ? filemtime(__DIR__ . '/../assets/css/servicebanner.css') : '1.2' ?>">
-
-    <!-- Training Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/trainingbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/trainingbanner.css') ? filemtime(__DIR__ . '/../assets/css/trainingbanner.css') : '1.2' ?>">
-
-    <!-- Workshop Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/workshopbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/workshopbanner.css') ? filemtime(__DIR__ . '/../assets/css/workshopbanner.css') : '1.2' ?>">
-
-    <!-- Course Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/coursebanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/coursebanner.css') ? filemtime(__DIR__ . '/../assets/css/coursebanner.css') : '1.2' ?>">
-
-    <!-- Full Service Cards 3-Column Grid Styles -->
     <link rel="stylesheet" href="assets/css/servicecards.css?v=<?= file_exists(__DIR__ . '/../assets/css/servicecards.css') ? filemtime(__DIR__ . '/../assets/css/servicecards.css') : '1.2' ?>">
-
-    <!-- Training Programs Alternating 4-Row Section Styles -->
     <link rel="stylesheet" href="assets/css/trainingcards.css?v=<?= file_exists(__DIR__ . '/../assets/css/trainingcards.css') ? filemtime(__DIR__ . '/../assets/css/trainingcards.css') : '1.2' ?>">
-
-    <!-- Product Page Hero Banner Custom Styles -->
     <link rel="stylesheet" href="assets/css/productbanner.css?v=<?= file_exists(__DIR__ . '/../assets/css/productbanner.css') ? filemtime(__DIR__ . '/../assets/css/productbanner.css') : '2.2' ?>">
-
-    <!-- Shamaa Wellness Page Custom Styles -->
     <link rel="stylesheet" href="assets/css/wellness.css?v=<?= file_exists(__DIR__ . '/../assets/css/wellness.css') ? filemtime(__DIR__ . '/../assets/css/wellness.css') : '1.0' ?>">
-
-    <!-- Masonry Gallery Grid & Lightbox Styles -->
     <link rel="stylesheet" href="assets/css/galleryimages.css">
-
-    <!-- Frequently Asked Questions (FAQ) Accordion Styles -->
     <link rel="stylesheet" href="assets/css/faq.css">
-
-    <!-- Contact & Booking Section Custom Styles -->
     <link rel="stylesheet" href="assets/css/contact.css">
-
-    <!-- Personal Profile Details Page Custom Styles -->
     <link rel="stylesheet" href="assets/css/profile.css?v=<?= file_exists(__DIR__ . '/../assets/css/profile.css') ? filemtime(__DIR__ . '/../assets/css/profile.css') : '1.2' ?>">
-
-    <!-- Customer Stories Banner & Page Custom Styles -->
     <link rel="stylesheet" href="assets/css/storiesbanner.css">
-
-    <!-- Reusable Footer Island Custom Styles -->
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body class="<?= !empty($current_page) ? 'page-' . htmlspecialchars($current_page) : '' ?>">
 
 <?php
-// Homepage Preloader (displays on homepage load)
 if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
     include __DIR__ . '/preloader.php';
 }
@@ -182,7 +148,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                             <?php 
                                 $isActive = ($current_page === $key || 
                                             ($key === 'services' && in_array($current_page, ['services', 'service', 'training', 'course', 'courses', 'workshop', 'workshops'])) ||
-                                            ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
+                                            ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'customersstories', 'customerstories', 'testimonials'])) ||
                                             ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness', 'shamaa'])));
                                 $hasChildren = !empty($item['children']);
                             ?>
@@ -280,7 +246,7 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                 <?php 
                     $isActive = ($current_page === $key || 
                                 ($key === 'services' && in_array($current_page, ['services', 'service', 'training', 'course', 'courses', 'workshop', 'workshops'])) ||
-                                ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'testimonials'])) ||
+                                ($key === 'stories' && in_array($current_page, ['stories', 'customer-stories', 'customersstories', 'customerstories', 'testimonials'])) ||
                                 ($key === 'products' && in_array($current_page, ['products', 'product', 'ame-crystals', 'shamaa-wellness', 'wellness', 'shamaa']))); 
                 ?>
                 <?php if (!empty($item['children'])): ?>
