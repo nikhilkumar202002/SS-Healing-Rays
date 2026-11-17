@@ -1,5 +1,6 @@
 <?php
 
+$shamaa_brand_name       = $shamaa_brand_name ?? 'SHAMAA';
 $shamaa_heading_1        = $shamaa_heading_1 ?? 'Where Yogic Wisdom';
 $shamaa_heading_2        = $shamaa_heading_2 ?? 'Meets the <em>Art of Healing.</em>';
 
