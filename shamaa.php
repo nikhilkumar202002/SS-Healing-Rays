@@ -438,6 +438,25 @@ $shamaa_pillars = [
     ],
 ];
 ?>
+<style>
+/* Instant override: Zero hovering top borders across all cards */
+.shamaa-highlight-card::before,
+.shamaa-highlight-card::after,
+.shamaa-transformation-card::before,
+.shamaa-transformation-card::after,
+.shamaa-offering-card::before,
+.shamaa-offering-card::after,
+.wellness-card::before,
+.wellness-card::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+</style>
+
 <section class="shamaa-transformation-section position-relative" id="enduringTransformation" aria-label="Enduring Transformation – Four Pillars">
     <!-- Anchor for direct deep linking -->
     <div id="transformationPillars" class="position-absolute" style="top: -95px;"></div>
