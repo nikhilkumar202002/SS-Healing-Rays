@@ -48,7 +48,6 @@ if (empty($banner_images)) {
     ];
 }
 
-// 3. Testimonials Bento Grid Items (Exact Homepage Bento Structure)
 $stories_grid_items = [
     // --- ROW 1 ---
     [

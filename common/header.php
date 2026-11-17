@@ -204,12 +204,15 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                     <!-- Action CTA Button (Desktop only, hidden on mobile) -->
                     <div class="header-cta-wrapper d-none d-lg-inline-flex">
                         <?php
-                            $is_wa_cta   = str_contains($cta_url ?? '', 'wa.me');
-                            $btn_text    = $cta_text;
-                            $btn_url     = $cta_url;
-                            $btn_class   = 'Btn-Header';
-                            $btn_id      = 'headerCtaBtn';
-                            $btn_attr    = 'aria-label="' . htmlspecialchars($cta_text) . '" title="' . htmlspecialchars($cta_text) . '"' . ($is_wa_cta ? ' target="_blank" rel="noopener noreferrer"' : '');
+                            $is_wa_cta    = str_contains($cta_url ?? '', 'wa.me');
+                            $is_modal_cta = str_starts_with($cta_url ?? '', '#');
+                            $btn_text     = $cta_text;
+                            $btn_url      = $cta_url;
+                            $btn_class    = 'Btn-Header';
+                            $btn_id       = 'headerCtaBtn';
+                            $btn_attr     = 'aria-label="' . htmlspecialchars($cta_text) . '" title="' . htmlspecialchars($cta_text) . '"' . 
+                                           ($is_wa_cta ? ' target="_blank" rel="noopener noreferrer"' : '') . 
+                                           ($is_modal_cta ? ' data-bs-toggle="modal" data-bs-target="' . htmlspecialchars($cta_url) . '"' : '');
                             include __DIR__ . '/button.php';
                         ?>
                     </div>
@@ -305,12 +308,15 @@ if (($current_page ?? '') === 'home' || !empty($show_preloader)) {
                 </a>
             </div>
             <?php
-                $is_wa_cta   = str_contains($cta_url ?? '', 'wa.me');
-                $btn_text    = $cta_text;
-                $btn_url     = $cta_url;
-                $btn_class   = 'Btn-Header w-100 justify-content-between';
-                $btn_id      = 'drawerCtaBtn';
-                $btn_attr    = 'aria-label="' . htmlspecialchars($cta_text) . '"' . ($is_wa_cta ? ' target="_blank" rel="noopener noreferrer"' : '');
+                $is_wa_cta    = str_contains($cta_url ?? '', 'wa.me');
+                $is_modal_cta = str_starts_with($cta_url ?? '', '#');
+                $btn_text     = $cta_text;
+                $btn_url      = $cta_url;
+                $btn_class    = 'Btn-Header w-100 justify-content-between';
+                $btn_id       = 'drawerCtaBtn';
+                $btn_attr     = 'aria-label="' . htmlspecialchars($cta_text) . '"' . 
+                               ($is_wa_cta ? ' target="_blank" rel="noopener noreferrer"' : '') . 
+                               ($is_modal_cta ? ' data-bs-toggle="modal" data-bs-target="' . htmlspecialchars($cta_url) . '"' : '');
                 include __DIR__ . '/button.php';
             ?>
         </div>

@@ -46,6 +46,7 @@
                     <li><a href="services" class="footer-link">Healing Services</a></li>
                     <li><a href="training" class="footer-link">Training</a></li>
                     <li><a href="workshop" class="footer-link">Workshop</a></li>
+                    <li><a href="course" class="footer-link">Courses on Wellness</a></li>
                     <li><a href="ame-crystals" class="footer-link">Âme Crystals</a></li>
                     <li><a href="shamaa" class="footer-link">SHAMAA</a></li>
                     <li><a href="customersstories" class="footer-link">Customer Stories</a></li>
