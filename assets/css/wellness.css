@@ -1531,7 +1531,18 @@
 
 .page-shamaa #shamaaFaq .faq-item,
 .page-shamaa .shamaa-page-content .faq-item {
-    border: 1px solid rgba(40, 114, 77, 0.14) !important;
+    border: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(17, 17, 51, 0.08) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.page-shamaa #shamaaFaq .faq-item:last-child,
+.page-shamaa .shamaa-page-content .faq-item:last-child {
+    border-bottom: none !important;
 }
 
 .page-shamaa #shamaaFaq .faq-button:hover .faq-question-text,
@@ -1563,8 +1574,12 @@
 
 .page-shamaa #shamaaFaq .faq-item:has(.faq-button:not(.collapsed)),
 .page-shamaa .shamaa-page-content .faq-item:has(.faq-button:not(.collapsed)) {
-    border-color: rgba(40, 114, 77, 0.42) !important;
-    box-shadow: 0 8px 24px rgba(40, 114, 77, 0.08) !important;
+    border: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(17, 17, 51, 0.08) !important;
+    box-shadow: none !important;
 }
 
 /* 7. Action Buttons (Pill buttons across the SHAMAA page) */
