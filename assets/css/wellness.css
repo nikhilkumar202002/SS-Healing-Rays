@@ -1317,6 +1317,291 @@
     background: none !important;
 }
 
+/* ==========================================================================
+   13. SHAMAA Page: Holistic Green Mode Color Tone
+   A soothing, restorative botanical / forest / emerald yogic palette.
+   STRICTLY scoped to SHAMAA page content.
+   Site Header and Site Footer are 100% UNCHANGED.
+   ========================================================================== */
+
+/* Page-level CSS Variables for Green Mode */
+.page-shamaa .shamaa-page-content {
+    --shamaa-green-primary: #28724d;
+    --shamaa-green-dark: #1b5336;
+    --shamaa-green-accent: #377a15;
+    --shamaa-green-subtle: #eef6f1;
+    --shamaa-green-tint: #f5f9f6;
+    --shamaa-green-border: rgba(40, 114, 77, 0.14);
+    --shamaa-green-border-hover: rgba(40, 114, 77, 0.45);
+    --shamaa-green-glow: rgba(40, 114, 77, 0.18);
+    --secondary-color: #28724d !important;
+}
+
+/* 1. Hero Banner */
+.page-shamaa .shamaa-hero-banner .product-banner-title em {
+    color: #6ed39b !important;
+    text-shadow: 0 2px 14px rgba(27, 83, 54, 0.45);
+}
+
+.page-shamaa .shamaa-hero-banner .Btn-Crystal-Primary,
+.page-shamaa .shamaa-hero-banner .Btn-Shamaa-Primary {
+    border-color: rgba(110, 211, 155, 0.45) !important;
+}
+
+.page-shamaa .shamaa-hero-banner .Btn-Crystal-Primary .icon-Container,
+.page-shamaa .shamaa-hero-banner .Btn-Shamaa-Primary .icon-Container {
+    background: linear-gradient(135deg, #28724d 0%, #1b5336 100%) !important;
+}
+
+.page-shamaa .shamaa-hero-banner .Btn-Crystal-Primary:hover,
+.page-shamaa .shamaa-hero-banner .Btn-Shamaa-Primary:hover {
+    border-color: #28724d !important;
+    box-shadow: 0 8px 24px rgba(40, 114, 77, 0.35) !important;
+}
+
+.page-shamaa .shamaa-hero-banner .Btn-Crystal-Primary:hover .text,
+.page-shamaa .shamaa-hero-banner .Btn-Shamaa-Primary:hover .text {
+    color: #1b5336 !important;
+}
+
+.page-shamaa .shamaa-hero-banner .btn-hero-shamaa-explore:hover {
+    background: rgba(40, 114, 77, 0.28) !important;
+    border-color: #6ed39b !important;
+    color: #ffffff !important;
+}
+
+/* 2. Section 2: About Philosophy (#wellnessAbout) */
+.page-shamaa #wellnessAbout .wellness-pretitle {
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessAbout .wellness-heading em {
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-philosophy-subheading {
+    color: #1b5336 !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-philosophy-subheading strong {
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-principles-block {
+    border-left: 3.5px solid #28724d !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-principle-badge {
+    background: linear-gradient(135deg, rgba(40, 114, 77, 0.14) 0%, rgba(55, 122, 21, 0.18) 100%) !important;
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessAbout .shamaa-sticky-frame:hover {
+    border-color: rgba(40, 114, 77, 0.38) !important;
+    box-shadow: 0 16px 36px -10px rgba(40, 114, 77, 0.16) !important;
+}
+
+/* 3. Section 3: Yogic Offerings (#wellnessOfferings) */
+.page-shamaa #wellnessOfferings {
+    background: #f5f9f6 !important;
+}
+
+.page-shamaa #wellnessOfferings .service-cards-pretitle {
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessOfferings .service-cards-title em {
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-offering-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(40, 114, 77, 0.12) !important;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-offering-card:hover {
+    border-color: rgba(40, 114, 77, 0.45) !important;
+    box-shadow: 0 18px 40px -10px rgba(40, 114, 77, 0.18) !important;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-offering-card .service-item-number {
+    color: #28724d !important;
+}
+
+.page-shamaa #wellnessOfferings .shamaa-offering-card:hover .service-item-title {
+    color: #1b5336 !important;
+}
+
+/* 4. Section 4: A Guided Wellness Experience (#guidedExperience) */
+.page-shamaa #guidedExperience {
+    background: #ffffff !important;
+}
+
+.page-shamaa #guidedExperience .wellness-pretitle {
+    color: #28724d !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-guided-heading em {
+    color: #28724d !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-guided-subheading {
+    color: #28724d !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-highlight-card {
+    border: 1px solid rgba(40, 114, 77, 0.12) !important;
+    background: #ffffff !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-highlight-icon-box {
+    background: #eef6f1 !important;
+    color: #28724d !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-highlight-card:hover {
+    border-color: rgba(40, 114, 77, 0.45) !important;
+    box-shadow: 0 16px 36px -8px rgba(40, 114, 77, 0.16) !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-highlight-card:hover .shamaa-highlight-icon-box {
+    background: linear-gradient(135deg, #28724d 0%, #1b5336 100%) !important;
+    color: #ffffff !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-highlight-card:hover .shamaa-highlight-title {
+    color: #1b5336 !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-slider-card {
+    border: 1px solid rgba(40, 114, 77, 0.12) !important;
+}
+
+.page-shamaa #guidedExperience .shamaa-slider-card:hover {
+    border-color: rgba(40, 114, 77, 0.4) !important;
+    box-shadow: 0 14px 28px -6px rgba(40, 114, 77, 0.18) !important;
+}
+
+/* 5. Section 5: Enduring Transformation (#enduringTransformation) */
+.page-shamaa #enduringTransformation {
+    background: #f5f9f6 !important;
+}
+
+.page-shamaa #enduringTransformation .wellness-pretitle {
+    color: #28724d !important;
+}
+
+.page-shamaa #enduringTransformation .shamaa-transformation-heading em {
+    color: #28724d !important;
+}
+
+.page-shamaa #enduringTransformation .shamaa-transformation-subheading {
+    color: #28724d !important;
+}
+
+.page-shamaa #enduringTransformation .shamaa-transformation-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(40, 114, 77, 0.12) !important;
+}
+
+.page-shamaa #enduringTransformation .shamaa-transformation-card:hover {
+    border-color: rgba(40, 114, 77, 0.45) !important;
+    box-shadow: 0 20px 42px -10px rgba(40, 114, 77, 0.18) !important;
+}
+
+.page-shamaa #enduringTransformation .shamaa-transformation-card:hover .shamaa-transformation-card-title {
+    color: #1b5336 !important;
+}
+
+/* 6. Section 6: FAQ (#shamaaFaq / .faq-section) */
+.page-shamaa #shamaaFaq,
+.page-shamaa .shamaa-page-content .faq-section {
+    background: #ffffff !important;
+}
+
+.page-shamaa #shamaaFaq .faq-pretitle,
+.page-shamaa .shamaa-page-content .faq-pretitle {
+    color: #28724d !important;
+}
+
+.page-shamaa #shamaaFaq .faq-heading .title-highlight,
+.page-shamaa .shamaa-page-content .faq-heading .title-highlight {
+    color: #28724d !important;
+}
+
+.page-shamaa #shamaaFaq .faq-item,
+.page-shamaa .shamaa-page-content .faq-item {
+    border: 1px solid rgba(40, 114, 77, 0.14) !important;
+}
+
+.page-shamaa #shamaaFaq .faq-button:hover .faq-question-text,
+.page-shamaa .shamaa-page-content .faq-button:hover .faq-question-text {
+    color: #28724d !important;
+}
+
+.page-shamaa #shamaaFaq .faq-button:not(.collapsed) .faq-question-text,
+.page-shamaa .shamaa-page-content .faq-button:not(.collapsed) .faq-question-text {
+    color: #1b5336 !important;
+}
+
+.page-shamaa #shamaaFaq .faq-toggle-icon,
+.page-shamaa .shamaa-page-content .faq-toggle-icon {
+    background-color: #eef6f1 !important;
+    color: #28724d !important;
+}
+
+.page-shamaa #shamaaFaq .faq-button:hover .faq-toggle-icon,
+.page-shamaa .shamaa-page-content .faq-button:hover .faq-toggle-icon {
+    background-color: #dcece0 !important;
+}
+
+.page-shamaa #shamaaFaq .faq-button:not(.collapsed) .faq-toggle-icon,
+.page-shamaa .shamaa-page-content .faq-button:not(.collapsed) .faq-toggle-icon {
+    background-color: #28724d !important;
+    color: #ffffff !important;
+}
+
+.page-shamaa #shamaaFaq .faq-item:has(.faq-button:not(.collapsed)),
+.page-shamaa .shamaa-page-content .faq-item:has(.faq-button:not(.collapsed)) {
+    border-color: rgba(40, 114, 77, 0.42) !important;
+    box-shadow: 0 8px 24px rgba(40, 114, 77, 0.08) !important;
+}
+
+/* 7. Action Buttons (Pill buttons across the SHAMAA page) */
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Approach .icon-Container,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Clarity .icon-Container,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Explore .icon-Container,
+.page-shamaa .shamaa-page-content .Btn-Workshop-Card .icon-Container,
+.page-shamaa .shamaa-page-content .Btn-Card-Main .icon-Container {
+    background: linear-gradient(135deg, #28724d 0%, #1b5336 100%) !important;
+    background-color: #28724d !important;
+}
+
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Approach,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Clarity,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Explore,
+.page-shamaa .shamaa-page-content .Btn-Workshop-Card,
+.page-shamaa .shamaa-page-content .Btn-Card-Main {
+    border-color: rgba(40, 114, 77, 0.35) !important;
+}
+
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Approach:hover,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Clarity:hover,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Explore:hover,
+.page-shamaa .shamaa-page-content .Btn-Workshop-Card:hover,
+.page-shamaa .shamaa-page-content .Btn-Card-Main:hover {
+    border-color: #28724d !important;
+    box-shadow: 0 8px 22px rgba(40, 114, 77, 0.22) !important;
+}
+
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Approach:hover .text,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Clarity:hover .text,
+.page-shamaa .shamaa-page-content .Btn-Shamaa-Explore:hover .text,
+.page-shamaa .shamaa-page-content .Btn-Workshop-Card:hover .text,
+.page-shamaa .shamaa-page-content .Btn-Card-Main:hover .text {
+    color: #1b5336 !important;
+}
+
 
 
 

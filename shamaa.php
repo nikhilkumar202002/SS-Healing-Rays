@@ -22,6 +22,11 @@ $cta_url          = $whatsapp_url_wellness;
 $current_user = 'shamaa';
 
 include __DIR__ . '/common/header.php';
+?>
+
+<main class="shamaa-page-content" id="shamaaPageContent">
+
+<?php
 include __DIR__ . '/products/shamaabanner.php';
 
 $wellness_cta_bg = file_exists(__DIR__ . '/assets/banner/cta-banner.jpg') 
@@ -486,6 +491,8 @@ $shamaa_pillars = [
      6. Frequently Asked Questions (Section 6 - Accordion)
      ========================================================================== -->
 <?php include __DIR__ . '/products/shamaafaq.php'; ?>
+
+</main>
 
 <?php 
 // Common Global Modals & Footer
